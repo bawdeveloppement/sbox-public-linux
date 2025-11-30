@@ -52,24 +52,49 @@ public class StandaloneAppSystem : AppSystem
 		_standaloneLoadTask = IGameInstanceDll.Current.LoadGamePackageAsync( Standalone.Manifest.Ident, GameLoadingFlags.Host, default );
 	}
 
-	protected override bool RunFrame()
-	{
+		protected override bool RunFrame()
 
-		EngineLoop.RunFrame( _appSystem, out bool wantsToQuit );
-		// Still loading
-		if ( _standaloneLoadTask is not null )
 		{
-			if ( _standaloneLoadTask.IsCompleted )
+
+			if ( _appSystem is null )
+
 			{
-				_standaloneLoadTask.GetAwaiter().GetResult();
-				_standaloneLoadTask = null;
+
+				return false; // If appSystem is null, we want to quit.
+
 			}
-		}
-		// Quit next loop after load, if we are testing
-		else if ( Utility.CommandLine.HasSwitch( "-test-standalone" ) )
-		{
-			Application.Exit();
-		}
+
+	
+
+			EngineLoop.RunFrame( _appSystem.Value, out bool wantsToQuit ); // Use .Value to access the non-nullable struct
+
+			// Still loading
+
+			if ( _standaloneLoadTask is not null )
+
+			{
+
+				if ( _standaloneLoadTask.IsCompleted )
+
+				{
+
+					_standaloneLoadTask.GetAwaiter().GetResult();
+
+					_standaloneLoadTask = null;
+
+				}
+
+			}
+
+			// Quit next loop after load, if we are testing
+
+			else if ( Utility.CommandLine.HasSwitch( "-test-standalone" ) )
+
+			{
+
+				Application.Exit();
+
+			}
 
 		return !wantsToQuit;
 	}

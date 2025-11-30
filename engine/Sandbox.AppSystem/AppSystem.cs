@@ -12,7 +12,7 @@ namespace Sandbox;
 public class AppSystem
 {
 	protected Logger log = new Logger( "AppSystem" );
-	internal CMaterialSystem2AppSystemDict _appSystem { get; set; }
+	internal CMaterialSystem2AppSystemDict? _appSystem { get; set; }
 
 	[DllImport( "user32.dll", CharSet = CharSet.Unicode )]
 	private static extern int MessageBox( IntPtr hWnd, string text, string caption, uint type );
@@ -100,7 +100,10 @@ public class AppSystem
 
 			Init();
 
-			NativeEngine.EngineGlobal.Plat_SetCurrentFrame( 0 );
+			if ( !System.OperatingSystem.IsLinux() )
+			{
+				NativeEngine.EngineGlobal.Plat_SetCurrentFrame( 0 );
+			}
 
 			while ( RunFrame() )
 			{
@@ -123,7 +126,12 @@ public class AppSystem
 
 	protected virtual bool RunFrame()
 	{
-		EngineLoop.RunFrame( _appSystem, out bool wantsToQuit );
+		if ( _appSystem is null )
+		{
+			return false; // If appSystem is null, we want to quit.
+		}
+
+		EngineLoop.RunFrame( _appSystem.Value, out bool wantsToQuit ); // Use .Value to access the non-nullable struct
 
 		return !wantsToQuit;
 	}
@@ -134,89 +142,108 @@ public class AppSystem
 		EngineLoop.Exiting();
 
 		// Shut the engine down (close window etc)
-		NativeEngine.EngineGlobal.SourceEngineShutdown( _appSystem, false );
+		if ( _appSystem is not null ) // Only shutdown if it was initialized
+		{
+			NativeEngine.EngineGlobal.SourceEngineShutdown( _appSystem.Value, false ); // Pass the non-nullable value
+		}
 
 		// Flush the api (close actvity, update stats etc)
 		Api.Shutdown();
 
-		if ( _appSystem.IsValid )
-		{
-			_appSystem.Destroy();
-			_appSystem = default;
-		}
-
-		if ( steamApiDll != IntPtr.Zero )
-		{
-			NativeLibrary.Free( steamApiDll );
-			steamApiDll = default;
-		}
-		// Unload native dlls:
-		// At this point we should no longer need them.
-		// If we still hold references to native resources, we want it to crash here rather than on application exit.
-		Managed.SandboxEngine.NativeInterop.Free();
-
-		// No-ops if editor isn't loaded
-		Managed.SourceTools.NativeInterop.Free();
-		Managed.SourceAssetSytem.NativeInterop.Free();
-		Managed.SourceHammer.NativeInterop.Free();
-		Managed.SourceModelDoc.NativeInterop.Free();
-		Managed.SourceAnimgraph.NativeInterop.Free();
-	}
-
-	protected void InitGame( AppSystemCreateInfo createInfo )
-	{
-		var commandLine = System.Environment.CommandLine;
-		commandLine = commandLine.Replace( ".dll", ".exe" ); // uck
-
-		_appSystem = CMaterialSystem2AppSystemDict.Create( createInfo.ToMaterialSystem2AppSystemDictCreateInfo() );
-
-		if ( createInfo.Flags.HasFlag( AppSystemFlags.IsEditor ) )
-		{
-			_appSystem.SetInToolsMode();
-		}
-
-		if ( createInfo.Flags.HasFlag( AppSystemFlags.IsUnitTest ) )
-		{
-			_appSystem.SetInTestMode();
-		}
-
-		if ( createInfo.Flags.HasFlag( AppSystemFlags.IsStandaloneGame ) )
-		{
-			_appSystem.SetInStandaloneApp();
-		}
-
-		if ( createInfo.Flags.HasFlag( AppSystemFlags.IsDedicatedServer ) )
-		{
-			_appSystem.SetDedicatedServer( true );
-		}
-
-		_appSystem.SetSteamAppId( (uint)Application.AppId );
-
-		if ( !NativeEngine.EngineGlobal.SourceEnginePreInit( commandLine, _appSystem ) )
-		{
-			throw new System.Exception( "SourceEnginePreInit failed" );
-		}
-
-		Bootstrap.PreInit( _appSystem );
-
-		if ( createInfo.Flags.HasFlag( AppSystemFlags.IsStandaloneGame ) )
-		{
-			Standalone.Init();
-		}
-
-		if ( !NativeEngine.EngineGlobal.SourceEngineInit( _appSystem ) )
-		{
-			throw new System.Exception( "SourceEngineInit returned false" );
-		}
-
-		Bootstrap.Init();
-	}
-
-	protected void SetWindowTitle( string title )
-	{
-		_appSystem.SetAppWindowTitle( title );
-	}
-
+		        if ( _appSystem is not null && _appSystem.Value.IsValid )
+		        {
+		            _appSystem.Value.Destroy();
+		            _appSystem = default;
+		        }
+		
+		        if ( steamApiDll != IntPtr.Zero )
+		        {
+		            NativeLibrary.Free( steamApiDll );
+		            steamApiDll = default;
+		        }
+		        // Unload native dlls:
+		        // At this point we should no longer need them.
+		        // If we still hold references to native resources, we want it to crash here rather than on application exit.
+		        Managed.SandboxEngine.NativeInterop.Free();
+		
+		        // No-ops if editor isn't loaded
+		        Managed.SourceTools.NativeInterop.Free();
+		        Managed.SourceAssetSytem.NativeInterop.Free();
+		        Managed.SourceHammer.NativeInterop.Free();
+		        Managed.SourceModelDoc.NativeInterop.Free();
+		        Managed.SourceAnimgraph.NativeInterop.Free();
+		    }
+		
+		    protected void InitGame( AppSystemCreateInfo createInfo )
+		    {
+		        var commandLine = System.Environment.CommandLine;
+		        commandLine = commandLine.Replace( ".dll", ".exe" ); // uck
+		
+		        _appSystem = null; // Default to null for Linux
+		        if ( !System.OperatingSystem.IsLinux() )
+		        {
+		            _appSystem = CMaterialSystem2AppSystemDict.Create( createInfo.ToMaterialSystem2AppSystemDictCreateInfo() );
+		        }
+		
+		        if ( _appSystem is not null )
+		        {
+		            if ( createInfo.Flags.HasFlag( AppSystemFlags.IsEditor ) )
+		            {
+		                _appSystem.Value.SetInToolsMode();
+		            }
+		
+		            if ( createInfo.Flags.HasFlag( AppSystemFlags.IsUnitTest ) )
+		            {
+		                _appSystem.Value.SetInTestMode();
+		            }
+		
+		            if ( createInfo.Flags.HasFlag( AppSystemFlags.IsStandaloneGame ) )
+		            {
+		                _appSystem.Value.SetInStandaloneApp();
+		            }
+		
+		            if ( createInfo.Flags.HasFlag( AppSystemFlags.IsDedicatedServer ) )
+		            {
+		                _appSystem.Value.SetDedicatedServer( true );
+		            }
+		
+		            _appSystem.Value.SetSteamAppId( (uint)Application.AppId );
+		
+		            if ( _appSystem is not null )
+		            {
+		                if ( !NativeEngine.EngineGlobal.SourceEnginePreInit( commandLine, _appSystem.Value ) ) // Use .Value
+		                {
+		                    throw new System.Exception( "SourceEnginePreInit failed" );
+		                }
+		
+		                Bootstrap.PreInit( _appSystem.Value );
+		
+		                if ( createInfo.Flags.HasFlag( AppSystemFlags.IsStandaloneGame ) )
+		                {
+		                    Standalone.Init();
+		                }
+		
+		                if ( !NativeEngine.EngineGlobal.SourceEngineInit( _appSystem.Value ) ) // Use .Value
+		                {
+		                    throw new System.Exception( "SourceEngineInit returned false" );
+		                }
+		
+		                Bootstrap.Init();
+		            }
+		            else if ( !System.OperatingSystem.IsLinux() ) // Only throw if not Linux, and _appSystem is null unexpectedly
+		            {
+		                throw new System.Exception( "SourceEnginePreInit failed - _appSystem is null." );
+		            }
+		        }
+		    }
+		
+		    protected void SetWindowTitle( string title )
+		    {
+		        if ( _appSystem is not null )
+		        {
+		            _appSystem.Value.SetAppWindowTitle( title );
+		        }
+		    }
 	IntPtr steamApiDll = IntPtr.Zero;
 
 	/// <summary>
