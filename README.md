@@ -10,7 +10,7 @@
 [Documentation]: https://sbox.game/dev/doc/
 [Contributing]: CONTRIBUTING.md
 
-# s&box
+# s&box Linux
 
 s&box is a modern game engine, built on Valve's Source 2 and the latest .NET technology, it provides a modern intuitive editor for creating games.
 
@@ -42,7 +42,7 @@ If you want to build from source, this repository includes all the necessary fil
 git clone https://github.com/Facepunch/sbox-public.git
 ```
 
-Once you've cloned the repo simply run `Bootstrap.bat` which will download dependencies and build the engine.
+Once you've cloned the repo simply run `Bootstrap.bat` on windows or `Bootstrap.sh` on linux which will download dependencies and build the engine.
 
 The game and editor can be run from the binaries in the game folder.
 
