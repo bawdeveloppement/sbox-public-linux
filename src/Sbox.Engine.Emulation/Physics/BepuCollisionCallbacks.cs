@@ -1,5 +1,8 @@
 using BepuPhysics;
+using BepuPhysics.Collidables;
 using BepuPhysics.CollisionDetection;
+using BepuPhysics.Constraints;
+using BepuUtilities;
 using System.Numerics;
 
 namespace Sbox.Engine.Emulation.Physics;
@@ -23,14 +26,25 @@ public struct NarrowPhaseCallbacks : INarrowPhaseCallbacks
 public struct PoseIntegratorCallbacks : IPoseIntegratorCallbacks
 {
     public Vector3 Gravity;
-    public PoseIntegratorCallbacks(Vector3 gravity) { Gravity = gravity; }
+    private Vector3Wide gravityWide;
+    public PoseIntegratorCallbacks(Vector3 gravity)
+    {
+        Gravity = gravity;
+        gravityWide = default;
+    }
     public AngularIntegrationMode AngularIntegrationMode => AngularIntegrationMode.Nonconserving;
     public bool AllowSubstepsForUnconstrainedBodies => false;
     public bool IntegrateVelocityForKinematics => false;
     public void Initialize(Simulation simulation) { }
-    public void PrepareForIntegration(float dt) { }
+    public void PrepareForIntegration(float dt)
+    {
+        // Prépare la version "wide" du vecteur gravité pour SIMD
+        Vector3Wide.Broadcast(Gravity, out gravityWide);
+    }
     public void IntegrateVelocity(Vector<int> bodyIndices, Vector3Wide position, QuaternionWide orientation, BodyInertiaWide localInertia, Vector<int> integrationMask, int workerIndex, Vector<float> dt, ref BodyVelocityWide velocity)
     {
-        velocity.Linear += Gravity * dt;
+        // Utilise Vector3Wide.Scale pour appliquer la gravité à chaque lane
+        Vector3Wide.Scale(gravityWide, dt, out var gravityDt);
+        velocity.Linear += gravityDt;
     }
 }

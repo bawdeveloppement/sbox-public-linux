@@ -83,7 +83,8 @@ engine/TestResults/
 /src/OpenEngine2Android/obj
 /src/OpenEngine2Android/bin
 /src/Sandbox.Engine.Emulation/bin
-/src/Sandbox.Engine.Emulation/obj
+/src/Sandbox.Engine.Emulation/obj/
+/src/Sandbox.Engine.Emulation/obj/*
 /src/Sandbox.Engine.Emulation/Generated
 /src/OpenEngine2Android/bin
 

@@ -76,24 +76,24 @@ public static unsafe class EngineExports
         // global_UpdateWindowSize: Line 1609 -> Index 1596
         native[1596] = (void*)(delegate* unmanaged<void*>)&UpdateWindowSize;
 
-        // Physics System Stubs
+        // Physics System Exports
         // g_pPhysicsSystem_CreateWorld: Index 1464
         native[1464] = (void*)(delegate* unmanaged<int>)&Physics_CreateWorld;
-
         // g_pPhysicsSystem_DestroyWorld: Index 1465
         native[1465] = (void*)(delegate* unmanaged<void*, void>)&Physics_DestroyWorld;
-
         // IPhysicsWorld_SetWorldReferenceBody: Index 2019
         native[2019] = (void*)(delegate* unmanaged<void*, void*, void>)&Physics_SetWorldReferenceBody;
-
         // IPhysicsWorld_GetGravity: Index 2022
         native[2022] = (void*)(delegate* unmanaged<void*, Vector3>)&Physics_GetGravity;
-
         // IPhysicsWorld_SetDebugScene: Index 2041
         native[2041] = (void*)(delegate* unmanaged<void*, void*, void>)&Physics_SetDebugScene;
-
         // IPhysicsWorld_GetDebugScene: Index 2042
         native[2042] = (void*)(delegate* unmanaged<void*, int>)&Physics_GetDebugScene;
+        // IPhysicsWorld_AddBody: Index 2043
+        native[2043] = (void*)(delegate* unmanaged<void*, int>)&Physics_AddBody;
+        // IPhysicsWorld_Step: Index 2044
+        native[2044] = (void*)(delegate* unmanaged<void*, float, void>)&Physics_Step;
+    
 
         _isReady = true;
     }
@@ -344,17 +344,23 @@ public static unsafe class EngineExports
         return world?.Gravity ?? new Vector3(0, 0, -800);
     }
 
+    private static readonly Dictionary<int, IntPtr> _debugScenes = new();
+
     [UnmanagedCallersOnly]
     public static void Physics_SetDebugScene(void* worldPtr, void* scenePtr)
     {
-        // Store debug scene handle if needed. For now no-op.
-        // Could be used later for debug drawing.
+        int handle = (int)(long)worldPtr;
+        IntPtr scene = (IntPtr)scenePtr;
+        _debugScenes[handle] = scene;
+        Console.WriteLine($"[NativeAOT] Physics_SetDebugScene: world={handle} scene=0x{scene.ToInt64():X}");
     }
 
     [UnmanagedCallersOnly]
     public static int Physics_GetDebugScene(void* worldPtr)
     {
-        // No debug scene implemented yet, return 0.
+        int handle = (int)(long)worldPtr;
+        if (_debugScenes.TryGetValue(handle, out var scene))
+            return (int)scene;
         return 0;
     }
 
@@ -453,5 +459,25 @@ public static unsafe class EngineExports
         int handle = (int)(long)bodyPtr;
         var body = HandleManager.Get<BepuPhysicsBody>(handle);
         body?.Disable();
+    }
+
+    [UnmanagedCallersOnly]
+    public static int Physics_AddBody(void* worldPtr)
+    {
+        int handle = (int)(long)worldPtr;
+        var world = HandleManager.Get<BepuPhysicsWorld>(handle);
+        if (world == null) return 0;
+        var bodyHandle = world.AddBody();
+        var body = new BepuPhysicsBody(world, bodyHandle);
+        int bodyId = HandleManager.Register(body);
+        return bodyId;
+    }
+
+    [UnmanagedCallersOnly]
+    public static void Physics_Step(void* worldPtr, float dt)
+    {
+        int handle = (int)(long)worldPtr;
+        var world = HandleManager.Get<BepuPhysicsWorld>(handle);
+        world?.Step(dt);
     }
 }
