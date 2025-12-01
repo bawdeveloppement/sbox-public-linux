@@ -11,6 +11,7 @@
         "dependencies": {
           "Silk.NET": "2.22.0",
           "Silk.NET.Core": "2.22.0",
+          "Silk.NET.GLFW": "2.22.0",
           "Silk.NET.Input": "2.22.0",
           "Silk.NET.OpenAL": "2.22.0",
           "Silk.NET.OpenGL": "2.22.0",

@@ -1,13 +1,11 @@
 using System.Runtime.InteropServices;
 using Sbox.Engine.Emulation.Generated;
+using Sbox.Engine.Emulation.Physics;
 using Sbox.Engine;
 using NativeEngine;
-using Silk.NET.Windowing;
 using Silk.NET.Maths;
 using System.IO;
-using Silk.NET.SDL;
-using Silk.NET.Windowing.Sdl;
-using Silk.NET.Windowing.Glfw;
+using Silk.NET.GLFW;
 using Sandbox;
 using Silk.NET.OpenGL;
 
@@ -16,8 +14,8 @@ namespace Sbox.Engine.Emulation;
 public static unsafe class EngineExports
 {
     private static bool _isReady = false;
-    private static IWindow? _window;
-
+    private static Glfw? _glfw;
+    private static WindowHandle* _windowHandle;
     private static Silk.NET.OpenGL.GL? _gl;
 
     /// <summary>
@@ -78,6 +76,25 @@ public static unsafe class EngineExports
         // global_UpdateWindowSize: Line 1609 -> Index 1596
         native[1596] = (void*)(delegate* unmanaged<void*>)&UpdateWindowSize;
 
+        // Physics System Stubs
+        // g_pPhysicsSystem_CreateWorld: Index 1464
+        native[1464] = (void*)(delegate* unmanaged<int>)&Physics_CreateWorld;
+
+        // g_pPhysicsSystem_DestroyWorld: Index 1465
+        native[1465] = (void*)(delegate* unmanaged<void*, void>)&Physics_DestroyWorld;
+
+        // IPhysicsWorld_SetWorldReferenceBody: Index 2019
+        native[2019] = (void*)(delegate* unmanaged<void*, void*, void>)&Physics_SetWorldReferenceBody;
+
+        // IPhysicsWorld_GetGravity: Index 2022
+        native[2022] = (void*)(delegate* unmanaged<void*, Vector3>)&Physics_GetGravity;
+
+        // IPhysicsWorld_SetDebugScene: Index 2041
+        native[2041] = (void*)(delegate* unmanaged<void*, void*, void>)&Physics_SetDebugScene;
+
+        // IPhysicsWorld_GetDebugScene: Index 2042
+        native[2042] = (void*)(delegate* unmanaged<void*, int>)&Physics_GetDebugScene;
+
         _isReady = true;
     }
 
@@ -106,12 +123,13 @@ public static unsafe class EngineExports
     public static void* CMtrlSystm2ppSys_GetAppWindow(void* self)
     {
         Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_GetAppWindow");
-        return (void*)1; // Return dummy window handle
+        return (void*)_windowHandle;
     }
 
     [UnmanagedCallersOnly]
     public static void* FindOrCreateTexture2(void* pResourceName, int bIsAnonymous, void* pDescriptor, void* data, int dataSize)
     {
+        if (_gl == null) return null;
         var gl = _gl;
 
         var desc = (TextureCreationConfig_t*)pDescriptor;
@@ -191,24 +209,48 @@ public static unsafe class EngineExports
     // Internal helper that can be called directly
     private static void* CreateAppWindowInternal(string title, int w, int h)
     {
-        Console.WriteLine($"[NativeAOT] Creating Window: {title} ({w}x{h})");
+        Console.WriteLine($"[NativeAOT] Creating Window (GLFW): {title} ({w}x{h})");
 
-        // Register GLFW as the windowing platform (try GLFW instead of SDL)
-        GlfwWindowing.Use();
+        try
+        {
+            _glfw = Glfw.GetApi();
+            if (!_glfw.Init())
+            {
+                Console.WriteLine("[NativeAOT] GLFW Init failed!");
+                return null;
+            }
 
-        var options = WindowOptions.Default;
-        options.Size = new Vector2D<int>(w > 0 ? w : 1280, h > 0 ? h : 720);
-        options.Title = title;
-        options.API = GraphicsAPI.Default;
-        options.ShouldSwapAutomatically = false; // We control swapping in Frame
+            _glfw.WindowHint(WindowHintClientApi.ClientApi, ClientApi.OpenGL);
+            _glfw.WindowHint(WindowHintInt.ContextVersionMajor, 3);
+            _glfw.WindowHint(WindowHintInt.ContextVersionMinor, 3);
+            _glfw.WindowHint(WindowHintOpenGlProfile.OpenGlProfile, OpenGlProfile.Core);
 
-        _window = Silk.NET.Windowing.Window.Create(options);
-        _window.Initialize();
-        _window.MakeCurrent();
+            _windowHandle = _glfw.CreateWindow(w > 0 ? w : 1280, h > 0 ? h : 720, title, null, null);
+            
+            if (_windowHandle == null)
+            {
+                Console.WriteLine("[NativeAOT] GLFW CreateWindow failed!");
+                // Try to get error
+                byte* errorDesc;
+                var errorCode = _glfw.GetError(out errorDesc);
+                string? errorStr = Marshal.PtrToStringUTF8((IntPtr)errorDesc);
+                Console.WriteLine($"[NativeAOT] GLFW Error: {errorCode} - {errorStr}");
+                return null;
+            }
 
-        _gl = Silk.NET.OpenGL.GL.GetApi(_window);
-        Console.WriteLine($"[NativeAOT] Window Initialized");
-        return (void*)1;
+            _glfw.MakeContextCurrent(_windowHandle);
+            
+            // Initialize GL
+            _gl = GL.GetApi(new GlfwContext(_glfw, _windowHandle));
+
+            Console.WriteLine($"[NativeAOT] Window Initialized (Handle: {(long)_windowHandle:X})");
+            return (void*)_windowHandle;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[NativeAOT] Exception in CreateAppWindowInternal: {ex}");
+            return null;
+        }
     }
 
     [UnmanagedCallersOnly]
@@ -221,13 +263,14 @@ public static unsafe class EngineExports
     [UnmanagedCallersOnly]
     public static void* GetEngineSwapChainSize( void* w, void* h )
     {
-        if (_window == null)
+        if (_windowHandle == null || _glfw == null)
             return null;
 
-        var fb = _window.FramebufferSize;
+        int width, height;
+        _glfw.GetFramebufferSize(_windowHandle, out width, out height);
 
-        *(int*)w = fb.X;
-        *(int*)h = fb.Y;
+        *(int*)w = width;
+        *(int*)h = height;
 
         return null;
     }
@@ -246,15 +289,16 @@ public static unsafe class EngineExports
     [UnmanagedCallersOnly]
     public static int SourceEngineFrame(void* appDict, double currentTime, double previousTime)
     {
-        if (_window == null) return 0;
+        if (_windowHandle == null || _glfw == null) return 0;
 
-        _window.DoEvents();
+        _glfw.PollEvents();
         
-        if (_window.IsClosing) return 0;
+        if (_glfw.WindowShouldClose(_windowHandle)) return 0;
 
-        _window.DoUpdate();
-        _window.DoRender();
-        _window.SwapBuffers();
+        // Render loop would go here
+        // _gl.Clear((uint)ClearBufferMask.ColorBufferBit);
+        
+        _glfw.SwapBuffers(_windowHandle);
         
         return 1;
     }
@@ -266,15 +310,148 @@ public static unsafe class EngineExports
         return null;
     }
 
-    private static GL GetGL()
+    // Physics Stubs
+    [UnmanagedCallersOnly]
+    public static int Physics_CreateWorld()
     {
-        if (_gl != null)
-            return _gl;
+        Console.WriteLine("[NativeAOT] Physics_CreateWorld (Bepu)");
+        var world = new BepuPhysicsWorld();
+        int handle = HandleManager.Register(world);
+        return handle;
+    }
 
-        if (_window == null)
-            throw new Exception("Window not initialized");
+    [UnmanagedCallersOnly]
+    public static void Physics_DestroyWorld(void* worldPtr)
+    {
+        int handle = (int)(long)worldPtr;
+        var world = HandleManager.Get<BepuPhysicsWorld>(handle);
+        world?.Dispose();
+        HandleManager.Unregister(handle);
+        Console.WriteLine("[NativeAOT] Physics_DestroyWorld (Bepu) handle=" + handle);
+    }
 
-        _gl = GL.GetApi(_window);
-        return _gl;
+    [UnmanagedCallersOnly]
+    public static void Physics_SetWorldReferenceBody(void* world, void* body)
+    {
+        // Console.WriteLine("[NativeAOT] Physics_SetWorldReferenceBody");
+    }
+
+    [UnmanagedCallersOnly]
+    public static Vector3 Physics_GetGravity(void* worldPtr)
+    {
+        int handle = (int)(long)worldPtr;
+        var world = HandleManager.Get<BepuPhysicsWorld>(handle);
+        return world?.Gravity ?? new Vector3(0, 0, -800);
+    }
+
+    [UnmanagedCallersOnly]
+    public static void Physics_SetDebugScene(void* worldPtr, void* scenePtr)
+    {
+        // Store debug scene handle if needed. For now no-op.
+        // Could be used later for debug drawing.
+    }
+
+    [UnmanagedCallersOnly]
+    public static int Physics_GetDebugScene(void* worldPtr)
+    {
+        // No debug scene implemented yet, return 0.
+        return 0;
+    }
+
+    // IPhysicsBody Stubs
+    [UnmanagedCallersOnly]
+    public static Vector3 IPhysicsBody_GetPosition(void* bodyPtr)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        return body?.GetPosition() ?? Vector3.Zero;
+    }
+
+    [UnmanagedCallersOnly]
+    public static void IPhysicsBody_SetPosition(void* bodyPtr, Vector3 pos)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        body?.SetPosition(pos);
+    }
+
+    [UnmanagedCallersOnly]
+    public static System.Numerics.Quaternion IPhysicsBody_GetOrientation(void* bodyPtr)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        return body != null ? body.GetOrientation() : new System.Numerics.Quaternion(0,0,0,1);
+    }
+
+    [UnmanagedCallersOnly]
+    public static void IPhysicsBody_SetOrientation(void* bodyPtr, System.Numerics.Quaternion orientation)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        body?.SetOrientation(orientation);
+    }
+
+    [UnmanagedCallersOnly]
+    public static Vector3 IPhysicsBody_GetLinearVelocity(void* bodyPtr)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        return body?.GetLinearVelocity() ?? Vector3.Zero;
+    }
+
+    [UnmanagedCallersOnly]
+    public static void IPhysicsBody_SetLinearVelocity(void* bodyPtr, Vector3 velocity)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        body?.SetLinearVelocity(velocity);
+    }
+
+    [UnmanagedCallersOnly]
+    public static Vector3 IPhysicsBody_GetAngularVelocity(void* bodyPtr)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        return body?.GetAngularVelocity() ?? Vector3.Zero;
+    }
+
+    [UnmanagedCallersOnly]
+    public static void IPhysicsBody_SetAngularVelocity(void* bodyPtr, Vector3 velocity)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        body?.SetAngularVelocity(velocity);
+    }
+
+    [UnmanagedCallersOnly]
+    public static float IPhysicsBody_GetMass(void* bodyPtr)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        return body?.GetMass() ?? 0f;
+    }
+
+    [UnmanagedCallersOnly]
+    public static void IPhysicsBody_SetMass(void* bodyPtr, float mass)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        body?.SetMass(mass);
+    }
+
+    [UnmanagedCallersOnly]
+    public static void IPhysicsBody_Enable(void* bodyPtr)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        body?.Enable();
+    }
+
+    [UnmanagedCallersOnly]
+    public static void IPhysicsBody_Disable(void* bodyPtr)
+    {
+        int handle = (int)(long)bodyPtr;
+        var body = HandleManager.Get<BepuPhysicsBody>(handle);
+        body?.Disable();
     }
 }
