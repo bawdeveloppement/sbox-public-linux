@@ -19,6 +19,11 @@ public static class Program
 			{
 				Definition definitions = Definition.FromFile( filename );
 
+
+				var managedWriter = new ManagerWriter( definitions, definitions.SaveFileCs );
+				managedWriter.Generate();
+				managedWriter.SaveToFile( definitions.SaveFileCs );
+
 				// Détection automatique de l’OS
 				bool isLinux = RuntimeInformation.IsOSPlatform( OSPlatform.Linux );
 
@@ -33,10 +38,6 @@ public static class Program
 				else
 				{
 					Log.WriteLine( "Detected non-Linux → Saving Managed + Native C++ Files" );
-
-					var managedWriter = new ManagerWriter( definitions, definitions.SaveFileCs );
-					managedWriter.Generate();
-					managedWriter.SaveToFile( definitions.SaveFileCs );
 
 					if ( !skipNative )
 					{

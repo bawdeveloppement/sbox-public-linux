@@ -1,7 +1,7 @@
 ﻿namespace NativeEngine;
 
 [Flags]
-internal enum RuntimeTextureSpecificationFlags : uint
+public enum RuntimeTextureSpecificationFlags : uint
 {
 	TSPEC_FLAGS = 0x0000,
 	TSPEC_RENDER_TARGET = 0x0001,

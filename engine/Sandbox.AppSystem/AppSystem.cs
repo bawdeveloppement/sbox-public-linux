@@ -103,10 +103,7 @@ public class AppSystem
 
 			Init();
 
-			if ( !System.OperatingSystem.IsLinux() )
-			{
-				NativeEngine.EngineGlobal.Plat_SetCurrentFrame( 0 );
-			}
+			NativeEngine.EngineGlobal.Plat_SetCurrentFrame( 0 );
 
 			while ( RunFrame() )
 			{

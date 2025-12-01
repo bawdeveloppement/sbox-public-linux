@@ -34,7 +34,9 @@ internal class Build
 		// Add native build step if not skipped
 		if ( !shouldSkipNative )
 		{
-			// Removed GenerateSolutions and BuildNative steps entirely to bypass problematic native build.
+			builder.AddStep( new GenerateSolutions( "Generate Solutions", configuration ) );
+
+			builder.AddStep( new BuildNative( "Build Native", configuration, clean ) );
 		}
 
 		// Add managed build step if not skipped

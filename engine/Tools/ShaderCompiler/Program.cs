@@ -120,7 +120,6 @@ public static partial class Program
 			// Shitty cleanup our garbage before exiting
 			GC.Collect();
 			GC.WaitForPendingFinalizers();
-			MainThread.RunQueues();
 		}
 
 		return failedList.Any() ? 1 : 0;

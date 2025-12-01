@@ -71,12 +71,6 @@ public static class ShaderCompile
 
 	static ShaderCompile()
 	{
-		if ( System.OperatingSystem.IsLinux() )
-		{
-			Log.Warning( "Skipping ShaderCompile native initialization on Linux due to disabled native interop." );
-			return;
-		}
-
 		if ( NativeEngine.EngineGlobal.AppIsDedicatedServer() )
 			return;
 
@@ -86,7 +80,7 @@ public static class ShaderCompile
 
 		if ( OperatingSystem.IsLinux() )
 		{
-			vfxDllName = "libvfx_vulkan";
+			vfxDllName = "libvulkan";
 			filesystemDllName = "libfilesystem_stdio";
 			dllExtension = ".so";
 		}

@@ -1,6 +1,6 @@
 ﻿namespace NativeEngine
 {
-	internal enum TextureScope : int
+	public enum TextureScope : int
 	{
 		TEXTURE_SCOPE_INVALID = -1,
 

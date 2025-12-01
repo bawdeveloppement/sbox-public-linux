@@ -78,6 +78,17 @@ engine/TestResults/
 /game/**/obj
 /game/**/launchSettings.json
 
+/src/EmulationHarnessDesktop/bin
+/src/EmulationHarnessDesktop/obj
+/src/OpenEngine2Android/obj
+/src/OpenEngine2Android/bin
+/src/Sandbox.Engine.Emulation/bin
+/src/Sandbox.Engine.Emulation/obj
+/src/Sandbox.Engine.Emulation/Generated
+/src/OpenEngine2Android/bin
+
+/bin/obj/**/SboxAndroid
+
 #
 # Game debris
 #

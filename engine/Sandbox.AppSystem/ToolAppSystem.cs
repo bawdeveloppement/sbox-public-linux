@@ -99,7 +99,7 @@ public class ToolAppSystem : AppSystem, IDisposable
 	{
 		var exePath = Environment.GetCommandLineArgs()[0];
 		exePath = System.IO.Path.GetDirectoryName( exePath );
-
+		Console.WriteLine( $"Exe Path: {exePath}" );
 		// we're in the managed folder, we can set this shit up
 		if ( exePath.EndsWith( Path.Combine( "bin", "managed" ), StringComparison.OrdinalIgnoreCase ) )
 		{

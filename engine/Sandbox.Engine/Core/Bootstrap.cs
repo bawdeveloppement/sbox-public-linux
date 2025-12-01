@@ -154,8 +154,8 @@ internal static class Bootstrap
 
 #pragma warning restore CS0612 // Type or member is obsolete
 
-			ReflectionUtility.RunAllStaticConstructors( "Sandbox.System" );
-			ReflectionUtility.RunAllStaticConstructors( "Sandbox.Engine" );
+			// ReflectionUtility.RunAllStaticConstructors( "Sandbox.System" );
+			// ReflectionUtility.RunAllStaticConstructors( "Sandbox.Engine" );
 
 			//log.Trace( "Bootstrap::Init" );
 			//log.Trace( $"Current Directory is {System.IO.Directory.GetCurrentDirectory()}" );

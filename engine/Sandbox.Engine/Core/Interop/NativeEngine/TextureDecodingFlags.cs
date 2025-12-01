@@ -1,7 +1,7 @@
 ﻿namespace NativeEngine
 {
 	[Flags]
-	internal enum TextureDecodingFlags : int
+	public enum TextureDecodingFlags : int
 	{
 		TEXTURE_DECODE_FLAGS = 0x0000,
 		TEXTURE_DECODE_COLOR_DILATION = 0x0001,

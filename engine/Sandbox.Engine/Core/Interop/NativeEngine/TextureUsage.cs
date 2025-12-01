@@ -1,6 +1,6 @@
 ﻿namespace NativeEngine
 {
-	internal enum TextureUsage : int
+	public enum TextureUsage : int
 	{
 		TEXTURE_USAGE_INVALID = -1,
 
