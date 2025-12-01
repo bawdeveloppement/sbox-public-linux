@@ -61,15 +61,15 @@ internal sealed class MenuDll : IMenuDll
 			{
 				// No menu or citizen addon in standalone
 				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, $"/base/code" );
-				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, $"/base/assets" );
+				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, $"/base/Assets" );
 			}
 			else
 			{
 				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, "/base/code/" );
-				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, "/base/assets/" );
+				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, "/base/Assets/" );
 				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, "/menu/code/" );
-				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, "/menu/assets/" );
-				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, "/citizen/assets/" );
+				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, "/menu/Assets/" );
+				FileSystem.Mounted.CreateAndMount( EngineFileSystem.Addons, "/citizen/Assets/" );
 			}
 
 			FileSystem.Mounted.CreateAndMount( EngineFileSystem.Root, "/core/" );

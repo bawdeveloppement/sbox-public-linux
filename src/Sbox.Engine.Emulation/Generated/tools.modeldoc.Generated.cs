@@ -7,6 +7,29 @@ namespace Sbox.Engine.Emulation.Generated
 {
     public static unsafe partial class Exports
     {
+	public static unsafe void FillNativeFunctionsModeldoc(void** managedFunctions, void** nativeFunctions, int* structSizes)
+ 	{
+ 		var i = 0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged<IntPtr, void>)&Sbox.Engine.Emulation.EngineExports.DebugError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModelDoc_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CModelDoc_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CModelDoc_SaveToFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMdlDcdtrpp_RefreshGameData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMdlDcdtrpp_GetSessionModel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModelMesh_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CModelMesh_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModelMesh_AddVertices;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CModelMesh_AddFaceGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CModelMesh_SetPositions;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CModelMesh_SetTexCoords;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CModelMesh_SetNormals;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, void* >)&CModelMesh_AddFace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&g_pModelDocUtils_InitFromMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&NativeEngine_ModelDoc_CreateModelFromMeshFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&NativeEngine_ModelDoc_CreateModelFromMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&NativeEngine_ModelDoc_CreateModelFromMeshes;
+ 	}
+
         [UnmanagedCallersOnly(EntryPoint = "CModelDoc_DeleteThis")]
         public static void* CModelDoc_DeleteThis( void* self )
         {

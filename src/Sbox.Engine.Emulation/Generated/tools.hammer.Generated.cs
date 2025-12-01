@@ -7,6 +7,627 @@ namespace Sbox.Engine.Emulation.Generated
 {
     public static unsafe partial class Exports
     {
+	public static unsafe void FillNativeFunctionsHammer(void** managedFunctions, void** nativeFunctions, int* structSizes)
+ 	{
+ 		var i = 0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged<IntPtr, void>)&Sbox.Engine.Emulation.EngineExports.DebugError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHammerApp_RefreshEntitiesGameData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHammerApp_GetCurrentMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHammerApp_SetCurrentTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CHammerApp_GetActiveMapAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CHammerApp_GetActiveMapDoc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHammerApp_MarkAllViewHudsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHammerApp_SelectObjectsUsingAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHammerApp_SelectFacesUsingMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHammerApp_AssignAssetToSelection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHammerApp_ShowEntityReportForAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHammerApp_OnFileReload;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHmmrdtrSssn_ShowLoadingProgressBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHmmrdtrSssn_HideLoadingProgressBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHmmrdtrSssn_GetMapAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CHmmrdtrSssn_GetMapDoc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CHistory_MarkUndoPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHistory_Keep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHistory_KeepNew;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CHistory_GetHistory;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapDoc_GetMapWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapDoc_GetPathName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapDoc_GetSelection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMapDoc_AddObjectToDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapDoc_DeleteObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapDoc_CreateEmptyMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapDoc_CreateEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapDoc_CreateGameObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapDoc_CreateMapGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapDoc_CreateMapInstance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapDoc_CreateMapPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapDoc_CreateStaticOverlay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_GetClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapEntity_SetClass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMapEntity_SetKeyValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapEntity_GetKeyValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapEntity_TargetNameMatches;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMapEntity_SetDefaultBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapEntity_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapEntity_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapEntity_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapEntity_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapEntity_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapEntity_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapEntity_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapEntity_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapEntity_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapEntity_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapEntity_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapEntity_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapEntity_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapEntity_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapGameObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapGameObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGameObject_SetGUID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_GetGUID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGameObject_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGameObject_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapGameObject_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapGameObject_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapGameObject_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapGameObject_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapGameObject_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGameObject_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGameObject_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGameObject_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapGameObject_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapGameObject_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGameObject_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGameObject_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGroup_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGroup_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapGroup_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapGroup_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapGroup_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapGroup_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapGroup_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGroup_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGroup_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapGroup_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapGroup_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapGroup_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapGroup_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapGroup_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapInstance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapInstance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapInstance_SetTarget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_GetTarget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapInstance_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapInstance_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapInstance_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapInstance_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapInstance_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapInstance_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapInstance_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapInstance_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapInstance_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapInstance_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapInstance_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapInstance_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapInstance_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapInstance_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapMesh_AssignMaterialToMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, int, void*, int, void*, void*, int, float, void* >)&CMapMesh_ConstructFromData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapMesh_GetFaceMaterials;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapMesh_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapMesh_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapMesh_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapMesh_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapMesh_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapMesh_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapMesh_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapMesh_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapMesh_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapMesh_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapMesh_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapMesh_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapMesh_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapMesh_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapNode_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapNode_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapNode_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapNode_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapNode_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapNode_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapNode_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapNode_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapNode_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapNode_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapNode_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapNode_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapNode_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapNode_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapEntity_To_CMapPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapEntity_From_CMapPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_AddNewNodeToPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_GetClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPath_SetClass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMapPath_SetKeyValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPath_GetKeyValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapPath_TargetNameMatches;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMapPath_SetDefaultBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPath_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPath_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapPath_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapPath_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapPath_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapPath_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapPath_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPath_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPath_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPath_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapPath_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapPath_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPath_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPath_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapEntity_To_CMapPathNode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapEntity_From_CMapPathNode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapPathNode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapPathNode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_GetClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPathNode_SetClass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMapPathNode_SetKeyValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPathNode_GetKeyValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapPathNode_TargetNameMatches;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMapPathNode_SetDefaultBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPathNode_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPathNode_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapPathNode_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapPathNode_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapPathNode_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapPathNode_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapPathNode_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPathNode_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPathNode_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapPathNode_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapPathNode_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapPathNode_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapPathNode_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapPathNode_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapMesh_To_CMapStaticOverlay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapMesh_From_CMapStaticOverlay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapStaticOverlay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapStaticOverlay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, void*, void* >)&CMpSttcvrly_CreateCenteredQuad;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMpSttcvrly_AssignMaterialToMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, int, void*, int, void*, void*, int, float, void* >)&CMpSttcvrly_ConstructFromData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMpSttcvrly_GetFaceMaterials;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMpSttcvrly_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMpSttcvrly_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMpSttcvrly_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMpSttcvrly_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMpSttcvrly_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMpSttcvrly_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMpSttcvrly_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMpSttcvrly_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMpSttcvrly_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMpSttcvrly_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMpSttcvrly_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMpSttcvrly_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMpSttcvrly_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMpSttcvrly_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapView_GetMapDoc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapView_MarkHudDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapView_GetCamera;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapView_IsActive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapView_GetMousePosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, void* >)&CMapView_EnterFreeDragMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CMapView_UpdateFreeDragMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapView_ExitFreeDragMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&CMapView_GetDropTarget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, float, void* >)&CMapView_UpdateManagedGizmoState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMapView_GetManipulationMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMapView_HitDistanceAtMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CMapNode_To_CMapWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CMapNode_From_CMapWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapWorld_SetSerializedScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_GetSerializedScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapWorld_FindNodeByID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapWorld_FindEntityByNodeId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapWorld_Trace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_GetNodeID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapWorld_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapWorld_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_GetParentWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMapWorld_GetRootDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_GetTypeString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_IsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMapWorld_SetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_IsSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_GetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CMapWorld_GetChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapWorld_GetFirstDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMapWorld_GetNextDescendent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_AsMapEntity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_GetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapWorld_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapWorld_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMapWorld_SetScales;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMapWorld_BeginTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CMapWorld_Transform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_EndTransformOperation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_MarkBoundsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_FullBoundsUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_SetModifiedFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMapWorld_GeneratesEntityModelGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_DescriptionChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMapWorld_CoreAttributeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CFramelessMainWindow_To_CQHammerMainWnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CFramelessMainWindow_From_CQHammerMainWnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QMainWindow_To_CQHammerMainWnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QMainWindow_From_CQHammerMainWnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_CQHammerMainWnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_CQHammerMainWnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CQHammerMainWnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CQHammerMainWnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_CreateEverything;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_CreateMenus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_SetupDefaultLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, void*, void*, void*, void* >)&CQHammerMainWnd_SetTitleBarWidgets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_iconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_menuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setMenuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setMenuWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_statusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setStatusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_centralWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setCentralWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isAnimated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setAnimated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQHammerMainWnd_addToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_insertToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, void* >)&CQHammerMainWnd_addToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_addToolBar_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CQHammerMainWnd_insertToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_removeToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_removeToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_saveState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CQHammerMainWnd_restoreState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQHammerMainWnd_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQHammerMainWnd_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&CQHammerMainWnd_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CQHammerMainWnd_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQHammerMainWnd_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CQHammerMainWnd_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CQHammerMainWnd_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQHammerMainWnd_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQHammerMainWnd_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CQHammerMainWnd_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CQHammerMainWnd_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQHammerMainWnd_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQHammerMainWnd_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQHammerMainWnd_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&CQHammerMainWnd_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CQHammerMainWnd_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CQHammerMainWnd_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQHammerMainWnd_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQHammerMainWnd_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQHammerMainWnd_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQHammerMainWnd_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CQHammerMainWnd_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQHammerMainWnd_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQHammerMainWnd_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQHammerMainWnd_setParent_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CQHammerMainWnd_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&CQHammerMainWnd_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CQHammerMainWnd_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSavedObjects_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CSavedObjects_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSavedObjects_RemoveAll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSavedObjects_SaveObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSavedObjects_RestoreObjects;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSavedObjects_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CSelection_GetMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CSelection_SetMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSelection_ActiveSelectionSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CSelection_GetSelectionSetForMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSelection_GetNumSelectionSets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CSelection_GetSelectionSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CToolBlock_OnObjectTypeChanged;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CToolBlock_SetPrimitiveType2D;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CToolBlock_GetOrientPrimitives;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CToolBlock_SetOrientPrimitives;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CToolBlock_m_OverrideMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CToolBlock_m_OverrideMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CToolBlockState_GetAABBBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CToolBlockState_GetDragWorkPlane;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CToolCamera_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CToolCamera_GetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CToolCamera_SetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CToolCamera_SetAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CToolCamera_GetWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CToolCamera_GetHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CToolCamera_GetCameraFOV;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&CToolCamera_BuildRay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CToolEntity_StartBlockEntityCreation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CWorkPlane_GetWorkPlaneToWorldTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&global_MaterialGetMappingWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&global_MaterialGetMappingHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, int >)&ISelectionSet_SelectObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&ISelectionSet_GetSelectedObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISelectionSet_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISelectionSet_RemoveAll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISelectionSet_SelectAll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISelectionSet_InvertSelection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISelectionSet_GetPivotPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISelectionSet_SetPivot;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&NativeHammer_Options_GetShowHelpers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&NativeHammer_Options_GetShowGameObjectsOnly;
+ 	}
+
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_RefreshEntitiesGameData")]
         public static void* CHammerApp_RefreshEntitiesGameData( void* self )
         {
@@ -28,7 +649,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_GetActiveMapDoc")]
-        public static void* CHammerApp_GetActiveMapDoc( void* self )
+        public static int CHammerApp_GetActiveMapDoc( void* self )
         {
             return default;
         }
@@ -78,7 +699,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CHmmrdtrSssn_GetMapDoc")]
-        public static void* CHmmrdtrSssn_GetMapDoc( void* self )
+        public static int CHmmrdtrSssn_GetMapDoc( void* self )
         {
             return default;
         }
@@ -103,7 +724,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_GetMapWorld")]
-        public static void* CMapDoc_GetMapWorld( void* self )
+        public static int CMapDoc_GetMapWorld( void* self )
         {
             return default;
         }
@@ -128,17 +749,17 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateEmptyMesh")]
-        public static void* CMapDoc_CreateEmptyMesh( void* self, int addToDocument )
+        public static int CMapDoc_CreateEmptyMesh( void* self, int addToDocument )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateEntity")]
-        public static void* CMapDoc_CreateEntity( void* self, int addToDocument )
+        public static int CMapDoc_CreateEntity( void* self, int addToDocument )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateGameObject")]
-        public static void* CMapDoc_CreateGameObject( void* self, int addToDocument )
+        public static int CMapDoc_CreateGameObject( void* self, int addToDocument )
         {
             return default;
         }
@@ -162,9 +783,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapEntity")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapEntity", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapEntity( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapEntity")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapEntity", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapEntity( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetClassName")]
         public static void* CMapEntity_GetClassName( void* self )
@@ -212,7 +833,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetParent")]
-        public static void* CMapEntity_GetParent( void* self )
+        public static int CMapEntity_GetParent( void* self )
         {
             return default;
         }
@@ -222,12 +843,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetParentWorld")]
-        public static void* CMapEntity_GetParentWorld( void* self )
+        public static int CMapEntity_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetRootDocument")]
-        public static void* CMapEntity_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapEntity_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -242,7 +863,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_Copy")]
-        public static void* CMapEntity_Copy( void* self )
+        public static int CMapEntity_Copy( void* self )
         {
             return default;
         }
@@ -267,22 +888,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetChild")]
-        public static void* CMapEntity_GetChild( void* self, int i )
+        public static int CMapEntity_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetFirstDescendent")]
-        public static void* CMapEntity_GetFirstDescendent( void* self, void* pos )
+        public static int CMapEntity_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetNextDescendent")]
-        public static void* CMapEntity_GetNextDescendent( void* self, void* pos )
+        public static int CMapEntity_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_AsMapEntity")]
-        public static void* CMapEntity_AsMapEntity( void* self )
+        public static int CMapEntity_AsMapEntity( void* self )
         {
             return default;
         }
@@ -361,9 +982,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapGameObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapGameObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapGameObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapGameObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapGameObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapGameObject( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetGUID")]
         public static void* CMapGameObject_SetGUID( void* self, void* json )
@@ -391,7 +1012,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetParent")]
-        public static void* CMapGameObject_GetParent( void* self )
+        public static int CMapGameObject_GetParent( void* self )
         {
             return default;
         }
@@ -401,12 +1022,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetParentWorld")]
-        public static void* CMapGameObject_GetParentWorld( void* self )
+        public static int CMapGameObject_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetRootDocument")]
-        public static void* CMapGameObject_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapGameObject_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -421,7 +1042,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_Copy")]
-        public static void* CMapGameObject_Copy( void* self )
+        public static int CMapGameObject_Copy( void* self )
         {
             return default;
         }
@@ -446,22 +1067,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetChild")]
-        public static void* CMapGameObject_GetChild( void* self, int i )
+        public static int CMapGameObject_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetFirstDescendent")]
-        public static void* CMapGameObject_GetFirstDescendent( void* self, void* pos )
+        public static int CMapGameObject_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetNextDescendent")]
-        public static void* CMapGameObject_GetNextDescendent( void* self, void* pos )
+        public static int CMapGameObject_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_AsMapEntity")]
-        public static void* CMapGameObject_AsMapEntity( void* self )
+        public static int CMapGameObject_AsMapEntity( void* self )
         {
             return default;
         }
@@ -540,9 +1161,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapGroup")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapGroup", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapGroup( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapGroup")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapGroup", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapGroup( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetNodeID")]
         public static int CMapGroup_GetNodeID( void* self )
@@ -560,7 +1181,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetParent")]
-        public static void* CMapGroup_GetParent( void* self )
+        public static int CMapGroup_GetParent( void* self )
         {
             return default;
         }
@@ -570,12 +1191,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetParentWorld")]
-        public static void* CMapGroup_GetParentWorld( void* self )
+        public static int CMapGroup_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetRootDocument")]
-        public static void* CMapGroup_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapGroup_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -590,7 +1211,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_Copy")]
-        public static void* CMapGroup_Copy( void* self )
+        public static int CMapGroup_Copy( void* self )
         {
             return default;
         }
@@ -615,22 +1236,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetChild")]
-        public static void* CMapGroup_GetChild( void* self, int i )
+        public static int CMapGroup_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetFirstDescendent")]
-        public static void* CMapGroup_GetFirstDescendent( void* self, void* pos )
+        public static int CMapGroup_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetNextDescendent")]
-        public static void* CMapGroup_GetNextDescendent( void* self, void* pos )
+        public static int CMapGroup_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_AsMapEntity")]
-        public static void* CMapGroup_AsMapEntity( void* self )
+        public static int CMapGroup_AsMapEntity( void* self )
         {
             return default;
         }
@@ -709,9 +1330,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapInstance")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapInstance", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapInstance( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapInstance")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapInstance", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapInstance( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetTarget")]
         public static void* CMapInstance_SetTarget( void* self, void* node )
@@ -719,7 +1340,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetTarget")]
-        public static void* CMapInstance_GetTarget( void* self )
+        public static int CMapInstance_GetTarget( void* self )
         {
             return default;
         }
@@ -739,7 +1360,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetParent")]
-        public static void* CMapInstance_GetParent( void* self )
+        public static int CMapInstance_GetParent( void* self )
         {
             return default;
         }
@@ -749,12 +1370,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetParentWorld")]
-        public static void* CMapInstance_GetParentWorld( void* self )
+        public static int CMapInstance_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetRootDocument")]
-        public static void* CMapInstance_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapInstance_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -769,7 +1390,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_Copy")]
-        public static void* CMapInstance_Copy( void* self )
+        public static int CMapInstance_Copy( void* self )
         {
             return default;
         }
@@ -794,22 +1415,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetChild")]
-        public static void* CMapInstance_GetChild( void* self, int i )
+        public static int CMapInstance_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetFirstDescendent")]
-        public static void* CMapInstance_GetFirstDescendent( void* self, void* pos )
+        public static int CMapInstance_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetNextDescendent")]
-        public static void* CMapInstance_GetNextDescendent( void* self, void* pos )
+        public static int CMapInstance_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_AsMapEntity")]
-        public static void* CMapInstance_AsMapEntity( void* self )
+        public static int CMapInstance_AsMapEntity( void* self )
         {
             return default;
         }
@@ -888,9 +1509,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapMesh")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapMesh", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapMesh( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapMesh")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapMesh", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapMesh( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_AssignMaterialToMesh")]
         public static void* CMapMesh_AssignMaterialToMesh( void* self, void* materialName )
@@ -923,7 +1544,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetParent")]
-        public static void* CMapMesh_GetParent( void* self )
+        public static int CMapMesh_GetParent( void* self )
         {
             return default;
         }
@@ -933,12 +1554,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetParentWorld")]
-        public static void* CMapMesh_GetParentWorld( void* self )
+        public static int CMapMesh_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetRootDocument")]
-        public static void* CMapMesh_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapMesh_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -953,7 +1574,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_Copy")]
-        public static void* CMapMesh_Copy( void* self )
+        public static int CMapMesh_Copy( void* self )
         {
             return default;
         }
@@ -978,22 +1599,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetChild")]
-        public static void* CMapMesh_GetChild( void* self, int i )
+        public static int CMapMesh_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetFirstDescendent")]
-        public static void* CMapMesh_GetFirstDescendent( void* self, void* pos )
+        public static int CMapMesh_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetNextDescendent")]
-        public static void* CMapMesh_GetNextDescendent( void* self, void* pos )
+        public static int CMapMesh_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_AsMapEntity")]
-        public static void* CMapMesh_AsMapEntity( void* self )
+        public static int CMapMesh_AsMapEntity( void* self )
         {
             return default;
         }
@@ -1088,7 +1709,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetParent")]
-        public static void* CMapNode_GetParent( void* self )
+        public static int CMapNode_GetParent( void* self )
         {
             return default;
         }
@@ -1098,12 +1719,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetParentWorld")]
-        public static void* CMapNode_GetParentWorld( void* self )
+        public static int CMapNode_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetRootDocument")]
-        public static void* CMapNode_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapNode_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -1118,7 +1739,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_Copy")]
-        public static void* CMapNode_Copy( void* self )
+        public static int CMapNode_Copy( void* self )
         {
             return default;
         }
@@ -1143,22 +1764,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetChild")]
-        public static void* CMapNode_GetChild( void* self, int i )
+        public static int CMapNode_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetFirstDescendent")]
-        public static void* CMapNode_GetFirstDescendent( void* self, void* pos )
+        public static int CMapNode_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetNextDescendent")]
-        public static void* CMapNode_GetNextDescendent( void* self, void* pos )
+        public static int CMapNode_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_AsMapEntity")]
-        public static void* CMapNode_AsMapEntity( void* self )
+        public static int CMapNode_AsMapEntity( void* self )
         {
             return default;
         }
@@ -1237,16 +1858,16 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapEntity_To_CMapPath")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapEntity_To_CMapPath", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapEntity_To_CMapPath( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapEntity_From_CMapPath")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapEntity_From_CMapPath", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapEntity_From_CMapPath( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapPath")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapPath", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapPath( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapPath")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapPath", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapPath( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_AddNewNodeToPath")]
-        public static void* CMapPath_AddNewNodeToPath( void* self )
+        public static int CMapPath_AddNewNodeToPath( void* self )
         {
             return default;
         }
@@ -1296,7 +1917,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetParent")]
-        public static void* CMapPath_GetParent( void* self )
+        public static int CMapPath_GetParent( void* self )
         {
             return default;
         }
@@ -1306,12 +1927,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetParentWorld")]
-        public static void* CMapPath_GetParentWorld( void* self )
+        public static int CMapPath_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetRootDocument")]
-        public static void* CMapPath_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapPath_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -1326,7 +1947,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_Copy")]
-        public static void* CMapPath_Copy( void* self )
+        public static int CMapPath_Copy( void* self )
         {
             return default;
         }
@@ -1351,22 +1972,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetChild")]
-        public static void* CMapPath_GetChild( void* self, int i )
+        public static int CMapPath_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetFirstDescendent")]
-        public static void* CMapPath_GetFirstDescendent( void* self, void* pos )
+        public static int CMapPath_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetNextDescendent")]
-        public static void* CMapPath_GetNextDescendent( void* self, void* pos )
+        public static int CMapPath_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_AsMapEntity")]
-        public static void* CMapPath_AsMapEntity( void* self )
+        public static int CMapPath_AsMapEntity( void* self )
         {
             return default;
         }
@@ -1445,13 +2066,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapEntity_To_CMapPathNode")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapEntity_To_CMapPathNode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapEntity_To_CMapPathNode( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapEntity_From_CMapPathNode")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapEntity_From_CMapPathNode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapEntity_From_CMapPathNode( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapPathNode")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapPathNode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapPathNode( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapPathNode")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapPathNode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapPathNode( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetClassName")]
         public static void* CMapPathNode_GetClassName( void* self )
@@ -1499,7 +2120,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetParent")]
-        public static void* CMapPathNode_GetParent( void* self )
+        public static int CMapPathNode_GetParent( void* self )
         {
             return default;
         }
@@ -1509,12 +2130,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetParentWorld")]
-        public static void* CMapPathNode_GetParentWorld( void* self )
+        public static int CMapPathNode_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetRootDocument")]
-        public static void* CMapPathNode_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapPathNode_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -1529,7 +2150,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_Copy")]
-        public static void* CMapPathNode_Copy( void* self )
+        public static int CMapPathNode_Copy( void* self )
         {
             return default;
         }
@@ -1554,22 +2175,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetChild")]
-        public static void* CMapPathNode_GetChild( void* self, int i )
+        public static int CMapPathNode_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetFirstDescendent")]
-        public static void* CMapPathNode_GetFirstDescendent( void* self, void* pos )
+        public static int CMapPathNode_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetNextDescendent")]
-        public static void* CMapPathNode_GetNextDescendent( void* self, void* pos )
+        public static int CMapPathNode_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_AsMapEntity")]
-        public static void* CMapPathNode_AsMapEntity( void* self )
+        public static int CMapPathNode_AsMapEntity( void* self )
         {
             return default;
         }
@@ -1648,13 +2269,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapMesh_To_CMapStaticOverlay")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapMesh_To_CMapStaticOverlay", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapMesh_To_CMapStaticOverlay( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapMesh_From_CMapStaticOverlay")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapMesh_From_CMapStaticOverlay", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapMesh_From_CMapStaticOverlay( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapStaticOverlay")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapStaticOverlay", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapStaticOverlay( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapStaticOverlay")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapStaticOverlay", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapStaticOverlay( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_CreateCenteredQuad")]
         public static void* CMpSttcvrly_CreateCenteredQuad( void* self, float flWidth, float flHeight, void* pMaterialName )
@@ -1692,7 +2313,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetParent")]
-        public static void* CMpSttcvrly_GetParent( void* self )
+        public static int CMpSttcvrly_GetParent( void* self )
         {
             return default;
         }
@@ -1702,12 +2323,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetParentWorld")]
-        public static void* CMpSttcvrly_GetParentWorld( void* self )
+        public static int CMpSttcvrly_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetRootDocument")]
-        public static void* CMpSttcvrly_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMpSttcvrly_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -1722,7 +2343,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_Copy")]
-        public static void* CMpSttcvrly_Copy( void* self )
+        public static int CMpSttcvrly_Copy( void* self )
         {
             return default;
         }
@@ -1747,22 +2368,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetChild")]
-        public static void* CMpSttcvrly_GetChild( void* self, int i )
+        public static int CMpSttcvrly_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetFirstDescendent")]
-        public static void* CMpSttcvrly_GetFirstDescendent( void* self, void* pos )
+        public static int CMpSttcvrly_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetNextDescendent")]
-        public static void* CMpSttcvrly_GetNextDescendent( void* self, void* pos )
+        public static int CMpSttcvrly_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_AsMapEntity")]
-        public static void* CMpSttcvrly_AsMapEntity( void* self )
+        public static int CMpSttcvrly_AsMapEntity( void* self )
         {
             return default;
         }
@@ -1842,7 +2463,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_GetMapDoc")]
-        public static void* CMapView_GetMapDoc( void* self )
+        public static int CMapView_GetMapDoc( void* self )
         {
             return default;
         }
@@ -1901,9 +2522,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapWorld")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapWorld", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CMapNode_To_CMapWorld( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapWorld")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CMapNode_From_CMapWorld", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CMapNode_From_CMapWorld( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetSerializedScene")]
         public static void* CMapWorld_SetSerializedScene( void* self, void* json )
@@ -1916,12 +2537,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_FindNodeByID")]
-        public static void* CMapWorld_FindNodeByID( void* self, int nodeId )
+        public static int CMapWorld_FindNodeByID( void* self, int nodeId )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_FindEntityByNodeId")]
-        public static void* CMapWorld_FindEntityByNodeId( void* self, int nodeId )
+        public static int CMapWorld_FindEntityByNodeId( void* self, int nodeId )
         {
             return default;
         }
@@ -1946,7 +2567,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetParent")]
-        public static void* CMapWorld_GetParent( void* self )
+        public static int CMapWorld_GetParent( void* self )
         {
             return default;
         }
@@ -1956,12 +2577,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetParentWorld")]
-        public static void* CMapWorld_GetParentWorld( void* self )
+        public static int CMapWorld_GetParentWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetRootDocument")]
-        public static void* CMapWorld_GetRootDocument( void* self, long nDocumentLoaded )
+        public static int CMapWorld_GetRootDocument( void* self, long nDocumentLoaded )
         {
             return default;
         }
@@ -1976,7 +2597,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_Copy")]
-        public static void* CMapWorld_Copy( void* self )
+        public static int CMapWorld_Copy( void* self )
         {
             return default;
         }
@@ -2001,22 +2622,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetChild")]
-        public static void* CMapWorld_GetChild( void* self, int i )
+        public static int CMapWorld_GetChild( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetFirstDescendent")]
-        public static void* CMapWorld_GetFirstDescendent( void* self, void* pos )
+        public static int CMapWorld_GetFirstDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetNextDescendent")]
-        public static void* CMapWorld_GetNextDescendent( void* self, void* pos )
+        public static int CMapWorld_GetNextDescendent( void* self, void* pos )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_AsMapEntity")]
-        public static void* CMapWorld_AsMapEntity( void* self )
+        public static int CMapWorld_AsMapEntity( void* self )
         {
             return default;
         }
@@ -2095,21 +2716,21 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CFramelessMainWindow_To_CQHammerMainWnd")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CFramelessMainWindow_To_CQHammerMainWnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CFramelessMainWindow_To_CQHammerMainWnd( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CFramelessMainWindow_From_CQHammerMainWnd")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CFramelessMainWindow_From_CQHammerMainWnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CFramelessMainWindow_From_CQHammerMainWnd( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QMainWindow_To_CQHammerMainWnd")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QMainWindow_To_CQHammerMainWnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QMainWindow_To_CQHammerMainWnd( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QMainWindow_From_CQHammerMainWnd")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QMainWindow_From_CQHammerMainWnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QMainWindow_From_CQHammerMainWnd( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CQHammerMainWnd")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CQHammerMainWnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_CQHammerMainWnd( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CQHammerMainWnd")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CQHammerMainWnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_CQHammerMainWnd( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CQHammerMainWnd")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CQHammerMainWnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CQHammerMainWnd( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CQHammerMainWnd")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CQHammerMainWnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CQHammerMainWnd( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_CreateEverything")]
         public static void* CQHammerMainWnd_CreateEverything( void* self )
@@ -2856,14 +3477,15 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CToolBlock_m_OverrideMaterial")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CToolBlock_m_OverrideMaterial", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CToolBlock_m_OverrideMaterial( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CToolBlock_m_OverrideMaterial")]
-        public static void _Set__CToolBlock_m_OverrideMaterial( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CToolBlock_m_OverrideMaterial", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CToolBlock_m_OverrideMaterial( void* self, void* value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolBlockState_GetAABBBounds")]
         public static void* CToolBlockState_GetAABBBounds( void* self )
@@ -2941,7 +3563,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_GetSelectedObject")]
-        public static void* ISelectionSet_GetSelectedObject( void* self, int nIndex )
+        public static int ISelectionSet_GetSelectedObject( void* self, int nIndex )
         {
             return default;
         }

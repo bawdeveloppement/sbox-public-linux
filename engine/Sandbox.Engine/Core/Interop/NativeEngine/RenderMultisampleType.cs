@@ -1,6 +1,6 @@
 ﻿namespace NativeEngine
 {
-	internal enum RenderMultisampleType : int
+	public enum RenderMultisampleType : int
 	{
 		RENDER_MULTISAMPLE_INVALID = -1,
 		RENDER_MULTISAMPLE_NONE = 0,

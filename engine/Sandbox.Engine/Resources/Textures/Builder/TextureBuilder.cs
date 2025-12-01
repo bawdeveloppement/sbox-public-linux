@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 namespace NativeEngine
 {
 	[StructLayout( LayoutKind.Sequential )]
-	internal struct TextureCreationConfig_t
+	public struct TextureCreationConfig_t
 	{
 		public short m_nWidth;
 		public short m_nHeight;

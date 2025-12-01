@@ -7,6 +7,2720 @@ namespace Sbox.Engine.Emulation.Generated
 {
     public static unsafe partial class Exports
     {
+	public static unsafe void FillNativeFunctionsEngine(void** managedFunctions, void** nativeFunctions, int* structSizes)
+ 	{
+ 		var i = 0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged<IntPtr, void>)&Sbox.Engine.Emulation.EngineExports.DebugError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CnmtnGrpBldr_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CnmtnGrpBldr_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CnmtnGrpBldr_AddAnimation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, void* >)&CnmtnGrpBldr_AddFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CnmtnGrpBldr_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, float, void* >)&CnmtnGrpBldr_SetFrameRate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CnmtnGrpBldr_SetLooping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CnmtnGrpBldr_SetDelta;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CnmtnGrpBldr_SetDisableInterpolation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAttachment_GetInfluenceName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAttachment_GetInfluenceOffset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAttachment_GetInfluenceRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CAttachment_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CAttachment_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, byte>)&_Get__CAttachment_m_nInfluences;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, byte, void*>)&_Set__CAttachment_m_nInfluences;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CAttachment_m_bIgnoreRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CAttachment_m_bIgnoreRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void* >)&CAudioMixBuffer_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CAudioMixBuffer_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CAudioMixBuffer_GetDataPointer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CAudioMixBuffer_Silence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, float >)&CAudioMixBuffer_AbsLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, float >)&CAudioMixBuffer_AvergeLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, float, float, void* >)&CAudioMixBuffer_Ramp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void*, void* >)&CAudioMixBuffer_CopyFrom;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void*, float, void* >)&CAudioMixBuffer_Mix;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void*, float, float, void* >)&CAudioMixBuffer_MixRamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< int, void* >)&CdMxDvcBffrs_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CdMxDvcBffrs_Destroy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int, void* >)&CdMxDvcBffrs_GetBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CAudioMixer_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CAudioMixer_GetSamplePosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CAudioMixer_ShouldContinueMixing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAudioMixer_SetSamplePosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, uint, void* >)&CAudioMixer_SetSampleEnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int, void* >)&CAudioMixer_DelayOrSkipSamples;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CAudioMixer_IsReadyToMix;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CAudioMixer_GetPositionForSave;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAudioMixer_SetPositionFromSaved;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAudioMixer_UpdateMixerState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAudioMixer_GetIndexState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CAudioMixer_GetSfxTable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CAudioMixer_GetSampleCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CAudioMixer_GetChannelCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, float, int >)&CAudioMixer_SetTimeScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int, void* >)&CAudioMixer_EnableLooping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void*, void* >)&CAudioMixer_ReadToBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAudioProcessor_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CAudioProcessor_Process;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, int >)&CAudioProcessor_SetControlParameter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&CAudioProcessor_SetNameParameter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&CAudioProcessor_CreateDelay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&CAudioProcessor_CreatePitchShift;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, uint, int >)&CdStrmMngd_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CdStrmMngd_Destroy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint, uint, void* >)&CdStrmMngd_WriteAudioData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CdStrmMngd_QueuedSampleCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CdStrmMngd_MaxWriteSampleCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CdStrmMngd_LatencySamplesCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CdStrmMngd_Pause;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CdStrmMngd_Resume;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CdStrmMngd_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CdStrmMngd_GetSfxTable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void* >)&CBinauralEffect_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CBinauralEffect_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void*, float, void*, void*, void* >)&CBinauralEffect_Apply;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CBldrMtrlGrp_AddMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CBldrMtrlGrp_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CBldrMtrlGrp_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CBldrMtrlGrprry_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&CBldrMtrlGrprry_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CBldrMtrlGrprry_Get;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CCameraRenderer_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CCameraRenderer_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CCameraRenderer_ClearSceneWorlds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CCameraRenderer_AddSceneWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CCameraRenderer_SetRenderAttributes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CCameraRenderer_Render;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CCameraRenderer_RenderToTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CCameraRenderer_RenderToCubeTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, void* >)&CCameraRenderer_RenderToBitmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&CCameraRenderer_RenderStereo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CCameraRenderer_SubmitStereo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CCameraRenderer_BlitStereo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CCameraRenderer_ClearRenderTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CCameraRenderer_ClearExcludeTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CCameraRenderer_AddRenderTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CCameraRenderer_AddExcludeTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_ViewUniqueId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_ViewUniqueId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CCameraRenderer_CameraPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CCameraRenderer_CameraPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CCameraRenderer_CameraRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CCameraRenderer_CameraRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CCameraRenderer_FieldOfView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CCameraRenderer_FieldOfView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CCameraRenderer_ZNear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CCameraRenderer_ZNear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CCameraRenderer_ZFar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CCameraRenderer_ZFar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CCameraRenderer_Rect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CCameraRenderer_Rect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CCameraRenderer_Viewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CCameraRenderer_Viewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CCameraRenderer_ClipSpaceBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CCameraRenderer_ClipSpaceBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_EnablePostprocessing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_EnablePostprocessing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_EnableEngineOverlays;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_EnableEngineOverlays;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_Ortho;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_Ortho;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CCameraRenderer_OrthoSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CCameraRenderer_OrthoSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_NeedTonemapRenderer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_NeedTonemapRenderer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, long>)&_Get__CCameraRenderer_SceneViewFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, long, void*>)&_Set__CCameraRenderer_SceneViewFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_IsRenderingStereo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_IsRenderingStereo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CCameraRenderer_MiddleEyePosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CCameraRenderer_MiddleEyePosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CCameraRenderer_MiddleEyeRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CCameraRenderer_MiddleEyeRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CCameraRenderer_OverrideProjection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CCameraRenderer_OverrideProjection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_HasOverrideProjection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_HasOverrideProjection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_FlipX;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_FlipX;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CCameraRenderer_FlipY;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CCameraRenderer_FlipY;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneObject_To_CDecalSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneObject_From_CDecalSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CDclScnbjct_ChangeFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CDclScnbjct_SetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CDclScnbjct_HasFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CDclScnbjct_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CDclScnbjct_GetOriginalFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CDclScnbjct_ClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CDclScnbjct_SetCullDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_EnableLightingCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CDclScnbjct_SetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_GetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDclScnbjct_HasLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDclScnbjct_SetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_GetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CDclScnbjct_SetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CDclScnbjct_GetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDclScnbjct_SetMaterialOverrideForMeshInstances;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_ClearMaterialOverrideList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CDclScnbjct_SetMaterialOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDclScnbjct_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDclScnbjct_IsRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_SetLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_ClearLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_DisableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_EnableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CDclScnbjct_SetRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CDclScnbjct_GetBoundingSphereRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDclScnbjct_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_GetCTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDclScnbjct_SetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_GetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_SetBoundsInfinite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDclScnbjct_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&CDclScnbjct_AddChildObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDclScnbjct_RemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CDclScnbjct_EnableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CDclScnbjct_DisableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CDclScnbjct_ResetMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CDclScnbjct_GetCurrentMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDclScnbjct_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CDclScnbjct_SetLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_DisableLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CDclScnbjct_GetCurrentLODGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDclScnbjct_GetCurrentLODLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_GetModelHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDclScnbjct_SetMaterialGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CDclScnbjct_SetBodyGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CDclScnbjct_SetBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDclScnbjct_IsNotBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CDclScnbjct_SetUniqueBatchGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CDclScnbjct_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_RemoveAllTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDclScnbjct_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CDclScnbjct_GetTagAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CDclScnbjct_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CDclScnbjct_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDclScnbjct_SetForceLayerID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDclScnbjct_SetLayerMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDclScnbjct_UpdateFlagsBasedOnMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CDclScnbjct_SetMaterialOverrideByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CDclScnbjct_m_hColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CDclScnbjct_m_hColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CDclScnbjct_m_hNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CDclScnbjct_m_hNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CDclScnbjct_m_hRMO;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CDclScnbjct_m_hRMO;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__CDclScnbjct_m_nSortOrder;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__CDclScnbjct_m_nSortOrder;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__CDclScnbjct_m_nExclusionBitMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__CDclScnbjct_m_nExclusionBitMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CDclScnbjct_m_vColorTint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CDclScnbjct_m_vColorTint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CDclScnbjct_m_flAttenuationAngle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CDclScnbjct_m_flAttenuationAngle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CDclScnbjct_m_flColorMix;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CDclScnbjct_m_flColorMix;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CDclScnbjct_m_hEmission;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CDclScnbjct_m_hEmission;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CDclScnbjct_m_flEmissionEnergy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CDclScnbjct_m_flEmissionEnergy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__CDclScnbjct_m_nSequenceIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__CDclScnbjct_m_nSequenceIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CDclScnbjct_m_hHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CDclScnbjct_m_hHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CDclScnbjct_m_flParallaxStrength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CDclScnbjct_m_flParallaxStrength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CDclScnbjct_m_nSamplerIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CDclScnbjct_m_nSamplerIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneObject_To_CDynamicSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneObject_From_CDynamicSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, long, int, void* >)&CDynmcScnbjct_Begin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CDynmcScnbjct_End;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void*, void* >)&CDynmcScnbjct_AddVertex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void*, int, void* >)&CDynmcScnbjct_AddVertexRange;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CDynmcScnbjct_Reset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CDynmcScnbjct_ChangeFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CDynmcScnbjct_SetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CDynmcScnbjct_HasFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CDynmcScnbjct_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CDynmcScnbjct_GetOriginalFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CDynmcScnbjct_ClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CDynmcScnbjct_SetCullDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_EnableLightingCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CDynmcScnbjct_SetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_GetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_HasLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDynmcScnbjct_SetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_GetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CDynmcScnbjct_SetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CDynmcScnbjct_GetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDynmcScnbjct_SetMaterialOverrideForMeshInstances;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_ClearMaterialOverrideList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CDynmcScnbjct_SetMaterialOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_IsRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_SetLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_ClearLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_DisableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_EnableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CDynmcScnbjct_SetRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CDynmcScnbjct_GetBoundingSphereRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDynmcScnbjct_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_GetCTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDynmcScnbjct_SetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_GetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_SetBoundsInfinite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&CDynmcScnbjct_AddChildObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDynmcScnbjct_RemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CDynmcScnbjct_EnableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CDynmcScnbjct_DisableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CDynmcScnbjct_ResetMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CDynmcScnbjct_GetCurrentMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CDynmcScnbjct_SetLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_DisableLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CDynmcScnbjct_GetCurrentLODGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_GetCurrentLODLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_GetModelHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDynmcScnbjct_SetMaterialGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CDynmcScnbjct_SetBodyGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CDynmcScnbjct_SetBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_IsNotBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CDynmcScnbjct_SetUniqueBatchGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CDynmcScnbjct_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_RemoveAllTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CDynmcScnbjct_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CDynmcScnbjct_GetTagAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CDynmcScnbjct_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CDynmcScnbjct_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDynmcScnbjct_SetForceLayerID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CDynmcScnbjct_SetLayerMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CDynmcScnbjct_UpdateFlagsBasedOnMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CDynmcScnbjct_SetMaterialOverrideByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CDynmcScnbjct_Material;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CDynmcScnbjct_Material;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CEntityKeyValues_GetValueString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CEntityKeyValues_GetKeyCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CEntityKeyValues_GetKey;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void*, void* >)&CEntityKeyValues_GetValueString_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneLightObject_To_CEnvMapSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneLightObject_From_CEnvMapSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneObject_To_CEnvMapSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneObject_From_CEnvMapSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CnvMpScnbjct_CalculateRadianceSH;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CnvMpScnbjct_CalculateRadianceSH_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CnvMpScnbjct_CalculateNormalizationSH;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CnvMpScnbjct_CalculateBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CnvMpScnbjct_SetWorldPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CnvMpScnbjct_GetWorldPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CnvMpScnbjct_SetWorldDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CnvMpScnbjct_GetWorldDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CnvMpScnbjct_SetColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CnvMpScnbjct_SetBounceColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CnvMpScnbjct_GetColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetTheta;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetTheta;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetPhi;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetPhi;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetFallOff;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetFallOff;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CnvMpScnbjct_GetShadowTextureResolution;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetShadowTextureResolution;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CnvMpScnbjct_GetShadows;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetShadows;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetConstantAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetConstantAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetLinearAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetLinearAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetQuadraticAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetQuadraticAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CnvMpScnbjct_SetLightCookie;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CnvMpScnbjct_GetLightCookie;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CnvMpScnbjct_GetShadowCascades;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetShadowCascades;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetCascadeDistanceScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetCascadeDistanceScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CnvMpScnbjct_GetFogContributionStength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetFogContributionStength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CnvMpScnbjct_GetFogLightingMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetFogLightingMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetBakeLightIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetBakeLightIndexScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetUsesIndexedBakedLighting;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetRenderDiffuse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetRenderSpecular;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetRenderTransmissive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetLightSourceSize0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetLightSourceSize1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetShadowTextureWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CnvMpScnbjct_SetShadowTextureHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CnvMpScnbjct_GetShadowTextureWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CnvMpScnbjct_GetShadowTextureHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CnvMpScnbjct_GetLightFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CnvMpScnbjct_SetLightFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CnvMpScnbjct_GetLightShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CnvMpScnbjct_SetLightShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetLightSourceDim0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CnvMpScnbjct_SetLightSourceDim1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, long>)&_Get__CnvMpScnbjct_m_nProjectionMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, long, void*>)&_Set__CnvMpScnbjct_m_nProjectionMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CnvMpScnbjct_m_vBoxProjectMins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CnvMpScnbjct_m_vBoxProjectMins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CnvMpScnbjct_m_vBoxProjectMaxs;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CnvMpScnbjct_m_vBoxProjectMaxs;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CnvMpScnbjct_m_vColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CnvMpScnbjct_m_vColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CnvMpScnbjct_m_nRenderPriority;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CnvMpScnbjct_m_nRenderPriority;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CnvMpScnbjct_m_hEnvMapTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CnvMpScnbjct_m_hEnvMapTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CnvMpScnbjct_m_vNormalizationSH;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CnvMpScnbjct_m_vNormalizationSH;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CnvMpScnbjct_m_flFeathering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CnvMpScnbjct_m_flFeathering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CFrustum_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_Delete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, float, float, float, float, float, float, float, void* >)&CFrustum_InitCamera;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, float, float, float, void* >)&CFrustum_InitCamera_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, float, float, float, void* >)&CFrustum_InitOrthoCamera;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, void* >)&CFrustum_SetCameraWidthHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_GetProj;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_GetInvProj;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_GetReverseZProj;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_GetInvReverseZProj;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_GetViewProj;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_GetInvViewProj;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CFrustum_BoundingVolumeIntersectsFrustum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&CFrustum_ScreenTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CFrustum_WorldToView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CFrustum_ViewToWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_GetCameraPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrustum_GetCameraAngles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CFrustum_GetCameraNearPlane;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CFrustum_GetCameraFarPlane;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CFrustum_GetCameraFOV;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CFrustum_GetCameraAspect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, void* >)&CFrustum_GetPlane;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CHitBox_GetTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CHitBox_m_vMinBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CHitBox_m_vMinBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CHitBox_m_vMaxBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CHitBox_m_vMaxBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CHitBox_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CHitBox_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CHitBox_m_sSurfaceProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CHitBox_m_sSurfaceProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CHitBox_m_sBoneName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CHitBox_m_sBoneName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CHitBox_m_flShapeRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CHitBox_m_flShapeRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__CHitBox_m_nBoneNameHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__CHitBox_m_nBoneNameHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CHitBox_m_cRenderColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CHitBox_m_cRenderColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort>)&_Get__CHitBox_m_nHitBoxIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort, void*>)&_Set__CHitBox_m_nHitBoxIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, byte>)&_Get__CHitBox_m_nShapeType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, byte, void*>)&_Set__CHitBox_m_nShapeType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CHitBox_m_bForcedTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CHitBox_m_bForcedTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CHitBox_m_bTranslationOnly;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CHitBox_m_bTranslationOnly;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CHitBox_m_bVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CHitBox_m_bVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CHitBox_m_bSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CHitBox_m_bSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CHitBoxSet_numhitboxes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CHitBoxSet_pHitbox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CHitBoxSet_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CHitBoxSet_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CHitBoxSet_m_SourceFilename;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CHitBoxSet_m_SourceFilename;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneObject_To_CManagedSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneObject_From_CManagedSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMngdScnbjct_ChangeFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdScnbjct_SetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMngdScnbjct_HasFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdScnbjct_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdScnbjct_GetOriginalFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdScnbjct_ClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdScnbjct_SetCullDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_EnableLightingCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CMngdScnbjct_SetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_GetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_HasLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdScnbjct_SetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_GetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdScnbjct_SetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdScnbjct_GetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdScnbjct_SetMaterialOverrideForMeshInstances;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_ClearMaterialOverrideList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CMngdScnbjct_SetMaterialOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_IsRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_SetLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_ClearLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_DisableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_EnableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdScnbjct_SetRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdScnbjct_GetBoundingSphereRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdScnbjct_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_GetCTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdScnbjct_SetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_GetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_SetBoundsInfinite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&CMngdScnbjct_AddChildObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdScnbjct_RemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CMngdScnbjct_EnableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CMngdScnbjct_DisableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CMngdScnbjct_ResetMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CMngdScnbjct_GetCurrentMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdScnbjct_SetLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_DisableLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CMngdScnbjct_GetCurrentLODGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_GetCurrentLODLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_GetModelHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdScnbjct_SetMaterialGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CMngdScnbjct_SetBodyGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdScnbjct_SetBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_IsNotBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdScnbjct_SetUniqueBatchGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CMngdScnbjct_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_RemoveAllTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdScnbjct_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CMngdScnbjct_GetTagAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CMngdScnbjct_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CMngdScnbjct_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdScnbjct_SetForceLayerID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdScnbjct_SetLayerMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdScnbjct_UpdateFlagsBasedOnMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CMngdScnbjct_SetMaterialOverrideByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CMngdScnbjct_ExecuteOnMainThread;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CMngdScnbjct_ExecuteOnMainThread;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_Destroy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_Init;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_InitWithoutMaterialSystem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_InitFinishSetupMaterialSystem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_GetAppWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_GetAppWindowSwapChain;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMtrlSystm2ppSys_SetAppWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMtrlSystm2ppSys_SetAppWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMtrlSystm2ppSys_SetInitialAppWindowImage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMtrlSystm2ppSys_SetAppWindowDiscardMouseFocusClick;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_DrawInitialWindowImage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMtrlSystm2ppSys_SuppressStartupManifestLoad;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMtrlSystm2ppSys_SetModuleSearchPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMtrlSystm2ppSys_SetModGameSubdir;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CMtrlSystm2ppSys_SetModFromFileName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_DisableModPathCheck;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMtrlSystm2ppSys_SetDefaultRenderSystemOption;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMtrlSystm2ppSys_SetInitializationPhase;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_GetInitializationPhase;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_PreShutdown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CMtrlSystm2ppSys_InitSDL;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_ShutdownSDL;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsConsoleApp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsGameApp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMtrlSystm2ppSys_SetDedicatedServer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsDedicatedServer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_GetContentPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_GetModGameSubdir;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_SetInToolsMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsInToolsMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsInDeveloperMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsInVRMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, int, int, int, void* >)&CMtrlSystm2ppSys_CreateAppWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_SuppressCOMInitialization;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsRunningOnCustomerMachine;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMtrlSystm2ppSys_AddSystem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_SetInTestMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsInTestMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMtrlSystm2ppSys_SetInStandaloneApp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMtrlSystm2ppSys_IsStandaloneApp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CMtrlSystm2ppSys_SetSteamAppId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CMtrlSystm2ppSys_GetSteamAppId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModel_DestroyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CModel_IsStrongHandleValid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CModel_IsError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CModel_IsStrongHandleLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CModel_CopyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CModel_GetBindingPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModel_GetModelName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_IsTranslucent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_IsTranslucentTwoPass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_HasPhysics;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CModel_FindModelSubKey;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&CModel_GetAttachmentTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_GetAttachmentNameFromIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CModel_GetBodyPartForName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_GetBodyPartName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_GetNumBodyParts;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CModel_GetNumBodyPartMeshes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, ulong >)&CModel_GetBodyPartMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, ulong >)&CModel_GetBodyPartMeshMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, ulong, int >)&CModel_FindMeshIndexForMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_GetNumMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CModel_GetDefaultMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CModel_GetBodyPartMeshName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_GetNumMaterialGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_GetMaterialGroupName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CModel_GetMaterialGroupIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CModel_GetNumMaterialsInGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CModel_GetMaterialInGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CModel_GetNumSceneObjects;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int >)&CModel_GetNumDrawCalls;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, void* >)&CModel_GetMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_GetNumMeshes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModel_GetMeshBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModel_GetPhysicsBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModel_GetModelRenderBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_NumBones;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CModel_FindBoneIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_boneName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CModel_boneParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_GetBoneTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_bonePosParentSpace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_boneRotParentSpace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_NumFlexControllers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_GetFlexControllerName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, float >)&CModel_GetVisemeMorph;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_GetNumAnim;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_GetAnimationName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CModel_GetSequenceNames;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CModel_HasSceneObjects;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&CModel_MeshTrace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModel_GetAnimationGraph;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CModel_GetPhysicsContainer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CModel_FindHitboxSetByName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&CModel_FindHitboxSetIndexByName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CModel_GetHitboxSetByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CModel_GetBoneIndexForHitbox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CModel_GetHitboxSetCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_HasSkinnedMeshes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_HasAnimationDrivenFlexes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, long >)&CModel_boneFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_GetNumAttachments;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_GetAttachment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CModel_GetMaterialIndexCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CModel_GetMaterialByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ConCommand_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ConCommand_GetHelpText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&ConCommand_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ConCommand_Run;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ConVar_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ConVar_GetHelpText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ConVar_SetValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&ConVar_SetValue_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&ConVar_SetValue_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ConVar_GetString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ConVar_Revert;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ConVar_HasMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ConVar_HasMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&ConVar_GetMinValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&ConVar_GetMaxValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ConVar_GetDefault;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&ConVar_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CPhysggrgtDt_AddRef;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CPhysggrgtDt_Release;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CPhysggrgtDt_GetChecksum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CPhysggrgtDt_GetBoneCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CPhysggrgtDt_GetBoneName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CPhysggrgtDt_GetPartCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CPhysggrgtDt_GetBoneHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CPhysggrgtDt_GetIndexHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CPhysggrgtDt_GetBindPose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CPhysggrgtDt_GetPart;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CPhysggrgtDt_GetSurfaceProperties;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CPhysggrgtDt_GetSurfacePropertiesCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CPhysggrgtDt_GetCollisionAttributeCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CPhysggrgtDt_GetTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CPhysggrgtDt_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CPhysggrgtDt_GetJointCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CPhysggrgtDt_GetJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort>)&_Get__CPhysggrgtDt_m_nFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort, void*>)&_Set__CPhysggrgtDt_m_nFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CPhysBodyDesc_SetBoneName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CPhysBodyDesc_SetSurface;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CPhysBodyDesc_SetBindPose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CPhysBodyDesc_AddSphere;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CPhysBodyDesc_AddCapsule;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void*, float, float, int, int, int, int, void* >)&CPhysBodyDesc_AddHull;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint, void*, uint, void*, void* >)&CPhysBodyDesc_AddMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CPhysBodyDesc_m_flMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CPhysBodyDesc_m_flMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CPhysBdyDscrry_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CPhysBdyDscrry_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CPhysBdyDscrry_Get;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CPhysBdyDscrry_GetJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, float, float, float, void* >)&CPhysSrfcPrprts_UpdatePhysics;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CPhysSrfcPrprts_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CPhysSrfcPrprts_m_name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__CPhysSrfcPrprts_m_nameHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__CPhysSrfcPrprts_m_nameHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__CPhysSrfcPrprts_m_baseNameHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__CPhysSrfcPrprts_m_baseNameHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CPhysSrfcPrprts_m_nIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CPhysSrfcPrprts_m_nIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CPhysSrfcPrprts_m_nBaseIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CPhysSrfcPrprts_m_nBaseIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CPhysSrfcPrprts_m_AudioSurface;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CPhysSrfcPrprts_m_AudioSurface;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CPhysSrfcPrprts_m_bHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CPhysSrfcPrprts_m_bHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CPhysSrfcPrprts_m_description;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CPhysSrfcPrprts_m_description;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQueryResult_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CQueryResult_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQueryResult_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CQueryResult_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_IReadBufferCallback_To_CReadBufferManagedCallback;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_IReadBufferCallback_From_CReadBufferManagedCallback;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CRdBffrMngdCllbc_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CRdBffrMngdCllbc_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CRdBffrMngdCllbc_SetManagedId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CRdBffrMngdCllbc_GetManagedId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CRdBffrMngdCllbc_Done;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_IReadTexturePixelsCallback_To_CReadTexturePixelsManagedCallback;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_IReadTexturePixelsCallback_From_CReadTexturePixelsManagedCallback;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CRdTxtrPxlsMngdC_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CRdTxtrPxlsMngdC_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CRdTxtrPxlsMngdC_SetManagedId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CRdTxtrPxlsMngdC_GetManagedId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CRdTxtrPxlsMngdC_Done;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CRndrttrbts_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CRndrttrbts_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&CRndrttrbts_SetFloatValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float >)&CRndrttrbts_GetFloatValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteFloatValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_SetVector2DValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_GetVector2DValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteVector2DValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_SetVectorValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_GetVectorValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteVectorValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_SetVector4DValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_GetVector4DValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteVector4DValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_SetVMatrixValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_GetVMatrixValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteVMatrixValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_SetStringValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteStringValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CRndrttrbts_SetIntValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&CRndrttrbts_GetIntValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteIntValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, byte, void* >)&CRndrttrbts_SetComboValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, byte, byte >)&CRndrttrbts_GetComboValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteComboValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CRndrttrbts_SetBoolValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&CRndrttrbts_GetBoolValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteBoolValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CRndrttrbts_SetTextureValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_GetTextureValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeleteTextureValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_SetSamplerValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_SetBufferValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CRndrttrbts_SetPtrValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_DeletePtrValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, int, void* >)&CRndrttrbts_SetIntVector4DValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CRndrttrbts_MergeToPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CRndrttrbts_IsEmpty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CRndrttrbts_Clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CRenderMesh_DestroyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CRenderMesh_IsStrongHandleValid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CRenderMesh_IsError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CRenderMesh_IsStrongHandleLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CRenderMesh_CopyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CRenderMesh_GetBindingPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneObject_To_CSceneAnimatableObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneObject_From_CSceneAnimatableObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CScnnmtblbjct_SetWorldSpaceRenderBoneTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_GetWorldSpaceRenderBoneTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_GetWorldSpaceRenderBoneTransform_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_GetWorldSpaceRenderBonePreviousTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_GetWorldSpaceRenderBonePreviousTransform_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_GetLocalSpaceRenderBoneTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_GetLocalSpaceRenderBoneTransform_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_GetWorldSpaceAnimationTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnnmtblbjct_Update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_MergeFrom;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_SetBindPose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_CalculateWorldSpaceBones;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_FinishUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_ResetGraphParameters;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_GetParentSpaceBone;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CScnnmtblbjct_SetParentSpaceBone;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_InitAnimGraph;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetAnimGraph;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetAnimGraph_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetAnimGraph;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&CScnnmtblbjct_SBox_SetFlexOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, float, void* >)&CScnnmtblbjct_SBox_SetFlexOverride_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, float >)&CScnnmtblbjct_SBox_GetFlexOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float >)&CScnnmtblbjct_SBox_GetFlexOverride_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_SBox_ClearFlexOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_DirectPlayback_PlaySequence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, float, void* >)&CScnnmtblbjct_DirectPlayback_PlaySequence_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_DirectPlayback_CancelSequence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnnmtblbjct_DirectPlayback_GetSequenceCycle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_DirectPlayback_GetSequence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnnmtblbjct_DirectPlayback_SetSequenceStartTime;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnnmtblbjct_DirectPlayback_GetSequenceDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void*, int >)&CScnnmtblbjct_SBox_GetAttachment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_SetShouldUseAnimGraph;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_GetShouldUseAnimGraph;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetSequence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetSequence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnnmtblbjct_GetSequenceDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnnmtblbjct_GetSequenceCycle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnnmtblbjct_SetSequenceCycle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_SetSequenceLooping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_IsSequenceFinished;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_SetSequenceBlending;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnnmtblbjct_GetPlaybackRate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnnmtblbjct_SetPlaybackRate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CScnnmtblbjct_GetParameterInt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float >)&CScnnmtblbjct_GetParameterFloat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_GetParameterVector3;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_GetParameterRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_PendingAnimationEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_RunAnimationEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_DispatchTagEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_ClearPhysicsBones;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ushort, void*, void* >)&CScnnmtblbjct_SetPhysicsBone;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetRootMotion;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_HasPhysicsBones;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_GetAnimParameter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_GetAnimParameter_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CScnnmtblbjct_ChangeFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnnmtblbjct_SetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CScnnmtblbjct_HasFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnnmtblbjct_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnnmtblbjct_GetOriginalFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnnmtblbjct_ClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnnmtblbjct_SetCullDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_EnableLightingCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CScnnmtblbjct_SetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_HasLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnnmtblbjct_SetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnnmtblbjct_GetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetMaterialOverrideForMeshInstances;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_ClearMaterialOverrideList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CScnnmtblbjct_SetMaterialOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_IsRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_SetLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_ClearLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_DisableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_EnableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_SetRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnnmtblbjct_GetBoundingSphereRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetCTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_SetBoundsInfinite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&CScnnmtblbjct_AddChildObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_RemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnnmtblbjct_EnableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnnmtblbjct_DisableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnnmtblbjct_ResetMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CScnnmtblbjct_GetCurrentMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_SetLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_DisableLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CScnnmtblbjct_GetCurrentLODGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_GetCurrentLODLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_GetModelHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetMaterialGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CScnnmtblbjct_SetBodyGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_SetBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_IsNotBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnnmtblbjct_SetUniqueBatchGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnnmtblbjct_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_RemoveAllTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnnmtblbjct_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CScnnmtblbjct_GetTagAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnnmtblbjct_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CScnnmtblbjct_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetForceLayerID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnnmtblbjct_SetLayerMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnnmtblbjct_UpdateFlagsBasedOnMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CScnnmtblbjct_SetMaterialOverrideByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CScnnmtblbjct_m_flDeltaTime;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CScnnmtblbjct_m_flDeltaTime;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CScnnmtblbjct_m_worldBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CScnnmtblbjct_m_worldBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CScnnmtblbjct_m_localBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CScnnmtblbjct_m_localBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneObject_To_CSceneLightObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneObject_From_CSceneLightObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetWorldPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetWorldPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetWorldDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetWorldDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetBounceColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetTheta;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetTheta;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetPhi;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetPhi;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetFallOff;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetFallOff;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetShadowTextureResolution;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetShadowTextureResolution;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetShadows;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetShadows;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetConstantAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetConstantAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetLinearAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetLinearAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetQuadraticAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetQuadraticAttn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetLightCookie;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetLightCookie;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetShadowCascades;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetShadowCascades;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetCascadeDistanceScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetCascadeDistanceScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetFogContributionStength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetFogContributionStength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetFogLightingMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetFogLightingMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetBakeLightIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetBakeLightIndexScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetUsesIndexedBakedLighting;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetRenderDiffuse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetRenderSpecular;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetRenderTransmissive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetLightSourceSize0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetLightSourceSize1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetShadowTextureWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetShadowTextureHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetShadowTextureWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetShadowTextureHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CScnLghtbjct_GetLightFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnLghtbjct_SetLightFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnLghtbjct_GetLightShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnLghtbjct_SetLightShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetLightSourceDim0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetLightSourceDim1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CScnLghtbjct_ChangeFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnLghtbjct_SetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CScnLghtbjct_HasFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnLghtbjct_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnLghtbjct_GetOriginalFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnLghtbjct_ClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetCullDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_EnableLightingCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CScnLghtbjct_SetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_HasLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtbjct_SetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetMaterialOverrideForMeshInstances;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_ClearMaterialOverrideList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CScnLghtbjct_SetMaterialOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_IsRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_SetLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_ClearLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_DisableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_EnableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtbjct_GetBoundingSphereRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetCTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_SetBoundsInfinite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&CScnLghtbjct_AddChildObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_RemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnLghtbjct_EnableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnLghtbjct_DisableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnLghtbjct_ResetMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CScnLghtbjct_GetCurrentMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_DisableLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CScnLghtbjct_GetCurrentLODGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetCurrentLODLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_GetModelHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetMaterialGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CScnLghtbjct_SetBodyGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_IsNotBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtbjct_SetUniqueBatchGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnLghtbjct_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_RemoveAllTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtbjct_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CScnLghtbjct_GetTagAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnLghtbjct_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CScnLghtbjct_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetForceLayerID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtbjct_SetLayerMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtbjct_UpdateFlagsBasedOnMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CScnLghtbjct_SetMaterialOverrideByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneObject_To_CSceneLightProbeVolumeObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneObject_From_CSceneLightProbeVolumeObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_CreateConstants;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CScnLghtPrbVlmbj_ChangeFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnLghtPrbVlmbj_SetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CScnLghtPrbVlmbj_HasFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnLghtPrbVlmbj_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnLghtPrbVlmbj_GetOriginalFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnLghtPrbVlmbj_ClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtPrbVlmbj_SetCullDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_EnableLightingCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CScnLghtPrbVlmbj_SetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_GetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtPrbVlmbj_HasLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtPrbVlmbj_SetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_GetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnLghtPrbVlmbj_SetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtPrbVlmbj_GetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtPrbVlmbj_SetMaterialOverrideForMeshInstances;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_ClearMaterialOverrideList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CScnLghtPrbVlmbj_SetMaterialOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtPrbVlmbj_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtPrbVlmbj_IsRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_SetLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_ClearLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_DisableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_EnableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtPrbVlmbj_SetRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnLghtPrbVlmbj_GetBoundingSphereRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtPrbVlmbj_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_GetCTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtPrbVlmbj_SetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_GetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_SetBoundsInfinite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtPrbVlmbj_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&CScnLghtPrbVlmbj_AddChildObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtPrbVlmbj_RemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnLghtPrbVlmbj_EnableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnLghtPrbVlmbj_DisableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnLghtPrbVlmbj_ResetMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CScnLghtPrbVlmbj_GetCurrentMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtPrbVlmbj_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtPrbVlmbj_SetLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_DisableLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CScnLghtPrbVlmbj_GetCurrentLODGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtPrbVlmbj_GetCurrentLODLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_GetModelHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtPrbVlmbj_SetMaterialGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CScnLghtPrbVlmbj_SetBodyGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtPrbVlmbj_SetBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtPrbVlmbj_IsNotBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnLghtPrbVlmbj_SetUniqueBatchGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnLghtPrbVlmbj_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_RemoveAllTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnLghtPrbVlmbj_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CScnLghtPrbVlmbj_GetTagAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnLghtPrbVlmbj_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CScnLghtPrbVlmbj_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtPrbVlmbj_SetForceLayerID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnLghtPrbVlmbj_SetLayerMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnLghtPrbVlmbj_UpdateFlagsBasedOnMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CScnLghtPrbVlmbj_SetMaterialOverrideByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CScnLghtPrbVlmbj_m_vBoxMins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CScnLghtPrbVlmbj_m_vBoxMins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CScnLghtPrbVlmbj_m_vBoxMaxs;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CScnLghtPrbVlmbj_m_vBoxMaxs;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CScnLghtPrbVlmbj_m_nHandshake;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CScnLghtPrbVlmbj_m_nHandshake;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CScnLghtPrbVlmbj_m_nRenderPriority;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CScnLghtPrbVlmbj_m_nRenderPriority;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CScnLghtPrbVlmbj_m_hLightProbeTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CScnLghtPrbVlmbj_m_hLightProbeTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CSceneObject_ChangeFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CSceneObject_SetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CSceneObject_HasFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CSceneObject_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CSceneObject_GetOriginalFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CSceneObject_ClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CSceneObject_SetCullDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_EnableLightingCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CSceneObject_SetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_GetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSceneObject_HasLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSceneObject_SetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_GetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CSceneObject_SetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CSceneObject_GetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSceneObject_SetMaterialOverrideForMeshInstances;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_ClearMaterialOverrideList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CSceneObject_SetMaterialOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSceneObject_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSceneObject_IsRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_SetLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_ClearLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_DisableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_EnableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CSceneObject_SetRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CSceneObject_GetBoundingSphereRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSceneObject_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_GetCTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSceneObject_SetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_GetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_SetBoundsInfinite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSceneObject_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&CSceneObject_AddChildObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSceneObject_RemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CSceneObject_EnableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CSceneObject_DisableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CSceneObject_ResetMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CSceneObject_GetCurrentMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSceneObject_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CSceneObject_SetLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_DisableLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CSceneObject_GetCurrentLODGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSceneObject_GetCurrentLODLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_GetModelHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSceneObject_SetMaterialGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CSceneObject_SetBodyGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CSceneObject_SetBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSceneObject_IsNotBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CSceneObject_SetUniqueBatchGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CSceneObject_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_RemoveAllTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSceneObject_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CSceneObject_GetTagAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CSceneObject_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CSceneObject_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSceneObject_SetForceLayerID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSceneObject_SetLayerMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSceneObject_UpdateFlagsBasedOnMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CSceneObject_SetMaterialOverrideByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CSceneObject_To_CSceneSkyBoxObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CSceneObject_From_CSceneSkyBoxObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetLighting_ConstantColorHemisphere;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CScnSkyBxbjct_SetLighting_Samples;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_GetMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetSkyTint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_GetSkyTint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnSkyBxbjct_SetFogType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_GetFogType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, float, float, void* >)&CScnSkyBxbjct_SetAngularFogParams;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnSkyBxbjct_GetFogMinStart;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnSkyBxbjct_GetFogMinEnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnSkyBxbjct_GetFogMaxStart;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnSkyBxbjct_GetFogMaxEnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CScnSkyBxbjct_ChangeFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnSkyBxbjct_SetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CScnSkyBxbjct_HasFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnSkyBxbjct_GetFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CScnSkyBxbjct_GetOriginalFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CScnSkyBxbjct_ClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnSkyBxbjct_SetCullDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_EnableLightingCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CScnSkyBxbjct_SetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_GetLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_HasLightingOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_GetTintRGBA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CScnSkyBxbjct_SetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnSkyBxbjct_GetAlphaFade;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetMaterialOverrideForMeshInstances;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_ClearMaterialOverrideList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&CScnSkyBxbjct_SetMaterialOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_IsRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_SetLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_ClearLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_DisableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_EnableRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnSkyBxbjct_SetRenderingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CScnSkyBxbjct_GetBoundingSphereRadius;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_GetCTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_GetBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_SetBoundsInfinite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&CScnSkyBxbjct_AddChildObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_RemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnSkyBxbjct_EnableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnSkyBxbjct_DisableMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CScnSkyBxbjct_ResetMeshGroups;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CScnSkyBxbjct_GetCurrentMeshGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnSkyBxbjct_SetLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_DisableLOD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CScnSkyBxbjct_GetCurrentLODGroupMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_GetCurrentLODLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_GetModelHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetMaterialGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CScnSkyBxbjct_SetBodyGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnSkyBxbjct_SetBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_IsNotBatchable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CScnSkyBxbjct_SetUniqueBatchGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnSkyBxbjct_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_RemoveAllTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CScnSkyBxbjct_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CScnSkyBxbjct_GetTagAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CScnSkyBxbjct_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&CScnSkyBxbjct_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetForceLayerID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CScnSkyBxbjct_SetLayerMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CScnSkyBxbjct_UpdateFlagsBasedOnMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CScnSkyBxbjct_SetMaterialOverrideByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, void* >)&CServerList_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CServerList_Destroy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CServerList_StartQuery;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CServerList_AddFilter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSfxTable_GetCacheStatus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSfxTable_GetSampleCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint, int >)&CSfxTable_GetSamples;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CSfxTable_GetSound;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSfxTable_IsValidForPlayback;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSfxTable_FailedResourceLoad;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSfxTable_CreateMixer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CStmnvntryRslt_Destroy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CStmnvntryRslt_IsPending;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CStmnvntryRslt_IsOk;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, int >)&CStmnvntryRslt_CheckSteamId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CStmnvntryRslt_GetTimestamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CStmnvntryRslt_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CStmnvntryRslt_Get;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CStmtmnstnc_ItemId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CStmtmnstnc_DefinitionId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CTextureBase_DestroyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CTextureBase_IsStrongHandleValid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CTextureBase_IsError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CTextureBase_IsStrongHandleLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CTextureBase_CopyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CTextureBase_GetBindingPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CUtlBuffer_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CUtlBuffer_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CUtlBuffer_Base;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CUtlBuffer_TellMaxPut;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CUtlSymbolTable_AddString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CtlVctrCtlStrng_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CtlVctrCtlStrng_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CtlVctrCtlStrng_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrCtlStrng_SetCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrCtlStrng_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CtlVctrflt_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CtlVctrflt_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CtlVctrflt_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrflt_SetCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, float >)&CtlVctrflt_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CtlVctrHRndrTxtr_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CtlVctrHRndrTxtr_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CtlVctrHRndrTxtr_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrHRndrTxtr_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CtlVctrPhyscsTrc_Result_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CtlVctrPhyscsTrc_Result_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CtlVctrPhyscsTrc_Result_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrPhyscsTrc_Result_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CtlVctrnt32_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CtlVctrnt32_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CtlVctrnt32_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrnt32_SetCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&CtlVctrnt32_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CtlVctrVctr_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CtlVctrVctr_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CtlVctrVctr_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrVctr_SetCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrVctr_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfx_DestroyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CVfx_IsStrongHandleValid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CVfx_IsError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&CVfx_IsStrongHandleLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CVfx_CopyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&CVfx_GetBindingPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfx_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfx_GetFilename;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, uint, int, int >)&CVfx_CreateFromResourceFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, uint, int >)&CVfx_CreateFromShaderFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CVfx_GetProgramData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CVfx_GetIterator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfx_Serialize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CVfx_HasShaderProgram;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVfx_InitializeWrite;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVfx_FinalizeCompile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, void*, int >)&CVfx_WriteProgramToBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, ulong, ulong, void*, int >)&CVfx_WriteCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfx_GetPropertiesJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CVfxBytCdMngr_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfxBytCdMngr_Delete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&CVfxBytCdMngr_OnStaticCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CVfxBytCdMngr_OnDynamicCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfxBytCdMngr_Reset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfxCombo_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfxCombo_GetGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, byte>)&_Get__CVfxCombo_m_nMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, byte, void*>)&_Set__CVfxCombo_m_nMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, byte>)&_Get__CVfxCombo_m_nMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, byte, void*>)&_Set__CVfxCombo_m_nMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVfxCmbtrtr_Delete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CVfxCmbtrtr_InvalidIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, ulong >)&CVfxCmbtrtr_SetStaticCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CVfxCmbtrtr_FirstStaticCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CVfxCmbtrtr_NextStaticCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, ulong >)&CVfxCmbtrtr_SetDynamicCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CVfxCmbtrtr_FirstDynamicCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&CVfxCmbtrtr_NextDynamicCombo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__CVfxProgramData_m_bLoadedFromVcsFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__CVfxProgramData_m_bLoadedFromVcsFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, void* >)&CVideoPlayer_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoPlayer_Destroy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&CVideoPlayer_Play;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoPlayer_Resume;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoPlayer_Stop;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoPlayer_Pause;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, double, void* >)&CVideoPlayer_Seek;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVideoPlayer_GetRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CVideoPlayer_SetRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CVideoPlayer_GetDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CVideoPlayer_GetPlaybackTime;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVideoPlayer_HasAudioStream;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoPlayer_Update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVideoPlayer_IsPaused;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVideoPlayer_IsMuted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CVideoPlayer_SetMuted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVideoPlayer_GetWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVideoPlayer_GetHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoPlayer_SetVideoOnly;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CVideoPlayer_GetMetadata;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CVideoPlayer_GetSpectrum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CVideoPlayer_GetAmplitude;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoPlayer_GetTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CVideoPlayer_GetAudioStream;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CVideoRecorder_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoRecorder_Destroy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CVideoRecorder_Stop;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void* >)&CVideoRecorder_AddVideoFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CVideoRecorder_AddAudioSamples;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, int, int, int, void*, int >)&CVideoRecorder_Initialize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&DspInstance_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&DspInstance_ProcessChannel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&DspPreset_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&DspPreset_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, uint, void* >)&DspPreset_AddProcessor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&DspPreset_FinishBuilding;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&DspPreset_Instantiate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&EngineGlue_JsonToKeyValues3;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&EngineGlue_KeyValuesToJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&EngineGlue_KeyValues3ToJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&EngineGlue_LoadKeyValues3;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&EngineGlue_GetStringToken;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, void* >)&EngineGlue_GetStringTokenValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&EngineGlue_AddSearchPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&EngineGlue_RemoveSearchPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< ulong >)&EngineGlue_ApproximateProcessMemoryUsage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&EngineGlue_ReadCompiledResourceFileJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&EngineGlue_ReadCompiledResourceFileBlock;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&EngineGlue_ReadCompiledResourceFileJsonFromFilesystem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&EngineGlue_SetEngineLoggingVerbose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&EngineGlue_RequestWebAuthTicket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&EngineGlue_CancelWebAuthTicket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&EngineGlue_GetWebAuthTicket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ErrorReports_SetTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void*, void*, void* >)&ErrorReports_Breadcrumb;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&FloatBitMap_t_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&FloatBitMap_t_Create_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&FloatBitMap_t_Delete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, int >)&FloatBitMap_t_LoadFromFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&FloatBitMap_t_LoadFromPFM;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, int >)&FloatBitMap_t_LoadFromPSD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, int >)&FloatBitMap_t_LoadFromTIF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, int >)&FloatBitMap_t_LoadFromPNG;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, int >)&FloatBitMap_t_LoadFromJPG;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&FloatBitMap_t_LoadFromEXR;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, long, long, void* >)&FloatBitMap_t_LoadFromBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, void* >)&FloatBitMap_t_Init;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&FloatBitMap_t_Shutdown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, float, void* >)&FloatBitMap_t_SetChannel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&FloatBitMap_t_Rotate90DegreesCW;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&FloatBitMap_t_Rotate90DegreesCCW;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&FloatBitMap_t_Rotate180Degrees;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&FloatBitMap_t_MirrorHorizontally;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&FloatBitMap_t_MirrorVertically;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&FloatBitMap_t_WriteTGAFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&FloatBitMap_t_WritePFM;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&FloatBitMap_t_WriteEXR;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&FloatBitMap_t_LoadFromInMemoryTGA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&FloatBitMap_t_LoadFromInMemoryPSD;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&FloatBitMap_t_LoadFromInMemoryTIF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, float >)&FloatBitMap_t_Pixel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, float >)&FloatBitMap_t_PixelWrapped;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, float >)&FloatBitMap_t_PixelClamped;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, float >)&FloatBitMap_t_Alpha;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, void* >)&FloatBitMap_t_RGBPixelAsVector;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&FloatBitMap_t_Width;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&FloatBitMap_t_Height;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&FloatBitMap_t_Depth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, void* >)&FloatBitMap_t_Resize2D;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, long, int, int, uint, int >)&FloatBitMap_t_WriteToBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&fpxr_pplctnCnfg_SetDebugCallback;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&fpxr_pplctnCnfg_SetErrorCallback;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&fpxr_Compositor_EventManager;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long >)&fpxr_Compositor_Submit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&fpxr_Compositor_BeginFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&fpxr_Compositor_EndFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&fpxr_Compositor_GetEyeWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&fpxr_Compositor_GetEyeHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&fpxr_Compositor_GetRenderTargetWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&fpxr_Compositor_GetRenderTargetHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&fpxr_Compositor_GetDisplayRefreshRate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void*, long >)&fpxr_Compositor_GetViewInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, float, float, void*, long >)&fpxr_Compositor_GetProjectionMatrix;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long >)&fpxr_EventManager_PumpEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void*, long >)&fpxr_Input_GetBooleanActionState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void*, long >)&fpxr_Input_GetFloatActionState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void*, long >)&fpxr_Input_GetVector2ActionState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, void*, long >)&fpxr_Input_GetPoseActionState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, float, long, long >)&fpxr_Input_TriggerHapticVibration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void*, long >)&fpxr_Input_GetHandPoseState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, float >)&fpxr_Input_GetFingerCurl;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&fpxr_Instance_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&fpxr_Instance_HasHeadset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&fpxr_Instance_Compositor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&fpxr_Instance_Input;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&fpxr_Instance_GetRequiredDeviceExtensions;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&fpxr_Instance_GetRequiredInstanceExtensions;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&fpxr_Instance_GetProperties;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pAudioDevice_Name;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint >)&g_pAudioDevice_ChannelCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint >)&g_pAudioDevice_MixChannelCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint >)&g_pAudioDevice_BitsPerSample;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint >)&g_pAudioDevice_BytesPerSample;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint >)&g_pAudioDevice_SampleRate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pAudioDevice_IsActive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pAudioDevice_CancelOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pAudioDevice_WaitForComplete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pAudioDevice_MuteDevice;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pAudioDevice_ClearBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pAudioDevice_OutputDebugInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pAudioDevice_IsValid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pAudioDevice_SendOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pngnPVSMngr_BuildPvs;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pngnPVSMngr_DestroyPvs;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pngnSrvcMgr_GetEngineSwapChain;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pngnSrvcMgr_GetEngineSwapChainSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pngnSrvcMgr_SetEngineState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pngnSrvcMgr_ExitMainLoop;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pFllFlSystm_GetSymLink;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&g_pFllFlSystm_AddSymLink;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pFllFlSystm_RemoveSymLink;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pFllFlSystm_ResetProjectPaths;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pFllFlSystm_AddProjectPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pFllFlSystm_AddCloudPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pInputService_IsAppActive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pInputService_HasMouseFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pInputService_Key_NameForBinding;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void* >)&g_pInputService_GetBinding;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&g_pInputService_SetCursorPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pInputService_Pump;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pInputSystem_RegisterWindowWithSDL;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pInputSystem_UnregisterWindowFromSDL;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pInputSystem_SetEditorMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&g_pInputSystem_OnEditorGameFocusChange;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void*, void* >)&g_pInputSystem_SetCursorPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pInputSystem_HasMouseFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pInputSystem_IsAppActive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pInputSystem_IsIMEAllowed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pInputSystem_SetIMEAllowed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, int, int, void* >)&g_pInputSystem_SetIMETextLocation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pInputSystem_DismissIME;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void* >)&g_pInputSystem_CodeToString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&g_pInputSystem_StringToButtonCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, long >)&g_pInputSystem_VirtualKeyToButtonCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, int >)&g_pInputSystem_ButtonCodeToVirtualKey;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pInputSystem_SetRelativeMouseMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pInputSystem_GetRelativeMouseMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void* >)&g_pInputSystem_SetCursorStandard;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pInputSystem_SetCursorUser;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int >)&g_pInputSystem_LoadCursorFromFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pInputSystem_ShutdownUserCursors;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&g_pMtrlSystm2_CreateRawMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&g_pMtrlSystm2_CreateProceduralMaterialCopy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pMtrlSystm2_FindOrCreateMaterialFromResource;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pMtrlSystm2_FrameUpdate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, long, long, void*, int, int >)&g_pMeshSystem_CreateSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pMeshSystem_ChangeModel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pPhysicsSystem_NumWorlds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pPhysicsSystem_CreateWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pPhysicsSystem_DestroyWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pPhysicsSystem_GetSurfacePropertyController;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, int, float, float, int >)&g_pPhysicsSystem_CastHeightField;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pPhysicsSystem_GetAggregateData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pPhysicsSystem_UpdateSurfaceProperties;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_FindOrCreateSamplerState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pRenderDevice_GetSamplerIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_GetSwapChainInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&g_pRenderDevice_FindOrCreateFileTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, int, void* >)&g_pRenderDevice_FindOrCreateTexture2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pRenderDevice_ClearTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void*, void* >)&g_pRenderDevice_AsyncSetTextureData2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&g_pRenderDevice_GetSwapChainTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&g_pRenderDevice_GetGPUFrameTimeMS;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_GetTextureDesc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_GetOnDiskTextureDesc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&g_pRenderDevice_GetTextureMultisampleType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, void* >)&g_pRenderDevice_CreateRenderContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_ReleaseRenderContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void*, void*, long, int, int >)&g_pRenderDevice_ReadTexturePixels;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_DestroySwapChain;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pRenderDevice_Present;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pRenderDevice_Flush;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pRenderDevice_CanRenderToSwapChain;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pRenderDevice_IsUsing32BitDepthBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_GetBackbufferDimensions;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void*, uint, void*, void*, void* >)&g_pRenderDevice_CompileAndCreateShader;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pRenderDevice_GetTextureLastUsed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, void* >)&g_pRenderDevice_UnThrottleTextureStreamingForNFrames;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pRenderDevice_GetNumTextureLoadsInFlight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pRenderDevice_SetForcePreloadStreamingData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long >)&g_pRenderDevice_GetRenderDeviceAPI;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&g_pRenderDevice_MarkTextureUsed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pRenderDevice_IsTextureRenderTarget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pRenderDevice_IsRayTracingSupported;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void*, long, void*, void* >)&g_pRenderDevice_CreateGPUBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_DestroyGPUBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void*, uint, int >)&g_pRenderDevice_ReadBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void* >)&g_pRenderDevice_GetDeviceSpecificInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_GetGraphicsAPISpecificTextureHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_GetDeviceSpecificTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, byte, long, int >)&g_pRenderDevice_GetTextureViewIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pRenderDevice_GetTextureResidencyInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRenderDevice_GetSheetInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pRenderDevice_GetSequenceCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&g_pRenderDevice_GetSequence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long >)&g_pRenderService_GetMultisampleType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&g_pRsrcCmplrSyst_GenerateResourceFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&g_pRsrcCmplrSyst_GenerateResourceFile_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&g_pRsrcCmplrSyst_GenerateResourceBytes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pRsrcSystm_ReloadSymlinkedResidentResources;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pRsrcSystm_UpdateSimple;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pRsrcSystm_HasPendingWork;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRsrcSystm_LoadResourceInManifest;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRsrcSystm_DestroyResourceManifest;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pRsrcSystm_IsManifestLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pRsrcSystm_GetAllCodeManifests;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneSystem_DeleteSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneSystem_DeleteSceneObjectAtFrameEnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&g_pSceneSystem_CreateSkyBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pSceneSystem_CreateDecal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneSystem_BeginRenderingDynamicView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void* >)&g_pSceneSystem_GetWellKnownTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void* >)&g_pSceneSystem_GetWellKnownMaterialHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pSceneSystem_GetPerFrameStats;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pSceneSystem_CreateWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneSystem_DestroyWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&g_pSceneSystem_SetupPerObjectLighting;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pSceneSystem_CreatePointLight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pSceneSystem_CreateSpotLight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pSceneSystem_CreateOrthoLight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&g_pSceneSystem_CreateDirectionalLight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&g_pSceneSystem_CreateEnvMap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pSceneSystem_CreateLightProbeVolume;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneSystem_MarkEnvironmentMapObjectUpdated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneSystem_MarkLightProbeVolumeObjectUpdated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, void*, uint >)&g_pSceneSystem_AddCullingBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&g_pSceneSystem_RemoveCullingBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint >)&g_pSceneSystem_AddVolumetricFogVolume;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&g_pSceneSystem_RemoveVolumetricFogVolume;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, byte, void* >)&g_pSceneSystem_DownsampleTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&g_pSceneSystem_RenderTiledLightCulling;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&g_pSceneSystem_BindTransformSlot;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&g_pSceneSystem_CreateRayTraceWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneSystem_DestroyRayTraceWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pSceneUtils_CreateTonemapSystem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneUtils_DestroyTonemapSystem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pSceneUtils_CreateVolumetricFog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSceneUtils_DestroyVolumetricFog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pSndSystmntrnl_GetNumAudioDevices;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pSndSystmntrnl_GetAudioDeviceDesc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pSndSystmntrnl_GetAudioDeviceId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pSndSystmntrnl_GetAudioDeviceName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pSndSystmntrnl_GetActiveAudioDevice;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSndSystmntrnl_SetActiveAudioDevice;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSndSystmntrnl_PlaySoundAtOSLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSndSystmntrnl_PrecacheSound;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, float, int, void*, int, void* >)&g_pSndSystmntrnl_CreateSound;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pSndSystmntrnl_PreloadSound;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pWrldRndrrMgr_ServiceWorldRequests;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float, uint >)&g_pWrldRndrrMgr_UpdateObjectsForRendering;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, int, void*, void*, void* >)&g_pWrldRndrrMgr_CreateWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&g_pWrldRndrrMgr_MountWorldVPK;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pWrldRndrrMgr_UnmountWorldVPK;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&global_Plat_ScreenToWindowCoords;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&global_Plat_WindowToScreenCoords;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&global_Plat_MessageBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void*, void*, void*, int >)&global_Plat_GetDesktopResolution;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&global_Plat_GetDefaultMonitorIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&global_Plat_SafeRemoveFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&global_Plat_SetModuleFilename;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&global_Plat_SetCurrentDirectory;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< ulong >)&global_Plat_GetCurrentFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< ulong, void* >)&global_Plat_SetCurrentFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void* >)&global_Plat_ChangeCurrentFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&global_Plat_IsRunningOnCustomerMachine;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&global_Plat_HasClipboardText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&global_Plat_SetClipboardText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&global_Plat_GetClipboardText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&global_Plat_ClearClipboardText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&global_IsWindowFocused;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&global_IsRetail;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&global_HasLaunchParameter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&global_Plat_SetNoAssert;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&global_GetGameRootFolder;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&global_GetGameSearchPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&global_SourceEngineUnitTestInit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&global_SourceEnginePreInit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&global_SourceEngineInit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, double, double, int >)&global_SourceEngineFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&global_SourceEngineShutdown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&global_UpdateWindowSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< float >)&global_GetDiagonalDpi;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&global_AppIsDedicatedServer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&global_ToolsStallMonitor_IndicateActivity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, long >)&globalOVRLipSync_ovrLipSync_Initialize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long >)&globalOVRLipSync_ovrLipSync_Shutdown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, long >)&globalOVRLipSync_ovrLipSync_DestroyContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, long >)&globalOVRLipSync_ovrLipSync_ResetContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long >)&globalOVRLipSync_ovrLipSync_CreateContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, int, long >)&globalOVRLipSync_ovrLipSync_CreateContextEx;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, long, int, int, long >)&globalOVRLipSync_ovrLipSync_SendSignal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< uint, void*, int, long, void*, long >)&globalOVRLipSync_ovrLipSync_ProcessFrameEx;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamHTMLSurface;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamAPI_RunCallbacks;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamGameServer_RunCallbacks;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamUser;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamFriends;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamNetworkingMessages;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamNetworkingUtils;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamMatchmaking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamGameServer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamApps;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamUtils;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&globalSteam_SteamGameServer_BSecure;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< ulong >)&globalSteam_SteamGameServer_GetSteamID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamGameServer_Shutdown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamGameServer_ReleaseCurrentThreadMemory;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalSteam_SteamNetworkingSockets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void*, void* >)&globalSteam_SteamGameServer_Init;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalYoga_YGNodeNew;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeNewWithConfig;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeFree;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeReset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, long, void* >)&globalYoga_YGNodeCalculateLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&globalYoga_YGNodeGetHasNewLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&globalYoga_YGNodeSetHasNewLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeIsDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeMarkDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&globalYoga_YGNodeInsertChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&globalYoga_YGNodeRemoveChild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeRemoveAllChildren;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&globalYoga_YGNodeGetChildCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeGetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&globalYoga_YGNodeSetConfig;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeLayoutGetLeft;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeLayoutGetTop;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeLayoutGetRight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeLayoutGetBottom;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeLayoutGetWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeLayoutGetHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeLayoutGetDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeLayoutGetHadOverflow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float >)&globalYoga_YGNodeLayoutGetMargin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float >)&globalYoga_YGNodeLayoutGetBorder;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float >)&globalYoga_YGNodeLayoutGetPadding;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&globalYoga_YGConfigNew;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGConfigFree;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&globalYoga_YGConfigSetUseWebDefaults;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGConfigSetPointScaleFactor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&globalYoga_YGNodeCopyStyle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetFlexDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetFlexDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetJustifyContent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetJustifyContent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetAlignContent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetAlignContent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetAlignItems;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetAlignItems;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetAlignSelf;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetAlignSelf;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetPositionType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetPositionType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetFlexWrap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetFlexWrap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetOverflow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetOverflow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetDisplay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&globalYoga_YGNodeStyleGetDisplay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetFlex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeStyleGetFlex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetFlexGrow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeStyleGetFlexGrow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetFlexShrink;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeStyleGetFlexShrink;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetFlexBasis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetFlexBasisPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleSetFlexBasisAuto;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleGetFlexBasis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float, void* >)&globalYoga_YGNodeStyleSetPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float, void* >)&globalYoga_YGNodeStyleSetPositionPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleGetPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float, void* >)&globalYoga_YGNodeStyleSetMargin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float, void* >)&globalYoga_YGNodeStyleSetMarginPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleSetMarginAuto;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleGetMargin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float, void* >)&globalYoga_YGNodeStyleSetPadding;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float, void* >)&globalYoga_YGNodeStyleSetPaddingPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&globalYoga_YGNodeStyleGetPadding;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float, void* >)&globalYoga_YGNodeStyleSetBorder;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float >)&globalYoga_YGNodeStyleGetBorder;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float, void* >)&globalYoga_YGNodeStyleSetGap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, float >)&globalYoga_YGNodeStyleGetGap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetWidthPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleSetWidthAuto;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleGetWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetHeightPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleSetHeightAuto;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleGetHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetMinWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetMinWidthPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleGetMinWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetMinHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetMinHeightPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleGetMinHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetMaxWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetMaxWidthPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleGetMaxWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetMaxHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetMaxHeightPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&globalYoga_YGNodeStyleGetMaxHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&globalYoga_YGNodeStyleSetAspectRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&globalYoga_YGNodeStyleGetAspectRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&globalYoga_YGNodeSetMeasureFunc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&globalYoga_YGNodeHasMeasureFunc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&Glue_Networking_RunCallbacks;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void*, void* >)&Glue_Networking_SetDebugFunction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&Glue_Networking_GetAuthenticationStatus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&Glue_Networking_GetRelayNetworkStatus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&Glue_Networking_CreateSocket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&Glue_Networking_CreateIpBasedSocket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Networking_CloseSocket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Networking_GetSocketAddress;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&Glue_Networking_BeginAsyncRequestFakeIP;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&Glue_Networking_GetIdentity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&Glue_Networking_CreatePollGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Networking_DestroyPollGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&Glue_Networking_SetPollGroup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&Glue_Networking_GetPollGroupMessages;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< ulong, int, void* >)&Glue_Networking_ConnectToSteamId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Networking_ConnectToIpAddress;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&Glue_Networking_CloseConnection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Networking_AcceptConnection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Networking_FlushMessagesOnConnection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, long >)&Glue_Networking_SendMessage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&Glue_Networking_GetConnectionMessages;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&Glue_Networking_GetConnectionState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Networking_GetConnectionDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&Glue_Networking_GetConnectionSteamId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&Glue_RndrDvcMngr_WriteVideoConfig;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&Glue_RndrDvcMngr_ResetVideoConfig;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, int, int, int, long, void* >)&Glue_RndrDvcMngr_ChangeVideoMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int >)&Glue_RndrDvcMngr_GetDisplayModes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Resources_GetMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Resources_GetTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Resources_GetModel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Resources_GetAnimationGraph;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Glue_Resources_GetShader;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAnimationGraph_DestroyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&IAnimationGraph_IsStrongHandleValid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&IAnimationGraph_IsError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&IAnimationGraph_IsStrongHandleLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&IAnimationGraph_CopyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&IAnimationGraph_GetBindingPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAnimationGraph_GetResourceName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAnimationGraph_GetParameterList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAnimParameter_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&IAnimParameter_GetParameterType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAnimParameter_GetDefaultValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAnimParameter_GetMinValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAnimParameter_GetMaxValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAnimParameter_GetNumOptionNames;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IAnimParameter_GetOptionName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&nmPrmtrnstnc_SetValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&nmPrmtrnstnc_SetValue_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&nmPrmtrnstnc_SetValue_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&nmPrmtrnstnc_SetValue_3;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&nmPrmtrnstnc_SetValue_4;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&nmPrmtrnstnc_SetEnumValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&nmPrmtrnstnc_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&nmPrmtrnstnc_IsAutoReset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&nmPrmtrnstnc_GetParameterType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&nmPrmtrLst_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&nmPrmtrLst_GetParameter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&nmPrmtrLst_GetParameter_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&syncRsrcDtRqst_GetFileName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&syncRsrcDtRqst_GetResultBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&syncRsrcDtRqst_GetResultBufferSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, int, long, int, int >)&ImageLoader_GetMemRequired;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, int, int, long, int >)&ImageLoader_GetMemRequired_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, long, int, int, int, int, int >)&ImageLoader_ConvertImageFormat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IMaterial2_DestroyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&IMaterial2_IsStrongHandleValid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&IMaterial2_IsError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&IMaterial2_IsStrongHandleLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&IMaterial2_CopyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&IMaterial2_GetBindingPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IMaterial2_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IMaterial2_GetNameWithMod;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&IMaterial2_GetSimilarityKey;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IMaterial2_IsLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IMaterial2_GetMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IMaterial2_GetMode_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IMaterial2_GetMode_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IMaterial2_GetRenderAttributes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IMaterial2_RecreateAllStaticConstantAndCommandBuffers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IMaterial2_GetFirstTextureAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IMaterial2_GetBoolAttributeOrDefault;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IMaterial2_GetIntAttributeOrDefault;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float >)&IMaterial2_GetFloatAttributeOrDefault;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IMaterial2_GetTextureAttributeOrDefault;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&IMaterial2_HasParam;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IMaterial2_Set;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IMaterial2_GetString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IMaterial2_Set_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IMaterial2_GetVector4;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IMaterial2_Set_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IMaterial2_GetTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IMaterial2_SetEdited;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IMaterial2_IsEdited;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IMaterial2_ReloadStaticCombos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Physggrgtnstnc_WakeUp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Physggrgtnstnc_PutToSleep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&Physggrgtnstnc_IsAsleep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&Physggrgtnstnc_SetVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&Physggrgtnstnc_AddVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&Physggrgtnstnc_SetAngularVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&Physggrgtnstnc_AddAngularVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&Physggrgtnstnc_GetBodyCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&Physggrgtnstnc_GetBodyHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&Physggrgtnstnc_GetBodyName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, uint >)&Physggrgtnstnc_GetBodyNameHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&Physggrgtnstnc_GetBodyByNameHash;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&Physggrgtnstnc_GetBodyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&Physggrgtnstnc_FindBodyByName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&Physggrgtnstnc_GetJointCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&Physggrgtnstnc_GetJointHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&Physggrgtnstnc_RemoveJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Physggrgtnstnc_GetOrigin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&Physggrgtnstnc_GetMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&Physggrgtnstnc_SetSurfaceProperties;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&Physggrgtnstnc_GetTotalMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&Physggrgtnstnc_SetTotalMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&Physggrgtnstnc_SetLinearDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&Physggrgtnstnc_SetAngularDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&Physggrgtnstnc_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsBody_SetGravityScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsBody_GetGravityScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_IsGravityEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IPhysicsBody_EnableGravity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsBody_SetMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsBody_GetMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetLocalMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_SetLocalMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IPhysicsBody_SetOverrideMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_GetOverrideMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_SetPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_SetOrientation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetOrientation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsBody_SetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_SetLinearVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetLinearVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_GetVelocityAtPoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_AddLinearVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_SetAngularVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetAngularVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_Wake;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_Sleep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_IsSleeping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_EnableAutoSleeping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_DisableAutoSleeping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_EnableTouchEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_DisableTouchEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_IsTouchEventEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&IPhysicsBody_GetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&IPhysicsBody_SetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_GetShapeCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&IPhysicsBody_GetShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, int >)&IPhysicsBody_AddSphereShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, int >)&IPhysicsBody_AddCapsuleShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int >)&IPhysicsBody_AddBoxShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void*, int >)&IPhysicsBody_AddHullShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&IPhysicsBody_AddHullShape_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&IPhysicsBody_AddHullShape_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, void*, int, int >)&IPhysicsBody_AddMeshShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, int >)&IPhysicsBody_AddMeshShape_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, int, float, float, int, int >)&IPhysicsBody_AddHeightFieldShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_RemoveShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_PurgeShapes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_ApplyLinearImpulse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsBody_ApplyLinearImpulseAtWorldSpace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_ApplyAngularImpulse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_ApplyForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsBody_ApplyForceAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_ApplyTorque;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_ClearForces;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_ClearTorque;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_Enable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_Disable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_IsEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_BuildMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsBody_SetLinearDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsBody_GetLinearDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsBody_SetAngularDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsBody_GetAngularDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_BuildBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsBody_GetDensity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_GetClosestPoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsBody_SetMaterialIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_GetAggregate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, void* >)&IPhysicsBody_SetTargetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&IPhysicsBody_CheckOverlap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetLocalInertiaVector;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_GetLocalInertiaOrientation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsBody_SetLocalInertia;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_ResetLocalInertia;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsBody_ManagedObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, int, int, void* >)&IPhysicsBody_SetMotionLocks;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IPhysicsBody_IsTouching;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IPhysicsBody_IsTouching_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IPhysicsBody_SetTrigger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsJoint_GetWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsJoint_GetBody1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsJoint_GetBody2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsJoint_GetLocalFrameA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsJoint_GetLocalFrameB;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsJoint_SetLocalFrameA;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsJoint_SetLocalFrameB;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IPhysicsJoint_SetEnableCollision;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsJoint_IsCollisionEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&IPhysicsJoint_GetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsJoint_SetLinearSpring;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsJoint_GetLinearSpring;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsJoint_SetAngularSpring;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsJoint_GetAngularSpring;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, void* >)&IPhysicsJoint_SetAngularMotor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_SetMinLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetMinLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_SetMaxLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetMaxLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_SetMinForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetMinForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_SetMaxForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetMaxForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_SetFriction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsJoint_SetLimit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&IPhysicsJoint_SetLimitEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetAngle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetLinearImpulse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetAngularImpulse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetMaxLinearImpulse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_GetMaxAngularImpulse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_SetMaxLinearImpulse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_SetMaxAngularImpulse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&IPhysicsJoint_SetMotorVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float, void* >)&IPhysicsJoint_SetTargetRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsJoint_Motor_SetLinearVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsJoint_Motor_SetAngularVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_Motor_SetMaxVelocityForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_Motor_SetMaxVelocityTorque;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_Motor_SetLinearHertz;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_Motor_SetLinearDampingRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_Motor_SetAngularHertz;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_Motor_SetAngularDampingRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_Motor_SetMaxSpringForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsJoint_Motor_SetMaxSpringTorque;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsJoint_Motor_GetLinearVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsJoint_Motor_GetAngularVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_Motor_GetMaxVelocityForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_Motor_GetMaxVelocityTorque;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_Motor_GetLinearHertz;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_Motor_GetLinearDampingRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_Motor_GetAngularHertz;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_Motor_GetAngularDampingRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_Motor_GetMaxSpringForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsJoint_Motor_GetMaxSpringTorque;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, byte, void* >)&IPhysicsShape_AddCollisionFunctionMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, byte, void* >)&IPhysicsShape_RemoveCollisionFunctionMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, byte >)&IPhysicsShape_GetCollisionFunctionMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&IPhysicsShape_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&IPhysicsShape_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&IPhysicsShape_RemoveTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsShape_ClearTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsShape_GetBody;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsShape_SetMaterialIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&IPhysicsShape_SetSurfaceIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_GetMaterialName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&IPhysicsShape_GetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, void*, void* >)&IPhysicsShape_UpdateMeshShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, int, int, int, float, float, void* >)&IPhysicsShape_UpdateHeightShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&IPhysicsShape_UpdateSphereShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, void* >)&IPhysicsShape_UpdateCapsuleShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void*, void* >)&IPhysicsShape_UpdateHullShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsShape_ManagedObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IPhysicsShape_SetTrigger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsShape_IsTrigger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IPhysicsShape_GetTriangulation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&IPhysicsShape_GetTriangulationForNavmesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsShape_GetOutline;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_AsSphere;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_AsCapsule;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&IPhysicsShape_UpdateBoxShape;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsShape_SetFriction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&IPhysicsShape_GetFriction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsShape_SetLocalVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_GetLocalVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsShape_SetElasticity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsShape_SetRollingResistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IPhysicsShape_SetIgnoreTraces;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IPhysicsShape_SetHasNoMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_BuildBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_LocalBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IPhysicsShape_IsTouching;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsWorld_AddBody;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_RemoveBody;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsWorld_GetWorldReferenceBody;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_SetWorldReferenceBody;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_RemoveJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_SetGravity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsWorld_GetGravity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&IPhysicsWorld_SetSimulation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&IPhysicsWorld_GetSimulation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsWorld_EnableSleeping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsWorld_DisableSleeping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsWorld_IsSleepingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&IPhysicsWorld_SetMaximumLinearSpeed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddWeldJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddSpringJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddRevoluteJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddPrismaticJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddSphericalJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddMotorJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_SetCollisionRulesFromJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, int, void* >)&IPhysicsWorld_StepSimulation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_ProcessIntersections;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_DestroyAggregateInstance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, ulong, long, int >)&IPhysicsWorld_CreateAggregateInstance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, ulong, long, int >)&IPhysicsWorld_CreateAggregateInstance_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_SetDebugScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsWorld_GetDebugScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_Draw;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsWorld_ManagedObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, ushort, void* >)&IPhysicsWorld_Query;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, ushort, void* >)&IPhysicsWorld_Query_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, ushort, void* >)&IPhysicsWorld_Query_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&PhysSrfcPrprtyCn_GetSurfacePropCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&PhysSrfcPrprtyCn_GetSurfaceProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&PhysSrfcPrprtyCn_AddProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPVS_IsEmptyPVS;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, int >)&IPVS_IsInPVS;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, void*, int >)&IPVS_IsAbsBoxInPVS;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&IPVS_IsSkyVisibleFromPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&IPVS_IsSunVisibleFromPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RyTrcScnWrld_BeginBuild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&RyTrcScnWrld_AddSceneWorldToBuild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&RyTrcScnWrld_EndBuild;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&RyTrcScnWrld_BuildTLASForWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RD_RgstrRsrcDttl_SetDataRegistrationFailed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RD_RgstrRsrcDttl_IsReloading;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&RD_RgstrRsrcDttl_SetFinalResourceData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RD_RgstrRsrcDttl_GetDataRegistrationFailed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RD_RgstrRsrcDttl_GetFinalResourceData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&RD_RgstrRsrcDttl_GetResultBufferSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, int, void* >)&IRenderContext_Draw;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, int, int, void* >)&IRenderContext_DrawInstanced;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, int, int, int, void* >)&IRenderContext_DrawIndexed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, int, int, int, int, void* >)&IRenderContext_DrawIndexedInstanced;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, uint, void* >)&IRenderContext_DrawInstancedIndirect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, uint, void* >)&IRenderContext_DrawIndexedInstancedIndirect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, long, long, long, long, long, void* >)&IRenderContext_TextureBarrierTransition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, long, long, long, long, void* >)&IRenderContext_BufferBarrierTransition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IRenderContext_SetScissorRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IRenderContext_GetAttributesPtrForModify;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IRenderContext_GenerateMipMaps;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, void* >)&IRenderContext_Clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&IRenderContext_BindRenderTargets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IRenderContext_RestoreRenderTargets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IRenderContext_SetViewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IRenderContext_SetViewport_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&IRenderContext_SetViewport_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IRenderContext_GetViewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IRenderContext_Submit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IRenderContext_SetAssociatedThreadIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void* >)&IRenderContext_BindRenderTargets_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IRenderContext_BindIndexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int >)&IRenderContext_BindIndexBuffer_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, int >)&IRenderContext_BindVertexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, int, int >)&IRenderContext_BindVertexBuffer_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, int >)&IRenderContext_BindVertexBuffer_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, int, int >)&IRenderContext_BindVertexBuffer_3;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IRenderContext_BindVertexShader;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IRenderContext_BindPixelShader;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, int, int, void* >)&IRenderContext_SetDynamicConstantBufferData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&IRenderContext_BindTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, int, int, void* >)&IRenderContext_ReadTexturePixels;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, int, int, void* >)&IRenderContext_ReadBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IRenderContext_BeginPixEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IRenderContext_EndPixEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IRenderContext_PixSetMarker;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISceneLayer_SetObjectMatchID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&ISceneLayer_AddObjectFlagsRequiredMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&ISceneLayer_AddObjectFlagsExcludedMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&ISceneLayer_RemoveObjectFlagsRequiredMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&ISceneLayer_RemoveObjectFlagsExcludedMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&ISceneLayer_GetObjectFlagsRequiredMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&ISceneLayer_GetObjectFlagsExcludedMask;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneLayer_GetDebugName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneLayer_GetRenderAttributesPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, long, uint, void* >)&ISceneLayer_SetAttr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&ISceneLayer_SetBoundingVolumeSizeCullThresholdInPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&ISceneLayer_SetClearColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&ISceneLayer_GetTextureValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISceneLayer_GetTextureValue_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneLayer_GetColorTarget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneLayer_GetDepthTarget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&ISceneLayer_SetOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, long>)&_Get__ISceneLayer_m_nLayerFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, long, void*>)&_Set__ISceneLayer_m_nLayerFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, long>)&_Get__ISceneLayer_LayerEnum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, long, void*>)&_Set__ISceneLayer_LayerEnum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__ISceneLayer_m_viewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__ISceneLayer_m_viewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__ISceneLayer_m_nClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__ISceneLayer_m_nClearFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneView_GetMainViewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneView_GetSwapChain;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&ISceneView_AddDependentView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneView_GetRenderAttributesPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, void* >)&ISceneView_AddRenderLayer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int, void* >)&ISceneView_AddManagedProceduralLayer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&ISceneView_SetDefaultLayerObjectRequiredFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&ISceneView_SetDefaultLayerObjectExcludedFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&ISceneView_GetDefaultLayerObjectRequiredFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&ISceneView_GetDefaultLayerObjectExcludedFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISceneView_AddWorldToRenderList;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&ISceneView_FindOrCreateRenderTarget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISceneView_SetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneView_GetParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISceneView_GetPriority;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&ISceneView_SetPriority;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneView_GetFrustum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISceneView_GetPostProcessEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISceneView_GetToolsVisMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__ISceneView_m_ViewUniqueId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__ISceneView_m_ViewUniqueId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__ISceneView_m_ManagedCameraId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__ISceneView_m_ManagedCameraId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneWorld_DeleteAllObjects;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneWorld_Release;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISceneWorld_GetSceneObjectCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISceneWorld_IsEmpty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneWorld_GetWorldDebugName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&ISceneWorld_SetDeleteAtEndOfFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISceneWorld_GetDeleteAtEndOfFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneWorld_DeleteEndOfFrameObjects;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&ISceneWorld_MeshTrace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISceneWorld_GetPVS;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISceneWorld_SetPVS;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISceneWorld_Add3DSkyboxWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISceneWorld_Remove3DSkyboxWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, void* >)&ISceneWorld_Set3DSkyboxParameters;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ShdrCmplCntxt_Delete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ShdrCmplCntxt_SetMaskedCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&ISteamApps_BIsAppInstalled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISteamApps_BIsCybercafe;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&ISteamApps_BIsDlcInstalled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISteamApps_BIsLowViolence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISteamApps_BIsSubscribed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&ISteamApps_BIsSubscribedApp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamApps_GetAvailableGameLanguages;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamApps_GetCurrentGameLanguage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISteamApps_GetAppBuildId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISteamApps_BIsVACBanned;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamApps_GetCommandLine;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&ISteamApps_GetAppInstallDir;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, int, int, void* >)&ISteamFriends_GetProfileItemPropertyString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, ulong >)&ISteamFriends_RequestEquippedProfileItems;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamFriends_GetPersonaName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&ISteamFriends_SetRichPresence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamFriends_ClearRichPresence;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamGameServer_SetServerName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamGameServer_SetMapName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamGameServer_SetGameTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&ISteamGameServer_SetDedicatedServer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&ISteamGameServer_SetAdvertiseServerActive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&ISteamGameServer_SetMaxPlayerCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamGameServer_LogOnAnonymous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamGameServer_LogOn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamGameServer_LogOff;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamGameServer_SetGameDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamGameServer_SetProduct;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamGameServer_SetModDir;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISteamGameServer_BLoggedOn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void*, void*, void* >)&ISteamGameServer_GetAuthSessionTicket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void*, int, long >)&ISteamGameServer_BeginAuthSession;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamGameServer_CancelAuthTicket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&ISteamGameServer_EndAuthSession;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&StmHTMLSrfc_Init;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&StmHTMLSrfc_Shutdown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, ulong >)&StmHTMLSrfc_CreateBrowser;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&StmHTMLSrfc_RemoveBrowser;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void*, void*, void* >)&StmHTMLSrfc_LoadURL;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void*, void*, void* >)&StmHTMLSrfc_AddHeader;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, uint, uint, void* >)&StmHTMLSrfc_SetSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, uint, uint, void* >)&StmHTMLSrfc_GetLinkAtPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, uint, void* >)&StmHTMLSrfc_SetHorizontalScroll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, uint, void* >)&StmHTMLSrfc_SetVerticalScroll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&StmHTMLSrfc_SetKeyFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&StmHTMLSrfc_AllowStartRequest;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&StmHTMLSrfc_JSDialogResponse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&StmHTMLSrfc_SetBackgroundMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, float, void* >)&StmHTMLSrfc_SetDPIScalingFactor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, uint, int, int, void* >)&StmHTMLSrfc_KeyDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, uint, int, void* >)&StmHTMLSrfc_KeyUp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, uint, int, void* >)&StmHTMLSrfc_KeyChar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&StmHTMLSrfc_MouseUp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&StmHTMLSrfc_MouseDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&StmHTMLSrfc_MouseDoubleClick;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, int, void* >)&StmHTMLSrfc_MouseMove;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&StmHTMLSrfc_MouseWheel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, uint, int, int, void* >)&StmHTMLSrfc_SetCookie;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&StmMtchmkng_LeaveLobby;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, int >)&StmMtchmkng_GetNumLobbyMembers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, int, ulong >)&StmMtchmkng_GetLobbyMemberByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void*, void* >)&StmMtchmkng_GetLobbyData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void*, void*, int >)&StmMtchmkng_SetLobbyData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, int >)&StmMtchmkng_GetLobbyDataCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void*, void* >)&StmMtchmkng_DeleteLobbyData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, int, void*, int, void*, int, int >)&StmMtchmkng_GetLobbyDataByIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void*, int, int, int, int >)&StmNtwrkngMssgs_SendMessageToUser;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, int >)&StmNtwrkngMssgs_ReceiveMessagesOnChannel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, int >)&StmNtwrkngMssgs_AcceptSessionWithUser;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, int, int >)&StmNtwrkngMssgs_CloseChannelWithUser;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&StmNtwrkngMssgs_ReleaseMessage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&StmNtwrkngMssgs_GetConnectionInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&StmNtwrkngSckts_GetConnectionInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&StmNtwrkngSckts_StartAuthentication;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&StmNtwrkngSckts_BeginRequestFakeIP;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&StmNtwrkngSckts_ReleaseMessage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&StmNtwrkngtls_SetConfig;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, void* >)&StmNtwrkngtls_SetConfig_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&StmNtwrkngtls_InitializeRelayNetwork;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ISteamUser_BLoggedOn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&ISteamUser_GetSteamID;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, uint, void*, int >)&ISteamUser_GetVoice;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&ISteamUser_GetAvailableVoice;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&ISteamUser_GetVoiceOptimalSampleRate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint, void*, uint, void*, uint, int >)&ISteamUser_DecompressVoice;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamUser_StartVoiceRecording;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ISteamUser_StopVoiceRecording;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void*, void*, void* >)&ISteamUser_GetAuthSessionTicket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void*, int, long >)&ISteamUser_BeginAuthSession;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ISteamUser_CancelAuthTicket;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong, void* >)&ISteamUser_EndAuthSession;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int >)&ISteamUtils_InitFilterText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, ulong, void*, void*, uint, int >)&ISteamUtils_FilterText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&ITonemapSystem_SetTonemapParameters;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ITonemapSystem_ResetTonemapParameters;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IVfx_Init;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, ulong, ulong, void*, long, long, int, uint, void* >)&IVfx_CompileShader;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IVfx_ClearShaderCache;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IVfx_CreateSharedContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IVolumetricFog_IsFoggingEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&IVolumetricFog_SetParams;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IWorldReference_Release;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IWorldReference_IsWorldLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IWorldReference_IsErrorWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IWorldReference_IsMarkedForDeletion;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&IWorldReference_GetWorldBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IWorldReference_GetSceneWorld;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&IWorldReference_PrecacheAllWorldNodes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IWorldReference_GetFolder;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&IWorldReference_GetEntityCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&IWorldReference_GetEntityKeyValues;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IWorldReference_SetWorldTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&KeyValues3_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&KeyValues3_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&KeyValues3_IsArray;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&KeyValues3_IsTable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&KeyValues3_GetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&KeyValues3_GetValueBool;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&KeyValues3_GetValueInt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&KeyValues3_GetValueInt64;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&KeyValues3_GetValueUint64;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&KeyValues3_GetValueFloat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, double >)&KeyValues3_GetValueDouble;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&KeyValues3_GetValueString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&KeyValues3_GetValueVector;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&KeyValues3_GetValueColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&KeyValues3_SetValueBool;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&KeyValues3_SetValueString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&KeyValues3_SetValueResourceString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&KeyValues3_SetValueInt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&KeyValues3_SetValueFloat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&KeyValues3_SetMemberString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&KeyValues3_SetMemberInt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&KeyValues3_SetMemberFloat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&KeyValues3_GetMemberString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&KeyValues3_GetMemberInt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float >)&KeyValues3_GetMemberFloat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&KeyValues3_GetMemberVector;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&KeyValues3_SetToEmptyArray;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&KeyValues3_GetArrayLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&KeyValues3_ArrayAddToTail;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&KeyValues3_GetArrayElement;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&KeyValues3_FindOrCreateMember;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&KeyValues3_SetToEmptyTable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&KeyValues3_GetMemberCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&KeyValues3_GetMember;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&KeyValues3_GetMemberName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&MeshGlue_CreateRenderMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, void*, void*, void*, int, void*, void*, void*, int, void*, int, void*, int, void*, int, void*, int, void*, int, void*, int, void*, int, void*, int, void*, int, int, int, int, ulong, void* >)&MeshGlue_CreateModel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&MeshGlue_GetModelNumVertices;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint, void* >)&MeshGlue_GetModelVertices;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&MeshGlue_GetModelNumIndices;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint, void* >)&MeshGlue_GetModelIndices;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&MeshGlue_GetModelIndexCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&MeshGlue_GetModelIndexStart;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&MeshGlue_GetModelBaseVertex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&MeshGlue_SetMeshMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&MeshGlue_SetMeshPrimType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&MeshGlue_SetMeshBounds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&MeshGlue_SetMeshUvDensity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&MeshGlue_SetMeshVertexRange;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&MeshGlue_SetMeshIndexRange;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&MeshGlue_SetMeshVertexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, void* >)&MeshGlue_SetMeshIndexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void*, void*, int, void*, int, void* >)&MeshGlue_CreateVertexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void*, int, void* >)&MeshGlue_CreateIndexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&MeshGlue_LockVertexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void* >)&MeshGlue_UnlockVertexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&MeshGlue_LockIndexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void* >)&MeshGlue_UnlockIndexBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void* >)&MeshGlue_SetVertexBufferData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void* >)&MeshGlue_SetIndexBufferData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&MeshGlue_SetVertexBufferSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&MeshGlue_SetIndexBufferSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, int >)&MeshGlue_TriangulatePolygon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, void*, void* >)&MeshGlue_ClipPolygonLineSegment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, long, int >)&NativeEngine_SDLGmCntrllr_GetAxis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, long >)&NativeEngine_SDLGmCntrllr_GetControllerType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int >)&NativeEngine_SDLGmCntrllr_Close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, int, int, int >)&NativeEngine_SDLGmCntrllr_SetLEDColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, int, int, int >)&NativeEngine_SDLGmCntrllr_Rumble;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, int, int, int >)&NativeEngine_SDLGmCntrllr_RumbleTriggers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&NativeEngine_SDLGmCntrllr_GetGyroscope;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&NativeEngine_SDLGmCntrllr_GetAccelerometer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void*, long, void* >)&NativeLowLevel_Copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void*, uint, void* >)&PerformanceTrace_BeginEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void* >)&PerformanceTrace_EndEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&PhysicsTrace_Trace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&PhysicsTrace_TraceAll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&PhysicsTrace_TraceAgainstCapsule;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&PhysicsTrace_TraceAgainstBBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&PhysicsTrace_TraceAgainstSphere;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&RenderTools_SetRenderState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, void*, int, void*, int, void*, void* >)&RenderTools_Draw;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&RenderTools_ResolveFrameBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&RenderTools_ResolveDepthBuffer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, void*, void*, void* >)&RenderTools_DrawSceneObject;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, void*, void* >)&RenderTools_DrawModel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, void*, void* >)&RenderTools_DrawModel_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, int, int, void* >)&RenderTools_Compute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, uint, void* >)&RenderTools_ComputeIndirect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, uint, uint, void* >)&RenderTools_TraceRays;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, uint, void* >)&RenderTools_TraceRaysIndirect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, void* >)&RenderTools_SetDynamicConstantBufferData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, int, uint, uint, uint, uint, void* >)&RenderTools_CopyTexture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, uint, void* >)&RenderTools_SetGPUBufferData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, uint, void* >)&RenderTools_CopyGPUBufferHiddenStructureCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint, void* >)&RenderTools_SetGPUBufferHiddenStructureCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__RnCapsuleDesc_t_m_Capsule;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__RnCapsuleDesc_t_m_Capsule;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__RnCapsuleDesc_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__RnCapsuleDesc_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__RnCapsuleDesc_t_m_nSurfacePropertyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__RnCapsuleDesc_t_m_nSurfacePropertyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RnHull_t_GetVertexCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RnHull_t_GetEdgeCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&RnHull_t_GetVolume;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RnHull_t_GetMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RnHull_t_GetCentroid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&RnHull_t_GetSurfaceArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RnHull_t_GetMemory;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RnHull_t_GetBbox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&RnHull_t_GetVertex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, void* >)&RnHull_t_GetEdgeVertex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RnHullDesc_t_GetHull;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__RnHullDesc_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__RnHullDesc_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__RnHullDesc_t_m_nSurfacePropertyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__RnHullDesc_t_m_nSurfacePropertyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RnMesh_t_GetTriangleCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RnMesh_t_GetHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RnMesh_t_GetMemory;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RnMesh_t_GetBbox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RnMesh_t_GetMaterialCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void*, void*, void* >)&RnMesh_t_GetTriangle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RnMeshDesc_t_GetMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__RnMeshDesc_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__RnMeshDesc_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__RnMeshDesc_t_m_nSurfacePropertyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__RnMeshDesc_t_m_nSurfacePropertyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__RnSphereDesc_t_m_Sphere;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__RnSphereDesc_t_m_Sphere;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__RnSphereDesc_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__RnSphereDesc_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__RnSphereDesc_t_m_nSurfacePropertyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__RnSphereDesc_t_m_nSurfacePropertyIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nTrianglesRendered;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nTrianglesRendered;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nArtistTrianglesRendered;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nArtistTrianglesRendered;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nRenderBatchDraws;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nRenderBatchDraws;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nDrawCalls;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nDrawCalls;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nDrawPrimitives;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nDrawPrimitives;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumMaterialCompute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumMaterialCompute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumMaterialSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumMaterialSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumVfxEval;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumVfxEval;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumVfxRule;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumVfxRule;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumConstantBufferBytes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumConstantBufferBytes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nMaxTransformRow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nMaxTransformRow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumRowsUsed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumRowsUsed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsTested;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsTested;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumVerticesReferenced;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumVerticesReferenced;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumPrimaryContexts;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumPrimaryContexts;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumSecondaryContexts;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumSecondaryContexts;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__ScnSystmPrFrmStt_m_nNumViewsRendered;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__ScnSystmPrFrmStt_m_nNumViewsRendered;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumResolves;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumResolves;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumCullBoxes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumCullBoxes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ulong>)&_Get__ScnSystmPrFrmStt_m_nCullingBoxCycleCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ulong, void*>)&_Set__ScnSystmPrFrmStt_m_nCullingBoxCycleCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumFadingObjects;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumFadingObjects;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumShadowedLightsInView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumShadowedLightsInView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumShadowMaps;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumShadowMaps;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nNumRenderTargetBinds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nNumRenderTargetBinds;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__ScnSystmPrFrmStt_m_nPushConstantSets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__ScnSystmPrFrmStt_m_nPushConstantSets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ShaderTools_GetShaderSource;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&ShaderTools_MaskShaderSource;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&SheetSequence_t_FrameCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__SheetSequence_t_m_nId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__SheetSequence_t_m_nId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SheetSequence_t_m_bClamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SheetSequence_t_m_bClamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SheetSequence_t_m_bAlphaCrop;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SheetSequence_t_m_bAlphaCrop;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SheetSequence_t_m_bNoColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SheetSequence_t_m_bNoColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SheetSequence_t_m_bNoAlpha;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SheetSequence_t_m_bNoAlpha;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__SheetSequence_t_m_flTotalTime;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__SheetSequence_t_m_flTotalTime;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&ShtSqncFrm_t_ImageCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&ShtSqncFrm_t_GetImage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__ShtSqncFrm_t_m_flDisplayTime;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__ShtSqncFrm_t_m_flDisplayTime;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&Steam_Inventory_GetAllItems;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&Steam_Inventory_DefinitionCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int >)&Steam_Inventory_GetDefinitionId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void*, void* >)&Steam_Inventory_GetDefinitionProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void*, void*, int >)&Steam_Inventory_GetDefinitionPrice;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&Steam_Inventory_HasPrices;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&Steam_Inventory_GetCurrency;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&Steam_Inventory_CheckOut;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&Steam_Inventory_IsCheckingOut;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&Steam_Inventory_WasCheckoutSuccessful;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, int, int >)&Steam_Screenshots_WriteScreenshot;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< ulong, void* >)&SteamUgc_CUgcInstall_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&SteamUgc_CUgcInstall_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&SteamUgc_CUgcInstall_GetResultJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcInstall_m_complete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcInstall_m_complete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcInstall_m_success;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcInstall_m_success;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcInstall_m_resultCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcInstall_m_resultCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcQuery_CreateQuery;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&SteamUgc_CUgcQuery_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&SteamUgc_CUgcQuery_GetResultJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcQuery_m_complete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcQuery_m_complete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcQuery_m_success;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcQuery_m_success;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcQuery_m_resultCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcQuery_m_resultCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&SteamUgc_CUgcUpdate_CreateCommunityItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&SteamUgc_CUgcUpdate_CreateMtxItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< ulong, void* >)&SteamUgc_CUgcUpdate_OpenCommunityItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&SteamUgc_CUgcUpdate_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&SteamUgc_CUgcUpdate_GetPublishedFileId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_SetTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_SetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_SetLanguage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_SetMetadata;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&SteamUgc_CUgcUpdate_SetVisibility;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_SetTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_SetContentFolder;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_SetPreviewImage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&SteamUgc_CUgcUpdate_SetAllowLegacyUpload;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&SteamUgc_CUgcUpdate_AddKeyValueTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_RemoveKeyValueTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&SteamUgc_CUgcUpdate_RemoveAllKeyValueTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&SteamUgc_CUgcUpdate_AddPreviewFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&SteamUgc_CUgcUpdate_AddPreviewVideo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void*, void* >)&SteamUgc_CUgcUpdate_UpdatePreviewFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void*, void* >)&SteamUgc_CUgcUpdate_UpdatePreviewVideo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&SteamUgc_CUgcUpdate_RemovePreview;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&SteamUgc_CUgcUpdate_SetRequiredGameVersions;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&SteamUgc_CUgcUpdate_Submit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&SteamUgc_CUgcUpdate_GetProgressPercent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&SteamUgc_CUgcUpdate_GetBytesProcessed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&SteamUgc_CUgcUpdate_GetBytesTotal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcUpdate_m_creating;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcUpdate_m_creating;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcUpdate_m_created;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcUpdate_m_created;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcUpdate_m_submitted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcUpdate_m_submitted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcUpdate_m_complete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcUpdate_m_complete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcUpdate_m_success;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcUpdate_m_success;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__SteamUgc_CUgcUpdate_m_resultCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__SteamUgc_CUgcUpdate_m_resultCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&VertexLayout_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&VertexLayout_Destroy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&VertexLayout_Free;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, uint, int, void* >)&VertexLayout_Add;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&VertexLayout_Build;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&VfxCmpldShdrnf_t_Delete;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__VfxCmpldShdrnf_t_compilerOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__VfxCmpldShdrnf_t_compilerOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__VfxCmpldShdrnf_t_compileFailed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__VfxCmpldShdrnf_t_compileFailed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VPhysXBodyPart_t_GetSphereCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&VPhysXBodyPart_t_GetSphere;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VPhysXBodyPart_t_GetCapsuleCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&VPhysXBodyPart_t_GetCapsule;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VPhysXBodyPart_t_GetHullCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&VPhysXBodyPart_t_GetHull;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VPhysXBodyPart_t_GetMeshCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&VPhysXBodyPart_t_GetMesh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VPhysXBodyPart_t_GetCollisionAttributeCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, ushort >)&VPhysXBodyPart_t_GetCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint>)&_Get__VPhysXBodyPart_t_m_nFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, uint, void*>)&_Set__VPhysXBodyPart_t_m_nFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXBodyPart_t_m_flMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXBodyPart_t_m_flMass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort>)&_Get__VPhysXBodyPart_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort, void*>)&_Set__VPhysXBodyPart_t_m_nCollisionAttributeIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXBodyPart_t_m_flInertiaScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXBodyPart_t_m_flInertiaScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXBodyPart_t_m_flLinearDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXBodyPart_t_m_flLinearDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXBodyPart_t_m_flAngularDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXBodyPart_t_m_flAngularDamping;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__VPhysXBodyPart_t_m_bOverrideMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__VPhysXBodyPart_t_m_bOverrideMassCenter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__VPhysXBodyPart_t_m_vMassCenterOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__VPhysXBodyPart_t_m_vMassCenterOverride;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&VPhysXJoint_t_GetLinearLimitMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&VPhysXJoint_t_GetLinearLimitMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&VPhysXJoint_t_GetSwingLimitMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&VPhysXJoint_t_GetSwingLimitMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&VPhysXJoint_t_GetTwistLimitMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&VPhysXJoint_t_GetTwistLimitMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&VPhysXJoint_t_SetLinearLimitMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&VPhysXJoint_t_SetLinearLimitMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&VPhysXJoint_t_SetSwingLimitMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&VPhysXJoint_t_SetSwingLimitMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&VPhysXJoint_t_SetTwistLimitMin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&VPhysXJoint_t_SetTwistLimitMax;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort>)&_Get__VPhysXJoint_t_m_nType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort, void*>)&_Set__VPhysXJoint_t_m_nType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort>)&_Get__VPhysXJoint_t_m_nBody1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort, void*>)&_Set__VPhysXJoint_t_m_nBody1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort>)&_Get__VPhysXJoint_t_m_nBody2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort, void*>)&_Set__VPhysXJoint_t_m_nBody2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort>)&_Get__VPhysXJoint_t_m_nFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, ushort, void*>)&_Set__VPhysXJoint_t_m_nFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__VPhysXJoint_t_m_bEnableCollision;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__VPhysXJoint_t_m_bEnableCollision;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__VPhysXJoint_t_m_bEnableLinearLimit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__VPhysXJoint_t_m_bEnableLinearLimit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__VPhysXJoint_t_m_bEnableLinearMotor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__VPhysXJoint_t_m_bEnableLinearMotor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__VPhysXJoint_t_m_vLinearTargetVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__VPhysXJoint_t_m_vLinearTargetVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXJoint_t_m_flMaxForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXJoint_t_m_flMaxForce;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__VPhysXJoint_t_m_bEnableSwingLimit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__VPhysXJoint_t_m_bEnableSwingLimit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__VPhysXJoint_t_m_bEnableTwistLimit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__VPhysXJoint_t_m_bEnableTwistLimit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int>)&_Get__VPhysXJoint_t_m_bEnableAngularMotor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, int, void*>)&_Set__VPhysXJoint_t_m_bEnableAngularMotor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__VPhysXJoint_t_m_vAngularTargetVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__VPhysXJoint_t_m_vAngularTargetVelocity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXJoint_t_m_flMaxTorque;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXJoint_t_m_flMaxTorque;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXJoint_t_m_flLinearFrequency;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXJoint_t_m_flLinearFrequency;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXJoint_t_m_flLinearDampingRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXJoint_t_m_flLinearDampingRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXJoint_t_m_flAngularFrequency;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXJoint_t_m_flAngularFrequency;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXJoint_t_m_flAngularDampingRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXJoint_t_m_flAngularDampingRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXJoint_t_m_flLinearStrength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXJoint_t_m_flLinearStrength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__VPhysXJoint_t_m_flAngularStrength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__VPhysXJoint_t_m_flAngularStrength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__VPhysXJoint_t_m_Frame1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__VPhysXJoint_t_m_Frame1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&_Get__VPhysXJoint_t_m_Frame2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*, void*>)&_Set__VPhysXJoint_t_m_Frame2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&VSound_t_DestroyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&VSound_t_IsStrongHandleValid;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&VSound_t_IsError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, int >)&VSound_t_IsStrongHandleLoaded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&VSound_t_CopyStrongHandle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]< void*, void* >)&VSound_t_GetBindingPtr;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&VSound_t_format;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VSound_t_BitsPerSample;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VSound_t_channels;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VSound_t_BytesPerSample;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VSound_t_m_sampleFrameSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&VSound_t_m_rate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&VSound_t_Duration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&WindowsGlue_FindFile;
+ 	}
+
         [UnmanagedCallersOnly(EntryPoint = "CnmtnGrpBldr_DeleteThis")]
         public static void* CnmtnGrpBldr_DeleteThis( void* self )
         {
@@ -67,109 +2781,112 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CAttachment_m_name")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CAttachment_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CAttachment_m_name( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CAttachment_m_name")]
-        public static void _Set__CAttachment_m_name( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CAttachment_m_nInfluences")]
-        public static void* _Get__CAttachment_m_nInfluences( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CAttachment_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CAttachment_m_name( void* self, void* value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CAttachment_m_nInfluences")]
-        public static void _Set__CAttachment_m_nInfluences( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CAttachment_m_nInfluences", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static byte _Get__CAttachment_m_nInfluences( void* self )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CAttachment_m_bIgnoreRotation")]
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CAttachment_m_nInfluences", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CAttachment_m_nInfluences( void* self, byte value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CAttachment_m_bIgnoreRotation", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CAttachment_m_bIgnoreRotation( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CAttachment_m_bIgnoreRotation")]
-        public static void _Set__CAttachment_m_bIgnoreRotation( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CAttachment_m_bIgnoreRotation", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CAttachment_m_bIgnoreRotation( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Create")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Create", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixBuffer_Create()
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Dispose")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Dispose", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixBuffer_Dispose( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_GetDataPointer")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_GetDataPointer", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixBuffer_GetDataPointer( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Silence")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Silence", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixBuffer_Silence( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_AbsLevel")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_AbsLevel", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float CAudioMixBuffer_AbsLevel( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_AvergeLevel")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_AvergeLevel", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float CAudioMixBuffer_AvergeLevel( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Ramp")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Ramp", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixBuffer_Ramp( void* self, float flStart, float flEnd )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_CopyFrom")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_CopyFrom", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixBuffer_CopyFrom( void* self, void* addThis )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Mix")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_Mix", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixBuffer_Mix( void* self, void* addThis, float flScale )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_MixRamp")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixBuffer_MixRamp", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixBuffer_MixRamp( void* self, void* addThis, float flScaleStart, float flScaleEnd )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CdMxDvcBffrs_Create")]
+        [UnmanagedCallersOnly(EntryPoint = "CdMxDvcBffrs_Create", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CdMxDvcBffrs_Create( int channels )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CdMxDvcBffrs_Destroy")]
+        [UnmanagedCallersOnly(EntryPoint = "CdMxDvcBffrs_Destroy", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CdMxDvcBffrs_Destroy( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CdMxDvcBffrs_GetBuffer")]
+        [UnmanagedCallersOnly(EntryPoint = "CdMxDvcBffrs_GetBuffer", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CdMxDvcBffrs_GetBuffer( void* self, int i )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_Dispose")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_Dispose", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixer_Dispose( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetSamplePosition")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetSamplePosition", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CAudioMixer_GetSamplePosition( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_ShouldContinueMixing")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_ShouldContinueMixing", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CAudioMixer_ShouldContinueMixing( void* self )
         {
             return default;
@@ -179,12 +2896,12 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_SetSampleEnd")]
-        public static void* CAudioMixer_SetSampleEnd( void* self, void* nEndSample )
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_SetSampleEnd", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* CAudioMixer_SetSampleEnd( void* self, uint nEndSample )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_DelayOrSkipSamples")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_DelayOrSkipSamples", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixer_DelayOrSkipSamples( void* self, int nDelaySamples )
         {
             return default;
@@ -194,7 +2911,7 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetPositionForSave")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetPositionForSave", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CAudioMixer_GetPositionForSave( void* self )
         {
             return default;
@@ -214,27 +2931,27 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetSfxTable")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetSfxTable", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixer_GetSfxTable( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetSampleCount")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetSampleCount", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CAudioMixer_GetSampleCount( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetChannelCount")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_GetChannelCount", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CAudioMixer_GetChannelCount( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_SetTimeScale")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_SetTimeScale", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CAudioMixer_SetTimeScale( void* self, float flTimeScale )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_EnableLooping")]
+        [UnmanagedCallersOnly(EntryPoint = "CAudioMixer_EnableLooping", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CAudioMixer_EnableLooping( void* self, int bEnable )
         {
             return default;
@@ -255,12 +2972,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CAudioProcessor_SetControlParameter")]
-        public static int CAudioProcessor_SetControlParameter( void* self, uint name, float flValue )
+        public static int CAudioProcessor_SetControlParameter( void* self, void* name, float flValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CAudioProcessor_SetNameParameter")]
-        public static int CAudioProcessor_SetNameParameter( void* self, uint name, uint nNameValue )
+        public static int CAudioProcessor_SetNameParameter( void* self, void* name, void* nNameValue )
         {
             return default;
         }
@@ -275,7 +2992,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CdStrmMngd_Create")]
-        public static void* CdStrmMngd_Create( int nChannels, void* nSampleRate )
+        public static int CdStrmMngd_Create( int nChannels, uint nSampleRate )
         {
             return default;
         }
@@ -285,22 +3002,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CdStrmMngd_WriteAudioData")]
-        public static void* CdStrmMngd_WriteAudioData( void* self, void* pData, void* nSampleCount, void* nChannels )
+        public static void* CdStrmMngd_WriteAudioData( void* self, void* pData, uint nSampleCount, uint nChannels )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CdStrmMngd_QueuedSampleCount")]
-        public static void* CdStrmMngd_QueuedSampleCount( void* self )
+        public static uint CdStrmMngd_QueuedSampleCount( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CdStrmMngd_MaxWriteSampleCount")]
-        public static void* CdStrmMngd_MaxWriteSampleCount( void* self )
+        public static uint CdStrmMngd_MaxWriteSampleCount( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CdStrmMngd_LatencySamplesCount")]
-        public static void* CdStrmMngd_LatencySamplesCount( void* self )
+        public static uint CdStrmMngd_LatencySamplesCount( void* self )
         {
             return default;
         }
@@ -324,17 +3041,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CBinauralEffect_Create")]
+        [UnmanagedCallersOnly(EntryPoint = "CBinauralEffect_Create", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CBinauralEffect_Create()
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CBinauralEffect_Dispose")]
+        [UnmanagedCallersOnly(EntryPoint = "CBinauralEffect_Dispose", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CBinauralEffect_Dispose( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CBinauralEffect_Apply")]
+        [UnmanagedCallersOnly(EntryPoint = "CBinauralEffect_Apply", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CBinauralEffect_Apply( void* self, void* localDirection, float spatialBlend, void* input, void* output )
         {
             return default;
@@ -344,14 +3061,15 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CBldrMtrlGrp_m_name")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CBldrMtrlGrp_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CBldrMtrlGrp_m_name( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CBldrMtrlGrp_m_name")]
-        public static void _Set__CBldrMtrlGrp_m_name( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CBldrMtrlGrp_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CBldrMtrlGrp_m_name( void* self, void* value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CBldrMtrlGrprry_DeleteThis")]
         public static void* CBldrMtrlGrprry_DeleteThis( void* self )
@@ -439,216 +3157,238 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CCameraRenderer_AddRenderTag")]
-        public static void* CCameraRenderer_AddRenderTag( void* self, void* hash )
+        public static void* CCameraRenderer_AddRenderTag( void* self, uint hash )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CCameraRenderer_AddExcludeTag")]
-        public static void* CCameraRenderer_AddExcludeTag( void* self, void* hash )
+        public static void* CCameraRenderer_AddExcludeTag( void* self, uint hash )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_ViewUniqueId")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_ViewUniqueId", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_ViewUniqueId( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_ViewUniqueId")]
-        public static void _Set__CCameraRenderer_ViewUniqueId( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_ViewUniqueId", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_ViewUniqueId( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_CameraPosition")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_CameraPosition", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CCameraRenderer_CameraPosition( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_CameraPosition")]
-        public static void _Set__CCameraRenderer_CameraPosition( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_CameraPosition", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_CameraPosition( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_CameraRotation")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_CameraRotation", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CCameraRenderer_CameraRotation( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_CameraRotation")]
-        public static void _Set__CCameraRenderer_CameraRotation( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_CameraRotation", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_CameraRotation( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_FieldOfView")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_FieldOfView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CCameraRenderer_FieldOfView( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_FieldOfView")]
-        public static void _Set__CCameraRenderer_FieldOfView( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_FieldOfView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_FieldOfView( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_ZNear")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_ZNear", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CCameraRenderer_ZNear( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_ZNear")]
-        public static void _Set__CCameraRenderer_ZNear( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_ZNear", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_ZNear( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_ZFar")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_ZFar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CCameraRenderer_ZFar( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_ZFar")]
-        public static void _Set__CCameraRenderer_ZFar( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_ZFar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_ZFar( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_Rect")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_Rect", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CCameraRenderer_Rect( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_Rect")]
-        public static void _Set__CCameraRenderer_Rect( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_Rect", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_Rect( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_Viewport")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_Viewport", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CCameraRenderer_Viewport( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_Viewport")]
-        public static void _Set__CCameraRenderer_Viewport( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_Viewport", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_Viewport( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_ClipSpaceBounds")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_ClipSpaceBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CCameraRenderer_ClipSpaceBounds( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_ClipSpaceBounds")]
-        public static void _Set__CCameraRenderer_ClipSpaceBounds( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_ClipSpaceBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_ClipSpaceBounds( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_EnablePostprocessing")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_EnablePostprocessing", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_EnablePostprocessing( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_EnablePostprocessing")]
-        public static void _Set__CCameraRenderer_EnablePostprocessing( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_EnablePostprocessing", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_EnablePostprocessing( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_EnableEngineOverlays")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_EnableEngineOverlays", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_EnableEngineOverlays( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_EnableEngineOverlays")]
-        public static void _Set__CCameraRenderer_EnableEngineOverlays( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_EnableEngineOverlays", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_EnableEngineOverlays( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_Ortho")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_Ortho", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_Ortho( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_Ortho")]
-        public static void _Set__CCameraRenderer_Ortho( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_Ortho", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_Ortho( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_OrthoSize")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_OrthoSize", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CCameraRenderer_OrthoSize( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_OrthoSize")]
-        public static void _Set__CCameraRenderer_OrthoSize( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_OrthoSize", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_OrthoSize( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_NeedTonemapRenderer")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_NeedTonemapRenderer", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_NeedTonemapRenderer( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_NeedTonemapRenderer")]
-        public static void _Set__CCameraRenderer_NeedTonemapRenderer( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_NeedTonemapRenderer", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_NeedTonemapRenderer( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_SceneViewFlags")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_SceneViewFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static long _Get__CCameraRenderer_SceneViewFlags( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_SceneViewFlags")]
-        public static void _Set__CCameraRenderer_SceneViewFlags( void* self, long value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_SceneViewFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_SceneViewFlags( void* self, long value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_IsRenderingStereo")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_IsRenderingStereo", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_IsRenderingStereo( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_IsRenderingStereo")]
-        public static void _Set__CCameraRenderer_IsRenderingStereo( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_IsRenderingStereo", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_IsRenderingStereo( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_MiddleEyePosition")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_MiddleEyePosition", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CCameraRenderer_MiddleEyePosition( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_MiddleEyePosition")]
-        public static void _Set__CCameraRenderer_MiddleEyePosition( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_MiddleEyePosition", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_MiddleEyePosition( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_MiddleEyeRotation")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_MiddleEyeRotation", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CCameraRenderer_MiddleEyeRotation( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_MiddleEyeRotation")]
-        public static void _Set__CCameraRenderer_MiddleEyeRotation( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_MiddleEyeRotation", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_MiddleEyeRotation( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_OverrideProjection")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_OverrideProjection", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CCameraRenderer_OverrideProjection( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_OverrideProjection")]
-        public static void _Set__CCameraRenderer_OverrideProjection( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_OverrideProjection", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_OverrideProjection( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_HasOverrideProjection")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_HasOverrideProjection", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_HasOverrideProjection( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_HasOverrideProjection")]
-        public static void _Set__CCameraRenderer_HasOverrideProjection( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_HasOverrideProjection", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_HasOverrideProjection( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_FlipX")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_FlipX", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_FlipX( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_FlipX")]
-        public static void _Set__CCameraRenderer_FlipX( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_FlipX", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_FlipX( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_FlipY")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CCameraRenderer_FlipY", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CCameraRenderer_FlipY( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_FlipY")]
-        public static void _Set__CCameraRenderer_FlipY( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CCameraRenderer_FlipY", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CCameraRenderer_FlipY( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CDecalSceneObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CDecalSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CSceneObject_To_CDecalSceneObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CDecalSceneObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CDecalSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CSceneObject_From_CDecalSceneObject( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_ChangeFlags")]
         public static void* CDclScnbjct_ChangeFlags( void* self, long nNewFlags, long nNewFlagsMask )
@@ -736,7 +3476,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_SetMaterialOverride")]
-        public static void* CDclScnbjct_SetMaterialOverride( void* self, void* hMaterial, uint nAttr, int nAttrValueMatch )
+        public static void* CDclScnbjct_SetMaterialOverride( void* self, void* hMaterial, void* nAttr, int nAttrValueMatch )
         {
             return default;
         }
@@ -806,12 +3546,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_GetParent")]
-        public static void* CDclScnbjct_GetParent( void* self )
+        public static int CDclScnbjct_GetParent( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_AddChildObject")]
-        public static void* CDclScnbjct_AddChildObject( void* self, uint nId, void* pChild, void* nChildUpdateFlags )
+        public static void* CDclScnbjct_AddChildObject( void* self, void* nId, void* pChild, uint nChildUpdateFlags )
         {
             return default;
         }
@@ -846,7 +3586,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_GetWorld")]
-        public static void* CDclScnbjct_GetWorld( void* self )
+        public static int CDclScnbjct_GetWorld( void* self )
         {
             return default;
         }
@@ -876,12 +3616,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_SetMaterialGroup")]
-        public static void* CDclScnbjct_SetMaterialGroup( void* self, uint token )
+        public static void* CDclScnbjct_SetMaterialGroup( void* self, void* token )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_SetBodyGroup")]
-        public static void* CDclScnbjct_SetBodyGroup( void* self, uint token, int value )
+        public static void* CDclScnbjct_SetBodyGroup( void* self, void* token, int value )
         {
             return default;
         }
@@ -901,7 +3641,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_RemoveTag")]
-        public static void* CDclScnbjct_RemoveTag( void* self, void* tag )
+        public static void* CDclScnbjct_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -916,27 +3656,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_GetTagAt")]
-        public static void* CDclScnbjct_GetTagAt( void* self, int i )
+        public static uint CDclScnbjct_GetTagAt( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_AddTag")]
-        public static void* CDclScnbjct_AddTag( void* self, void* tag )
+        public static void* CDclScnbjct_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_HasTag")]
-        public static int CDclScnbjct_HasTag( void* self, void* tag )
+        public static int CDclScnbjct_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_SetForceLayerID")]
-        public static void* CDclScnbjct_SetForceLayerID( void* self, uint nTok )
+        public static void* CDclScnbjct_SetForceLayerID( void* self, void* nTok )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDclScnbjct_SetLayerMatchID")]
-        public static void* CDclScnbjct_SetLayerMatchID( void* self, uint nTok )
+        public static void* CDclScnbjct_SetLayerMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -950,162 +3690,176 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hColor")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hColor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CDclScnbjct_m_hColor( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hColor")]
-        public static void _Set__CDclScnbjct_m_hColor( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hColor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_hColor( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hNormal")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hNormal", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CDclScnbjct_m_hNormal( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hNormal")]
-        public static void _Set__CDclScnbjct_m_hNormal( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hNormal", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_hNormal( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hRMO")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hRMO", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CDclScnbjct_m_hRMO( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hRMO")]
-        public static void _Set__CDclScnbjct_m_hRMO( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_nSortOrder")]
-        public static void* _Get__CDclScnbjct_m_nSortOrder( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hRMO", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_hRMO( void* self, void* value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_nSortOrder")]
-        public static void _Set__CDclScnbjct_m_nSortOrder( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_nExclusionBitMask")]
-        public static void* _Get__CDclScnbjct_m_nExclusionBitMask( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_nSortOrder", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__CDclScnbjct_m_nSortOrder( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_nExclusionBitMask")]
-        public static void _Set__CDclScnbjct_m_nExclusionBitMask( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_nSortOrder", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_nSortOrder( void* self, uint value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_vColorTint")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_nExclusionBitMask", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__CDclScnbjct_m_nExclusionBitMask( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_nExclusionBitMask", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_nExclusionBitMask( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_vColorTint", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CDclScnbjct_m_vColorTint( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_vColorTint")]
-        public static void _Set__CDclScnbjct_m_vColorTint( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_vColorTint", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_vColorTint( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_flAttenuationAngle")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_flAttenuationAngle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CDclScnbjct_m_flAttenuationAngle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_flAttenuationAngle")]
-        public static void _Set__CDclScnbjct_m_flAttenuationAngle( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_flAttenuationAngle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_flAttenuationAngle( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_flColorMix")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_flColorMix", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CDclScnbjct_m_flColorMix( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_flColorMix")]
-        public static void _Set__CDclScnbjct_m_flColorMix( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_flColorMix", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_flColorMix( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hEmission")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hEmission", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CDclScnbjct_m_hEmission( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hEmission")]
-        public static void _Set__CDclScnbjct_m_hEmission( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hEmission", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_hEmission( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_flEmissionEnergy")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_flEmissionEnergy", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CDclScnbjct_m_flEmissionEnergy( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_flEmissionEnergy")]
-        public static void _Set__CDclScnbjct_m_flEmissionEnergy( void* self, float value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_nSequenceIndex")]
-        public static void* _Get__CDclScnbjct_m_nSequenceIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_flEmissionEnergy", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_flEmissionEnergy( void* self, float value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_nSequenceIndex")]
-        public static void _Set__CDclScnbjct_m_nSequenceIndex( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_nSequenceIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__CDclScnbjct_m_nSequenceIndex( void* self )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hHeight")]
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_nSequenceIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_nSequenceIndex( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_hHeight", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CDclScnbjct_m_hHeight( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hHeight")]
-        public static void _Set__CDclScnbjct_m_hHeight( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_hHeight", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_hHeight( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_flParallaxStrength")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_flParallaxStrength", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CDclScnbjct_m_flParallaxStrength( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_flParallaxStrength")]
-        public static void _Set__CDclScnbjct_m_flParallaxStrength( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_flParallaxStrength", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_flParallaxStrength( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_nSamplerIndex")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDclScnbjct_m_nSamplerIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CDclScnbjct_m_nSamplerIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_nSamplerIndex")]
-        public static void _Set__CDclScnbjct_m_nSamplerIndex( void* self, int value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CDynamicSceneObject")]
-        public static void* From_CSceneObject_To_CDynamicSceneObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CDynamicSceneObject")]
-        public static void* To_CSceneObject_From_CDynamicSceneObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_Create")]
-        public static void* CDynmcScnbjct_Create( void* world )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDclScnbjct_m_nSamplerIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDclScnbjct_m_nSamplerIndex( void* self, int value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_Begin")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CDynamicSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* From_CSceneObject_To_CDynamicSceneObject( void* ptr ) => ptr;
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CDynamicSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* To_CSceneObject_From_CDynamicSceneObject( void* ptr ) => ptr;
+        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_Create")]
+        public static int CDynmcScnbjct_Create( void* world )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_Begin", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CDynmcScnbjct_Begin( void* self, long type, int vertexCount )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_End")]
+        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_End", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CDynmcScnbjct_End( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_AddVertex")]
+        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_AddVertex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CDynmcScnbjct_AddVertex( void* self, void* vertex )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_AddVertexRange")]
+        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_AddVertexRange", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CDynmcScnbjct_AddVertexRange( void* self, void* vertex, int length )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_Reset")]
+        [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_Reset", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CDynmcScnbjct_Reset( void* self )
         {
             return default;
@@ -1196,7 +3950,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_SetMaterialOverride")]
-        public static void* CDynmcScnbjct_SetMaterialOverride( void* self, void* hMaterial, uint nAttr, int nAttrValueMatch )
+        public static void* CDynmcScnbjct_SetMaterialOverride( void* self, void* hMaterial, void* nAttr, int nAttrValueMatch )
         {
             return default;
         }
@@ -1266,12 +4020,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_GetParent")]
-        public static void* CDynmcScnbjct_GetParent( void* self )
+        public static int CDynmcScnbjct_GetParent( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_AddChildObject")]
-        public static void* CDynmcScnbjct_AddChildObject( void* self, uint nId, void* pChild, void* nChildUpdateFlags )
+        public static void* CDynmcScnbjct_AddChildObject( void* self, void* nId, void* pChild, uint nChildUpdateFlags )
         {
             return default;
         }
@@ -1306,7 +4060,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_GetWorld")]
-        public static void* CDynmcScnbjct_GetWorld( void* self )
+        public static int CDynmcScnbjct_GetWorld( void* self )
         {
             return default;
         }
@@ -1336,12 +4090,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_SetMaterialGroup")]
-        public static void* CDynmcScnbjct_SetMaterialGroup( void* self, uint token )
+        public static void* CDynmcScnbjct_SetMaterialGroup( void* self, void* token )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_SetBodyGroup")]
-        public static void* CDynmcScnbjct_SetBodyGroup( void* self, uint token, int value )
+        public static void* CDynmcScnbjct_SetBodyGroup( void* self, void* token, int value )
         {
             return default;
         }
@@ -1361,7 +4115,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_RemoveTag")]
-        public static void* CDynmcScnbjct_RemoveTag( void* self, void* tag )
+        public static void* CDynmcScnbjct_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -1376,27 +4130,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_GetTagAt")]
-        public static void* CDynmcScnbjct_GetTagAt( void* self, int i )
+        public static uint CDynmcScnbjct_GetTagAt( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_AddTag")]
-        public static void* CDynmcScnbjct_AddTag( void* self, void* tag )
+        public static void* CDynmcScnbjct_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_HasTag")]
-        public static int CDynmcScnbjct_HasTag( void* self, void* tag )
+        public static int CDynmcScnbjct_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_SetForceLayerID")]
-        public static void* CDynmcScnbjct_SetForceLayerID( void* self, uint nTok )
+        public static void* CDynmcScnbjct_SetForceLayerID( void* self, void* nTok )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CDynmcScnbjct_SetLayerMatchID")]
-        public static void* CDynmcScnbjct_SetLayerMatchID( void* self, uint nTok )
+        public static void* CDynmcScnbjct_SetLayerMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -1410,17 +4164,18 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CDynmcScnbjct_Material")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CDynmcScnbjct_Material", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CDynmcScnbjct_Material( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CDynmcScnbjct_Material")]
-        public static void _Set__CDynmcScnbjct_Material( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CDynmcScnbjct_Material", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CDynmcScnbjct_Material( void* self, void* value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CEntityKeyValues_GetValueString")]
-        public static void* CEntityKeyValues_GetValueString( void* self, uint key, void* pDefaultValue )
+        public static void* CEntityKeyValues_GetValueString( void* self, void* key, void* pDefaultValue )
         {
             return default;
         }
@@ -1430,22 +4185,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CEntityKeyValues_GetKey")]
-        public static void* CEntityKeyValues_GetKey( void* self, int nIdx )
+        public static uint CEntityKeyValues_GetKey( void* self, int nIdx )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CEntityKeyValues_GetValueString_1")]
-        public static void* CEntityKeyValues_GetValueString_1( void* self, void* key, void* pDefaultValue )
+        public static void* CEntityKeyValues_GetValueString_1( void* self, uint key, void* pDefaultValue )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneLightObject_To_CEnvMapSceneObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneLightObject_To_CEnvMapSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CSceneLightObject_To_CEnvMapSceneObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneLightObject_From_CEnvMapSceneObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneLightObject_From_CEnvMapSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CSceneLightObject_From_CEnvMapSceneObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CEnvMapSceneObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CEnvMapSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CSceneObject_To_CEnvMapSceneObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CEnvMapSceneObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CEnvMapSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CSceneObject_From_CEnvMapSceneObject( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CnvMpScnbjct_CalculateRadianceSH")]
         public static void* CnvMpScnbjct_CalculateRadianceSH( void* self )
@@ -1703,12 +4458,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CnvMpScnbjct_GetLightFlags")]
-        public static void* CnvMpScnbjct_GetLightFlags( void* self )
+        public static uint CnvMpScnbjct_GetLightFlags( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CnvMpScnbjct_SetLightFlags")]
-        public static void* CnvMpScnbjct_SetLightFlags( void* self, void* flags )
+        public static void* CnvMpScnbjct_SetLightFlags( void* self, uint flags )
         {
             return default;
         }
@@ -1732,77 +4487,85 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_nProjectionMode")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_nProjectionMode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static long _Get__CnvMpScnbjct_m_nProjectionMode( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_nProjectionMode")]
-        public static void _Set__CnvMpScnbjct_m_nProjectionMode( void* self, long value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_nProjectionMode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CnvMpScnbjct_m_nProjectionMode( void* self, long value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_vBoxProjectMins")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_vBoxProjectMins", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CnvMpScnbjct_m_vBoxProjectMins( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_vBoxProjectMins")]
-        public static void _Set__CnvMpScnbjct_m_vBoxProjectMins( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_vBoxProjectMins", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CnvMpScnbjct_m_vBoxProjectMins( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_vBoxProjectMaxs")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_vBoxProjectMaxs", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CnvMpScnbjct_m_vBoxProjectMaxs( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_vBoxProjectMaxs")]
-        public static void _Set__CnvMpScnbjct_m_vBoxProjectMaxs( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_vBoxProjectMaxs", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CnvMpScnbjct_m_vBoxProjectMaxs( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_vColor")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_vColor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CnvMpScnbjct_m_vColor( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_vColor")]
-        public static void _Set__CnvMpScnbjct_m_vColor( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_vColor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CnvMpScnbjct_m_vColor( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_nRenderPriority")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_nRenderPriority", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CnvMpScnbjct_m_nRenderPriority( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_nRenderPriority")]
-        public static void _Set__CnvMpScnbjct_m_nRenderPriority( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_nRenderPriority", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CnvMpScnbjct_m_nRenderPriority( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_hEnvMapTexture")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_hEnvMapTexture", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CnvMpScnbjct_m_hEnvMapTexture( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_hEnvMapTexture")]
-        public static void _Set__CnvMpScnbjct_m_hEnvMapTexture( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_hEnvMapTexture", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CnvMpScnbjct_m_hEnvMapTexture( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_vNormalizationSH")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_vNormalizationSH", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CnvMpScnbjct_m_vNormalizationSH( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_vNormalizationSH")]
-        public static void _Set__CnvMpScnbjct_m_vNormalizationSH( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_vNormalizationSH", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CnvMpScnbjct_m_vNormalizationSH( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_flFeathering")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CnvMpScnbjct_m_flFeathering", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CnvMpScnbjct_m_flFeathering( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_flFeathering")]
-        public static void _Set__CnvMpScnbjct_m_flFeathering( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CnvMpScnbjct_m_flFeathering", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CnvMpScnbjct_m_flFeathering( void* self, float value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CFrustum_Create")]
         public static void* CFrustum_Create()
@@ -1924,131 +4687,145 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_vMinBounds")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_vMinBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CHitBox_m_vMinBounds( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_vMinBounds")]
-        public static void _Set__CHitBox_m_vMinBounds( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_vMinBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_vMinBounds( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_vMaxBounds")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_vMaxBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CHitBox_m_vMaxBounds( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_vMaxBounds")]
-        public static void _Set__CHitBox_m_vMaxBounds( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_vMaxBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_vMaxBounds( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_name")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CHitBox_m_name( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_name")]
-        public static void _Set__CHitBox_m_name( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_name( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_sSurfaceProperty")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_sSurfaceProperty", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CHitBox_m_sSurfaceProperty( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_sSurfaceProperty")]
-        public static void _Set__CHitBox_m_sSurfaceProperty( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_sSurfaceProperty", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_sSurfaceProperty( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_sBoneName")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_sBoneName", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CHitBox_m_sBoneName( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_sBoneName")]
-        public static void _Set__CHitBox_m_sBoneName( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_sBoneName", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_sBoneName( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_flShapeRadius")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_flShapeRadius", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CHitBox_m_flShapeRadius( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_flShapeRadius")]
-        public static void _Set__CHitBox_m_flShapeRadius( void* self, float value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_nBoneNameHash")]
-        public static void* _Get__CHitBox_m_nBoneNameHash( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_flShapeRadius", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_flShapeRadius( void* self, float value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_nBoneNameHash")]
-        public static void _Set__CHitBox_m_nBoneNameHash( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_nBoneNameHash", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__CHitBox_m_nBoneNameHash( void* self )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_cRenderColor")]
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_nBoneNameHash", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_nBoneNameHash( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_cRenderColor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CHitBox_m_cRenderColor( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_cRenderColor")]
-        public static void _Set__CHitBox_m_cRenderColor( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_nHitBoxIndex")]
-        public static void* _Get__CHitBox_m_nHitBoxIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_cRenderColor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_cRenderColor( void* self, void* value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_nHitBoxIndex")]
-        public static void _Set__CHitBox_m_nHitBoxIndex( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_nShapeType")]
-        public static void* _Get__CHitBox_m_nShapeType( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_nHitBoxIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static ushort _Get__CHitBox_m_nHitBoxIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_nShapeType")]
-        public static void _Set__CHitBox_m_nShapeType( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_nHitBoxIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_nHitBoxIndex( void* self, ushort value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_bForcedTransform")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_nShapeType", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static byte _Get__CHitBox_m_nShapeType( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_nShapeType", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_nShapeType( void* self, byte value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_bForcedTransform", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CHitBox_m_bForcedTransform( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_bForcedTransform")]
-        public static void _Set__CHitBox_m_bForcedTransform( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_bForcedTransform", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_bForcedTransform( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_bTranslationOnly")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_bTranslationOnly", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CHitBox_m_bTranslationOnly( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_bTranslationOnly")]
-        public static void _Set__CHitBox_m_bTranslationOnly( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_bTranslationOnly", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_bTranslationOnly( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_bVisible")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_bVisible", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CHitBox_m_bVisible( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_bVisible")]
-        public static void _Set__CHitBox_m_bVisible( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_bVisible", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_bVisible( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_bSelected")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBox_m_bSelected", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CHitBox_m_bSelected( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_bSelected")]
-        public static void _Set__CHitBox_m_bSelected( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBox_m_bSelected", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBox_m_bSelected( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CHitBoxSet_numhitboxes")]
         public static int CHitBoxSet_numhitboxes( void* self )
@@ -2060,30 +4837,32 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBoxSet_m_name")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBoxSet_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CHitBoxSet_m_name( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBoxSet_m_name")]
-        public static void _Set__CHitBoxSet_m_name( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBoxSet_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBoxSet_m_name( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBoxSet_m_SourceFilename")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CHitBoxSet_m_SourceFilename", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CHitBoxSet_m_SourceFilename( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBoxSet_m_SourceFilename")]
-        public static void _Set__CHitBoxSet_m_SourceFilename( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CHitBoxSet_m_SourceFilename", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CHitBoxSet_m_SourceFilename( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CManagedSceneObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CManagedSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CSceneObject_To_CManagedSceneObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CManagedSceneObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CManagedSceneObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CSceneObject_From_CManagedSceneObject( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_Create")]
-        public static void* CMngdScnbjct_Create( void* world )
+        public static int CMngdScnbjct_Create( void* world )
         {
             return default;
         }
@@ -2173,7 +4952,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_SetMaterialOverride")]
-        public static void* CMngdScnbjct_SetMaterialOverride( void* self, void* hMaterial, uint nAttr, int nAttrValueMatch )
+        public static void* CMngdScnbjct_SetMaterialOverride( void* self, void* hMaterial, void* nAttr, int nAttrValueMatch )
         {
             return default;
         }
@@ -2243,12 +5022,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_GetParent")]
-        public static void* CMngdScnbjct_GetParent( void* self )
+        public static int CMngdScnbjct_GetParent( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_AddChildObject")]
-        public static void* CMngdScnbjct_AddChildObject( void* self, uint nId, void* pChild, void* nChildUpdateFlags )
+        public static void* CMngdScnbjct_AddChildObject( void* self, void* nId, void* pChild, uint nChildUpdateFlags )
         {
             return default;
         }
@@ -2283,7 +5062,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_GetWorld")]
-        public static void* CMngdScnbjct_GetWorld( void* self )
+        public static int CMngdScnbjct_GetWorld( void* self )
         {
             return default;
         }
@@ -2313,12 +5092,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_SetMaterialGroup")]
-        public static void* CMngdScnbjct_SetMaterialGroup( void* self, uint token )
+        public static void* CMngdScnbjct_SetMaterialGroup( void* self, void* token )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_SetBodyGroup")]
-        public static void* CMngdScnbjct_SetBodyGroup( void* self, uint token, int value )
+        public static void* CMngdScnbjct_SetBodyGroup( void* self, void* token, int value )
         {
             return default;
         }
@@ -2338,7 +5117,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_RemoveTag")]
-        public static void* CMngdScnbjct_RemoveTag( void* self, void* tag )
+        public static void* CMngdScnbjct_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -2353,27 +5132,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_GetTagAt")]
-        public static void* CMngdScnbjct_GetTagAt( void* self, int i )
+        public static uint CMngdScnbjct_GetTagAt( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_AddTag")]
-        public static void* CMngdScnbjct_AddTag( void* self, void* tag )
+        public static void* CMngdScnbjct_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_HasTag")]
-        public static int CMngdScnbjct_HasTag( void* self, void* tag )
+        public static int CMngdScnbjct_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_SetForceLayerID")]
-        public static void* CMngdScnbjct_SetForceLayerID( void* self, uint nTok )
+        public static void* CMngdScnbjct_SetForceLayerID( void* self, void* nTok )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMngdScnbjct_SetLayerMatchID")]
-        public static void* CMngdScnbjct_SetLayerMatchID( void* self, uint nTok )
+        public static void* CMngdScnbjct_SetLayerMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -2387,14 +5166,15 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CMngdScnbjct_ExecuteOnMainThread")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CMngdScnbjct_ExecuteOnMainThread", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CMngdScnbjct_ExecuteOnMainThread( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CMngdScnbjct_ExecuteOnMainThread")]
-        public static void _Set__CMngdScnbjct_ExecuteOnMainThread( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CMngdScnbjct_ExecuteOnMainThread", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CMngdScnbjct_ExecuteOnMainThread( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMtrlSystm2ppSys_Create")]
         public static void* CMtrlSystm2ppSys_Create( void* createInfo )
@@ -2502,7 +5282,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMtrlSystm2ppSys_InitSDL")]
-        public static int CMtrlSystm2ppSys_InitSDL( void* self, void* flags )
+        public static int CMtrlSystm2ppSys_InitSDL( void* self, uint flags )
         {
             return default;
         }
@@ -2602,12 +5382,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMtrlSystm2ppSys_SetSteamAppId")]
-        public static void* CMtrlSystm2ppSys_SetSteamAppId( void* self, void* appId )
+        public static void* CMtrlSystm2ppSys_SetSteamAppId( void* self, uint appId )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CMtrlSystm2ppSys_GetSteamAppId")]
-        public static void* CMtrlSystm2ppSys_GetSteamAppId( void* self )
+        public static uint CMtrlSystm2ppSys_GetSteamAppId( void* self )
         {
             return default;
         }
@@ -2616,27 +5396,27 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CModel_IsStrongHandleValid")]
+        [UnmanagedCallersOnly(EntryPoint = "CModel_IsStrongHandleValid", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CModel_IsStrongHandleValid( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CModel_IsError")]
+        [UnmanagedCallersOnly(EntryPoint = "CModel_IsError", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CModel_IsError( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CModel_IsStrongHandleLoaded")]
+        [UnmanagedCallersOnly(EntryPoint = "CModel_IsStrongHandleLoaded", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CModel_IsStrongHandleLoaded( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CModel_CopyStrongHandle")]
+        [UnmanagedCallersOnly(EntryPoint = "CModel_CopyStrongHandle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CModel_CopyStrongHandle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CModel_GetBindingPtr")]
+        [UnmanagedCallersOnly(EntryPoint = "CModel_GetBindingPtr", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CModel_GetBindingPtr( void* self )
         {
             return default;
@@ -2667,7 +5447,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CModel_GetAttachmentTransform")]
-        public static int CModel_GetAttachmentTransform( void* self, uint name, void* tx )
+        public static int CModel_GetAttachmentTransform( void* self, void* name, void* tx )
         {
             return default;
         }
@@ -2737,7 +5517,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CModel_GetMaterialGroupIndex")]
-        public static int CModel_GetMaterialGroupIndex( void* self, uint nGroup )
+        public static int CModel_GetMaterialGroupIndex( void* self, void* nGroup )
         {
             return default;
         }
@@ -2851,7 +5631,7 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CModel_HasSceneObjects")]
+        [UnmanagedCallersOnly(EntryPoint = "CModel_HasSceneObjects", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CModel_HasSceneObjects( void* self )
         {
             return default;
@@ -3027,7 +5807,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CPhysggrgtDt_GetChecksum")]
-        public static void* CPhysggrgtDt_GetChecksum( void* self )
+        public static uint CPhysggrgtDt_GetChecksum( void* self )
         {
             return default;
         }
@@ -3047,12 +5827,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CPhysggrgtDt_GetBoneHash")]
-        public static void* CPhysggrgtDt_GetBoneHash( void* self, int i )
+        public static uint CPhysggrgtDt_GetBoneHash( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CPhysggrgtDt_GetIndexHash")]
-        public static void* CPhysggrgtDt_GetIndexHash( void* self, int i )
+        public static uint CPhysggrgtDt_GetIndexHash( void* self, int i )
         {
             return default;
         }
@@ -3101,14 +5881,15 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysggrgtDt_m_nFlags")]
-        public static void* _Get__CPhysggrgtDt_m_nFlags( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysggrgtDt_m_nFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static ushort _Get__CPhysggrgtDt_m_nFlags( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysggrgtDt_m_nFlags")]
-        public static void _Set__CPhysggrgtDt_m_nFlags( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysggrgtDt_m_nFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysggrgtDt_m_nFlags( void* self, ushort value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CPhysBodyDesc_SetBoneName")]
         public static void* CPhysBodyDesc_SetBoneName( void* self, void* boneName )
@@ -3116,7 +5897,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CPhysBodyDesc_SetSurface")]
-        public static void* CPhysBodyDesc_SetSurface( void* self, uint surface )
+        public static void* CPhysBodyDesc_SetSurface( void* self, void* surface )
         {
             return default;
         }
@@ -3141,18 +5922,19 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CPhysBodyDesc_AddMesh")]
-        public static void* CPhysBodyDesc_AddMesh( void* self, void* pVertices, void* nNumVertices, void* pIndices, void* nNumIndices, void* pMaterials )
+        public static void* CPhysBodyDesc_AddMesh( void* self, void* pVertices, uint nNumVertices, void* pIndices, uint nNumIndices, void* pMaterials )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysBodyDesc_m_flMass")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysBodyDesc_m_flMass", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CPhysBodyDesc_m_flMass( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysBodyDesc_m_flMass")]
-        public static void _Set__CPhysBodyDesc_m_flMass( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysBodyDesc_m_flMass", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysBodyDesc_m_flMass( void* self, float value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CPhysBdyDscrry_DeleteThis")]
         public static void* CPhysBdyDscrry_DeleteThis( void* self )
@@ -3179,77 +5961,85 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_name")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CPhysSrfcPrprts_m_name( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_name")]
-        public static void _Set__CPhysSrfcPrprts_m_name( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_nameHash")]
-        public static void* _Get__CPhysSrfcPrprts_m_nameHash( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_name", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysSrfcPrprts_m_name( void* self, void* value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_nameHash")]
-        public static void _Set__CPhysSrfcPrprts_m_nameHash( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_baseNameHash")]
-        public static void* _Get__CPhysSrfcPrprts_m_baseNameHash( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_nameHash", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__CPhysSrfcPrprts_m_nameHash( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_baseNameHash")]
-        public static void _Set__CPhysSrfcPrprts_m_baseNameHash( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_nameHash", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysSrfcPrprts_m_nameHash( void* self, uint value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_nIndex")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_baseNameHash", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__CPhysSrfcPrprts_m_baseNameHash( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_baseNameHash", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysSrfcPrprts_m_baseNameHash( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_nIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CPhysSrfcPrprts_m_nIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_nIndex")]
-        public static void _Set__CPhysSrfcPrprts_m_nIndex( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_nIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysSrfcPrprts_m_nIndex( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_nBaseIndex")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_nBaseIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CPhysSrfcPrprts_m_nBaseIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_nBaseIndex")]
-        public static void _Set__CPhysSrfcPrprts_m_nBaseIndex( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_nBaseIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysSrfcPrprts_m_nBaseIndex( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_AudioSurface")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_AudioSurface", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CPhysSrfcPrprts_m_AudioSurface( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_AudioSurface")]
-        public static void _Set__CPhysSrfcPrprts_m_AudioSurface( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_AudioSurface", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysSrfcPrprts_m_AudioSurface( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_bHidden")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_bHidden", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CPhysSrfcPrprts_m_bHidden( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_bHidden")]
-        public static void _Set__CPhysSrfcPrprts_m_bHidden( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_bHidden", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysSrfcPrprts_m_bHidden( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_description")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CPhysSrfcPrprts_m_description", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CPhysSrfcPrprts_m_description( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_description")]
-        public static void _Set__CPhysSrfcPrprts_m_description( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CPhysSrfcPrprts_m_description", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CPhysSrfcPrprts_m_description( void* self, void* value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CQueryResult_DeleteThis")]
         public static void* CQueryResult_DeleteThis( void* self )
@@ -3267,13 +6057,13 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CQueryResult_Element")]
-        public static void* CQueryResult_Element( void* self, int i )
+        public static int CQueryResult_Element( void* self, int i )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_IReadBufferCallback_To_CReadBufferManagedCallback")]
+        [UnmanagedCallersOnly(EntryPoint = "From_IReadBufferCallback_To_CReadBufferManagedCallback", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_IReadBufferCallback_To_CReadBufferManagedCallback( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_IReadBufferCallback_From_CReadBufferManagedCallback")]
+        [UnmanagedCallersOnly(EntryPoint = "To_IReadBufferCallback_From_CReadBufferManagedCallback", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_IReadBufferCallback_From_CReadBufferManagedCallback( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CRdBffrMngdCllbc_DeleteThis")]
         public static void* CRdBffrMngdCllbc_DeleteThis( void* self )
@@ -3300,9 +6090,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_IReadTexturePixelsCallback_To_CReadTexturePixelsManagedCallback")]
+        [UnmanagedCallersOnly(EntryPoint = "From_IReadTexturePixelsCallback_To_CReadTexturePixelsManagedCallback", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_IReadTexturePixelsCallback_To_CReadTexturePixelsManagedCallback( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_IReadTexturePixelsCallback_From_CReadTexturePixelsManagedCallback")]
+        [UnmanagedCallersOnly(EntryPoint = "To_IReadTexturePixelsCallback_From_CReadTexturePixelsManagedCallback", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_IReadTexturePixelsCallback_From_CReadTexturePixelsManagedCallback( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CRdTxtrPxlsMngdC_DeleteThis")]
         public static void* CRdTxtrPxlsMngdC_DeleteThis( void* self )
@@ -3340,172 +6130,172 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetFloatValue")]
-        public static void* CRndrttrbts_SetFloatValue( void* self, uint nTokenID, float flValue )
+        public static void* CRndrttrbts_SetFloatValue( void* self, void* nTokenID, float flValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetFloatValue")]
-        public static float CRndrttrbts_GetFloatValue( void* self, uint nTokenID, float flDefaultValue )
+        public static float CRndrttrbts_GetFloatValue( void* self, void* nTokenID, float flDefaultValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteFloatValue")]
-        public static void* CRndrttrbts_DeleteFloatValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteFloatValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetVector2DValue")]
-        public static void* CRndrttrbts_SetVector2DValue( void* self, uint nTokenID, void* vValue )
+        public static void* CRndrttrbts_SetVector2DValue( void* self, void* nTokenID, void* vValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetVector2DValue")]
-        public static void* CRndrttrbts_GetVector2DValue( void* self, uint nTokenID, void* vDefaultValue )
+        public static void* CRndrttrbts_GetVector2DValue( void* self, void* nTokenID, void* vDefaultValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteVector2DValue")]
-        public static void* CRndrttrbts_DeleteVector2DValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteVector2DValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetVectorValue")]
-        public static void* CRndrttrbts_SetVectorValue( void* self, uint nTokenID, void* vValue )
+        public static void* CRndrttrbts_SetVectorValue( void* self, void* nTokenID, void* vValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetVectorValue")]
-        public static void* CRndrttrbts_GetVectorValue( void* self, uint nTokenID, void* vDefaultValue )
+        public static void* CRndrttrbts_GetVectorValue( void* self, void* nTokenID, void* vDefaultValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteVectorValue")]
-        public static void* CRndrttrbts_DeleteVectorValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteVectorValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetVector4DValue")]
-        public static void* CRndrttrbts_SetVector4DValue( void* self, uint nTokenID, void* vValue )
+        public static void* CRndrttrbts_SetVector4DValue( void* self, void* nTokenID, void* vValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetVector4DValue")]
-        public static void* CRndrttrbts_GetVector4DValue( void* self, uint nTokenID, void* vDefaultValue )
+        public static void* CRndrttrbts_GetVector4DValue( void* self, void* nTokenID, void* vDefaultValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteVector4DValue")]
-        public static void* CRndrttrbts_DeleteVector4DValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteVector4DValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetVMatrixValue")]
-        public static void* CRndrttrbts_SetVMatrixValue( void* self, uint nTokenID, void* value )
+        public static void* CRndrttrbts_SetVMatrixValue( void* self, void* nTokenID, void* value )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetVMatrixValue")]
-        public static void* CRndrttrbts_GetVMatrixValue( void* self, uint nTokenID, void* vDefaultValue )
+        public static void* CRndrttrbts_GetVMatrixValue( void* self, void* nTokenID, void* vDefaultValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteVMatrixValue")]
-        public static void* CRndrttrbts_DeleteVMatrixValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteVMatrixValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetStringValue")]
-        public static void* CRndrttrbts_SetStringValue( void* self, uint nTokenID, void* str )
+        public static void* CRndrttrbts_SetStringValue( void* self, void* nTokenID, void* str )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteStringValue")]
-        public static void* CRndrttrbts_DeleteStringValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteStringValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetIntValue")]
-        public static void* CRndrttrbts_SetIntValue( void* self, uint nTokenID, int nValue )
+        public static void* CRndrttrbts_SetIntValue( void* self, void* nTokenID, int nValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetIntValue")]
-        public static int CRndrttrbts_GetIntValue( void* self, uint nTokenID, int nDefaultValue )
+        public static int CRndrttrbts_GetIntValue( void* self, void* nTokenID, int nDefaultValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteIntValue")]
-        public static void* CRndrttrbts_DeleteIntValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteIntValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetComboValue")]
-        public static void* CRndrttrbts_SetComboValue( void* self, uint nTokenID, void* nValue )
+        public static void* CRndrttrbts_SetComboValue( void* self, void* nTokenID, byte nValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetComboValue")]
-        public static void* CRndrttrbts_GetComboValue( void* self, uint nTokenID, void* nValue )
+        public static byte CRndrttrbts_GetComboValue( void* self, void* nTokenID, byte nValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteComboValue")]
-        public static void* CRndrttrbts_DeleteComboValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteComboValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetBoolValue")]
-        public static void* CRndrttrbts_SetBoolValue( void* self, uint nTokenID, int bValue )
+        public static void* CRndrttrbts_SetBoolValue( void* self, void* nTokenID, int bValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetBoolValue")]
-        public static int CRndrttrbts_GetBoolValue( void* self, uint nTokenID, int bValue )
+        public static int CRndrttrbts_GetBoolValue( void* self, void* nTokenID, int bValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteBoolValue")]
-        public static void* CRndrttrbts_DeleteBoolValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteBoolValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetTextureValue")]
-        public static void* CRndrttrbts_SetTextureValue( void* self, uint nTokenID, void* txtr, int nSingleMipLevelToBind )
+        public static void* CRndrttrbts_SetTextureValue( void* self, void* nTokenID, void* txtr, int nSingleMipLevelToBind )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_GetTextureValue")]
-        public static void* CRndrttrbts_GetTextureValue( void* self, uint nTokenID, void* defaultTxtr )
+        public static void* CRndrttrbts_GetTextureValue( void* self, void* nTokenID, void* defaultTxtr )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeleteTextureValue")]
-        public static void* CRndrttrbts_DeleteTextureValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeleteTextureValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetSamplerValue")]
-        public static void* CRndrttrbts_SetSamplerValue( void* self, uint nTokenID, void* samplerDesc )
+        public static void* CRndrttrbts_SetSamplerValue( void* self, void* nTokenID, void* samplerDesc )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetBufferValue")]
-        public static void* CRndrttrbts_SetBufferValue( void* self, uint nTokenID, void* hRenderBuffer )
+        public static void* CRndrttrbts_SetBufferValue( void* self, void* nTokenID, void* hRenderBuffer )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetPtrValue")]
-        public static void* CRndrttrbts_SetPtrValue( void* self, uint nTokenID, void* ptr )
+        public static void* CRndrttrbts_SetPtrValue( void* self, void* nTokenID, void* ptr )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_DeletePtrValue")]
-        public static void* CRndrttrbts_DeletePtrValue( void* self, uint nTokenID )
+        public static void* CRndrttrbts_DeletePtrValue( void* self, void* nTokenID )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CRndrttrbts_SetIntVector4DValue")]
-        public static void* CRndrttrbts_SetIntVector4DValue( void* self, uint nTokenID, int x, int y, int z, int w )
+        public static void* CRndrttrbts_SetIntVector4DValue( void* self, void* nTokenID, int x, int y, int z, int w )
         {
             return default;
         }
@@ -3529,34 +6319,34 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_IsStrongHandleValid")]
+        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_IsStrongHandleValid", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CRenderMesh_IsStrongHandleValid( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_IsError")]
+        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_IsError", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CRenderMesh_IsError( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_IsStrongHandleLoaded")]
+        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_IsStrongHandleLoaded", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CRenderMesh_IsStrongHandleLoaded( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_CopyStrongHandle")]
+        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_CopyStrongHandle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CRenderMesh_CopyStrongHandle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_GetBindingPtr")]
+        [UnmanagedCallersOnly(EntryPoint = "CRenderMesh_GetBindingPtr", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CRenderMesh_GetBindingPtr( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CSceneAnimatableObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CSceneAnimatableObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CSceneObject_To_CSceneAnimatableObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CSceneAnimatableObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CSceneAnimatableObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CSceneObject_From_CSceneAnimatableObject( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SetWorldSpaceRenderBoneTransform")]
         public static void* CScnnmtblbjct_SetWorldSpaceRenderBoneTransform( void* self, int nBoneIndex, void* pRenderWorldTransform )
@@ -3659,7 +6449,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SBox_SetFlexOverride")]
-        public static void* CScnnmtblbjct_SBox_SetFlexOverride( void* self, uint name, float flWeight )
+        public static void* CScnnmtblbjct_SBox_SetFlexOverride( void* self, void* name, float flWeight )
         {
             return default;
         }
@@ -3674,7 +6464,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SBox_GetFlexOverride_1")]
-        public static float CScnnmtblbjct_SBox_GetFlexOverride_1( void* self, uint name )
+        public static float CScnnmtblbjct_SBox_GetFlexOverride_1( void* self, void* name )
         {
             return default;
         }
@@ -3719,7 +6509,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SBox_GetAttachment")]
-        public static int CScnnmtblbjct_SBox_GetAttachment( void* self, uint name, int worldspace, void* tx )
+        public static int CScnnmtblbjct_SBox_GetAttachment( void* self, void* name, int worldspace, void* tx )
         {
             return default;
         }
@@ -3824,7 +6614,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SetPhysicsBone")]
-        public static void* CScnnmtblbjct_SetPhysicsBone( void* self, void* bone, void* transform )
+        public static void* CScnnmtblbjct_SetPhysicsBone( void* self, ushort bone, void* transform )
         {
             return default;
         }
@@ -3934,7 +6724,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SetMaterialOverride")]
-        public static void* CScnnmtblbjct_SetMaterialOverride( void* self, void* hMaterial, uint nAttr, int nAttrValueMatch )
+        public static void* CScnnmtblbjct_SetMaterialOverride( void* self, void* hMaterial, void* nAttr, int nAttrValueMatch )
         {
             return default;
         }
@@ -4004,12 +6794,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_GetParent")]
-        public static void* CScnnmtblbjct_GetParent( void* self )
+        public static int CScnnmtblbjct_GetParent( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_AddChildObject")]
-        public static void* CScnnmtblbjct_AddChildObject( void* self, uint nId, void* pChild, void* nChildUpdateFlags )
+        public static void* CScnnmtblbjct_AddChildObject( void* self, void* nId, void* pChild, uint nChildUpdateFlags )
         {
             return default;
         }
@@ -4044,7 +6834,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_GetWorld")]
-        public static void* CScnnmtblbjct_GetWorld( void* self )
+        public static int CScnnmtblbjct_GetWorld( void* self )
         {
             return default;
         }
@@ -4074,12 +6864,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SetMaterialGroup")]
-        public static void* CScnnmtblbjct_SetMaterialGroup( void* self, uint token )
+        public static void* CScnnmtblbjct_SetMaterialGroup( void* self, void* token )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SetBodyGroup")]
-        public static void* CScnnmtblbjct_SetBodyGroup( void* self, uint token, int value )
+        public static void* CScnnmtblbjct_SetBodyGroup( void* self, void* token, int value )
         {
             return default;
         }
@@ -4099,7 +6889,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_RemoveTag")]
-        public static void* CScnnmtblbjct_RemoveTag( void* self, void* tag )
+        public static void* CScnnmtblbjct_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -4114,27 +6904,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_GetTagAt")]
-        public static void* CScnnmtblbjct_GetTagAt( void* self, int i )
+        public static uint CScnnmtblbjct_GetTagAt( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_AddTag")]
-        public static void* CScnnmtblbjct_AddTag( void* self, void* tag )
+        public static void* CScnnmtblbjct_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_HasTag")]
-        public static int CScnnmtblbjct_HasTag( void* self, void* tag )
+        public static int CScnnmtblbjct_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SetForceLayerID")]
-        public static void* CScnnmtblbjct_SetForceLayerID( void* self, uint nTok )
+        public static void* CScnnmtblbjct_SetForceLayerID( void* self, void* nTok )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnnmtblbjct_SetLayerMatchID")]
-        public static void* CScnnmtblbjct_SetLayerMatchID( void* self, uint nTok )
+        public static void* CScnnmtblbjct_SetLayerMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -4148,36 +6938,39 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnnmtblbjct_m_flDeltaTime")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnnmtblbjct_m_flDeltaTime", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CScnnmtblbjct_m_flDeltaTime( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnnmtblbjct_m_flDeltaTime")]
-        public static void _Set__CScnnmtblbjct_m_flDeltaTime( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnnmtblbjct_m_flDeltaTime", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnnmtblbjct_m_flDeltaTime( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnnmtblbjct_m_worldBounds")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnnmtblbjct_m_worldBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CScnnmtblbjct_m_worldBounds( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnnmtblbjct_m_worldBounds")]
-        public static void _Set__CScnnmtblbjct_m_worldBounds( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnnmtblbjct_m_worldBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnnmtblbjct_m_worldBounds( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnnmtblbjct_m_localBounds")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnnmtblbjct_m_localBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CScnnmtblbjct_m_localBounds( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnnmtblbjct_m_localBounds")]
-        public static void _Set__CScnnmtblbjct_m_localBounds( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnnmtblbjct_m_localBounds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnnmtblbjct_m_localBounds( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CSceneLightObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CSceneLightObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CSceneObject_To_CSceneLightObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CSceneLightObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CSceneLightObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CSceneObject_From_CSceneLightObject( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_SetWorldPosition")]
         public static void* CScnLghtbjct_SetWorldPosition( void* self, void* pos )
@@ -4415,12 +7208,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_GetLightFlags")]
-        public static void* CScnLghtbjct_GetLightFlags( void* self )
+        public static uint CScnLghtbjct_GetLightFlags( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_SetLightFlags")]
-        public static void* CScnLghtbjct_SetLightFlags( void* self, void* flags )
+        public static void* CScnLghtbjct_SetLightFlags( void* self, uint flags )
         {
             return default;
         }
@@ -4530,7 +7323,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_SetMaterialOverride")]
-        public static void* CScnLghtbjct_SetMaterialOverride( void* self, void* hMaterial, uint nAttr, int nAttrValueMatch )
+        public static void* CScnLghtbjct_SetMaterialOverride( void* self, void* hMaterial, void* nAttr, int nAttrValueMatch )
         {
             return default;
         }
@@ -4600,12 +7393,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_GetParent")]
-        public static void* CScnLghtbjct_GetParent( void* self )
+        public static int CScnLghtbjct_GetParent( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_AddChildObject")]
-        public static void* CScnLghtbjct_AddChildObject( void* self, uint nId, void* pChild, void* nChildUpdateFlags )
+        public static void* CScnLghtbjct_AddChildObject( void* self, void* nId, void* pChild, uint nChildUpdateFlags )
         {
             return default;
         }
@@ -4640,7 +7433,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_GetWorld")]
-        public static void* CScnLghtbjct_GetWorld( void* self )
+        public static int CScnLghtbjct_GetWorld( void* self )
         {
             return default;
         }
@@ -4670,12 +7463,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_SetMaterialGroup")]
-        public static void* CScnLghtbjct_SetMaterialGroup( void* self, uint token )
+        public static void* CScnLghtbjct_SetMaterialGroup( void* self, void* token )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_SetBodyGroup")]
-        public static void* CScnLghtbjct_SetBodyGroup( void* self, uint token, int value )
+        public static void* CScnLghtbjct_SetBodyGroup( void* self, void* token, int value )
         {
             return default;
         }
@@ -4695,7 +7488,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_RemoveTag")]
-        public static void* CScnLghtbjct_RemoveTag( void* self, void* tag )
+        public static void* CScnLghtbjct_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -4710,27 +7503,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_GetTagAt")]
-        public static void* CScnLghtbjct_GetTagAt( void* self, int i )
+        public static uint CScnLghtbjct_GetTagAt( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_AddTag")]
-        public static void* CScnLghtbjct_AddTag( void* self, void* tag )
+        public static void* CScnLghtbjct_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_HasTag")]
-        public static int CScnLghtbjct_HasTag( void* self, void* tag )
+        public static int CScnLghtbjct_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_SetForceLayerID")]
-        public static void* CScnLghtbjct_SetForceLayerID( void* self, uint nTok )
+        public static void* CScnLghtbjct_SetForceLayerID( void* self, void* nTok )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtbjct_SetLayerMatchID")]
-        public static void* CScnLghtbjct_SetLayerMatchID( void* self, uint nTok )
+        public static void* CScnLghtbjct_SetLayerMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -4744,9 +7537,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CSceneLightProbeVolumeObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CSceneLightProbeVolumeObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CSceneObject_To_CSceneLightProbeVolumeObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CSceneLightProbeVolumeObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CSceneLightProbeVolumeObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CSceneObject_From_CSceneLightProbeVolumeObject( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_CreateConstants")]
         public static void* CScnLghtPrbVlmbj_CreateConstants( void* self )
@@ -4839,7 +7632,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_SetMaterialOverride")]
-        public static void* CScnLghtPrbVlmbj_SetMaterialOverride( void* self, void* hMaterial, uint nAttr, int nAttrValueMatch )
+        public static void* CScnLghtPrbVlmbj_SetMaterialOverride( void* self, void* hMaterial, void* nAttr, int nAttrValueMatch )
         {
             return default;
         }
@@ -4909,12 +7702,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_GetParent")]
-        public static void* CScnLghtPrbVlmbj_GetParent( void* self )
+        public static int CScnLghtPrbVlmbj_GetParent( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_AddChildObject")]
-        public static void* CScnLghtPrbVlmbj_AddChildObject( void* self, uint nId, void* pChild, void* nChildUpdateFlags )
+        public static void* CScnLghtPrbVlmbj_AddChildObject( void* self, void* nId, void* pChild, uint nChildUpdateFlags )
         {
             return default;
         }
@@ -4949,7 +7742,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_GetWorld")]
-        public static void* CScnLghtPrbVlmbj_GetWorld( void* self )
+        public static int CScnLghtPrbVlmbj_GetWorld( void* self )
         {
             return default;
         }
@@ -4979,12 +7772,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_SetMaterialGroup")]
-        public static void* CScnLghtPrbVlmbj_SetMaterialGroup( void* self, uint token )
+        public static void* CScnLghtPrbVlmbj_SetMaterialGroup( void* self, void* token )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_SetBodyGroup")]
-        public static void* CScnLghtPrbVlmbj_SetBodyGroup( void* self, uint token, int value )
+        public static void* CScnLghtPrbVlmbj_SetBodyGroup( void* self, void* token, int value )
         {
             return default;
         }
@@ -5004,7 +7797,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_RemoveTag")]
-        public static void* CScnLghtPrbVlmbj_RemoveTag( void* self, void* tag )
+        public static void* CScnLghtPrbVlmbj_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -5019,27 +7812,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_GetTagAt")]
-        public static void* CScnLghtPrbVlmbj_GetTagAt( void* self, int i )
+        public static uint CScnLghtPrbVlmbj_GetTagAt( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_AddTag")]
-        public static void* CScnLghtPrbVlmbj_AddTag( void* self, void* tag )
+        public static void* CScnLghtPrbVlmbj_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_HasTag")]
-        public static int CScnLghtPrbVlmbj_HasTag( void* self, void* tag )
+        public static int CScnLghtPrbVlmbj_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_SetForceLayerID")]
-        public static void* CScnLghtPrbVlmbj_SetForceLayerID( void* self, uint nTok )
+        public static void* CScnLghtPrbVlmbj_SetForceLayerID( void* self, void* nTok )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnLghtPrbVlmbj_SetLayerMatchID")]
-        public static void* CScnLghtPrbVlmbj_SetLayerMatchID( void* self, uint nTok )
+        public static void* CScnLghtPrbVlmbj_SetLayerMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -5053,68 +7846,75 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_vBoxMins")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_vBoxMins", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CScnLghtPrbVlmbj_m_vBoxMins( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_vBoxMins")]
-        public static void _Set__CScnLghtPrbVlmbj_m_vBoxMins( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_vBoxMins", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnLghtPrbVlmbj_m_vBoxMins( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_vBoxMaxs")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_vBoxMaxs", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CScnLghtPrbVlmbj_m_vBoxMaxs( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_vBoxMaxs")]
-        public static void _Set__CScnLghtPrbVlmbj_m_vBoxMaxs( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_vBoxMaxs", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnLghtPrbVlmbj_m_vBoxMaxs( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_nHandshake")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_nHandshake", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CScnLghtPrbVlmbj_m_nHandshake( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_nHandshake")]
-        public static void _Set__CScnLghtPrbVlmbj_m_nHandshake( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_nHandshake", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnLghtPrbVlmbj_m_nHandshake( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_nRenderPriority")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_nRenderPriority", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CScnLghtPrbVlmbj_m_nRenderPriority( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_nRenderPriority")]
-        public static void _Set__CScnLghtPrbVlmbj_m_nRenderPriority( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_nRenderPriority", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnLghtPrbVlmbj_m_nRenderPriority( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_hLightProbeTexture")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_hLightProbeTexture", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CScnLghtPrbVlmbj_m_hLightProbeTexture( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_hLightProbeTexture")]
-        public static void _Set__CScnLghtPrbVlmbj_m_hLightProbeTexture( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_hLightProbeTexture", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnLghtPrbVlmbj_m_hLightProbeTexture( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture")]
-        public static void _Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightIndicesTexture( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture")]
-        public static void _Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CScnLghtPrbVlmbj_m_hLightProbeDirectLightScalarsTexture( void* self, void* value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_ChangeFlags")]
         public static void* CSceneObject_ChangeFlags( void* self, long nNewFlags, long nNewFlagsMask )
@@ -5202,7 +8002,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_SetMaterialOverride")]
-        public static void* CSceneObject_SetMaterialOverride( void* self, void* hMaterial, uint nAttr, int nAttrValueMatch )
+        public static void* CSceneObject_SetMaterialOverride( void* self, void* hMaterial, void* nAttr, int nAttrValueMatch )
         {
             return default;
         }
@@ -5272,12 +8072,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_GetParent")]
-        public static void* CSceneObject_GetParent( void* self )
+        public static int CSceneObject_GetParent( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_AddChildObject")]
-        public static void* CSceneObject_AddChildObject( void* self, uint nId, void* pChild, void* nChildUpdateFlags )
+        public static void* CSceneObject_AddChildObject( void* self, void* nId, void* pChild, uint nChildUpdateFlags )
         {
             return default;
         }
@@ -5312,7 +8112,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_GetWorld")]
-        public static void* CSceneObject_GetWorld( void* self )
+        public static int CSceneObject_GetWorld( void* self )
         {
             return default;
         }
@@ -5342,12 +8142,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_SetMaterialGroup")]
-        public static void* CSceneObject_SetMaterialGroup( void* self, uint token )
+        public static void* CSceneObject_SetMaterialGroup( void* self, void* token )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_SetBodyGroup")]
-        public static void* CSceneObject_SetBodyGroup( void* self, uint token, int value )
+        public static void* CSceneObject_SetBodyGroup( void* self, void* token, int value )
         {
             return default;
         }
@@ -5367,7 +8167,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_RemoveTag")]
-        public static void* CSceneObject_RemoveTag( void* self, void* tag )
+        public static void* CSceneObject_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -5382,27 +8182,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_GetTagAt")]
-        public static void* CSceneObject_GetTagAt( void* self, int i )
+        public static uint CSceneObject_GetTagAt( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_AddTag")]
-        public static void* CSceneObject_AddTag( void* self, void* tag )
+        public static void* CSceneObject_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_HasTag")]
-        public static int CSceneObject_HasTag( void* self, void* tag )
+        public static int CSceneObject_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_SetForceLayerID")]
-        public static void* CSceneObject_SetForceLayerID( void* self, uint nTok )
+        public static void* CSceneObject_SetForceLayerID( void* self, void* nTok )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSceneObject_SetLayerMatchID")]
-        public static void* CSceneObject_SetLayerMatchID( void* self, uint nTok )
+        public static void* CSceneObject_SetLayerMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -5416,9 +8216,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CSceneSkyBoxObject")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CSceneObject_To_CSceneSkyBoxObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CSceneObject_To_CSceneSkyBoxObject( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CSceneSkyBoxObject")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CSceneObject_From_CSceneSkyBoxObject", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CSceneObject_From_CSceneSkyBoxObject( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_SetLighting_ConstantColorHemisphere")]
         public static void* CScnSkyBxbjct_SetLighting_ConstantColorHemisphere( void* self, void* vSkyColor )
@@ -5571,7 +8371,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_SetMaterialOverride")]
-        public static void* CScnSkyBxbjct_SetMaterialOverride( void* self, void* hMaterial, uint nAttr, int nAttrValueMatch )
+        public static void* CScnSkyBxbjct_SetMaterialOverride( void* self, void* hMaterial, void* nAttr, int nAttrValueMatch )
         {
             return default;
         }
@@ -5641,12 +8441,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_GetParent")]
-        public static void* CScnSkyBxbjct_GetParent( void* self )
+        public static int CScnSkyBxbjct_GetParent( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_AddChildObject")]
-        public static void* CScnSkyBxbjct_AddChildObject( void* self, uint nId, void* pChild, void* nChildUpdateFlags )
+        public static void* CScnSkyBxbjct_AddChildObject( void* self, void* nId, void* pChild, uint nChildUpdateFlags )
         {
             return default;
         }
@@ -5681,7 +8481,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_GetWorld")]
-        public static void* CScnSkyBxbjct_GetWorld( void* self )
+        public static int CScnSkyBxbjct_GetWorld( void* self )
         {
             return default;
         }
@@ -5711,12 +8511,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_SetMaterialGroup")]
-        public static void* CScnSkyBxbjct_SetMaterialGroup( void* self, uint token )
+        public static void* CScnSkyBxbjct_SetMaterialGroup( void* self, void* token )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_SetBodyGroup")]
-        public static void* CScnSkyBxbjct_SetBodyGroup( void* self, uint token, int value )
+        public static void* CScnSkyBxbjct_SetBodyGroup( void* self, void* token, int value )
         {
             return default;
         }
@@ -5736,7 +8536,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_RemoveTag")]
-        public static void* CScnSkyBxbjct_RemoveTag( void* self, void* tag )
+        public static void* CScnSkyBxbjct_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -5751,27 +8551,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_GetTagAt")]
-        public static void* CScnSkyBxbjct_GetTagAt( void* self, int i )
+        public static uint CScnSkyBxbjct_GetTagAt( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_AddTag")]
-        public static void* CScnSkyBxbjct_AddTag( void* self, void* tag )
+        public static void* CScnSkyBxbjct_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_HasTag")]
-        public static int CScnSkyBxbjct_HasTag( void* self, void* tag )
+        public static int CScnSkyBxbjct_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_SetForceLayerID")]
-        public static void* CScnSkyBxbjct_SetForceLayerID( void* self, uint nTok )
+        public static void* CScnSkyBxbjct_SetForceLayerID( void* self, void* nTok )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CScnSkyBxbjct_SetLayerMatchID")]
-        public static void* CScnSkyBxbjct_SetLayerMatchID( void* self, uint nTok )
+        public static void* CScnSkyBxbjct_SetLayerMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -5816,11 +8616,11 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CSfxTable_GetSamples")]
-        public static int CSfxTable_GetSamples( void* self, void* samples, void* numSamples )
+        public static int CSfxTable_GetSamples( void* self, void* samples, uint numSamples )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CSfxTable_GetSound")]
+        [UnmanagedCallersOnly(EntryPoint = "CSfxTable_GetSound", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CSfxTable_GetSound( void* self )
         {
             return default;
@@ -5861,7 +8661,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CStmnvntryRslt_GetTimestamp")]
-        public static void* CStmnvntryRslt_GetTimestamp( void* self )
+        public static uint CStmnvntryRslt_GetTimestamp( void* self )
         {
             return default;
         }
@@ -5881,7 +8681,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CStmtmnstnc_DefinitionId")]
-        public static void* CStmtmnstnc_DefinitionId( void* self )
+        public static uint CStmtmnstnc_DefinitionId( void* self )
         {
             return default;
         }
@@ -5890,27 +8690,27 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_IsStrongHandleValid")]
+        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_IsStrongHandleValid", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CTextureBase_IsStrongHandleValid( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_IsError")]
+        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_IsError", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CTextureBase_IsError( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_IsStrongHandleLoaded")]
+        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_IsStrongHandleLoaded", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CTextureBase_IsStrongHandleLoaded( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_CopyStrongHandle")]
+        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_CopyStrongHandle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CTextureBase_CopyStrongHandle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_GetBindingPtr")]
+        [UnmanagedCallersOnly(EntryPoint = "CTextureBase_GetBindingPtr", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CTextureBase_GetBindingPtr( void* self )
         {
             return default;
@@ -6051,7 +8851,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrnt32_Element")]
-        public static void* CtlVctrnt32_Element( void* self, int i )
+        public static uint CtlVctrnt32_Element( void* self, int i )
         {
             return default;
         }
@@ -6085,27 +8885,27 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CVfx_IsStrongHandleValid")]
+        [UnmanagedCallersOnly(EntryPoint = "CVfx_IsStrongHandleValid", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CVfx_IsStrongHandleValid( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CVfx_IsError")]
+        [UnmanagedCallersOnly(EntryPoint = "CVfx_IsError", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CVfx_IsError( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CVfx_IsStrongHandleLoaded")]
+        [UnmanagedCallersOnly(EntryPoint = "CVfx_IsStrongHandleLoaded", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int CVfx_IsStrongHandleLoaded( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CVfx_CopyStrongHandle")]
+        [UnmanagedCallersOnly(EntryPoint = "CVfx_CopyStrongHandle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CVfx_CopyStrongHandle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "CVfx_GetBindingPtr")]
+        [UnmanagedCallersOnly(EntryPoint = "CVfx_GetBindingPtr", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* CVfx_GetBindingPtr( void* self )
         {
             return default;
@@ -6121,12 +8921,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CVfx_CreateFromResourceFile")]
-        public static int CVfx_CreateFromResourceFile( void* self, void* pShaderFile, long compileTarget, void* nCreateFlags, int bFailSilently )
+        public static int CVfx_CreateFromResourceFile( void* self, void* pShaderFile, long compileTarget, uint nCreateFlags, int bFailSilently )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CVfx_CreateFromShaderFile")]
-        public static int CVfx_CreateFromShaderFile( void* self, void* pShaderFile, long compileTarget, void* nCreateFlags )
+        public static int CVfx_CreateFromShaderFile( void* self, void* pShaderFile, long compileTarget, uint nCreateFlags )
         {
             return default;
         }
@@ -6210,23 +9010,25 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CVfxCombo_m_nMin")]
-        public static void* _Get__CVfxCombo_m_nMin( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CVfxCombo_m_nMin", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static byte _Get__CVfxCombo_m_nMin( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CVfxCombo_m_nMin")]
-        public static void _Set__CVfxCombo_m_nMin( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CVfxCombo_m_nMax")]
-        public static void* _Get__CVfxCombo_m_nMax( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CVfxCombo_m_nMin", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CVfxCombo_m_nMin( void* self, byte value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CVfxCombo_m_nMax")]
-        public static void _Set__CVfxCombo_m_nMax( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CVfxCombo_m_nMax", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static byte _Get__CVfxCombo_m_nMax( void* self )
         {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CVfxCombo_m_nMax", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CVfxCombo_m_nMax( void* self, byte value )
+        {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CVfxCmbtrtr_Delete")]
         public static void* CVfxCmbtrtr_Delete( void* self )
@@ -6268,14 +9070,15 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CVfxProgramData_m_bLoadedFromVcsFile")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CVfxProgramData_m_bLoadedFromVcsFile", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__CVfxProgramData_m_bLoadedFromVcsFile( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CVfxProgramData_m_bLoadedFromVcsFile")]
-        public static void _Set__CVfxProgramData_m_bLoadedFromVcsFile( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CVfxProgramData_m_bLoadedFromVcsFile", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CVfxProgramData_m_bLoadedFromVcsFile( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CVideoPlayer_Create")]
         public static void* CVideoPlayer_Create( uint managedObject )
@@ -6393,7 +9196,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CVideoPlayer_GetAudioStream")]
-        public static void* CVideoPlayer_GetAudioStream( void* self )
+        public static int CVideoPlayer_GetAudioStream( void* self )
         {
             return default;
         }
@@ -6448,7 +9251,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "DspPreset_AddProcessor")]
-        public static void* DspPreset_AddProcessor( void* self, int nType, void* prms, void* prmsCount )
+        public static void* DspPreset_AddProcessor( void* self, int nType, void* prms, uint prmsCount )
         {
             return default;
         }
@@ -6483,12 +9286,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "EngineGlue_GetStringToken")]
-        public static void* EngineGlue_GetStringToken( void* str )
+        public static uint EngineGlue_GetStringToken( void* str )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "EngineGlue_GetStringTokenValue")]
-        public static void* EngineGlue_GetStringTokenValue( void* token )
+        public static void* EngineGlue_GetStringTokenValue( uint token )
         {
             return default;
         }
@@ -6723,7 +9526,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "FloatBitMap_t_WriteToBuffer")]
-        public static int FloatBitMap_t_WriteToBuffer( void* self, void* pBuffer, int nBufSize, long fmt, int bLowQualityFastCompile, int bIsSrgb, void* nFlags )
+        public static int FloatBitMap_t_WriteToBuffer( void* self, void* pBuffer, int nBufSize, long fmt, int bLowQualityFastCompile, int bIsSrgb, uint nFlags )
         {
             return default;
         }
@@ -6758,22 +9561,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "fpxr_Compositor_GetEyeWidth")]
-        public static void* fpxr_Compositor_GetEyeWidth( void* self )
+        public static uint fpxr_Compositor_GetEyeWidth( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "fpxr_Compositor_GetEyeHeight")]
-        public static void* fpxr_Compositor_GetEyeHeight( void* self )
+        public static uint fpxr_Compositor_GetEyeHeight( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "fpxr_Compositor_GetRenderTargetWidth")]
-        public static void* fpxr_Compositor_GetRenderTargetWidth( void* self )
+        public static uint fpxr_Compositor_GetRenderTargetWidth( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "fpxr_Compositor_GetRenderTargetHeight")]
-        public static void* fpxr_Compositor_GetRenderTargetHeight( void* self )
+        public static uint fpxr_Compositor_GetRenderTargetHeight( void* self )
         {
             return default;
         }
@@ -6783,12 +9586,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "fpxr_Compositor_GetViewInfo")]
-        public static long fpxr_Compositor_GetViewInfo( void* self, void* viewIndex, void* outViewInfo )
+        public static long fpxr_Compositor_GetViewInfo( void* self, uint viewIndex, void* outViewInfo )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "fpxr_Compositor_GetProjectionMatrix")]
-        public static long fpxr_Compositor_GetProjectionMatrix( void* self, void* viewIndex, float flNearZ, float flFarZ, void* outViewInfo )
+        public static long fpxr_Compositor_GetProjectionMatrix( void* self, uint viewIndex, float flNearZ, float flFarZ, void* outViewInfo )
         {
             return default;
         }
@@ -6873,27 +9676,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAudioDevice_ChannelCount")]
-        public static void* g_pAudioDevice_ChannelCount()
+        public static uint g_pAudioDevice_ChannelCount()
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAudioDevice_MixChannelCount")]
-        public static void* g_pAudioDevice_MixChannelCount()
+        public static uint g_pAudioDevice_MixChannelCount()
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAudioDevice_BitsPerSample")]
-        public static void* g_pAudioDevice_BitsPerSample()
+        public static uint g_pAudioDevice_BitsPerSample()
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAudioDevice_BytesPerSample")]
-        public static void* g_pAudioDevice_BytesPerSample()
+        public static uint g_pAudioDevice_BytesPerSample()
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAudioDevice_SampleRate")]
-        public static void* g_pAudioDevice_SampleRate()
+        public static uint g_pAudioDevice_SampleRate()
         {
             return default;
         }
@@ -7153,7 +9956,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pMeshSystem_CreateSceneObject")]
-        public static void* g_pMeshSystem_CreateSceneObject( void* model, void* modelToWorld, void* pDescName, long nFlags, long nObjectTypeFlags, void* pWorld, int creationFlags )
+        public static int g_pMeshSystem_CreateSceneObject( void* model, void* modelToWorld, void* pDescName, long nFlags, long nObjectTypeFlags, void* pWorld, int creationFlags )
         {
             return default;
         }
@@ -7168,7 +9971,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pPhysicsSystem_CreateWorld")]
-        public static void* g_pPhysicsSystem_CreateWorld()
+        public static int g_pPhysicsSystem_CreateWorld()
         {
             return default;
         }
@@ -7258,7 +10061,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pRenderDevice_CreateRenderContext")]
-        public static void* g_pRenderDevice_CreateRenderContext( void* flags )
+        public static void* g_pRenderDevice_CreateRenderContext( uint flags )
         {
             return default;
         }
@@ -7303,7 +10106,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pRenderDevice_CompileAndCreateShader")]
-        public static void* g_pRenderDevice_CompileAndCreateShader( long nType, void* pProgram, void* nBufLen, void* pShaderVersion, void* pDebugName )
+        public static void* g_pRenderDevice_CompileAndCreateShader( long nType, void* pProgram, uint nBufLen, void* pShaderVersion, void* pDebugName )
         {
             return default;
         }
@@ -7313,7 +10116,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pRenderDevice_UnThrottleTextureStreamingForNFrames")]
-        public static void* g_pRenderDevice_UnThrottleTextureStreamingForNFrames( void* nNumberOfFramesForUnthrottledTextureLoading )
+        public static void* g_pRenderDevice_UnThrottleTextureStreamingForNFrames( uint nNumberOfFramesForUnthrottledTextureLoading )
         {
             return default;
         }
@@ -7358,7 +10161,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pRenderDevice_ReadBuffer")]
-        public static int g_pRenderDevice_ReadBuffer( void* hBuffer, void* nOffsetInBytes, void* pBuf, void* nBytesToRead )
+        public static int g_pRenderDevice_ReadBuffer( void* hBuffer, uint nOffsetInBytes, void* pBuf, uint nBytesToRead )
         {
             return default;
         }
@@ -7378,7 +10181,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pRenderDevice_GetTextureViewIndex")]
-        public static int g_pRenderDevice_GetTextureViewIndex( void* hTexture, void* colorSpace, long dim )
+        public static int g_pRenderDevice_GetTextureViewIndex( void* hTexture, byte colorSpace, long dim )
         {
             return default;
         }
@@ -7468,12 +10271,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreateSkyBox")]
-        public static void* g_pSceneSystem_CreateSkyBox( void* skyMaterial, void* world )
+        public static int g_pSceneSystem_CreateSkyBox( void* skyMaterial, void* world )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreateDecal")]
-        public static void* g_pSceneSystem_CreateDecal( void* world )
+        public static int g_pSceneSystem_CreateDecal( void* world )
         {
             return default;
         }
@@ -7498,7 +10301,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreateWorld")]
-        public static void* g_pSceneSystem_CreateWorld( void* debugName )
+        public static int g_pSceneSystem_CreateWorld( void* debugName )
         {
             return default;
         }
@@ -7513,32 +10316,32 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreatePointLight")]
-        public static void* g_pSceneSystem_CreatePointLight( void* pWorld )
+        public static int g_pSceneSystem_CreatePointLight( void* pWorld )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreateSpotLight")]
-        public static void* g_pSceneSystem_CreateSpotLight( void* pWorld )
+        public static int g_pSceneSystem_CreateSpotLight( void* pWorld )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreateOrthoLight")]
-        public static void* g_pSceneSystem_CreateOrthoLight( void* pWorld )
+        public static int g_pSceneSystem_CreateOrthoLight( void* pWorld )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreateDirectionalLight")]
-        public static void* g_pSceneSystem_CreateDirectionalLight( void* pWorld, void* direction )
+        public static int g_pSceneSystem_CreateDirectionalLight( void* pWorld, void* direction )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreateEnvMap")]
-        public static void* g_pSceneSystem_CreateEnvMap( void* pWorld, int nProjectionMode )
+        public static int g_pSceneSystem_CreateEnvMap( void* pWorld, int nProjectionMode )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_CreateLightProbeVolume")]
-        public static void* g_pSceneSystem_CreateLightProbeVolume( void* pWorld )
+        public static int g_pSceneSystem_CreateLightProbeVolume( void* pWorld )
         {
             return default;
         }
@@ -7553,27 +10356,27 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_AddCullingBox")]
-        public static void* g_pSceneSystem_AddCullingBox( void* pWorld, int nCullMode, void* vOrigin, void* vAngles, void* vExtents )
+        public static uint g_pSceneSystem_AddCullingBox( void* pWorld, int nCullMode, void* vOrigin, void* vAngles, void* vExtents )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_RemoveCullingBox")]
-        public static void* g_pSceneSystem_RemoveCullingBox( void* pWorld, void* nBoxId )
+        public static void* g_pSceneSystem_RemoveCullingBox( void* pWorld, uint nBoxId )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_AddVolumetricFogVolume")]
-        public static void* g_pSceneSystem_AddVolumetricFogVolume( void* pWorld, void* volume )
+        public static uint g_pSceneSystem_AddVolumetricFogVolume( void* pWorld, void* volume )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_RemoveVolumetricFogVolume")]
-        public static void* g_pSceneSystem_RemoveVolumetricFogVolume( void* pWorld, void* nId )
+        public static void* g_pSceneSystem_RemoveVolumetricFogVolume( void* pWorld, uint nId )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pSceneSystem_DownsampleTexture")]
-        public static void* g_pSceneSystem_DownsampleTexture( void* ctx, void* src, void* nDownsampleType )
+        public static void* g_pSceneSystem_DownsampleTexture( void* ctx, void* src, byte nDownsampleType )
         {
             return default;
         }
@@ -7673,12 +10476,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pWrldRndrrMgr_UpdateObjectsForRendering")]
-        public static void* g_pWrldRndrrMgr_UpdateObjectsForRendering( uint worldGroupId, void* eyePos, float flLODScale, float flMaxVisibleDistance )
+        public static uint g_pWrldRndrrMgr_UpdateObjectsForRendering( void* worldGroupId, void* eyePos, float flLODScale, float flMaxVisibleDistance )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pWrldRndrrMgr_CreateWorld")]
-        public static void* g_pWrldRndrrMgr_CreateWorld( void* pMapName, void* pSceneWorld, int bAsyncLoad, int bIgnoreExistingWorlds, int bLoadVis, int bPrecacheOnly, uint worldGroupId, void* transform )
+        public static void* g_pWrldRndrrMgr_CreateWorld( void* pMapName, void* pSceneWorld, int bAsyncLoad, int bIgnoreExistingWorlds, int bLoadVis, int bPrecacheOnly, void* worldGroupId, void* transform )
         {
             return default;
         }
@@ -7858,12 +10661,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "globalOVRLipSync_ovrLipSync_DestroyContext")]
-        public static long globalOVRLipSync_ovrLipSync_DestroyContext( void* context )
+        public static long globalOVRLipSync_ovrLipSync_DestroyContext( uint context )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "globalOVRLipSync_ovrLipSync_ResetContext")]
-        public static long globalOVRLipSync_ovrLipSync_ResetContext( void* context )
+        public static long globalOVRLipSync_ovrLipSync_ResetContext( uint context )
         {
             return default;
         }
@@ -7878,12 +10681,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "globalOVRLipSync_ovrLipSync_SendSignal")]
-        public static long globalOVRLipSync_ovrLipSync_SendSignal( void* context, long signal, int arg1, int arg2 )
+        public static long globalOVRLipSync_ovrLipSync_SendSignal( uint context, long signal, int arg1, int arg2 )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "globalOVRLipSync_ovrLipSync_ProcessFrameEx")]
-        public static long globalOVRLipSync_ovrLipSync_ProcessFrameEx( void* context, void* audioBuffer, int sampleCount, long dataType, void* frame )
+        public static long globalOVRLipSync_ovrLipSync_ProcessFrameEx( uint context, void* audioBuffer, int sampleCount, long dataType, void* frame )
         {
             return default;
         }
@@ -8637,27 +11440,27 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_IsStrongHandleValid")]
+        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_IsStrongHandleValid", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int IAnimationGraph_IsStrongHandleValid( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_IsError")]
+        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_IsError", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int IAnimationGraph_IsError( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_IsStrongHandleLoaded")]
+        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_IsStrongHandleLoaded", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int IAnimationGraph_IsStrongHandleLoaded( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_CopyStrongHandle")]
+        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_CopyStrongHandle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* IAnimationGraph_CopyStrongHandle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_GetBindingPtr")]
+        [UnmanagedCallersOnly(EntryPoint = "IAnimationGraph_GetBindingPtr", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* IAnimationGraph_GetBindingPtr( void* self )
         {
             return default;
@@ -8802,27 +11605,27 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_IsStrongHandleValid")]
+        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_IsStrongHandleValid", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int IMaterial2_IsStrongHandleValid( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_IsError")]
+        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_IsError", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int IMaterial2_IsError( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_IsStrongHandleLoaded")]
+        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_IsStrongHandleLoaded", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int IMaterial2_IsStrongHandleLoaded( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_CopyStrongHandle")]
+        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_CopyStrongHandle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* IMaterial2_CopyStrongHandle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_GetBindingPtr")]
+        [UnmanagedCallersOnly(EntryPoint = "IMaterial2_GetBindingPtr", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* IMaterial2_GetBindingPtr( void* self )
         {
             return default;
@@ -8848,7 +11651,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IMaterial2_GetMode")]
-        public static void* IMaterial2_GetMode( void* self, uint token )
+        public static void* IMaterial2_GetMode( void* self, void* token )
         {
             return default;
         }
@@ -8878,22 +11681,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IMaterial2_GetBoolAttributeOrDefault")]
-        public static int IMaterial2_GetBoolAttributeOrDefault( void* self, uint name, int i )
+        public static int IMaterial2_GetBoolAttributeOrDefault( void* self, void* name, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IMaterial2_GetIntAttributeOrDefault")]
-        public static int IMaterial2_GetIntAttributeOrDefault( void* self, uint name, int i )
+        public static int IMaterial2_GetIntAttributeOrDefault( void* self, void* name, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IMaterial2_GetFloatAttributeOrDefault")]
-        public static float IMaterial2_GetFloatAttributeOrDefault( void* self, uint name, float f )
+        public static float IMaterial2_GetFloatAttributeOrDefault( void* self, void* name, float f )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IMaterial2_GetTextureAttributeOrDefault")]
-        public static void* IMaterial2_GetTextureAttributeOrDefault( void* self, uint name )
+        public static void* IMaterial2_GetTextureAttributeOrDefault( void* self, void* name )
         {
             return default;
         }
@@ -8988,7 +11791,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Physggrgtnstnc_GetBodyHandle")]
-        public static void* Physggrgtnstnc_GetBodyHandle( void* self, int i )
+        public static int Physggrgtnstnc_GetBodyHandle( void* self, int i )
         {
             return default;
         }
@@ -8998,12 +11801,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Physggrgtnstnc_GetBodyNameHash")]
-        public static void* Physggrgtnstnc_GetBodyNameHash( void* self, int i )
+        public static uint Physggrgtnstnc_GetBodyNameHash( void* self, int i )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Physggrgtnstnc_GetBodyByNameHash")]
-        public static void* Physggrgtnstnc_GetBodyByNameHash( void* self, int i )
+        public static int Physggrgtnstnc_GetBodyByNameHash( void* self, int i )
         {
             return default;
         }
@@ -9013,7 +11816,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Physggrgtnstnc_FindBodyByName")]
-        public static void* Physggrgtnstnc_FindBodyByName( void* self, void* name )
+        public static int Physggrgtnstnc_FindBodyByName( void* self, void* name )
         {
             return default;
         }
@@ -9023,7 +11826,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Physggrgtnstnc_GetJointHandle")]
-        public static void* Physggrgtnstnc_GetJointHandle( void* self, int nIndex )
+        public static int Physggrgtnstnc_GetJointHandle( void* self, int nIndex )
         {
             return default;
         }
@@ -9043,7 +11846,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Physggrgtnstnc_SetSurfaceProperties")]
-        public static void* Physggrgtnstnc_SetSurfaceProperties( void* self, uint name )
+        public static void* Physggrgtnstnc_SetSurfaceProperties( void* self, void* name )
         {
             return default;
         }
@@ -9068,12 +11871,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Physggrgtnstnc_GetWorld")]
-        public static void* Physggrgtnstnc_GetWorld( void* self )
+        public static int Physggrgtnstnc_GetWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_GetWorld")]
-        public static void* IPhysicsBody_GetWorld( void* self )
+        public static int IPhysicsBody_GetWorld( void* self )
         {
             return default;
         }
@@ -9248,52 +12051,52 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_GetShape")]
-        public static void* IPhysicsBody_GetShape( void* self, int nShape )
+        public static int IPhysicsBody_GetShape( void* self, int nShape )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddSphereShape")]
-        public static void* IPhysicsBody_AddSphereShape( void* self, void* vCenter, float flRadius )
+        public static int IPhysicsBody_AddSphereShape( void* self, void* vCenter, float flRadius )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddCapsuleShape")]
-        public static void* IPhysicsBody_AddCapsuleShape( void* self, void* vCenter1, void* vCenter2, float flRadius )
+        public static int IPhysicsBody_AddCapsuleShape( void* self, void* vCenter1, void* vCenter2, float flRadius )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddBoxShape")]
-        public static void* IPhysicsBody_AddBoxShape( void* self, void* position, void* rotation, void* extent )
+        public static int IPhysicsBody_AddBoxShape( void* self, void* position, void* rotation, void* extent )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddHullShape")]
-        public static void* IPhysicsBody_AddHullShape( void* self, void* position, void* rotation, int numVertices, void* vertices )
+        public static int IPhysicsBody_AddHullShape( void* self, void* position, void* rotation, int numVertices, void* vertices )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddHullShape_1")]
-        public static void* IPhysicsBody_AddHullShape_1( void* self, void* hull, void* xform )
+        public static int IPhysicsBody_AddHullShape_1( void* self, void* hull, void* xform )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddHullShape_2")]
-        public static void* IPhysicsBody_AddHullShape_2( void* self, void* mesh, void* xform )
+        public static int IPhysicsBody_AddHullShape_2( void* self, void* mesh, void* xform )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddMeshShape")]
-        public static void* IPhysicsBody_AddMeshShape( void* self, int numVertices, void* vertices, int numIndices, void* indices, int nMaterialCount )
+        public static int IPhysicsBody_AddMeshShape( void* self, int numVertices, void* vertices, int numIndices, void* indices, int nMaterialCount )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddMeshShape_1")]
-        public static void* IPhysicsBody_AddMeshShape_1( void* self, void* mesh, void* xform, int nMaterialCount )
+        public static int IPhysicsBody_AddMeshShape_1( void* self, void* mesh, void* xform, int nMaterialCount )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_AddHeightFieldShape")]
-        public static void* IPhysicsBody_AddHeightFieldShape( void* self, void* pHeights, void* pMaterials, int sizeX, int sizeY, float sizeScale, float heightScale, int nMaterialCount )
+        public static int IPhysicsBody_AddHeightFieldShape( void* self, void* pHeights, void* pMaterials, int sizeX, int sizeY, float sizeScale, float heightScale, int nMaterialCount )
         {
             return default;
         }
@@ -9403,12 +12206,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_SetMaterialIndex")]
-        public static void* IPhysicsBody_SetMaterialIndex( void* self, uint name )
+        public static void* IPhysicsBody_SetMaterialIndex( void* self, void* name )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_GetAggregate")]
-        public static void* IPhysicsBody_GetAggregate( void* self )
+        public static int IPhysicsBody_GetAggregate( void* self )
         {
             return default;
         }
@@ -9443,7 +12246,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_ManagedObject")]
-        public static void* IPhysicsBody_ManagedObject( void* self )
+        public static int IPhysicsBody_ManagedObject( void* self )
         {
             return default;
         }
@@ -9468,17 +12271,17 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsJoint_GetWorld")]
-        public static void* IPhysicsJoint_GetWorld( void* self )
+        public static int IPhysicsJoint_GetWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsJoint_GetBody1")]
-        public static void* IPhysicsJoint_GetBody1( void* self )
+        public static int IPhysicsJoint_GetBody1( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsJoint_GetBody2")]
-        public static void* IPhysicsJoint_GetBody2( void* self )
+        public static int IPhysicsJoint_GetBody2( void* self )
         {
             return default;
         }
@@ -9743,32 +12546,32 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_AddCollisionFunctionMask")]
-        public static void* IPhysicsShape_AddCollisionFunctionMask( void* self, void* nMask )
+        public static void* IPhysicsShape_AddCollisionFunctionMask( void* self, byte nMask )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_RemoveCollisionFunctionMask")]
-        public static void* IPhysicsShape_RemoveCollisionFunctionMask( void* self, void* nMask )
+        public static void* IPhysicsShape_RemoveCollisionFunctionMask( void* self, byte nMask )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_GetCollisionFunctionMask")]
-        public static void* IPhysicsShape_GetCollisionFunctionMask( void* self )
+        public static byte IPhysicsShape_GetCollisionFunctionMask( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_HasTag")]
-        public static int IPhysicsShape_HasTag( void* self, void* tag )
+        public static int IPhysicsShape_HasTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_AddTag")]
-        public static int IPhysicsShape_AddTag( void* self, void* tag )
+        public static int IPhysicsShape_AddTag( void* self, uint tag )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_RemoveTag")]
-        public static int IPhysicsShape_RemoveTag( void* self, void* tag )
+        public static int IPhysicsShape_RemoveTag( void* self, uint tag )
         {
             return default;
         }
@@ -9778,12 +12581,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_GetBody")]
-        public static void* IPhysicsShape_GetBody( void* self )
+        public static int IPhysicsShape_GetBody( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_SetMaterialIndex")]
-        public static void* IPhysicsShape_SetMaterialIndex( void* self, uint name )
+        public static void* IPhysicsShape_SetMaterialIndex( void* self, void* name )
         {
             return default;
         }
@@ -9828,7 +12631,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_ManagedObject")]
-        public static void* IPhysicsShape_ManagedObject( void* self )
+        public static int IPhysicsShape_ManagedObject( void* self )
         {
             return default;
         }
@@ -9928,7 +12731,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddBody")]
-        public static void* IPhysicsWorld_AddBody( void* self )
+        public static int IPhysicsWorld_AddBody( void* self )
         {
             return default;
         }
@@ -9938,7 +12741,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_GetWorldReferenceBody")]
-        public static void* IPhysicsWorld_GetWorldReferenceBody( void* self )
+        public static int IPhysicsWorld_GetWorldReferenceBody( void* self )
         {
             return default;
         }
@@ -9993,32 +12796,32 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddWeldJoint")]
-        public static void* IPhysicsWorld_AddWeldJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
+        public static int IPhysicsWorld_AddWeldJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddSpringJoint")]
-        public static void* IPhysicsWorld_AddSpringJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
+        public static int IPhysicsWorld_AddSpringJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddRevoluteJoint")]
-        public static void* IPhysicsWorld_AddRevoluteJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
+        public static int IPhysicsWorld_AddRevoluteJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddPrismaticJoint")]
-        public static void* IPhysicsWorld_AddPrismaticJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
+        public static int IPhysicsWorld_AddPrismaticJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddSphericalJoint")]
-        public static void* IPhysicsWorld_AddSphericalJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
+        public static int IPhysicsWorld_AddSphericalJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddMotorJoint")]
-        public static void* IPhysicsWorld_AddMotorJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
+        public static int IPhysicsWorld_AddMotorJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
         {
             return default;
         }
@@ -10043,12 +12846,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_CreateAggregateInstance")]
-        public static void* IPhysicsWorld_CreateAggregateInstance( void* self, void* resourceName, void* tmStart, ulong nGSNHandle, long nMotionType )
+        public static int IPhysicsWorld_CreateAggregateInstance( void* self, void* resourceName, void* tmStart, ulong nGSNHandle, long nMotionType )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_CreateAggregateInstance_1")]
-        public static void* IPhysicsWorld_CreateAggregateInstance_1( void* self, void* model, void* tmStart, ulong nGSNHandle, long nMotionType )
+        public static int IPhysicsWorld_CreateAggregateInstance_1( void* self, void* model, void* tmStart, ulong nGSNHandle, long nMotionType )
         {
             return default;
         }
@@ -10058,7 +12861,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_GetDebugScene")]
-        public static void* IPhysicsWorld_GetDebugScene( void* self )
+        public static int IPhysicsWorld_GetDebugScene( void* self )
         {
             return default;
         }
@@ -10068,22 +12871,22 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_ManagedObject")]
-        public static void* IPhysicsWorld_ManagedObject( void* self )
+        public static int IPhysicsWorld_ManagedObject( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_Query")]
-        public static void* IPhysicsWorld_Query( void* self, void* result, void* vCenter, float flRadius, void* nObjectSetMask )
+        public static void* IPhysicsWorld_Query( void* self, void* result, void* vCenter, float flRadius, ushort nObjectSetMask )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_Query_1")]
-        public static void* IPhysicsWorld_Query_1( void* self, void* result, void* bounds, void* nObjectSetMask )
+        public static void* IPhysicsWorld_Query_1( void* self, void* result, void* bounds, ushort nObjectSetMask )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_Query_2")]
-        public static void* IPhysicsWorld_Query_2( void* self, void* result, void* pPoints, int nPoints, void* nObjectSetMask )
+        public static void* IPhysicsWorld_Query_2( void* self, void* result, void* pPoints, int nPoints, ushort nObjectSetMask )
         {
             return default;
         }
@@ -10198,12 +13001,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IRenderContext_DrawInstancedIndirect")]
-        public static void* IRenderContext_DrawInstancedIndirect( void* self, long type, void* hDrawArgBuffer, void* nBufferOffset )
+        public static void* IRenderContext_DrawInstancedIndirect( void* self, long type, void* hDrawArgBuffer, uint nBufferOffset )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IRenderContext_DrawIndexedInstancedIndirect")]
-        public static void* IRenderContext_DrawIndexedInstancedIndirect( void* self, long type, void* hDrawArgBuffer, void* nBufferOffset )
+        public static void* IRenderContext_DrawIndexedInstancedIndirect( void* self, long type, void* hDrawArgBuffer, uint nBufferOffset )
         {
             return default;
         }
@@ -10358,7 +13161,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISceneLayer_SetObjectMatchID")]
-        public static void* ISceneLayer_SetObjectMatchID( void* self, uint nTok )
+        public static void* ISceneLayer_SetObjectMatchID( void* self, void* nTok )
         {
             return default;
         }
@@ -10403,7 +13206,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISceneLayer_SetAttr")]
-        public static void* ISceneLayer_SetAttr( void* self, uint nTokenID, void* hRenderTarget, long msaa, void* flags )
+        public static void* ISceneLayer_SetAttr( void* self, void* nTokenID, void* hRenderTarget, long msaa, uint flags )
         {
             return default;
         }
@@ -10418,12 +13221,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISceneLayer_GetTextureValue")]
-        public static void* ISceneLayer_GetTextureValue( void* self, uint nTokenID, void* nDefaultValue )
+        public static void* ISceneLayer_GetTextureValue( void* self, void* nTokenID, void* nDefaultValue )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISceneLayer_GetTextureValue_1")]
-        public static void* ISceneLayer_GetTextureValue_1( void* self, uint nTokenID )
+        public static void* ISceneLayer_GetTextureValue_1( void* self, void* nTokenID )
         {
             return default;
         }
@@ -10442,41 +13245,45 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneLayer_m_nLayerFlags")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneLayer_m_nLayerFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static long _Get__ISceneLayer_m_nLayerFlags( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneLayer_m_nLayerFlags")]
-        public static void _Set__ISceneLayer_m_nLayerFlags( void* self, long value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneLayer_m_nLayerFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ISceneLayer_m_nLayerFlags( void* self, long value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneLayer_LayerEnum")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneLayer_LayerEnum", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static long _Get__ISceneLayer_LayerEnum( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneLayer_LayerEnum")]
-        public static void _Set__ISceneLayer_LayerEnum( void* self, long value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneLayer_LayerEnum", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ISceneLayer_LayerEnum( void* self, long value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneLayer_m_viewport")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneLayer_m_viewport", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__ISceneLayer_m_viewport( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneLayer_m_viewport")]
-        public static void _Set__ISceneLayer_m_viewport( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneLayer_m_viewport", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ISceneLayer_m_viewport( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneLayer_m_nClearFlags")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneLayer_m_nClearFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__ISceneLayer_m_nClearFlags( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneLayer_m_nClearFlags")]
-        public static void _Set__ISceneLayer_m_nClearFlags( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneLayer_m_nClearFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ISceneLayer_m_nClearFlags( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISceneView_GetMainViewport")]
         public static void* ISceneView_GetMainViewport( void* self )
@@ -10499,7 +13306,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISceneView_AddRenderLayer")]
-        public static void* ISceneView_AddRenderLayer( void* self, void* pszDebugName, void* viewport, uint eShaderMode, void* pAddBefore )
+        public static void* ISceneView_AddRenderLayer( void* self, void* pszDebugName, void* viewport, void* eShaderMode, void* pAddBefore )
         {
             return default;
         }
@@ -10573,23 +13380,25 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneView_m_ViewUniqueId")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneView_m_ViewUniqueId", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__ISceneView_m_ViewUniqueId( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneView_m_ViewUniqueId")]
-        public static void _Set__ISceneView_m_ViewUniqueId( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneView_m_ViewUniqueId", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ISceneView_m_ViewUniqueId( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneView_m_ManagedCameraId")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ISceneView_m_ManagedCameraId", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__ISceneView_m_ManagedCameraId( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneView_m_ManagedCameraId")]
-        public static void _Set__ISceneView_m_ManagedCameraId( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ISceneView_m_ManagedCameraId", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ISceneView_m_ManagedCameraId( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISceneWorld_DeleteAllObjects")]
         public static void* ISceneWorld_DeleteAllObjects( void* self )
@@ -10857,107 +13666,107 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_RemoveBrowser")]
-        public static void* StmHTMLSrfc_RemoveBrowser( void* self, void* bx )
+        public static void* StmHTMLSrfc_RemoveBrowser( void* self, uint bx )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_LoadURL")]
-        public static void* StmHTMLSrfc_LoadURL( void* self, void* bx, void* pchURL, void* pchPostData )
+        public static void* StmHTMLSrfc_LoadURL( void* self, uint bx, void* pchURL, void* pchPostData )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_AddHeader")]
-        public static void* StmHTMLSrfc_AddHeader( void* self, void* bx, void* key, void* value )
+        public static void* StmHTMLSrfc_AddHeader( void* self, uint bx, void* key, void* value )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_SetSize")]
-        public static void* StmHTMLSrfc_SetSize( void* self, void* bx, void* w, void* h )
+        public static void* StmHTMLSrfc_SetSize( void* self, uint bx, uint w, uint h )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_GetLinkAtPosition")]
-        public static void* StmHTMLSrfc_GetLinkAtPosition( void* self, void* bx, void* w, void* h )
+        public static void* StmHTMLSrfc_GetLinkAtPosition( void* self, uint bx, uint w, uint h )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_SetHorizontalScroll")]
-        public static void* StmHTMLSrfc_SetHorizontalScroll( void* self, void* unBrowserHandle, void* nAbsolutePixelScroll )
+        public static void* StmHTMLSrfc_SetHorizontalScroll( void* self, uint unBrowserHandle, uint nAbsolutePixelScroll )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_SetVerticalScroll")]
-        public static void* StmHTMLSrfc_SetVerticalScroll( void* self, void* unBrowserHandle, void* nAbsolutePixelScroll )
+        public static void* StmHTMLSrfc_SetVerticalScroll( void* self, uint unBrowserHandle, uint nAbsolutePixelScroll )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_SetKeyFocus")]
-        public static void* StmHTMLSrfc_SetKeyFocus( void* self, void* unBrowserHandle, int b )
+        public static void* StmHTMLSrfc_SetKeyFocus( void* self, uint unBrowserHandle, int b )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_AllowStartRequest")]
-        public static void* StmHTMLSrfc_AllowStartRequest( void* self, void* bx, int b )
+        public static void* StmHTMLSrfc_AllowStartRequest( void* self, uint bx, int b )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_JSDialogResponse")]
-        public static void* StmHTMLSrfc_JSDialogResponse( void* self, void* bx, int b )
+        public static void* StmHTMLSrfc_JSDialogResponse( void* self, uint bx, int b )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_SetBackgroundMode")]
-        public static void* StmHTMLSrfc_SetBackgroundMode( void* self, void* bx, int b )
+        public static void* StmHTMLSrfc_SetBackgroundMode( void* self, uint bx, int b )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_SetDPIScalingFactor")]
-        public static void* StmHTMLSrfc_SetDPIScalingFactor( void* self, void* bx, float scale )
+        public static void* StmHTMLSrfc_SetDPIScalingFactor( void* self, uint bx, float scale )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_KeyDown")]
-        public static void* StmHTMLSrfc_KeyDown( void* self, void* unBrowserHandle, void* key, int modifiers, int isSystemKey )
+        public static void* StmHTMLSrfc_KeyDown( void* self, uint unBrowserHandle, uint key, int modifiers, int isSystemKey )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_KeyUp")]
-        public static void* StmHTMLSrfc_KeyUp( void* self, void* unBrowserHandle, void* key, int modifiers )
+        public static void* StmHTMLSrfc_KeyUp( void* self, uint unBrowserHandle, uint key, int modifiers )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_KeyChar")]
-        public static void* StmHTMLSrfc_KeyChar( void* self, void* unBrowserHandle, void* unicodeChar, int modifiers )
+        public static void* StmHTMLSrfc_KeyChar( void* self, uint unBrowserHandle, uint unicodeChar, int modifiers )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_MouseUp")]
-        public static void* StmHTMLSrfc_MouseUp( void* self, void* unBrowserHandle, int eMouseButton )
+        public static void* StmHTMLSrfc_MouseUp( void* self, uint unBrowserHandle, int eMouseButton )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_MouseDown")]
-        public static void* StmHTMLSrfc_MouseDown( void* self, void* unBrowserHandle, int eMouseButton )
+        public static void* StmHTMLSrfc_MouseDown( void* self, uint unBrowserHandle, int eMouseButton )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_MouseDoubleClick")]
-        public static void* StmHTMLSrfc_MouseDoubleClick( void* self, void* unBrowserHandle, int eMouseButton )
+        public static void* StmHTMLSrfc_MouseDoubleClick( void* self, uint unBrowserHandle, int eMouseButton )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_MouseMove")]
-        public static void* StmHTMLSrfc_MouseMove( void* self, void* unBrowserHandle, int x, int y )
+        public static void* StmHTMLSrfc_MouseMove( void* self, uint unBrowserHandle, int x, int y )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_MouseWheel")]
-        public static void* StmHTMLSrfc_MouseWheel( void* self, void* unBrowserHandle, int nDelta )
+        public static void* StmHTMLSrfc_MouseWheel( void* self, uint unBrowserHandle, int nDelta )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "StmHTMLSrfc_SetCookie")]
-        public static void* StmHTMLSrfc_SetCookie( void* self, void* pchHostname, void* pchKey, void* pchValue, void* pchPath, void* nExpires, int bSecure, int bHTTPOnly )
+        public static void* StmHTMLSrfc_SetCookie( void* self, void* pchHostname, void* pchKey, void* pchValue, void* pchPath, uint nExpires, int bSecure, int bHTTPOnly )
         {
             return default;
         }
@@ -11077,7 +13886,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISteamUser_GetVoice")]
-        public static int ISteamUser_GetVoice( void* self, int bWantCompressed, void* pDestBuffer, void* cbDestBufferSize, void* nBytesWritten )
+        public static int ISteamUser_GetVoice( void* self, int bWantCompressed, void* pDestBuffer, uint cbDestBufferSize, void* nBytesWritten )
         {
             return default;
         }
@@ -11087,12 +13896,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISteamUser_GetVoiceOptimalSampleRate")]
-        public static void* ISteamUser_GetVoiceOptimalSampleRate( void* self )
+        public static uint ISteamUser_GetVoiceOptimalSampleRate( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISteamUser_DecompressVoice")]
-        public static int ISteamUser_DecompressVoice( void* self, void* pCompressed, void* cbCompressed, void* pDestBuffer, void* cbDestBufferSize, void* nBytesWritten, void* nDesiredSampleRate )
+        public static int ISteamUser_DecompressVoice( void* self, void* pCompressed, uint cbCompressed, void* pDestBuffer, uint cbDestBufferSize, void* nBytesWritten, uint nDesiredSampleRate )
         {
             return default;
         }
@@ -11127,12 +13936,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISteamUtils_InitFilterText")]
-        public static int ISteamUtils_InitFilterText( void* self, void* unFilterOptions )
+        public static int ISteamUtils_InitFilterText( void* self, uint unFilterOptions )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ISteamUtils_FilterText")]
-        public static int ISteamUtils_FilterText( void* self, long eContext, ulong sourceSteamID, void* pchInputMessage, void* pchOutFilteredText, void* nByteSizeOutFilteredText )
+        public static int ISteamUtils_FilterText( void* self, long eContext, ulong sourceSteamID, void* pchInputMessage, void* pchOutFilteredText, uint nByteSizeOutFilteredText )
         {
             return default;
         }
@@ -11152,7 +13961,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IVfx_CompileShader")]
-        public static void* IVfx_CompileShader( void* self, void* ctx, ulong staticcombo, ulong dynamiccombo, void* pVfx, long compileTarget, long programType, int useShaderCache, void* flags )
+        public static void* IVfx_CompileShader( void* self, void* ctx, ulong staticcombo, ulong dynamiccombo, void* pVfx, long compileTarget, long programType, int useShaderCache, uint flags )
         {
             return default;
         }
@@ -11202,12 +14011,12 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IWorldReference_GetSceneWorld")]
-        public static void* IWorldReference_GetSceneWorld( void* self )
+        public static int IWorldReference_GetSceneWorld( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IWorldReference_PrecacheAllWorldNodes")]
-        public static void* IWorldReference_PrecacheAllWorldNodes( void* self, void* flags )
+        public static void* IWorldReference_PrecacheAllWorldNodes( void* self, uint flags )
         {
             return default;
         }
@@ -11412,7 +14221,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "MeshGlue_CreateModel")]
-        public static void* MeshGlue_CreateModel( void* anim, void* pBodies, void* pMaterialGroups, float mass, uint surfaceProp, void* lodSwitchDistance, void* meshes, int numMeshes, void* lodMasks, void* meshGroupMasks, void* meshGroups, int numMeshGroups, void* vertices, int numVertices, void* indices, int numIndices, void* spheres, int numSpheres, void* capsules, int numCapsules, void* boxes, int numBoxes, void* hulls, int numHulls, void* meshShapes, int numMeshShapes, void* bones, int numBones, void* boneNames, int startTraceVertex, int startTraceIndex, int numTraceVertices, int numTraceIndices, ulong _defaultMeshGroupMask )
+        public static void* MeshGlue_CreateModel( void* anim, void* pBodies, void* pMaterialGroups, float mass, void* surfaceProp, void* lodSwitchDistance, void* meshes, int numMeshes, void* lodMasks, void* meshGroupMasks, void* meshGroups, int numMeshGroups, void* vertices, int numVertices, void* indices, int numIndices, void* spheres, int numSpheres, void* capsules, int numCapsules, void* boxes, int numBoxes, void* hulls, int numHulls, void* meshShapes, int numMeshShapes, void* bones, int numBones, void* boneNames, int startTraceVertex, int startTraceIndex, int numTraceVertices, int numTraceIndices, ulong _defaultMeshGroupMask )
         {
             return default;
         }
@@ -11422,7 +14231,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "MeshGlue_GetModelVertices")]
-        public static void* MeshGlue_GetModelVertices( void* model, void* vertices, void* numVertices )
+        public static void* MeshGlue_GetModelVertices( void* model, void* vertices, uint numVertices )
         {
             return default;
         }
@@ -11432,7 +14241,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "MeshGlue_GetModelIndices")]
-        public static void* MeshGlue_GetModelIndices( void* model, void* indices, void* numIndices )
+        public static void* MeshGlue_GetModelIndices( void* model, void* indices, uint numIndices )
         {
             return default;
         }
@@ -11591,17 +14400,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "NativeLowLevel_Copy")]
+        [UnmanagedCallersOnly(EntryPoint = "NativeLowLevel_Copy", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* NativeLowLevel_Copy( void* dest, void* src, long count )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "PerformanceTrace_BeginEvent")]
-        public static void* PerformanceTrace_BeginEvent( void* name, void* data, void* color )
+        [UnmanagedCallersOnly(EntryPoint = "PerformanceTrace_BeginEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* PerformanceTrace_BeginEvent( void* name, void* data, uint color )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "PerformanceTrace_EndEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "PerformanceTrace_EndEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* PerformanceTrace_EndEvent()
         {
             return default;
@@ -11672,71 +14481,74 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RenderTools_ComputeIndirect")]
-        public static void* RenderTools_ComputeIndirect( void* renderContext, void* attributes, void* pMode, void* hIndirectBuffer, void* nIndirectBufferOffset )
+        public static void* RenderTools_ComputeIndirect( void* renderContext, void* attributes, void* pMode, void* hIndirectBuffer, uint nIndirectBufferOffset )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RenderTools_TraceRays")]
-        public static void* RenderTools_TraceRays( void* renderContext, void* attributes, void* pMode, void* tx, void* ty, void* tz )
+        public static void* RenderTools_TraceRays( void* renderContext, void* attributes, void* pMode, uint tx, uint ty, uint tz )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RenderTools_TraceRaysIndirect")]
-        public static void* RenderTools_TraceRaysIndirect( void* renderContext, void* attributes, void* pMode, void* hIndirectBuffer, void* nIndirectBufferOffset )
+        public static void* RenderTools_TraceRaysIndirect( void* renderContext, void* attributes, void* pMode, void* hIndirectBuffer, uint nIndirectBufferOffset )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RenderTools_SetDynamicConstantBufferData")]
-        public static void* RenderTools_SetDynamicConstantBufferData( void* attributes, uint nTokenID, void* renderContext, void* data, int dataSize )
+        public static void* RenderTools_SetDynamicConstantBufferData( void* attributes, void* nTokenID, void* renderContext, void* data, int dataSize )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RenderTools_CopyTexture")]
-        public static void* RenderTools_CopyTexture( void* renderContext, void* sourceTexture, void* destTexture, void* pSrcRect, int nDestX, int nDestY, void* nSrcMipSlice, void* nSrcArraySlice, void* nDstMipSlice, void* nDstArraySlice )
+        public static void* RenderTools_CopyTexture( void* renderContext, void* sourceTexture, void* destTexture, void* pSrcRect, int nDestX, int nDestY, uint nSrcMipSlice, uint nSrcArraySlice, uint nDstMipSlice, uint nDstArraySlice )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RenderTools_SetGPUBufferData")]
-        public static void* RenderTools_SetGPUBufferData( void* renderContext, void* hGpuBuffer, void* pData, void* nDataSize, void* nOffset )
+        public static void* RenderTools_SetGPUBufferData( void* renderContext, void* hGpuBuffer, void* pData, uint nDataSize, uint nOffset )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RenderTools_CopyGPUBufferHiddenStructureCount")]
-        public static void* RenderTools_CopyGPUBufferHiddenStructureCount( void* renderContext, void* hSrcBuffer, void* hDestBuffer, void* nDestBufferOffset )
+        public static void* RenderTools_CopyGPUBufferHiddenStructureCount( void* renderContext, void* hSrcBuffer, void* hDestBuffer, uint nDestBufferOffset )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RenderTools_SetGPUBufferHiddenStructureCount")]
-        public static void* RenderTools_SetGPUBufferHiddenStructureCount( void* renderContext, void* hBuffer, void* nCounter )
+        public static void* RenderTools_SetGPUBufferHiddenStructureCount( void* renderContext, void* hBuffer, uint nCounter )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnCapsuleDesc_t_m_Capsule")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnCapsuleDesc_t_m_Capsule", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__RnCapsuleDesc_t_m_Capsule( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnCapsuleDesc_t_m_Capsule")]
-        public static void _Set__RnCapsuleDesc_t_m_Capsule( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnCapsuleDesc_t_m_nCollisionAttributeIndex")]
-        public static void* _Get__RnCapsuleDesc_t_m_nCollisionAttributeIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnCapsuleDesc_t_m_Capsule", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnCapsuleDesc_t_m_Capsule( void* self, void* value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnCapsuleDesc_t_m_nCollisionAttributeIndex")]
-        public static void _Set__RnCapsuleDesc_t_m_nCollisionAttributeIndex( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnCapsuleDesc_t_m_nSurfacePropertyIndex")]
-        public static void* _Get__RnCapsuleDesc_t_m_nSurfacePropertyIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnCapsuleDesc_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__RnCapsuleDesc_t_m_nCollisionAttributeIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnCapsuleDesc_t_m_nSurfacePropertyIndex")]
-        public static void _Set__RnCapsuleDesc_t_m_nSurfacePropertyIndex( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnCapsuleDesc_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnCapsuleDesc_t_m_nCollisionAttributeIndex( void* self, uint value )
         {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnCapsuleDesc_t_m_nSurfacePropertyIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__RnCapsuleDesc_t_m_nSurfacePropertyIndex( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnCapsuleDesc_t_m_nSurfacePropertyIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnCapsuleDesc_t_m_nSurfacePropertyIndex( void* self, uint value )
+        {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RnHull_t_GetVertexCount")]
         public static int RnHull_t_GetVertexCount( void* self )
@@ -11793,23 +14605,25 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnHullDesc_t_m_nCollisionAttributeIndex")]
-        public static void* _Get__RnHullDesc_t_m_nCollisionAttributeIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnHullDesc_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__RnHullDesc_t_m_nCollisionAttributeIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnHullDesc_t_m_nCollisionAttributeIndex")]
-        public static void _Set__RnHullDesc_t_m_nCollisionAttributeIndex( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnHullDesc_t_m_nSurfacePropertyIndex")]
-        public static void* _Get__RnHullDesc_t_m_nSurfacePropertyIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnHullDesc_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnHullDesc_t_m_nCollisionAttributeIndex( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnHullDesc_t_m_nSurfacePropertyIndex")]
-        public static void _Set__RnHullDesc_t_m_nSurfacePropertyIndex( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnHullDesc_t_m_nSurfacePropertyIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__RnHullDesc_t_m_nSurfacePropertyIndex( void* self )
         {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnHullDesc_t_m_nSurfacePropertyIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnHullDesc_t_m_nSurfacePropertyIndex( void* self, uint value )
+        {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RnMesh_t_GetTriangleCount")]
         public static int RnMesh_t_GetTriangleCount( void* self )
@@ -11846,509 +14660,565 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnMeshDesc_t_m_nCollisionAttributeIndex")]
-        public static void* _Get__RnMeshDesc_t_m_nCollisionAttributeIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnMeshDesc_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__RnMeshDesc_t_m_nCollisionAttributeIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnMeshDesc_t_m_nCollisionAttributeIndex")]
-        public static void _Set__RnMeshDesc_t_m_nCollisionAttributeIndex( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnMeshDesc_t_m_nSurfacePropertyIndex")]
-        public static void* _Get__RnMeshDesc_t_m_nSurfacePropertyIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnMeshDesc_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnMeshDesc_t_m_nCollisionAttributeIndex( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnMeshDesc_t_m_nSurfacePropertyIndex")]
-        public static void _Set__RnMeshDesc_t_m_nSurfacePropertyIndex( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnMeshDesc_t_m_nSurfacePropertyIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__RnMeshDesc_t_m_nSurfacePropertyIndex( void* self )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnSphereDesc_t_m_Sphere")]
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnMeshDesc_t_m_nSurfacePropertyIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnMeshDesc_t_m_nSurfacePropertyIndex( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnSphereDesc_t_m_Sphere", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__RnSphereDesc_t_m_Sphere( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnSphereDesc_t_m_Sphere")]
-        public static void _Set__RnSphereDesc_t_m_Sphere( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnSphereDesc_t_m_nCollisionAttributeIndex")]
-        public static void* _Get__RnSphereDesc_t_m_nCollisionAttributeIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnSphereDesc_t_m_Sphere", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnSphereDesc_t_m_Sphere( void* self, void* value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnSphereDesc_t_m_nCollisionAttributeIndex")]
-        public static void _Set__RnSphereDesc_t_m_nCollisionAttributeIndex( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__RnSphereDesc_t_m_nSurfacePropertyIndex")]
-        public static void* _Get__RnSphereDesc_t_m_nSurfacePropertyIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnSphereDesc_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__RnSphereDesc_t_m_nCollisionAttributeIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__RnSphereDesc_t_m_nSurfacePropertyIndex")]
-        public static void _Set__RnSphereDesc_t_m_nSurfacePropertyIndex( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nTrianglesRendered")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nTrianglesRendered( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnSphereDesc_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnSphereDesc_t_m_nCollisionAttributeIndex( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nTrianglesRendered")]
-        public static void _Set__ScnSystmPrFrmStt_m_nTrianglesRendered( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nArtistTrianglesRendered")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nArtistTrianglesRendered( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__RnSphereDesc_t_m_nSurfacePropertyIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__RnSphereDesc_t_m_nSurfacePropertyIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nArtistTrianglesRendered")]
-        public static void _Set__ScnSystmPrFrmStt_m_nArtistTrianglesRendered( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nRenderBatchDraws")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nRenderBatchDraws( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__RnSphereDesc_t_m_nSurfacePropertyIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__RnSphereDesc_t_m_nSurfacePropertyIndex( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nRenderBatchDraws")]
-        public static void _Set__ScnSystmPrFrmStt_m_nRenderBatchDraws( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nDrawCalls")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nDrawCalls( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nTrianglesRendered", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nTrianglesRendered( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nDrawCalls")]
-        public static void _Set__ScnSystmPrFrmStt_m_nDrawCalls( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nDrawPrimitives")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nDrawPrimitives( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nTrianglesRendered", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nTrianglesRendered( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nDrawPrimitives")]
-        public static void _Set__ScnSystmPrFrmStt_m_nDrawPrimitives( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nArtistTrianglesRendered", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nArtistTrianglesRendered( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws")]
-        public static void _Set__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nArtistTrianglesRendered", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nArtistTrianglesRendered( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws")]
-        public static void _Set__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nRenderBatchDraws", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nRenderBatchDraws( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws")]
-        public static void _Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nRenderBatchDraws", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nRenderBatchDraws( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled")]
-        public static void _Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nDrawCalls", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nDrawCalls( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls")]
-        public static void _Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumMaterialCompute")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumMaterialCompute( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nDrawCalls", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nDrawCalls( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumMaterialCompute")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumMaterialCompute( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumMaterialSet")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumMaterialSet( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nDrawPrimitives", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nDrawPrimitives( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumMaterialSet")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumMaterialSet( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nDrawPrimitives", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nDrawPrimitives( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumVfxEval")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumVfxEval( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nBaseSceneObjectPrimDraws( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumVfxEval")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumVfxEval( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumVfxRule")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumVfxRule( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumVfxRule")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumVfxRule( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nAnimatableObjectPrimDraws( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumConstantBufferBytes")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumConstantBufferBytes( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumConstantBufferBytes")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumConstantBufferBytes( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectPrimDraws( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow")]
-        public static void _Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial")]
-        public static void _Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadow")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nMaterialChangesShadow( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectsFullyCulled( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadow")]
-        public static void _Set__ScnSystmPrFrmStt_m_nMaterialChangesShadow( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial")]
-        public static void _Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nAggregateSceneObjectDrawCalls( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested")]
-        public static void _Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumMaterialCompute", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumMaterialCompute( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow")]
-        public static void _Set__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaxTransformRow")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nMaxTransformRow( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumMaterialCompute", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumMaterialCompute( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaxTransformRow")]
-        public static void _Set__ScnSystmPrFrmStt_m_nMaxTransformRow( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumRowsUsed")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumRowsUsed( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumMaterialSet", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumMaterialSet( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumRowsUsed")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumRowsUsed( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsTested")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsTested( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumMaterialSet", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumMaterialSet( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsTested")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsTested( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumSimilarMaterialSet( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumVerticesReferenced")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumVerticesReferenced( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumVerticesReferenced")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumVerticesReferenced( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumPrimaryContexts")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumPrimaryContexts( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumTextureOnlyMaterialSet( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumPrimaryContexts")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumPrimaryContexts( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumSecondaryContexts")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumSecondaryContexts( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumVfxEval", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumVfxEval( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumSecondaryContexts")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumSecondaryContexts( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumVfxEval", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumVfxEval( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumVfxRule", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumVfxRule( void* self )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumViewsRendered")]
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumVfxRule", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumVfxRule( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumConstantBufferUpdates( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumConstantBufferBytes", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumConstantBufferBytes( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumConstantBufferBytes", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumConstantBufferBytes( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadow( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nMaterialChangesNonShadowInitial( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nMaterialChangesShadow( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nMaterialChangesShadow( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowInitial( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nMaterialChangesShadowAlphaTested( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nCopyMaterialChangesNonShadow( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nMaxTransformRow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nMaxTransformRow( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nMaxTransformRow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nMaxTransformRow( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumRowsUsed", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumRowsUsed( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumRowsUsed", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumRowsUsed( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsTested", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsTested( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsTested", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsTested( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsPreCullCheck( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsPassingCullCheck( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumVerticesReferenced", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumVerticesReferenced( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumVerticesReferenced", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumVerticesReferenced( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumPrimaryContexts", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumPrimaryContexts( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumPrimaryContexts", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumPrimaryContexts( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumSecondaryContexts", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumSecondaryContexts( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumSecondaryContexts", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumSecondaryContexts( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumDisplayListsSubmitted( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumViewsRendered", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__ScnSystmPrFrmStt_m_nNumViewsRendered( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumViewsRendered")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumViewsRendered( void* self, int value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumResolves")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumResolves( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumViewsRendered", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumViewsRendered( void* self, int value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumResolves")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumResolves( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumCullBoxes")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumCullBoxes( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumResolves", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumResolves( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumCullBoxes")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumCullBoxes( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumResolves", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumResolves( void* self, uint value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nCullingBoxCycleCount")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumCullBoxes", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumCullBoxes( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumCullBoxes", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumCullBoxes( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nCullingBoxCycleCount", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static ulong _Get__ScnSystmPrFrmStt_m_nCullingBoxCycleCount( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nCullingBoxCycleCount")]
-        public static void _Set__ScnSystmPrFrmStt_m_nCullingBoxCycleCount( void* self, ulong value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nCullingBoxCycleCount", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nCullingBoxCycleCount( void* self, ulong value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsTestedAgainstCullingBoxes( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBoundsIndex( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByCullBoxes( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumFadingObjects")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumFadingObjects( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumFadingObjects")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumFadingObjects( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByVis( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumShadowedLightsInView")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumShadowedLightsInView( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByBackfaceCulling( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumShadowedLightsInView")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumShadowedLightsInView( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumShadowMaps")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumShadowMaps( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumShadowMaps")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumShadowMaps( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumRenderTargetBinds")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nNumRenderTargetBinds( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByScreenSizeCulling( void* self, uint value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumRenderTargetBinds")]
-        public static void _Set__ScnSystmPrFrmStt_m_nNumRenderTargetBinds( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nPushConstantSets")]
-        public static void* _Get__ScnSystmPrFrmStt_m_nPushConstantSets( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nPushConstantSets")]
-        public static void _Set__ScnSystmPrFrmStt_m_nPushConstantSets( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumObjectsRejectedByFading( void* self, uint value )
         {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumFadingObjects", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumFadingObjects( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumFadingObjects", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumFadingObjects( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumUniqueMaterialsSeen( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumUnshadowedLightsInView( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumShadowedLightsInView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumShadowedLightsInView( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumShadowedLightsInView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumShadowedLightsInView( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumShadowMaps", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumShadowMaps( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumShadowMaps", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumShadowMaps( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nNumRenderTargetBinds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nNumRenderTargetBinds( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nNumRenderTargetBinds", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nNumRenderTargetBinds( void* self, uint value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ScnSystmPrFrmStt_m_nPushConstantSets", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__ScnSystmPrFrmStt_m_nPushConstantSets( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ScnSystmPrFrmStt_m_nPushConstantSets", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ScnSystmPrFrmStt_m_nPushConstantSets( void* self, uint value )
+        {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ShaderTools_GetShaderSource")]
         public static void* ShaderTools_GetShaderSource( void* pShaderFile )
@@ -12365,59 +15235,65 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_nId")]
-        public static void* _Get__SheetSequence_t_m_nId( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_nId", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__SheetSequence_t_m_nId( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_nId")]
-        public static void _Set__SheetSequence_t_m_nId( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_nId", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SheetSequence_t_m_nId( void* self, uint value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_bClamp")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_bClamp", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SheetSequence_t_m_bClamp( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_bClamp")]
-        public static void _Set__SheetSequence_t_m_bClamp( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_bClamp", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SheetSequence_t_m_bClamp( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_bAlphaCrop")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_bAlphaCrop", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SheetSequence_t_m_bAlphaCrop( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_bAlphaCrop")]
-        public static void _Set__SheetSequence_t_m_bAlphaCrop( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_bAlphaCrop", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SheetSequence_t_m_bAlphaCrop( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_bNoColor")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_bNoColor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SheetSequence_t_m_bNoColor( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_bNoColor")]
-        public static void _Set__SheetSequence_t_m_bNoColor( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_bNoColor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SheetSequence_t_m_bNoColor( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_bNoAlpha")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_bNoAlpha", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SheetSequence_t_m_bNoAlpha( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_bNoAlpha")]
-        public static void _Set__SheetSequence_t_m_bNoAlpha( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_bNoAlpha", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SheetSequence_t_m_bNoAlpha( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_flTotalTime")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SheetSequence_t_m_flTotalTime", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__SheetSequence_t_m_flTotalTime( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_flTotalTime")]
-        public static void _Set__SheetSequence_t_m_flTotalTime( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SheetSequence_t_m_flTotalTime", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SheetSequence_t_m_flTotalTime( void* self, float value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "ShtSqncFrm_t_ImageCount")]
         public static int ShtSqncFrm_t_ImageCount( void* self )
@@ -12429,14 +15305,15 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__ShtSqncFrm_t_m_flDisplayTime")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__ShtSqncFrm_t_m_flDisplayTime", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__ShtSqncFrm_t_m_flDisplayTime( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__ShtSqncFrm_t_m_flDisplayTime")]
-        public static void _Set__ShtSqncFrm_t_m_flDisplayTime( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__ShtSqncFrm_t_m_flDisplayTime", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__ShtSqncFrm_t_m_flDisplayTime( void* self, float value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Steam_Inventory_GetAllItems")]
         public static void* Steam_Inventory_GetAllItems()
@@ -12489,7 +15366,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "Steam_Screenshots_WriteScreenshot")]
-        public static int Steam_Screenshots_WriteScreenshot( void* pubRGB, void* cubRGB, int nWidth, int nHeight )
+        public static int Steam_Screenshots_WriteScreenshot( void* pubRGB, uint cubRGB, int nWidth, int nHeight )
         {
             return default;
         }
@@ -12508,32 +15385,35 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcInstall_m_complete")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcInstall_m_complete", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcInstall_m_complete( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcInstall_m_complete")]
-        public static void _Set__SteamUgc_CUgcInstall_m_complete( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcInstall_m_complete", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcInstall_m_complete( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcInstall_m_success")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcInstall_m_success", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcInstall_m_success( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcInstall_m_success")]
-        public static void _Set__SteamUgc_CUgcInstall_m_success( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcInstall_m_success", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcInstall_m_success( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcInstall_m_resultCode")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcInstall_m_resultCode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcInstall_m_resultCode( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcInstall_m_resultCode")]
-        public static void _Set__SteamUgc_CUgcInstall_m_resultCode( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcInstall_m_resultCode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcInstall_m_resultCode( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "SteamUgc_CUgcQuery_CreateQuery")]
         public static void* SteamUgc_CUgcQuery_CreateQuery( void* json, void* cursor )
@@ -12550,32 +15430,35 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcQuery_m_complete")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcQuery_m_complete", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcQuery_m_complete( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcQuery_m_complete")]
-        public static void _Set__SteamUgc_CUgcQuery_m_complete( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcQuery_m_complete", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcQuery_m_complete( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcQuery_m_success")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcQuery_m_success", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcQuery_m_success( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcQuery_m_success")]
-        public static void _Set__SteamUgc_CUgcQuery_m_success( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcQuery_m_success", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcQuery_m_success( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcQuery_m_resultCode")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcQuery_m_resultCode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcQuery_m_resultCode( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcQuery_m_resultCode")]
-        public static void _Set__SteamUgc_CUgcQuery_m_resultCode( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcQuery_m_resultCode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcQuery_m_resultCode( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "SteamUgc_CUgcUpdate_CreateCommunityItem")]
         public static void* SteamUgc_CUgcUpdate_CreateCommunityItem()
@@ -12673,17 +15556,17 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "SteamUgc_CUgcUpdate_UpdatePreviewFile")]
-        public static void* SteamUgc_CUgcUpdate_UpdatePreviewFile( void* self, void* index, void* previewFile )
+        public static void* SteamUgc_CUgcUpdate_UpdatePreviewFile( void* self, uint index, void* previewFile )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "SteamUgc_CUgcUpdate_UpdatePreviewVideo")]
-        public static void* SteamUgc_CUgcUpdate_UpdatePreviewVideo( void* self, void* index, void* videoId )
+        public static void* SteamUgc_CUgcUpdate_UpdatePreviewVideo( void* self, uint index, void* videoId )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "SteamUgc_CUgcUpdate_RemovePreview")]
-        public static void* SteamUgc_CUgcUpdate_RemovePreview( void* self, void* index )
+        public static void* SteamUgc_CUgcUpdate_RemovePreview( void* self, uint index )
         {
             return default;
         }
@@ -12712,68 +15595,75 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_creating")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_creating", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcUpdate_m_creating( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_creating")]
-        public static void _Set__SteamUgc_CUgcUpdate_m_creating( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_creating", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcUpdate_m_creating( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_created")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_created", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcUpdate_m_created( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_created")]
-        public static void _Set__SteamUgc_CUgcUpdate_m_created( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_created", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcUpdate_m_created( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_submitted")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_submitted", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcUpdate_m_submitted( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_submitted")]
-        public static void _Set__SteamUgc_CUgcUpdate_m_submitted( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_submitted", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcUpdate_m_submitted( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_complete")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_complete", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcUpdate_m_complete( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_complete")]
-        public static void _Set__SteamUgc_CUgcUpdate_m_complete( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_complete", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcUpdate_m_complete( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_success")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_success", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcUpdate_m_success( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_success")]
-        public static void _Set__SteamUgc_CUgcUpdate_m_success( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_success", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcUpdate_m_success( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement")]
-        public static void _Set__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcUpdate_m_bNeedsLegalAgreement( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_resultCode")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__SteamUgc_CUgcUpdate_m_resultCode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__SteamUgc_CUgcUpdate_m_resultCode( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_resultCode")]
-        public static void _Set__SteamUgc_CUgcUpdate_m_resultCode( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__SteamUgc_CUgcUpdate_m_resultCode", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__SteamUgc_CUgcUpdate_m_resultCode( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "VertexLayout_Create")]
         public static void* VertexLayout_Create( void* name, int size )
@@ -12791,7 +15681,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "VertexLayout_Add")]
-        public static void* VertexLayout_Add( void* self, void* semanticName, int semanticIndex, void* format, int offset )
+        public static void* VertexLayout_Add( void* self, void* semanticName, int semanticIndex, uint format, int offset )
         {
             return default;
         }
@@ -12805,23 +15695,25 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VfxCmpldShdrnf_t_compilerOutput")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VfxCmpldShdrnf_t_compilerOutput", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__VfxCmpldShdrnf_t_compilerOutput( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VfxCmpldShdrnf_t_compilerOutput")]
-        public static void _Set__VfxCmpldShdrnf_t_compilerOutput( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VfxCmpldShdrnf_t_compilerOutput", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VfxCmpldShdrnf_t_compilerOutput( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VfxCmpldShdrnf_t_compileFailed")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VfxCmpldShdrnf_t_compileFailed", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__VfxCmpldShdrnf_t_compileFailed( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VfxCmpldShdrnf_t_compileFailed")]
-        public static void _Set__VfxCmpldShdrnf_t_compileFailed( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VfxCmpldShdrnf_t_compileFailed", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VfxCmpldShdrnf_t_compileFailed( void* self, int value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "VPhysXBodyPart_t_GetSphereCount")]
         public static int VPhysXBodyPart_t_GetSphereCount( void* self )
@@ -12869,81 +15761,89 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "VPhysXBodyPart_t_GetCollisionAttributeIndex")]
-        public static void* VPhysXBodyPart_t_GetCollisionAttributeIndex( void* self, int index )
+        public static ushort VPhysXBodyPart_t_GetCollisionAttributeIndex( void* self, int index )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_nFlags")]
-        public static void* _Get__VPhysXBodyPart_t_m_nFlags( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_nFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static uint _Get__VPhysXBodyPart_t_m_nFlags( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_nFlags")]
-        public static void _Set__VPhysXBodyPart_t_m_nFlags( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_nFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXBodyPart_t_m_nFlags( void* self, uint value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_flMass")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_flMass", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXBodyPart_t_m_flMass( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_flMass")]
-        public static void _Set__VPhysXBodyPart_t_m_flMass( void* self, float value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_nCollisionAttributeIndex")]
-        public static void* _Get__VPhysXBodyPart_t_m_nCollisionAttributeIndex( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_flMass", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXBodyPart_t_m_flMass( void* self, float value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_nCollisionAttributeIndex")]
-        public static void _Set__VPhysXBodyPart_t_m_nCollisionAttributeIndex( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static ushort _Get__VPhysXBodyPart_t_m_nCollisionAttributeIndex( void* self )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_flInertiaScale")]
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_nCollisionAttributeIndex", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXBodyPart_t_m_nCollisionAttributeIndex( void* self, ushort value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_flInertiaScale", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXBodyPart_t_m_flInertiaScale( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_flInertiaScale")]
-        public static void _Set__VPhysXBodyPart_t_m_flInertiaScale( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_flInertiaScale", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXBodyPart_t_m_flInertiaScale( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_flLinearDamping")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_flLinearDamping", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXBodyPart_t_m_flLinearDamping( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_flLinearDamping")]
-        public static void _Set__VPhysXBodyPart_t_m_flLinearDamping( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_flLinearDamping", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXBodyPart_t_m_flLinearDamping( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_flAngularDamping")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_flAngularDamping", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXBodyPart_t_m_flAngularDamping( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_flAngularDamping")]
-        public static void _Set__VPhysXBodyPart_t_m_flAngularDamping( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_flAngularDamping", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXBodyPart_t_m_flAngularDamping( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_bOverrideMassCenter")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_bOverrideMassCenter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__VPhysXBodyPart_t_m_bOverrideMassCenter( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_bOverrideMassCenter")]
-        public static void _Set__VPhysXBodyPart_t_m_bOverrideMassCenter( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_bOverrideMassCenter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXBodyPart_t_m_bOverrideMassCenter( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_vMassCenterOverride")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXBodyPart_t_m_vMassCenterOverride", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__VPhysXBodyPart_t_m_vMassCenterOverride( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_vMassCenterOverride")]
-        public static void _Set__VPhysXBodyPart_t_m_vMassCenterOverride( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXBodyPart_t_m_vMassCenterOverride", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXBodyPart_t_m_vMassCenterOverride( void* self, void* value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "VPhysXJoint_t_GetLinearLimitMin")]
         public static float VPhysXJoint_t_GetLinearLimitMin( void* self )
@@ -13005,230 +15905,252 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_nType")]
-        public static void* _Get__VPhysXJoint_t_m_nType( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_nType", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static ushort _Get__VPhysXJoint_t_m_nType( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_nType")]
-        public static void _Set__VPhysXJoint_t_m_nType( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_nBody1")]
-        public static void* _Get__VPhysXJoint_t_m_nBody1( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_nType", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_nType( void* self, ushort value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_nBody1")]
-        public static void _Set__VPhysXJoint_t_m_nBody1( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_nBody2")]
-        public static void* _Get__VPhysXJoint_t_m_nBody2( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_nBody1", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static ushort _Get__VPhysXJoint_t_m_nBody1( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_nBody2")]
-        public static void _Set__VPhysXJoint_t_m_nBody2( void* self, void* value )
-        {
-        }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_nFlags")]
-        public static void* _Get__VPhysXJoint_t_m_nFlags( void* self )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_nBody1", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_nBody1( void* self, ushort value )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_nFlags")]
-        public static void _Set__VPhysXJoint_t_m_nFlags( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_nBody2", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static ushort _Get__VPhysXJoint_t_m_nBody2( void* self )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableCollision")]
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_nBody2", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_nBody2( void* self, ushort value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_nFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static ushort _Get__VPhysXJoint_t_m_nFlags( void* self )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_nFlags", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_nFlags( void* self, ushort value )
+        {
+            return default;
+        }
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableCollision", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__VPhysXJoint_t_m_bEnableCollision( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableCollision")]
-        public static void _Set__VPhysXJoint_t_m_bEnableCollision( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableCollision", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_bEnableCollision( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableLinearLimit")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableLinearLimit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__VPhysXJoint_t_m_bEnableLinearLimit( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableLinearLimit")]
-        public static void _Set__VPhysXJoint_t_m_bEnableLinearLimit( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableLinearLimit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_bEnableLinearLimit( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableLinearMotor")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableLinearMotor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__VPhysXJoint_t_m_bEnableLinearMotor( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableLinearMotor")]
-        public static void _Set__VPhysXJoint_t_m_bEnableLinearMotor( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableLinearMotor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_bEnableLinearMotor( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_vLinearTargetVelocity")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_vLinearTargetVelocity", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__VPhysXJoint_t_m_vLinearTargetVelocity( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_vLinearTargetVelocity")]
-        public static void _Set__VPhysXJoint_t_m_vLinearTargetVelocity( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_vLinearTargetVelocity", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_vLinearTargetVelocity( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flMaxForce")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flMaxForce", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXJoint_t_m_flMaxForce( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flMaxForce")]
-        public static void _Set__VPhysXJoint_t_m_flMaxForce( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flMaxForce", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_flMaxForce( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableSwingLimit")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableSwingLimit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__VPhysXJoint_t_m_bEnableSwingLimit( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableSwingLimit")]
-        public static void _Set__VPhysXJoint_t_m_bEnableSwingLimit( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableSwingLimit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_bEnableSwingLimit( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableTwistLimit")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableTwistLimit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__VPhysXJoint_t_m_bEnableTwistLimit( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableTwistLimit")]
-        public static void _Set__VPhysXJoint_t_m_bEnableTwistLimit( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableTwistLimit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_bEnableTwistLimit( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableAngularMotor")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_bEnableAngularMotor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int _Get__VPhysXJoint_t_m_bEnableAngularMotor( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableAngularMotor")]
-        public static void _Set__VPhysXJoint_t_m_bEnableAngularMotor( void* self, int value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_bEnableAngularMotor", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_bEnableAngularMotor( void* self, int value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_vAngularTargetVelocity")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_vAngularTargetVelocity", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__VPhysXJoint_t_m_vAngularTargetVelocity( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_vAngularTargetVelocity")]
-        public static void _Set__VPhysXJoint_t_m_vAngularTargetVelocity( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_vAngularTargetVelocity", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_vAngularTargetVelocity( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flMaxTorque")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flMaxTorque", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXJoint_t_m_flMaxTorque( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flMaxTorque")]
-        public static void _Set__VPhysXJoint_t_m_flMaxTorque( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flMaxTorque", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_flMaxTorque( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flLinearFrequency")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flLinearFrequency", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXJoint_t_m_flLinearFrequency( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flLinearFrequency")]
-        public static void _Set__VPhysXJoint_t_m_flLinearFrequency( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flLinearFrequency", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_flLinearFrequency( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flLinearDampingRatio")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flLinearDampingRatio", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXJoint_t_m_flLinearDampingRatio( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flLinearDampingRatio")]
-        public static void _Set__VPhysXJoint_t_m_flLinearDampingRatio( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flLinearDampingRatio", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_flLinearDampingRatio( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flAngularFrequency")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flAngularFrequency", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXJoint_t_m_flAngularFrequency( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flAngularFrequency")]
-        public static void _Set__VPhysXJoint_t_m_flAngularFrequency( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flAngularFrequency", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_flAngularFrequency( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flAngularDampingRatio")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flAngularDampingRatio", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXJoint_t_m_flAngularDampingRatio( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flAngularDampingRatio")]
-        public static void _Set__VPhysXJoint_t_m_flAngularDampingRatio( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flAngularDampingRatio", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_flAngularDampingRatio( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flLinearStrength")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flLinearStrength", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXJoint_t_m_flLinearStrength( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flLinearStrength")]
-        public static void _Set__VPhysXJoint_t_m_flLinearStrength( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flLinearStrength", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_flLinearStrength( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flAngularStrength")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_flAngularStrength", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__VPhysXJoint_t_m_flAngularStrength( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flAngularStrength")]
-        public static void _Set__VPhysXJoint_t_m_flAngularStrength( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_flAngularStrength", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_flAngularStrength( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_Frame1")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_Frame1", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__VPhysXJoint_t_m_Frame1( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_Frame1")]
-        public static void _Set__VPhysXJoint_t_m_Frame1( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_Frame1", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_Frame1( void* self, void* value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_Frame2")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__VPhysXJoint_t_m_Frame2", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* _Get__VPhysXJoint_t_m_Frame2( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_Frame2")]
-        public static void _Set__VPhysXJoint_t_m_Frame2( void* self, void* value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__VPhysXJoint_t_m_Frame2", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__VPhysXJoint_t_m_Frame2( void* self, void* value )
         {
+            return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "VSound_t_DestroyStrongHandle")]
         public static void* VSound_t_DestroyStrongHandle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "VSound_t_IsStrongHandleValid")]
+        [UnmanagedCallersOnly(EntryPoint = "VSound_t_IsStrongHandleValid", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int VSound_t_IsStrongHandleValid( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "VSound_t_IsError")]
+        [UnmanagedCallersOnly(EntryPoint = "VSound_t_IsError", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int VSound_t_IsError( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "VSound_t_IsStrongHandleLoaded")]
+        [UnmanagedCallersOnly(EntryPoint = "VSound_t_IsStrongHandleLoaded", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static int VSound_t_IsStrongHandleLoaded( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "VSound_t_CopyStrongHandle")]
+        [UnmanagedCallersOnly(EntryPoint = "VSound_t_CopyStrongHandle", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* VSound_t_CopyStrongHandle( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "VSound_t_GetBindingPtr")]
+        [UnmanagedCallersOnly(EntryPoint = "VSound_t_GetBindingPtr", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* VSound_t_GetBindingPtr( void* self )
         {
             return default;

@@ -69,4 +69,7 @@
     <Project Path="Sandbox.Test.Hotload/Sandbox.Test.BeforeHotload.csproj" />
     <Project Path="Sandbox.Test/Sandbox.Test.csproj" />
   </Folder>
+  <Folder Name="/Emulation/">
+    <Project Path="../src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj" />
+  </Folder>
 </Solution>

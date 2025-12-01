@@ -2,7 +2,7 @@
 
 namespace NativeEngine;
 
-internal enum MaterialSystem2AppSystemDictFlags
+public enum MaterialSystem2AppSystemDictFlags
 {
 	None = 0,
 	IsConsoleApp = 1 << 0,
@@ -12,7 +12,7 @@ internal enum MaterialSystem2AppSystemDictFlags
 };
 
 [StructLayout( LayoutKind.Sequential )]
-internal struct MaterialSystem2AppSystemDictCreateInfo
+public struct MaterialSystem2AppSystemDictCreateInfo
 {
 	public IntPtr pWindowTitle;
 	public MaterialSystem2AppSystemDictFlags iFlags;

@@ -7,6 +7,14 @@ namespace Sbox.Engine.Emulation.Generated
 {
     public static unsafe partial class Exports
     {
+	public static unsafe void FillNativeFunctionsAnimgraph(void** managedFunctions, void** nativeFunctions, int* structSizes)
+ 	{
+ 		var i = 0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged<IntPtr, void>)&Sbox.Engine.Emulation.EngineExports.DebugError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQnmGrphPrvwDckW_GetPreviewModel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQnmGrphPrvwDckW_SetPreviewModel;
+ 	}
+
         [UnmanagedCallersOnly(EntryPoint = "CQnmGrphPrvwDckW_GetPreviewModel")]
         public static void* CQnmGrphPrvwDckW_GetPreviewModel( void* self )
         {

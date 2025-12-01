@@ -7,6 +7,111 @@ namespace Sbox.Engine.Emulation.Generated
 {
     public static unsafe partial class Exports
     {
+	public static unsafe void FillNativeFunctionsAssetsystem(void** managedFunctions, void** nativeFunctions, int* structSizes)
+ 	{
+ 		var i = 0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged<IntPtr, void>)&Sbox.Engine.Emulation.EngineExports.DebugError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&sstPckdWrppr_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&sstPckdWrppr_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&sstPckdWrppr_AddAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CResourceStream_WriteBytes;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CResourceStream_Align;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CResourceStream_AlignPointer;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&CResourceStream_Tell;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CtlVctrsst_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CtlVctrsst_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CtlVctrsst_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrsst_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CtlVctrsstTyp_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&CtlVctrsstTyp_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CtlVctrsstTyp_Count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CtlVctrsstTyp_Element;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&g_psstPrvwSystm_RenderAssetThumbnail;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_psstPrvwSystm_OnThumbnailGenerated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_psstPrvwSystm_GetModelForAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pAssetSystem_RecordAssetOpen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pAssetSystem_RecordAssetOpen_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pAssetSystem_FindAssetByFilename;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pAssetSystem_FindAssetByAssetRelativePath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pAssetSystem_RegisterAssetFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pAssetSystem_RunFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pAssetSystem_UpdateMods;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&g_pAssetSystem_GetAllModsCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&g_pAssetSystem_RecompileAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&g_pAssetSystem_UpdateGameResourceType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pAssetSystem_LoadWorkingSetsAndTags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAsset_GetFriendlyName_Transient;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&IAsset_GetRelativePath_Transient;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&IAsset_GetAbsolutePath_Transient;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_HasAnyFiles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_IsCached;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_CanReload;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_CanRecompile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&IAsset_GetAssetIndexInt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_OpenInTool;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&IAsset_OpenInSecondaryTool;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&IAsset_GetAssetsIDependOn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&IAsset_GetAssetsIParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&IAsset_GetAssetsIReference;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&IAsset_GetAssetsDependingOnMe;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&IAsset_GetAssetsReferencingMe;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&IAsset_GetAssetsParentingMe;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_AdditionalRelatedFileCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_AdditionalInputDependencyCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IAsset_GetAdditionalRelatedFile_Transient;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IAsset_GetAdditionalInputDependency_Transient;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, void* >)&IAsset_GetUnrecognizedRelatedPaths;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAsset_RequireDependencyInfo_Virtual;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_NeedAnyDependencyUpdate_Virtual;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_IsTrivialChildAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_HasHiddenAssetFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_GetAssetTypeId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IAsset_CacheAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAsset_UncacheAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_HasSourceFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_HasCompiledFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_IsCompiled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_IsCompiledAndUpToDate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_IsCompileFailed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAsset_CompileIfNeeded;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&IAsset_FindIntEditInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IAsset_FindStringEditInfo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAsset_GetCompileStateReason_Transient;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&IAsset_SetInMemoryReplacement;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAsset_DiscardInMemoryReplacement;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&sstPckrLstnr_NotifyAssetPicked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAssetType_GetFriendlyName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAssetType_GetIconLg;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAssetType_GetIconSm;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAssetType_GetPrimaryExtension;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAssetType_GetColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAssetType_GetCategory;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAssetType_HideTypeByDefault;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAssetType_IgnoreCompiledState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAssetType_IsContentFileText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAssetType_IsSimpleAsset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAssetType_HasDependencies;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IAssetType_PrefersIconForThumbnail;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IAssetType_GetAssetTypeName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IAssetType_GetAdditionalExtensions;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&RsrcCmplrCntxt_SetExtension;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&RsrcCmplrCntxt_SetCompiler;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RsrcCmplrCntxt_FullPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RsrcCmplrCntxt_RelativePath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RsrcCmplrCntxt_ResourceName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&RsrcCmplrCntxt_SpecifyResourceVersion;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, uint, uint, void* >)&RsrcCmplrCntxt_RegisterSpecialDependency;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&RsrcCmplrCntxt_RegisterReference;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&RsrcCmplrCntxt_RegisterInputFileDependency;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, int >)&RsrcCmplrCntxt_WriteBlock;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RsrcCmplrCntxt_GetOverrideData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RsrcCmplrCntxt_Data;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&RsrcCmplrCntxt_StreamingData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&RsrcCmplrCntxt_CreateChildContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&RsrcCmplrCntxtCh_SetOverrideInputData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&RsrcCmplrCntxtCh_CompileImmediately;
+ 	}
+
         [UnmanagedCallersOnly(EntryPoint = "sstPckdWrppr_DeleteThis")]
         public static void* sstPckdWrppr_DeleteThis( void* self )
         {
@@ -38,7 +143,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "CResourceStream_Tell")]
-        public static void* CResourceStream_Tell( void* self )
+        public static uint CResourceStream_Tell( void* self )
         {
             return default;
         }
@@ -188,7 +293,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetIndexInt")]
-        public static void* IAsset_GetAssetIndexInt( void* self )
+        public static uint IAsset_GetAssetIndexInt( void* self )
         {
             return default;
         }
@@ -453,7 +558,7 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_RegisterSpecialDependency")]
-        public static void* RsrcCmplrCntxt_RegisterSpecialDependency( void* self, void* str, void* nUserData, void* nFingerprint )
+        public static void* RsrcCmplrCntxt_RegisterSpecialDependency( void* self, void* str, uint nUserData, uint nFingerprint )
         {
             return default;
         }

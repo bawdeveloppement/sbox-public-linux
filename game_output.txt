@@ -1,0 +1,57 @@
+Current directory: /home/hermann/Repositories/sbox-public/game
+[NativeAOT Engine] igen_engine called with hash: 43604
+[NativeAOT] CMtrlSystm2ppSys_Create
+[NativeAOT] SourceEnginePreInit
+[AppSystem] Calling Bootstrap.PreInit...
+[NativeAOT] GetGameRootFolder: /home/hermann/Repositories/sbox-public/game
+[AppSystem] Bootstrap.PreInit completed
+[NativeAOT] SourceEngineInit
+[NativeAOT MESSAGEBOX] Bootstrap::Init Error: Failed to bootstrap engine.
+
+System.AggregateException: One or more errors occurred. (The type initializer for 'Sandbox.CubemapRendering' threw an exception.) (The type initializer for 'Sandbox.Graphics' threw an exception.) (The type initializer for 'Sandbox.Audio.AudioEngine' threw an exception.) (The type initializer for 'Sandbox.Engine.Shaders.ShaderCompile' threw an exception.)
+ ---> System.TypeInitializationException: The type initializer for 'Sandbox.CubemapRendering' threw an exception.
+ ---> System.Exception: Object should not be null
+   at Sandbox.Diagnostics.Assert.NotNull[T](T obj, String message) in /home/hermann/Repositories/sbox-public/engine/Sandbox.System/Assert.cs:line 18
+   at Sandbox.Diagnostics.Assert.NotNull[T](T obj) in /home/hermann/Repositories/sbox-public/engine/Sandbox.System/Assert.cs:line 27
+   at Sandbox.ComputeShader..ctor(String path) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Render/ComputeShader.cs:line 24
+   at Sandbox.CubemapRendering..cctor() in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Render/CubemapRendering.cs:line 15
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(RuntimeTypeHandle type)
+   at Sandbox.ReflectionUtility.RunAllStaticConstructors(Assembly asm) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Reflection/Utility.cs:line 19
+   --- End of inner exception stack trace ---
+   at Sandbox.ReflectionUtility.RunAllStaticConstructors(Assembly asm) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Reflection/Utility.cs:line 30
+   at Sandbox.ReflectionUtility.RunAllStaticConstructors(String assemblyName) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Reflection/Utility.cs:line 7
+   at Sandbox.Engine.Bootstrap.Init() in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Core/Bootstrap.cs:line 168
+ ---> (Inner Exception #1) System.TypeInitializationException: The type initializer for 'Sandbox.Graphics' threw an exception.
+ ---> System.Exception: Object should not be null
+   at Sandbox.Diagnostics.Assert.NotNull[T](T obj, String message) in /home/hermann/Repositories/sbox-public/engine/Sandbox.System/Assert.cs:line 18
+   at Sandbox.Diagnostics.Assert.NotNull[T](T obj) in /home/hermann/Repositories/sbox-public/engine/Sandbox.System/Assert.cs:line 27
+   at Sandbox.ComputeShader..ctor(String path) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Render/ComputeShader.cs:line 24
+   at Sandbox.Graphics..cctor() in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Render/Graphics.MipmapGen.cs:line 9
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(RuntimeTypeHandle type)
+   at Sandbox.ReflectionUtility.RunAllStaticConstructors(Assembly asm) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Reflection/Utility.cs:line 19<---
+
+ ---> (Inner Exception #2) System.TypeInitializationException: The type initializer for 'Sandbox.Audio.AudioEngine' threw an exception.
+ ---> System.NullReferenceException: DspPreset was null when calling AddProcessor
+   at Sandbox.Audio.DspPreset.AddProcessor(Int32 v, Single[] values) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Audio/Dsp/DspPreset.cs:line 48
+   at Sandbox.Audio.DspPreset.AddReverb(Single msDelayMax, Single msDelayMin, Single delayCount, Single feedack, Single gain, Single cutoffFreq, Boolean parallel, Single modDepthMs, Single modRate) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Audio/Dsp/DspPreset.cs:line 54
+   at Sandbox.Audio.DspFactory.CreateBuiltIn() in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Audio/Dsp/DspFactory.cs:line 21
+   at Sandbox.Audio.AudioEngine..cctor() in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Audio/AudioEngine.cs:line 50
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(RuntimeTypeHandle type)
+   at Sandbox.ReflectionUtility.RunAllStaticConstructors(Assembly asm) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Reflection/Utility.cs:line 19<---
+
+ ---> (Inner Exception #3) System.TypeInitializationException: The type initializer for 'Sandbox.Engine.Shaders.ShaderCompile' threw an exception.
+ ---> System.EntryPointNotFoundException: Unable to find an entry point named 'CreateInterface' in shared library.
+   at System.Runtime.InteropServices.NativeLibrary.GetExport(IntPtr handle, String name)
+   at NativeEngine.CreateInterface.GetCreateInterface(String dll) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Core/Interop/CreateInterface.cs:line 34
+   at NativeEngine.CreateInterface.LoadInterface(String dll, String interfacename) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Core/Interop/CreateInterface.cs:line 39
+   at Sandbox.Engine.Shaders.ShaderCompile..cctor() in /home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Render/ShaderCompile/ShaderCompile.cs:line 93
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(RuntimeTypeHandle type)
+   at Sandbox.ReflectionUtility.RunAllStaticConstructors(Assembly asm) in /home/hermann/Repositories/sbox-public/engine/Sandbox.Reflection/Utility.cs:line 19<---
+
+
+This either means that we've messed something up, or you've edited a base addon - in that case, verify your game files.
+Take a look at your Log files if you're still having problems.

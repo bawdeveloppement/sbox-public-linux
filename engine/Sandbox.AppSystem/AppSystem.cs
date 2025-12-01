@@ -100,10 +100,7 @@ public class AppSystem
 
 			Init();
 
-			if ( !System.OperatingSystem.IsLinux() )
-			{
-				NativeEngine.EngineGlobal.Plat_SetCurrentFrame( 0 );
-			}
+			NativeEngine.EngineGlobal.Plat_SetCurrentFrame( 0 );
 
 			while ( RunFrame() )
 			{
@@ -179,11 +176,7 @@ public class AppSystem
 		        var commandLine = System.Environment.CommandLine;
 		        commandLine = commandLine.Replace( ".dll", ".exe" ); // uck
 		
-		        _appSystem = null; // Default to null for Linux
-		        if ( !System.OperatingSystem.IsLinux() )
-		        {
-		            _appSystem = CMaterialSystem2AppSystemDict.Create( createInfo.ToMaterialSystem2AppSystemDictCreateInfo() );
-		        }
+		        _appSystem = CMaterialSystem2AppSystemDict.Create( createInfo.ToMaterialSystem2AppSystemDictCreateInfo() );
 		
 		        if ( _appSystem is not null )
 		        {
@@ -215,20 +208,32 @@ public class AppSystem
 		                {
 		                    throw new System.Exception( "SourceEnginePreInit failed" );
 		                }
-		
-		                Bootstrap.PreInit( _appSystem.Value );
-		
-		                if ( createInfo.Flags.HasFlag( AppSystemFlags.IsStandaloneGame ) )
-		                {
-		                    Standalone.Init();
-		                }
-		
-		                if ( !NativeEngine.EngineGlobal.SourceEngineInit( _appSystem.Value ) ) // Use .Value
-		                {
-		                    throw new System.Exception( "SourceEngineInit returned false" );
-		                }
-		
-		                Bootstrap.Init();
+
+
+                try
+                {
+                    Console.WriteLine("[AppSystem] Calling Bootstrap.PreInit...");
+                    Bootstrap.PreInit( _appSystem.Value );
+                    Console.WriteLine("[AppSystem] Bootstrap.PreInit completed");
+
+                    if ( createInfo.Flags.HasFlag( AppSystemFlags.IsStandaloneGame ) )
+                    {
+                        Standalone.Init();
+                    }
+
+                    if ( !NativeEngine.EngineGlobal.SourceEngineInit( _appSystem.Value ) )
+                    {
+                        throw new System.Exception( "SourceEngineInit returned false" );
+                    }
+
+                    Bootstrap.Init();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[AppSystem] Initialization failed: {ex.Message}");
+                    Console.WriteLine($"[AppSystem] Stack trace: {ex.StackTrace}");
+                    throw;
+                }
 		            }
 		            else if ( !System.OperatingSystem.IsLinux() ) // Only throw if not Linux, and _appSystem is null unexpectedly
 		            {

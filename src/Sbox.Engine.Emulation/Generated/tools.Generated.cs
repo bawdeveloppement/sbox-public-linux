@@ -7,21 +7,4375 @@ namespace Sbox.Engine.Emulation.Generated
 {
     public static unsafe partial class Exports
     {
-        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractScrollArea_To_CAbstractScrollArea")]
+	public static unsafe void FillNativeFunctionsTools(void** managedFunctions, void** nativeFunctions, int* structSizes)
+ 	{
+ 		var i = 0;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged<IntPtr, void>)&Sbox.Engine.Emulation.EngineExports.DebugError;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QAbstractScrollArea_To_CAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QAbstractScrollArea_From_CAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QFrame_To_CAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QFrame_From_CAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_CAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_CAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CbstrctScrllr_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CbstrctScrllr_horizontalScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CbstrctScrllr_verticalScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CbstrctScrllr_horizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CbstrctScrllr_setHorizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CbstrctScrllr_verticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CbstrctScrllr_setVerticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CbstrctScrllr_viewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QAction_To_CAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QAction_From_CAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CAction_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAction_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAction_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAction_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAction_setSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CAction_isSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAction_setCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CAction_isCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CAction_isChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CAction_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CAction_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAction_setChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAction_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAction_setIconVisibleInMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CAction_isIconVisibleInMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CAction_setShortcutVisibleInContextMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CAction_isShortcutVisibleInContextMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAction_trigger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setShortcut;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CAction_setShortcutContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CAction_shortcutContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAction_iconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAction_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CAction_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CAction_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CAction_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&CAction_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CAction_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CCheckBox_CreateCheckBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CClassInputOutputBase_To_CClassInput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CClassInputOutputBase_From_CClassInput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CClassInput_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClassInput_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClassInput_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClassInput_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CClassInput_GetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClassInput_GetTypeText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CClassInput_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CClassInput_SetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CClassInput_SetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CClassInput_IsInput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CClassInput_IsOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClssnpttptBs_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClssnpttptBs_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClssnpttptBs_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CClssnpttptBs_GetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClssnpttptBs_GetTypeText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CClssnpttptBs_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CClssnpttptBs_SetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CClssnpttptBs_SetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CClssnpttptBs_IsInput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CClssnpttptBs_IsOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CClassInputOutputBase_To_CClassOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CClassInputOutputBase_From_CClassOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CClassOutput_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClassOutput_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClassOutput_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClassOutput_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CClassOutput_GetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CClassOutput_GetTypeText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CClassOutput_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CClassOutput_SetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CClassOutput_SetType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CClassOutput_IsInput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CClassOutput_IsOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CComboBox_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CFrame_CreateFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QMainWindow_To_CFramelessMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QMainWindow_From_CFramelessMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_CFramelessMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_CFramelessMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CFramelessMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CFramelessMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, void*, void*, void*, void* >)&CFrmlssMnWndw_SetTitleBarWidgets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_iconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_menuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setMenuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setMenuWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_statusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setStatusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_centralWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setCentralWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isAnimated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setAnimated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CFrmlssMnWndw_addToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_insertToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, void* >)&CFrmlssMnWndw_addToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_addToolBar_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CFrmlssMnWndw_insertToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_removeToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_removeToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_saveState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CFrmlssMnWndw_restoreState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CFrmlssMnWndw_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CFrmlssMnWndw_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&CFrmlssMnWndw_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CFrmlssMnWndw_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CFrmlssMnWndw_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CFrmlssMnWndw_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CFrmlssMnWndw_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CFrmlssMnWndw_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CFrmlssMnWndw_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CFrmlssMnWndw_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CFrmlssMnWndw_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CFrmlssMnWndw_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CFrmlssMnWndw_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CFrmlssMnWndw_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&CFrmlssMnWndw_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CFrmlssMnWndw_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CFrmlssMnWndw_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CFrmlssMnWndw_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CFrmlssMnWndw_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CFrmlssMnWndw_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CFrmlssMnWndw_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CFrmlssMnWndw_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CFrmlssMnWndw_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CFrmlssMnWndw_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CFrmlssMnWndw_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CGameData_AddClass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CGameData_RemoveClass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CGameData_GetClassCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CGameData_GetClass;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CGameData_ClassForName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGameData_AllocateVar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameData_FreeVar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGameDataClass_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CGameDataClass_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGameDataClass_Reset;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGameDataClass_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGameDataClass_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGameDataClass_GetHelpContextName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameDataClass_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameDataClass_SetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CGameDataClass_GetClassType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CGameDataClass_SetClassType;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CGameDataClass_GetVariableCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CGameDataClass_GetVariableAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameDataClass_AddVariable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameDataClass_AddInput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CGameDataClass_GetInputCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CGameDataClass_GetInput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameDataClass_AddOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CGameDataClass_GetOutputCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CGameDataClass_GetOutput;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameDataClass_AddTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CGameDataClass_HasTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CGameDataClass_GetTagCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CGameDataClass_GetTag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameDataClass_AddHelper;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CGameDataClass_GetHelperCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CGameDataClass_GetHelper;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGameDataClass_MergeKV3Metadata;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGmDtVrbl_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGmDtVrbl_GetLongName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGmDtVrbl_GetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGmDtVrbl_GetGroupName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGmDtVrbl_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGmDtVrbl_SetLongName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGmDtVrbl_SetDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGmDtVrbl_SetGroupName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGmDtVrbl_SetMetadataFromString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGmDtVrbl_SetTypeFromString;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CGmDtVrbl_SetDefaultValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CGmDtVrbl_SetDefaultValueNumber;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CGmDtVrbl_GetItemSet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHelperInfo_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&CHelperInfo_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CHelperInfo_GetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHelperInfo_SetName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CHelperInfo_AddParameter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CHelperInfo_SetKV3ParameterData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CHelperInfo_GetParameterCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CHelperInfo_GetParameter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CLabel_CreateLabel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CLineEdit_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CLineEdit_SetValidation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CLineEdit_cursorRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QGraphicsItem_To_CManagedGraphicsItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QGraphicsItem_From_CManagedGraphicsItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CMngdGrphcstm_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdGrphcstm_PrepareGeometryChange;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdGrphcstm_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdGrphcstm_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdGrphcstm_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdGrphcstm_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdGrphcstm_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdGrphcstm_isSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdGrphcstm_setSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdGrphcstm_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdGrphcstm_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdGrphcstm_opacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdGrphcstm_effectiveOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdGrphcstm_setOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdGrphcstm_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdGrphcstm_setPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdGrphcstm_setRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdGrphcstm_rotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdGrphcstm_setScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdGrphcstm_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdGrphcstm_scale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdGrphcstm_zValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdGrphcstm_setZValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdGrphcstm_flags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&CMngdGrphcstm_setFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdGrphcstm_stackBefore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdGrphcstm_setParentItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdGrphcstm_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdGrphcstm_acceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdGrphcstm_setAcceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMngdGrphcstm_mapToItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdGrphcstm_mapToParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdGrphcstm_mapToScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMngdGrphcstm_mapFromItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdGrphcstm_mapFromParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdGrphcstm_mapFromScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdGrphcstm_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdGrphcstm_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdGrphcstm_filtersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdGrphcstm_setFiltersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdGrphcstm_handlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdGrphcstm_setHandlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CManagedGraphicsItem_To_CManagedLineGraphicsItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CManagedGraphicsItem_From_CManagedLineGraphicsItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QGraphicsItem_To_CManagedLineGraphicsItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QGraphicsItem_From_CManagedLineGraphicsItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CMngdLnGrphcstm_CreateLine;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdLnGrphcstm_Clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_MoveTo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_LineTo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&CMngdLnGrphcstm_CubicTo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_paint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdLnGrphcstm_PrepareGeometryChange;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdLnGrphcstm_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdLnGrphcstm_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdLnGrphcstm_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdLnGrphcstm_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdLnGrphcstm_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdLnGrphcstm_isSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdLnGrphcstm_setSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdLnGrphcstm_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdLnGrphcstm_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdLnGrphcstm_opacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdLnGrphcstm_effectiveOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdLnGrphcstm_setOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdLnGrphcstm_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_setPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdLnGrphcstm_setRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdLnGrphcstm_rotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdLnGrphcstm_setScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdLnGrphcstm_scale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdLnGrphcstm_zValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdLnGrphcstm_setZValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdLnGrphcstm_flags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&CMngdLnGrphcstm_setFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_stackBefore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_setParentItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdLnGrphcstm_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdLnGrphcstm_acceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdLnGrphcstm_setAcceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMngdLnGrphcstm_mapToItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_mapToParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_mapToScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMngdLnGrphcstm_mapFromItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_mapFromParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdLnGrphcstm_mapFromScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdLnGrphcstm_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdLnGrphcstm_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdLnGrphcstm_filtersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdLnGrphcstm_setFiltersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdLnGrphcstm_handlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdLnGrphcstm_setHandlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float>)&_Get__CMngdLnGrphcstm_HitWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, float, void*>)&_Set__CMngdLnGrphcstm_HitWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_CFramelessMainWindow_To_CManagedMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_CFramelessMainWindow_From_CManagedMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QMainWindow_To_CManagedMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QMainWindow_From_CManagedMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_CManagedMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_CManagedMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CManagedMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CManagedMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CMngdMnWndw_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, void*, void*, void*, void* >)&CMngdMnWndw_SetTitleBarWidgets;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_iconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_menuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setMenuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setMenuWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_statusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setStatusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_centralWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setCentralWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isAnimated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setAnimated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdMnWndw_addToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_insertToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, void* >)&CMngdMnWndw_addToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_addToolBar_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CMngdMnWndw_insertToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_removeToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_removeToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_saveState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMngdMnWndw_restoreState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdMnWndw_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdMnWndw_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&CMngdMnWndw_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CMngdMnWndw_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdMnWndw_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdMnWndw_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdMnWndw_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdMnWndw_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdMnWndw_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CMngdMnWndw_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CMngdMnWndw_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CMngdMnWndw_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdMnWndw_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdMnWndw_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&CMngdMnWndw_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CMngdMnWndw_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CMngdMnWndw_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CMngdMnWndw_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdMnWndw_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CMngdMnWndw_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdMnWndw_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CMngdMnWndw_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CMngdMnWndw_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CMngdMnWndw_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CMngdMnWndw_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CMenuBar_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CPlainTextEdit_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CPushButton_CreatePushButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QSplitter_To_CQLinkableSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QSplitter_From_CQLinkableSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QFrame_To_CQLinkableSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QFrame_From_CQLinkableSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_CQLinkableSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_CQLinkableSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CQLinkableSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CQLinkableSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void*, void* >)&CQLnkblSplttr_CreateSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_LinkWith;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_addWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CQLnkblSplttr_insertWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&CQLnkblSplttr_replaceWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQLnkblSplttr_setOrientation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQLnkblSplttr_orientation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setChildrenCollapsible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_childrenCollapsible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CQLnkblSplttr_setCollapsible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&CQLnkblSplttr_isCollapsible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setOpaqueResize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_opaqueResize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_refresh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_handleWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setHandleWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CQLnkblSplttr_setStretchFactor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_saveState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CQLnkblSplttr_restoreState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQLnkblSplttr_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQLnkblSplttr_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&CQLnkblSplttr_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CQLnkblSplttr_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQLnkblSplttr_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CQLnkblSplttr_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CQLnkblSplttr_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQLnkblSplttr_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQLnkblSplttr_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CQLnkblSplttr_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CQLnkblSplttr_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQLnkblSplttr_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQLnkblSplttr_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQLnkblSplttr_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&CQLnkblSplttr_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQLnkblSplttr_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CQLnkblSplttr_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CQLnkblSplttr_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQLnkblSplttr_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQLnkblSplttr_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQLnkblSplttr_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQLnkblSplttr_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CQLnkblSplttr_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQLnkblSplttr_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQLnkblSplttr_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QAction_To_CQNoDeleteWidgetAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QAction_From_CQNoDeleteWidgetAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CQNoDeleteWidgetAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CQNoDeleteWidgetAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQNDltWdgtctn_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setDefaultWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQNDltWdgtctn_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQNDltWdgtctn_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQNDltWdgtctn_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQNDltWdgtctn_setSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQNDltWdgtctn_isSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQNDltWdgtctn_setCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQNDltWdgtctn_isCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQNDltWdgtctn_isChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQNDltWdgtctn_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQNDltWdgtctn_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQNDltWdgtctn_setChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQNDltWdgtctn_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQNDltWdgtctn_setIconVisibleInMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQNDltWdgtctn_isIconVisibleInMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQNDltWdgtctn_setShortcutVisibleInContextMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQNDltWdgtctn_isShortcutVisibleInContextMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQNDltWdgtctn_trigger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setShortcut;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQNDltWdgtctn_setShortcutContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQNDltWdgtctn_shortcutContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQNDltWdgtctn_iconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQNDltWdgtctn_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQNDltWdgtctn_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQNDltWdgtctn_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CQNDltWdgtctn_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&CQNDltWdgtctn_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CQNDltWdgtctn_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_CQToolSceneWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_CQToolSceneWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CQToolSceneWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CQToolSceneWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_SetCreateSettingsButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_Init;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_GetMousePositionScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_GetNativeWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_GetNativeHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_MarkSceneDirty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_StartRenderingLive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_StopRenderingLive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CQTlScnWdgt_RunFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_SetMouseControl;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_SetRenderOverlays;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQTlScnWdgt_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQTlScnWdgt_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&CQTlScnWdgt_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&CQTlScnWdgt_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQTlScnWdgt_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CQTlScnWdgt_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CQTlScnWdgt_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQTlScnWdgt_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQTlScnWdgt_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&CQTlScnWdgt_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&CQTlScnWdgt_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CQTlScnWdgt_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQTlScnWdgt_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQTlScnWdgt_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&CQTlScnWdgt_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&CQTlScnWdgt_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&CQTlScnWdgt_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQTlScnWdgt_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&CQTlScnWdgt_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQTlScnWdgt_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&CQTlScnWdgt_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&CQTlScnWdgt_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&CQTlScnWdgt_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CQTlScnWdgt_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CQTlScnWdgt_setParent_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CQTlScnWdgt_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&CQTlScnWdgt_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CQTlScnWdgt_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int >)&CQUtils_IsKeyPressed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int >)&CQUtils_GetWindowsVirtualKey;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CStatusBar_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CSystemTrayIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CSystemTrayIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CSystemTrayIcon_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSystemTrayIcon_setIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSystemTrayIcon_setIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSystemTrayIcon_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CSystemTrayIcon_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, void* >)&CSystemTrayIcon_showMessage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSystemTrayIcon_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSystemTrayIcon_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSystemTrayIcon_setContextMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSystemTrayIcon_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&CSystemTrayIcon_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSystemTrayIcon_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CSystemTrayIcon_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&CSystemTrayIcon_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&CSystemTrayIcon_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&CSystemTrayIcon_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&CToolBar_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CTlRndrCntxt_IsScreenSpace;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CTlRndrCntxt_IsOrthographic;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CTlRndrCntxt_IsWireframe;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CTlRndrCntxt_IsActiveView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&CTlRndrCntxt_Is3D;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CTlRndrCntxt_SetCurrentMaterial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&CTlRndrCntxt_SetDrawColor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&CTlRndrCntxt_Draw2DRectangleFilled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&CTlRndrCntxt_Draw2DRectangleOutline;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, int, void*, void* >)&CTlRndrCntxt_Draw2DCircle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&CTlRndrCntxt_Draw2DCross;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, int, int, void* >)&CTlRndrCntxt_Draw2DRectangleTextured;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, void* >)&CTlRndrCntxt_DrawLine;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&CTlRndrCntxt_DrawBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&CTlRndrCntxt_DrawScreenText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, float, void* >)&CTlRndrCntxt_DrawWorldSpaceText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, int, void* >)&CWidget_CreateWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pBndSystmGlblH_Cmd_ShowAllCommandsPopup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pBndSystmGlblH_Cmd_DebugWidgetUnderMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pBndSystmGlblH_Cmd_DebugWidgetWithFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pBndSystmGlblH_Cmd_DebugWidgetActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pBndSystmGlblH_Cmd_ShowInputDebugger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pBndSystmGlblH_Cmd_ShowWidgetDebugger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pBndSystmGlblH_Cmd_ShowFullHelpForBindableCommandUnderMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&g_pBndSystmGlblH_Cmd_FocusChainDebug_Tweak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pBndSystmGlblH_Cmd_FocusChainDebug_Toggle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pTlFrmwrk2_SetWantsFullFrameRate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&g_pTlFrmwrk2_SetStallMonitorMainThreadWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pTlFrmwrk2_Tools_RunFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&g_pTlFrmwrk2_Tools_OnIdle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pTlFrmwrk2_Tools_UnloadPending;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&g_pTlFrmwrk2_Spin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&g_pTlFrmwrk2_InitEngineTool;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, void* >)&GDIVItemSet_AddFlagItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&GDIVItemSet_AddChoiceItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, int, void* >)&GDIVItemSet_AddTagItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QGraphicsScene_To_ManagedGraphicsScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QGraphicsScene_From_ManagedGraphicsScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_ManagedGraphicsScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_ManagedGraphicsScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&MngdGrphcsScn_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&MngdGrphcsScn_sceneRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&MngdGrphcsScn_setSceneRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&MngdGrphcsScn_itemsBoundingRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&MngdGrphcsScn_addItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&MngdGrphcsScn_removeItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&MngdGrphcsScn_setSelectionArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&MngdGrphcsScn_Capture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&MngdGrphcsScn_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&MngdGrphcsScn_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&MngdGrphcsScn_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&MngdGrphcsScn_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&MngdGrphcsScn_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&MngdGrphcsScn_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&MngdGrphcsScn_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QAbstractButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QAbstractButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QAbstractButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QAbstractButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_getIconAsPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_animateClick;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_click;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_toggle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setAutoRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_autoRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setAutoRepeatDelay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_autoRepeatDelay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setAutoRepeatInterval;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_autoRepeatInterval;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setAutoExclusive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_autoExclusive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QAbstractButton_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QAbstractButton_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QAbstractButton_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QAbstractButton_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QAbstractButton_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QAbstractButton_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QAbstractButton_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QAbstractButton_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QAbstractButton_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QAbstractButton_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QAbstractButton_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAbstractButton_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QAbstractButton_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QAbstractButton_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QAbstractButton_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAbstractButton_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QAbstractButton_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QAbstractButton_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QAbstractButton_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QAbstractButton_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QAbstractButton_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QAbstractButton_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QAbstractButton_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAbstractButton_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAbstractButton_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QFrame_To_QAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QFrame_From_QAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QAbstractScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QbstrctScrllr_horizontalScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QbstrctScrllr_verticalScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QbstrctScrllr_horizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QbstrctScrllr_setHorizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QbstrctScrllr_verticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QbstrctScrllr_setVerticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QbstrctScrllr_viewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAction_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAction_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAction_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAction_setSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAction_isSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAction_setCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAction_isCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAction_isChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAction_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAction_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAction_setChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAction_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAction_setIconVisibleInMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAction_isIconVisibleInMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QAction_setShortcutVisibleInContextMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QAction_isShortcutVisibleInContextMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAction_trigger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setShortcut;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QAction_setShortcutContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QAction_shortcutContext;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAction_iconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAction_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QAction_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QAction_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QAction_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QAction_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QAction_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&qApp_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_beep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&qApp_alert;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long >)&qApp_queryKeyboardModifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long >)&qApp_mouseButtons;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_focusWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&qApp_SetClipboardText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_GetClipboardText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_redrawActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< float >)&qApp_DpiPixelRatio;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_CursorPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&qApp_SetCursorPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_NativeCursorPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&qApp_SetNativeCursorPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_processEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_exec;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_Initialize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_ReloadTabbedStyle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_exit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&qApp_HoveredWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int >)&qApp_ScreenCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, void* >)&qApp_GetScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QLayout_To_QBoxLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QLayout_From_QBoxLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QBoxLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QBoxLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< long, void*, void* >)&QBoxLayout_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QBoxLayout_direction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QBoxLayout_setDirection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QBoxLayout_addSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QBoxLayout_addStretch;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&QBoxLayout_setStretchFactor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&QBoxLayout_setStretchFactor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QBoxLayout_setStretch;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&QBoxLayout_stretch;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QBoxLayout_addWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QBoxLayout_addLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QBoxLayout_addItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QBoxLayout_removeItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QBoxLayout_spacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QBoxLayout_setSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QBoxLayout_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QBoxLayout_geometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QBoxLayout_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QBoxLayout_addWidget_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QBoxLayout_removeWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QBoxLayout_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QBoxLayout_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QBoxLayout_alignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QBoxLayout_setAlignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QBoxLayout_setSizeConstraint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QBoxLayout_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QBoxLayout_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QBoxLayout_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QBoxLayout_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QBoxLayout_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QBoxLayout_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QBoxLayout_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QBoxLayout_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QAbstractButton_To_QCheckBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QAbstractButton_From_QCheckBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QCheckBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QCheckBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QCheckBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QCheckBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setTristate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isTristate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QCheckBox_checkState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QCheckBox_setCheckState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_getIconAsPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_animateClick;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_click;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_toggle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setAutoRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_autoRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setAutoRepeatDelay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_autoRepeatDelay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setAutoRepeatInterval;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_autoRepeatInterval;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setAutoExclusive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_autoExclusive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QCheckBox_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QCheckBox_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QCheckBox_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QCheckBox_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QCheckBox_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QCheckBox_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QCheckBox_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QCheckBox_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QCheckBox_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QCheckBox_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QCheckBox_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCheckBox_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QCheckBox_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QCheckBox_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QCheckBox_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QCheckBox_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QCheckBox_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QCheckBox_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QCheckBox_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QCheckBox_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QCheckBox_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QCheckBox_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QCheckBox_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCheckBox_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCheckBox_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QComboBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QComboBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QComboBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QComboBox;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_maxVisibleItems;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setMaxVisibleItems;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setMaxCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_maxCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_duplicatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setDuplicatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_hasFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QComboBox_insertPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QComboBox_setInsertPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_minimumContentsLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setMinimumContentsLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_iconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isEditable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setEditable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setLineEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_lineEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_modelColumn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setModelColumn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_currentIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_currentText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_itemText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_addItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QComboBox_addItem_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_removeItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&QComboBox_setItemText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&QComboBox_setItemIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_showPopup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_hidePopup;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_clearEditText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setEditText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setCurrentIndex;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setCurrentText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QComboBox_findText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&QComboBox_setItemDescription;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QComboBox_setItemEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QComboBox_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QComboBox_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QComboBox_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QComboBox_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QComboBox_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QComboBox_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QComboBox_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QComboBox_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QComboBox_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QComboBox_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QComboBox_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QComboBox_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QComboBox_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QComboBox_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QComboBox_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QComboBox_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QComboBox_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QComboBox_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QComboBox_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QComboBox_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QComboBox_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QComboBox_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QComboBox_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QComboBox_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QComboBox_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QInputEvent_To_QContextMenuEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QInputEvent_From_QContextMenuEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QContextMenuEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QContextMenuEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCntxtMnvnt_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCntxtMnvnt_globalPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QCntxtMnvnt_modifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&QCntxtMnvnt_timestamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCntxtMnvnt_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QCntxtMnvnt_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCntxtMnvnt_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QCntxtMnvnt_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QCntxtMnvnt_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QDir_addSearchPath;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QDrag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QDrag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDrag_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QDrag_setPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QDrag_setHotSpot;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QDrag_setMimeData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDrag_mimeData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDrag_exec;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDrag_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDrag_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QDrag_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QDrag_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QDrag_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QDrag_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QDrag_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QDragMoveEvent_To_QDragEnterEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QDragMoveEvent_From_QDragEnterEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QDropEvent_To_QDragEnterEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QDropEvent_From_QDragEnterEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QDragEnterEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QDragEnterEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragEnterEvent_acceptProposedAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragEnterEvent_mimeData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragEnterEvent_source;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragEnterEvent_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDragEnterEvent_mouseButtons;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDragEnterEvent_keyboardModifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDragEnterEvent_dropAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QDragEnterEvent_setDropAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragEnterEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragEnterEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QDragEnterEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QDragEnterEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QDragEnterEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QDragLeaveEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QDragLeaveEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragLeaveEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragLeaveEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QDragLeaveEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QDragLeaveEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QDragLeaveEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QDropEvent_To_QDragMoveEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QDropEvent_From_QDragMoveEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QDragMoveEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QDragMoveEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragMoveEvent_acceptProposedAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragMoveEvent_mimeData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragMoveEvent_source;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragMoveEvent_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDragMoveEvent_mouseButtons;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDragMoveEvent_keyboardModifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDragMoveEvent_dropAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QDragMoveEvent_setDropAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragMoveEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDragMoveEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QDragMoveEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QDragMoveEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QDragMoveEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QDropEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QDropEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDropEvent_acceptProposedAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDropEvent_mimeData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDropEvent_source;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDropEvent_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDropEvent_mouseButtons;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDropEvent_keyboardModifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QDropEvent_dropAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QDropEvent_setDropAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDropEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QDropEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QDropEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QDropEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QDropEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QFileDialog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QFileDialog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QFileDialog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QFileDialog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_exec;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setResult;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setDirectory;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_directory;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_selectFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setNameFilter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_nameFilters;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_selectNameFilter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_selectedMimeTypeFilter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_selectedNameFilter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFileDialog_setAcceptMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFileDialog_acceptMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setDefaultSuffix;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_defaultSuffix;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_selectedFiles;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFileDialog_setFileMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFileDialog_fileMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QFileDialog_setOption;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFileDialog_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFileDialog_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QFileDialog_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QFileDialog_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFileDialog_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QFileDialog_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QFileDialog_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFileDialog_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFileDialog_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QFileDialog_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QFileDialog_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFileDialog_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFileDialog_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFileDialog_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QFileDialog_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFileDialog_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QFileDialog_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QFileDialog_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFileDialog_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFileDialog_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFileDialog_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFileDialog_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QFileDialog_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFileDialog_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileDialog_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFileInfo_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QFileInfo_GetIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFontDatabase_addApplicationFont;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFrame_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFrame_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QFrame_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QFrame_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFrame_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QFrame_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QFrame_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFrame_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFrame_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QFrame_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QFrame_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QFrame_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFrame_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFrame_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QFrame_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QFrame_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QFrame_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QFrame_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFrame_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QFrame_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFrame_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QFrame_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QFrame_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QFrame_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QFrame_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsItem_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsItem_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsItem_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsItem_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsItem_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsItem_isSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsItem_setSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsItem_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsItem_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGraphicsItem_opacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGraphicsItem_effectiveOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGraphicsItem_setOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsItem_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsItem_setPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGraphicsItem_setRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGraphicsItem_rotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGraphicsItem_setScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsItem_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGraphicsItem_scale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGraphicsItem_zValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGraphicsItem_setZValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsItem_flags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QGraphicsItem_setFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsItem_stackBefore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsItem_setParentItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsItem_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsItem_acceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsItem_setAcceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGraphicsItem_mapToItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsItem_mapToParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsItem_mapToScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGraphicsItem_mapFromItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsItem_mapFromParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsItem_mapFromScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsItem_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsItem_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsItem_filtersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsItem_setFiltersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsItem_handlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsItem_setHandlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QGraphicsItem_To_QGraphicsProxyWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QGraphicsItem_From_QGraphicsProxyWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_setWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsPrxyWdgt_widget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsPrxyWdgt_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsPrxyWdgt_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsPrxyWdgt_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QGrphcsPrxyWdgt_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QGrphcsPrxyWdgt_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsPrxyWdgt_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsPrxyWdgt_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsPrxyWdgt_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsPrxyWdgt_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsPrxyWdgt_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsPrxyWdgt_isSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsPrxyWdgt_setSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsPrxyWdgt_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsPrxyWdgt_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsPrxyWdgt_opacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsPrxyWdgt_effectiveOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGrphcsPrxyWdgt_setOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsPrxyWdgt_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_setPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGrphcsPrxyWdgt_setRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsPrxyWdgt_rotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGrphcsPrxyWdgt_setScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsPrxyWdgt_scale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsPrxyWdgt_zValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGrphcsPrxyWdgt_setZValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGrphcsPrxyWdgt_flags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QGrphcsPrxyWdgt_setFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_stackBefore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_setParentItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsPrxyWdgt_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsPrxyWdgt_acceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsPrxyWdgt_setAcceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGrphcsPrxyWdgt_mapToItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_mapToParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_mapToScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGrphcsPrxyWdgt_mapFromItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_mapFromParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsPrxyWdgt_mapFromScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGrphcsPrxyWdgt_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsPrxyWdgt_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsPrxyWdgt_filtersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsPrxyWdgt_setFiltersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsPrxyWdgt_handlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsPrxyWdgt_setHandlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QGraphicsScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QGraphicsScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsScene_sceneRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsScene_setSceneRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsScene_itemsBoundingRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsScene_addItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsScene_removeItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGraphicsScene_setSelectionArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QGraphicsScene_Capture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsScene_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsScene_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsScene_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsScene_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QGraphicsScene_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QGraphicsScene_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGraphicsScene_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QGraphicsSceneHoverEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QGraphicsSceneHoverEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnHvrvnt_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnHvrvnt_scenePos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnHvrvnt_screenPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnHvrvnt_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnHvrvnt_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsScnHvrvnt_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsScnHvrvnt_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsScnHvrvnt_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QGraphicsSceneMouseEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QGraphicsSceneMouseEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnMsvnt_widget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnMsvnt_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnMsvnt_scenePos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnMsvnt_screenPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGrphcsScnMsvnt_buttons;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGrphcsScnMsvnt_button;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGrphcsScnMsvnt_modifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnMsvnt_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsScnMsvnt_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsScnMsvnt_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsScnMsvnt_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsScnMsvnt_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QGraphicsItem_To_QGraphicsSimpleTextItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QGraphicsItem_From_QGraphicsSimpleTextItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsSmplTxttm_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsSmplTxttm_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsSmplTxttm_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsSmplTxttm_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsSmplTxttm_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsSmplTxttm_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsSmplTxttm_isSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsSmplTxttm_setSelected;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsSmplTxttm_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsSmplTxttm_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsSmplTxttm_opacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsSmplTxttm_effectiveOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGrphcsSmplTxttm_setOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsSmplTxttm_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_setPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGrphcsSmplTxttm_setRotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsSmplTxttm_rotation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGrphcsSmplTxttm_setScale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsSmplTxttm_scale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGrphcsSmplTxttm_zValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGrphcsSmplTxttm_setZValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGrphcsSmplTxttm_flags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QGrphcsSmplTxttm_setFlag;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_stackBefore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_setParentItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsSmplTxttm_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsSmplTxttm_acceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsSmplTxttm_setAcceptHoverEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGrphcsSmplTxttm_mapToItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_mapToParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_mapToScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGrphcsSmplTxttm_mapFromItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_mapFromParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGrphcsSmplTxttm_mapFromScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGrphcsSmplTxttm_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGrphcsSmplTxttm_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsSmplTxttm_filtersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsSmplTxttm_setFiltersChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGrphcsSmplTxttm_handlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGrphcsSmplTxttm_setHandlesChildEvents;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QFrame_To_QGraphicsView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QFrame_From_QGraphicsView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QGraphicsView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QGraphicsView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QGraphicsView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QGraphicsView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isInteractive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setInteractive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_resetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGraphicsView_rotate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, void* >)&QGraphicsView_scale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, void* >)&QGraphicsView_shear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, void* >)&QGraphicsView_translate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_centerOn;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void* >)&QGraphicsView_ensureVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_fitInView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_sceneRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setSceneRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_scene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsView_horizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_setHorizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsView_verticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_setVerticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsView_transformationAnchor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_setTransformationAnchor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_mapToScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_mapFromScene;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QGraphicsView_setRenderHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_itemAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_setDragMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_rubberBandRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsView_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QGraphicsView_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QGraphicsView_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGraphicsView_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGraphicsView_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsView_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QGraphicsView_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QGraphicsView_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGraphicsView_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsView_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QGraphicsView_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGraphicsView_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QGraphicsView_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QGraphicsView_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsView_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QGraphicsView_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGraphicsView_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QGraphicsView_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGraphicsView_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGraphicsView_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QLayout_To_QGridLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QLayout_From_QGridLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QGridLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QGridLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGridLayout_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QGridLayout_setRowStretch;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QGridLayout_setColumnStretch;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&QGridLayout_rowStretch;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&QGridLayout_columnStretch;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGridLayout_setHorizontalSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGridLayout_horizontalSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGridLayout_setVerticalSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGridLayout_verticalSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QGridLayout_setRowMinimumHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QGridLayout_setColumnMinimumWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&QGridLayout_rowMinimumHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&QGridLayout_columnMinimumWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGridLayout_columnCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGridLayout_rowCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QGridLayout_cellRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, void* >)&QGridLayout_addWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, int, int, void* >)&QGridLayout_addWidget_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, void* >)&QGridLayout_addLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, int, int, void* >)&QGridLayout_addLayout_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGridLayout_spacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGridLayout_setSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGridLayout_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGridLayout_geometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QGridLayout_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGridLayout_addWidget_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGridLayout_removeWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGridLayout_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGridLayout_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QGridLayout_alignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGridLayout_setAlignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QGridLayout_setSizeConstraint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QGridLayout_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGridLayout_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QGridLayout_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGridLayout_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QGridLayout_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QGridLayout_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QGridLayout_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QGridLayout_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QInputEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QInputEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QInputEvent_modifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&QInputEvent_timestamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QInputEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QInputEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QInputEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QInputEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QInputEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QInputEvent_To_QKeyEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QInputEvent_From_QKeyEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QKeyEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QKeyEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QKeyEvent_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QKeyEvent_isAutoRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QKeyEvent_count;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QKeyEvent_key;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&QKeyEvent_nativeModifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&QKeyEvent_nativeScanCode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint >)&QKeyEvent_nativeVirtualKey;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QKeyEvent_modifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&QKeyEvent_timestamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QKeyEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QKeyEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QKeyEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QKeyEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QKeyEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QFrame_To_QLabel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QFrame_From_QLabel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QLabel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QLabel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QLabel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QLabel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_Create_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setWordWrap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_wordWrap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_indent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setIndent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_margin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setMargin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_alignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setAlignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_openExternalLinks;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setOpenExternalLinks;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_hasSelectedText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_selectedText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLabel_setTextInteractionFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLabel_textInteractionFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLabel_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLabel_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QLabel_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QLabel_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLabel_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QLabel_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QLabel_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLabel_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLabel_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QLabel_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QLabel_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLabel_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLabel_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLabel_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QLabel_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLabel_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QLabel_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QLabel_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLabel_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLabel_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLabel_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLabel_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QLabel_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLabel_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLabel_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLayout_spacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLayout_setSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLayout_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLayout_geometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QLayout_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLayout_addWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLayout_removeWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLayout_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLayout_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLayout_alignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLayout_setAlignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLayout_setSizeConstraint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLayout_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLayout_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLayout_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLayout_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLayout_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QLayout_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QLayout_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QLayout_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QLineEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QLineEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QLineEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QLineEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_displayText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_placeholderText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setPlaceholderText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_maxLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setMaxLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_hasFrame;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setClearButtonEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isClearButtonEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isReadOnly;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setReadOnly;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_cursorPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setCursorPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QLineEdit_cursorPositionAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_hasSelectedText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_selectedText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_selectionStart;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_selectionEnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_selectionLength;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QLineEdit_setSelection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_selectAll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_undo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_redo;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_cut;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_copy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_paste;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_deselect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_insert;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QLineEdit_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_alignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setAlignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setRegexValidator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLineEdit_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLineEdit_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QLineEdit_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QLineEdit_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLineEdit_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QLineEdit_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QLineEdit_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLineEdit_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLineEdit_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QLineEdit_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QLineEdit_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_addAction_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QLineEdit_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLineEdit_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLineEdit_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QLineEdit_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QLineEdit_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QLineEdit_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QLineEdit_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLineEdit_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QLineEdit_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLineEdit_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QLineEdit_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QLineEdit_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QLineEdit_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QLineEdit_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QMainWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_iconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_menuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setMenuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setMenuWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_statusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setStatusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_centralWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setCentralWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isAnimated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setAnimated;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMainWindow_addToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_insertToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void*, void* >)&QMainWindow_addToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_addToolBar_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QMainWindow_insertToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_removeToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_removeToolBarBreak;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_saveState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QMainWindow_restoreState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMainWindow_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMainWindow_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QMainWindow_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QMainWindow_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMainWindow_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QMainWindow_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QMainWindow_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMainWindow_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMainWindow_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QMainWindow_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QMainWindow_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMainWindow_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMainWindow_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMainWindow_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QMainWindow_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMainWindow_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QMainWindow_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QMainWindow_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMainWindow_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMainWindow_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMainWindow_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMainWindow_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QMainWindow_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMainWindow_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMainWindow_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QMenu_insertAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_addSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isEmpty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_title;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_exec;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_activeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_addMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QMenu_insertMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setTearOffEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isTearOffEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setToolTipsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_toolTipsVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenu_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenu_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QMenu_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QMenu_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenu_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QMenu_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QMenu_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenu_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenu_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QMenu_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QMenu_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenu_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenu_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenu_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QMenu_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenu_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QMenu_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QMenu_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenu_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenu_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenu_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenu_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QMenu_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenu_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenu_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QMenuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QMenuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QMenuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QMenuBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QMenuBar_insertAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_addMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QMenuBar_insertMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_addSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenuBar_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenuBar_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QMenuBar_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QMenuBar_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenuBar_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QMenuBar_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QMenuBar_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenuBar_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenuBar_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QMenuBar_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QMenuBar_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMenuBar_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenuBar_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenuBar_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QMenuBar_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMenuBar_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QMenuBar_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QMenuBar_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenuBar_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMenuBar_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenuBar_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QMenuBar_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QMenuBar_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMenuBar_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMenuBar_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QMimeData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QMimeData;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void* >)&QMimeData_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMimeData_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMimeData_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMimeData_html;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMimeData_setHtml;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMimeData_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMimeData_url;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMimeData_setUrl;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMimeData_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMimeData_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMimeData_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QMimeData_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QMimeData_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QMimeData_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QMimeData_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QInputEvent_To_QMouseEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QInputEvent_From_QMouseEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QMouseEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QMouseEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMouseEvent_localPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMouseEvent_windowPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMouseEvent_screenPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMouseEvent_buttons;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMouseEvent_button;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QMouseEvent_modifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&QMouseEvent_timestamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMouseEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMouseEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMouseEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMouseEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMouseEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QMoveEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QMoveEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMoveEvent_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMoveEvent_oldPos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMoveEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QMoveEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMoveEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QMoveEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QMoveEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QObject_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QObject_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QObject_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QObject_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QObject_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QObject_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QObject_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPainter_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPainter_DeleteThis;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPainter_setCompositionMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QPainter_drawLine;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float, void* >)&QPainter_drawRoundedRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPainter_drawRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPainter_drawEllipse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QPainter_opacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QPainter_setOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPainter_setBrush;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPainter_setPen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void*, void*, void* >)&QPainter_drawText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void*, void* >)&QPainter_MeasureText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPainter_translate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPainter_resetTransform;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, void* >)&QPainter_scale;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, float, void* >)&QPainter_shear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QPainter_rotate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPainter_drawPoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QPainter_setRenderHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, float, void* >)&QPainter_drawPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void* >)&QPainter_drawTiledPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float, void* >)&QPainter_drawArc;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float, void* >)&QPainter_drawPie;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QPainter_DrawPoly;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QPainter_DrawPoints;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QPainter_DrawPolyLine;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPainter_setBrush_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPainter_clearBrush;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPainter_setBrush_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, int, void* >)&QPainter_setPen_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPainter_clearPen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, float, void*, float, void*, void* >)&QPainter_setBrushLinear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, float, void*, float, void*, void* >)&QPainter_setBrushRadial;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void* >)&QPainter_drawPixels;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPixmap_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPixmap_CreateFromFile;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< int, int, void* >)&QPixmap_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPixmap_width;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPixmap_height;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPixmap_depth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPixmap_fill;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPixmap_hasAlpha;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPixmap_hasAlphaChannel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, long, long, void* >)&QPixmap_scaled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&QPixmap_load;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int, int >)&QPixmap_save;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, int, int, void* >)&QPixmap_scroll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, long, int >)&QPixmap_FromPixels;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QPixmap_getpixels;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QAbstractScrollArea_To_QPlainTextEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QAbstractScrollArea_From_QPlainTextEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QFrame_To_QPlainTextEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QFrame_From_QPlainTextEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QPlainTextEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QPlainTextEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QPlainTextEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QPlainTextEdit;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_document;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setPlaceholderText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_placeholderText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isReadOnly;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setReadOnly;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setTextInteractionFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_textInteractionFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_tabChangesFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setTabChangesFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setDocumentTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_documentTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isUndoRedoEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setUndoRedoEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setMaximumBlockCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_maximumBlockCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_lineWrapMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setLineWrapMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_wordWrapMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setWordWrapMode;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setBackgroundVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_backgroundVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setCenterOnScroll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_centerOnScroll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QPlainTextEdit_find;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_toPlainText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setPlainText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_ensureCursorVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_insertPlainText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_appendPlainText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_appendHtml;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_centerCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_selectAll;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_anchorAt;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setTextCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_textCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_cursorForPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_cursorRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QPlainTextEdit_tabStopDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QPlainTextEdit_setTabStopDistance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_horizontalScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_verticalScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_horizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setHorizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_verticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setVerticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_viewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QPlainTextEdit_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QPlainTextEdit_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QPlainTextEdit_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QPlainTextEdit_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QPlainTextEdit_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QPlainTextEdit_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPlainTextEdit_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QPlainTextEdit_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPlainTextEdit_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QPlainTextEdit_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QPlainTextEdit_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPlainTextEdit_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPlainTextEdit_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QPlainTextEdit_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPlainTextEdit_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPlainTextEdit_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QProgressDialog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QProgressDialog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QProgressDialog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QProgressDialog;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setMaximum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setLabelText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QProgressDialog_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QProgressDialog_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QProgressDialog_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QProgressDialog_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QProgressDialog_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QProgressDialog_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QProgressDialog_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QProgressDialog_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QProgressDialog_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QProgressDialog_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QProgressDialog_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QProgressDialog_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QProgressDialog_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QProgressDialog_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QProgressDialog_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QProgressDialog_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QProgressDialog_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QProgressDialog_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QProgressDialog_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QProgressDialog_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QProgressDialog_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QProgressDialog_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QProgressDialog_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QProgressDialog_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QProgressDialog_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QAbstractButton_To_QPushButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QAbstractButton_From_QPushButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QPushButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QPushButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QPushButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QPushButton;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_getIconAsPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isCheckable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_animateClick;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_click;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_toggle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setChecked;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setAutoRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_autoRepeat;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setAutoRepeatDelay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_autoRepeatDelay;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setAutoRepeatInterval;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_autoRepeatInterval;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setAutoExclusive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_autoExclusive;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPushButton_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPushButton_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QPushButton_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QPushButton_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPushButton_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QPushButton_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QPushButton_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPushButton_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPushButton_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QPushButton_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QPushButton_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QPushButton_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPushButton_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPushButton_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QPushButton_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QPushButton_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QPushButton_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QPushButton_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPushButton_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QPushButton_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPushButton_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QPushButton_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QPushButton_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QPushButton_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QPushButton_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QResizeEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QResizeEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QResizeEvent_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QResizeEvent_oldSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QResizeEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QResizeEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QResizeEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QResizeEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QResizeEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScreen_geometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScreen_getCapture;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QAbstractScrollArea_To_QScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QAbstractScrollArea_From_QScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QFrame_To_QScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QFrame_From_QScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_CreateQScrollArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QScrollArea_ensureVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, void* >)&QScrollArea_ensureWidgetVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_widgetResizable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setWidgetResizable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_widget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_horizontalScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_verticalScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollArea_horizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollArea_setHorizontalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollArea_verticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollArea_setVerticalScrollBarPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_viewport;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollArea_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollArea_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QScrollArea_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QScrollArea_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollArea_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QScrollArea_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QScrollArea_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollArea_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollArea_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QScrollArea_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QScrollArea_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollArea_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollArea_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollArea_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QScrollArea_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollArea_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QScrollArea_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QScrollArea_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollArea_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollArea_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollArea_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollArea_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QScrollArea_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollArea_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollArea_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QScrollBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setValue;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_value;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setMinimum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_minimum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setMaximum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_maximum;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setSingleStep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_singleStep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setPageStep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_pageStep;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_hasTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setSliderDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isSliderDown;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setSliderPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_sliderPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setInvertedAppearance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_invertedAppearance;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setInvertedControls;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_invertedControls;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollBar_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollBar_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QScrollBar_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QScrollBar_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollBar_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QScrollBar_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QScrollBar_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollBar_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollBar_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QScrollBar_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QScrollBar_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QScrollBar_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollBar_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollBar_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QScrollBar_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QScrollBar_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QScrollBar_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QScrollBar_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollBar_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QScrollBar_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollBar_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QScrollBar_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QScrollBar_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QScrollBar_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QScrollBar_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QFrame_To_QSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QFrame_From_QSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_CreateSplitter;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_addWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&QSplitter_insertWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&QSplitter_replaceWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QSplitter_setOrientation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QSplitter_orientation;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setChildrenCollapsible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_childrenCollapsible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QSplitter_setCollapsible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&QSplitter_isCollapsible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setOpaqueResize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_opaqueResize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_refresh;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_handleWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setHandleWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QSplitter_setStretchFactor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_saveState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QSplitter_restoreState;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QSplitter_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QSplitter_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QSplitter_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QSplitter_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QSplitter_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QSplitter_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QSplitter_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QSplitter_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QSplitter_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QSplitter_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QSplitter_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QSplitter_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QSplitter_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QSplitter_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QSplitter_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QSplitter_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QSplitter_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QSplitter_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QSplitter_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QSplitter_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QSplitter_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QSplitter_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QSplitter_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QSplitter_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QSplitter_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QStatusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QStatusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QStatusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QStatusBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_currentMessage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QStatusBar_showMessage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_clearMessage;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setSizeGripEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isSizeGripEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QStatusBar_addWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, int >)&QStatusBar_insertWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QStatusBar_addPermanentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, int, int >)&QStatusBar_insertPermanentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_removeWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QStatusBar_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QStatusBar_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QStatusBar_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QStatusBar_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QStatusBar_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QStatusBar_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QStatusBar_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QStatusBar_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QStatusBar_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QStatusBar_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QStatusBar_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStatusBar_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QStatusBar_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QStatusBar_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QStatusBar_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QStatusBar_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QStatusBar_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QStatusBar_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QStatusBar_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QStatusBar_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QStatusBar_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QStatusBar_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QStatusBar_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStatusBar_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStatusBar_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QStringList_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QStringList_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QStringList_at;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QTabBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QTabBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QTabBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QTabBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QTabBar_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QTabBar_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QTabBar_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QTabBar_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QTabBar_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QTabBar_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QTabBar_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QTabBar_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QTabBar_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QTabBar_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QTabBar_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTabBar_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QTabBar_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QTabBar_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QTabBar_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTabBar_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QTabBar_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QTabBar_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QTabBar_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QTabBar_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QTabBar_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QTabBar_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QTabBar_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTabBar_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTabBar_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextBlock_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextBlock_position;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextBlock_length;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextBlock_text;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextBlock_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTextBlock_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextBlock_blockNumber;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextBlock_firstLineNumber;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTextBlock_setLineCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextBlock_lineCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextBlock_next;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextBlock_previous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextCursor_CreateFromBlock;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextCursor_Dispose;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_blockNumber;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_columnNumber;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextCursor_selectedText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_atBlockStart;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_atBlockEnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_atStart;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_atEnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTextCursor_insertHtml;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTextCursor_insertText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_hasSelection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_hasComplexSelection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextCursor_removeSelectedText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextCursor_clearSelection;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_selectionStart;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_selectionEnd;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_position;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextCursor_positionInBlock;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTextCursor_setPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextCursor_deleteChar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextCursor_deletePreviousChar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QTextCursor_select;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QTextDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QTextDocument;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_toRawText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_toPlainText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTextDocument_setPlainText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTextDocument_setDefaultStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextDocument_blockCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextDocument_lineCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextDocument_characterCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextDocument_isModified;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QTextDocument_pageCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTextDocument_findBlock;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTextDocument_findBlockByNumber;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QTextDocument_findBlockByLineNumber;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_begin;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_end;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_firstBlock;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_lastBlock;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTextDocument_setHtml;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_toHtml;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QTextDocument_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTextDocument_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QTextDocument_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QTextDocument_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QTextDocument_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QTextDocument_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_QToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_QToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QToolBar;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setMovable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isMovable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QToolBar_setAllowedAreas;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QToolBar_allowedAreas;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QToolBar_insertAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QToolBar_insertWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_addWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_addSeparator;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isFloatable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setFloatable;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isFloating;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setIconSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QToolBar_toolButtonStyle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QToolBar_setToolButtonStyle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_allowContextMenu;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QToolBar_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QToolBar_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QToolBar_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QToolBar_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QToolBar_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QToolBar_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QToolBar_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QToolBar_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QToolBar_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QToolBar_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QToolBar_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QToolBar_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QToolBar_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QToolBar_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QToolBar_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QToolBar_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QToolBar_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QToolBar_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QToolBar_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QToolBar_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QToolBar_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QToolBar_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QToolBar_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QToolBar_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QToolBar_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QLayout_To_QVerticalLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QLayout_From_QVerticalLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QVerticalLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QVerticalLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QVerticalLayout_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QVerticalLayout_addItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QVerticalLayout_removeItem;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QVerticalLayout_spacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QVerticalLayout_setSpacing;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QVerticalLayout_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QVerticalLayout_geometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QVerticalLayout_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QVerticalLayout_addWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QVerticalLayout_removeWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QVerticalLayout_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QVerticalLayout_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QVerticalLayout_alignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QVerticalLayout_setAlignment;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QVerticalLayout_setSizeConstraint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QVerticalLayout_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QVerticalLayout_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QVerticalLayout_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QVerticalLayout_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QVerticalLayout_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QVerticalLayout_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QVerticalLayout_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QVerticalLayout_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QInputEvent_To_QWheelEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QInputEvent_From_QWheelEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QEvent_To_QWheelEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QEvent_From_QWheelEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWheelEvent_pixelDelta;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWheelEvent_angleDelta;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWheelEvent_position;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWheelEvent_globalPosition;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QWheelEvent_buttons;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QWheelEvent_modifiers;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, ulong >)&QWheelEvent_timestamp;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWheelEvent_accept;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWheelEvent_ignore;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWheelEvent_isAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWheelEvent_spontaneous;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWheelEvent_setAccepted;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_QWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_QWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_CreateWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QWidget_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QWidget_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&QWidget_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&QWidget_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QWidget_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QWidget_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QWidget_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QWidget_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QWidget_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&QWidget_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&QWidget_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&QWidget_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QWidget_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QWidget_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&QWidget_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&QWidget_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&QWidget_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QWidget_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&QWidget_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QWidget_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&QWidget_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&QWidget_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&QWidget_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&QWidget_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&QWidget_setParent_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&QWidget_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&QWidget_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&QWidget_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&ToolGlue_ShowTool;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QWidget_To_CToolWindowManager;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QWidget_From_CToolWindowManager;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&From_QObject_To_CToolWindowManager;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged[SuppressGCTransition]<void*, void*>)&To_QObject_From_CToolWindowManager;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&TlWndwMngr_Create;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&TlWndwMngr_IsOpen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_hideToolWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_closeToolWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_raiseToolWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, long, long, float, void* >)&TlWndwMngr_AddWindowToArea;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_saveStateJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_loadStateJson;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int >)&TlWndwMngr_clear;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isTopLevel;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isModal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setStyleSheet;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_windowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setWindowTitle;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&TlWndwMngr_setWindowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&TlWndwMngr_windowFlags;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_size;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_resize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_minimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setMinimumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_maximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setMaximumSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_sizeHint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_pos;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_move;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_show;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_hide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_showMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_showMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_showFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_showNormal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_close;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_raise;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_lower;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isVisible;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setHidden;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int, void* >)&TlWndwMngr_setAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&TlWndwMngr_testAttribute;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_acceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setAcceptDrops;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_updateGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_update;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_repaint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&TlWndwMngr_setCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setCursor_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_unsetCursor;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setWindowIcon;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setWindowIconFromPixmap;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setWindowIconText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&TlWndwMngr_setWindowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&TlWndwMngr_windowOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isMinimized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isMaximized;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isFullScreen;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_hasMouseTracking;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_underMouse;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_mapToGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_mapFromGlobal;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_hasFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&TlWndwMngr_focusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&TlWndwMngr_setFocusPolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setFocusProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_isActiveWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_updatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setUpdatesEnabled;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_setFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_activateWindow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_clearFocus;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float >)&TlWndwMngr_devicePixelRatioF;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_saveGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int >)&TlWndwMngr_restoreGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_addAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_removeAction;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setParent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_parentWidget;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_window;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_AddClassName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_Polish;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_toolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setToolTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_statusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setStatusTip;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_toolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setToolTipDuration;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&TlWndwMngr_autoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setAutoFillBackground;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_adjustSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&TlWndwMngr_windowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&TlWndwMngr_setWindowModality;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_ScreenGeometry;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, int, void* >)&TlWndwMngr_setContentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_contentsMargins;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_layout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setLayout;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_contentsRect;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, void* >)&TlWndwMngr_SetEffectOpacity;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, long, void* >)&TlWndwMngr_setSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&TlWndwMngr_GetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long >)&TlWndwMngr_GetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&TlWndwMngr_SetHorizontalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&TlWndwMngr_SetVerticalSizePolicy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, void* >)&TlWndwMngr_setFixedSize;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setFixedWidth;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&TlWndwMngr_setFixedHeight;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_winId;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_deleteLater;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&TlWndwMngr_objectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setObjectName;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&TlWndwMngr_setParent_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, void* >)&TlWndwMngr_setProperty;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, float, void* >)&TlWndwMngr_setProperty_1;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void* >)&TlWndwMngr_setProperty_2;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&WidgetUtil_OnObject_Destroyed;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&WidgetUtil_OnMenu_AboutToShow;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&WidgetUtil_OnMenu_AboutToHide;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&WidgetUtil_GetChildrenCount;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&WidgetUtil_GetChildren;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&WidgetUtil_CreateGraphicsView;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&WidgetUtil_CreateGraphicsProxy;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&WidgetUtil_PostKeyEvent;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, int, void* >)&WidgetUtil_PaintSetFont;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&WidgetUtil_CreateSwapChain;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&WidgetUtil_SetWindowNoActivate;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&WidgetUtil_MeasureText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, void* >)&WidgetUtil_ElidedText;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&WidgetUtil_ConstrainToScreen;
+ 	}
+
+        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractScrollArea_To_CAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QAbstractScrollArea_To_CAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractScrollArea_From_CAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractScrollArea_From_CAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QAbstractScrollArea_From_CAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_CAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_CAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QFrame_To_CAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_CAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_CAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QFrame_From_CAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_CAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_CAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CAbstractScrollArea( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CbstrctScrllr_Create")]
         public static void* CbstrctScrllr_Create( void* parent, uint obj )
@@ -63,13 +4417,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QAction_To_CAction")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QAction_To_CAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QAction_To_CAction( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QAction_From_CAction")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QAction_From_CAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QAction_From_CAction( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CAction")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CAction( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CAction")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CAction( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CAction_Create")]
         public static void* CAction_Create( void* parent, uint action )
@@ -256,9 +4610,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CClassInputOutputBase_To_CClassInput")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CClassInputOutputBase_To_CClassInput", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CClassInputOutputBase_To_CClassInput( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CClassInputOutputBase_From_CClassInput")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CClassInputOutputBase_From_CClassInput", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CClassInputOutputBase_From_CClassInput( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CClassInput_Create")]
         public static void* CClassInput_Create()
@@ -365,9 +4719,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CClassInputOutputBase_To_CClassOutput")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CClassInputOutputBase_To_CClassOutput", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CClassInputOutputBase_To_CClassOutput( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CClassInputOutputBase_From_CClassOutput")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CClassInputOutputBase_From_CClassOutput", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CClassInputOutputBase_From_CClassOutput( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CClassOutput_Create")]
         public static void* CClassOutput_Create()
@@ -434,17 +4788,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QMainWindow_To_CFramelessMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QMainWindow_To_CFramelessMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QMainWindow_To_CFramelessMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QMainWindow_From_CFramelessMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QMainWindow_From_CFramelessMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QMainWindow_From_CFramelessMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CFramelessMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CFramelessMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_CFramelessMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CFramelessMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CFramelessMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_CFramelessMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CFramelessMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CFramelessMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CFramelessMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CFramelessMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CFramelessMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CFramelessMainWindow( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CFrmlssMnWndw_SetTitleBarWidgets")]
         public static void* CFrmlssMnWndw_SetTitleBarWidgets( void* self, void* icon, void* titleLabel, void* menuBar, void* grabber, void* minimizeButton, void* maximizeButton, void* closeButton )
@@ -1356,9 +5710,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsItem_To_CManagedGraphicsItem")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsItem_To_CManagedGraphicsItem", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QGraphicsItem_To_CManagedGraphicsItem( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsItem_From_CManagedGraphicsItem")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsItem_From_CManagedGraphicsItem", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QGraphicsItem_From_CManagedGraphicsItem( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMngdGrphcstm_Create")]
         public static void* CMngdGrphcstm_Create( void* parent, uint managedObject )
@@ -1570,13 +5924,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CManagedGraphicsItem_To_CManagedLineGraphicsItem")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CManagedGraphicsItem_To_CManagedLineGraphicsItem", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CManagedGraphicsItem_To_CManagedLineGraphicsItem( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CManagedGraphicsItem_From_CManagedLineGraphicsItem")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CManagedGraphicsItem_From_CManagedLineGraphicsItem", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CManagedGraphicsItem_From_CManagedLineGraphicsItem( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsItem_To_CManagedLineGraphicsItem")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsItem_To_CManagedLineGraphicsItem", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QGraphicsItem_To_CManagedLineGraphicsItem( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsItem_From_CManagedLineGraphicsItem")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsItem_From_CManagedLineGraphicsItem", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QGraphicsItem_From_CManagedLineGraphicsItem( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMngdLnGrphcstm_CreateLine")]
         public static void* CMngdLnGrphcstm_CreateLine( void* parent, uint managedObject )
@@ -1813,30 +6167,31 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Get__CMngdLnGrphcstm_HitWidth")]
+        [UnmanagedCallersOnly(EntryPoint = "_Get__CMngdLnGrphcstm_HitWidth", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static float _Get__CMngdLnGrphcstm_HitWidth( void* self )
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "_Set__CMngdLnGrphcstm_HitWidth")]
-        public static void _Set__CMngdLnGrphcstm_HitWidth( void* self, float value )
+        [UnmanagedCallersOnly(EntryPoint = "_Set__CMngdLnGrphcstm_HitWidth", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
+        public static void* _Set__CMngdLnGrphcstm_HitWidth( void* self, float value )
         {
+            return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_CFramelessMainWindow_To_CManagedMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_CFramelessMainWindow_To_CManagedMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_CFramelessMainWindow_To_CManagedMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_CFramelessMainWindow_From_CManagedMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_CFramelessMainWindow_From_CManagedMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_CFramelessMainWindow_From_CManagedMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QMainWindow_To_CManagedMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QMainWindow_To_CManagedMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QMainWindow_To_CManagedMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QMainWindow_From_CManagedMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QMainWindow_From_CManagedMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QMainWindow_From_CManagedMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CManagedMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CManagedMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_CManagedMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CManagedMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CManagedMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_CManagedMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CManagedMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CManagedMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CManagedMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CManagedMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CManagedMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CManagedMainWindow( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CMngdMnWndw_Create")]
         public static void* CMngdMnWndw_Create( void* parent, uint managedobj )
@@ -2473,21 +6828,21 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QSplitter_To_CQLinkableSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QSplitter_To_CQLinkableSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QSplitter_To_CQLinkableSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QSplitter_From_CQLinkableSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QSplitter_From_CQLinkableSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QSplitter_From_CQLinkableSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_CQLinkableSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_CQLinkableSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QFrame_To_CQLinkableSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_CQLinkableSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_CQLinkableSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QFrame_From_CQLinkableSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CQLinkableSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CQLinkableSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_CQLinkableSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CQLinkableSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CQLinkableSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_CQLinkableSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CQLinkableSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CQLinkableSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CQLinkableSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CQLinkableSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CQLinkableSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CQLinkableSplitter( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CQLnkblSplttr_CreateSplitter")]
         public static void* CQLnkblSplttr_CreateSplitter( long orientation, void* parent )
@@ -3094,13 +7449,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QAction_To_CQNoDeleteWidgetAction")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QAction_To_CQNoDeleteWidgetAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QAction_To_CQNoDeleteWidgetAction( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QAction_From_CQNoDeleteWidgetAction")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QAction_From_CQNoDeleteWidgetAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QAction_From_CQNoDeleteWidgetAction( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CQNoDeleteWidgetAction")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CQNoDeleteWidgetAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CQNoDeleteWidgetAction( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CQNoDeleteWidgetAction")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CQNoDeleteWidgetAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CQNoDeleteWidgetAction( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CQNDltWdgtctn_Create")]
         public static void* CQNDltWdgtctn_Create( void* parent )
@@ -3287,13 +7642,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CQToolSceneWidget")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CQToolSceneWidget", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_CQToolSceneWidget( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CQToolSceneWidget")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CQToolSceneWidget", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_CQToolSceneWidget( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CQToolSceneWidget")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CQToolSceneWidget", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CQToolSceneWidget( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CQToolSceneWidget")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CQToolSceneWidget", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CQToolSceneWidget( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CQTlScnWdgt_Create")]
         public static void* CQTlScnWdgt_Create( void* pParent )
@@ -3915,9 +8270,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CSystemTrayIcon")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CSystemTrayIcon", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CSystemTrayIcon( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CSystemTrayIcon")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CSystemTrayIcon", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CSystemTrayIcon( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "CSystemTrayIcon_Create")]
         public static void* CSystemTrayIcon_Create( void* parent, uint managedObject )
@@ -4184,13 +8539,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsScene_To_ManagedGraphicsScene")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsScene_To_ManagedGraphicsScene", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QGraphicsScene_To_ManagedGraphicsScene( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsScene_From_ManagedGraphicsScene")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsScene_From_ManagedGraphicsScene", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QGraphicsScene_From_ManagedGraphicsScene( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_ManagedGraphicsScene")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_ManagedGraphicsScene", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_ManagedGraphicsScene( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_ManagedGraphicsScene")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_ManagedGraphicsScene", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_ManagedGraphicsScene( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "MngdGrphcsScn_Create")]
         public static void* MngdGrphcsScn_Create( void* parent, uint obj )
@@ -4267,13 +8622,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QAbstractButton")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QAbstractButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QAbstractButton( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QAbstractButton")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QAbstractButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QAbstractButton( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QAbstractButton")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QAbstractButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QAbstractButton( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QAbstractButton")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QAbstractButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QAbstractButton( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QAbstractButton_setText")]
         public static void* QAbstractButton_setText( void* self, void* text )
@@ -4900,17 +9255,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QFrame_To_QAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QFrame_From_QAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QAbstractScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QAbstractScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QAbstractScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QAbstractScrollArea( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QbstrctScrllr_horizontalScrollBar")]
         public static void* QbstrctScrllr_horizontalScrollBar( void* self )
@@ -4947,9 +9302,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QAction")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QAction( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QAction")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QAction", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QAction( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QAction_setText")]
         public static void* QAction_setText( void* self, void* text )
@@ -5236,13 +9591,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QLayout_To_QBoxLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QLayout_To_QBoxLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QLayout_To_QBoxLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QLayout_From_QBoxLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QLayout_From_QBoxLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QLayout_From_QBoxLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QBoxLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QBoxLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QBoxLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QBoxLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QBoxLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QBoxLayout( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QBoxLayout_Create")]
         public static void* QBoxLayout_Create( long direction, void* parent )
@@ -5409,17 +9764,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractButton_To_QCheckBox")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractButton_To_QCheckBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QAbstractButton_To_QCheckBox( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractButton_From_QCheckBox")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractButton_From_QCheckBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QAbstractButton_From_QCheckBox( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QCheckBox")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QCheckBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QCheckBox( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QCheckBox")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QCheckBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QCheckBox( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QCheckBox")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QCheckBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QCheckBox( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QCheckBox")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QCheckBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QCheckBox( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QCheckBox_setTristate")]
         public static void* QCheckBox_setTristate( void* self, int y )
@@ -6066,13 +10421,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QComboBox")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QComboBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QComboBox( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QComboBox")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QComboBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QComboBox( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QComboBox")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QComboBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QComboBox( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QComboBox")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QComboBox", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QComboBox( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QComboBox_maxVisibleItems")]
         public static int QComboBox_maxVisibleItems( void* self )
@@ -6779,13 +11134,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QInputEvent_To_QContextMenuEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QInputEvent_To_QContextMenuEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QInputEvent_To_QContextMenuEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QInputEvent_From_QContextMenuEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QInputEvent_From_QContextMenuEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QInputEvent_From_QContextMenuEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QContextMenuEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QContextMenuEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QContextMenuEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QContextMenuEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QContextMenuEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QContextMenuEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QCntxtMnvnt_pos")]
         public static void* QCntxtMnvnt_pos( void* self )
@@ -6837,9 +11192,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QDrag")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QDrag", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QDrag( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QDrag")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QDrag", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QDrag( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QDrag_Create")]
         public static void* QDrag_Create( void* dragSource )
@@ -6906,17 +11261,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QDragMoveEvent_To_QDragEnterEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QDragMoveEvent_To_QDragEnterEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QDragMoveEvent_To_QDragEnterEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QDragMoveEvent_From_QDragEnterEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QDragMoveEvent_From_QDragEnterEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QDragMoveEvent_From_QDragEnterEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QDropEvent_To_QDragEnterEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QDropEvent_To_QDragEnterEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QDropEvent_To_QDragEnterEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QDropEvent_From_QDragEnterEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QDropEvent_From_QDragEnterEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QDropEvent_From_QDragEnterEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QDragEnterEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QDragEnterEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QDragEnterEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QDragEnterEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QDragEnterEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QDragEnterEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QDragEnterEvent_acceptProposedAction")]
         public static void* QDragEnterEvent_acceptProposedAction( void* self )
@@ -6983,9 +11338,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QDragLeaveEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QDragLeaveEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QDragLeaveEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QDragLeaveEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QDragLeaveEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QDragLeaveEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QDragLeaveEvent_accept")]
         public static void* QDragLeaveEvent_accept( void* self )
@@ -7012,13 +11367,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QDropEvent_To_QDragMoveEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QDropEvent_To_QDragMoveEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QDropEvent_To_QDragMoveEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QDropEvent_From_QDragMoveEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QDropEvent_From_QDragMoveEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QDropEvent_From_QDragMoveEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QDragMoveEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QDragMoveEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QDragMoveEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QDragMoveEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QDragMoveEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QDragMoveEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QDragMoveEvent_acceptProposedAction")]
         public static void* QDragMoveEvent_acceptProposedAction( void* self )
@@ -7085,9 +11440,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QDropEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QDropEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QDropEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QDropEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QDropEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QDropEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QDropEvent_acceptProposedAction")]
         public static void* QDropEvent_acceptProposedAction( void* self )
@@ -7179,13 +11534,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QFileDialog")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QFileDialog", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QFileDialog( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QFileDialog")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QFileDialog", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QFileDialog( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QFileDialog")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QFileDialog", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QFileDialog( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QFileDialog")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QFileDialog", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QFileDialog( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QFileDialog_Create")]
         public static void* QFileDialog_Create( void* parent )
@@ -7812,13 +12167,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QFrame")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QFrame", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QFrame( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QFrame")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QFrame", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QFrame( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QFrame")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QFrame", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QFrame( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QFrame")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QFrame", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QFrame( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QFrame_isTopLevel")]
         public static int QFrame_isTopLevel( void* self )
@@ -8530,9 +12885,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsItem_To_QGraphicsProxyWidget")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsItem_To_QGraphicsProxyWidget", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QGraphicsItem_To_QGraphicsProxyWidget( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsItem_From_QGraphicsProxyWidget")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsItem_From_QGraphicsProxyWidget", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QGraphicsItem_From_QGraphicsProxyWidget( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QGrphcsPrxyWdgt_setWidget")]
         public static void* QGrphcsPrxyWdgt_setWidget( void* self, void* widget )
@@ -8784,9 +13139,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QGraphicsScene")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QGraphicsScene", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QGraphicsScene( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QGraphicsScene")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QGraphicsScene", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QGraphicsScene( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QGraphicsScene_sceneRect")]
         public static void* QGraphicsScene_sceneRect( void* self )
@@ -8858,9 +13213,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QGraphicsSceneHoverEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QGraphicsSceneHoverEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QGraphicsSceneHoverEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QGraphicsSceneHoverEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QGraphicsSceneHoverEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QGraphicsSceneHoverEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QGrphcsScnHvrvnt_pos")]
         public static void* QGrphcsScnHvrvnt_pos( void* self )
@@ -8902,9 +13257,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QGraphicsSceneMouseEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QGraphicsSceneMouseEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QGraphicsSceneMouseEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QGraphicsSceneMouseEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QGraphicsSceneMouseEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QGraphicsSceneMouseEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QGrphcsScnMsvnt_widget")]
         public static void* QGrphcsScnMsvnt_widget( void* self )
@@ -8966,9 +13321,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsItem_To_QGraphicsSimpleTextItem")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QGraphicsItem_To_QGraphicsSimpleTextItem", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QGraphicsItem_To_QGraphicsSimpleTextItem( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsItem_From_QGraphicsSimpleTextItem")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QGraphicsItem_From_QGraphicsSimpleTextItem", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QGraphicsItem_From_QGraphicsSimpleTextItem( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QGrphcsSmplTxttm_Create")]
         public static void* QGrphcsSmplTxttm_Create( void* text, void* parent )
@@ -9185,17 +13540,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QGraphicsView")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QGraphicsView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QFrame_To_QGraphicsView( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QGraphicsView")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QGraphicsView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QFrame_From_QGraphicsView( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QGraphicsView")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QGraphicsView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QGraphicsView( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QGraphicsView")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QGraphicsView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QGraphicsView( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QGraphicsView")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QGraphicsView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QGraphicsView( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QGraphicsView")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QGraphicsView", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QGraphicsView( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QGraphicsView_isInteractive")]
         public static int QGraphicsView_isInteractive( void* self )
@@ -9842,13 +14197,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QLayout_To_QGridLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QLayout_To_QGridLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QLayout_To_QGridLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QLayout_From_QGridLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QLayout_From_QGridLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QLayout_From_QGridLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QGridLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QGridLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QGridLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QGridLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QGridLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QGridLayout( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QGridLayout_Create")]
         public static void* QGridLayout_Create( void* parent )
@@ -10050,9 +14405,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QInputEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QInputEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QInputEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QInputEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QInputEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QInputEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QInputEvent_modifiers")]
         public static long QInputEvent_modifiers( void* self )
@@ -10089,13 +14444,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QInputEvent_To_QKeyEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QInputEvent_To_QKeyEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QInputEvent_To_QKeyEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QInputEvent_From_QKeyEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QInputEvent_From_QKeyEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QInputEvent_From_QKeyEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QKeyEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QKeyEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QKeyEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QKeyEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QKeyEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QKeyEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QKeyEvent_text")]
         public static void* QKeyEvent_text( void* self )
@@ -10118,17 +14473,17 @@ namespace Sbox.Engine.Emulation.Generated
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "QKeyEvent_nativeModifiers")]
-        public static void* QKeyEvent_nativeModifiers( void* self )
+        public static uint QKeyEvent_nativeModifiers( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "QKeyEvent_nativeScanCode")]
-        public static void* QKeyEvent_nativeScanCode( void* self )
+        public static uint QKeyEvent_nativeScanCode( void* self )
         {
             return default;
         }
         [UnmanagedCallersOnly(EntryPoint = "QKeyEvent_nativeVirtualKey")]
-        public static void* QKeyEvent_nativeVirtualKey( void* self )
+        public static uint QKeyEvent_nativeVirtualKey( void* self )
         {
             return default;
         }
@@ -10167,17 +14522,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QLabel")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QLabel", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QFrame_To_QLabel( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QLabel")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QLabel", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QFrame_From_QLabel( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QLabel")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QLabel", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QLabel( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QLabel")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QLabel", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QLabel( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QLabel")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QLabel", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QLabel( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QLabel")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QLabel", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QLabel( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QLabel_Create")]
         public static void* QLabel_Create( void* parent )
@@ -10779,9 +15134,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QLayout( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QLayout_spacing")]
         public static int QLayout_spacing( void* self )
@@ -10883,13 +15238,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QLineEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QLineEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QLineEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QLineEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QLineEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QLineEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QLineEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QLineEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QLineEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QLineEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QLineEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QLineEdit( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QLineEdit_setText")]
         public static void* QLineEdit_setText( void* self, void* text )
@@ -11576,13 +15931,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QMainWindow( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QMainWindow")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QMainWindow", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QMainWindow( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QMainWindow_iconSize")]
         public static void* QMainWindow_iconSize( void* self )
@@ -12194,13 +16549,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QMenu")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QMenu", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QMenu( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QMenu")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QMenu", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QMenu( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QMenu")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QMenu", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QMenu( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QMenu")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QMenu", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QMenu( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QMenu_Create")]
         public static void* QMenu_Create( void* parent )
@@ -12797,13 +17152,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QMenuBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QMenuBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QMenuBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QMenuBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QMenuBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QMenuBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QMenuBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QMenuBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QMenuBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QMenuBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QMenuBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QMenuBar( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QMenuBar_insertAction")]
         public static void* QMenuBar_insertAction( void* self, void* before, void* action )
@@ -13340,9 +17695,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QMimeData")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QMimeData", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QMimeData( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QMimeData")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QMimeData", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QMimeData( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QMimeData_Create")]
         public static void* QMimeData_Create()
@@ -13419,13 +17774,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QInputEvent_To_QMouseEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QInputEvent_To_QMouseEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QInputEvent_To_QMouseEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QInputEvent_From_QMouseEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QInputEvent_From_QMouseEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QInputEvent_From_QMouseEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QMouseEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QMouseEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QMouseEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QMouseEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QMouseEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QMouseEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QMouseEvent_localPos")]
         public static void* QMouseEvent_localPos( void* self )
@@ -13487,9 +17842,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QMoveEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QMoveEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QMoveEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QMoveEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QMoveEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QMoveEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QMoveEvent_pos")]
         public static void* QMoveEvent_pos( void* self )
@@ -13811,21 +18166,21 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractScrollArea_To_QPlainTextEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractScrollArea_To_QPlainTextEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QAbstractScrollArea_To_QPlainTextEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractScrollArea_From_QPlainTextEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractScrollArea_From_QPlainTextEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QAbstractScrollArea_From_QPlainTextEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QPlainTextEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QPlainTextEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QFrame_To_QPlainTextEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QPlainTextEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QPlainTextEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QFrame_From_QPlainTextEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QPlainTextEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QPlainTextEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QPlainTextEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QPlainTextEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QPlainTextEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QPlainTextEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QPlainTextEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QPlainTextEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QPlainTextEdit( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QPlainTextEdit")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QPlainTextEdit", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QPlainTextEdit( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QPlainTextEdit_document")]
         public static void* QPlainTextEdit_document( void* self )
@@ -14572,13 +18927,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QProgressDialog")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QProgressDialog", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QProgressDialog( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QProgressDialog")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QProgressDialog", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QProgressDialog( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QProgressDialog")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QProgressDialog", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QProgressDialog( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QProgressDialog")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QProgressDialog", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QProgressDialog( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QProgressDialog_setMaximum")]
         public static void* QProgressDialog_setMaximum( void* self, int maximum )
@@ -15105,17 +19460,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractButton_To_QPushButton")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractButton_To_QPushButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QAbstractButton_To_QPushButton( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractButton_From_QPushButton")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractButton_From_QPushButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QAbstractButton_From_QPushButton( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QPushButton")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QPushButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QPushButton( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QPushButton")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QPushButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QPushButton( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QPushButton")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QPushButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QPushButton( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QPushButton")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QPushButton", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QPushButton( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QPushButton_setText")]
         public static void* QPushButton_setText( void* self, void* text )
@@ -15742,9 +20097,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QResizeEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QResizeEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QResizeEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QResizeEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QResizeEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QResizeEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QResizeEvent_size")]
         public static void* QResizeEvent_size( void* self )
@@ -15791,21 +20146,21 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractScrollArea_To_QScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QAbstractScrollArea_To_QScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QAbstractScrollArea_To_QScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractScrollArea_From_QScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QAbstractScrollArea_From_QScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QAbstractScrollArea_From_QScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QFrame_To_QScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QFrame_From_QScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QScrollArea( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QScrollArea")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QScrollArea", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QScrollArea( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QScrollArea_CreateQScrollArea")]
         public static void* QScrollArea_CreateQScrollArea( void* parent )
@@ -16387,13 +20742,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QScrollBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QScrollBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QScrollBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QScrollBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QScrollBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QScrollBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QScrollBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QScrollBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QScrollBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QScrollBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QScrollBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QScrollBar( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QScrollBar_setValue")]
         public static void* QScrollBar_setValue( void* self, int v )
@@ -17005,17 +21360,17 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QFrame_To_QSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QFrame_To_QSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QFrame_From_QSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QFrame_From_QSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QSplitter( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QSplitter")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QSplitter", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QSplitter( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QSplitter_CreateSplitter")]
         public static void* QSplitter_CreateSplitter( void* parent )
@@ -17617,13 +21972,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QStatusBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QStatusBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QStatusBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QStatusBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QStatusBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QStatusBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QStatusBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QStatusBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QStatusBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QStatusBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QStatusBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QStatusBar( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QStatusBar_currentMessage")]
         public static void* QStatusBar_currentMessage( void* self )
@@ -18200,13 +22555,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QTabBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QTabBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QTabBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QTabBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QTabBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QTabBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QTabBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QTabBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QTabBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QTabBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QTabBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QTabBar( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QTabBar_isTopLevel")]
         public static int QTabBar_isTopLevel( void* self )
@@ -18893,9 +23248,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QTextDocument")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QTextDocument", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QTextDocument( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QTextDocument")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QTextDocument", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QTextDocument( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QTextDocument_toRawText")]
         public static void* QTextDocument_toRawText( void* self )
@@ -19022,13 +23377,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QToolBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_QToolBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_QToolBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QToolBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_QToolBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_QToolBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QToolBar")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QToolBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QToolBar( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QToolBar")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QToolBar", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QToolBar( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QToolBar_setMovable")]
         public static void* QToolBar_setMovable( void* self, int movable )
@@ -19620,13 +23975,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QLayout_To_QVerticalLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QLayout_To_QVerticalLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QLayout_To_QVerticalLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QLayout_From_QVerticalLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QLayout_From_QVerticalLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QLayout_From_QVerticalLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QVerticalLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QVerticalLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QVerticalLayout( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QVerticalLayout")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QVerticalLayout", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QVerticalLayout( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QVerticalLayout_Create")]
         public static void* QVerticalLayout_Create( void* parent )
@@ -19743,13 +24098,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QInputEvent_To_QWheelEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QInputEvent_To_QWheelEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QInputEvent_To_QWheelEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QInputEvent_From_QWheelEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QInputEvent_From_QWheelEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QInputEvent_From_QWheelEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QWheelEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QEvent_To_QWheelEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QEvent_To_QWheelEvent( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QWheelEvent")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QEvent_From_QWheelEvent", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QEvent_From_QWheelEvent( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QWheelEvent_pixelDelta")]
         public static void* QWheelEvent_pixelDelta( void* self )
@@ -19811,9 +24166,9 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QWidget")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_QWidget", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_QWidget( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QWidget")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_QWidget", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_QWidget( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "QWidget_CreateWidget")]
         public static void* QWidget_CreateWidget( void* parent )
@@ -20370,13 +24725,13 @@ namespace Sbox.Engine.Emulation.Generated
         {
             return default;
         }
-        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CToolWindowManager")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QWidget_To_CToolWindowManager", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QWidget_To_CToolWindowManager( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CToolWindowManager")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QWidget_From_CToolWindowManager", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QWidget_From_CToolWindowManager( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CToolWindowManager")]
+        [UnmanagedCallersOnly(EntryPoint = "From_QObject_To_CToolWindowManager", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* From_QObject_To_CToolWindowManager( void* ptr ) => ptr;
-        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CToolWindowManager")]
+        [UnmanagedCallersOnly(EntryPoint = "To_QObject_From_CToolWindowManager", CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
         public static void* To_QObject_From_CToolWindowManager( void* ptr ) => ptr;
         [UnmanagedCallersOnly(EntryPoint = "TlWndwMngr_Create")]
         public static void* TlWndwMngr_Create( void* parent, uint dockmanager )

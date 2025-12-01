@@ -64,7 +64,7 @@ internal class Program
 		var aotOption = new Option<bool>(
 			"--aot",
 			description: "Generate NativeAOT stubs",
-			getDefaultValue: () => false );
+			getDefaultValue: () => true );
 		buildCommand.AddOption( aotOption );
 
 		buildCommand.SetHandler( ( BuildConfiguration config, bool clean, bool skipNative, bool skipManaged, bool aot ) =>

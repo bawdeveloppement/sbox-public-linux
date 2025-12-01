@@ -40,8 +40,7 @@ public static class LauncherEnvironment
 		if ( GamePath.EndsWith( System.IO.Path.Combine( "bin", PlatformName ) ) )
 		{
 			// go up two folders
-			GamePath = System.IO.Path.GetDirectoryName( GamePath );
-			GamePath = System.IO.Path.GetDirectoryName( GamePath );
+			GamePath = System.IO.Path.GetFullPath(GamePath);
 		}
 
 		// this exe is in the game folder
@@ -50,7 +49,7 @@ public static class LauncherEnvironment
 
 		// make the game dir our current dir
 		Environment.CurrentDirectory = GamePath;
-
+		Console.WriteLine( $"Current directory: {Environment.CurrentDirectory}" );
 		//
 		// Allows unit tests and csproj to find the engine path.
 		//
