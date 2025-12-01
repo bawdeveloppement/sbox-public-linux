@@ -12,6 +12,7 @@
           "DotNext.Unsafe": "1.0.0",
           "Sandbox.Engine": "1.0.1",
           "Silk.NET.Core": "2.22.0",
+          "Silk.NET.GLFW": "2.22.0",
           "Silk.NET.Input": "2.22.0",
           "Silk.NET.OpenAL": "2.22.0",
           "Silk.NET.OpenGL": "2.22.0",
@@ -1625,6 +1626,14 @@
           }
         }
       },
+      "System.Numerics.Tensors/10.0.0": {
+        "runtime": {
+          "lib/net10.0/System.Numerics.Tensors.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.52411"
+          }
+        }
+      },
       "Ultz.Native.GLFW/3.4.0": {
         "native": {
           "runtimes/linux-x64/native/libglfw.so.3": {
@@ -1742,6 +1751,7 @@
           "SkiaSharp": "3.116.0",
           "SkiaSharp.HarfBuzz": "3.116.0",
           "Svg.Skia": "2.0.0.4",
+          "System.Numerics.Tensors": "10.0.0",
           "Topten.RichTextKit": "1.0.0"
         },
         "runtime": {
@@ -2378,6 +2388,13 @@
       "sha512": "sha512-JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==",
       "path": "system.memory.data/1.0.2",
       "hashPath": "system.memory.data.1.0.2.nupkg.sha512"
+    },
+    "System.Numerics.Tensors/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PxZKFx8ACAt7gRnTSDgtZFA06cimls5XL1Olv63bWF8qKL5+EQdqq3K02etW4LNut4xDoREPe9z7QYATLMkBPA==",
+      "path": "system.numerics.tensors/10.0.0",
+      "hashPath": "system.numerics.tensors.10.0.0.nupkg.sha512"
     },
     "Ultz.Native.GLFW/3.4.0": {
       "type": "package",

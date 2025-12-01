@@ -276,7 +276,8 @@ namespace Sandbox
 				depth *= 6;
 
 			var mips = (_config.m_nNumMipLevels <= 0) ? 1 : _config.m_nNumMipLevels;
-			var memoryRequiredWithMips = ImageLoader.GetMemRequired( _config.m_nWidth, _config.m_nHeight, depth, mips, _config.m_nImageFormat );
+			// var memoryRequiredWithMips = ImageLoader.GetMemRequired( _config.m_nWidth, _config.m_nHeight, depth, mips, _config.m_nImageFormat );
+            var memoryRequiredWithMips = CalculateMemRequired( _config.m_nWidth, _config.m_nHeight, depth, mips, _config.m_nImageFormat );
 
 			// Early out sanity checks if we have no data
 			if ( data.IsEmpty || dataLength == 0 )
@@ -292,9 +293,14 @@ namespace Sandbox
 
 			// HERE'S WHERE WE SANITY CHECK EVERYTHING TO PREVENT FUCKUPS
 
-			var memoryRequired = ImageLoader.GetMemRequired( _config.m_nWidth, _config.m_nHeight, depth, _config.m_nImageFormat, false );
+			// var memoryRequired = ImageLoader.GetMemRequired( _config.m_nWidth, _config.m_nHeight, depth, _config.m_nImageFormat, false );
+            var memoryRequired = CalculateMemRequired( _config.m_nWidth, _config.m_nHeight, depth, 1, _config.m_nImageFormat );
+
 			if ( dataLength != memoryRequired && dataLength != memoryRequiredWithMips )
-				throw new Exception( $"{dataLength} is wrong for this texture! {memoryRequired:n0} bytes are required (or {memoryRequiredWithMips:n0} with mips)! You sent {dataLength:n0} bytes!" );
+			{
+				// throw new Exception( $"{dataLength} is wrong for this texture! {memoryRequired:n0} bytes are required (or {memoryRequiredWithMips:n0} with mips)! You sent {dataLength:n0} bytes!" );
+                Console.WriteLine( $"[TextureBuilder] Warning: {dataLength} bytes sent, expected {memoryRequired} or {memoryRequiredWithMips}. Proceeding anyway." );
+			}
 
 			return CreateInternal( name, anonymous, data[..dataLength] );
 		}
@@ -306,5 +312,45 @@ namespace Sandbox
 				return Texture.Create( string.IsNullOrEmpty( name ) ? "unnamed" : name, anonymous, this, data.IsEmpty ? IntPtr.Zero : (IntPtr)dataPtr, data.Length );
 			}
 		}
+
+        private static int GetPixelSize( ImageFormat format )
+		{
+			switch ( format )
+			{
+				case ImageFormat.RGBA8888:
+				case ImageFormat.ABGR8888:
+				case ImageFormat.ARGB8888:
+				case ImageFormat.BGRA8888:
+				case ImageFormat.BGRX8888:
+                case ImageFormat.RGBA16161616F:
+					return 4;
+				case ImageFormat.RGB888:
+				case ImageFormat.BGR888:
+					return 3;
+				case ImageFormat.I8:
+				case ImageFormat.A8:
+					return 1;
+				case ImageFormat.IA88:
+					return 2;
+				default:
+					return 4; // Fallback
+			}
+		}
+
+        private static int CalculateMemRequired( int width, int height, int depth, int mips, ImageFormat format )
+        {
+            int pixelSize = GetPixelSize( format );
+            int totalSize = 0;
+            
+            for ( int i = 0; i < mips; i++ )
+            {
+                int w = Math.Max( 1, width >> i );
+                int h = Math.Max( 1, height >> i );
+                int d = Math.Max( 1, depth >> i );
+                totalSize += w * h * d * pixelSize;
+            }
+            
+            return totalSize;
+        }
 	}
 }

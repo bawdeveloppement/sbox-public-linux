@@ -11,18 +11,21 @@
     <SelfContained>true</SelfContained>
   </PropertyGroup>
 
-  	<ItemGroup>
-      <PackageReference Include="DotNext.Unsafe" Version="1.0.0" />
-      <PackageReference Include="Silk.NET.Core" Version="2.22.0" />
-      <PackageReference Include="Silk.NET.Windowing" Version="2.22.0" />
-      <PackageReference Include="Silk.NET.OpenGL" Version="2.22.0" />
-      <PackageReference Include="Silk.NET.Input" Version="2.22.0" />
-      <PackageReference Include="Silk.NET.SDL" Version="2.22.0" />
-      <PackageReference Include="Silk.NET.OpenAL" Version="2.22.0" />
-      <PackageReference Include="Silk.NET.Vulkan" Version="2.22.0" />
-      <PackageReference Include="Silk.NET.Windowing.Glfw" Version="2.22.0" />
-      <PackageReference Include="Silk.NET.Windowing.Sdl" Version="2.22.0" />
-      <ProjectReference Include="../../engine/Sandbox.Engine/Sandbox.Engine.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DotNext.Unsafe" Version="1.0.0" />
+    <PackageReference Include="Silk.NET.Core" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.GLFW" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.Windowing" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.OpenGL" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.Input" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.SDL" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.OpenAL" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.Vulkan" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.Windowing.Glfw" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.Windowing.Sdl" Version="2.22.0" />
+    <PackageReference Include="BepuPhysics" Version="2.5.0-beta.27" />
+    <PackageReference Include="BepuUtilities" Version="2.5.0-beta.27" />
+    <ProjectReference Include="../../engine/Sandbox.Engine/Sandbox.Engine.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -3247,3 +3247,276 @@ Laissez-moi essayer une approche différente: au lieu d'utiliser Silk.NET.Window
 Mais d'abord, je vais créer un résumé de ce que nous avons accompli et demander à l'utilisateur comment procéder, car nous avons fait d'énormes progrès même si la fenêtre ne s'ouvre pas encore.
 
 *Edited relevant file*
+
+### User Input
+
+J'ai bien avancé, continue là on en était 
+
+*Viewed [task.md](file:///home/hermann/.gemini/antigravity/brain/a7f6de24-8a5c-4f20-b095-484b2ae5fe29/task.md) *
+
+*Edited relevant file*
+
+*User accepted the command `dotnet add src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj package Silk.NET.GLFW`*
+
+*Checked command status*
+
+*Viewed [EngineExports.cs](file:///home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/EngineExports.cs) *
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release -r linux-x64 /p:NativeLib=Shared /p:SelfContained=true -o game/bin/linuxsteamrt64 && mv game/bin/linuxsteamrt64/Sbox.Engine.Emulation.so game/bin/linuxsteamrt64/libengine2.so && cp src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/libglfw.so.3 game/bin/linuxsteamrt64/ && ./game/sbox 2>&1 | head -n 30`*
+
+*Checked command status*
+
+*Viewed [implementation_plan.md](file:///home/hermann/.gemini/antigravity/brain/a7f6de24-8a5c-4f20-b095-484b2ae5fe29/implementation_plan.md) *
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release -r linux-x64 /p:NativeLib=Shared /p:SelfContained=true -o game/bin/linuxsteamrt64 && mv game/bin/linuxsteamrt64/Sbox.Engine.Emulation.so game/bin/linuxsteamrt64/libengine2.so && cp src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/libglfw.so.3 game/bin/linuxsteamrt64/ && ./game/sbox 2>&1 | head -n 30`*
+
+*Checked command status*
+
+*Edited relevant file*
+
+### User Input
+
+D'accord 
+
+*Viewed [Texture2D.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Resources/Textures/Builder/Texture2D.cs) *
+
+*Viewed [Texture.Static.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Resources/Textures/Texture.Static.cs) *
+
+*Grep searched codebase*
+
+*Searched filesystem*
+
+*Viewed [ImageLoader.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Resources/Textures/Loader/ImageLoader.cs) *
+
+*Grep searched codebase*
+
+*Viewed [Interop.Engine.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Interop.Engine.cs) *
+
+### User Input
+
+J'ajoute un commentaire, c'est que certaines class ou struct de NativeEngine, j'ai mis en public pour continuer l'initialization, tu peux le faire aussi si un jour tu es bloqué 
+
+*Viewed [Interop.Engine.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Interop.Engine.cs) *
+
+*Searched filesystem*
+
+*Viewed [ImageFormat.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Core/Interop/NativeEngine/ImageFormat.cs) *
+
+*Edited relevant file*
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release -r linux-x64 /p:NativeLib=Shared /p:SelfContained=true -o game/bin/linuxsteamrt64 && mv game/bin/linuxsteamrt64/Sbox.Engine.Emulation.so game/bin/linuxsteamrt64/libengine2.so && cp src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/libglfw.so.3 game/bin/linuxsteamrt64/ && ./game/sbox 2>&1 | head -n 30`*
+
+*Checked command status*
+
+*Viewed [TextureBuilder.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Resources/Textures/Builder/TextureBuilder.cs) *
+
+*Edited relevant file*
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release -r linux-x64 /p:NativeLib=Shared /p:SelfContained=true -o game/bin/linuxsteamrt64 && mv game/bin/linuxsteamrt64/Sbox.Engine.Emulation.so game/bin/linuxsteamrt64/libengine2.so && cp src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/libglfw.so.3 game/bin/linuxsteamrt64/ && ./game/sbox 2>&1 | head -n 30`*
+
+*Checked command status*
+
+*User accepted the command `ln -sf libSkiaSharp.so.116.0.0 game/bin/linuxsteamrt64/libSkiaSharp.so && ls -la game/bin/linuxsteamrt64/libSkiaSharp*`*
+
+*Edited relevant file*
+
+*User accepted the command `./game/sbox 2>&1 | head -n 30`*
+
+*Checked command status*
+
+*User accepted the command `file game/sbox`*
+
+*Checked command status*
+
+*User accepted the command `ln -sf libSkiaSharp.so.116.0.0 game/bin/linuxsteamrt64/liblibSkiaSharp.so && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/game/bin/linuxsteamrt64 && ./game/sbox 2>&1 | head -n 30`*
+
+*Viewed [implementation_plan.md](file:///home/hermann/.gemini/antigravity/brain/a7f6de24-8a5c-4f20-b095-484b2ae5fe29/implementation_plan.md) *
+
+*Checked command status*
+
+*Edited relevant file*
+
+*User accepted the command `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/game/bin/linuxsteamrt64 && ./game/sbox 2>&1 | head -n 100`*
+
+*Checked command status*
+
+*Viewed [Bootstrap.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Core/Bootstrap.cs) *
+
+### User Input
+
+@[TerminalName: Antigravity Agent, ProcessId: 6232] 
+
+*Viewed [PhysicsWorld.DebugDraw.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Physics/PhysicsWorld.DebugDraw.cs) *
+
+*Viewed [PhysicsWorld.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Physics/PhysicsWorld.cs) *
+
+*Grep searched codebase*
+
+*Grep searched codebase*
+
+*Viewed [Interop.Engine.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Interop.Engine.cs) *
+
+*Viewed [Interop.Engine.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Interop.Engine.cs) *
+
+*Grep searched codebase*
+
+*Grep searched codebase*
+
+*Viewed [Interop.Engine.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Interop.Engine.cs) *
+
+*Edited relevant file*
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release -r linux-x64 /p:NativeLib=Shared /p:SelfContained=true -o game/bin/linuxsteamrt64 && mv game/bin/linuxsteamrt64/Sbox.Engine.Emulation.so game/bin/linuxsteamrt64/libengine2.so && cp src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/libglfw.so.3 game/bin/linuxsteamrt64/ && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/game/bin/linuxsteamrt64 && ./game/sbox 2>&1 | head -n 100`*
+
+*Checked command status*
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release -r linux-x64 /p:NativeLib=Shared /p:SelfContained=true -o game/bin/linuxsteamrt64 && mv game/bin/linuxsteamrt64/Sbox.Engine.Emulation.so game/bin/linuxsteamrt64/libengine2.so && cp src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/libglfw.so.3 game/bin/linuxsteamrt64/ && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/game/bin/linuxsteamrt64 && ./game/sbox 2>&1 | head -n 200`*
+
+### User Input
+
+Ok quand tu te sens prêt créer un plan
+
+*Checked command status*
+
+### User Input
+
+ok continue
+
+### Planner Response
+
+D'accord, je vais continuer à travailler sur le problème de l'initialisation du PhysicsWorld. Laisse-moi d'abord vérifier l'état actuel et créer un plan pour résoudre les problèmes restants.
+
+*Viewed [Scene.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Scene/Scene/Scene.cs) *
+
+### Planner Response
+
+Je vois le problème. Le [PhysicsWorld](cci:2://file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Physics/PhysicsWorld.DebugDraw.cs:5:0-168:1) est créé avec `DebugSceneWorld = DebugSceneWorld` (ligne 57), mais à ce moment-là, `DebugSceneWorld` peut être null car `gizmoInstance?.World` peut ne pas être initialisé. Cela cause le `NullReferenceException` quand [SetDebugScene](cci:1://file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Interop.Engine.cs:9123:1-9124:175) est appelé avec un [SceneWorld](cci:1://file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Interop.Engine.cs:9804:2-9804:52) null.
+
+Laisse-moi créer un plan complet pour résoudre les problèmes restants:
+
+*Viewed [task.md](file:///home/hermann/.gemini/antigravity/brain/a7f6de24-8a5c-4f20-b095-484b2ae5fe29/task.md) *
+
+*Edited relevant file*
+
+### Planner Response
+
+Parfait ! J'ai créé un plan détaillé. Maintenant je vais te le présenter pour validation avant de commencer l'implémentation.
+
+### User Input
+
+Non je veux rien de dummy ou factice, on as pas le temps, je veux un plan concret tourner vers une résolution de la physique correct
+
+### Planner Response
+
+Compris ! Tu as raison, pas de solutions factices. Je vais créer un plan concret pour intégrer une vraie bibliothèque physique. Laisse-moi analyser les options disponibles.
+
+*Grep searched codebase*
+
+*Searched web for Jolt Physics C# bindings .NET Linux NativeAOT*
+
+*Searched web for BepuPhysics v2 .NET physics engine Linux*
+
+### Planner Response
+
+Excellent ! J'ai deux options concrètes :
+
+1. **BepuPhysics v2** - 100% .NET, natif, performant, compatible NativeAOT
+2. **JoltPhysicsSharp** - Bindings C# pour Jolt Physics (utilisé par Godot)
+
+BepuPhysics v2 est le meilleur choix car c'est du .NET pur, pas de dépendances natives supplémentaires. Laisse-moi créer un vrai plan d'intégration.
+
+*Viewed [PhysicsBody.cs](file:///home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Systems/Physics/PhysicsBody.cs) *
+
+*Edited relevant file*
+
+### User Input
+
+J'ai fais une review, trop de breaking change, je veux que presque tout passe par Le NativeAot 
+
+### Planner Response
+
+Parfait ! Je comprends maintenant - tout doit passer par `Sbox.Engine.Emulation` avec NativeAOT, sans modifier le code existant de `Sandbox.Engine`. C'est beaucoup mieux comme approche. Laisse-moi refaire le plan correctement.
+
+*Viewed [task.md](file:///home/hermann/.gemini/antigravity/brain/a7f6de24-8a5c-4f20-b095-484b2ae5fe29/task.md) *
+
+*Grep searched codebase*
+
+*Edited relevant file*
+
+### User Input
+
+
+
+### User Input
+
+Proceed
+
+*Viewed [Sbox.Engine.Emulation.csproj](file:///home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj) *
+
+*Edited relevant file*
+
+*Edited relevant file*
+
+*Edited relevant file*
+
+### Planner Response
+
+We need to edit EngineExports.cs to add the physics functions.We need to edit EngineExports.cs to add the physics functions.
+
+*Viewed [EngineExports.cs](file:///home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/EngineExports.cs) *
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release`*
+
+*Checked command status*
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release`*
+
+*Checked command status*
+
+*Searched web for BepuUtilities 2.5.0-beta.27 nuget*
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release`*
+
+*Checked command status*
+
+*Edited relevant file*
+
+*User accepted the command `dotnet publish src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj -c Release`*
+
+### Planner Response
+
+We need to check compile status.We need to check compile status.
+
+*Checked command status*
+
+### Planner Response
+
+We will poll the command status again.We will poll the command status again.
+
+*Checked command status*
+
+### User Input
+
+continue
+
+### User Input
+
+continue
