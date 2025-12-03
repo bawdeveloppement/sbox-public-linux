@@ -240,7 +240,7 @@ internal class ToolsDll : IToolsDll
 
 		// This is really just here for F5, if we stop the game session and defocus the game window, Qt is going to then run it's event
 		// The other option is, do we need to run EditorShortcuts from game mode? What is there other than F5?
-		EditorShortcuts._timeSinceGlobalShortcut = 0;
+		EditorShortcuts.STimeSinceGlobalShortcut = 0;
 	}
 
 	public void Spin()

@@ -9,12 +9,55 @@ public static class EditorShortcuts
 
 	public static bool AllowShortcuts
 	{
-		get => _timeSinceInputsBlocked >= 0.05f;
-		set => _timeSinceInputsBlocked = value ? 1f : 0f;
+		get => s_timeSinceInputsBlocked >= 0.05f;
+		set => s_timeSinceInputsBlocked = value ? 1f : 0f;
 	}
-	static RealTimeSince _timeSinceInputsBlocked = 0f;
+	static RealTimeSince s_timeSinceInputsBlocked = 0f;
 
-	internal static RealTimeSince _timeSinceGlobalShortcut = 0f;
+	internal static RealTimeSince STimeSinceGlobalShortcut = 0f;
+
+	// Instance par défaut pour la production
+	private static readonly IFocusProvider SDefaultFocusProvider = new DefaultFocusProvider();
+	private static ShortcutBlockingService s_blockingService;
+
+	static EditorShortcuts()
+	{
+		InitializeBlockingService();
+	}
+
+	private static void InitializeBlockingService()
+	{
+		IEnumerable<IShortcutEntry> GetEntries( string keys ) => Entries.Where( entry => GetKeys( entry.Identifier ) == keys );
+
+		s_blockingService = new ShortcutBlockingService(
+			SDefaultFocusProvider,
+			GetEntries
+		);
+	}
+
+
+	/// <summary>
+	/// Registers a new shortcut blocking rule.
+	/// Allows plugins/addons to extend the rule system.
+	/// </summary>
+	public static void RegisterBlockingRule( IShortcutBlockingRule rule )
+	{
+		s_blockingService.RegisterRule( rule );
+	}
+
+	/// <summary>
+	/// Unregisters a shortcut blocking rule.
+	/// </summary>
+	public static void UnregisterBlockingRule( IShortcutBlockingRule rule )
+	{
+		s_blockingService.UnregisterRule( rule );
+	}
+
+	// For tests only
+	internal static void SetBlockingService( ShortcutBlockingService service )
+	{
+		s_blockingService = service;
+	}
 
 	[Event( "editor.created" )]
 	static void EditorCreated( EditorMainWindow _ )
@@ -72,8 +115,9 @@ public static class EditorShortcuts
 
 	internal static bool Invoke( string keys, bool force = false )
 	{
-		// Don't invoke shortcuts if the focus widget if we're typing in a LineEdit and holding CTRL or ALT (Not SHIFT since it's used for capital letters)
-		if ( (Application.FocusWidget is LineEdit || Application.FocusWidget is TextEdit) && (!keys.Split( "+" ).Any( x => x == "CTRL" || x == "ALT" ) || keys == "CTRL+A" || keys == "CTRL+C" || keys == "CTRL+V" || keys == "CTRL+X") ) return false;
+		// Use the rule service to determine if we should block
+		if ( s_blockingService.ShouldBlockShortcut( keys, force ) )
+			return false;
 
 		// widgets first, then work up to app-level
 		bool hasInvoked = false;
@@ -171,7 +215,7 @@ public static class EditorShortcuts
 	/// Returns whether a given shortcut is currently being held down
 	/// </summary>
 	/// <param name="identifier">The identifier of the shortcut</param>
-	public static bool IsDown( string identifier )
+	public static bool IsShortcutDown( string identifier )
 	{
 		var entry = Entries.FirstOrDefault( x => x.Identifier == identifier );
 		if ( entry != null )
@@ -180,7 +224,7 @@ public static class EditorShortcuts
 		return false;
 	}
 
-	public class Entry
+	public class Entry : IShortcutEntry
 	{
 		public string Identifier { get; set; }
 		public string Name { get; set; }
@@ -188,7 +232,10 @@ public static class EditorShortcuts
 		internal Type TypeKey { get; set; }
 		internal Type TargetKey { get; set; }
 
-		public bool IsDown { get; internal set; }
+		public bool IsDown { get; set; }
+
+		// Explicit implementation of IShortcutEntry.Type
+		ShortcutType IShortcutEntry.Type => Attribute.Type;
 
 		public string Keys
 		{
@@ -262,7 +309,7 @@ public static class EditorShortcuts
 				else if ( type == ShortcutType.Widget )
 				{
 					var accessible = w.Visible && w.Enabled && (w.IsFocused || (Application.FocusWidget?.IsDescendantOf( w ) ?? false));
-					if ( type == ShortcutType.Widget && !accessible )
+					if ( !accessible )
 						continue;
 				}
 
@@ -277,7 +324,7 @@ public static class EditorShortcuts
 			}
 
 			// If we would have invoked the method, but we have a custom target override, invoke the method for the custom target(s)
-			if ( !MethodDesc.IsStatic && invoked && TargetKey != TypeKey )
+			if ( MethodDesc is { IsStatic: false } && invoked && TargetKey != TypeKey )
 			{
 				invoked = false;
 				foreach ( var target in Targets )
@@ -298,10 +345,7 @@ public static class EditorShortcuts
 
 		void ResetKeys()
 		{
-			if ( EditorPreferences.ShortcutOverrides.ContainsKey( Identifier ) )
-				Keys = EditorPreferences.ShortcutOverrides[Identifier];
-			else
-				Keys = Attribute.Keys;
+			Keys = EditorPreferences.ShortcutOverrides.ContainsKey( Identifier ) ? EditorPreferences.ShortcutOverrides[Identifier] : Attribute.Keys;
 		}
 
 		void UpdateDisplayKeys()
@@ -317,8 +361,12 @@ public static class EditorShortcuts
 			if ( string.IsNullOrEmpty( Group ) )
 			{
 				Group = split.FirstOrDefault();
-				Group = Group.Replace( "-", " " ).Replace( "_", " " );
-				Group = string.Join( " ", Group.Split( ' ' ).Select( x => char.ToUpper( x[0] ) + x.Substring( 1 ) ) );
+				if ( Group != null )
+				{
+					Group = Group.Replace( "-", " " ).Replace( "_", " " );
+					Group = string.Join( " ",
+						Group.Split( ' ' ).Select( x => char.ToUpper( x[0] ) + x.Substring( 1 ) ) );
+				}
 			}
 			var combined = split.Skip( 1 ).Aggregate( ( a, b ) => a + "." + b );
 			Name = combined.Replace( "-", " " ).Replace( "_", " " );

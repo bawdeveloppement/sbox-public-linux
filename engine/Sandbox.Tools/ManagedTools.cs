@@ -140,8 +140,7 @@ internal static class ManagedTools
 
 		if ( parameters.Length == 1 )
 		{
-			method?.Invoke( null, new object[] { (Native.QWidget)arg0 } );
-			return;
+			method?.Invoke( null, [(Native.QWidget)arg0] );
 		}
 	}
 
@@ -189,7 +188,7 @@ internal static class ManagedTools
 				}
 
 				// If we're "in game" these will be passed by the InputRouter whilst we're not focused
-				if ( EditorShortcuts._timeSinceGlobalShortcut <= 0.05f && ev.Key >= KeyCode.F1 && ev.Key <= KeyCode.F12 )
+				if ( EditorShortcuts.STimeSinceGlobalShortcut <= 0.05f && ev.Key >= KeyCode.F1 && ev.Key <= KeyCode.F12 )
 				{
 					return false;
 				}
