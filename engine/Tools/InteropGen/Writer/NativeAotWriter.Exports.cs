@@ -107,7 +107,7 @@ internal partial class NativeAotWriter
 				WriteLine( "        {" );
 				if ( returnType != "void" )
 				{
-					WriteLine( $"            return default;" );
+					WriteLine( $"            throw new NotImplementedException(\"{f.MangledName} is not yet implemented in the linux emulation layer\");" );
 				}
 				WriteLine( "        }" );
 			}

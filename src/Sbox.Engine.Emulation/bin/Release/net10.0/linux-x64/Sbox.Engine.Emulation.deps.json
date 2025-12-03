@@ -13,6 +13,7 @@
           "BepuUtilities": "2.5.0-beta.27",
           "DotNext.Unsafe": "1.0.0",
           "Sandbox.Engine": "1.0.1",
+          "Sandbox.System": "1.0.1",
           "Silk.NET.Core": "2.22.0",
           "Silk.NET.GLFW": "2.22.0",
           "Silk.NET.Input": "2.22.0",

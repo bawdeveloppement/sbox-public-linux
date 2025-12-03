@@ -6203,6 +6203,7 @@
       "Microsoft.DotNet.ILCompiler >= 10.0.0",
       "Microsoft.NET.ILLink.Tasks >= 10.0.0",
       "Sandbox.Engine >= 1.0.1",
+      "Sandbox.System >= 1.0.1",
       "Silk.NET.Core >= 2.22.0",
       "Silk.NET.GLFW >= 2.22.0",
       "Silk.NET.Input >= 2.22.0",
@@ -6242,6 +6243,9 @@
           "projectReferences": {
             "/home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Sandbox.Engine.csproj": {
               "projectPath": "/home/hermann/Repositories/sbox-public/engine/Sandbox.Engine/Sandbox.Engine.csproj"
+            },
+            "/home/hermann/Repositories/sbox-public/engine/Sandbox.System/Sandbox.System.csproj": {
+              "projectPath": "/home/hermann/Repositories/sbox-public/engine/Sandbox.System/Sandbox.System.csproj"
             }
           }
         }

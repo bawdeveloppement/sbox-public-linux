@@ -5,6 +5,8 @@
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/libSDL2-2.0.so
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.Engine.pdb
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.Engine.xml
+/home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.System.pdb
+/home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.System.xml
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Microsoft.AspNetCore.Components.pdb
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Microsoft.AspNetCore.Components.xml
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.Access.pdb
@@ -27,6 +29,4 @@
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.Services.pdb
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.SolutionGenerator.pdb
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.SolutionGenerator.xml
-/home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.System.pdb
-/home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Sandbox.System.xml
 /home/hermann/Repositories/sbox-public/src/Sbox.Engine.Emulation/bin/Release/net10.0/linux-x64/publish/Topten.RichTextKit.pdb

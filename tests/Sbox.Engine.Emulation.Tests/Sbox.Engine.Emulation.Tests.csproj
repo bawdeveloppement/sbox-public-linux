@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <IsPackable>false</IsPackable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <IsTestProject>true</IsTestProject>
+    <IsPublishable>false</IsPublishable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(BuildingForLiveUnitTesting)' == 'true'">
+    <DefineConstants>$(DefineConstants);LIVE_UNIT_TEST</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.6.4" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.6.4" />
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Sbox.Engine.Emulation/Sbox.Engine.Emulation.csproj" />
+    <ProjectReference Include="../../engine/Sandbox.Engine/Sandbox.Engine.csproj" />
+    <ProjectReference Include="../../engine/Sandbox.System/Sandbox.System.csproj" />
+  </ItemGroup>
+	
+</Project>
+

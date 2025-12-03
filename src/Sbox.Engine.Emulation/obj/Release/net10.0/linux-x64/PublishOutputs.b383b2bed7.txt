@@ -5,6 +5,8 @@
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/libSDL2-2.0.so
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.Engine.pdb
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.Engine.xml
+/home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.System.pdb
+/home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.System.xml
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Microsoft.AspNetCore.Components.pdb
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Microsoft.AspNetCore.Components.xml
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.Access.pdb
@@ -27,6 +29,4 @@
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.Services.pdb
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.SolutionGenerator.pdb
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.SolutionGenerator.xml
-/home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.System.pdb
-/home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Sandbox.System.xml
 /home/hermann/Repositories/sbox-public/game/bin/linuxsteamrt64/Topten.RichTextKit.pdb
