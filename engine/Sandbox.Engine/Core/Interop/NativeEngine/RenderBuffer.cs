@@ -2,7 +2,7 @@ using System;
 
 namespace NativeEngine;
 
-struct BufferDesc
+public struct BufferDesc
 {
 	public int m_nElementCount;        // Number of vertices/indices
 	public int m_nElementSizeInBytes;  // Size of a single vertex/index

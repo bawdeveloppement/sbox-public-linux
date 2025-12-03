@@ -21,5 +21,6 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo( "Facepunch.Interopgen" )]
 [assembly: InternalsVisibleTo( "Sandbox.AppSystem" )]
 [assembly: InternalsVisibleTo( "Sbox-Server" )]
+[assembly: InternalsVisibleTo( "Sbox.Engine.Emulation" )]
 
 [assembly: TasksPersistOnContextReset]

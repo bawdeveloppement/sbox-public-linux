@@ -193,6 +193,58 @@ internal sealed class MenuDll : IMenuDll
 			SetupMenuScene();
 		}
 
+		// Debug: Check if MenuSystem type exists in TypeLibrary
+		var menuSystemType = Game.TypeLibrary.GetType<IMenuSystem>( "MenuSystem", false );
+		if ( menuSystemType == null )
+		{
+			// Try to find all types that implement IMenuSystem
+			var allMenuTypes = Game.TypeLibrary.GetTypes<IMenuSystem>();
+			Log.Warning( $"MenuSystem type not found. Found {allMenuTypes.Count} types implementing IMenuSystem:" );
+			foreach ( var type in allMenuTypes )
+			{
+				Log.Warning( $"  - {type.ClassName} ({type.FullName})" );
+			}
+			
+			// Check if the package was loaded
+			var package = PackageManager.Find( "local.menu" );
+			if ( package == null )
+			{
+				Log.Warning( "Package 'local.menu' not found!" );
+			}
+			else
+			{
+				Log.Info( $"Package 'local.menu' found: {package.Package}" );
+				
+				// Check if assemblies are loaded
+				var loadedAssemblies = Enroller.GetLoadedAssemblies();
+				Log.Info( $"Enroller has {loadedAssemblies.Length} loaded assemblies:" );
+				foreach ( var assm in loadedAssemblies )
+				{
+					Log.Info( $"  - {assm.Name} (Package: {assm.Package?.FullIdent})" );
+					
+					// Check if this assembly is in TypeLibrary
+					var typesInAssembly = Game.TypeLibrary.GetTypes().Where( t => t.TargetType.Assembly == assm.Assembly ).ToList();
+					Log.Info( $"    Types in TypeLibrary: {typesInAssembly.Count}" );
+					
+					// Try to find MenuSystem directly in the assembly
+					if ( assm.Assembly != null )
+					{
+						var menuSystemTypeInAssembly = assm.Assembly.GetType( "Sandbox.MenuSystem" );
+						if ( menuSystemTypeInAssembly != null )
+						{
+							Log.Info( $"    Found MenuSystem type directly in assembly: {menuSystemTypeInAssembly.FullName}" );
+							var hasLibraryAttr = menuSystemTypeInAssembly.GetCustomAttributes( typeof( LibraryAttribute ), false ).Any();
+							Log.Info( $"    Has [Library] attribute: {hasLibraryAttr}" );
+						}
+						else
+						{
+							Log.Warning( $"    MenuSystem type NOT found in assembly {assm.Name}" );
+						}
+					}
+				}
+			}
+		}
+
 		IMenuSystem.Current = TypeLibrary.Create<IMenuSystem>( "MenuSystem", true );
 
 		if ( IMenuSystem.Current == null )

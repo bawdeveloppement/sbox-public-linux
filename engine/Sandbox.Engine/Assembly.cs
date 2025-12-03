@@ -29,6 +29,7 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo( "sbox-profiler" )]
 [assembly: InternalsVisibleTo( "benchmark" )]
 [assembly: InternalsVisibleTo( "CreateGameCache" )]
+[assembly: InternalsVisibleTo( "Sbox.Engine.Emulation" )]
 
 [assembly: TasksPersistOnContextReset]
 

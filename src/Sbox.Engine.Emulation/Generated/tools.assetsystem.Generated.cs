@@ -10,497 +10,497 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "sstPckdWrppr_DeleteThis")]
         public static void* sstPckdWrppr_DeleteThis( void* self )
         {
-            return default;
+            throw new NotImplementedException("sstPckdWrppr_DeleteThis is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "sstPckdWrppr_Create")]
         public static void* sstPckdWrppr_Create()
         {
-            return default;
+            throw new NotImplementedException("sstPckdWrppr_Create is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "sstPckdWrppr_AddAsset")]
         public static void* sstPckdWrppr_AddAsset( void* self, void* asset )
         {
-            return default;
+            throw new NotImplementedException("sstPckdWrppr_AddAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CResourceStream_WriteBytes")]
         public static void* CResourceStream_WriteBytes( void* self, void* data, int size )
         {
-            return default;
+            throw new NotImplementedException("CResourceStream_WriteBytes is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CResourceStream_Align")]
         public static void* CResourceStream_Align( void* self, int alignment, int offset )
         {
-            return default;
+            throw new NotImplementedException("CResourceStream_Align is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CResourceStream_AlignPointer")]
         public static void* CResourceStream_AlignPointer( void* self )
         {
-            return default;
+            throw new NotImplementedException("CResourceStream_AlignPointer is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CResourceStream_Tell")]
         public static void* CResourceStream_Tell( void* self )
         {
-            return default;
+            throw new NotImplementedException("CResourceStream_Tell is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrsst_DeleteThis")]
         public static void* CtlVctrsst_DeleteThis( void* self )
         {
-            return default;
+            throw new NotImplementedException("CtlVctrsst_DeleteThis is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrsst_Create")]
         public static void* CtlVctrsst_Create( int growsize, int initialcapacity )
         {
-            return default;
+            throw new NotImplementedException("CtlVctrsst_Create is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrsst_Count")]
         public static int CtlVctrsst_Count( void* self )
         {
-            return default;
+            throw new NotImplementedException("CtlVctrsst_Count is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrsst_Element")]
         public static void* CtlVctrsst_Element( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CtlVctrsst_Element is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrsstTyp_DeleteThis")]
         public static void* CtlVctrsstTyp_DeleteThis( void* self )
         {
-            return default;
+            throw new NotImplementedException("CtlVctrsstTyp_DeleteThis is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrsstTyp_Create")]
         public static void* CtlVctrsstTyp_Create( int growsize, int initialcapacity )
         {
-            return default;
+            throw new NotImplementedException("CtlVctrsstTyp_Create is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrsstTyp_Count")]
         public static int CtlVctrsstTyp_Count( void* self )
         {
-            return default;
+            throw new NotImplementedException("CtlVctrsstTyp_Count is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CtlVctrsstTyp_Element")]
         public static void* CtlVctrsstTyp_Element( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CtlVctrsstTyp_Element is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_psstPrvwSystm_RenderAssetThumbnail")]
         public static int g_psstPrvwSystm_RenderAssetThumbnail( void* pAsset, void* targetPixmap )
         {
-            return default;
+            throw new NotImplementedException("g_psstPrvwSystm_RenderAssetThumbnail is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_psstPrvwSystm_OnThumbnailGenerated")]
         public static void* g_psstPrvwSystm_OnThumbnailGenerated( void* asset, void* renderedPixmap )
         {
-            return default;
+            throw new NotImplementedException("g_psstPrvwSystm_OnThumbnailGenerated is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_psstPrvwSystm_GetModelForAsset")]
         public static void* g_psstPrvwSystm_GetModelForAsset( void* pAsset )
         {
-            return default;
+            throw new NotImplementedException("g_psstPrvwSystm_GetModelForAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_RecordAssetOpen")]
         public static void* g_pAssetSystem_RecordAssetOpen( void* pAsset )
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_RecordAssetOpen is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_RecordAssetOpen_1")]
         public static void* g_pAssetSystem_RecordAssetOpen_1( void* pAssetFileName )
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_RecordAssetOpen_1 is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_FindAssetByFilename")]
         public static void* g_pAssetSystem_FindAssetByFilename( void* pFilename )
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_FindAssetByFilename is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_FindAssetByAssetRelativePath")]
         public static void* g_pAssetSystem_FindAssetByAssetRelativePath( void* pFilename )
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_FindAssetByAssetRelativePath is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_RegisterAssetFile")]
         public static void* g_pAssetSystem_RegisterAssetFile( void* pFilename )
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_RegisterAssetFile is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_RunFrame")]
         public static void* g_pAssetSystem_RunFrame()
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_RunFrame is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_UpdateMods")]
         public static void* g_pAssetSystem_UpdateMods()
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_UpdateMods is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_GetAllModsCount")]
         public static int g_pAssetSystem_GetAllModsCount()
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_GetAllModsCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_RecompileAsset")]
         public static int g_pAssetSystem_RecompileAsset( void* asset, int full )
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_RecompileAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_UpdateGameResourceType")]
         public static void* g_pAssetSystem_UpdateGameResourceType( void* title, void* extension )
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_UpdateGameResourceType is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pAssetSystem_LoadWorkingSetsAndTags")]
         public static void* g_pAssetSystem_LoadWorkingSetsAndTags()
         {
-            return default;
+            throw new NotImplementedException("g_pAssetSystem_LoadWorkingSetsAndTags is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetFriendlyName_Transient")]
         public static void* IAsset_GetFriendlyName_Transient( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetFriendlyName_Transient is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetRelativePath_Transient")]
         public static void* IAsset_GetRelativePath_Transient( void* self, long source )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetRelativePath_Transient is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAbsolutePath_Transient")]
         public static void* IAsset_GetAbsolutePath_Transient( void* self, long source )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAbsolutePath_Transient is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_HasAnyFiles")]
         public static int IAsset_HasAnyFiles( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_HasAnyFiles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_IsCached")]
         public static int IAsset_IsCached( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_IsCached is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_CanReload")]
         public static int IAsset_CanReload( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_CanReload is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_CanRecompile")]
         public static int IAsset_CanRecompile( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_CanRecompile is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetIndexInt")]
         public static void* IAsset_GetAssetIndexInt( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAssetIndexInt is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_OpenInTool")]
         public static int IAsset_OpenInTool( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_OpenInTool is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_OpenInSecondaryTool")]
         public static int IAsset_OpenInSecondaryTool( void* self, void* tool )
         {
-            return default;
+            throw new NotImplementedException("IAsset_OpenInSecondaryTool is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetsIDependOn")]
         public static void* IAsset_GetAssetsIDependOn( void* self, void* pOutAssetsIDependOn, int bDeep )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAssetsIDependOn is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetsIParent")]
         public static void* IAsset_GetAssetsIParent( void* self, void* pOutChildren, int bDeep )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAssetsIParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetsIReference")]
         public static void* IAsset_GetAssetsIReference( void* self, void* pOutReferencers, int bDeep )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAssetsIReference is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetsDependingOnMe")]
         public static void* IAsset_GetAssetsDependingOnMe( void* self, void* pOutDependencies, int bDeep )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAssetsDependingOnMe is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetsReferencingMe")]
         public static void* IAsset_GetAssetsReferencingMe( void* self, void* pOutReferencers, int bDeep )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAssetsReferencingMe is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetsParentingMe")]
         public static void* IAsset_GetAssetsParentingMe( void* self, void* pOutParents, int bDeep )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAssetsParentingMe is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_AdditionalRelatedFileCount")]
         public static int IAsset_AdditionalRelatedFileCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_AdditionalRelatedFileCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_AdditionalInputDependencyCount")]
         public static int IAsset_AdditionalInputDependencyCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_AdditionalInputDependencyCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAdditionalRelatedFile_Transient")]
         public static void* IAsset_GetAdditionalRelatedFile_Transient( void* self, int nIndex )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAdditionalRelatedFile_Transient is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAdditionalInputDependency_Transient")]
         public static void* IAsset_GetAdditionalInputDependency_Transient( void* self, int nIndex )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAdditionalInputDependency_Transient is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetUnrecognizedRelatedPaths")]
         public static void* IAsset_GetUnrecognizedRelatedPaths( void* self, long filterType, void* paths )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetUnrecognizedRelatedPaths is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_RequireDependencyInfo_Virtual")]
         public static void* IAsset_RequireDependencyInfo_Virtual( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_RequireDependencyInfo_Virtual is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_NeedAnyDependencyUpdate_Virtual")]
         public static int IAsset_NeedAnyDependencyUpdate_Virtual( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_NeedAnyDependencyUpdate_Virtual is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_IsTrivialChildAsset")]
         public static int IAsset_IsTrivialChildAsset( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_IsTrivialChildAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_HasHiddenAssetFlag")]
         public static int IAsset_HasHiddenAssetFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_HasHiddenAssetFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetAssetTypeId")]
         public static int IAsset_GetAssetTypeId( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetAssetTypeId is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_CacheAsset")]
         public static void* IAsset_CacheAsset( void* self, int bIsBlocking )
         {
-            return default;
+            throw new NotImplementedException("IAsset_CacheAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_UncacheAsset")]
         public static void* IAsset_UncacheAsset( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_UncacheAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_HasSourceFile")]
         public static int IAsset_HasSourceFile( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_HasSourceFile is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_HasCompiledFile")]
         public static int IAsset_HasCompiledFile( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_HasCompiledFile is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_IsCompiled")]
         public static int IAsset_IsCompiled( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_IsCompiled is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_IsCompiledAndUpToDate")]
         public static int IAsset_IsCompiledAndUpToDate( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_IsCompiledAndUpToDate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_IsCompileFailed")]
         public static int IAsset_IsCompileFailed( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_IsCompileFailed is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_CompileIfNeeded")]
         public static int IAsset_CompileIfNeeded( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_CompileIfNeeded is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_FindIntEditInfo")]
         public static int IAsset_FindIntEditInfo( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("IAsset_FindIntEditInfo is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_FindStringEditInfo")]
         public static void* IAsset_FindStringEditInfo( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("IAsset_FindStringEditInfo is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_GetCompileStateReason_Transient")]
         public static void* IAsset_GetCompileStateReason_Transient( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_GetCompileStateReason_Transient is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_SetInMemoryReplacement")]
         public static int IAsset_SetInMemoryReplacement( void* self, void* data )
         {
-            return default;
+            throw new NotImplementedException("IAsset_SetInMemoryReplacement is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAsset_DiscardInMemoryReplacement")]
         public static void* IAsset_DiscardInMemoryReplacement( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAsset_DiscardInMemoryReplacement is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "sstPckrLstnr_NotifyAssetPicked")]
         public static void* sstPckrLstnr_NotifyAssetPicked( void* self, void* wrapper )
         {
-            return default;
+            throw new NotImplementedException("sstPckrLstnr_NotifyAssetPicked is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_GetFriendlyName")]
         public static void* IAssetType_GetFriendlyName( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_GetFriendlyName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_GetIconLg")]
         public static void* IAssetType_GetIconLg( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_GetIconLg is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_GetIconSm")]
         public static void* IAssetType_GetIconSm( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_GetIconSm is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_GetPrimaryExtension")]
         public static void* IAssetType_GetPrimaryExtension( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_GetPrimaryExtension is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_GetColor")]
         public static void* IAssetType_GetColor( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_GetColor is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_GetCategory")]
         public static void* IAssetType_GetCategory( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_GetCategory is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_HideTypeByDefault")]
         public static int IAssetType_HideTypeByDefault( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_HideTypeByDefault is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_IgnoreCompiledState")]
         public static int IAssetType_IgnoreCompiledState( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_IgnoreCompiledState is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_IsContentFileText")]
         public static int IAssetType_IsContentFileText( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_IsContentFileText is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_IsSimpleAsset")]
         public static int IAssetType_IsSimpleAsset( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_IsSimpleAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_HasDependencies")]
         public static int IAssetType_HasDependencies( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_HasDependencies is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_PrefersIconForThumbnail")]
         public static int IAssetType_PrefersIconForThumbnail( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_PrefersIconForThumbnail is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_GetAssetTypeName")]
         public static void* IAssetType_GetAssetTypeName( void* self )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_GetAssetTypeName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IAssetType_GetAdditionalExtensions")]
         public static void* IAssetType_GetAdditionalExtensions( void* self, void* pExts )
         {
-            return default;
+            throw new NotImplementedException("IAssetType_GetAdditionalExtensions is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_SetExtension")]
         public static void* RsrcCmplrCntxt_SetExtension( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_SetExtension is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_SetCompiler")]
         public static void* RsrcCmplrCntxt_SetCompiler( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_SetCompiler is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_FullPath")]
         public static void* RsrcCmplrCntxt_FullPath( void* self )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_FullPath is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_RelativePath")]
         public static void* RsrcCmplrCntxt_RelativePath( void* self )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_RelativePath is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_ResourceName")]
         public static void* RsrcCmplrCntxt_ResourceName( void* self )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_ResourceName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_SpecifyResourceVersion")]
         public static void* RsrcCmplrCntxt_SpecifyResourceVersion( void* self, int nVersion )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_SpecifyResourceVersion is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_RegisterSpecialDependency")]
         public static void* RsrcCmplrCntxt_RegisterSpecialDependency( void* self, void* str, void* nUserData, void* nFingerprint )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_RegisterSpecialDependency is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_RegisterReference")]
         public static int RsrcCmplrCntxt_RegisterReference( void* self, void* filename )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_RegisterReference is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_RegisterInputFileDependency")]
         public static void* RsrcCmplrCntxt_RegisterInputFileDependency( void* self, void* filename, int flags )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_RegisterInputFileDependency is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_WriteBlock")]
         public static int RsrcCmplrCntxt_WriteBlock( void* self, void* blockName, void* data, int count )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_WriteBlock is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_GetOverrideData")]
         public static void* RsrcCmplrCntxt_GetOverrideData( void* self )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_GetOverrideData is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_Data")]
         public static void* RsrcCmplrCntxt_Data( void* self )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_Data is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_StreamingData")]
         public static void* RsrcCmplrCntxt_StreamingData( void* self )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_StreamingData is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxt_CreateChildContext")]
         public static void* RsrcCmplrCntxt_CreateChildContext( void* self, void* pFileName )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxt_CreateChildContext is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxtCh_SetOverrideInputData")]
         public static void* RsrcCmplrCntxtCh_SetOverrideInputData( void* self, void* data )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxtCh_SetOverrideInputData is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "RsrcCmplrCntxtCh_CompileImmediately")]
         public static int RsrcCmplrCntxtCh_CompileImmediately( void* self )
         {
-            return default;
+            throw new NotImplementedException("RsrcCmplrCntxtCh_CompileImmediately is not yet implemented in the linux emulation layer");
         }
     }
     public static unsafe partial class Imports

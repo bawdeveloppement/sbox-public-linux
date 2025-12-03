@@ -178,7 +178,30 @@ public sealed partial class Project
 	/// <summary>
 	/// Absolute path to the Code folder of the project.
 	/// </summary>
-	public string GetCodePath() => System.IO.Path.Combine( RootDirectory.FullName, "Code" );
+	public string GetCodePath()
+	{
+		string codePath = "Code";
+		
+		// Try to read CodePath from the JSON file directly (it's not in Metadata)
+		if ( ConfigFilePath != null && File.Exists( ConfigFilePath ) )
+		{
+			try
+			{
+				var jsonText = File.ReadAllText( ConfigFilePath );
+				using var doc = JsonDocument.Parse( jsonText );
+				if ( doc.RootElement.TryGetProperty( "CodePath", out var codePathElement ) )
+				{
+					codePath = codePathElement.GetString() ?? "Code";
+				}
+			}
+			catch
+			{
+				// Fall back to default "Code"
+			}
+		}
+		
+		return System.IO.Path.Combine( RootDirectory.FullName, codePath );
+	}
 
 	/// <summary>
 	/// Returns true if the Code path exists

@@ -1,6 +1,6 @@
 ﻿using Sandbox;
 
-internal struct NativeRect
+public struct NativeRect
 {
 	public int x;
 	public int y;

@@ -10,12 +10,12 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CQnmGrphPrvwDckW_GetPreviewModel")]
         public static void* CQnmGrphPrvwDckW_GetPreviewModel( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQnmGrphPrvwDckW_GetPreviewModel is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQnmGrphPrvwDckW_SetPreviewModel")]
         public static void* CQnmGrphPrvwDckW_SetPreviewModel( void* self, void* model )
         {
-            return default;
+            throw new NotImplementedException("CQnmGrphPrvwDckW_SetPreviewModel is not yet implemented in the linux emulation layer");
         }
     }
     public static unsafe partial class Imports

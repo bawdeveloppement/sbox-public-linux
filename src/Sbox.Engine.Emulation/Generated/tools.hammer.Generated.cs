@@ -10,157 +10,157 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_RefreshEntitiesGameData")]
         public static void* CHammerApp_RefreshEntitiesGameData( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_RefreshEntitiesGameData is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_GetCurrentMaterial")]
         public static void* CHammerApp_GetCurrentMaterial( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_GetCurrentMaterial is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_SetCurrentTexture")]
         public static void* CHammerApp_SetCurrentTexture( void* self, void* assetFilename )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_SetCurrentTexture is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_GetActiveMapAsset")]
         public static int CHammerApp_GetActiveMapAsset( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_GetActiveMapAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_GetActiveMapDoc")]
         public static void* CHammerApp_GetActiveMapDoc( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_GetActiveMapDoc is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_MarkAllViewHudsDirty")]
         public static void* CHammerApp_MarkAllViewHudsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_MarkAllViewHudsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_SelectObjectsUsingAsset")]
         public static void* CHammerApp_SelectObjectsUsingAsset( void* self, void* assetFilename )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_SelectObjectsUsingAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_SelectFacesUsingMaterial")]
         public static void* CHammerApp_SelectFacesUsingMaterial( void* self, void* assetFilename )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_SelectFacesUsingMaterial is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_AssignAssetToSelection")]
         public static void* CHammerApp_AssignAssetToSelection( void* self, void* assetFilename )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_AssignAssetToSelection is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_ShowEntityReportForAsset")]
         public static void* CHammerApp_ShowEntityReportForAsset( void* self, void* assetFilename )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_ShowEntityReportForAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHammerApp_OnFileReload")]
         public static void* CHammerApp_OnFileReload( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHammerApp_OnFileReload is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHmmrdtrSssn_ShowLoadingProgressBar")]
         public static void* CHmmrdtrSssn_ShowLoadingProgressBar( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHmmrdtrSssn_ShowLoadingProgressBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHmmrdtrSssn_HideLoadingProgressBar")]
         public static void* CHmmrdtrSssn_HideLoadingProgressBar( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHmmrdtrSssn_HideLoadingProgressBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHmmrdtrSssn_GetMapAsset")]
         public static void* CHmmrdtrSssn_GetMapAsset( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHmmrdtrSssn_GetMapAsset is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHmmrdtrSssn_GetMapDoc")]
         public static void* CHmmrdtrSssn_GetMapDoc( void* self )
         {
-            return default;
+            throw new NotImplementedException("CHmmrdtrSssn_GetMapDoc is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHistory_MarkUndoPosition")]
         public static void* CHistory_MarkUndoPosition( void* self, void* pSelection, void* pszName )
         {
-            return default;
+            throw new NotImplementedException("CHistory_MarkUndoPosition is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHistory_Keep")]
         public static void* CHistory_Keep( void* self, void* pUndoable )
         {
-            return default;
+            throw new NotImplementedException("CHistory_Keep is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHistory_KeepNew")]
         public static void* CHistory_KeepNew( void* self, void* pUndoable )
         {
-            return default;
+            throw new NotImplementedException("CHistory_KeepNew is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CHistory_GetHistory")]
         public static void* CHistory_GetHistory()
         {
-            return default;
+            throw new NotImplementedException("CHistory_GetHistory is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_GetMapWorld")]
         public static void* CMapDoc_GetMapWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_GetMapWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_GetPathName")]
         public static void* CMapDoc_GetPathName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_GetPathName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_GetSelection")]
         public static void* CMapDoc_GetSelection( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_GetSelection is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_AddObjectToDocument")]
         public static void* CMapDoc_AddObjectToDocument( void* self, void* pObject, void* pParent )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_AddObjectToDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_DeleteObject")]
         public static void* CMapDoc_DeleteObject( void* self, void* node )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_DeleteObject is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateEmptyMesh")]
         public static void* CMapDoc_CreateEmptyMesh( void* self, int addToDocument )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_CreateEmptyMesh is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateEntity")]
         public static void* CMapDoc_CreateEntity( void* self, int addToDocument )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_CreateEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateGameObject")]
         public static void* CMapDoc_CreateGameObject( void* self, int addToDocument )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_CreateGameObject is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateMapGroup")]
         public static void* CMapDoc_CreateMapGroup( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_CreateMapGroup is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateMapInstance")]
         public static void* CMapDoc_CreateMapInstance( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_CreateMapInstance is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateMapPath")]
         public static void* CMapDoc_CreateMapPath( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_CreateMapPath is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapDoc_CreateStaticOverlay")]
         public static void* CMapDoc_CreateStaticOverlay( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapDoc_CreateStaticOverlay is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapEntity")]
         public static void* From_CMapNode_To_CMapEntity( void* ptr ) => ptr;
@@ -169,197 +169,197 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetClassName")]
         public static void* CMapEntity_GetClassName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetClassName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetClass")]
         public static void* CMapEntity_SetClass( void* self, void* classname )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetClass is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetKeyValue")]
         public static void* CMapEntity_SetKeyValue( void* self, void* key, void* value )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetKeyValue is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetKeyValue")]
         public static void* CMapEntity_GetKeyValue( void* self, void* key )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetKeyValue is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_TargetNameMatches")]
         public static int CMapEntity_TargetNameMatches( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_TargetNameMatches is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetDefaultBounds")]
         public static void* CMapEntity_SetDefaultBounds( void* self, void* minBounds, void* maxBounds )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetDefaultBounds is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetNodeID")]
         public static int CMapEntity_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetName")]
         public static void* CMapEntity_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetName")]
         public static void* CMapEntity_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetParent")]
         public static void* CMapEntity_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetParent")]
         public static void* CMapEntity_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetParentWorld")]
         public static void* CMapEntity_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetRootDocument")]
         public static void* CMapEntity_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetDescription")]
         public static void* CMapEntity_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetTypeString")]
         public static void* CMapEntity_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_Copy")]
         public static void* CMapEntity_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_IsVisible")]
         public static int CMapEntity_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetVisible")]
         public static void* CMapEntity_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_IsSelected")]
         public static int CMapEntity_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetChildCount")]
         public static int CMapEntity_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetChild")]
         public static void* CMapEntity_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetFirstDescendent")]
         public static void* CMapEntity_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetNextDescendent")]
         public static void* CMapEntity_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_AsMapEntity")]
         public static void* CMapEntity_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetOrigin")]
         public static void* CMapEntity_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetAngles")]
         public static void* CMapEntity_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GetScales")]
         public static void* CMapEntity_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetOrigin")]
         public static void* CMapEntity_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetAngles")]
         public static void* CMapEntity_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetScales")]
         public static void* CMapEntity_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_BeginTransformOperation")]
         public static void* CMapEntity_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_Transform")]
         public static void* CMapEntity_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_EndTransformOperation")]
         public static void* CMapEntity_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_MarkBoundsDirty")]
         public static void* CMapEntity_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_FullBoundsUpdate")]
         public static void* CMapEntity_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_SetModifiedFlag")]
         public static void* CMapEntity_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_GeneratesEntityModelGeometry")]
         public static int CMapEntity_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_DescriptionChanged")]
         public static void* CMapEntity_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapEntity_CoreAttributeChanged")]
         public static void* CMapEntity_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapEntity_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapGameObject")]
         public static void* From_CMapNode_To_CMapGameObject( void* ptr ) => ptr;
@@ -368,177 +368,177 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetGUID")]
         public static void* CMapGameObject_SetGUID( void* self, void* json )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_SetGUID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetGUID")]
         public static void* CMapGameObject_GetGUID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetGUID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetNodeID")]
         public static int CMapGameObject_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetName")]
         public static void* CMapGameObject_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetName")]
         public static void* CMapGameObject_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetParent")]
         public static void* CMapGameObject_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetParent")]
         public static void* CMapGameObject_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetParentWorld")]
         public static void* CMapGameObject_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetRootDocument")]
         public static void* CMapGameObject_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetDescription")]
         public static void* CMapGameObject_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetTypeString")]
         public static void* CMapGameObject_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_Copy")]
         public static void* CMapGameObject_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_IsVisible")]
         public static int CMapGameObject_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetVisible")]
         public static void* CMapGameObject_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_IsSelected")]
         public static int CMapGameObject_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetChildCount")]
         public static int CMapGameObject_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetChild")]
         public static void* CMapGameObject_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetFirstDescendent")]
         public static void* CMapGameObject_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetNextDescendent")]
         public static void* CMapGameObject_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_AsMapEntity")]
         public static void* CMapGameObject_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetOrigin")]
         public static void* CMapGameObject_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetAngles")]
         public static void* CMapGameObject_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GetScales")]
         public static void* CMapGameObject_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetOrigin")]
         public static void* CMapGameObject_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetAngles")]
         public static void* CMapGameObject_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetScales")]
         public static void* CMapGameObject_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_BeginTransformOperation")]
         public static void* CMapGameObject_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_Transform")]
         public static void* CMapGameObject_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_EndTransformOperation")]
         public static void* CMapGameObject_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_MarkBoundsDirty")]
         public static void* CMapGameObject_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_FullBoundsUpdate")]
         public static void* CMapGameObject_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_SetModifiedFlag")]
         public static void* CMapGameObject_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_GeneratesEntityModelGeometry")]
         public static int CMapGameObject_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_DescriptionChanged")]
         public static void* CMapGameObject_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGameObject_CoreAttributeChanged")]
         public static void* CMapGameObject_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGameObject_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapGroup")]
         public static void* From_CMapNode_To_CMapGroup( void* ptr ) => ptr;
@@ -547,167 +547,167 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetNodeID")]
         public static int CMapGroup_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetName")]
         public static void* CMapGroup_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_SetName")]
         public static void* CMapGroup_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetParent")]
         public static void* CMapGroup_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_SetParent")]
         public static void* CMapGroup_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetParentWorld")]
         public static void* CMapGroup_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetRootDocument")]
         public static void* CMapGroup_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetDescription")]
         public static void* CMapGroup_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetTypeString")]
         public static void* CMapGroup_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_Copy")]
         public static void* CMapGroup_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_IsVisible")]
         public static int CMapGroup_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_SetVisible")]
         public static void* CMapGroup_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_IsSelected")]
         public static int CMapGroup_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetChildCount")]
         public static int CMapGroup_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetChild")]
         public static void* CMapGroup_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetFirstDescendent")]
         public static void* CMapGroup_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetNextDescendent")]
         public static void* CMapGroup_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_AsMapEntity")]
         public static void* CMapGroup_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetOrigin")]
         public static void* CMapGroup_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetAngles")]
         public static void* CMapGroup_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GetScales")]
         public static void* CMapGroup_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_SetOrigin")]
         public static void* CMapGroup_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_SetAngles")]
         public static void* CMapGroup_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_SetScales")]
         public static void* CMapGroup_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_BeginTransformOperation")]
         public static void* CMapGroup_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_Transform")]
         public static void* CMapGroup_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_EndTransformOperation")]
         public static void* CMapGroup_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_MarkBoundsDirty")]
         public static void* CMapGroup_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_FullBoundsUpdate")]
         public static void* CMapGroup_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_SetModifiedFlag")]
         public static void* CMapGroup_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_GeneratesEntityModelGeometry")]
         public static int CMapGroup_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_DescriptionChanged")]
         public static void* CMapGroup_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapGroup_CoreAttributeChanged")]
         public static void* CMapGroup_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapGroup_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapInstance")]
         public static void* From_CMapNode_To_CMapInstance( void* ptr ) => ptr;
@@ -716,177 +716,177 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetTarget")]
         public static void* CMapInstance_SetTarget( void* self, void* node )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_SetTarget is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetTarget")]
         public static void* CMapInstance_GetTarget( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetTarget is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetNodeID")]
         public static int CMapInstance_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetName")]
         public static void* CMapInstance_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetName")]
         public static void* CMapInstance_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetParent")]
         public static void* CMapInstance_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetParent")]
         public static void* CMapInstance_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetParentWorld")]
         public static void* CMapInstance_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetRootDocument")]
         public static void* CMapInstance_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetDescription")]
         public static void* CMapInstance_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetTypeString")]
         public static void* CMapInstance_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_Copy")]
         public static void* CMapInstance_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_IsVisible")]
         public static int CMapInstance_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetVisible")]
         public static void* CMapInstance_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_IsSelected")]
         public static int CMapInstance_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetChildCount")]
         public static int CMapInstance_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetChild")]
         public static void* CMapInstance_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetFirstDescendent")]
         public static void* CMapInstance_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetNextDescendent")]
         public static void* CMapInstance_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_AsMapEntity")]
         public static void* CMapInstance_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetOrigin")]
         public static void* CMapInstance_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetAngles")]
         public static void* CMapInstance_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GetScales")]
         public static void* CMapInstance_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetOrigin")]
         public static void* CMapInstance_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetAngles")]
         public static void* CMapInstance_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetScales")]
         public static void* CMapInstance_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_BeginTransformOperation")]
         public static void* CMapInstance_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_Transform")]
         public static void* CMapInstance_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_EndTransformOperation")]
         public static void* CMapInstance_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_MarkBoundsDirty")]
         public static void* CMapInstance_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_FullBoundsUpdate")]
         public static void* CMapInstance_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_SetModifiedFlag")]
         public static void* CMapInstance_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_GeneratesEntityModelGeometry")]
         public static int CMapInstance_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_DescriptionChanged")]
         public static void* CMapInstance_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapInstance_CoreAttributeChanged")]
         public static void* CMapInstance_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapInstance_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapMesh")]
         public static void* From_CMapNode_To_CMapMesh( void* ptr ) => ptr;
@@ -895,347 +895,347 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_AssignMaterialToMesh")]
         public static void* CMapMesh_AssignMaterialToMesh( void* self, void* materialName )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_AssignMaterialToMesh is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_ConstructFromData")]
         public static void* CMapMesh_ConstructFromData( void* self, int numVerticies, void* vertexPositions, void* vertexTexCoords, int numIndices, void* vertexIndices, int numFaces, void* faceVertexCounts, void* faceMaterialsPtr, int mergeVertices, float vertexMergeTolerance )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_ConstructFromData is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetFaceMaterials")]
         public static void* CMapMesh_GetFaceMaterials( void* self, void* materials )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetFaceMaterials is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetNodeID")]
         public static int CMapMesh_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetName")]
         public static void* CMapMesh_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_SetName")]
         public static void* CMapMesh_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetParent")]
         public static void* CMapMesh_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_SetParent")]
         public static void* CMapMesh_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetParentWorld")]
         public static void* CMapMesh_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetRootDocument")]
         public static void* CMapMesh_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetDescription")]
         public static void* CMapMesh_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetTypeString")]
         public static void* CMapMesh_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_Copy")]
         public static void* CMapMesh_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_IsVisible")]
         public static int CMapMesh_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_SetVisible")]
         public static void* CMapMesh_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_IsSelected")]
         public static int CMapMesh_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetChildCount")]
         public static int CMapMesh_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetChild")]
         public static void* CMapMesh_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetFirstDescendent")]
         public static void* CMapMesh_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetNextDescendent")]
         public static void* CMapMesh_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_AsMapEntity")]
         public static void* CMapMesh_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetOrigin")]
         public static void* CMapMesh_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetAngles")]
         public static void* CMapMesh_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GetScales")]
         public static void* CMapMesh_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_SetOrigin")]
         public static void* CMapMesh_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_SetAngles")]
         public static void* CMapMesh_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_SetScales")]
         public static void* CMapMesh_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_BeginTransformOperation")]
         public static void* CMapMesh_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_Transform")]
         public static void* CMapMesh_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_EndTransformOperation")]
         public static void* CMapMesh_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_MarkBoundsDirty")]
         public static void* CMapMesh_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_FullBoundsUpdate")]
         public static void* CMapMesh_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_SetModifiedFlag")]
         public static void* CMapMesh_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_GeneratesEntityModelGeometry")]
         public static int CMapMesh_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_DescriptionChanged")]
         public static void* CMapMesh_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapMesh_CoreAttributeChanged")]
         public static void* CMapMesh_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapMesh_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetNodeID")]
         public static int CMapNode_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetName")]
         public static void* CMapNode_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_SetName")]
         public static void* CMapNode_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetParent")]
         public static void* CMapNode_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_SetParent")]
         public static void* CMapNode_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetParentWorld")]
         public static void* CMapNode_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetRootDocument")]
         public static void* CMapNode_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetDescription")]
         public static void* CMapNode_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetTypeString")]
         public static void* CMapNode_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_Copy")]
         public static void* CMapNode_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_IsVisible")]
         public static int CMapNode_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_SetVisible")]
         public static void* CMapNode_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_IsSelected")]
         public static int CMapNode_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetChildCount")]
         public static int CMapNode_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetChild")]
         public static void* CMapNode_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetFirstDescendent")]
         public static void* CMapNode_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetNextDescendent")]
         public static void* CMapNode_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_AsMapEntity")]
         public static void* CMapNode_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetOrigin")]
         public static void* CMapNode_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetAngles")]
         public static void* CMapNode_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GetScales")]
         public static void* CMapNode_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_SetOrigin")]
         public static void* CMapNode_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_SetAngles")]
         public static void* CMapNode_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_SetScales")]
         public static void* CMapNode_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_BeginTransformOperation")]
         public static void* CMapNode_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_Transform")]
         public static void* CMapNode_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_EndTransformOperation")]
         public static void* CMapNode_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_MarkBoundsDirty")]
         public static void* CMapNode_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_FullBoundsUpdate")]
         public static void* CMapNode_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_SetModifiedFlag")]
         public static void* CMapNode_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_GeneratesEntityModelGeometry")]
         public static int CMapNode_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_DescriptionChanged")]
         public static void* CMapNode_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapNode_CoreAttributeChanged")]
         public static void* CMapNode_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapNode_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapEntity_To_CMapPath")]
         public static void* From_CMapEntity_To_CMapPath( void* ptr ) => ptr;
@@ -1248,202 +1248,202 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_AddNewNodeToPath")]
         public static void* CMapPath_AddNewNodeToPath( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_AddNewNodeToPath is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetClassName")]
         public static void* CMapPath_GetClassName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetClassName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetClass")]
         public static void* CMapPath_SetClass( void* self, void* classname )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetClass is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetKeyValue")]
         public static void* CMapPath_SetKeyValue( void* self, void* key, void* value )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetKeyValue is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetKeyValue")]
         public static void* CMapPath_GetKeyValue( void* self, void* key )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetKeyValue is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_TargetNameMatches")]
         public static int CMapPath_TargetNameMatches( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_TargetNameMatches is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetDefaultBounds")]
         public static void* CMapPath_SetDefaultBounds( void* self, void* minBounds, void* maxBounds )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetDefaultBounds is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetNodeID")]
         public static int CMapPath_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetName")]
         public static void* CMapPath_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetName")]
         public static void* CMapPath_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetParent")]
         public static void* CMapPath_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetParent")]
         public static void* CMapPath_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetParentWorld")]
         public static void* CMapPath_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetRootDocument")]
         public static void* CMapPath_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetDescription")]
         public static void* CMapPath_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetTypeString")]
         public static void* CMapPath_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_Copy")]
         public static void* CMapPath_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_IsVisible")]
         public static int CMapPath_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetVisible")]
         public static void* CMapPath_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_IsSelected")]
         public static int CMapPath_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetChildCount")]
         public static int CMapPath_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetChild")]
         public static void* CMapPath_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetFirstDescendent")]
         public static void* CMapPath_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetNextDescendent")]
         public static void* CMapPath_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_AsMapEntity")]
         public static void* CMapPath_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetOrigin")]
         public static void* CMapPath_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetAngles")]
         public static void* CMapPath_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GetScales")]
         public static void* CMapPath_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetOrigin")]
         public static void* CMapPath_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetAngles")]
         public static void* CMapPath_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetScales")]
         public static void* CMapPath_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_BeginTransformOperation")]
         public static void* CMapPath_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_Transform")]
         public static void* CMapPath_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_EndTransformOperation")]
         public static void* CMapPath_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_MarkBoundsDirty")]
         public static void* CMapPath_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_FullBoundsUpdate")]
         public static void* CMapPath_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_SetModifiedFlag")]
         public static void* CMapPath_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_GeneratesEntityModelGeometry")]
         public static int CMapPath_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_DescriptionChanged")]
         public static void* CMapPath_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPath_CoreAttributeChanged")]
         public static void* CMapPath_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPath_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapEntity_To_CMapPathNode")]
         public static void* From_CMapEntity_To_CMapPathNode( void* ptr ) => ptr;
@@ -1456,197 +1456,197 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetClassName")]
         public static void* CMapPathNode_GetClassName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetClassName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetClass")]
         public static void* CMapPathNode_SetClass( void* self, void* classname )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetClass is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetKeyValue")]
         public static void* CMapPathNode_SetKeyValue( void* self, void* key, void* value )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetKeyValue is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetKeyValue")]
         public static void* CMapPathNode_GetKeyValue( void* self, void* key )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetKeyValue is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_TargetNameMatches")]
         public static int CMapPathNode_TargetNameMatches( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_TargetNameMatches is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetDefaultBounds")]
         public static void* CMapPathNode_SetDefaultBounds( void* self, void* minBounds, void* maxBounds )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetDefaultBounds is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetNodeID")]
         public static int CMapPathNode_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetName")]
         public static void* CMapPathNode_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetName")]
         public static void* CMapPathNode_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetParent")]
         public static void* CMapPathNode_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetParent")]
         public static void* CMapPathNode_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetParentWorld")]
         public static void* CMapPathNode_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetRootDocument")]
         public static void* CMapPathNode_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetDescription")]
         public static void* CMapPathNode_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetTypeString")]
         public static void* CMapPathNode_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_Copy")]
         public static void* CMapPathNode_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_IsVisible")]
         public static int CMapPathNode_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetVisible")]
         public static void* CMapPathNode_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_IsSelected")]
         public static int CMapPathNode_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetChildCount")]
         public static int CMapPathNode_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetChild")]
         public static void* CMapPathNode_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetFirstDescendent")]
         public static void* CMapPathNode_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetNextDescendent")]
         public static void* CMapPathNode_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_AsMapEntity")]
         public static void* CMapPathNode_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetOrigin")]
         public static void* CMapPathNode_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetAngles")]
         public static void* CMapPathNode_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GetScales")]
         public static void* CMapPathNode_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetOrigin")]
         public static void* CMapPathNode_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetAngles")]
         public static void* CMapPathNode_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetScales")]
         public static void* CMapPathNode_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_BeginTransformOperation")]
         public static void* CMapPathNode_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_Transform")]
         public static void* CMapPathNode_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_EndTransformOperation")]
         public static void* CMapPathNode_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_MarkBoundsDirty")]
         public static void* CMapPathNode_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_FullBoundsUpdate")]
         public static void* CMapPathNode_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_SetModifiedFlag")]
         public static void* CMapPathNode_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_GeneratesEntityModelGeometry")]
         public static int CMapPathNode_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_DescriptionChanged")]
         public static void* CMapPathNode_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapPathNode_CoreAttributeChanged")]
         public static void* CMapPathNode_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapPathNode_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapMesh_To_CMapStaticOverlay")]
         public static void* From_CMapMesh_To_CMapStaticOverlay( void* ptr ) => ptr;
@@ -1659,247 +1659,247 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_CreateCenteredQuad")]
         public static void* CMpSttcvrly_CreateCenteredQuad( void* self, float flWidth, float flHeight, void* pMaterialName )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_CreateCenteredQuad is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_AssignMaterialToMesh")]
         public static void* CMpSttcvrly_AssignMaterialToMesh( void* self, void* materialName )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_AssignMaterialToMesh is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_ConstructFromData")]
         public static void* CMpSttcvrly_ConstructFromData( void* self, int numVerticies, void* vertexPositions, void* vertexTexCoords, int numIndices, void* vertexIndices, int numFaces, void* faceVertexCounts, void* faceMaterialsPtr, int mergeVertices, float vertexMergeTolerance )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_ConstructFromData is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetFaceMaterials")]
         public static void* CMpSttcvrly_GetFaceMaterials( void* self, void* materials )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetFaceMaterials is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetNodeID")]
         public static int CMpSttcvrly_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetName")]
         public static void* CMpSttcvrly_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_SetName")]
         public static void* CMpSttcvrly_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetParent")]
         public static void* CMpSttcvrly_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_SetParent")]
         public static void* CMpSttcvrly_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetParentWorld")]
         public static void* CMpSttcvrly_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetRootDocument")]
         public static void* CMpSttcvrly_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetDescription")]
         public static void* CMpSttcvrly_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetTypeString")]
         public static void* CMpSttcvrly_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_Copy")]
         public static void* CMpSttcvrly_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_IsVisible")]
         public static int CMpSttcvrly_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_SetVisible")]
         public static void* CMpSttcvrly_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_IsSelected")]
         public static int CMpSttcvrly_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetChildCount")]
         public static int CMpSttcvrly_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetChild")]
         public static void* CMpSttcvrly_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetFirstDescendent")]
         public static void* CMpSttcvrly_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetNextDescendent")]
         public static void* CMpSttcvrly_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_AsMapEntity")]
         public static void* CMpSttcvrly_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetOrigin")]
         public static void* CMpSttcvrly_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetAngles")]
         public static void* CMpSttcvrly_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GetScales")]
         public static void* CMpSttcvrly_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_SetOrigin")]
         public static void* CMpSttcvrly_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_SetAngles")]
         public static void* CMpSttcvrly_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_SetScales")]
         public static void* CMpSttcvrly_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_BeginTransformOperation")]
         public static void* CMpSttcvrly_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_Transform")]
         public static void* CMpSttcvrly_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_EndTransformOperation")]
         public static void* CMpSttcvrly_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_MarkBoundsDirty")]
         public static void* CMpSttcvrly_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_FullBoundsUpdate")]
         public static void* CMpSttcvrly_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_SetModifiedFlag")]
         public static void* CMpSttcvrly_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_GeneratesEntityModelGeometry")]
         public static int CMpSttcvrly_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_DescriptionChanged")]
         public static void* CMpSttcvrly_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMpSttcvrly_CoreAttributeChanged")]
         public static void* CMpSttcvrly_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMpSttcvrly_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_GetMapDoc")]
         public static void* CMapView_GetMapDoc( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapView_GetMapDoc is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_MarkHudDirty")]
         public static void* CMapView_MarkHudDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapView_MarkHudDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_GetCamera")]
         public static void* CMapView_GetCamera( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapView_GetCamera is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_IsActive")]
         public static int CMapView_IsActive( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapView_IsActive is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_GetMousePosition")]
         public static void* CMapView_GetMousePosition( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapView_GetMousePosition is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_EnterFreeDragMode")]
         public static void* CMapView_EnterFreeDragMode( void* self, void* vClientPos, void* pObjectToSelect, void* vecInitialHitNormal, int bAlignToSurface )
         {
-            return default;
+            throw new NotImplementedException("CMapView_EnterFreeDragMode is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_UpdateFreeDragMode")]
         public static void* CMapView_UpdateFreeDragMode( void* self, void* vClientPos, int bModifyAlignToSurface )
         {
-            return default;
+            throw new NotImplementedException("CMapView_UpdateFreeDragMode is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_ExitFreeDragMode")]
         public static void* CMapView_ExitFreeDragMode( void* self, int bRestoreToolState )
         {
-            return default;
+            throw new NotImplementedException("CMapView_ExitFreeDragMode is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_GetDropTarget")]
         public static void* CMapView_GetDropTarget( void* self, void* pVecNormalOut, void* pVecDropPointOut, void* vecPoint2D )
         {
-            return default;
+            throw new NotImplementedException("CMapView_GetDropTarget is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_UpdateManagedGizmoState")]
         public static void* CMapView_UpdateManagedGizmoState( void* self, int isHoveredOverSomething, float distanceFromCamera )
         {
-            return default;
+            throw new NotImplementedException("CMapView_UpdateManagedGizmoState is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_GetManipulationMode")]
         public static long CMapView_GetManipulationMode( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapView_GetManipulationMode is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapView_HitDistanceAtMouse")]
         public static float CMapView_HitDistanceAtMouse( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapView_HitDistanceAtMouse is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CMapNode_To_CMapWorld")]
         public static void* From_CMapNode_To_CMapWorld( void* ptr ) => ptr;
@@ -1908,192 +1908,192 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetSerializedScene")]
         public static void* CMapWorld_SetSerializedScene( void* self, void* json )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_SetSerializedScene is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetSerializedScene")]
         public static void* CMapWorld_GetSerializedScene( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetSerializedScene is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_FindNodeByID")]
         public static void* CMapWorld_FindNodeByID( void* self, int nodeId )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_FindNodeByID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_FindEntityByNodeId")]
         public static void* CMapWorld_FindEntityByNodeId( void* self, int nodeId )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_FindEntityByNodeId is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_Trace")]
         public static void* CMapWorld_Trace( void* self, void* traceRequest )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_Trace is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetNodeID")]
         public static int CMapWorld_GetNodeID( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetNodeID is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetName")]
         public static void* CMapWorld_GetName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetName")]
         public static void* CMapWorld_SetName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_SetName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetParent")]
         public static void* CMapWorld_GetParent( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetParent")]
         public static void* CMapWorld_SetParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_SetParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetParentWorld")]
         public static void* CMapWorld_GetParentWorld( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetParentWorld is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetRootDocument")]
         public static void* CMapWorld_GetRootDocument( void* self, long nDocumentLoaded )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetRootDocument is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetDescription")]
         public static void* CMapWorld_GetDescription( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetDescription is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetTypeString")]
         public static void* CMapWorld_GetTypeString( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetTypeString is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_Copy")]
         public static void* CMapWorld_Copy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_Copy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_IsVisible")]
         public static int CMapWorld_IsVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_IsVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetVisible")]
         public static void* CMapWorld_SetVisible( void* self, int bVisible )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_SetVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_IsSelected")]
         public static int CMapWorld_IsSelected( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_IsSelected is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetChildCount")]
         public static int CMapWorld_GetChildCount( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetChildCount is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetChild")]
         public static void* CMapWorld_GetChild( void* self, int i )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetChild is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetFirstDescendent")]
         public static void* CMapWorld_GetFirstDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetFirstDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetNextDescendent")]
         public static void* CMapWorld_GetNextDescendent( void* self, void* pos )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetNextDescendent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_AsMapEntity")]
         public static void* CMapWorld_AsMapEntity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_AsMapEntity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetOrigin")]
         public static void* CMapWorld_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetAngles")]
         public static void* CMapWorld_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GetScales")]
         public static void* CMapWorld_GetScales( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetOrigin")]
         public static void* CMapWorld_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetAngles")]
         public static void* CMapWorld_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetScales")]
         public static void* CMapWorld_SetScales( void* self, void* scales )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_SetScales is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_BeginTransformOperation")]
         public static void* CMapWorld_BeginTransformOperation( void* self, long nTransformType, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_BeginTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_Transform")]
         public static void* CMapWorld_Transform( void* self, void* matrix, long nFlags )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_Transform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_EndTransformOperation")]
         public static void* CMapWorld_EndTransformOperation( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_EndTransformOperation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_MarkBoundsDirty")]
         public static void* CMapWorld_MarkBoundsDirty( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_MarkBoundsDirty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_FullBoundsUpdate")]
         public static void* CMapWorld_FullBoundsUpdate( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_FullBoundsUpdate is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_SetModifiedFlag")]
         public static void* CMapWorld_SetModifiedFlag( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_SetModifiedFlag is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_GeneratesEntityModelGeometry")]
         public static int CMapWorld_GeneratesEntityModelGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_GeneratesEntityModelGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_DescriptionChanged")]
         public static void* CMapWorld_DescriptionChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_DescriptionChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMapWorld_CoreAttributeChanged")]
         public static void* CMapWorld_CoreAttributeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMapWorld_CoreAttributeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "From_CFramelessMainWindow_To_CQHammerMainWnd")]
         public static void* From_CFramelessMainWindow_To_CQHammerMainWnd( void* ptr ) => ptr;
@@ -2114,747 +2114,747 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_CreateEverything")]
         public static void* CQHammerMainWnd_CreateEverything( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_CreateEverything is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_CreateMenus")]
         public static void* CQHammerMainWnd_CreateMenus( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_CreateMenus is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_SetupDefaultLayout")]
         public static void* CQHammerMainWnd_SetupDefaultLayout( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_SetupDefaultLayout is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_SetTitleBarWidgets")]
         public static void* CQHammerMainWnd_SetTitleBarWidgets( void* self, void* icon, void* titleLabel, void* menuBar, void* grabber, void* minimizeButton, void* maximizeButton, void* closeButton )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_SetTitleBarWidgets is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_iconSize")]
         public static void* CQHammerMainWnd_iconSize( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_iconSize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setIconSize")]
         public static void* CQHammerMainWnd_setIconSize( void* self, void* iconSize )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setIconSize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_menuBar")]
         public static void* CQHammerMainWnd_menuBar( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_menuBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setMenuBar")]
         public static void* CQHammerMainWnd_setMenuBar( void* self, void* menubar )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setMenuBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setMenuWidget")]
         public static void* CQHammerMainWnd_setMenuWidget( void* self, void* menubar )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setMenuWidget is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_statusBar")]
         public static void* CQHammerMainWnd_statusBar( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_statusBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setStatusBar")]
         public static void* CQHammerMainWnd_setStatusBar( void* self, void* statusbar )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setStatusBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_centralWidget")]
         public static void* CQHammerMainWnd_centralWidget( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_centralWidget is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setCentralWidget")]
         public static void* CQHammerMainWnd_setCentralWidget( void* self, void* widget )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setCentralWidget is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isAnimated")]
         public static int CQHammerMainWnd_isAnimated( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isAnimated is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setAnimated")]
         public static void* CQHammerMainWnd_setAnimated( void* self, int enabled )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setAnimated is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_addToolBarBreak")]
         public static void* CQHammerMainWnd_addToolBarBreak( void* self, long area )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_addToolBarBreak is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_insertToolBarBreak")]
         public static void* CQHammerMainWnd_insertToolBarBreak( void* self, void* before )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_insertToolBarBreak is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_addToolBar")]
         public static void* CQHammerMainWnd_addToolBar( void* self, long area, void* toolbar )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_addToolBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_addToolBar_1")]
         public static void* CQHammerMainWnd_addToolBar_1( void* self, void* toolbar )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_addToolBar_1 is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_insertToolBar")]
         public static void* CQHammerMainWnd_insertToolBar( void* self, void* before, void* toolbar )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_insertToolBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_removeToolBar")]
         public static void* CQHammerMainWnd_removeToolBar( void* self, void* toolbar )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_removeToolBar is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_removeToolBarBreak")]
         public static void* CQHammerMainWnd_removeToolBarBreak( void* self, void* before )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_removeToolBarBreak is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_saveState")]
         public static void* CQHammerMainWnd_saveState( void* self, int version )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_saveState is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_restoreState")]
         public static int CQHammerMainWnd_restoreState( void* self, void* state )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_restoreState is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isTopLevel")]
         public static int CQHammerMainWnd_isTopLevel( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isTopLevel is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isWindow")]
         public static int CQHammerMainWnd_isWindow( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isWindow is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isModal")]
         public static int CQHammerMainWnd_isModal( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isModal is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setStyleSheet")]
         public static void* CQHammerMainWnd_setStyleSheet( void* self, void* sheet )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setStyleSheet is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_windowTitle")]
         public static void* CQHammerMainWnd_windowTitle( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_windowTitle is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setWindowTitle")]
         public static void* CQHammerMainWnd_setWindowTitle( void* self, void* title )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setWindowTitle is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setWindowFlags")]
         public static void* CQHammerMainWnd_setWindowFlags( void* self, long type )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setWindowFlags is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_windowFlags")]
         public static long CQHammerMainWnd_windowFlags( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_windowFlags is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_size")]
         public static void* CQHammerMainWnd_size( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_size is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_resize")]
         public static void* CQHammerMainWnd_resize( void* self, void* x )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_resize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_minimumSize")]
         public static void* CQHammerMainWnd_minimumSize( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_minimumSize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setMinimumSize")]
         public static void* CQHammerMainWnd_setMinimumSize( void* self, void* x )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setMinimumSize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_maximumSize")]
         public static void* CQHammerMainWnd_maximumSize( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_maximumSize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setMaximumSize")]
         public static void* CQHammerMainWnd_setMaximumSize( void* self, void* x )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setMaximumSize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_sizeHint")]
         public static void* CQHammerMainWnd_sizeHint( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_sizeHint is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_pos")]
         public static void* CQHammerMainWnd_pos( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_pos is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_move")]
         public static void* CQHammerMainWnd_move( void* self, void* x )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_move is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isEnabled")]
         public static int CQHammerMainWnd_isEnabled( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isEnabled is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setEnabled")]
         public static void* CQHammerMainWnd_setEnabled( void* self, int x )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setEnabled is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setVisible")]
         public static void* CQHammerMainWnd_setVisible( void* self, int visible )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_show")]
         public static void* CQHammerMainWnd_show( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_show is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_hide")]
         public static void* CQHammerMainWnd_hide( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_hide is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_showMinimized")]
         public static void* CQHammerMainWnd_showMinimized( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_showMinimized is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_showMaximized")]
         public static void* CQHammerMainWnd_showMaximized( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_showMaximized is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_showFullScreen")]
         public static void* CQHammerMainWnd_showFullScreen( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_showFullScreen is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_showNormal")]
         public static void* CQHammerMainWnd_showNormal( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_showNormal is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_close")]
         public static int CQHammerMainWnd_close( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_close is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_raise")]
         public static void* CQHammerMainWnd_raise( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_raise is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_lower")]
         public static void* CQHammerMainWnd_lower( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_lower is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isVisible")]
         public static int CQHammerMainWnd_isVisible( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isVisible is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isHidden")]
         public static int CQHammerMainWnd_isHidden( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isHidden is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setHidden")]
         public static void* CQHammerMainWnd_setHidden( void* self, int b )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setHidden is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setAttribute")]
         public static void* CQHammerMainWnd_setAttribute( void* self, long a, int on )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setAttribute is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_testAttribute")]
         public static int CQHammerMainWnd_testAttribute( void* self, long a )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_testAttribute is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_acceptDrops")]
         public static int CQHammerMainWnd_acceptDrops( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_acceptDrops is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setAcceptDrops")]
         public static void* CQHammerMainWnd_setAcceptDrops( void* self, int on )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setAcceptDrops is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_updateGeometry")]
         public static void* CQHammerMainWnd_updateGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_updateGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_update")]
         public static void* CQHammerMainWnd_update( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_update is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_repaint")]
         public static void* CQHammerMainWnd_repaint( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_repaint is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setCursor")]
         public static void* CQHammerMainWnd_setCursor( void* self, long shape )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setCursor is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setCursor_1")]
         public static void* CQHammerMainWnd_setCursor_1( void* self, void* pixmap )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setCursor_1 is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_unsetCursor")]
         public static void* CQHammerMainWnd_unsetCursor( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_unsetCursor is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setWindowIcon")]
         public static void* CQHammerMainWnd_setWindowIcon( void* self, void* icon )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setWindowIcon is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setWindowIconFromPixmap")]
         public static void* CQHammerMainWnd_setWindowIconFromPixmap( void* self, void* icon )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setWindowIconFromPixmap is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setWindowIconText")]
         public static void* CQHammerMainWnd_setWindowIconText( void* self, void* str )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setWindowIconText is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setWindowOpacity")]
         public static void* CQHammerMainWnd_setWindowOpacity( void* self, float level )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setWindowOpacity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_windowOpacity")]
         public static float CQHammerMainWnd_windowOpacity( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_windowOpacity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isMinimized")]
         public static int CQHammerMainWnd_isMinimized( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isMinimized is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isMaximized")]
         public static int CQHammerMainWnd_isMaximized( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isMaximized is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isFullScreen")]
         public static int CQHammerMainWnd_isFullScreen( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isFullScreen is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setMouseTracking")]
         public static void* CQHammerMainWnd_setMouseTracking( void* self, int enable )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setMouseTracking is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_hasMouseTracking")]
         public static int CQHammerMainWnd_hasMouseTracking( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_hasMouseTracking is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_underMouse")]
         public static int CQHammerMainWnd_underMouse( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_underMouse is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_mapToGlobal")]
         public static void* CQHammerMainWnd_mapToGlobal( void* self, void* p )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_mapToGlobal is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_mapFromGlobal")]
         public static void* CQHammerMainWnd_mapFromGlobal( void* self, void* p )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_mapFromGlobal is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_hasFocus")]
         public static int CQHammerMainWnd_hasFocus( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_hasFocus is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_focusPolicy")]
         public static long CQHammerMainWnd_focusPolicy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_focusPolicy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setFocusPolicy")]
         public static void* CQHammerMainWnd_setFocusPolicy( void* self, long policy )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setFocusPolicy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setFocusProxy")]
         public static void* CQHammerMainWnd_setFocusProxy( void* self, void* widget )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setFocusProxy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_isActiveWindow")]
         public static int CQHammerMainWnd_isActiveWindow( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_isActiveWindow is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_updatesEnabled")]
         public static int CQHammerMainWnd_updatesEnabled( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_updatesEnabled is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setUpdatesEnabled")]
         public static void* CQHammerMainWnd_setUpdatesEnabled( void* self, int enable )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setUpdatesEnabled is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setFocus")]
         public static void* CQHammerMainWnd_setFocus( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setFocus is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_activateWindow")]
         public static void* CQHammerMainWnd_activateWindow( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_activateWindow is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_clearFocus")]
         public static void* CQHammerMainWnd_clearFocus( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_clearFocus is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_devicePixelRatioF")]
         public static float CQHammerMainWnd_devicePixelRatioF( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_devicePixelRatioF is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_saveGeometry")]
         public static void* CQHammerMainWnd_saveGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_saveGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_restoreGeometry")]
         public static int CQHammerMainWnd_restoreGeometry( void* self, void* state )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_restoreGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_addAction")]
         public static void* CQHammerMainWnd_addAction( void* self, void* action )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_addAction is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_removeAction")]
         public static void* CQHammerMainWnd_removeAction( void* self, void* action )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_removeAction is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setParent")]
         public static void* CQHammerMainWnd_setParent( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setParent is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_parentWidget")]
         public static void* CQHammerMainWnd_parentWidget( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_parentWidget is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_window")]
         public static void* CQHammerMainWnd_window( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_window is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_AddClassName")]
         public static void* CQHammerMainWnd_AddClassName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_AddClassName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_Polish")]
         public static void* CQHammerMainWnd_Polish( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_Polish is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_toolTip")]
         public static void* CQHammerMainWnd_toolTip( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_toolTip is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setToolTip")]
         public static void* CQHammerMainWnd_setToolTip( void* self, void* str )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setToolTip is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_statusTip")]
         public static void* CQHammerMainWnd_statusTip( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_statusTip is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setStatusTip")]
         public static void* CQHammerMainWnd_setStatusTip( void* self, void* str )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setStatusTip is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_toolTipDuration")]
         public static int CQHammerMainWnd_toolTipDuration( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_toolTipDuration is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setToolTipDuration")]
         public static void* CQHammerMainWnd_setToolTipDuration( void* self, int x )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setToolTipDuration is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_autoFillBackground")]
         public static int CQHammerMainWnd_autoFillBackground( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_autoFillBackground is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setAutoFillBackground")]
         public static void* CQHammerMainWnd_setAutoFillBackground( void* self, int enabled )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setAutoFillBackground is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_adjustSize")]
         public static void* CQHammerMainWnd_adjustSize( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_adjustSize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_windowModality")]
         public static long CQHammerMainWnd_windowModality( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_windowModality is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setWindowModality")]
         public static void* CQHammerMainWnd_setWindowModality( void* self, long windowModality )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setWindowModality is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_ScreenGeometry")]
         public static void* CQHammerMainWnd_ScreenGeometry( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_ScreenGeometry is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setContentsMargins")]
         public static void* CQHammerMainWnd_setContentsMargins( void* self, int left, int top, int right, int bottom )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setContentsMargins is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_contentsMargins")]
         public static void* CQHammerMainWnd_contentsMargins( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_contentsMargins is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_layout")]
         public static void* CQHammerMainWnd_layout( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_layout is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setLayout")]
         public static void* CQHammerMainWnd_setLayout( void* self, void* l )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setLayout is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_contentsRect")]
         public static void* CQHammerMainWnd_contentsRect( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_contentsRect is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_SetEffectOpacity")]
         public static void* CQHammerMainWnd_SetEffectOpacity( void* self, float opacity )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_SetEffectOpacity is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setSizePolicy")]
         public static void* CQHammerMainWnd_setSizePolicy( void* self, long x, long y )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setSizePolicy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_GetHorizontalSizePolicy")]
         public static long CQHammerMainWnd_GetHorizontalSizePolicy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_GetHorizontalSizePolicy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_GetVerticalSizePolicy")]
         public static long CQHammerMainWnd_GetVerticalSizePolicy( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_GetVerticalSizePolicy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_SetHorizontalSizePolicy")]
         public static void* CQHammerMainWnd_SetHorizontalSizePolicy( void* self, long mode )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_SetHorizontalSizePolicy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_SetVerticalSizePolicy")]
         public static void* CQHammerMainWnd_SetVerticalSizePolicy( void* self, long mode )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_SetVerticalSizePolicy is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setFixedSize")]
         public static void* CQHammerMainWnd_setFixedSize( void* self, int w, int h )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setFixedSize is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setFixedWidth")]
         public static void* CQHammerMainWnd_setFixedWidth( void* self, int w )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setFixedWidth is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setFixedHeight")]
         public static void* CQHammerMainWnd_setFixedHeight( void* self, int h )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setFixedHeight is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_winId")]
         public static void* CQHammerMainWnd_winId( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_winId is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_deleteLater")]
         public static void* CQHammerMainWnd_deleteLater( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_deleteLater is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_objectName")]
         public static void* CQHammerMainWnd_objectName( void* self )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_objectName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setObjectName")]
         public static void* CQHammerMainWnd_setObjectName( void* self, void* name )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setObjectName is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setParent_1")]
         public static void* CQHammerMainWnd_setParent_1( void* self, void* parent )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setParent_1 is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setProperty")]
         public static void* CQHammerMainWnd_setProperty( void* self, void* key, int value )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setProperty is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setProperty_1")]
         public static void* CQHammerMainWnd_setProperty_1( void* self, void* key, float value )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setProperty_1 is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CQHammerMainWnd_setProperty_2")]
         public static void* CQHammerMainWnd_setProperty_2( void* self, void* key, void* value )
         {
-            return default;
+            throw new NotImplementedException("CQHammerMainWnd_setProperty_2 is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSavedObjects_DeleteThis")]
         public static void* CSavedObjects_DeleteThis( void* self )
         {
-            return default;
+            throw new NotImplementedException("CSavedObjects_DeleteThis is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSavedObjects_Create")]
         public static void* CSavedObjects_Create()
         {
-            return default;
+            throw new NotImplementedException("CSavedObjects_Create is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSavedObjects_RemoveAll")]
         public static void* CSavedObjects_RemoveAll( void* self )
         {
-            return default;
+            throw new NotImplementedException("CSavedObjects_RemoveAll is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSavedObjects_SaveObject")]
         public static void* CSavedObjects_SaveObject( void* self, void* pObject )
         {
-            return default;
+            throw new NotImplementedException("CSavedObjects_SaveObject is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSavedObjects_RestoreObjects")]
         public static void* CSavedObjects_RestoreObjects( void* self )
         {
-            return default;
+            throw new NotImplementedException("CSavedObjects_RestoreObjects is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSavedObjects_Count")]
         public static int CSavedObjects_Count( void* self )
         {
-            return default;
+            throw new NotImplementedException("CSavedObjects_Count is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSelection_GetMode")]
         public static long CSelection_GetMode( void* self )
         {
-            return default;
+            throw new NotImplementedException("CSelection_GetMode is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSelection_SetMode")]
         public static void* CSelection_SetMode( void* self, long mode, long method )
         {
-            return default;
+            throw new NotImplementedException("CSelection_SetMode is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSelection_ActiveSelectionSet")]
         public static void* CSelection_ActiveSelectionSet( void* self )
         {
-            return default;
+            throw new NotImplementedException("CSelection_ActiveSelectionSet is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSelection_GetSelectionSetForMode")]
         public static void* CSelection_GetSelectionSetForMode( void* self, long nMode )
         {
-            return default;
+            throw new NotImplementedException("CSelection_GetSelectionSetForMode is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSelection_GetNumSelectionSets")]
         public static int CSelection_GetNumSelectionSets( void* self )
         {
-            return default;
+            throw new NotImplementedException("CSelection_GetNumSelectionSets is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CSelection_GetSelectionSet")]
         public static void* CSelection_GetSelectionSet( void* self, int nIndex )
         {
-            return default;
+            throw new NotImplementedException("CSelection_GetSelectionSet is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolBlock_OnObjectTypeChanged")]
         public static void* CToolBlock_OnObjectTypeChanged( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolBlock_OnObjectTypeChanged is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolBlock_SetPrimitiveType2D")]
         public static void* CToolBlock_SetPrimitiveType2D( void* self, int primitiveIs2D )
         {
-            return default;
+            throw new NotImplementedException("CToolBlock_SetPrimitiveType2D is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolBlock_GetOrientPrimitives")]
         public static int CToolBlock_GetOrientPrimitives( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolBlock_GetOrientPrimitives is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolBlock_SetOrientPrimitives")]
         public static void* CToolBlock_SetOrientPrimitives( void* self, int bOrientPrimitives )
         {
-            return default;
+            throw new NotImplementedException("CToolBlock_SetOrientPrimitives is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "_Get__CToolBlock_m_OverrideMaterial")]
         public static void* _Get__CToolBlock_m_OverrideMaterial( void* self )
@@ -2868,122 +2868,122 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CToolBlockState_GetAABBBounds")]
         public static void* CToolBlockState_GetAABBBounds( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolBlockState_GetAABBBounds is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolBlockState_GetDragWorkPlane")]
         public static void* CToolBlockState_GetDragWorkPlane( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolBlockState_GetDragWorkPlane is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolCamera_GetOrigin")]
         public static void* CToolCamera_GetOrigin( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolCamera_GetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolCamera_GetAngles")]
         public static void* CToolCamera_GetAngles( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolCamera_GetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolCamera_SetOrigin")]
         public static void* CToolCamera_SetOrigin( void* self, void* origin )
         {
-            return default;
+            throw new NotImplementedException("CToolCamera_SetOrigin is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolCamera_SetAngles")]
         public static void* CToolCamera_SetAngles( void* self, void* angles )
         {
-            return default;
+            throw new NotImplementedException("CToolCamera_SetAngles is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolCamera_GetWidth")]
         public static float CToolCamera_GetWidth( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolCamera_GetWidth is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolCamera_GetHeight")]
         public static float CToolCamera_GetHeight( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolCamera_GetHeight is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolCamera_GetCameraFOV")]
         public static float CToolCamera_GetCameraFOV( void* self )
         {
-            return default;
+            throw new NotImplementedException("CToolCamera_GetCameraFOV is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolCamera_BuildRay")]
         public static void* CToolCamera_BuildRay( void* self, void* view, void* start, void* end )
         {
-            return default;
+            throw new NotImplementedException("CToolCamera_BuildRay is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CToolEntity_StartBlockEntityCreation")]
         public static void* CToolEntity_StartBlockEntityCreation( void* self, void* className )
         {
-            return default;
+            throw new NotImplementedException("CToolEntity_StartBlockEntityCreation is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CWorkPlane_GetWorkPlaneToWorldTransform")]
         public static void* CWorkPlane_GetWorkPlaneToWorldTransform( void* self )
         {
-            return default;
+            throw new NotImplementedException("CWorkPlane_GetWorkPlaneToWorldTransform is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "global_MaterialGetMappingWidth")]
         public static int global_MaterialGetMappingWidth( void* material )
         {
-            return default;
+            throw new NotImplementedException("global_MaterialGetMappingWidth is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "global_MaterialGetMappingHeight")]
         public static int global_MaterialGetMappingHeight( void* material )
         {
-            return default;
+            throw new NotImplementedException("global_MaterialGetMappingHeight is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_SelectObject")]
         public static int ISelectionSet_SelectObject( void* self, void* pObject, long selectOp )
         {
-            return default;
+            throw new NotImplementedException("ISelectionSet_SelectObject is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_GetSelectedObject")]
         public static void* ISelectionSet_GetSelectedObject( void* self, int nIndex )
         {
-            return default;
+            throw new NotImplementedException("ISelectionSet_GetSelectedObject is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_Count")]
         public static int ISelectionSet_Count( void* self )
         {
-            return default;
+            throw new NotImplementedException("ISelectionSet_Count is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_RemoveAll")]
         public static void* ISelectionSet_RemoveAll( void* self )
         {
-            return default;
+            throw new NotImplementedException("ISelectionSet_RemoveAll is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_SelectAll")]
         public static void* ISelectionSet_SelectAll( void* self )
         {
-            return default;
+            throw new NotImplementedException("ISelectionSet_SelectAll is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_InvertSelection")]
         public static void* ISelectionSet_InvertSelection( void* self )
         {
-            return default;
+            throw new NotImplementedException("ISelectionSet_InvertSelection is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_GetPivotPosition")]
         public static void* ISelectionSet_GetPivotPosition( void* self )
         {
-            return default;
+            throw new NotImplementedException("ISelectionSet_GetPivotPosition is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "ISelectionSet_SetPivot")]
         public static void* ISelectionSet_SetPivot( void* self, void* pivot )
         {
-            return default;
+            throw new NotImplementedException("ISelectionSet_SetPivot is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "NativeHammer_Options_GetShowHelpers")]
         public static int NativeHammer_Options_GetShowHelpers()
         {
-            return default;
+            throw new NotImplementedException("NativeHammer_Options_GetShowHelpers is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "NativeHammer_Options_GetShowGameObjectsOnly")]
         public static int NativeHammer_Options_GetShowGameObjectsOnly()
         {
-            return default;
+            throw new NotImplementedException("NativeHammer_Options_GetShowGameObjectsOnly is not yet implemented in the linux emulation layer");
         }
     }
     public static unsafe partial class Imports

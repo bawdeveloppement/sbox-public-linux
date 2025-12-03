@@ -387,19 +387,36 @@ public class BaseFileSystem
 		watcher?.Dispose();
 		watcher = null;
 
-		if ( watcher == null )
+		if ( watcher == null && WatchEnabled )
 		{
-			watcher = system.Watch( "/" );
-			watcher.NotifyFilter = Zio.NotifyFilters.Attributes | Zio.NotifyFilters.Size | Zio.NotifyFilters.CreationTime | Zio.NotifyFilters.LastWrite | Zio.NotifyFilters.FileName | Zio.NotifyFilters.DirectoryName | Zio.NotifyFilters.Security;
-			watcher.IncludeSubdirectories = true;
+			try
+			{
+				watcher = system.Watch( "/" );
+				watcher.NotifyFilter = Zio.NotifyFilters.Attributes | Zio.NotifyFilters.Size | Zio.NotifyFilters.CreationTime | Zio.NotifyFilters.LastWrite | Zio.NotifyFilters.FileName | Zio.NotifyFilters.DirectoryName | Zio.NotifyFilters.Security;
+				watcher.IncludeSubdirectories = true;
 
-			watcher.Changed += OnDirectoryContentsChanged;
-			watcher.Deleted += OnDirectoryContentsChanged;
-			watcher.Created += OnDirectoryContentsChanged;
-			watcher.Renamed += OnDirectoryContentsRenamed;
-			watcher.Error += OnDirectoryContentsError;
+				watcher.Changed += OnDirectoryContentsChanged;
+				watcher.Deleted += OnDirectoryContentsChanged;
+				watcher.Created += OnDirectoryContentsChanged;
+				watcher.Renamed += OnDirectoryContentsRenamed;
+				watcher.Error += OnDirectoryContentsError;
 
-			watcher.EnableRaisingEvents = true;
+				watcher.EnableRaisingEvents = true;
+			}
+			catch ( System.IO.IOException ex ) when ( ex.Message.Contains( "inotify" ) || ex.Message.Contains( "file descriptors" ) )
+			{
+				// Linux inotify limit reached - disable watchers for this filesystem
+				Log.Warning( $"FileSystemWatcher creation failed (inotify limit): {ex.Message}. Disabling file watching for this filesystem." );
+				WatchEnabled = false;
+				watcher = null;
+			}
+			catch ( System.Exception ex )
+			{
+				// Other errors - log and disable watchers
+				Log.Warning( $"FileSystemWatcher creation failed: {ex.Message}. Disabling file watching for this filesystem." );
+				WatchEnabled = false;
+				watcher = null;
+			}
 		}
 
 		FileWatch w = (pathglob != null) ? new FileWatch( this, pathglob ) : new FileWatch( this );

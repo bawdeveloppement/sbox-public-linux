@@ -10,87 +10,87 @@ namespace Sbox.Engine.Emulation.Generated
         [UnmanagedCallersOnly(EntryPoint = "CModelDoc_DeleteThis")]
         public static void* CModelDoc_DeleteThis( void* self )
         {
-            return default;
+            throw new NotImplementedException("CModelDoc_DeleteThis is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelDoc_Create")]
         public static void* CModelDoc_Create()
         {
-            return default;
+            throw new NotImplementedException("CModelDoc_Create is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelDoc_SaveToFile")]
         public static int CModelDoc_SaveToFile( void* self, void* pFullPath )
         {
-            return default;
+            throw new NotImplementedException("CModelDoc_SaveToFile is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMdlDcdtrpp_RefreshGameData")]
         public static void* CMdlDcdtrpp_RefreshGameData( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMdlDcdtrpp_RefreshGameData is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CMdlDcdtrpp_GetSessionModel")]
         public static void* CMdlDcdtrpp_GetSessionModel( void* self )
         {
-            return default;
+            throw new NotImplementedException("CMdlDcdtrpp_GetSessionModel is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelMesh_DeleteThis")]
         public static void* CModelMesh_DeleteThis( void* self )
         {
-            return default;
+            throw new NotImplementedException("CModelMesh_DeleteThis is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelMesh_Create")]
         public static void* CModelMesh_Create()
         {
-            return default;
+            throw new NotImplementedException("CModelMesh_Create is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelMesh_AddVertices")]
         public static void* CModelMesh_AddVertices( void* self, int nNumVertices )
         {
-            return default;
+            throw new NotImplementedException("CModelMesh_AddVertices is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelMesh_AddFaceGroup")]
         public static void* CModelMesh_AddFaceGroup( void* self, void* pMaterialName )
         {
-            return default;
+            throw new NotImplementedException("CModelMesh_AddFaceGroup is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelMesh_SetPositions")]
         public static void* CModelMesh_SetPositions( void* self, void* pPositions, int nNumPositions )
         {
-            return default;
+            throw new NotImplementedException("CModelMesh_SetPositions is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelMesh_SetTexCoords")]
         public static void* CModelMesh_SetTexCoords( void* self, void* pTexCoords, int nNumTexCoords )
         {
-            return default;
+            throw new NotImplementedException("CModelMesh_SetTexCoords is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelMesh_SetNormals")]
         public static void* CModelMesh_SetNormals( void* self, void* pNormals, int nNumNormals )
         {
-            return default;
+            throw new NotImplementedException("CModelMesh_SetNormals is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "CModelMesh_AddFace")]
         public static void* CModelMesh_AddFace( void* self, int nGroupIndex, void* pVertices, int nNumVertices )
         {
-            return default;
+            throw new NotImplementedException("CModelMesh_AddFace is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "g_pModelDocUtils_InitFromMesh")]
         public static int g_pModelDocUtils_InitFromMesh( void* pModelDoc, void* pFilename )
         {
-            return default;
+            throw new NotImplementedException("g_pModelDocUtils_InitFromMesh is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "NativeEngine_ModelDoc_CreateModelFromMeshFile")]
         public static int NativeEngine_ModelDoc_CreateModelFromMeshFile( void* pVmdlFileFullPath, void* meshRelativePath, void* material )
         {
-            return default;
+            throw new NotImplementedException("NativeEngine_ModelDoc_CreateModelFromMeshFile is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "NativeEngine_ModelDoc_CreateModelFromMesh")]
         public static int NativeEngine_ModelDoc_CreateModelFromMesh( void* pVmdlFileFullPath, void* pMesh )
         {
-            return default;
+            throw new NotImplementedException("NativeEngine_ModelDoc_CreateModelFromMesh is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "NativeEngine_ModelDoc_CreateModelFromMeshes")]
         public static int NativeEngine_ModelDoc_CreateModelFromMeshes( void* pVmdlFileFullPath, void* pMeshes, int nMeshCount )
         {
-            return default;
+            throw new NotImplementedException("NativeEngine_ModelDoc_CreateModelFromMeshes is not yet implemented in the linux emulation layer");
         }
     }
     public static unsafe partial class Imports
