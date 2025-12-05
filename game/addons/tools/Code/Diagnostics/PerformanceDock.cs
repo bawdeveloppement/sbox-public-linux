@@ -1,4 +1,5 @@
 ﻿using Sandbox.Diagnostics;
+using Editor.Rendering.RenderableEventQueue;
 namespace Editor;
 
 [Dock( "Editor", "Performance", "timer" )]
@@ -8,6 +9,11 @@ public class PerformanceDock : Widget
 	Button MenuButton;
 
 	public float RefreshSpeed = 0.25f;
+
+	/// <summary>
+	/// Activer/désactiver l'utilisation de RenderableEventQueue pour optimiser les mises à jour
+	/// </summary>
+	public bool EnableEventQueue { get; set; } = true;
 
 	public PerformanceDock( Widget parent ) : base( parent )
 	{
@@ -52,13 +58,56 @@ public class PerformanceDock : Widget
 
 	RealTimeSince timeSinceUpdate;
 	int framesSinceUpdate;
+	bool hasInitialRender = false;
+	RealTimeSince lastPerformanceEventEmit;
 
 	[EditorEvent.Frame]
 	public void Frame()
 	{
 		framesSinceUpdate++;
 
-		if ( timeSinceUpdate < RefreshSpeed )
+		// Émettre un événement PerformanceUpdated périodiquement si EnableEventQueue est activé
+		// Cela permet au système de cache de savoir quand mettre à jour
+		if ( EnableEventQueue && timeSinceUpdate >= RefreshSpeed )
+		{
+			// Émettre un événement de performance pour déclencher la mise à jour
+			// On limite l'émission à la même fréquence que RefreshSpeed pour éviter le spam
+			if ( lastPerformanceEventEmit >= RefreshSpeed )
+			{
+				RenderableEventEmitter.EmitPerformanceUpdated( this );
+				lastPerformanceEventEmit = 0;
+			}
+		}
+
+		// Vérifier si on doit mettre à jour en utilisant la queue d'événements
+		bool shouldUpdate = false;
+
+		if ( EnableEventQueue )
+		{
+			// Vérifier s'il y a des événements de performance dans la queue
+			var eventCount = RenderableEventQueue.Count;
+			var hasPerformanceEvent = false;
+
+			if ( eventCount > 0 )
+			{
+				// Vérifier s'il y a un événement PerformanceUpdated
+				var events = RenderableEventQueue.PeekAll();
+				hasPerformanceEvent = events.Any( e => e.Type == RenderableEvent.EventType.PerformanceUpdated );
+			}
+
+			// Mettre à jour si :
+			// 1. Il y a un événement de performance dans la queue
+			// 2. C'est le premier rendu (hasInitialRender = false)
+			// 3. Le throttling temporel est respecté (fallback)
+			shouldUpdate = hasPerformanceEvent || !hasInitialRender || timeSinceUpdate >= RefreshSpeed;
+		}
+		else
+		{
+			// Mode classique : seulement le throttling temporel
+			shouldUpdate = timeSinceUpdate >= RefreshSpeed;
+		}
+
+		if ( !shouldUpdate )
 			return;
 
 		if ( !Chart.IsValid() )
@@ -85,5 +134,20 @@ public class PerformanceDock : Widget
 		Chart.Draw();
 
 		framesSinceUpdate = 0;
+		hasInitialRender = true;
+
+		// Vider les événements de performance après le rendu
+		if ( EnableEventQueue )
+		{
+			// Retirer uniquement les événements PerformanceUpdated de la queue
+			var events = RenderableEventQueue.DequeueAll();
+			var otherEvents = events.Where( e => e.Type != RenderableEvent.EventType.PerformanceUpdated ).ToList();
+			
+			// Remettre les autres événements dans la queue
+			foreach ( var evt in otherEvents )
+			{
+				RenderableEventQueue.Enqueue( evt );
+			}
+		}
 	}
 }

@@ -94,11 +94,16 @@ class CameraToolWindow : WidgetWindow
 {
 	private CameraComponent selectedComponent;
 	CameraComponent targetComponent;
-	SceneWidget SceneWidget;
+	SceneRenderingWidget SceneWidget;
 
 	private static CameraComponent PinnedCamera;
 	private static bool IsPinned;
 	static bool IsClosed = false;
+
+	/// <summary>
+	/// Public accessor for IsClosed to allow SceneWidget to check if window is closed
+	/// </summary>
+	public static bool WindowIsClosed => IsClosed;
 
 	public CameraToolWindow()
 	{
@@ -148,13 +153,14 @@ class CameraToolWindow : WidgetWindow
 		headerRow.Add( new IconButton( "colorize", LookAt ) { ToolTip = "Look At", FixedHeight = HeaderHeight, FixedWidth = HeaderHeight, Background = Theme.ControlBackground } );
 		headerRow.Add( new IconButton( "close", CloseWindow ) { ToolTip = "Close Preview", FixedHeight = HeaderHeight, FixedWidth = HeaderHeight, Background = Theme.ControlBackground } );
 
-		SceneWidget = new SceneWidget( this );
+		SceneWidget = new SceneRenderingWidget( this );
 		SceneWidget.FixedWidth = 1280 * 0.4f;
 		SceneWidget.FixedHeight = 720 * 0.4f;
 
 		if ( targetComponent is CameraComponent camera )
 		{
 			SceneWidget.Scene = camera.Scene;
+			SceneWidget.Camera = camera;
 		}
 
 		Layout.Add( SceneWidget );
@@ -229,8 +235,9 @@ class CameraToolWindow : WidgetWindow
 
 		if ( SceneWidget.IsValid() )
 		{
-			targetComponent.UpdateSceneCamera( SceneWidget.Camera );
-			SceneWidget.Camera.Rect = new Rect( 0, 0, 1, 1 );
+			// Mettre à jour la caméra directement (SceneRenderingWidget utilise CameraComponent directement)
+			SceneWidget.Camera = targetComponent;
+			SceneWidget.Scene = targetComponent.Scene;
 		}
 	}
 
@@ -279,52 +286,12 @@ class CameraToolWindow : WidgetWindow
 		UpdateWindowTitle();
 
 		if ( SceneWidget.IsValid() )
+		{
 			SceneWidget.Scene = camera.IsValid() ? camera.Scene : null;
-	}
-}
-
-class SceneWidget : Widget
-{
-	public Scene Scene { get; set; }
-	public SceneCamera Camera { get; set; } = new SceneCamera();
-
-	Pixmap pixmap;
-
-	public SceneWidget( Widget parent ) : base( parent )
-	{
-
-	}
-
-	[EditorEvent.Frame]
-	internal void Frame()
-	{
-		if ( !Visible ) return;
-
-		var realSize = Size * DpiScale;
-
-		if ( pixmap is null || pixmap.Size != realSize )
-		{
-			pixmap = new Pixmap( realSize );
-		}
-
-		if ( Scene.IsValid() )
-		{
-			Camera.World = Scene.SceneWorld;
-			Camera.Worlds.Clear();
-
-			Camera.RenderToPixmap( pixmap );
-		}
-
-		Update();
-	}
-
-	protected override void OnPaint()
-	{
-		base.OnPaint();
-
-		if ( pixmap is not null )
-		{
-			Paint.Draw( LocalRect, pixmap );
+			SceneWidget.Camera = camera;
 		}
 	}
 }
+
+// SceneWidget est maintenant remplacé par SceneRenderingWidget qui rend directement sur GPU
+// via un SwapChain, éliminant complètement le readback CPU

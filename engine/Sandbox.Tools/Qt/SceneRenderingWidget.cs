@@ -1,4 +1,5 @@
 ﻿using System;
+using Editor.Rendering.RenderableEventQueue;
 
 namespace Editor;
 
@@ -28,6 +29,16 @@ public class SceneRenderingWidget : Frame
 
 	public bool EnableEngineOverlays { get; set; } = false;
 
+	/// <summary>
+	/// Gestionnaire de cache GPU pour les frames rendues
+	/// </summary>
+	private RenderCacheManager _cacheManager;
+
+	/// <summary>
+	/// Activer/désactiver le système de cache d'événements
+	/// </summary>
+	public bool EnableEventCache { get; set; } = true;
+
 	public SceneRenderingWidget( Widget parent = null ) : base( parent )
 	{
 		SetFlag( Flag.WA_NativeWindow, true );
@@ -39,7 +50,16 @@ public class SceneRenderingWidget : Frame
 
 		FocusMode = FocusMode.Click; // If we're focused we're probably accepting input, don't let tab blur us
 
+		// Initialiser le gestionnaire de cache
+		_cacheManager = new RenderCacheManager( $"SceneRenderingWidget_{GetHashCode()}" );
+
 		All.Add( this );
+
+		// Émettre un événement Loaded pour indiquer que le widget est prêt
+		if ( EnableEventCache )
+		{
+			RenderableEventEmitter.EmitLoaded( this );
+		}
 	}
 
 	internal override void NativeShutdown()
@@ -55,6 +75,10 @@ public class SceneRenderingWidget : Frame
 
 		GizmoInstance?.Dispose();
 		GizmoInstance = default;
+
+		// Nettoyer le cache
+		_cacheManager?.Dispose();
+		_cacheManager = null;
 	}
 
 	/// <summary>
@@ -92,10 +116,42 @@ public class SceneRenderingWidget : Frame
 		{
 			Camera.Scene?.PreCameraRender();
 			Camera.AddToRenderList( SwapChain, Size * DpiScale );
+			
+			// Émettre un événement de mouvement de caméra si le cache est activé
+			if ( EnableEventCache )
+			{
+				RenderableEventEmitter.EmitCameraMoved( Camera );
+			}
 		}
 		else if ( Scene.IsValid() )
 		{
 			Scene.Render( SwapChain, Size * DpiScale );
+		}
+	}
+
+	/// <summary>
+	/// Rendre la scène dans une texture de cache
+	/// </summary>
+	void RenderSceneToCache( Texture cacheTexture )
+	{
+		if ( !this.IsValid() || cacheTexture == null || !cacheTexture.IsValid() )
+			return;
+
+		var sceneCamera = GetSceneCamera();
+		if ( sceneCamera is not null )
+		{
+			sceneCamera.EnableEngineOverlays = EnableEngineOverlays;
+		}
+
+		if ( Camera.IsValid() )
+		{
+			Camera.Scene?.PreCameraRender();
+			Camera.RenderToTexture( cacheTexture, default );
+		}
+		else if ( Scene.IsValid() && Scene.Camera.IsValid() )
+		{
+			Scene.PreCameraRender();
+			Scene.Camera.RenderToTexture( cacheTexture, default );
 		}
 	}
 
@@ -126,16 +182,79 @@ public class SceneRenderingWidget : Frame
 		if ( !Scene.IsValid() ) return;
 		if ( !Visible ) return;
 
+		// Vérifier la queue d'événements si le cache est activé
+		int eventCount = EnableEventCache ? RenderableEventQueue.Count : 1;
+		var realSize = Size * DpiScale;
+		bool shouldRender = true;
+
 		using ( Scene.Push() )
 		{
 			using ( GizmoInstance.Push() )
 			{
 				PreFrame();
-				RenderScene();
+
+				if ( EnableEventCache && eventCount == 0 )
+				{
+					// Queue = 0 : Utiliser le cache si disponible - NE PAS RENDRE
+					if ( _cacheManager.HasCachedFrame )
+					{
+						// Cache disponible, on saute le rendu
+						// Le SwapChain gardera la dernière frame présentée
+						shouldRender = false;
+					}
+					else
+					{
+						// Pas de cache disponible, forcer le rendu une fois
+						shouldRender = true;
+					}
+				}
+				else if ( EnableEventCache && eventCount == 1 )
+				{
+					// Queue = 1 : Rendre UNE SEULE FOIS dans le cache, puis copier vers SwapChain
+					var cacheTexture = _cacheManager.GetOrCreateCacheTexture( realSize );
+					
+					if ( cacheTexture != null && cacheTexture.IsValid() )
+					{
+						// Rendre dans la texture de cache
+						RenderSceneToCache( cacheTexture );
+						_cacheManager.MarkFrameCached();
+						
+						// Maintenant copier le cache vers le SwapChain en rendant depuis le cache
+						// Pour l'instant, on rend directement vers le SwapChain aussi
+						// TODO: Implémenter un blit GPU direct cache -> SwapChain pour éviter le double rendu
+						RenderScene();
+					}
+					else
+					{
+						// Échec de création du cache, rendre normalement
+						RenderScene();
+					}
+				}
+				else
+				{
+					// Queue > 1 ou cache désactivé : Rendre normalement sans sauvegarder
+					RenderScene();
+					
+					// Invalider le cache car trop de changements
+					if ( EnableEventCache && eventCount > 1 )
+					{
+						_cacheManager.InvalidateCache();
+					}
+				}
 			}
 		}
 
-		g_pRenderDevice.Present( SwapChain );
+		// Présenter seulement si on a rendu
+		if ( shouldRender )
+		{
+			g_pRenderDevice.Present( SwapChain );
+		}
+
+		// Vider la queue après le rendu
+		if ( EnableEventCache )
+		{
+			RenderableEventQueue.Clear();
+		}
 	}
 
 	private void UpdateGizmoInputs( ref Gizmo.Inputs input, SceneCamera camera, bool hasMouseFocus )
