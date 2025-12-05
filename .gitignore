@@ -77,7 +77,9 @@ engine/TestResults/
 /game/**/*.csproj
 /game/**/obj
 /game/**/launchSettings.json
-
+/src/Sandbox.Engine.Emulation/Generated/*.Generated.cs
+/src/Sandbox.Engine.Emulation/bin
+/src/Sandbox.Engine.Emulation/obj
 #
 # Game debris
 #

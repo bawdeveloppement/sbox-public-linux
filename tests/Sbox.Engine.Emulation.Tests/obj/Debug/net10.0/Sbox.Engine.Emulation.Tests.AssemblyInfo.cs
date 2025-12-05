@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sbox.Engine.Emulation.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2560e21de69d744edde701084f93cf7caefc5cbc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c71e790b5bac7878c5016acc79c57fafbef37b20")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sbox.Engine.Emulation.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sbox.Engine.Emulation.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
