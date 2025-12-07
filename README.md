@@ -9,7 +9,7 @@
 
 ---
 
-# s&box Linux – Toward a Multi-Platform Open-Source Engine
+# s&box – Toward a Multi-Platform Open-Source Engine
 
 s&box is a modern game engine built on Valve’s Source 2 and the latest .NET technologies.  
 This repository expands on that foundation with an experimental, open-source effort led by **Baw Studios** to explore a truly multi-platform future for the engine.
