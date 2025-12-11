@@ -15745,7 +15745,9 @@ internal unsafe static partial class WidgetUtil
 	[MethodImpl( MethodImplOptions.AggressiveInlining )]
 	internal static void PaintSetFont( global::QPainter painter, string fontName, int size, int weight, bool italic, bool heightInPixels ) { if ( __N.WidgetUtil_PaintSetFont == null ) throw new System.Exception( "Function Pointer Is Null" );var _str_fontName = new Sandbox.Interop.InteropString( fontName ); try { __N.WidgetUtil_PaintSetFont( painter, _str_fontName.Pointer, size, weight, italic ? 1 : 0, heightInPixels ? 1 : 0 ); } finally { _str_fontName.Free(); }  }
 	[MethodImpl( MethodImplOptions.AggressiveInlining )]
-	internal static SwapChainHandle_t CreateSwapChain( global::Native.QWidget target ) { if ( __N.WidgetUtil_CreateSwapChain == null ) throw new System.Exception( "Function Pointer Is Null" );return __N.WidgetUtil_CreateSwapChain( target ); }
+	internal static SwapChainHandle_t CreateSwapChain( global::Native.QWidget target, NativeEngine.RenderMultisampleType nMSAAAmount ) { if ( __N.WidgetUtil_CreateSwapChain == null ) throw new System.Exception( "Function Pointer Is Null" );return __N.WidgetUtil_CreateSwapChain( target, (long)(nMSAAAmount) ); }
+	[MethodImpl( MethodImplOptions.AggressiveInlining )]
+	internal static bool UpdateSwapChainMSAA( SwapChainHandle_t swapChain, NativeEngine.RenderMultisampleType nMSAAAmount ) { if ( __N.WidgetUtil_UpdateSwapChainMSAA == null ) throw new System.Exception( "Function Pointer Is Null" );return __N.WidgetUtil_UpdateSwapChainMSAA( swapChain, (long)(nMSAAAmount) ) != 0; }
 	[MethodImpl( MethodImplOptions.AggressiveInlining )]
 	internal static void SetWindowNoActivate( global::Native.QWidget widget ) { if ( __N.WidgetUtil_SetWindowNoActivate == null ) throw new System.Exception( "Function Pointer Is Null" );__N.WidgetUtil_SetWindowNoActivate( widget ); }
 	[MethodImpl( MethodImplOptions.AggressiveInlining )]
@@ -15765,7 +15767,8 @@ internal unsafe static partial class WidgetUtil
 		internal static delegate* unmanaged< IntPtr, uint, IntPtr > WidgetUtil_CreateGraphicsProxy;
 		internal static delegate* unmanaged< IntPtr, int, void > WidgetUtil_PostKeyEvent;
 		internal static delegate* unmanaged< IntPtr, IntPtr, int, int, int, int, void > WidgetUtil_PaintSetFont;
-		internal static delegate* unmanaged< IntPtr, IntPtr /* PtrHandle:SwapChainHandle_t  */ > WidgetUtil_CreateSwapChain;
+		internal static delegate* unmanaged< IntPtr, long, IntPtr /* PtrHandle:SwapChainHandle_t  */ > WidgetUtil_CreateSwapChain;
+		internal static delegate* unmanaged< IntPtr /* PtrHandle:SwapChainHandle_t  */, long, int > WidgetUtil_UpdateSwapChainMSAA;
 		internal static delegate* unmanaged< IntPtr, void > WidgetUtil_SetWindowNoActivate;
 		internal static delegate* unmanaged< QRectF, int, IntPtr, Vector4 > WidgetUtil_MeasureText;
 		internal static delegate* unmanaged< IntPtr, int, int, int, IntPtr > WidgetUtil_ElidedText;
@@ -24228,7 +24231,7 @@ namespace Managed.SourceTools
 				(IntPtr) (delegate* unmanaged<void>) &Exports.Sandbox_RenderTarget_Flush,
 			};
 			
-			var nativeFunctions = new IntPtr[4349];
+			var nativeFunctions = new IntPtr[4350];
 			
 			var structSizes = new int[]
 			
@@ -24282,7 +24285,7 @@ namespace Managed.SourceTools
 			fixed ( int* s = structSizes )
 			
 			{
-				nativeInit( 38614, m, n, s );
+				nativeInit( 9738, m, n, s );
 			}
 			
 			var onError = Marshal.GetDelegateForFunctionPointer<_ErrorFunction>( nativeFunctions[0] );
@@ -28632,11 +28635,12 @@ namespace Managed.SourceTools
 				WidgetUtil.__N.WidgetUtil_CreateGraphicsProxy = (delegate* unmanaged< IntPtr, uint, IntPtr >) nativeFunctions[4341];
 				WidgetUtil.__N.WidgetUtil_PostKeyEvent = (delegate* unmanaged< IntPtr, int, void >) nativeFunctions[4342];
 				WidgetUtil.__N.WidgetUtil_PaintSetFont = (delegate* unmanaged< IntPtr, IntPtr, int, int, int, int, void >) nativeFunctions[4343];
-				WidgetUtil.__N.WidgetUtil_CreateSwapChain = (delegate* unmanaged< IntPtr, IntPtr /* PtrHandle:SwapChainHandle_t  */ >) nativeFunctions[4344];
-				WidgetUtil.__N.WidgetUtil_SetWindowNoActivate = (delegate* unmanaged< IntPtr, void >) nativeFunctions[4345];
-				WidgetUtil.__N.WidgetUtil_MeasureText = (delegate* unmanaged< QRectF, int, IntPtr, Vector4 >) nativeFunctions[4346];
-				WidgetUtil.__N.WidgetUtil_ElidedText = (delegate* unmanaged< IntPtr, int, int, int, IntPtr >) nativeFunctions[4347];
-				WidgetUtil.__N.WidgetUtil_ConstrainToScreen = (delegate* unmanaged< IntPtr, void >) nativeFunctions[4348];
+				WidgetUtil.__N.WidgetUtil_CreateSwapChain = (delegate* unmanaged< IntPtr, long, IntPtr /* PtrHandle:SwapChainHandle_t  */ >) nativeFunctions[4344];
+				WidgetUtil.__N.WidgetUtil_UpdateSwapChainMSAA = (delegate* unmanaged< IntPtr /* PtrHandle:SwapChainHandle_t  */, long, int >) nativeFunctions[4345];
+				WidgetUtil.__N.WidgetUtil_SetWindowNoActivate = (delegate* unmanaged< IntPtr, void >) nativeFunctions[4346];
+				WidgetUtil.__N.WidgetUtil_MeasureText = (delegate* unmanaged< QRectF, int, IntPtr, Vector4 >) nativeFunctions[4347];
+				WidgetUtil.__N.WidgetUtil_ElidedText = (delegate* unmanaged< IntPtr, int, int, int, IntPtr >) nativeFunctions[4348];
+				WidgetUtil.__N.WidgetUtil_ConstrainToScreen = (delegate* unmanaged< IntPtr, void >) nativeFunctions[4349];
 			}
 			catch ( System.Exception ___e )
 			{

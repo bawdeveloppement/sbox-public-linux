@@ -18,6 +18,14 @@ namespace Sandbox.Engine.Emulation.Rendering;
 /// </summary>
 internal static unsafe class EmulatedSceneView
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][SV] {name} {message}");
+    }
+
     private class SceneViewData
     {
         public RenderViewport MainViewport = new RenderViewport(0, 0, 1280, 720);
@@ -36,12 +44,21 @@ internal static unsafe class EmulatedSceneView
         public bool PostProcessEnabled = true;
         public int ToolsVisMode;
         public IntPtr FrustumPtr = IntPtr.Zero;
+        public readonly Dictionary<(string Name, IntPtr Texture, int Flags), IntPtr> RenderTargets = new();
+    }
+
+    private class RenderTargetData
+    {
+        public IntPtr Texture;
+        public int Flags;
     }
 
     private static readonly Dictionary<IntPtr, SceneViewData> _views = new();
 
     public static IntPtr CreateView(RenderViewport viewport, int managedCameraId = 1, int priority = 0, IntPtr swapChain = default)
     {
+        var rect = viewport.Rect;
+        LogCall(nameof(CreateView), minimal: true, message: $"vp=({rect.Width}x{rect.Height}) cam={managedCameraId} prio={priority} swap=0x{swapChain.ToInt64():X}");
         var data = new SceneViewData
         {
             MainViewport = viewport,
@@ -61,12 +78,14 @@ internal static unsafe class EmulatedSceneView
 
     public static void SetSwapChainManaged(IntPtr self, IntPtr swapChain)
     {
+        LogCall(nameof(SetSwapChainManaged), minimal: true, message: $"self=0x{self.ToInt64():X} swap=0x{swapChain.ToInt64():X}");
         var data = GetView(self);
         data.SwapChain = swapChain;
     }
 
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         native[2163] = (void*)(delegate* unmanaged<IntPtr, RenderViewport>)&ISceneView_GetMainViewport;
         native[2164] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&ISceneView_GetSwapChain;
         native[2165] = (void*)(delegate* unmanaged<IntPtr, IntPtr, int, void>)&ISceneView_AddDependentView;
@@ -99,6 +118,7 @@ internal static unsafe class EmulatedSceneView
         {
             if (!_views.TryGetValue(self, out var data))
             {
+                LogCall(nameof(GetView), minimal: true, message: $"create self=0x{self.ToInt64():X}");
                 var window = PlatformFunctions.GetWindowHandle();
                 data = new SceneViewData
                 {
@@ -115,6 +135,8 @@ internal static unsafe class EmulatedSceneView
     {
         string debugName = pszDebugName != IntPtr.Zero ? Marshal.PtrToStringUTF8(pszDebugName) ?? "RenderLayer" : "RenderLayer";
         var vp = viewport != null ? *viewport : new RenderViewport(0, 0, 1280, 720);
+        var rect = vp.Rect;
+        LogCall(nameof(CreateLayerForView), minimal: true, message: $"self=0x{self.ToInt64():X} name={debugName} vp=({rect.Width}x{rect.Height}) layer={layerType}");
         var data = GetView(self);
         lock (data.RenderLayers)
         {
@@ -136,11 +158,17 @@ internal static unsafe class EmulatedSceneView
     public static RenderViewport ISceneView_GetMainViewport(IntPtr self) => GetView(self).MainViewport;
 
     [UnmanagedCallersOnly]
-    public static IntPtr ISceneView_GetSwapChain(IntPtr self) => GetView(self).SwapChain;
+    public static IntPtr ISceneView_GetSwapChain(IntPtr self)
+    {
+        var swap = GetView(self).SwapChain;
+        LogCall(nameof(ISceneView_GetSwapChain), minimal: true, message: $"self=0x{self.ToInt64():X} swap=0x{swap.ToInt64():X}");
+        return swap;
+    }
 
     [UnmanagedCallersOnly]
     public static void ISceneView_AddDependentView(IntPtr self, IntPtr pView, int nSlot)
     {
+        LogCall(nameof(ISceneView_AddDependentView), minimal: true, message: $"self=0x{self.ToInt64():X} view=0x{pView.ToInt64():X} slot={nSlot}");
         var data = GetView(self);
         lock (data.DependentViews)
         {
@@ -151,6 +179,7 @@ internal static unsafe class EmulatedSceneView
     [UnmanagedCallersOnly]
     public static IntPtr ISceneView_GetRenderAttributesPtr(IntPtr self)
     {
+        LogCall(nameof(ISceneView_GetRenderAttributesPtr), minimal: true, message: $"self=0x{self.ToInt64():X}");
         var data = GetView(self);
         if (data.RenderAttributesPtr == IntPtr.Zero)
         {
@@ -169,18 +198,21 @@ internal static unsafe class EmulatedSceneView
     public static IntPtr ISceneView_AddManagedProceduralLayer(IntPtr self, IntPtr pszDebugName, RenderViewport* viewport, IntPtr renderCallback, IntPtr pAddBefore, int bDeleteWhenDone)
     {
         // Procedural layer modeled as a normal layer; callback not invoked yet.
+        LogCall(nameof(ISceneView_AddManagedProceduralLayer), minimal: true, message: $"self=0x{self.ToInt64():X} namePtr=0x{pszDebugName.ToInt64():X} cb=0x{renderCallback.ToInt64():X} delete={bDeleteWhenDone}");
         return CreateLayerForView(self, pszDebugName, viewport, SceneLayerType.Translucent);
     }
 
     [UnmanagedCallersOnly]
     public static void ISceneView_SetDefaultLayerObjectRequiredFlags(IntPtr self, long nFlags)
     {
+        LogCall(nameof(ISceneView_SetDefaultLayerObjectRequiredFlags), minimal: true, message: $"self=0x{self.ToInt64():X} flags={nFlags}");
         GetView(self).DefaultRequiredFlags = nFlags;
     }
 
     [UnmanagedCallersOnly]
     public static void ISceneView_SetDefaultLayerObjectExcludedFlags(IntPtr self, long nFlags)
     {
+        LogCall(nameof(ISceneView_SetDefaultLayerObjectExcludedFlags), minimal: true, message: $"self=0x{self.ToInt64():X} flags={nFlags}");
         GetView(self).DefaultExcludedFlags = nFlags;
     }
 
@@ -193,6 +225,7 @@ internal static unsafe class EmulatedSceneView
     [UnmanagedCallersOnly]
     public static void ISceneView_AddWorldToRenderList(IntPtr self, IntPtr pWorld)
     {
+        LogCall(nameof(ISceneView_AddWorldToRenderList), minimal: true, message: $"self=0x{self.ToInt64():X} world=0x{pWorld.ToInt64():X}");
         var data = GetView(self);
         lock (data.Worlds)
         {
@@ -203,28 +236,66 @@ internal static unsafe class EmulatedSceneView
     [UnmanagedCallersOnly]
     public static IntPtr ISceneView_FindOrCreateRenderTarget(IntPtr self, IntPtr pName, IntPtr hTexture, int nFlags)
     {
-        // Minimal: reuse texture handle if provided, else return zero.
-        return hTexture;
+        var name = pName != IntPtr.Zero ? Marshal.PtrToStringUTF8(pName) ?? string.Empty : string.Empty;
+        LogCall(nameof(ISceneView_FindOrCreateRenderTarget), minimal: true, message: $"self=0x{self.ToInt64():X} name={name} tex=0x{hTexture.ToInt64():X} flags=0x{nFlags:X}");
+        return FindOrCreateRenderTargetManaged(self, name, hTexture, nFlags);
+    }
+
+    /// <summary>
+    /// Helper managé pour créer/récupérer un render target handle (SceneViewRenderTargetHandle) à partir d'une texture.
+    /// </summary>
+    public static IntPtr FindOrCreateRenderTargetManaged(IntPtr self, string name, IntPtr texture, int flags)
+    {
+        LogCall(nameof(FindOrCreateRenderTargetManaged), minimal: false, message: $"self=0x{self.ToInt64():X} name={name} tex=0x{texture.ToInt64():X} flags=0x{flags:X}");
+        var data = GetView(self);
+        var key = (name ?? string.Empty, texture, flags);
+        lock (data.RenderTargets)
+        {
+            if (data.RenderTargets.TryGetValue(key, out var handle))
+                return handle;
+
+            var rt = new RenderTargetData { Texture = texture, Flags = flags };
+            int h = HandleManager.Register(rt);
+            var hPtr = (IntPtr)h;
+            data.RenderTargets[key] = hPtr;
+            return hPtr;
+        }
     }
 
     [UnmanagedCallersOnly]
     public static void ISceneView_SetParent(IntPtr self, IntPtr pParent)
     {
+        LogCall(nameof(ISceneView_SetParent), minimal: true, message: $"self=0x{self.ToInt64():X} parent=0x{pParent.ToInt64():X}");
         GetView(self).Parent = pParent;
     }
 
     [UnmanagedCallersOnly]
-    public static IntPtr ISceneView_GetParent(IntPtr self) => GetView(self).Parent;
+    public static IntPtr ISceneView_GetParent(IntPtr self)
+    {
+        var parent = GetView(self).Parent;
+        LogCall(nameof(ISceneView_GetParent), minimal: true, message: $"self=0x{self.ToInt64():X} parent=0x{parent.ToInt64():X}");
+        return parent;
+    }
 
     [UnmanagedCallersOnly]
-    public static int ISceneView_GetPriority(IntPtr self) => GetView(self).Priority;
+    public static int ISceneView_GetPriority(IntPtr self)
+    {
+        var prio = GetView(self).Priority;
+        LogCall(nameof(ISceneView_GetPriority), minimal: true, message: $"self=0x{self.ToInt64():X} prio={prio}");
+        return prio;
+    }
 
     [UnmanagedCallersOnly]
-    public static void ISceneView_SetPriority(IntPtr self, int nPriority) => GetView(self).Priority = nPriority;
+    public static void ISceneView_SetPriority(IntPtr self, int nPriority)
+    {
+        LogCall(nameof(ISceneView_SetPriority), minimal: true, message: $"self=0x{self.ToInt64():X} prio={nPriority}");
+        GetView(self).Priority = nPriority;
+    }
 
     [UnmanagedCallersOnly]
     public static IntPtr ISceneView_GetFrustum(IntPtr self)
     {
+        LogCall(nameof(ISceneView_GetFrustum), minimal: true, message: $"self=0x{self.ToInt64():X}");
         var data = GetView(self);
         if (data.FrustumPtr == IntPtr.Zero)
     {
@@ -237,20 +308,48 @@ internal static unsafe class EmulatedSceneView
     }
 
     [UnmanagedCallersOnly]
-    public static int ISceneView_GetPostProcessEnabled(IntPtr self) => GetView(self).PostProcessEnabled ? 1 : 0;
+    public static int ISceneView_GetPostProcessEnabled(IntPtr self)
+    {
+        var enabled = GetView(self).PostProcessEnabled ? 1 : 0;
+        LogCall(nameof(ISceneView_GetPostProcessEnabled), minimal: true, message: $"self=0x{self.ToInt64():X} enabled={enabled}");
+        return enabled;
+    }
 
     [UnmanagedCallersOnly]
-    public static int ISceneView_GetToolsVisMode(IntPtr self) => GetView(self).ToolsVisMode;
+    public static int ISceneView_GetToolsVisMode(IntPtr self)
+    {
+        var mode = GetView(self).ToolsVisMode;
+        LogCall(nameof(ISceneView_GetToolsVisMode), minimal: true, message: $"self=0x{self.ToInt64():X} mode={mode}");
+        return mode;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static int Get__ISceneView_m_ViewUniqueId(IntPtr self) => GetView(self).ViewUniqueId;
+    public static int Get__ISceneView_m_ViewUniqueId(IntPtr self)
+    {
+        var id = GetView(self).ViewUniqueId;
+        LogCall(nameof(Get__ISceneView_m_ViewUniqueId), minimal: true, message: $"self=0x{self.ToInt64():X} id={id}");
+        return id;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static void Set__ISceneView_m_ViewUniqueId(IntPtr self, int value) => GetView(self).ViewUniqueId = value;
+    public static void Set__ISceneView_m_ViewUniqueId(IntPtr self, int value)
+    {
+        LogCall(nameof(Set__ISceneView_m_ViewUniqueId), minimal: true, message: $"self=0x{self.ToInt64():X} id={value}");
+        GetView(self).ViewUniqueId = value;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static int Get__ISceneView_m_ManagedCameraId(IntPtr self) => GetView(self).ManagedCameraId;
+    public static int Get__ISceneView_m_ManagedCameraId(IntPtr self)
+    {
+        var id = GetView(self).ManagedCameraId;
+        LogCall(nameof(Get__ISceneView_m_ManagedCameraId), minimal: true, message: $"self=0x{self.ToInt64():X} camId={id}");
+        return id;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static void Set__ISceneView_m_ManagedCameraId(IntPtr self, int value) => GetView(self).ManagedCameraId = value;
+    public static void Set__ISceneView_m_ManagedCameraId(IntPtr self, int value)
+    {
+        LogCall(nameof(Set__ISceneView_m_ManagedCameraId), minimal: true, message: $"self=0x{self.ToInt64():X} camId={value}");
+        GetView(self).ManagedCameraId = value;
+    }
     }

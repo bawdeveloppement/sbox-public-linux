@@ -11,12 +11,21 @@ namespace Sandbox.Engine.Emulation.CUtl;
 /// </summary>
 public static unsafe class CUtlVectorUInt32
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][CUtlVecU32] {name} {message}");
+    }
+
     /// <summary>
     /// Initialise le module CUtlVectorUInt32 en patchant les fonctions natives.
     /// Indices depuis Interop.Engine.cs lignes 16101-16105 (1236-1240)
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // Indices 1236-1240
         native[1236] = (void*)(delegate* unmanaged<IntPtr, void>)&CtlVctrnt32_DeleteThis;
         native[1237] = (void*)(delegate* unmanaged<int, int, IntPtr>)&CtlVctrnt32_Create;
@@ -24,12 +33,13 @@ public static unsafe class CUtlVectorUInt32
         native[1239] = (void*)(delegate* unmanaged<IntPtr, int, void>)&CtlVctrnt32_SetCount;
         native[1240] = (void*)(delegate* unmanaged<IntPtr, int, uint>)&CtlVctrnt32_Element;
         
-        Console.WriteLine("[NativeAOT] CUtlVectorUInt32 module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     [UnmanagedCallersOnly]
     public static void CtlVctrnt32_DeleteThis(IntPtr self)
     {
+        LogCall(nameof(CtlVctrnt32_DeleteThis), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return;
         
@@ -47,6 +57,7 @@ public static unsafe class CUtlVectorUInt32
     [UnmanagedCallersOnly]
     public static IntPtr CtlVctrnt32_Create(int growsize, int initialcapacity)
     {
+        LogCall(nameof(CtlVctrnt32_Create), minimal: true, message: $"growsize={growsize} initcap={initialcapacity}");
         var vectorData = new VectorUInt32Data
         {
             GrowSize = growsize,
@@ -70,6 +81,7 @@ public static unsafe class CUtlVectorUInt32
     [UnmanagedCallersOnly]
     public static int CtlVctrnt32_Count(IntPtr self)
     {
+        LogCall(nameof(CtlVctrnt32_Count), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return 0;
         
@@ -80,6 +92,7 @@ public static unsafe class CUtlVectorUInt32
     [UnmanagedCallersOnly]
     public static void CtlVctrnt32_SetCount(IntPtr self, int count)
     {
+        LogCall(nameof(CtlVctrnt32_SetCount), minimal: true, message: $"self=0x{self.ToInt64():X} count={count}");
         if (self == IntPtr.Zero || count < 0)
             return;
         
@@ -115,6 +128,7 @@ public static unsafe class CUtlVectorUInt32
     [UnmanagedCallersOnly]
     public static uint CtlVctrnt32_Element(IntPtr self, int i)
     {
+        LogCall(nameof(CtlVctrnt32_Element), minimal: true, message: $"self=0x{self.ToInt64():X} i={i}");
         if (self == IntPtr.Zero || i < 0)
             return 0;
         

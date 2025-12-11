@@ -23,6 +23,7 @@ using Sandbox.Engine.Emulation.Video;
 using Sandbox.Engine.Emulation.CUtl;
 using Sandbox.Engine.Emulation.Vfx;
 using Sandbox.Engine.Emulation.ShaderTools;
+using Sandbox.Engine.Emulation.PerformanceTrace;
 using Sandbox.Engine;
 using System.Collections.Generic;
 using System.Reflection;

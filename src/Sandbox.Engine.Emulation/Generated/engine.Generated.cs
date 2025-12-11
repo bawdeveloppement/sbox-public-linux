@@ -1,5 +1,3 @@
-// DO NOT EDIT -> Implement theses functions elsewhere, in their respective scope
-
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
@@ -1935,6 +1933,7 @@ namespace Sandbox.Engine.Emulation.Generated
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IPhysicsBody_IsTouching;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IPhysicsBody_IsTouching_1;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&IPhysicsBody_SetTrigger;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsBody_ResetProxy;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsJoint_GetWorld;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsJoint_GetBody1;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsJoint_GetBody2;
@@ -2063,6 +2062,7 @@ namespace Sandbox.Engine.Emulation.Generated
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_BuildBounds;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_LocalBounds;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int >)&IPhysicsShape_IsTouching;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&IPhysicsShape_ResetProxy;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsWorld_AddBody;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_RemoveBody;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int >)&IPhysicsWorld_GetWorldReferenceBody;
@@ -2083,6 +2083,7 @@ namespace Sandbox.Engine.Emulation.Generated
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddSphericalJoint;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddMotorJoint;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, void*, void*, int >)&IPhysicsWorld_AddWheelJoint;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void*, int >)&IPhysicsWorld_AddFilterJoint;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_SetCollisionRulesFromJson;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, float, int, void* >)&IPhysicsWorld_StepSimulation;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, void* >)&IPhysicsWorld_ProcessIntersections;
@@ -12305,6 +12306,11 @@ namespace Sandbox.Engine.Emulation.Generated
         {
             throw new NotImplementedException("IPhysicsBody_SetTrigger is not yet implemented in the linux emulation layer");
         }
+        [UnmanagedCallersOnly(EntryPoint = "IPhysicsBody_ResetProxy")]
+        public static void* IPhysicsBody_ResetProxy( void* self )
+        {
+            throw new NotImplementedException("IPhysicsBody_ResetProxy is not yet implemented in the linux emulation layer");
+        }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsJoint_GetWorld")]
         public static int IPhysicsJoint_GetWorld( void* self )
         {
@@ -12945,6 +12951,11 @@ namespace Sandbox.Engine.Emulation.Generated
         {
             throw new NotImplementedException("IPhysicsShape_IsTouching is not yet implemented in the linux emulation layer");
         }
+        [UnmanagedCallersOnly(EntryPoint = "IPhysicsShape_ResetProxy")]
+        public static void* IPhysicsShape_ResetProxy( void* self )
+        {
+            throw new NotImplementedException("IPhysicsShape_ResetProxy is not yet implemented in the linux emulation layer");
+        }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddBody")]
         public static int IPhysicsWorld_AddBody( void* self )
         {
@@ -13044,6 +13055,11 @@ namespace Sandbox.Engine.Emulation.Generated
         public static int IPhysicsWorld_AddWheelJoint( void* self, void* pBody1, void* pBody2, void* localFrame1, void* localFrame2 )
         {
             throw new NotImplementedException("IPhysicsWorld_AddWheelJoint is not yet implemented in the linux emulation layer");
+        }
+        [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_AddFilterJoint")]
+        public static int IPhysicsWorld_AddFilterJoint( void* self, void* pBody1, void* pBody2 )
+        {
+            throw new NotImplementedException("IPhysicsWorld_AddFilterJoint is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "IPhysicsWorld_SetCollisionRulesFromJson")]
         public static void* IPhysicsWorld_SetCollisionRulesFromJson( void* self, void* rules )
@@ -16476,9 +16492,9 @@ namespace Sandbox.Engine.Emulation.Generated
         public static delegate* unmanaged<void*, ulong, void*> _ptr_SandboxNetwork_SteamNetwork_OnSessionFailed;
         public static delegate* unmanaged<void*, void*> _ptr_SandboxPhysics_PhysicsEngine_OnPhysicsJointBreak;
         public static delegate* unmanaged<void*, void*, void*, void*, void*> _ptr_SandboxPhysics_PhysicsEngine_OnActive;
-        public static delegate* unmanaged<float, void*> _ptr_Sandbox_RealTime_Update;
-        public static delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void*> _ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView;
-        public static delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void*> _ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd;
+        public static delegate* unmanaged<float, void> _ptr_Sandbox_RealTime_Update;
+        internal static delegate* unmanaged<IntPtr, NativeEngine.RenderViewport, IntPtr, IntPtr, long, IntPtr, NativeEngine.RenderViewport, void> _ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView;
+        internal static delegate* unmanaged<IntPtr, NativeEngine.RenderViewport, IntPtr, IntPtr, long, IntPtr, NativeEngine.RenderViewport, void> _ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd;
         public static delegate* unmanaged<void*> _ptr_Sandbox_RenderTarget_Flush;
         public static delegate* unmanaged<void*, void*, void*> _ptr_Sandbox_Resource_OnResourceReloaded;
         public static delegate* unmanaged<void*, void*, void*> _ptr_Sandbox_ScnCstmbjctRndr_RenderObject;
@@ -16701,15 +16717,15 @@ namespace Sandbox.Engine.Emulation.Generated
         }
         public static void StoreImport_Sandbox_RealTime_Update(void* ptr)
         {
-            _ptr_Sandbox_RealTime_Update = (delegate* unmanaged<float, void*>)ptr;
+            _ptr_Sandbox_RealTime_Update = (delegate* unmanaged<float, void>)ptr;
         }
         public static void StoreImport_SndbxRndrng_RenderPipeline_InternalAddLayersToView(void* ptr)
         {
-            _ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView = (delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void*>)ptr;
+            _ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView = (delegate* unmanaged<IntPtr, NativeEngine.RenderViewport, IntPtr, IntPtr, long, IntPtr, NativeEngine.RenderViewport, void>)ptr;
         }
         public static void StoreImport_SndbxRndrng_RenderPipeline_InternalPipelineEnd(void* ptr)
         {
-            _ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd = (delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void*>)ptr;
+            _ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd = (delegate* unmanaged<IntPtr, NativeEngine.RenderViewport, IntPtr, IntPtr, long, IntPtr, NativeEngine.RenderViewport, void>)ptr;
         }
         public static void StoreImport_Sandbox_RenderTarget_Flush(void* ptr)
         {
@@ -17027,6 +17043,7 @@ public static void* Sandbox_EngineLoop_OnSceneViewSubmitted( void* view )
 }
 
 // Sandbox.Graphics
+[UnmanagedCallersOnly(EntryPoint = "Sandbox_Graphics_OnLayer")]
 public static void* Sandbox_Graphics_OnLayer( void* renderHookStage, void* setup )
 {
     return (void*)Imports._ptr_Sandbox_Graphics_OnLayer( renderHookStage, setup );
@@ -17141,22 +17158,22 @@ public static void* SandboxPhysics_PhysicsEngine_OnActive( void* body, void* tra
 
 // Sandbox.RealTime
 [UnmanagedCallersOnly(EntryPoint = "Sandbox_RealTime_Update")]
-public static void* Sandbox_RealTime_Update( float time )
+public static void Sandbox_RealTime_Update( float time )
 {
-    return (void*)Imports._ptr_Sandbox_RealTime_Update( time );
+    Imports._ptr_Sandbox_RealTime_Update( time );
 }
 
 // Sandbox.Rendering.RenderPipeline
 [UnmanagedCallersOnly(EntryPoint = "SndbxRndrng_RenderPipeline_InternalAddLayersToView")]
-public static void* SndbxRndrng_RenderPipeline_InternalAddLayersToView( void* view, void* viewport, void* hColor, void* hDepth, long nMSAA, void* pipelineAttributes, void* screenDimensions )
+internal static void SndbxRndrng_RenderPipeline_InternalAddLayersToView( IntPtr view, NativeEngine.RenderViewport viewport, IntPtr hColor, IntPtr hDepth, long nMSAA, IntPtr pipelineAttributes, NativeEngine.RenderViewport screenDimensions )
 {
-    return (void*)Imports._ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView( view, viewport, hColor, hDepth, nMSAA, pipelineAttributes, screenDimensions );
+    Imports._ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView( view, viewport, hColor, hDepth, nMSAA, pipelineAttributes, screenDimensions );
 }
 
 [UnmanagedCallersOnly(EntryPoint = "SndbxRndrng_RenderPipeline_InternalPipelineEnd")]
-public static void* SndbxRndrng_RenderPipeline_InternalPipelineEnd( void* view, void* viewport, void* hColor, void* hDepth, long nMSAA, void* pipelineAttributes, void* screenDimensions )
+internal static void SndbxRndrng_RenderPipeline_InternalPipelineEnd( IntPtr view, NativeEngine.RenderViewport viewport, IntPtr hColor, IntPtr hDepth, long nMSAA, IntPtr pipelineAttributes, NativeEngine.RenderViewport screenDimensions )
 {
-    return (void*)Imports._ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd( view, viewport, hColor, hDepth, nMSAA, pipelineAttributes, screenDimensions );
+    Imports._ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd( view, viewport, hColor, hDepth, nMSAA, pipelineAttributes, screenDimensions );
 }
 
 // Sandbox.RenderTarget

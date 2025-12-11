@@ -1,4 +1,4 @@
-﻿using Sandbox.Diagnostics;
+using Sandbox.Diagnostics;
 using Sandbox.Engine;
 using Sandbox.Internal;
 using Sandbox.Network;
@@ -8,6 +8,8 @@ using System.Globalization;
 using System.Runtime;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
+using System.IO;
+using System.Reflection;
 
 
 namespace Sandbox;
@@ -15,7 +17,9 @@ namespace Sandbox;
 public class AppSystem
 {
 	protected Logger log = new Logger( "AppSystem" );
-	internal CMaterialSystem2AppSystemDict? _appSystem { get; set; }
+	internal CMaterialSystem2AppSystemDict _appSystem { get; set; }
+	private static bool _skiaResolverSet;
+	private static IntPtr _skiaHandle = IntPtr.Zero;
 
 	[DllImport( "user32.dll", CharSet = CharSet.Unicode )]
 	private static extern int MessageBox( IntPtr hWnd, string text, string caption, uint type );
@@ -43,8 +47,118 @@ public class AppSystem
 
 	public virtual void Init()
 	{
+		if ( !_skiaResolverSet )
+		{
+			NativeLibrary.SetDllImportResolver( typeof( SkiaSharp.SKTypeface ).Assembly, SkiaImportResolver );
+			SkiaPreload();
+			_skiaResolverSet = true;
+		}
+
 		GCSettings.LatencyMode = GCLatencyMode.SustainedLowLatency;
 		NetCore.InitializeInterop( Environment.CurrentDirectory );
+	}
+
+	private static IntPtr SkiaImportResolver( string libraryName, Assembly assembly, DllImportSearchPath? searchPath )
+	{
+		if ( !OperatingSystem.IsLinux() )
+			return IntPtr.Zero;
+
+		if ( !libraryName.Contains( "skia", StringComparison.OrdinalIgnoreCase ) )
+			return IntPtr.Zero;
+
+		var bases = new[]
+		{
+			AppContext.BaseDirectory,
+			Environment.CurrentDirectory
+		};
+
+		var names = new[]
+		{
+			"libSkiaSharp.so",
+			"libSkiaSharp.so.2",
+			"libSkiaSharp.so.1",
+			"libskia.so",
+			"libskia",
+		};
+
+		foreach ( var root in bases )
+		{
+			var folder = Path.Combine( root, "bin", "linuxsteamrt64" );
+			foreach ( var name in names )
+			{
+				var candidate = Path.Combine( folder, name );
+				if ( NativeLibrary.TryLoad( candidate, out var handle ) )
+				{
+					return handle;
+				}
+			}
+
+			// Try any versioned libSkiaSharp* present in the folder
+			if ( Directory.Exists( folder ) )
+			{
+				foreach ( var candidate in Directory.GetFiles( folder, "libSkiaSharp.so*" ) )
+				{
+					if ( NativeLibrary.TryLoad( candidate, out var handle ) )
+					{
+						return handle;
+					}
+				}
+			}
+		}
+
+		return IntPtr.Zero;
+	}
+
+	private static void SkiaPreload()
+	{
+		if ( !OperatingSystem.IsLinux() || _skiaHandle != IntPtr.Zero )
+			return;
+
+		var bases = new[]
+		{
+			AppContext.BaseDirectory,
+			Environment.CurrentDirectory
+		};
+
+		var names = new[]
+		{
+			"libSkiaSharp.so",
+			"libSkiaSharp.so.2",
+			"libSkiaSharp.so.1",
+			"libskia.so",
+			"libskia"
+		};
+
+		foreach ( var root in bases )
+		{
+			var folder = Path.Combine( root, "bin", "linuxsteamrt64" );
+			foreach ( var name in names )
+			{
+				var candidate = Path.Combine( folder, name );
+				if ( NativeLibrary.TryLoad( candidate, out var handle ) )
+				{
+					_skiaHandle = handle;
+					Console.WriteLine( $"[NativeAOT] Skia preloaded from {candidate}" );
+					return;
+				}
+			}
+
+			// Try any versioned libSkiaSharp* present in the folder
+			if ( Directory.Exists( folder ) )
+			{
+				foreach ( var candidate in Directory.GetFiles( folder, "libSkiaSharp.so*" ) )
+				{
+					if ( NativeLibrary.TryLoad( candidate, out var handle ) )
+					{
+						_skiaHandle = handle;
+						Console.WriteLine( $"[NativeAOT] Skia preloaded from {candidate}" );
+						return;
+					}
+				}
+			}
+		}
+
+		Console.WriteLine( "[NativeAOT] Warning: failed to preload SkiaSharp from bin/linuxsteamrt64" );
 	}
 
 	void SetupEnvironment()
@@ -126,12 +240,12 @@ public class AppSystem
 
 	protected virtual bool RunFrame()
 	{
-		if ( _appSystem is null )
+		if ( !_appSystem.IsValid )
 		{
-			return false; // If appSystem is null, we want to quit.
+			return false; // If appSystem is invalid, we want to quit.
 		}
 
-		EngineLoop.RunFrame( _appSystem.Value, out bool wantsToQuit ); // Use .Value to access the non-nullable struct
+		EngineLoop.RunFrame( _appSystem, out bool wantsToQuit );
 
 		return !wantsToQuit;
 	}
@@ -199,10 +313,7 @@ public class AppSystem
 		}
 
 		// Shut the engine down (close window etc)
-		if ( _appSystem is not null ) // Only shutdown if it was initialized
-		{
-			NativeEngine.EngineGlobal.SourceEngineShutdown( _appSystem.Value, false ); // Pass the non-nullable value
-		}
+		NativeEngine.EngineGlobal.SourceEngineShutdown( _appSystem, false );
 
 		if ( _appSystem.IsValid )
 		{
@@ -229,6 +340,12 @@ public class AppSystem
 
 		EngineFileSystem.Shutdown();
 		Application.Shutdown();
+	}
+
+	// Backward-compatible overload: some callers expect the single-parameter signature.
+	protected void InitGame( AppSystemCreateInfo createInfo )
+	{
+		InitGame( createInfo, null );
 	}
 
 	protected void InitGame( AppSystemCreateInfo createInfo, string commandLine = null )
@@ -282,6 +399,7 @@ public class AppSystem
 
 	protected void SetWindowTitle( string title )
 	{
+		if ( !_appSystem.IsValid ) return;
 		_appSystem.SetAppWindowTitle( title );
 	}
 	IntPtr steamApiDll = IntPtr.Zero;
@@ -294,13 +412,24 @@ public class AppSystem
 	/// </summary>
 	protected void LoadSteamDll()
 	{
-		if ( !OperatingSystem.IsWindows() )
+		string dllName;
+		if ( OperatingSystem.IsLinux() )
+		{
+			dllName = Path.Combine( Environment.CurrentDirectory, "bin", "linuxsteamrt64", "libsteam_api.so" );
+		}
+		else if ( OperatingSystem.IsWindows() )
+		{
+			dllName = $"{Environment.CurrentDirectory}\\bin\\win64\\steam_api64.dll";
+		}
+		else
+		{
+			// Unsupported platform for Steam API preload; let default probing handle it (will likely fail fast).
 			return;
+		}
 
-		var dllName = $"{Environment.CurrentDirectory}\\bin\\win64\\steam_api64.dll";
 		if ( !NativeLibrary.TryLoad( dllName, out steamApiDll ) )
 		{
-			throw new System.Exception( "Couldn't load bin/win64/steam_api64.dll" );
+			throw new System.Exception( $"Couldn't load Steam API library: {dllName}" );
 		}
 	}
 }

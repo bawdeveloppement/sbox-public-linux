@@ -140,8 +140,10 @@ public static unsafe class EngineGlue
         public static delegate* unmanaged<void*, void*> _ptr_SandboxPhysics_PhysicsEngine_OnPhysicsJointBreak;
         public static delegate* unmanaged<void*, void*, void*, void*, void*> _ptr_SandboxPhysics_PhysicsEngine_OnActive;
         public static delegate* unmanaged<float, void*> _ptr_Sandbox_RealTime_Update;
-        public static delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void*> _ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView;
-        public static delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void*> _ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd;
+        // Signature depuis Interop.Engine.cs (indices 14675-14676) :
+        // (IntPtr view, RenderViewport viewport, IntPtr color, IntPtr depth, long msaa/onLayerPtr, IntPtr pipelineAttributes, RenderViewport screenDimensions)
+        internal static delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void> _ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView;
+        internal static delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void> _ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd;
         public static delegate* unmanaged<void*> _ptr_Sandbox_RenderTarget_Flush;
         public static delegate* unmanaged<void*, void*, void*> _ptr_Sandbox_Resource_OnResourceReloaded;
         public static delegate* unmanaged<void*, void*, void*> _ptr_Sandbox_ScnCstmbjctRndr_RenderObject;
@@ -368,11 +370,11 @@ public static unsafe class EngineGlue
         }
         public static void StoreImport_SndbxRndrng_RenderPipeline_InternalAddLayersToView(void* ptr)
         {
-            _ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView = (delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void*>)ptr;
+            _ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView = (delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void>)ptr;
         }
         public static void StoreImport_SndbxRndrng_RenderPipeline_InternalPipelineEnd(void* ptr)
         {
-            _ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd = (delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void*>)ptr;
+            _ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd = (delegate* unmanaged<void*, void*, void*, void*, long, void*, void*, void>)ptr;
         }
         public static void StoreImport_Sandbox_RenderTarget_Flush(void* ptr)
         {
@@ -762,14 +764,14 @@ public static unsafe class EngineGlue
         }
 
         // Sandbox.Rendering.RenderPipeline
-        public static void* SndbxRndrng_RenderPipeline_InternalAddLayersToView( void* view, void* viewport, void* hColor, void* hDepth, long nMSAA, void* pipelineAttributes, void* screenDimensions )
+        internal static void SndbxRndrng_RenderPipeline_InternalAddLayersToView( void* view, void* viewport, void* hColor, void* hDepth, long nMSAA, void* pipelineAttributes, void* screenDimensions )
         {
-            return (void*)Imports._ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView( view, viewport, hColor, hDepth, nMSAA, pipelineAttributes, screenDimensions );
+            Imports._ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView( view, viewport, hColor, hDepth, nMSAA, pipelineAttributes, screenDimensions );
         }
 
-        public static void* SndbxRndrng_RenderPipeline_InternalPipelineEnd( void* view, void* viewport, void* hColor, void* hDepth, long nMSAA, void* pipelineAttributes, void* screenDimensions )
+        internal static void SndbxRndrng_RenderPipeline_InternalPipelineEnd( void* view, void* viewport, void* hColor, void* hDepth, long nMSAA, void* pipelineAttributes, void* screenDimensions )
         {
-            return (void*)Imports._ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd( view, viewport, hColor, hDepth, nMSAA, pipelineAttributes, screenDimensions );
+            Imports._ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd( view, viewport, hColor, hDepth, nMSAA, pipelineAttributes, screenDimensions );
         }
 
         // Sandbox.RenderTarget

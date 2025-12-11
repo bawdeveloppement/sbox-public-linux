@@ -194,7 +194,7 @@ internal static class Bootstrap
 				Model.InitStatic();
 				Texture.InitStatic();
 				CubemapRendering.InitStatic();
-				Graphics.InitStatic();
+				Sandbox.Graphics.InitStatic();
 			}
 
 			if ( !Application.IsHeadless && !Application.IsStandalone )

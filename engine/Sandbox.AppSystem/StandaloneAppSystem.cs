@@ -1,4 +1,4 @@
-﻿using Sandbox.Engine;
+using Sandbox.Engine;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -54,18 +54,12 @@ public class StandaloneAppSystem : AppSystem
 
 	protected override bool RunFrame()
 	{
-
-		if ( _appSystem is null )
-
+		if ( !_appSystem.IsValid )
 		{
-
-			return false; // If appSystem is null, we want to quit.
-
+			return false; // If appSystem is invalid, we want to quit.
 		}
 
-
-
-		EngineLoop.RunFrame( _appSystem.Value, out bool wantsToQuit ); // Use .Value to access the non-nullable struct
+		EngineLoop.RunFrame( _appSystem, out bool wantsToQuit );
 
 		// Still loading
 

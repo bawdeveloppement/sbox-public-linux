@@ -4354,7 +4354,8 @@ namespace Sandbox.Engine.Emulation.Generated
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, uint, void* >)&WidgetUtil_CreateGraphicsProxy;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void* >)&WidgetUtil_PostKeyEvent;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void*, int, int, int, int, void* >)&WidgetUtil_PaintSetFont;
- 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&WidgetUtil_CreateSwapChain;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, void* >)&WidgetUtil_CreateSwapChain;
+ 		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, long, int >)&WidgetUtil_UpdateSwapChainMSAA;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, void* >)&WidgetUtil_SetWindowNoActivate;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, void*, void* >)&WidgetUtil_MeasureText;
  		nativeFunctions[i++] = (void*)(delegate* unmanaged< void*, int, int, int, void* >)&WidgetUtil_ElidedText;
@@ -25369,9 +25370,14 @@ namespace Sandbox.Engine.Emulation.Generated
             throw new NotImplementedException("WidgetUtil_PaintSetFont is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "WidgetUtil_CreateSwapChain")]
-        public static void* WidgetUtil_CreateSwapChain( void* target )
+        public static void* WidgetUtil_CreateSwapChain( void* target, long nMSAAAmount )
         {
             throw new NotImplementedException("WidgetUtil_CreateSwapChain is not yet implemented in the linux emulation layer");
+        }
+        [UnmanagedCallersOnly(EntryPoint = "WidgetUtil_UpdateSwapChainMSAA")]
+        public static int WidgetUtil_UpdateSwapChainMSAA( void* swapChain, long nMSAAAmount )
+        {
+            throw new NotImplementedException("WidgetUtil_UpdateSwapChainMSAA is not yet implemented in the linux emulation layer");
         }
         [UnmanagedCallersOnly(EntryPoint = "WidgetUtil_SetWindowNoActivate")]
         public static void* WidgetUtil_SetWindowNoActivate( void* widget )

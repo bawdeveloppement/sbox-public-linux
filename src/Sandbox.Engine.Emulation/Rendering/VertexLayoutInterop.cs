@@ -10,6 +10,14 @@ namespace Sandbox.Engine.Emulation.Rendering;
 /// </summary>
 internal static unsafe class VertexLayoutInterop
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][VL] {name} {message}");
+    }
+
     internal class LayoutData
     {
         public int Size;
@@ -20,6 +28,7 @@ internal static unsafe class VertexLayoutInterop
 
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         native[2654] = (void*)(delegate* unmanaged<IntPtr, int, IntPtr>)&VertexLayout_Create;
         native[2655] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&VertexLayout_Destroy;
         native[2656] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&VertexLayout_Free;
@@ -38,6 +47,8 @@ internal static unsafe class VertexLayoutInterop
     [UnmanagedCallersOnly]
     private static IntPtr VertexLayout_Create(IntPtr name, int size)
     {
+        string semanticName = Marshal.PtrToStringUTF8(name) ?? "";
+        LogCall(nameof(VertexLayout_Create), minimal: true, message: $"name={semanticName} size={size}");
         var data = new LayoutData { Size = size };
         int handle = HandleManager.Register(data);
         lock (_layouts)
@@ -49,6 +60,7 @@ internal static unsafe class VertexLayoutInterop
 
     private static void DestroyLayout(IntPtr self)
     {
+        LogCall(nameof(DestroyLayout), minimal: true, message: $"self=0x{self.ToInt64():X}");
         lock (_layouts)
         {
             _layouts.Remove(self);
@@ -59,6 +71,7 @@ internal static unsafe class VertexLayoutInterop
     [UnmanagedCallersOnly]
     private static IntPtr VertexLayout_Destroy(IntPtr self)
     {
+        LogCall(nameof(VertexLayout_Destroy), minimal: true, message: $"self=0x{self.ToInt64():X}");
         DestroyLayout(self);
         return IntPtr.Zero;
     }
@@ -66,6 +79,7 @@ internal static unsafe class VertexLayoutInterop
     [UnmanagedCallersOnly]
     private static IntPtr VertexLayout_Free(IntPtr self)
     {
+        LogCall(nameof(VertexLayout_Free), minimal: true, message: $"self=0x{self.ToInt64():X}");
         DestroyLayout(self);
         return IntPtr.Zero;
     }
@@ -78,6 +92,7 @@ internal static unsafe class VertexLayoutInterop
             if (_layouts.TryGetValue(self, out var data))
             {
                 string semantic = Marshal.PtrToStringUTF8(semanticName) ?? "";
+                LogCall(nameof(VertexLayout_Add), minimal: true, message: $"self=0x{self.ToInt64():X} semantic={semantic} idx={semanticIndex} fmt=0x{format:X} offset={offset}");
                 data.Attributes.Add((semantic, semanticIndex, format, offset));
             }
         }
@@ -87,6 +102,7 @@ internal static unsafe class VertexLayoutInterop
     [UnmanagedCallersOnly]
     private static IntPtr VertexLayout_Build(IntPtr self)
     {
+        LogCall(nameof(VertexLayout_Build), minimal: true, message: $"self=0x{self.ToInt64():X}");
         // Rien de particulier à faire côté émulation pour le build.
         return self;
     }

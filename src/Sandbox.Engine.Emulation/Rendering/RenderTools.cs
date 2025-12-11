@@ -18,6 +18,14 @@ namespace Sandbox.Engine.Emulation.Rendering;
 /// </summary>
 public static unsafe class RenderTools
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][RT] {name} {message}");
+    }
+
     // One-time debug log to know if RenderTools.Draw is reached.
     private static bool _loggedDraw = false;
     private static bool _loggedSetRenderState = false;
@@ -74,27 +82,28 @@ public static unsafe class RenderTools
     public static void Init(void** native)
     {
         // Ordre conforme à engine.Generated.cs
-        native[2394] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, IntPtr, int>)&RenderTools_SetRenderState;
-        native[2395] = (void*)(delegate* unmanaged<IntPtr, long, IntPtr, IntPtr, int, IntPtr, int, IntPtr, void>)&RenderTools_Draw;
-        native[2396] = (void*)(delegate* unmanaged<IntPtr, IntPtr, NativeRect*, void>)&RenderTools_ResolveFrameBuffer;
-        native[2397] = (void*)(delegate* unmanaged<IntPtr, IntPtr, NativeRect*, void>)&RenderTools_ResolveDepthBuffer;
-        native[2398] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, System.Numerics.Vector4*, IntPtr, IntPtr, void>)&RenderTools_DrawSceneObject;
-        native[2399] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, int, IntPtr, void>)&RenderTools_DrawModel;
-        native[2400] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, int, IntPtr, void>)&RenderTools_DrawModel_1;
-        native[2401] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, int, int, int, void>)&RenderTools_Compute;
-        native[2402] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, uint, void>)&RenderTools_ComputeIndirect;
-        native[2403] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, uint, uint, uint, void>)&RenderTools_TraceRays;
-        native[2404] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, uint, void>)&RenderTools_TraceRaysIndirect;
-        native[2405] = (void*)(delegate* unmanaged<IntPtr, StringToken, IntPtr, IntPtr, int, void>)&RenderTools_SetDynamicConstantBufferData;
-        native[2406] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, NativeRect*, int, int, uint, uint, uint, uint, void>)&RenderTools_CopyTexture;
-        native[2407] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, uint, uint, void>)&RenderTools_SetGPUBufferData;
-        native[2408] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, uint, void>)&RenderTools_CopyGPUBufferHiddenStructureCount;
-        native[2409] = (void*)(delegate* unmanaged<IntPtr, IntPtr, uint, void>)&RenderTools_SetGPUBufferHiddenStructureCount;
+        native[2397] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, IntPtr, int>)&RenderTools_SetRenderState;
+        native[2398] = (void*)(delegate* unmanaged<IntPtr, long, IntPtr, IntPtr, int, IntPtr, int, IntPtr, void>)&RenderTools_Draw;
+        native[2399] = (void*)(delegate* unmanaged<IntPtr, IntPtr, NativeRect*, void>)&RenderTools_ResolveFrameBuffer;
+        native[2400] = (void*)(delegate* unmanaged<IntPtr, IntPtr, NativeRect*, void>)&RenderTools_ResolveDepthBuffer;
+        native[2401] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, System.Numerics.Vector4*, IntPtr, IntPtr, void>)&RenderTools_DrawSceneObject;
+        native[2402] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, int, IntPtr, void>)&RenderTools_DrawModel;
+        native[2403] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, int, IntPtr, void>)&RenderTools_DrawModel_1;
+        native[2404] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, int, int, int, void>)&RenderTools_Compute;
+        native[2405] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, uint, void>)&RenderTools_ComputeIndirect;
+        native[2406] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, uint, uint, uint, void>)&RenderTools_TraceRays;
+        native[2407] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, uint, void>)&RenderTools_TraceRaysIndirect;
+        native[2408] = (void*)(delegate* unmanaged<IntPtr, StringToken, IntPtr, IntPtr, int, void>)&RenderTools_SetDynamicConstantBufferData;
+        native[2409] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, NativeRect*, int, int, uint, uint, uint, uint, void>)&RenderTools_CopyTexture;
+        native[2410] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, uint, uint, void>)&RenderTools_SetGPUBufferData;
+        native[2411] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, uint, void>)&RenderTools_CopyGPUBufferHiddenStructureCount;
+        native[2412] = (void*)(delegate* unmanaged<IntPtr, IntPtr, uint, void>)&RenderTools_SetGPUBufferHiddenStructureCount;
     }
 
     [UnmanagedCallersOnly]
     public static int RenderTools_SetRenderState(IntPtr context, IntPtr attributes, IntPtr materialMode, IntPtr layout, IntPtr stats)
     {
+        LogCall(nameof(RenderTools_SetRenderState), minimal: true, message: $"ctx=0x{context.ToInt64():X} attrs=0x{attributes.ToInt64():X} mode=0x{materialMode.ToInt64():X} layout=0x{layout.ToInt64():X} stats=0x{stats.ToInt64():X}");
         if (context == IntPtr.Zero)
             return 0;
 
@@ -124,14 +133,16 @@ public static unsafe class RenderTools
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[NativeAOT] RenderTools_SetRenderState error: {ex}");
+            LogCall(nameof(RenderTools_SetRenderState), minimal: true, message: $"error={ex}");
             return 0;
         }
     }
 
     [UnmanagedCallersOnly]
+    // (global::NativeEngine.IRenderContext context, NativeEngine.RenderPrimitiveType type, global::NativeEngine.VertexLayout layout, IntPtr vertices, int numVertices, IntPtr indices, int numIndices, global::SceneSystemPerFrameStats_t stats )
     public static void RenderTools_Draw(IntPtr context, long type, IntPtr layout, IntPtr vertices, int numVertices, IntPtr indices, int numIndices, IntPtr stats)
     {
+        LogCall(nameof(RenderTools_Draw), minimal: true, message: $"ctx=0x{context.ToInt64():X} type={type} layout=0x{layout.ToInt64():X} vtxPtr=0x{vertices.ToInt64():X} vtxCount={numVertices} idxPtr=0x{indices.ToInt64():X} idxCount={numIndices} stats=0x{stats.ToInt64():X}");
         if (context == IntPtr.Zero)
             return;
 
@@ -192,13 +203,14 @@ public static unsafe class RenderTools
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[NativeAOT] RenderTools_Draw error: {ex}");
+            LogCall(nameof(RenderTools_Draw), minimal: true, message: $"error={ex}");
         }
     }
 
     [UnmanagedCallersOnly]
     public static void RenderTools_ResolveFrameBuffer(IntPtr renderContext, IntPtr texture, NativeRect* viewport)
     {
+        LogCall(nameof(RenderTools_ResolveFrameBuffer), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} tex=0x{texture.ToInt64():X} viewportPtr=0x{(IntPtr)viewport:X}");
         if (renderContext == IntPtr.Zero || texture == IntPtr.Zero) return;
         var gl = PlatformFunctions.GetGL();
         if (gl == null) return;
@@ -233,6 +245,7 @@ public static unsafe class RenderTools
     [UnmanagedCallersOnly]
     public static void RenderTools_ResolveDepthBuffer(IntPtr renderContext, IntPtr texture, NativeRect* viewport)
     {
+        LogCall(nameof(RenderTools_ResolveDepthBuffer), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} tex=0x{texture.ToInt64():X} viewportPtr=0x{(IntPtr)viewport:X}");
         if (renderContext == IntPtr.Zero || texture == IntPtr.Zero) return;
         var gl = PlatformFunctions.GetGL();
         if (gl == null) return;
@@ -265,6 +278,7 @@ public static unsafe class RenderTools
     [UnmanagedCallersOnly]
     public static void RenderTools_DrawSceneObject(IntPtr renderContext, IntPtr sceneLayer, IntPtr sceneObject, Transform* transform, System.Numerics.Vector4* color, IntPtr material, IntPtr attributes)
     {
+        LogCall(nameof(RenderTools_DrawSceneObject), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} layer=0x{sceneLayer.ToInt64():X} obj=0x{sceneObject.ToInt64():X} transformPtr=0x{(IntPtr)transform:X} colorPtr=0x{(IntPtr)color:X} mat=0x{material.ToInt64():X} attrs=0x{attributes.ToInt64():X}");
         if (!_loggedDrawSceneObject)
         {
             Console.WriteLine($"[NativeAOT] RenderTools_DrawSceneObject first call: ctx=0x{renderContext.ToInt64():X} obj=0x{sceneObject.ToInt64():X} mat=0x{material.ToInt64():X} attrs=0x{attributes.ToInt64():X}");
@@ -317,6 +331,7 @@ public static unsafe class RenderTools
     [UnmanagedCallersOnly]
     public static void RenderTools_DrawModel(IntPtr renderContext, IntPtr sceneLayer, IntPtr hModel, IntPtr transforms, int numTransforms, IntPtr attributes)
     {
+        LogCall(nameof(RenderTools_DrawModel), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} layer=0x{sceneLayer.ToInt64():X} model=0x{hModel.ToInt64():X} transformsPtr=0x{transforms.ToInt64():X} num={numTransforms} attrs=0x{attributes.ToInt64():X}");
         RenderTools_DrawModelInternal(renderContext, sceneLayer, hModel, transforms, numTransforms, attributes);
         
     }
@@ -324,36 +339,37 @@ public static unsafe class RenderTools
     [UnmanagedCallersOnly]
     public static void RenderTools_DrawModel_1(IntPtr renderContext, IntPtr sceneLayer, IntPtr hModel, IntPtr hDrawArgBuffer, int nBufferOffset, IntPtr attributes)
     {
-        Console.WriteLine("[NativeAOT] RenderTools_DrawModel_1: indirect draw not yet wired");
+        LogCall(nameof(RenderTools_DrawModel_1), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} layer=0x{sceneLayer.ToInt64():X} model=0x{hModel.ToInt64():X} argBuf=0x{hDrawArgBuffer.ToInt64():X} offset={nBufferOffset} attrs=0x{attributes.ToInt64():X}");
     }
 
     [UnmanagedCallersOnly]
     public static void RenderTools_Compute(IntPtr renderContext, IntPtr attributes, IntPtr pMode, int tx, int ty, int tz)
     {
-        Console.WriteLine("[NativeAOT] RenderTools_Compute: compute shaders not supported in GL path");
+        LogCall(nameof(RenderTools_Compute), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} attrs=0x{attributes.ToInt64():X} mode=0x{pMode.ToInt64():X} tx={tx} ty={ty} tz={tz}");
     }
 
     [UnmanagedCallersOnly]
     public static void RenderTools_ComputeIndirect(IntPtr renderContext, IntPtr attributes, IntPtr pMode, IntPtr hIndirectBuffer, uint nIndirectBufferOffset)
     {
-        Console.WriteLine("[NativeAOT] RenderTools_ComputeIndirect: compute indirect not supported");
+        LogCall(nameof(RenderTools_ComputeIndirect), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} attrs=0x{attributes.ToInt64():X} mode=0x{pMode.ToInt64():X} indirectBuf=0x{hIndirectBuffer.ToInt64():X} offset={nIndirectBufferOffset}");
     }
 
     [UnmanagedCallersOnly]
     public static void RenderTools_TraceRays(IntPtr renderContext, IntPtr attributes, IntPtr pMode, uint tx, uint ty, uint tz)
     {
-        Console.WriteLine("[NativeAOT] RenderTools_TraceRays: ray tracing not supported");
+        LogCall(nameof(RenderTools_TraceRays), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} attrs=0x{attributes.ToInt64():X} mode=0x{pMode.ToInt64():X} tx={tx} ty={ty} tz={tz}");
     }
 
     [UnmanagedCallersOnly]
     public static void RenderTools_TraceRaysIndirect(IntPtr renderContext, IntPtr attributes, IntPtr pMode, IntPtr hIndirectBuffer, uint nIndirectBufferOffset)
     {
-        Console.WriteLine("[NativeAOT] RenderTools_TraceRaysIndirect: ray tracing not supported");
+        LogCall(nameof(RenderTools_TraceRaysIndirect), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} attrs=0x{attributes.ToInt64():X} mode=0x{pMode.ToInt64():X} indirectBuf=0x{hIndirectBuffer.ToInt64():X} offset={nIndirectBufferOffset}");
     }
 
     [UnmanagedCallersOnly]
     public static void RenderTools_SetDynamicConstantBufferData(IntPtr attributes, StringToken nTokenID, IntPtr renderContext, IntPtr data, int dataSize)
     {
+        LogCall(nameof(RenderTools_SetDynamicConstantBufferData), minimal: true, message: $"attrs=0x{attributes.ToInt64():X} token={nTokenID.Value} ctx=0x{renderContext.ToInt64():X} dataPtr=0x{data.ToInt64():X} size={dataSize}");
         if (attributes == IntPtr.Zero || data == IntPtr.Zero || dataSize <= 0) return;
         // Stocker un blob binaire dans RenderAttributes via PtrValues (pointeur managé)
         var buffer = new byte[dataSize];
@@ -365,6 +381,7 @@ public static unsafe class RenderTools
     [UnmanagedCallersOnly]
     public static void RenderTools_CopyTexture(IntPtr renderContext, IntPtr sourceTexture, IntPtr destTexture, NativeRect* pSrcRect, int nDestX, int nDestY, uint nSrcMipSlice, uint nSrcArraySlice, uint nDstMipSlice, uint nDstArraySlice)
     {
+        LogCall(nameof(RenderTools_CopyTexture), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} src=0x{sourceTexture.ToInt64():X} dst=0x{destTexture.ToInt64():X} srcRectPtr=0x{(IntPtr)pSrcRect:X} dstXY=({nDestX},{nDestY}) srcMip={nSrcMipSlice} srcArr={nSrcArraySlice} dstMip={nDstMipSlice} dstArr={nDstArraySlice}");
         var gl = PlatformFunctions.GetGL();
         if (gl == null || sourceTexture == IntPtr.Zero || destTexture == IntPtr.Zero) return;
 
@@ -402,6 +419,7 @@ public static unsafe class RenderTools
     [UnmanagedCallersOnly]
     public static void RenderTools_SetGPUBufferData(IntPtr renderContext, IntPtr hGpuBuffer, IntPtr pData, uint nDataSize, uint nOffset)
     {
+        LogCall(nameof(RenderTools_SetGPUBufferData), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} buf=0x{hGpuBuffer.ToInt64():X} data=0x{pData.ToInt64():X} bytes={nDataSize} offset={nOffset}");
         if (hGpuBuffer == IntPtr.Zero || pData == IntPtr.Zero || nDataSize == 0) return;
         var gl = PlatformFunctions.GetGL();
         if (gl == null) return;
@@ -416,13 +434,13 @@ public static unsafe class RenderTools
     [UnmanagedCallersOnly]
     public static void RenderTools_CopyGPUBufferHiddenStructureCount(IntPtr renderContext, IntPtr hSrcBuffer, IntPtr hDestBuffer, uint nDestBufferOffset)
     {
-        Console.WriteLine("[NativeAOT] RenderTools_CopyGPUBufferHiddenStructureCount: not supported (hidden counter)");
+        LogCall(nameof(RenderTools_CopyGPUBufferHiddenStructureCount), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} src=0x{hSrcBuffer.ToInt64():X} dst=0x{hDestBuffer.ToInt64():X} dstOff={nDestBufferOffset}");
     }
 
     [UnmanagedCallersOnly]
     public static void RenderTools_SetGPUBufferHiddenStructureCount(IntPtr renderContext, IntPtr hBuffer, uint nCounter)
     {
-        Console.WriteLine("[NativeAOT] RenderTools_SetGPUBufferHiddenStructureCount: not supported (hidden counter)");
+        LogCall(nameof(RenderTools_SetGPUBufferHiddenStructureCount), minimal: true, message: $"ctx=0x{renderContext.ToInt64():X} buf=0x{hBuffer.ToInt64():X} count={nCounter}");
     }
 }
 

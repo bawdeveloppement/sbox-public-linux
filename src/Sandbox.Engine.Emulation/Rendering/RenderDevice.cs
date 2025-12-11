@@ -54,7 +54,9 @@ public static unsafe class RenderDevice
 {
     private static int _nextBindlessIndex = 1;
     private static IntPtr _swapChainTextureHandle = IntPtr.Zero;
+    private static IntPtr _swapChainDepthHandle = IntPtr.Zero;
     private static uint _swapChainTextureGl = 0;
+    private static uint _swapChainDepthGl = 0;
     private static uint _swapChainFbo = 0;
     private static int _swapChainWidth = 0;
     private static int _swapChainHeight = 0;
@@ -387,7 +389,12 @@ public static unsafe class RenderDevice
     [UnmanagedCallersOnly]
     public static IntPtr g_pRenderDevice_GetSwapChainTexture(IntPtr swapChain, long bufferType)
     {
-        return EnsureSwapChainTexture();
+        var handle = EnsureSwapChainTexture();
+        if (handle == IntPtr.Zero)
+        {
+            Console.WriteLine("[NativeAOT] g_pRenderDevice_GetSwapChainTexture: swapchain handle is null");
+        }
+        return handle;
     }
     
     [UnmanagedCallersOnly]
@@ -459,7 +466,7 @@ public static unsafe class RenderDevice
 
         glfw.SwapBuffers(windowHandle);
     }
-
+    
     /// <summary>
     /// Binde le FBO de swapchain comme cible de rendu actuelle.
     /// Retourne true si le bind a réussi.
@@ -472,7 +479,11 @@ public static unsafe class RenderDevice
             if (gl == null) return false;
 
             EnsureSwapChainTexture();
-            if (_swapChainFbo == 0) return false;
+            if (_swapChainFbo == 0)
+            {
+                Console.WriteLine("[NativeAOT] BindSwapChainForRender: swapchain FBO missing");
+                return false;
+            }
 
             gl.BindFramebuffer(FramebufferTarget.Framebuffer, _swapChainFbo);
             gl.Viewport(0, 0, (uint)_swapChainWidth, (uint)_swapChainHeight);
@@ -823,6 +834,8 @@ public static unsafe class RenderDevice
             Console.WriteLine($"[NativeAOT] g_pRenderDevice_CompileAndCreateShader: empty source ({debugName})");
             return IntPtr.Zero;
         }
+
+        Console.WriteLine($"[NativeAOT] g_pRenderDevice_CompileAndCreateShader: stage={(int)nType} name={debugName} len={source.Length}");
         
         ShaderType shaderType = nType switch
         {
@@ -1135,6 +1148,11 @@ public static unsafe class RenderDevice
                     gl.DeleteTexture(_swapChainTextureGl);
                     _swapChainTextureGl = 0;
                 }
+                if (_swapChainDepthGl != 0)
+                {
+                    gl.DeleteTexture(_swapChainDepthGl);
+                    _swapChainDepthGl = 0;
+                }
                 if (_swapChainFbo != 0)
                 {
                     gl.DeleteFramebuffer(_swapChainFbo);
@@ -1144,6 +1162,11 @@ public static unsafe class RenderDevice
                 {
                     HandleManager.Unregister((int)_swapChainTextureHandle);
                     _swapChainTextureHandle = IntPtr.Zero;
+                }
+                if (_swapChainDepthHandle != IntPtr.Zero)
+                {
+                    HandleManager.Unregister((int)_swapChainDepthHandle);
+                    _swapChainDepthHandle = IntPtr.Zero;
                 }
 
                 gl.GenTextures(1, out _swapChainTextureGl);
@@ -1155,10 +1178,21 @@ public static unsafe class RenderDevice
                 gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureWrapS, (int)GLEnum.ClampToEdge);
                 gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureWrapT, (int)GLEnum.ClampToEdge);
 
+                gl.GenTextures(1, out _swapChainDepthGl);
+                gl.BindTexture(GLEnum.Texture2D, _swapChainDepthGl);
+                gl.TexImage2D(GLEnum.Texture2D, 0, (int)GLEnum.DepthComponent24, (uint)width, (uint)height, 0,
+                              GLEnum.DepthComponent, GLEnum.UnsignedInt, null);
+                gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureMinFilter, (int)GLEnum.Linear);
+                gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureMagFilter, (int)GLEnum.Linear);
+                gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureWrapS, (int)GLEnum.ClampToEdge);
+                gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureWrapT, (int)GLEnum.ClampToEdge);
+
                 gl.GenFramebuffers(1, out _swapChainFbo);
                 gl.BindFramebuffer(FramebufferTarget.Framebuffer, _swapChainFbo);
                 gl.FramebufferTexture2D(FramebufferTarget.Framebuffer, FramebufferAttachment.ColorAttachment0,
                                         GLEnum.Texture2D, _swapChainTextureGl, 0);
+                gl.FramebufferTexture2D(FramebufferTarget.Framebuffer, FramebufferAttachment.DepthAttachment,
+                                        GLEnum.Texture2D, _swapChainDepthGl, 0);
                 var status = gl.CheckFramebufferStatus(FramebufferTarget.Framebuffer);
                 if (status != GLEnum.FramebufferComplete)
                 {
@@ -1170,7 +1204,8 @@ public static unsafe class RenderDevice
                 _swapChainHeight = height;
 
                 _swapChainTextureHandle = TextureSystem.CreateTextureWithOpenGLHandle("swapchain-backbuffer", _swapChainTextureGl);
-                Console.WriteLine($"[NativeAOT] RenderDevice: swapchain recreated {width}x{height}, gl={_swapChainTextureGl}, handle={_swapChainTextureHandle}");
+                _swapChainDepthHandle = TextureSystem.CreateTextureWithOpenGLHandle("swapchain-depth", _swapChainDepthGl);
+                Console.WriteLine($"[NativeAOT] RenderDevice: swapchain recreated {width}x{height}, glColor={_swapChainTextureGl}, glDepth={_swapChainDepthGl}, handleColor={_swapChainTextureHandle}, handleDepth={_swapChainDepthHandle}");
             }
 
             return _swapChainTextureHandle;
@@ -1183,6 +1218,15 @@ public static unsafe class RenderDevice
     internal static IntPtr GetSwapChainTextureHandle()
     {
         return EnsureSwapChainTexture();
+    }
+
+    /// <summary>
+    /// Helper managé pour récupérer la depth du swapchain (Handle TextureSystem).
+    /// </summary>
+    internal static IntPtr GetSwapChainDepthHandle()
+    {
+        EnsureSwapChainTexture();
+        return _swapChainDepthHandle;
     }
 }
 

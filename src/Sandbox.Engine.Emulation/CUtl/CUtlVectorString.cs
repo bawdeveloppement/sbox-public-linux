@@ -12,12 +12,21 @@ namespace Sandbox.Engine.Emulation.CUtl;
 /// </summary>
 public static unsafe class CUtlVectorString
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][CUtlVecStr] {name} {message}");
+    }
+
     /// <summary>
     /// Initialise le module CUtlVectorString en patchant les fonctions natives.
     /// Indices depuis Interop.Engine.cs lignes 16083-16087 (1218-1222)
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // Indices 1218-1222
         native[1218] = (void*)(delegate* unmanaged<IntPtr, void>)&CtlVctrCtlStrng_DeleteThis;
         native[1219] = (void*)(delegate* unmanaged<int, int, IntPtr>)&CtlVctrCtlStrng_Create;
@@ -25,12 +34,13 @@ public static unsafe class CUtlVectorString
         native[1221] = (void*)(delegate* unmanaged<IntPtr, int, void>)&CtlVctrCtlStrng_SetCount;
         native[1222] = (void*)(delegate* unmanaged<IntPtr, int, IntPtr>)&CtlVctrCtlStrng_Element;
         
-        Console.WriteLine("[NativeAOT] CUtlVectorString module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     [UnmanagedCallersOnly]
     public static void CtlVctrCtlStrng_DeleteThis(IntPtr self)
     {
+        LogCall(nameof(CtlVctrCtlStrng_DeleteThis), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return;
         
@@ -52,6 +62,7 @@ public static unsafe class CUtlVectorString
     [UnmanagedCallersOnly]
     public static IntPtr CtlVctrCtlStrng_Create(int growsize, int initialcapacity)
     {
+        LogCall(nameof(CtlVctrCtlStrng_Create), minimal: true, message: $"growsize={growsize} initcap={initialcapacity}");
         var vectorData = new VectorStringData
         {
             GrowSize = growsize,
@@ -68,6 +79,7 @@ public static unsafe class CUtlVectorString
     [UnmanagedCallersOnly]
     public static int CtlVctrCtlStrng_Count(IntPtr self)
     {
+        LogCall(nameof(CtlVctrCtlStrng_Count), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return 0;
         
@@ -78,6 +90,7 @@ public static unsafe class CUtlVectorString
     [UnmanagedCallersOnly]
     public static void CtlVctrCtlStrng_SetCount(IntPtr self, int count)
     {
+        LogCall(nameof(CtlVctrCtlStrng_SetCount), minimal: true, message: $"self=0x{self.ToInt64():X} count={count}");
         if (self == IntPtr.Zero || count < 0)
             return;
         
@@ -109,6 +122,7 @@ public static unsafe class CUtlVectorString
     [UnmanagedCallersOnly]
     public static IntPtr CtlVctrCtlStrng_Element(IntPtr self, int i)
     {
+        LogCall(nameof(CtlVctrCtlStrng_Element), minimal: true, message: $"self=0x{self.ToInt64():X} i={i}");
         if (self == IntPtr.Zero || i < 0)
             return IntPtr.Zero;
         

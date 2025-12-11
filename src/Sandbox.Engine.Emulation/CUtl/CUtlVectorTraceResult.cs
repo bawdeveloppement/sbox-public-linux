@@ -11,12 +11,21 @@ namespace Sandbox.Engine.Emulation.CUtl;
 /// </summary>
 public static unsafe class CUtlVectorTraceResult
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][CUtlVecTrace] {name} {message}");
+    }
+
     /// <summary>
     /// Initialise le module CUtlVectorTraceResult en patchant les fonctions natives.
     /// Indices depuis Interop.Engine.cs lignes 16097-16100 (1232-1235)
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // Indices 1232-1235
         native[1232] = (void*)(delegate* unmanaged<IntPtr, void>)&CtlVctrPhyscsTrc_Result_DeleteThis;
         native[1233] = (void*)(delegate* unmanaged<int, int, IntPtr>)&CtlVctrPhyscsTrc_Result_Create;
@@ -24,12 +33,13 @@ public static unsafe class CUtlVectorTraceResult
         // Note: PhysicsTrace.Result is not blittable, so we use void* and cast in Interop.Engine.cs
         native[1235] = (void*)(delegate* unmanaged<IntPtr, int, void*>)&CtlVctrPhyscsTrc_Result_Element;
         
-        Console.WriteLine("[NativeAOT] CUtlVectorTraceResult module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     [UnmanagedCallersOnly]
     public static void CtlVctrPhyscsTrc_Result_DeleteThis(IntPtr self)
     {
+        LogCall(nameof(CtlVctrPhyscsTrc_Result_DeleteThis), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return;
         
@@ -39,6 +49,7 @@ public static unsafe class CUtlVectorTraceResult
     [UnmanagedCallersOnly]
     public static IntPtr CtlVctrPhyscsTrc_Result_Create(int growsize, int initialcapacity)
     {
+        LogCall(nameof(CtlVctrPhyscsTrc_Result_Create), minimal: true, message: $"growsize={growsize} initcap={initialcapacity}");
         var vectorData = new VectorTraceResultData
         {
             GrowSize = growsize,
@@ -54,6 +65,7 @@ public static unsafe class CUtlVectorTraceResult
     [UnmanagedCallersOnly]
     public static int CtlVctrPhyscsTrc_Result_Count(IntPtr self)
     {
+        LogCall(nameof(CtlVctrPhyscsTrc_Result_Count), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return 0;
         
@@ -64,6 +76,7 @@ public static unsafe class CUtlVectorTraceResult
     [UnmanagedCallersOnly]
     public static void* CtlVctrPhyscsTrc_Result_Element(IntPtr self, int i)
     {
+        LogCall(nameof(CtlVctrPhyscsTrc_Result_Element), minimal: true, message: $"self=0x{self.ToInt64():X} i={i}");
         if (self == IntPtr.Zero || i < 0)
             return null;
         

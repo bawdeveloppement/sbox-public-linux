@@ -1,6 +1,6 @@
 using System;
-using System.IO;
 using System.Runtime.InteropServices;
+using System.IO;
 using Silk.NET.GLFW;
 using Silk.NET.OpenGL;
 using Sandbox;
@@ -22,6 +22,7 @@ public static unsafe class PlatformFunctions
     private static Glfw? _glfw;
     private static WindowHandle* _windowHandle;
     private static GL? _gl;
+    private static bool _glfwResolverSet;
     
     // Cache pour GetGameRootFolder (évite les allocations répétées)
     private static IntPtr? _cachedGameRootFolder = null;
@@ -33,36 +34,146 @@ public static unsafe class PlatformFunctions
     private static IntPtr _renderContextHandle = IntPtr.Zero;
     private static bool _loggedFrameInfo = false;
     private static int _loggedOnLayerCount = 0;
+    private static IntPtr _defaultPipelineAttributes = IntPtr.Zero;
     
 
     private static bool _loggedAddLayers = false;
     private static bool _loggedPipelineEnd = false;
+    
+    private static IntPtr _glfwHandle = IntPtr.Zero;
+    private static DebugProc? _glDebugCallback;
 
-    private static void SafeCallRenderPipelineAddLayers(IntPtr view, ref RenderViewport viewport, IntPtr color, IntPtr depth, long msaa)
+    private static IntPtr GlfwImportResolver(string libraryName, System.Reflection.Assembly assembly, DllImportSearchPath? searchPath)
+    {
+        if (!OperatingSystem.IsLinux())
+            return IntPtr.Zero;
+
+        // Glfw native names commonly probed by Silk.NET: "glfw", "glfw3", "glfw.3", "glfw.3.3", "libglfw.so", "libglfw.so.3"
+        if (!libraryName.Contains("glfw", StringComparison.OrdinalIgnoreCase))
+            return IntPtr.Zero;
+
+        var bases = new[]
+        {
+            AppContext.BaseDirectory,
+            Environment.CurrentDirectory
+        };
+
+        var names = new[]
+        {
+            "libglfw.so",
+            "libglfw.so.3",
+            "libglfw3.so",
+            "glfw",
+            "glfw3"
+        };
+
+        foreach (var root in bases)
+        {
+            foreach (var name in names)
+            {
+                var candidate = Path.Combine(root, "bin", "linuxsteamrt64", name);
+                if (NativeLibrary.TryLoad(candidate, out var handle))
+                {
+                    return handle;
+                }
+            }
+        }
+
+        return IntPtr.Zero;
+    }
+
+    private static void EnsureGlfwLoaded()
+    {
+        if (!OperatingSystem.IsLinux())
+            return;
+        if (_glfwHandle != IntPtr.Zero)
+            return;
+
+        var bases = new[]
+        {
+            AppContext.BaseDirectory,
+            Environment.CurrentDirectory
+        };
+
+        var names = new[]
+        {
+            "libglfw.so",
+            "libglfw.so.3",
+            "libglfw3.so",
+            "glfw",
+            "glfw3"
+        };
+
+        foreach (var root in bases)
+        {
+            foreach (var name in names)
+            {
+                var candidate = Path.Combine(root, "bin", "linuxsteamrt64", name);
+                if (NativeLibrary.TryLoad(candidate, out var handle))
+                {
+                    _glfwHandle = handle;
+                    Console.WriteLine($"[NativeAOT] GLFW preloaded from {candidate}");
+                    return;
+                }
+            }
+        }
+
+        Console.WriteLine("[NativeAOT] Warning: failed to preload GLFW from bin/linuxsteamrt64");
+    }
+
+    private static void EnsureGlDebug(GL gl)
+    {
+        if (gl == null) return;
+        if (_glDebugCallback != null) return;
+
+        _glDebugCallback = GlDebug;
+        try
+        {
+            gl.Enable(GLEnum.DebugOutput);
+            gl.Enable(GLEnum.DebugOutputSynchronous);
+            gl.DebugMessageCallback(_glDebugCallback, null);
+            gl.DebugMessageControl(GLEnum.DontCare, GLEnum.DontCare, GLEnum.DontCare, 0, ReadOnlySpan<uint>.Empty, true);
+            Console.WriteLine("[NativeAOT] OpenGL debug output enabled (KHR_debug)");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[NativeAOT] OpenGL debug setup failed: {ex.Message}");
+        }
+    }
+
+    private static unsafe void GlDebug(GLEnum source, GLEnum type, int id, GLEnum severity, int length, nint message, nint userParam)
+    {
+        try
+        {
+            string msg = Marshal.PtrToStringAnsi((IntPtr)message, length) ?? string.Empty;
+            Console.WriteLine($"[NativeAOT][GL] {severity} {type} {id}: {msg}");
+        }
+        catch
+        {
+            // Avoid throwing from debug callback
+        }
+    }
+
+    private static void SafeCallRenderPipelineAddLayers(ref IntPtr view,ref RenderViewport viewport,ref IntPtr color,ref IntPtr depth, long msaa,ref IntPtr pipelineAttributes,ref RenderViewport screenDimensions)
     {
         if (EngineGlue.Imports._ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView == null)
             return;
         try
         {
-            unsafe
+            Console.WriteLine($"[NativeAOT] RP call view=0x{view:X} color=0x{color:X} depth=0x{depth:X} msaa={msaa} pipeline=0x{pipelineAttributes:X} fn=0x{(nuint)EngineGlue.Imports._ptr_SndbxRndrng_RenderPipeline_InternalAddLayersToView:X}");
+            EngineGlue.Imports.SndbxRndrng_RenderPipeline_InternalAddLayersToView(
+                Unsafe.AsPointer(ref view),
+                Unsafe.AsPointer(ref viewport),
+                Unsafe.AsPointer(ref color),
+                Unsafe.AsPointer(ref depth),
+                msaa,
+                Unsafe.AsPointer(ref pipelineAttributes),
+                Unsafe.AsPointer(ref screenDimensions)
+            );
+            if (!_loggedAddLayers)
             {
-                fixed (RenderViewport* vp = &viewport)
-                {
-                    EngineGlue.Imports.SndbxRndrng_RenderPipeline_InternalAddLayersToView(
-                        (void*)view,
-                        (void*)vp,
-                        (void*)color,
-                        (void*)depth,
-                        msaa,
-                        null,
-                        null
-                    );
-                    if (!_loggedAddLayers)
-                    {
-                        Console.WriteLine($"[NativeAOT] RenderPipeline_InternalAddLayersToView view=0x{view.ToInt64():X} color=0x{color.ToInt64():X} depth=0x{depth.ToInt64():X} msaa={msaa}");
-                        _loggedAddLayers = true;
-                    }
-                }
+                Console.WriteLine($"[NativeAOT] RenderPipeline_InternalAddLayersToView view=0x{view.ToInt64():X} color=0x{color.ToInt64():X} depth=0x{depth.ToInt64():X} msaa={msaa}");
+                _loggedAddLayers = true;
             }
         }
         catch (Exception ex)
@@ -71,31 +182,25 @@ public static unsafe class PlatformFunctions
         }
     }
 
-    private static void SafeCallRenderPipelineEnd(IntPtr view, ref RenderViewport viewport, IntPtr color, IntPtr depth, long msaa)
+    private static void SafeCallRenderPipelineEnd(ref IntPtr view, ref RenderViewport viewport,ref IntPtr color,ref IntPtr depth, long msaa,ref IntPtr pipelineAttributes,ref RenderViewport screenDimensions)
     {
         if (EngineGlue.Imports._ptr_SndbxRndrng_RenderPipeline_InternalPipelineEnd == null)
             return;
         try
         {
-            unsafe
+            EngineGlue.Imports.SndbxRndrng_RenderPipeline_InternalPipelineEnd(
+                Unsafe.AsPointer(ref view),
+                Unsafe.AsPointer(ref viewport),
+                Unsafe.AsPointer(ref color),
+                Unsafe.AsPointer(ref depth),
+                msaa,
+                Unsafe.AsPointer(ref pipelineAttributes),
+                Unsafe.AsPointer(ref screenDimensions)
+            );
+            if (!_loggedPipelineEnd)
             {
-                fixed (RenderViewport* vp = &viewport)
-                {
-                    EngineGlue.Imports.SndbxRndrng_RenderPipeline_InternalPipelineEnd(
-                        (void*)view,
-                        (void*)vp,
-                        (void*)color,
-                        (void*)depth,
-                        msaa,
-                        null,
-                        null
-                    );
-                    if (!_loggedPipelineEnd)
-                    {
-                        Console.WriteLine($"[NativeAOT] RenderPipeline_InternalPipelineEnd view=0x{view.ToInt64():X} color=0x{color.ToInt64():X} depth=0x{depth.ToInt64():X} msaa={msaa}");
-                        _loggedPipelineEnd = true;
-                    }
-                }
+                Console.WriteLine($"[NativeAOT] RenderPipeline_InternalPipelineEnd view=0x{view.ToInt64():X} color=0x{color.ToInt64():X} depth=0x{depth.ToInt64():X} msaa={msaa}");
+                _loggedPipelineEnd = true;
             }
         }
         catch (Exception ex)
@@ -389,6 +494,14 @@ public static unsafe class PlatformFunctions
         // La fenêtre sera créée plus tard par CMtrlSystm2ppSys_CreateAppWindow, mais on initialise OpenGL maintenant
         try
         {
+            if (!_glfwResolverSet)
+            {
+                NativeLibrary.SetDllImportResolver(typeof(Glfw).Assembly, GlfwImportResolver);
+                _glfwResolverSet = true;
+            }
+
+            EnsureGlfwLoaded();
+
             if (_glfw == null)
             {
                 _glfw = Glfw.GetApi();
@@ -426,6 +539,7 @@ public static unsafe class PlatformFunctions
                 
                 // Initialize GL
                 _gl = GL.GetApi(new GlfwContext(_glfw, _windowHandle));
+                EnsureGlDebug(_gl);
                 
                 Material.MaterialSystem.SetWindowHandle(_windowHandle);
                 SetSharedState(_glfw, _windowHandle, _gl);
@@ -447,6 +561,7 @@ public static unsafe class PlatformFunctions
     [UnmanagedCallersOnly]
     public static int SourceEngineFrame(IntPtr appDict, double currentTime, double previousTime)
     {
+        Console.WriteLine($"[NativeAOT] SourceEngineFrame begin t={currentTime:F3} dt={(currentTime - previousTime):F3}");
         var glfw = GetGlfw();
         var window = GetWindowHandle();
         var gl = GetGL();
@@ -484,11 +599,19 @@ public static unsafe class PlatformFunctions
         }
 
         var swapColor = RenderDevice.GetSwapChainTextureHandle();
-        if (sceneLayerHandle != IntPtr.Zero && swapColor != IntPtr.Zero)
+        var swapDepth = RenderDevice.GetSwapChainDepthHandle();
+        IntPtr rtColor = swapColor;
+        IntPtr rtDepth = swapDepth;
+        if (sceneViewHandle != IntPtr.Zero && swapColor != IntPtr.Zero)
         {
-            EmulatedSceneLayer.SetOutputManaged(sceneLayerHandle, swapColor, IntPtr.Zero);
+            rtColor = EmulatedSceneView.FindOrCreateRenderTargetManaged(sceneViewHandle, "swapchain-color", swapColor, 0);
+            rtDepth = EmulatedSceneView.FindOrCreateRenderTargetManaged(sceneViewHandle, "swapchain-depth", swapDepth, 1);
         }
-        if (sceneViewHandle != IntPtr.Zero)
+        if (sceneLayerHandle != IntPtr.Zero && rtColor != IntPtr.Zero)
+        {
+            EmulatedSceneLayer.SetOutputManaged(sceneLayerHandle, rtColor, rtDepth);
+        }
+        if (sceneViewHandle != IntPtr.Zero && swapColor != IntPtr.Zero)
         {
             EmulatedSceneView.SetSwapChainManaged(sceneViewHandle, swapColor);
         }
@@ -509,8 +632,7 @@ public static unsafe class PlatformFunctions
 
         // Fallback visuel si le pipeline n'est pas câblé : affichage d'un clear + quad
         bool missingPipeline = sceneViewHandle == IntPtr.Zero
-            || sceneLayerHandle == IntPtr.Zero
-            || EngineGlue.Imports.Sandbox_Graphics_OnLayer == null;
+            || sceneLayerHandle == IntPtr.Zero;
         if (missingPipeline && _renderContext != null)
         {
             Console.WriteLine("[NativeAOT] Render fallback: pipeline missing (view/layer/OnLayer null)");
@@ -545,8 +667,22 @@ public static unsafe class PlatformFunctions
             stats = statsHandle
         };
 
+        // Préparer des RenderAttributes par défaut si rien n'est fourni
+        if (_defaultPipelineAttributes == IntPtr.Zero)
+        {
+            _defaultPipelineAttributes = RenderAttributes.RenderAttributes.CreateRenderAttributesInternal();
+        }
+
         // Laisser le pipeline managé ajouter les layers si disponible
-        SafeCallRenderPipelineAddLayers(sceneViewHandle, ref viewport, swapColor, IntPtr.Zero, (long)RenderMultisampleType.RENDER_MULTISAMPLE_NONE);
+        SafeCallRenderPipelineAddLayers(
+            ref sceneViewHandle,
+            ref viewport,
+            ref rtColor,
+            ref rtDepth,
+            (long)RenderMultisampleType.RENDER_MULTISAMPLE_NONE,
+            ref _defaultPipelineAttributes,
+            ref viewport         // screenDimensions (fallback: le même viewport)
+        );
 
         // Appeler Graphics.OnLayer pour UI et VS/PS
         SafeCallOnLayer(-1, ref setup); // UI
@@ -561,7 +697,15 @@ public static unsafe class PlatformFunctions
         SafeCallOnLayer((int)Stage.AfterUI, ref setup);
 
         // Fin de pipeline managé
-        SafeCallRenderPipelineEnd(sceneViewHandle, ref viewport, swapColor, IntPtr.Zero, (long)RenderMultisampleType.RENDER_MULTISAMPLE_NONE);
+        SafeCallRenderPipelineEnd(
+            ref sceneViewHandle,
+            ref viewport,
+            ref rtColor,
+            ref rtDepth,
+            (long)RenderMultisampleType.RENDER_MULTISAMPLE_NONE,
+            ref _defaultPipelineAttributes,
+            ref viewport         // screenDimensions (fallback: le même viewport)
+        );
         if (EngineGlue.Imports.Sandbox_EngineLoop_OnSceneViewSubmitted != null && sceneViewHandle != IntPtr.Zero)
         {
             try { EngineGlue.Imports.Sandbox_EngineLoop_OnSceneViewSubmitted((void*)sceneViewHandle); }
@@ -573,6 +717,8 @@ public static unsafe class PlatformFunctions
         // Présenter le swapchain sur le backbuffer et swapper une seule fois.
         RenderDevice.UnbindFramebuffer();
         RenderDevice.PresentManaged();
+        Console.WriteLine($"[NativeAOT] SourceEngineFrame end t={currentTime:F3} dt={(currentTime - previousTime):F3}");
+
         return 1;
     }
     

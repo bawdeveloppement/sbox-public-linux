@@ -1,6 +1,9 @@
-﻿using SkiaSharp;
+using SkiaSharp;
 using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
+using System.Reflection;
+using System.IO;
 using Topten.RichTextKit;
 
 namespace Sandbox;
@@ -24,11 +27,100 @@ internal class FontManager : FontMapper
 {
 	public static FontManager Instance = new FontManager();
 
+	private static bool _skiaResolverSet = false;
+
 	static ConcurrentDictionary<int, SKTypeface> LoadedFonts = new();
 
 	static Dictionary<int, SKTypeface> Cache = new();
 
 	public static IEnumerable<string> FontFamilies => LoadedFonts.Values.Select( x => x.FamilyName ).Distinct();
+
+	static FontManager()
+	{
+		TryInitSkiaResolver();
+	}
+
+	private static void TryInitSkiaResolver()
+	{
+		if ( _skiaResolverSet )
+			return;
+
+		_skiaResolverSet = true;
+
+		if ( !OperatingSystem.IsLinux() )
+			return;
+
+		NativeLibrary.SetDllImportResolver( typeof( SKTypeface ).Assembly, SkiaImportResolver );
+		SkiaPreload();
+	}
+
+	private static IntPtr SkiaImportResolver( string libraryName, Assembly assembly, DllImportSearchPath? searchPath )
+	{
+		if ( !OperatingSystem.IsLinux() )
+			return IntPtr.Zero;
+
+		if ( !libraryName.Contains( "skia", StringComparison.OrdinalIgnoreCase ) )
+			return IntPtr.Zero;
+
+		foreach ( var candidate in EnumerateSkiaCandidates() )
+		{
+			if ( NativeLibrary.TryLoad( candidate, out var handle ) )
+			{
+				return handle;
+			}
+		}
+
+		return IntPtr.Zero;
+	}
+
+	private static void SkiaPreload()
+	{
+		foreach ( var candidate in EnumerateSkiaCandidates() )
+		{
+			if ( NativeLibrary.TryLoad( candidate, out var handle ) )
+			{
+				// Preload once; no need to keep the handle here (the runtime holds it).
+				return;
+			}
+		}
+	}
+
+	private static IEnumerable<string> EnumerateSkiaCandidates()
+	{
+		var bases = new[]
+		{
+			AppContext.BaseDirectory,
+			Environment.CurrentDirectory
+		};
+
+		var names = new[]
+		{
+			"libSkiaSharp.so",
+			"libSkiaSharp.so.116.0.0",
+			"libSkiaSharp.so.2",
+			"libSkiaSharp.so.1",
+			"libskia.so",
+			"libskia"
+		};
+
+		foreach ( var root in bases )
+		{
+			var folder = Path.Combine( root, "bin", "linuxsteamrt64" );
+
+			foreach ( var name in names )
+			{
+				yield return Path.Combine( folder, name );
+			}
+
+			if ( Directory.Exists( folder ) )
+			{
+				foreach ( var file in Directory.GetFiles( folder, "libSkiaSharp.so*" ) )
+				{
+					yield return file;
+				}
+			}
+		}
+	}
 
 	private void Load( System.IO.Stream stream )
 	{

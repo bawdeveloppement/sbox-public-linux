@@ -87,129 +87,133 @@ public static unsafe class PhysicsWorld
     /// - IPhysicsWorld_GetSimulation: 2059
     /// - IPhysicsWorld_EnableSleeping: 2060
     /// - IPhysicsWorld_DisableSleeping: 2061
-    /// - IPhysicsWorld_IsSleepingEnabled: 2062
-    /// - IPhysicsWorld_SetMaximumLinearSpeed: 2063
-    /// - IPhysicsWorld_AddWeldJoint: 2064
-    /// - IPhysicsWorld_AddSpringJoint: 2065
-    /// - IPhysicsWorld_AddRevoluteJoint: 2066
-    /// - IPhysicsWorld_AddPrismaticJoint: 2067
-    /// - IPhysicsWorld_AddSphericalJoint: 2068
-    /// - IPhysicsWorld_AddMotorJoint: 2069
-    /// - IPhysicsWorld_AddWheelJoint: 2070
-    /// - IPhysicsWorld_SetCollisionRulesFromJson: 2071
-    /// - IPhysicsWorld_StepSimulation: 2072
-    /// - IPhysicsWorld_ProcessIntersections: 2073
-    /// - IPhysicsWorld_DestroyAggregateInstance: 2074
-    /// - IPhysicsWorld_CreateAggregateInstance: 2075
-    /// - IPhysicsWorld_CreateAggregateInstance_1: 2076
-    /// - IPhysicsWorld_SetDebugScene: 2077
-    /// - IPhysicsWorld_GetDebugScene: 2078
-    /// - IPhysicsWorld_Draw: 2079
-    /// - IPhysicsWorld_ManagedObject: 2080
-    /// - IPhysicsWorld_Query: 2081
-    /// - IPhysicsWorld_Query_1: 2082
-    /// - IPhysicsWorld_Query_2: 2083
+    /// - IPhysicsWorld_IsSleepingEnabled: 2064
+    /// - IPhysicsWorld_SetMaximumLinearSpeed: 2065
+    /// - IPhysicsWorld_AddWeldJoint: 2066
+    /// - IPhysicsWorld_AddSpringJoint: 2067
+    /// - IPhysicsWorld_AddRevoluteJoint: 2068
+    /// - IPhysicsWorld_AddPrismaticJoint: 2069
+    /// - IPhysicsWorld_AddSphericalJoint: 2070
+    /// - IPhysicsWorld_AddMotorJoint: 2071
+    /// - IPhysicsWorld_AddWheelJoint: 2072
+    /// - IPhysicsWorld_AddFilterJoint: 2073
+    /// - IPhysicsWorld_SetCollisionRulesFromJson: 2074
+    /// - IPhysicsWorld_StepSimulation: 2075
+    /// - IPhysicsWorld_ProcessIntersections: 2076
+    /// - IPhysicsWorld_DestroyAggregateInstance: 2077
+    /// - IPhysicsWorld_CreateAggregateInstance: 2078
+    /// - IPhysicsWorld_CreateAggregateInstance_1: 2079
+    /// - IPhysicsWorld_SetDebugScene: 2080
+    /// - IPhysicsWorld_GetDebugScene: 2081
+    /// - IPhysicsWorld_Draw: 2082
+    /// - IPhysicsWorld_ManagedObject: 2083
+    /// - IPhysicsWorld_Query: 2084
+    /// - IPhysicsWorld_Query_1: 2085
+    /// - IPhysicsWorld_Query_2: 2086
     /// </summary>
     public static void Init(void** native)
     {
-        // IPhysicsWorld_AddBody: Index 2051
-        native[2051] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_AddBody;
+        // IPhysicsWorld_AddBody: Index 2053
+        native[2053] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_AddBody;
         
-        // IPhysicsWorld_RemoveBody: Index 2052
-        native[2052] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_RemoveBody;
+        // IPhysicsWorld_RemoveBody: Index 2054
+        native[2054] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_RemoveBody;
         
-        // IPhysicsWorld_GetWorldReferenceBody: Index 2053
-        native[2053] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_GetWorldReferenceBody;
+        // IPhysicsWorld_GetWorldReferenceBody: Index 2055
+        native[2055] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_GetWorldReferenceBody;
         
-        // IPhysicsWorld_SetWorldReferenceBody: Index 2054
-        native[2054] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_SetWorldReferenceBody;
+        // IPhysicsWorld_SetWorldReferenceBody: Index 2056
+        native[2056] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_SetWorldReferenceBody;
         
-        // IPhysicsWorld_RemoveJoint: Index 2055
-        native[2055] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_RemoveJoint;
+        // IPhysicsWorld_RemoveJoint: Index 2057
+        native[2057] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_RemoveJoint;
         
-        // IPhysicsWorld_SetGravity: Index 2056
-        native[2056] = (void*)(delegate* unmanaged<IntPtr, Vector3*, void>)&IPhysicsWorld_SetGravity;
+        // IPhysicsWorld_SetGravity: Index 2058
+        native[2058] = (void*)(delegate* unmanaged<IntPtr, Vector3*, void>)&IPhysicsWorld_SetGravity;
         
-        // IPhysicsWorld_GetGravity: Index 2057
-        native[2057] = (void*)(delegate* unmanaged<IntPtr, Vector3>)&IPhysicsWorld_GetGravity;
+        // IPhysicsWorld_GetGravity: Index 2059
+        native[2059] = (void*)(delegate* unmanaged<IntPtr, Vector3>)&IPhysicsWorld_GetGravity;
         
-        // IPhysicsWorld_SetSimulation: Index 2058
-        native[2058] = (void*)(delegate* unmanaged<IntPtr, long, void>)&IPhysicsWorld_SetSimulation;
+        // IPhysicsWorld_SetSimulation: Index 2060
+        native[2060] = (void*)(delegate* unmanaged<IntPtr, long, void>)&IPhysicsWorld_SetSimulation;
         
-        // IPhysicsWorld_GetSimulation: Index 2059
-        native[2059] = (void*)(delegate* unmanaged<IntPtr, long>)&IPhysicsWorld_GetSimulation;
+        // IPhysicsWorld_GetSimulation: Index 2061
+        native[2061] = (void*)(delegate* unmanaged<IntPtr, long>)&IPhysicsWorld_GetSimulation;
         
-        // IPhysicsWorld_EnableSleeping: Index 2060
-        native[2060] = (void*)(delegate* unmanaged<IntPtr, void>)&IPhysicsWorld_EnableSleeping;
+        // IPhysicsWorld_EnableSleeping: Index 2062
+        native[2062] = (void*)(delegate* unmanaged<IntPtr, void>)&IPhysicsWorld_EnableSleeping;
         
-        // IPhysicsWorld_DisableSleeping: Index 2061
-        native[2061] = (void*)(delegate* unmanaged<IntPtr, void>)&IPhysicsWorld_DisableSleeping;
+        // IPhysicsWorld_DisableSleeping: Index 2063
+        native[2063] = (void*)(delegate* unmanaged<IntPtr, void>)&IPhysicsWorld_DisableSleeping;
         
-        // IPhysicsWorld_IsSleepingEnabled: Index 2062
-        native[2062] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_IsSleepingEnabled;
+        // IPhysicsWorld_IsSleepingEnabled: Index 2064
+        native[2064] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_IsSleepingEnabled;
         
-        // IPhysicsWorld_SetMaximumLinearSpeed: Index 2063
-        native[2063] = (void*)(delegate* unmanaged<IntPtr, float, void>)&IPhysicsWorld_SetMaximumLinearSpeed;
+        // IPhysicsWorld_SetMaximumLinearSpeed: Index 2065
+        native[2065] = (void*)(delegate* unmanaged<IntPtr, float, void>)&IPhysicsWorld_SetMaximumLinearSpeed;
         
-        // IPhysicsWorld_AddWeldJoint: Index 2064
-        native[2064] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddWeldJoint;
+        // IPhysicsWorld_AddWeldJoint: Index 2066
+        native[2066] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddWeldJoint;
         
-        // IPhysicsWorld_AddSpringJoint: Index 2065
-        native[2065] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddSpringJoint;
+        // IPhysicsWorld_AddSpringJoint: Index 2067
+        native[2067] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddSpringJoint;
         
-        // IPhysicsWorld_AddRevoluteJoint: Index 2066
-        native[2066] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddRevoluteJoint;
+        // IPhysicsWorld_AddRevoluteJoint: Index 2068
+        native[2068] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddRevoluteJoint;
         
-        // IPhysicsWorld_AddPrismaticJoint: Index 2067
-        native[2067] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddPrismaticJoint;
+        // IPhysicsWorld_AddPrismaticJoint: Index 2069
+        native[2069] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddPrismaticJoint;
         
-        // IPhysicsWorld_AddSphericalJoint: Index 2068
-        native[2068] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddSphericalJoint;
+        // IPhysicsWorld_AddSphericalJoint: Index 2070
+        native[2070] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddSphericalJoint;
         
-        // IPhysicsWorld_AddMotorJoint: Index 2069
-        native[2069] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddMotorJoint;
+        // IPhysicsWorld_AddMotorJoint: Index 2071
+        native[2071] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddMotorJoint;
         
-        // IPhysicsWorld_AddWheelJoint: Index 2070
-        native[2070] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddWheelJoint;
+        // IPhysicsWorld_AddWheelJoint: Index 2072
+        native[2072] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, Transform*, Transform*, int>)&IPhysicsWorld_AddWheelJoint;
         
-        // IPhysicsWorld_SetCollisionRulesFromJson: Index 2071
-        native[2071] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_SetCollisionRulesFromJson;
+        // IPhysicsWorld_AddFilterJoint: Index 2073
+        native[2073] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, int>)&IPhysicsWorld_AddFilterJoint;
         
-        // IPhysicsWorld_StepSimulation: Index 2072
-        native[2072] = (void*)(delegate* unmanaged<IntPtr, float, int, void>)&IPhysicsWorld_StepSimulation;
+        // IPhysicsWorld_SetCollisionRulesFromJson: Index 2074
+        native[2074] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_SetCollisionRulesFromJson;
         
-        // IPhysicsWorld_ProcessIntersections: Index 2073
-        native[2073] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_ProcessIntersections;
+        // IPhysicsWorld_StepSimulation: Index 2075
+        native[2075] = (void*)(delegate* unmanaged<IntPtr, float, int, void>)&IPhysicsWorld_StepSimulation;
         
-        // IPhysicsWorld_DestroyAggregateInstance: Index 2074
-        native[2074] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_DestroyAggregateInstance;
+        // IPhysicsWorld_ProcessIntersections: Index 2076
+        native[2076] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_ProcessIntersections;
         
-        // IPhysicsWorld_CreateAggregateInstance: Index 2075
-        native[2075] = (void*)(delegate* unmanaged<IntPtr, IntPtr, Transform*, ulong, long, int>)&IPhysicsWorld_CreateAggregateInstance;
+        // IPhysicsWorld_DestroyAggregateInstance: Index 2077
+        native[2077] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_DestroyAggregateInstance;
         
-        // IPhysicsWorld_CreateAggregateInstance_1: Index 2076
-        native[2076] = (void*)(delegate* unmanaged<IntPtr, IntPtr, Transform*, ulong, long, int>)&IPhysicsWorld_CreateAggregateInstance_1;
+        // IPhysicsWorld_CreateAggregateInstance: Index 2078
+        native[2078] = (void*)(delegate* unmanaged<IntPtr, IntPtr, Transform*, ulong, long, int>)&IPhysicsWorld_CreateAggregateInstance;
         
-        // IPhysicsWorld_SetDebugScene: Index 2077
-        native[2077] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_SetDebugScene;
+        // IPhysicsWorld_CreateAggregateInstance_1: Index 2079
+        native[2079] = (void*)(delegate* unmanaged<IntPtr, IntPtr, Transform*, ulong, long, int>)&IPhysicsWorld_CreateAggregateInstance_1;
         
-        // IPhysicsWorld_GetDebugScene: Index 2078
-        native[2078] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_GetDebugScene;
+        // IPhysicsWorld_SetDebugScene: Index 2080
+        native[2080] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_SetDebugScene;
         
-        // IPhysicsWorld_Draw: Index 2079
-        native[2079] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_Draw;
+        // IPhysicsWorld_GetDebugScene: Index 2081
+        native[2081] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_GetDebugScene;
         
-        // IPhysicsWorld_ManagedObject: Index 2080
-        native[2080] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_ManagedObject;
+        // IPhysicsWorld_Draw: Index 2082
+        native[2082] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IPhysicsWorld_Draw;
         
-        // IPhysicsWorld_Query: Index 2081
-        native[2081] = (void*)(delegate* unmanaged<IntPtr, IntPtr, Vector3*, float, ushort, void>)&IPhysicsWorld_Query;
+        // IPhysicsWorld_ManagedObject: Index 2083
+        native[2083] = (void*)(delegate* unmanaged<IntPtr, int>)&IPhysicsWorld_ManagedObject;
         
-        // IPhysicsWorld_Query_1: Index 2082
-        native[2082] = (void*)(delegate* unmanaged<IntPtr, IntPtr, BBox*, ushort, void>)&IPhysicsWorld_Query_1;
+        // IPhysicsWorld_Query: Index 2084
+        native[2084] = (void*)(delegate* unmanaged<IntPtr, IntPtr, Vector3*, float, ushort, void>)&IPhysicsWorld_Query;
         
-        // IPhysicsWorld_Query_2: Index 2083
-        native[2083] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, int, ushort, void>)&IPhysicsWorld_Query_2;
+        // IPhysicsWorld_Query_1: Index 2085
+        native[2085] = (void*)(delegate* unmanaged<IntPtr, IntPtr, BBox*, ushort, void>)&IPhysicsWorld_Query_1;
+        
+        // IPhysicsWorld_Query_2: Index 2086
+        native[2086] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, int, ushort, void>)&IPhysicsWorld_Query_2;
         
         Console.WriteLine("[NativeAOT] PhysicsWorld module initialized");
     }
@@ -600,6 +604,16 @@ public static unsafe class PhysicsWorld
     public static int IPhysicsWorld_AddWheelJoint(IntPtr self, IntPtr body1Ptr, IntPtr body2Ptr, Transform* localFrame1, Transform* localFrame2)
     {
         throw new NotImplementedException("IPhysicsWorld_AddWheelJoint is not yet implemented in the linux emulation layer");
+    }
+
+    /// <summary>
+    /// Add a filter joint (stub).
+    /// </summary>
+    [UnmanagedCallersOnly]
+    public static int IPhysicsWorld_AddFilterJoint(IntPtr self, IntPtr body1Ptr, IntPtr body2Ptr)
+    {
+        Console.WriteLine("[NativeAOT] IPhysicsWorld_AddFilterJoint: stub");
+        return 0;
     }
     
     /// <summary>

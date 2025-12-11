@@ -35,6 +35,20 @@ public struct RenderAttributesSamplerStateDesc
 /// </summary>
 public static unsafe class RenderAttributes
 {
+    // Logging controls for exported functions
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][RA] {name} {message}");
+    }
+    // Certains appels venant du moteur managé peuvent passer un pointeur/handle inconnu
+    // (ex: valeur élevée hors plage HandleManager). On garde un cache de secours pour
+    // ces handles externes afin d'éviter un crash immédiat.
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<IntPtr, EmulatedRenderAttributes> _externalAttributes = new();
+
     /// <summary>
     /// Initialise les fonctions natives de CRenderAttributes.
     /// </summary>
@@ -150,19 +164,7 @@ public static unsafe class RenderAttributes
         }
 
         long n = System.Threading.Interlocked.Increment(ref _createCount);
-
-        // Throttle logging: only log the first few and then every 10,000 creations with a stack trace to locate the caller.
-        // if (n <= 5 || (n % 10000) == 0)
-        // {
-        //     string? trace = null;
-        //     try { trace = Environment.StackTrace; } catch { /* ignore */ }
-            Console.WriteLine($"[NativeAOT] CRndrttrbts_Create: handle={handle}, count={n}");
-        //     if (!string.IsNullOrEmpty(trace))
-        //     {
-        //         Console.WriteLine("[NativeAOT] CRndrttrbts_Create stack:\n" + trace);
-        //     }
-        // }
-
+        Console.WriteLine($"[NativeAOT] CRndrttrbts_Create: handle={handle}, count={n}");
         return (IntPtr)handle;
     }
     
@@ -369,7 +371,13 @@ public static unsafe class RenderAttributes
         var result = HandleManager.Get<EmulatedRenderAttributes>(handle);
         if (result == null)
         {
-            Console.WriteLine($"[NativeAOT] RenderAttributes: handle {handle} not found");
+            // Fallback: si le handle ne provient pas de notre HandleManager (ex: pointeur natif),
+            // on alloue une instance de secours pour éviter un segfault et poursuivre le rendu.
+            result = _externalAttributes.GetOrAdd(self, static h =>
+            {
+                Console.WriteLine($"[NativeAOT] RenderAttributes: external handle 0x{h.ToInt64():X} not found in HandleManager, allocating fallback attributes");
+                return new EmulatedRenderAttributes();
+            });
         }
         return result;
     }
@@ -382,6 +390,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteThis(IntPtr self)
     {
+        LogCall(nameof(CRndrttrbts_DeleteThis), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -391,6 +400,9 @@ public static unsafe class RenderAttributes
             HandleManager.Unregister(handle);
             Console.WriteLine($"[NativeAOT] CRndrttrbts_DeleteThis: deleted handle={handle}");
         }
+
+        // Nettoyer un éventuel handle externe de secours
+        _externalAttributes.TryRemove(self, out _);
     }
     
     /// <summary>
@@ -399,6 +411,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static IntPtr CRndrttrbts_Create()
     {
+        LogCall(nameof(CRndrttrbts_Create), minimal: true);
         return CreateRenderAttributesInternal();
     }
     
@@ -407,6 +420,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetFloatValue(IntPtr self, Sandbox.StringToken nTokenID, float flValue)
     {
+        LogCall(nameof(CRndrttrbts_SetFloatValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} value={flValue}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.FloatValues[nTokenID] = flValue;
@@ -415,6 +429,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static float CRndrttrbts_GetFloatValue(IntPtr self, Sandbox.StringToken nTokenID, float flDefaultValue)
     {
+        LogCall(nameof(CRndrttrbts_GetFloatValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} default={flDefaultValue}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return flDefaultValue;
         return attrs.FloatValues.TryGetValue(nTokenID, out var value) ? value : flDefaultValue;
@@ -423,6 +438,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteFloatValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteFloatValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.FloatValues.Remove(nTokenID);
@@ -433,6 +449,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetVector2DValue(IntPtr self, Sandbox.StringToken nTokenID, Vector2* vValue)
     {
+        LogCall(nameof(CRndrttrbts_SetVector2DValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} ptr=0x{(IntPtr)vValue:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null || vValue == null) return;
         attrs.Vector2DValues[nTokenID] = *vValue;
@@ -441,6 +458,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static Vector2 CRndrttrbts_GetVector2DValue(IntPtr self, Sandbox.StringToken nTokenID, Vector2* vDefaultValue)
     {
+        LogCall(nameof(CRndrttrbts_GetVector2DValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} defPtr=0x{(IntPtr)vDefaultValue:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null)
         {
@@ -452,6 +470,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteVector2DValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteVector2DValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.Vector2DValues.Remove(nTokenID);
@@ -462,6 +481,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetVectorValue(IntPtr self, Sandbox.StringToken nTokenID, Vector3* vValue)
     {
+        LogCall(nameof(CRndrttrbts_SetVectorValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} ptr=0x{(IntPtr)vValue:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null || vValue == null) return;
         attrs.VectorValues[nTokenID] = *vValue;
@@ -470,6 +490,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static Vector3 CRndrttrbts_GetVectorValue(IntPtr self, Sandbox.StringToken nTokenID, Vector3* vDefaultValue)
     {
+        LogCall(nameof(CRndrttrbts_GetVectorValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} defPtr=0x{(IntPtr)vDefaultValue:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null)
         {
@@ -481,6 +502,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteVectorValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteVectorValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.VectorValues.Remove(nTokenID);
@@ -491,6 +513,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetVector4DValue(IntPtr self, Sandbox.StringToken nTokenID, Vector4* vValue)
     {
+        LogCall(nameof(CRndrttrbts_SetVector4DValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} ptr=0x{(IntPtr)vValue:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null || vValue == null) return;
         attrs.Vector4DValues[nTokenID] = *vValue;
@@ -499,6 +522,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static Vector4 CRndrttrbts_GetVector4DValue(IntPtr self, Sandbox.StringToken nTokenID, Vector4* vDefaultValue)
     {
+        LogCall(nameof(CRndrttrbts_GetVector4DValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} defPtr=0x{(IntPtr)vDefaultValue:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null)
         {
@@ -510,6 +534,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteVector4DValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteVector4DValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.Vector4DValues.Remove(nTokenID);
@@ -520,6 +545,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetVMatrixValue(IntPtr self, Sandbox.StringToken nTokenID, Matrix* value)
     {
+        LogCall(nameof(CRndrttrbts_SetVMatrixValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} ptr=0x{(IntPtr)value:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null || value == null) return;
         attrs.MatrixValues[nTokenID] = *value;
@@ -528,6 +554,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static Matrix CRndrttrbts_GetVMatrixValue(IntPtr self, Sandbox.StringToken nTokenID, Matrix* vDefaultValue)
     {
+        LogCall(nameof(CRndrttrbts_GetVMatrixValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} defPtr=0x{(IntPtr)vDefaultValue:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null)
         {
@@ -539,6 +566,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteVMatrixValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteVMatrixValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.MatrixValues.Remove(nTokenID);
@@ -549,6 +577,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetStringValue(IntPtr self, Sandbox.StringToken nTokenID, IntPtr str)
     {
+        LogCall(nameof(CRndrttrbts_SetStringValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} strPtr=0x{str.ToInt64():X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         
@@ -563,6 +592,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteStringValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteStringValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.StringValues.Remove(nTokenID);
@@ -573,6 +603,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetIntValue(IntPtr self, Sandbox.StringToken nTokenID, int nValue)
     {
+        LogCall(nameof(CRndrttrbts_SetIntValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} value={nValue}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.IntValues[nTokenID] = nValue;
@@ -581,6 +612,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static int CRndrttrbts_GetIntValue(IntPtr self, Sandbox.StringToken nTokenID, int nDefaultValue)
     {
+        LogCall(nameof(CRndrttrbts_GetIntValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} default={nDefaultValue}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return nDefaultValue;
         return attrs.IntValues.TryGetValue(nTokenID, out var value) ? value : nDefaultValue;
@@ -589,6 +621,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteIntValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteIntValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.IntValues.Remove(nTokenID);
@@ -599,6 +632,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetComboValue(IntPtr self, Sandbox.StringToken nTokenID, byte nValue)
     {
+        LogCall(nameof(CRndrttrbts_SetComboValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} value={nValue}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.ComboValues[nTokenID] = nValue;
@@ -607,6 +641,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static byte CRndrttrbts_GetComboValue(IntPtr self, Sandbox.StringToken nTokenID, byte nValue)
     {
+        LogCall(nameof(CRndrttrbts_GetComboValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} default={nValue}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return nValue;
         return attrs.ComboValues.TryGetValue(nTokenID, out var value) ? value : nValue;
@@ -615,6 +650,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteComboValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteComboValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.ComboValues.Remove(nTokenID);
@@ -625,6 +661,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetBoolValue(IntPtr self, Sandbox.StringToken nTokenID, int bValue)
     {
+        LogCall(nameof(CRndrttrbts_SetBoolValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} value={bValue}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.BoolValues[nTokenID] = bValue != 0;
@@ -633,6 +670,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static int CRndrttrbts_GetBoolValue(IntPtr self, Sandbox.StringToken nTokenID, int bValue)
     {
+        LogCall(nameof(CRndrttrbts_GetBoolValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} default={bValue}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return bValue;
         return attrs.BoolValues.TryGetValue(nTokenID, out var value) ? (value ? 1 : 0) : bValue;
@@ -641,6 +679,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteBoolValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteBoolValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.BoolValues.Remove(nTokenID);
@@ -651,6 +690,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetTextureValue(IntPtr self, Sandbox.StringToken nTokenID, IntPtr txtr, int nSingleMipLevelToBind)
     {
+        LogCall(nameof(CRndrttrbts_SetTextureValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} tex=0x{txtr.ToInt64():X} mip={nSingleMipLevelToBind}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         
@@ -668,6 +708,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static IntPtr CRndrttrbts_GetTextureValue(IntPtr self, Sandbox.StringToken nTokenID, IntPtr defaultTxtr)
     {
+        LogCall(nameof(CRndrttrbts_GetTextureValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} default=0x{defaultTxtr.ToInt64():X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return defaultTxtr;
         
@@ -681,6 +722,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteTextureValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeleteTextureValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.TextureValues.Remove(nTokenID);
@@ -691,6 +733,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetSamplerValue(IntPtr self, Sandbox.StringToken nTokenID, RenderAttributesSamplerStateDesc* samplerDesc)
     {
+        LogCall(nameof(CRndrttrbts_SetSamplerValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} descPtr=0x{(IntPtr)samplerDesc:X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null || samplerDesc == null) return;
         attrs.SamplerValues[nTokenID] = *samplerDesc;
@@ -701,6 +744,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetBufferValue(IntPtr self, Sandbox.StringToken nTokenID, IntPtr hRenderBuffer)
     {
+        LogCall(nameof(CRndrttrbts_SetBufferValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} buffer=0x{hRenderBuffer.ToInt64():X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         
@@ -720,6 +764,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetPtrValue(IntPtr self, Sandbox.StringToken nTokenID, IntPtr ptr)
     {
+        LogCall(nameof(CRndrttrbts_SetPtrValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} ptr=0x{ptr.ToInt64():X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.PtrValues[nTokenID] = ptr;
@@ -728,6 +773,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeletePtrValue(IntPtr self, Sandbox.StringToken nTokenID)
     {
+        LogCall(nameof(CRndrttrbts_DeletePtrValue), minimal: false, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.PtrValues.Remove(nTokenID);
@@ -738,6 +784,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_SetIntVector4DValue(IntPtr self, Sandbox.StringToken nTokenID, int x, int y, int z, int w)
     {
+        LogCall(nameof(CRndrttrbts_SetIntVector4DValue), minimal: true, message: $"self=0x{self.ToInt64():X} token={nTokenID.Value} val=({x},{y},{z},{w})");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         // Stocker comme Vector4 (conversion implicite)
@@ -749,6 +796,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_MergeToPtr(IntPtr self, IntPtr attrList)
     {
+        LogCall(nameof(CRndrttrbts_MergeToPtr), minimal: true, message: $"self=0x{self.ToInt64():X} src=0x{attrList.ToInt64():X}");
         var attrs = GetRenderAttributes(self);
         var sourceAttrs = GetRenderAttributes(attrList);
         if (attrs == null || sourceAttrs == null) return;
@@ -787,6 +835,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static int CRndrttrbts_IsEmpty(IntPtr self)
     {
+        LogCall(nameof(CRndrttrbts_IsEmpty), minimal: true, message: $"self=0x{self.ToInt64():X}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return 1; // Empty if invalid
         return attrs.IsEmpty() ? 1 : 0;
@@ -797,6 +846,7 @@ public static unsafe class RenderAttributes
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_Clear(IntPtr self, int freeMemory, int resetParent)
     {
+        LogCall(nameof(CRndrttrbts_Clear), minimal: true, message: $"self=0x{self.ToInt64():X} free={freeMemory} resetParent={resetParent}");
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return;
         attrs.Clear(freeMemory != 0);

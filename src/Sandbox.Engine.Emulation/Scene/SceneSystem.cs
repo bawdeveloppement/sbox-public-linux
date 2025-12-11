@@ -866,6 +866,7 @@ public static unsafe class SceneSystem
     {
         var glfw = PlatformFunctions.GetGlfw();
         var window = PlatformFunctions.GetWindowHandle();
+        var swapChain = RenderDevice.GetSwapChainTextureHandle();
         int width = 1280, height = 720;
         if (glfw != null && window != null)
         {
@@ -885,7 +886,7 @@ public static unsafe class SceneSystem
         {
             if (_activeSceneViewHandle == IntPtr.Zero)
             {
-                _activeSceneViewHandle = Emulation.Rendering.EmulatedSceneView.CreateView(viewport, managedCameraId: 1, priority: 0);
+                _activeSceneViewHandle = Emulation.Rendering.EmulatedSceneView.CreateView(viewport, managedCameraId: 1, priority: 0, swapChain);
             }
         }
 
@@ -897,11 +898,14 @@ public static unsafe class SceneSystem
         // Mettre à jour viewport/swapchain sur les objets existants
         Emulation.Rendering.EmulatedSceneLayer.SetViewportManaged(_activeSceneLayerHandle, viewport);
 
-        // Brancher la swapchain comme color target si disponible.
+        // Brancher la swapchain comme color/depth target si disponible.
         var swapColor = RenderDevice.GetSwapChainTextureHandle();
+        var swapDepth = RenderDevice.GetSwapChainDepthHandle();
         if (swapColor != IntPtr.Zero)
         {
-            Emulation.Rendering.EmulatedSceneLayer.SetOutputManaged(_activeSceneLayerHandle, swapColor, IntPtr.Zero);
+            var colorRt = Emulation.Rendering.EmulatedSceneView.FindOrCreateRenderTargetManaged(_activeSceneViewHandle, "swapchain-color", swapColor, flags: 0);
+            var depthRt = Emulation.Rendering.EmulatedSceneView.FindOrCreateRenderTargetManaged(_activeSceneViewHandle, "swapchain-depth", swapDepth, flags: 1);
+            Emulation.Rendering.EmulatedSceneLayer.SetOutputManaged(_activeSceneLayerHandle, colorRt, depthRt);
             Emulation.Rendering.EmulatedSceneView.SetSwapChainManaged(_activeSceneViewHandle, swapColor);
         }
     }

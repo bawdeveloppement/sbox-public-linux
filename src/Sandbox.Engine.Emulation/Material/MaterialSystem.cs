@@ -18,6 +18,54 @@ namespace Sandbox.Engine.Emulation.Material;
 /// </summary>
 public static unsafe class MaterialSystem
 {
+    // Logging switches
+    private static bool LogMinimal = true; // active for key calls
+    private static bool LogAll = true;    // force logging for every call
+
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][Mat] {name} {message}");
+    }
+
+    private static string? TryFindCompiledShaderPath(string? shader)
+    {
+        if (string.IsNullOrWhiteSpace(shader))
+            return null;
+
+        string normalized = shader.Replace('\\', Path.DirectorySeparatorChar).Replace('/', Path.DirectorySeparatorChar);
+        string relCandidate = Path.ChangeExtension(normalized, ".shader_c");
+        var candidates = new List<string>
+        {
+            Path.GetFullPath(relCandidate, Directory.GetCurrentDirectory()),
+            Path.Combine(Directory.GetCurrentDirectory(), "game", relCandidate),
+            Path.Combine(Directory.GetCurrentDirectory(), Path.GetFileName(relCandidate))
+        };
+
+        foreach (var candidate in candidates)
+        {
+            if (!string.IsNullOrEmpty(candidate) && File.Exists(candidate))
+                return candidate;
+        }
+
+        try
+        {
+            string fileName = Path.GetFileName(relCandidate);
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                foreach (var path in Directory.EnumerateFiles(Directory.GetCurrentDirectory(), fileName, SearchOption.AllDirectories))
+                {
+                    return path;
+                }
+            }
+        }
+        catch
+        {
+            // swallow and return null
+        }
+
+        return null;
+    }
     /// <summary>
     /// Données internes pour un matériau émulé.
     /// </summary>
@@ -34,6 +82,8 @@ public static unsafe class MaterialSystem
         public Dictionary<string, object> Parameters { get; } = new(); // Stocke les paramètres du matériau
         public IntPtr BindingPtr { get; set; } = IntPtr.Zero; // Pointeur de binding unique
         public IntPtr MaterialMode { get; set; } = IntPtr.Zero; // Mode de rendu du matériau
+        public string? CompiledShaderPath { get; set; }
+        public byte[]? CompiledShaderBytes { get; set; }
     }
     
     /// <summary>
@@ -133,7 +183,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr CMtrlSystm2ppSys_Create(NativeEngine.MaterialSystem2AppSystemDictCreateInfo* createInfo)
     {
-        Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_Create");
+        LogCall(nameof(CMtrlSystm2ppSys_Create), minimal: true, message: $"createInfo=0x{((IntPtr)createInfo).ToInt64():X}");
         return (IntPtr)1; // Return a dummy non-null pointer
     }
     
@@ -143,7 +193,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_Destroy(IntPtr self)
     {
-        Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_Destroy");
+        LogCall(nameof(CMtrlSystm2ppSys_Destroy), minimal: true, message: $"self=0x{self.ToInt64():X}");
         // Cleanup if needed
     }
     
@@ -153,7 +203,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_Init(IntPtr self)
     {
-        Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_Init");
+        LogCall(nameof(CMtrlSystm2ppSys_Init), minimal: true, message: $"self=0x{self.ToInt64():X}");
         return 1; // Success
     }
     
@@ -176,7 +226,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr CMtrlSystm2ppSys_GetAppWindow(IntPtr self)
     {
-        Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_GetAppWindow");
+        LogCall(nameof(CMtrlSystm2ppSys_GetAppWindow), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (_windowHandle == null)
             return IntPtr.Zero;
         return (IntPtr)_windowHandle;
@@ -188,7 +238,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr CMtrlSystm2ppSys_GetAppWindowSwapChain(IntPtr self)
     {
-        Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_GetAppWindowSwapChain");
+        LogCall(nameof(CMtrlSystm2ppSys_GetAppWindowSwapChain), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (_windowHandle == null)
             return IntPtr.Zero;
         // Return window handle as SwapChain (GLFW window handle serves as SwapChain)
@@ -699,6 +749,7 @@ public static unsafe class MaterialSystem
     {
         string? materialName = Marshal.PtrToStringUTF8(materialNamePtr);
         string? shader = Marshal.PtrToStringUTF8(shaderPtr);
+        LogCall(nameof(g_pMtrlSystm2_CreateRawMaterial), minimal: true, message: $"name='{materialName}' shader='{shader}' anonymous={anonymous}");
         
         // Create render attributes for this material
         IntPtr renderAttributes = RenderAttributes.RenderAttributes.CreateRenderAttributesInternal();
@@ -710,6 +761,32 @@ public static unsafe class MaterialSystem
             Anonymous = anonymous != 0,
             RenderAttributes = renderAttributes
         };
+
+        // Charger le shader compilé (.shader_c) si disponible
+        string? compiledPath = TryFindCompiledShaderPath(shader);
+        if (!string.IsNullOrEmpty(compiledPath) && File.Exists(compiledPath))
+        {
+            try
+            {
+                materialData.CompiledShaderPath = compiledPath;
+                materialData.CompiledShaderBytes = File.ReadAllBytes(compiledPath);
+                materialData.IsLoaded = true;
+                materialData.IsError = false;
+                LogCall(nameof(g_pMtrlSystm2_CreateRawMaterial), minimal: true, message: $"loaded shader_c='{compiledPath}' size={materialData.CompiledShaderBytes.Length}");
+            }
+            catch (Exception ex)
+            {
+                materialData.IsLoaded = false;
+                materialData.IsError = true;
+                LogCall(nameof(g_pMtrlSystm2_CreateRawMaterial), minimal: true, message: $"failed to load shader_c: {ex.Message}");
+            }
+        }
+        else
+        {
+            materialData.IsLoaded = false;
+            materialData.IsError = true;
+            LogCall(nameof(g_pMtrlSystm2_CreateRawMaterial), minimal: true, message: "shader_c not found");
+        }
         
         // Enregistrer MaterialData dans HandleManager pour obtenir un handle unique
         int handle = HandleManager.Register(materialData);
@@ -728,8 +805,6 @@ public static unsafe class MaterialSystem
             HandleManager.RegisterNameIndex(materialName, bindingHandle);
         }
         
-        Console.WriteLine($"[NativeAOT] g_pMtrlSystm2_CreateRawMaterial: name={materialName}, shader={shader}, handle={handle}");
-        
         return (IntPtr)handle;
     }
     
@@ -741,6 +816,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetRenderAttributes(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_GetRenderAttributes), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         // Get the material data and return its render attributes
@@ -762,6 +838,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetName(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_GetName), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -781,6 +858,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetMode(IntPtr self, Sandbox.StringToken token)
     {
+        LogCall(nameof(IMaterial2_GetMode), minimal: true, message: $"self=0x{self.ToInt64():X} token={token.Value}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -834,6 +912,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr g_pMtrlSystm2_CreateProceduralMaterialCopy(IntPtr hSrcMaterial, int nResourceType, int bRecreateStaticBuffers)
     {
+        LogCall(nameof(g_pMtrlSystm2_CreateProceduralMaterialCopy), minimal: true, message: $"src=0x{hSrcMaterial.ToInt64():X} resType={nResourceType} recreate={bRecreateStaticBuffers}");
         if (hSrcMaterial == IntPtr.Zero) return IntPtr.Zero;
         
         var srcMaterial = HandleManager.Get<MaterialData>((int)hSrcMaterial);
@@ -876,7 +955,6 @@ public static unsafe class MaterialSystem
                 HandleManager.RegisterNameIndex(newMaterial.Name, newBindingHandle);
             }
             
-            Console.WriteLine($"[NativeAOT] g_pMtrlSystm2_CreateProceduralMaterialCopy: src={hSrcMaterial}, new={newHandle}");
             return (IntPtr)newHandle;
         }
         
@@ -889,6 +967,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr g_pMtrlSystm2_FindOrCreateMaterialFromResource(IntPtr pResourceName)
     {
+        LogCall(nameof(g_pMtrlSystm2_FindOrCreateMaterialFromResource), minimal: true, message: $"resource='{(pResourceName==IntPtr.Zero?string.Empty:Marshal.PtrToStringUTF8(pResourceName))}'");
         if (pResourceName == IntPtr.Zero) return IntPtr.Zero;
         
         string? resourceName = Marshal.PtrToStringUTF8(pResourceName);
@@ -959,8 +1038,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static void g_pMtrlSystm2_FrameUpdate()
     {
-        // Mise à jour par frame (pour l'instant, rien à faire)
-        // Cette fonction pourrait être utilisée pour nettoyer les ressources ou mettre à jour les états
+        LogCall(nameof(g_pMtrlSystm2_FrameUpdate), minimal: true);
     }
     
     // ========== IMaterial2 Functions supplémentaires ==========
@@ -971,6 +1049,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static void IMaterial2_DestroyStrongHandle(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_DestroyStrongHandle), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -990,7 +1069,6 @@ public static unsafe class MaterialSystem
         }
         
         HandleManager.Unregister((int)self);
-        Console.WriteLine($"[NativeAOT] IMaterial2_DestroyStrongHandle: {self}");
     }
     
     /// <summary>
@@ -999,6 +1077,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static int IMaterial2_IsStrongHandleValid(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_IsStrongHandleValid), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         return HandleManager.Exists((int)self) ? 1 : 0;
     }
@@ -1009,6 +1088,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static int IMaterial2_IsError(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_IsError), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 1; // Null = erreur
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1026,6 +1106,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static int IMaterial2_IsStrongHandleLoaded(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_IsStrongHandleLoaded), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1043,12 +1124,12 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_CopyStrongHandle(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_CopyStrongHandle), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         int newHandle = HandleManager.CopyHandle((int)self);
         if (newHandle != 0)
         {
-            Console.WriteLine($"[NativeAOT] IMaterial2_CopyStrongHandle: {self} -> {newHandle} (refs={HandleManager.GetReferenceCount((int)self)})");
             return (IntPtr)newHandle;
         }
         
@@ -1063,6 +1144,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetBindingPtr(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_GetBindingPtr), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         int bindingHandle = HandleManager.GetBindingHandle((int)self);
@@ -1075,6 +1157,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetNameWithMod(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_GetNameWithMod), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1099,6 +1182,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static ulong IMaterial2_GetSimilarityKey(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_GetSimilarityKey), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1123,6 +1207,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static int IMaterial2_IsLoaded(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_IsLoaded), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1140,6 +1225,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetMode_1(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_GetMode_1), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1164,6 +1250,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetMode_2(IntPtr self, IntPtr layer)
     {
+        LogCall(nameof(IMaterial2_GetMode_2), minimal: true, message: $"self=0x{self.ToInt64():X} layer=0x{layer.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1189,6 +1276,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static void IMaterial2_RecreateAllStaticConstantAndCommandBuffers(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_RecreateAllStaticConstantAndCommandBuffers), minimal: false, message: $"self=0x{self.ToInt64():X}");
         // Pour l'instant, rien à faire car on n'utilise pas de buffers statiques
         // Dans une implémentation complète, on recréerait les buffers GPU
     }
@@ -1199,6 +1287,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetFirstTextureAttribute(IntPtr self)
     {
+        LogCall(nameof(IMaterial2_GetFirstTextureAttribute), minimal: false, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1219,6 +1308,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static int IMaterial2_GetBoolAttributeOrDefault(IntPtr self, Sandbox.StringToken name, int defaultValue)
     {
+        LogCall(nameof(IMaterial2_GetBoolAttributeOrDefault), minimal: false, message: $"self=0x{self.ToInt64():X} token={name.Value} default={defaultValue}");
         if (self == IntPtr.Zero) return defaultValue;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1244,6 +1334,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static int IMaterial2_GetIntAttributeOrDefault(IntPtr self, Sandbox.StringToken name, int defaultValue)
     {
+        LogCall(nameof(IMaterial2_GetIntAttributeOrDefault), minimal: false, message: $"self=0x{self.ToInt64():X} token={name.Value} default={defaultValue}");
         if (self == IntPtr.Zero) return defaultValue;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1268,6 +1359,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static float IMaterial2_GetFloatAttributeOrDefault(IntPtr self, Sandbox.StringToken name, float defaultValue)
     {
+        LogCall(nameof(IMaterial2_GetFloatAttributeOrDefault), minimal: false, message: $"self=0x{self.ToInt64():X} token={name.Value} default={defaultValue}");
         if (self == IntPtr.Zero) return defaultValue;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);
@@ -1292,6 +1384,7 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetTextureAttributeOrDefault(IntPtr self, Sandbox.StringToken name)
     {
+        LogCall(nameof(IMaterial2_GetTextureAttributeOrDefault), minimal: false, message: $"self=0x{self.ToInt64():X} token={name.Value}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         var materialData = HandleManager.Get<MaterialData>((int)self);

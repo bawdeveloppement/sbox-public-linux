@@ -12,12 +12,21 @@ namespace Sandbox.Engine.Emulation.CUtl;
 /// </summary>
 public static unsafe class CUtlVectorVector
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][CUtlVecVec] {name} {message}");
+    }
+
     /// <summary>
     /// Initialise le module CUtlVectorVector en patchant les fonctions natives.
     /// Indices depuis Interop.Engine.cs lignes 16106-16110 (1241-1245)
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // Indices 1241-1245
         native[1241] = (void*)(delegate* unmanaged<IntPtr, void>)&CtlVctrVctr_DeleteThis;
         native[1242] = (void*)(delegate* unmanaged<int, int, IntPtr>)&CtlVctrVctr_Create;
@@ -25,12 +34,13 @@ public static unsafe class CUtlVectorVector
         native[1244] = (void*)(delegate* unmanaged<IntPtr, int, void>)&CtlVctrVctr_SetCount;
         native[1245] = (void*)(delegate* unmanaged<IntPtr, int, Vector3>)&CtlVctrVctr_Element;
         
-        Console.WriteLine("[NativeAOT] CUtlVectorVector module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     [UnmanagedCallersOnly]
     public static void CtlVctrVctr_DeleteThis(IntPtr self)
     {
+        LogCall(nameof(CtlVctrVctr_DeleteThis), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return;
         
@@ -48,6 +58,7 @@ public static unsafe class CUtlVectorVector
     [UnmanagedCallersOnly]
     public static IntPtr CtlVctrVctr_Create(int growsize, int initialcapacity)
     {
+        LogCall(nameof(CtlVctrVctr_Create), minimal: true, message: $"growsize={growsize} initcap={initialcapacity}");
         var vectorData = new VectorVectorData
         {
             GrowSize = growsize,
@@ -71,6 +82,7 @@ public static unsafe class CUtlVectorVector
     [UnmanagedCallersOnly]
     public static int CtlVctrVctr_Count(IntPtr self)
     {
+        LogCall(nameof(CtlVctrVctr_Count), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return 0;
         
@@ -81,6 +93,7 @@ public static unsafe class CUtlVectorVector
     [UnmanagedCallersOnly]
     public static void CtlVctrVctr_SetCount(IntPtr self, int count)
     {
+        LogCall(nameof(CtlVctrVctr_SetCount), minimal: true, message: $"self=0x{self.ToInt64():X} count={count}");
         if (self == IntPtr.Zero || count < 0)
             return;
         
@@ -116,6 +129,7 @@ public static unsafe class CUtlVectorVector
     [UnmanagedCallersOnly]
     public static Vector3 CtlVctrVctr_Element(IntPtr self, int i)
     {
+        LogCall(nameof(CtlVctrVctr_Element), minimal: true, message: $"self=0x{self.ToInt64():X} i={i}");
         if (self == IntPtr.Zero || i < 0)
             return Vector3.Zero;
         

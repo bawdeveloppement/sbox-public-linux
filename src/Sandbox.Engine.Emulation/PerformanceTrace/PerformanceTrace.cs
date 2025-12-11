@@ -10,17 +10,26 @@ namespace Sandbox.Engine.Emulation.PerformanceTrace;
 /// </summary>
 public static unsafe class PerformanceTrace
 {
+    private static bool LogMinimal = false; // If you enable this, its 100% sure you gonna lag
+    private static bool LogAll = false;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][Perf] {name} {message}");
+    }
+
     /// <summary>
     /// Initialise le module PerformanceTrace en patchant les fonctions natives.
     /// Indices depuis Interop.Engine.cs lignes 17252-17253 (2387-2388)
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // PerformanceTrace functions (indices 2387-2388 depuis Interop.Engine.cs)
-        native[2387] = (void*)(delegate* unmanaged<IntPtr, IntPtr, uint, void>)&PerformanceTrace_BeginEvent;
-        native[2388] = (void*)(delegate* unmanaged<void>)&PerformanceTrace_EndEvent;
+        native[2390] = (void*)(delegate* unmanaged<IntPtr, IntPtr, uint, void>)&PerformanceTrace_BeginEvent;
+        native[2391] = (void*)(delegate* unmanaged<void>)&PerformanceTrace_EndEvent;
         
-        Console.WriteLine("[NativeAOT] PerformanceTrace module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     /// <summary>
@@ -34,6 +43,8 @@ public static unsafe class PerformanceTrace
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
     public static void PerformanceTrace_BeginEvent(IntPtr name, IntPtr data, uint color)
     {
+        string nameStr = name != IntPtr.Zero ? Marshal.PtrToStringUTF8(name) ?? "" : "";
+        LogCall(nameof(PerformanceTrace_BeginEvent), minimal: true, message: $"name={nameStr} data=0x{data.ToInt64():X} color=0x{color:X}");
         // No-op for now - profiling is not critical for engine functionality
         // In the future, this could be implemented with a profiling library if needed
     }
@@ -49,6 +60,7 @@ public static unsafe class PerformanceTrace
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
     public static void PerformanceTrace_EndEvent()
     {
+        LogCall(nameof(PerformanceTrace_EndEvent), minimal: true);
         // No-op for now - profiling is not critical for engine functionality
         // In the future, this could be implemented with a profiling library if needed
     }

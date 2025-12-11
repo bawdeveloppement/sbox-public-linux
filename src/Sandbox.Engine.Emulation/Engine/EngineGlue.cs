@@ -18,6 +18,14 @@ namespace Sandbox.Engine.Emulation.Engine;
 /// </summary>
 public static unsafe class EngineGlue
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][Glue] {name} {message}");
+    }
+
     // Cache pour les chaînes allouées (GetStringTokenValue)
     private static readonly List<IntPtr> _allocatedStrings = new();
     private static readonly Dictionary<uint, IntPtr> _tokenStringPtrs = new();
@@ -73,6 +81,7 @@ public static unsafe class EngineGlue
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // Index calculés depuis Interop.Engine.cs (lignes 16070-16085)
         native[1323] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&EngineGlue_JsonToKeyValues3;
         native[1324] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&EngineGlue_KeyValuesToJson;
@@ -124,7 +133,7 @@ public static unsafe class EngineGlue
         native[1754] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&Glue_Resources_GetAnimationGraph;
         native[1755] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&Glue_Resources_GetShader;
         
-        Console.WriteLine("[NativeAOT] EngineGlue module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     // Structure simple pour représenter KeyValues3 (émulation)
@@ -145,6 +154,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_JsonToKeyValues3(IntPtr pJson)
     {
+        LogCall(nameof(EngineGlue_JsonToKeyValues3), minimal: true, message: $"pJson=0x{pJson.ToInt64():X}");
         if (pJson == IntPtr.Zero) return IntPtr.Zero;
         
         try
@@ -179,6 +189,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_KeyValuesToJson(IntPtr pKeyValues)
     {
+        LogCall(nameof(EngineGlue_KeyValuesToJson), minimal: true, message: $"ptr=0x{pKeyValues.ToInt64():X}");
         // KeyValues (ancien format) n'est plus utilisé, retourner null
         return IntPtr.Zero;
     }
@@ -189,6 +200,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_KeyValues3ToJson(IntPtr pKeyValues3)
     {
+        LogCall(nameof(EngineGlue_KeyValues3ToJson), minimal: true, message: $"ptr=0x{pKeyValues3.ToInt64():X}");
         if (pKeyValues3 == IntPtr.Zero) return IntPtr.Zero;
         
         try
@@ -268,6 +280,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_LoadKeyValues3(IntPtr pPath)
     {
+        LogCall(nameof(EngineGlue_LoadKeyValues3), minimal: true, message: $"pathPtr=0x{pPath.ToInt64():X}");
         if (pPath == IntPtr.Zero) return IntPtr.Zero;
         
         try
@@ -409,6 +422,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static uint EngineGlue_GetStringToken(IntPtr pString)
     {
+        LogCall(nameof(EngineGlue_GetStringToken), minimal: true, message: $"ptr=0x{pString.ToInt64():X}");
         if (pString == IntPtr.Zero) return 0;
         
         string? str = Marshal.PtrToStringUTF8(pString);
@@ -426,6 +440,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_GetStringTokenValue(uint token)
     {
+        LogCall(nameof(EngineGlue_GetStringTokenValue), minimal: true, message: $"token=0x{token:X}");
         if (token == 0) return IntPtr.Zero;
         
         // Utiliser Sandbox.StringToken pour récupérer la chaîne
@@ -456,6 +471,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void EngineGlue_AddSearchPath(IntPtr pPath, IntPtr pPathId, int nFlags)
     {
+        LogCall(nameof(EngineGlue_AddSearchPath), minimal: true, message: $"path=0x{pPath.ToInt64():X} pathId=0x{pPathId.ToInt64():X} flags=0x{nFlags:X}");
         if (pPath == IntPtr.Zero) return;
         
         string? path = Marshal.PtrToStringUTF8(pPath);
@@ -501,6 +517,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static int EngineGlue_RemoveSearchPath(IntPtr pPath, IntPtr pPathId)
     {
+        LogCall(nameof(EngineGlue_RemoveSearchPath), minimal: true, message: $"path=0x{pPath.ToInt64():X} pathId=0x{pPathId.ToInt64():X}");
         if (pPath == IntPtr.Zero) return 0;
         
         string? path = Marshal.PtrToStringUTF8(pPath);
@@ -530,6 +547,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static ulong EngineGlue_ApproximateProcessMemoryUsage()
     {
+        LogCall(nameof(EngineGlue_ApproximateProcessMemoryUsage), minimal: true);
         try
         {
             // Utiliser GC.GetTotalMemory pour une estimation rapide
@@ -554,6 +572,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_ReadCompiledResourceFileJson(IntPtr pData)
     {
+        LogCall(nameof(EngineGlue_ReadCompiledResourceFileJson), minimal: true, message: $"data=0x{pData.ToInt64():X}");
         if (pData == IntPtr.Zero) return IntPtr.Zero;
         
         try
@@ -606,6 +625,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_ReadCompiledResourceFileBlock(IntPtr pBlockName, IntPtr pData, int* pSize)
     {
+        LogCall(nameof(EngineGlue_ReadCompiledResourceFileBlock), minimal: true, message: $"block=0x{pBlockName.ToInt64():X} data=0x{pData.ToInt64():X}");
         if (pBlockName == IntPtr.Zero || pData == IntPtr.Zero || pSize == null)
         {
             if (pSize != null) *pSize = 0;
@@ -663,6 +683,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_ReadCompiledResourceFileJsonFromFilesystem(IntPtr pPath)
     {
+        LogCall(nameof(EngineGlue_ReadCompiledResourceFileJsonFromFilesystem), minimal: true, message: $"path=0x{pPath.ToInt64():X}");
         if (pPath == IntPtr.Zero) return IntPtr.Zero;
         
         try
@@ -707,6 +728,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void EngineGlue_SetEngineLoggingVerbose(int bVerbose)
     {
+        LogCall(nameof(EngineGlue_SetEngineLoggingVerbose), minimal: true, message: $"verbose={bVerbose}");
         _verboseLogging = bVerbose != 0;
     }
     
@@ -717,6 +739,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void EngineGlue_RequestWebAuthTicket()
     {
+        LogCall(nameof(EngineGlue_RequestWebAuthTicket), minimal: true);
         // Steam n'est pas disponible sur Linux dans cette émulation
         // Le moteur peut continuer sans ticket d'authentification
     }
@@ -728,6 +751,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void EngineGlue_CancelWebAuthTicket()
     {
+        LogCall(nameof(EngineGlue_CancelWebAuthTicket), minimal: true);
         // Steam n'est pas disponible sur Linux dans cette émulation
     }
     
@@ -738,6 +762,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr EngineGlue_GetWebAuthTicket()
     {
+        LogCall(nameof(EngineGlue_GetWebAuthTicket), minimal: true);
         // Steam n'est pas disponible sur Linux dans cette émulation
         return IntPtr.Zero;
     }
@@ -769,6 +794,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Resources_GetMaterial(IntPtr pName)
     {
+        LogCall(nameof(Glue_Resources_GetMaterial), minimal: true, message: $"namePtr=0x{pName.ToInt64():X}");
         if (pName == IntPtr.Zero) return IntPtr.Zero;
         
         string? resourceName = Marshal.PtrToStringUTF8(pName);
@@ -807,6 +833,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Resources_GetTexture(IntPtr pName)
     {
+        LogCall(nameof(Glue_Resources_GetTexture), minimal: true, message: $"namePtr=0x{pName.ToInt64():X}");
         if (pName == IntPtr.Zero) return IntPtr.Zero;
         
         string? resourceName = Marshal.PtrToStringUTF8(pName);
@@ -844,6 +871,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Resources_GetModel(IntPtr pName)
     {
+        LogCall(nameof(Glue_Resources_GetModel), minimal: true, message: $"namePtr=0x{pName.ToInt64():X}");
         if (pName == IntPtr.Zero) return IntPtr.Zero;
         
         string? resourceName = Marshal.PtrToStringUTF8(pName);
@@ -882,6 +910,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Resources_GetAnimationGraph(IntPtr pName)
     {
+        LogCall(nameof(Glue_Resources_GetAnimationGraph), minimal: true, message: $"namePtr=0x{pName.ToInt64():X}");
         if (pName == IntPtr.Zero) return IntPtr.Zero;
         
         string? resourceName = Marshal.PtrToStringUTF8(pName);
@@ -918,7 +947,7 @@ public static unsafe class EngineGlue
             _resourceCache[cacheKey] = animGraphHandle;
         }
         
-        Console.WriteLine($"[NativeAOT] Glue_Resources_GetAnimationGraph: {resourceName} -> handle={animGraphHandle}, binding={bindingHandle}");
+        LogCall(nameof(Glue_Resources_GetAnimationGraph), minimal: true, message: $"name={resourceName} handle=0x{animGraphHandle.ToInt64():X} binding=0x{bindingHandle:X}");
         return animGraphHandle;
     }
     
@@ -930,6 +959,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Resources_GetShader(IntPtr pName)
     {
+        LogCall(nameof(Glue_Resources_GetShader), minimal: true, message: $"namePtr=0x{pName.ToInt64():X}");
         if (pName == IntPtr.Zero) return IntPtr.Zero;
         
         string? resourceName = Marshal.PtrToStringUTF8(pName);
@@ -966,7 +996,7 @@ public static unsafe class EngineGlue
             _resourceCache[cacheKey] = shaderHandle;
         }
         
-        Console.WriteLine($"[NativeAOT] Glue_Resources_GetShader: {resourceName} -> handle={shaderHandle}, binding={bindingHandle}");
+        LogCall(nameof(Glue_Resources_GetShader), minimal: true, message: $"name={resourceName} handle=0x{shaderHandle.ToInt64():X} binding=0x{bindingHandle:X}");
         return shaderHandle;
     }
     
@@ -1006,6 +1036,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_RunCallbacks()
     {
+        LogCall(nameof(Glue_Networking_RunCallbacks), minimal: true);
         if (!Steam.SteamAPI.IsSteamEnabled())
         {
             // Steam désactivé, rien à faire (pas d'exception car c'est appelé fréquemment)
@@ -1020,6 +1051,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_SetDebugFunction(int level, IntPtr func)
     {
+        LogCall(nameof(Glue_Networking_SetDebugFunction), minimal: true, message: $"level={level} func=0x{func.ToInt64():X}");
         // Si Steam est désactivé, rien à faire (no-op)
         if (!Steam.SteamAPI.IsSteamEnabled()) return;
         throw new NotImplementedException("Glue_Networking_SetDebugFunction: Steam Networking not yet implemented in the linux emulation layer");
@@ -1031,6 +1063,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static long Glue_Networking_GetAuthenticationStatus(IntPtr debugMsg)
     {
+        LogCall(nameof(Glue_Networking_GetAuthenticationStatus), minimal: true, message: $"debug=0x{debugMsg.ToInt64():X}");
         // Si Steam est désactivé, retourner 0 (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return 0;
         throw new NotImplementedException("Glue_Networking_GetAuthenticationStatus: Steam Networking not yet implemented in the linux emulation layer");
@@ -1042,6 +1075,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static long Glue_Networking_GetRelayNetworkStatus(IntPtr debugMsg)
     {
+        LogCall(nameof(Glue_Networking_GetRelayNetworkStatus), minimal: true, message: $"debug=0x{debugMsg.ToInt64():X}");
         // Si Steam est désactivé, retourner 0 (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return 0;
         throw new NotImplementedException("Glue_Networking_GetRelayNetworkStatus: Steam Networking not yet implemented in the linux emulation layer");
@@ -1053,6 +1087,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Networking_CreateSocket(int virtualPort)
     {
+        LogCall(nameof(Glue_Networking_CreateSocket), minimal: true, message: $"port={virtualPort}");
         // Si Steam est désactivé, retourner IntPtr.Zero (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return IntPtr.Zero;
         throw new NotImplementedException("Glue_Networking_CreateSocket: Steam Networking not yet implemented in the linux emulation layer");
@@ -1064,6 +1099,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Networking_CreateIpBasedSocket(int useFakeIP)
     {
+        LogCall(nameof(Glue_Networking_CreateIpBasedSocket), minimal: true, message: $"fakeIp={useFakeIP}");
         // Si Steam est désactivé, retourner IntPtr.Zero (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return IntPtr.Zero;
         throw new NotImplementedException("Glue_Networking_CreateIpBasedSocket: Steam Networking not yet implemented in the linux emulation layer");
@@ -1075,6 +1111,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_CloseSocket(IntPtr socket)
     {
+        LogCall(nameof(Glue_Networking_CloseSocket), minimal: true, message: $"socket=0x{socket.ToInt64():X}");
         // Si Steam est désactivé, rien à faire (no-op)
         if (!Steam.SteamAPI.IsSteamEnabled()) return;
         throw new NotImplementedException("Glue_Networking_CloseSocket: Steam Networking not yet implemented in the linux emulation layer");
@@ -1086,6 +1123,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Networking_GetSocketAddress(IntPtr socket)
     {
+        LogCall(nameof(Glue_Networking_GetSocketAddress), minimal: true, message: $"socket=0x{socket.ToInt64():X}");
         // Si Steam est désactivé, retourner IntPtr.Zero (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return IntPtr.Zero;
         throw new NotImplementedException("Glue_Networking_GetSocketAddress: Steam Networking not yet implemented in the linux emulation layer");
@@ -1097,6 +1135,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_BeginAsyncRequestFakeIP()
     {
+        LogCall(nameof(Glue_Networking_BeginAsyncRequestFakeIP), minimal: true);
         // Si Steam est désactivé, rien à faire (no-op)
         if (!Steam.SteamAPI.IsSteamEnabled()) return;
         throw new NotImplementedException("Glue_Networking_BeginAsyncRequestFakeIP: Steam Networking not yet implemented in the linux emulation layer");
@@ -1108,6 +1147,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Networking_GetIdentity()
     {
+        LogCall(nameof(Glue_Networking_GetIdentity), minimal: true);
         // Si Steam est désactivé, retourner IntPtr.Zero (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return IntPtr.Zero;
         throw new NotImplementedException("Glue_Networking_GetIdentity: Steam Networking not yet implemented in the linux emulation layer");
@@ -1119,6 +1159,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Networking_CreatePollGroup()
     {
+        LogCall(nameof(Glue_Networking_CreatePollGroup), minimal: true);
         // Si Steam est désactivé, retourner IntPtr.Zero (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return IntPtr.Zero;
         throw new NotImplementedException("Glue_Networking_CreatePollGroup: Steam Networking not yet implemented in the linux emulation layer");
@@ -1130,6 +1171,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_DestroyPollGroup(IntPtr group)
     {
+        LogCall(nameof(Glue_Networking_DestroyPollGroup), minimal: true, message: $"group=0x{group.ToInt64():X}");
         // Si Steam est désactivé, rien à faire (no-op)
         if (!Steam.SteamAPI.IsSteamEnabled()) return;
         throw new NotImplementedException("Glue_Networking_DestroyPollGroup: Steam Networking not yet implemented in the linux emulation layer");
@@ -1141,6 +1183,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_SetPollGroup(IntPtr connection, IntPtr group)
     {
+        LogCall(nameof(Glue_Networking_SetPollGroup), minimal: true, message: $"conn=0x{connection.ToInt64():X} group=0x{group.ToInt64():X}");
         // Si Steam est désactivé, rien à faire (no-op)
         if (!Steam.SteamAPI.IsSteamEnabled()) return;
         throw new NotImplementedException("Glue_Networking_SetPollGroup: Steam Networking not yet implemented in the linux emulation layer");
@@ -1152,6 +1195,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static int Glue_Networking_GetPollGroupMessages(IntPtr group, IntPtr array_of_pointers, int maxmessages)
     {
+        LogCall(nameof(Glue_Networking_GetPollGroupMessages), minimal: true, message: $"group=0x{group.ToInt64():X} max={maxmessages}");
         // Si Steam est désactivé, retourner 0 (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return 0;
         throw new NotImplementedException("Glue_Networking_GetPollGroupMessages: Steam Networking not yet implemented in the linux emulation layer");
@@ -1163,6 +1207,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Networking_ConnectToSteamId(ulong steamid, int virtualPort)
     {
+        LogCall(nameof(Glue_Networking_ConnectToSteamId), minimal: true, message: $"steamid={steamid} port={virtualPort}");
         // Si Steam est désactivé, retourner IntPtr.Zero (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return IntPtr.Zero;
         throw new NotImplementedException("Glue_Networking_ConnectToSteamId: Steam Networking not yet implemented in the linux emulation layer");
@@ -1174,6 +1219,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Networking_ConnectToIpAddress(IntPtr address)
     {
+        LogCall(nameof(Glue_Networking_ConnectToIpAddress), minimal: true, message: $"addr=0x{address.ToInt64():X}");
         // Si Steam est désactivé, retourner IntPtr.Zero (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return IntPtr.Zero;
         throw new NotImplementedException("Glue_Networking_ConnectToIpAddress: Steam Networking not yet implemented in the linux emulation layer");
@@ -1185,6 +1231,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_CloseConnection(IntPtr c, int reason, IntPtr debugReason)
     {
+        LogCall(nameof(Glue_Networking_CloseConnection), minimal: true, message: $"conn=0x{c.ToInt64():X} reason={reason} debug=0x{debugReason.ToInt64():X}");
         // Si Steam est désactivé, rien à faire (no-op)
         if (!Steam.SteamAPI.IsSteamEnabled()) return;
         throw new NotImplementedException("Glue_Networking_CloseConnection: Steam Networking not yet implemented in the linux emulation layer");
@@ -1196,6 +1243,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_AcceptConnection(IntPtr c)
     {
+        LogCall(nameof(Glue_Networking_AcceptConnection), minimal: true, message: $"conn=0x{c.ToInt64():X}");
         // Si Steam est désactivé, rien à faire (no-op)
         if (!Steam.SteamAPI.IsSteamEnabled()) return;
         throw new NotImplementedException("Glue_Networking_AcceptConnection: Steam Networking not yet implemented in the linux emulation layer");
@@ -1207,6 +1255,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static void Glue_Networking_FlushMessagesOnConnection(IntPtr c)
     {
+        LogCall(nameof(Glue_Networking_FlushMessagesOnConnection), minimal: true, message: $"conn=0x{c.ToInt64():X}");
         // Si Steam est désactivé, rien à faire (no-op)
         if (!Steam.SteamAPI.IsSteamEnabled()) return;
         throw new NotImplementedException("Glue_Networking_FlushMessagesOnConnection: Steam Networking not yet implemented in the linux emulation layer");
@@ -1218,6 +1267,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static long Glue_Networking_SendMessage(IntPtr c, IntPtr data, int length, int flags)
     {
+        LogCall(nameof(Glue_Networking_SendMessage), minimal: true, message: $"conn=0x{c.ToInt64():X} data=0x{data.ToInt64():X} len={length} flags=0x{flags:X}");
         // Si Steam est désactivé, retourner 0 (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return 0;
         throw new NotImplementedException("Glue_Networking_SendMessage: Steam Networking not yet implemented in the linux emulation layer");
@@ -1229,6 +1279,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static int Glue_Networking_GetConnectionMessages(IntPtr c, IntPtr array_of_pointers, int maxmessages)
     {
+        LogCall(nameof(Glue_Networking_GetConnectionMessages), minimal: true, message: $"conn=0x{c.ToInt64():X} max={maxmessages}");
         // Si Steam est désactivé, retourner 0 (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return 0;
         throw new NotImplementedException("Glue_Networking_GetConnectionMessages: Steam Networking not yet implemented in the linux emulation layer");
@@ -1240,6 +1291,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static int Glue_Networking_GetConnectionState(IntPtr c)
     {
+        LogCall(nameof(Glue_Networking_GetConnectionState), minimal: true, message: $"conn=0x{c.ToInt64():X}");
         // Si Steam est désactivé, retourner 0 (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return 0;
         throw new NotImplementedException("Glue_Networking_GetConnectionState: Steam Networking not yet implemented in the linux emulation layer");
@@ -1251,6 +1303,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static IntPtr Glue_Networking_GetConnectionDescription(IntPtr c)
     {
+        LogCall(nameof(Glue_Networking_GetConnectionDescription), minimal: true, message: $"conn=0x{c.ToInt64():X}");
         // Si Steam est désactivé, retourner IntPtr.Zero (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return IntPtr.Zero;
         throw new NotImplementedException("Glue_Networking_GetConnectionDescription: Steam Networking not yet implemented in the linux emulation layer");
@@ -1262,6 +1315,7 @@ public static unsafe class EngineGlue
     [UnmanagedCallersOnly]
     public static ulong Glue_Networking_GetConnectionSteamId(IntPtr c)
     {
+        LogCall(nameof(Glue_Networking_GetConnectionSteamId), minimal: true, message: $"conn=0x{c.ToInt64():X}");
         // Si Steam est désactivé, retourner 0 (pas d'exception)
         if (!Steam.SteamAPI.IsSteamEnabled()) return 0;
         throw new NotImplementedException("Glue_Networking_GetConnectionSteamId: Steam Networking not yet implemented in the linux emulation layer");

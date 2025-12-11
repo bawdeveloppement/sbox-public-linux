@@ -26,11 +26,20 @@ public struct CameraNativeRect
 /// </summary>
 public static unsafe class CameraRenderer
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][Cam] {name} {message}");
+    }
+
     /// <summary>
     /// Initialise les fonctions natives de CCameraRenderer.
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // Fonctions principales (indices 74-89)
         native[74] = (void*)(delegate* unmanaged<IntPtr, void>)&CCameraRenderer_DeleteThis;
         native[75] = (void*)(delegate* unmanaged<IntPtr, int, IntPtr>)&CCameraRenderer_Create;
@@ -146,6 +155,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_DeleteThis(IntPtr self)
     {
+        LogCall(nameof(CCameraRenderer_DeleteThis), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -153,7 +163,6 @@ public static unsafe class CameraRenderer
         if (renderer != null)
         {
             HandleManager.Unregister(handle);
-            Console.WriteLine($"[NativeAOT] CCameraRenderer_DeleteThis: handle={handle}");
         }
     }
     
@@ -163,6 +172,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static IntPtr CCameraRenderer_Create(IntPtr name, int cameraId)
     {
+        LogCall(nameof(CCameraRenderer_Create), minimal: true, message: $"namePtr=0x{name.ToInt64():X} cameraId={cameraId}");
         var renderer = new EmulatedCameraRenderer
         {
             CameraId = cameraId
@@ -176,7 +186,6 @@ public static unsafe class CameraRenderer
         }
         
         int handle = HandleManager.Register(renderer);
-        Console.WriteLine($"[NativeAOT] CCameraRenderer_Create: cameraId={cameraId}, handle={handle}");
         return (IntPtr)handle;
     }
     
@@ -186,6 +195,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_ClearSceneWorlds(IntPtr self)
     {
+        LogCall(nameof(CCameraRenderer_ClearSceneWorlds), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -202,6 +212,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_AddSceneWorld(IntPtr self, IntPtr world)
     {
+        LogCall(nameof(CCameraRenderer_AddSceneWorld), minimal: true, message: $"self=0x{self.ToInt64():X} world=0x{world.ToInt64():X}");
         if (self == IntPtr.Zero || world == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -218,6 +229,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_SetRenderAttributes(IntPtr self, IntPtr attributes)
     {
+        LogCall(nameof(CCameraRenderer_SetRenderAttributes), minimal: true, message: $"self=0x{self.ToInt64():X} attrs=0x{attributes.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -234,6 +246,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_Render(IntPtr self, IntPtr targetSwapChain)
     {
+        LogCall(nameof(CCameraRenderer_Render), minimal: true, message: $"self=0x{self.ToInt64():X} swap=0x{targetSwapChain.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -249,6 +262,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_RenderToTexture(IntPtr self, IntPtr hTexture, IntPtr parentView)
     {
+        LogCall(nameof(CCameraRenderer_RenderToTexture), minimal: true, message: $"self=0x{self.ToInt64():X} tex=0x{hTexture.ToInt64():X} parent=0x{parentView.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -264,6 +278,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_RenderToCubeTexture(IntPtr self, IntPtr hTexture, int nSlice)
     {
+        LogCall(nameof(CCameraRenderer_RenderToCubeTexture), minimal: true, message: $"self=0x{self.ToInt64():X} tex=0x{hTexture.ToInt64():X} slice={nSlice}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -279,6 +294,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_RenderToBitmap(IntPtr self, IntPtr pixels, int width, int height, int bytesPerPixel)
     {
+        LogCall(nameof(CCameraRenderer_RenderToBitmap), minimal: true, message: $"self=0x{self.ToInt64():X} pixels=0x{pixels.ToInt64():X} w={width} h={height} bpp={bytesPerPixel}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -294,6 +310,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_RenderStereo(IntPtr self, int eye, int eyeWidth, int eyeHeight, int bSubmitThisEye)
     {
+        LogCall(nameof(CCameraRenderer_RenderStereo), minimal: true, message: $"self=0x{self.ToInt64():X} eye={eye} w={eyeWidth} h={eyeHeight} submit={bSubmitThisEye}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -309,6 +326,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_SubmitStereo(IntPtr self, int eyeWidth, int eyeHeight)
     {
+        LogCall(nameof(CCameraRenderer_SubmitStereo), minimal: true, message: $"self=0x{self.ToInt64():X} w={eyeWidth} h={eyeHeight}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -324,6 +342,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_BlitStereo(IntPtr self, int eyeWidth, int eyeHeight)
     {
+        LogCall(nameof(CCameraRenderer_BlitStereo), minimal: true, message: $"self=0x{self.ToInt64():X} w={eyeWidth} h={eyeHeight}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -339,6 +358,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_ClearRenderTags(IntPtr self)
     {
+        LogCall(nameof(CCameraRenderer_ClearRenderTags), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -355,6 +375,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_ClearExcludeTags(IntPtr self)
     {
+        LogCall(nameof(CCameraRenderer_ClearExcludeTags), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -371,6 +392,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_AddRenderTag(IntPtr self, uint hash)
     {
+        LogCall(nameof(CCameraRenderer_AddRenderTag), minimal: true, message: $"self=0x{self.ToInt64():X} tag=0x{hash:X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -387,6 +409,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly]
     public static void CCameraRenderer_AddExcludeTag(IntPtr self, uint hash)
     {
+        LogCall(nameof(CCameraRenderer_AddExcludeTag), minimal: true, message: $"self=0x{self.ToInt64():X} tag=0x{hash:X}");
         if (self == IntPtr.Zero) return;
         
         int handle = (int)self;
@@ -402,6 +425,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_ViewUniqueId(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_ViewUniqueId), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -411,6 +435,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_ViewUniqueId(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_ViewUniqueId), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -420,6 +445,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static Vector3 Get__CCameraRenderer_CameraPosition(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_CameraPosition), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return Vector3.Zero;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -429,6 +455,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_CameraPosition(IntPtr self, Vector3 value)
     {
+        LogCall(nameof(Set__CCameraRenderer_CameraPosition), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -438,6 +465,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static Angles Get__CCameraRenderer_CameraRotation(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_CameraRotation), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return Angles.Zero;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -447,6 +475,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_CameraRotation(IntPtr self, Angles value)
     {
+        LogCall(nameof(Set__CCameraRenderer_CameraRotation), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -456,6 +485,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static float Get__CCameraRenderer_FieldOfView(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_FieldOfView), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 75.0f;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -465,6 +495,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_FieldOfView(IntPtr self, float value)
     {
+        LogCall(nameof(Set__CCameraRenderer_FieldOfView), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -474,6 +505,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static float Get__CCameraRenderer_ZNear(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_ZNear), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0.1f;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -483,6 +515,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_ZNear(IntPtr self, float value)
     {
+        LogCall(nameof(Set__CCameraRenderer_ZNear), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -492,6 +525,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static float Get__CCameraRenderer_ZFar(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_ZFar), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 10000.0f;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -501,6 +535,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_ZFar(IntPtr self, float value)
     {
+        LogCall(nameof(Set__CCameraRenderer_ZFar), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -510,6 +545,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static CameraNativeRect Get__CCameraRenderer_Rect(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_Rect), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return default;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -519,6 +555,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_Rect(IntPtr self, CameraNativeRect value)
     {
+        LogCall(nameof(Set__CCameraRenderer_Rect), minimal: true, message: $"self=0x{self.ToInt64():X} rect=({value.w}x{value.h}@{value.x},{value.y})");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -528,6 +565,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static Vector4 Get__CCameraRenderer_Viewport(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_Viewport), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return Vector4.Zero;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -537,6 +575,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_Viewport(IntPtr self, Vector4 value)
     {
+        LogCall(nameof(Set__CCameraRenderer_Viewport), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -546,6 +585,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static Vector4 Get__CCameraRenderer_ClipSpaceBounds(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_ClipSpaceBounds), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return new Vector4(-1, -1, 1, 1);
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -555,6 +595,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_ClipSpaceBounds(IntPtr self, Vector4 value)
     {
+        LogCall(nameof(Set__CCameraRenderer_ClipSpaceBounds), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -564,6 +605,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_EnablePostprocessing(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_EnablePostprocessing), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 1;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -573,6 +615,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_EnablePostprocessing(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_EnablePostprocessing), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -582,6 +625,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_EnableEngineOverlays(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_EnableEngineOverlays), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 1;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -591,6 +635,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_EnableEngineOverlays(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_EnableEngineOverlays), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -600,6 +645,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_Ortho(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_Ortho), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -609,6 +655,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_Ortho(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_Ortho), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -618,6 +665,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static float Get__CCameraRenderer_OrthoSize(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_OrthoSize), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 1.0f;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -627,6 +675,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_OrthoSize(IntPtr self, float value)
     {
+        LogCall(nameof(Set__CCameraRenderer_OrthoSize), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -636,6 +685,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_NeedTonemapRenderer(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_NeedTonemapRenderer), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 1;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -645,6 +695,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_NeedTonemapRenderer(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_NeedTonemapRenderer), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -654,6 +705,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static long Get__CCameraRenderer_SceneViewFlags(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_SceneViewFlags), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -663,6 +715,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_SceneViewFlags(IntPtr self, long value)
     {
+        LogCall(nameof(Set__CCameraRenderer_SceneViewFlags), minimal: true, message: $"self=0x{self.ToInt64():X} value=0x{value:X}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -672,6 +725,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_IsRenderingStereo(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_IsRenderingStereo), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -681,6 +735,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_IsRenderingStereo(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_IsRenderingStereo), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -690,6 +745,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static Vector3 Get__CCameraRenderer_MiddleEyePosition(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_MiddleEyePosition), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return Vector3.Zero;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -699,6 +755,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_MiddleEyePosition(IntPtr self, Vector3 value)
     {
+        LogCall(nameof(Set__CCameraRenderer_MiddleEyePosition), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -708,6 +765,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static Angles Get__CCameraRenderer_MiddleEyeRotation(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_MiddleEyeRotation), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return Angles.Zero;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -717,6 +775,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_MiddleEyeRotation(IntPtr self, Angles value)
     {
+        LogCall(nameof(Set__CCameraRenderer_MiddleEyeRotation), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -726,6 +785,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static Matrix Get__CCameraRenderer_OverrideProjection(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_OverrideProjection), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return Matrix.Identity;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -735,6 +795,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_OverrideProjection(IntPtr self, Matrix value)
     {
+        LogCall(nameof(Set__CCameraRenderer_OverrideProjection), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -744,6 +805,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_HasOverrideProjection(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_HasOverrideProjection), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -753,6 +815,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_HasOverrideProjection(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_HasOverrideProjection), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -762,6 +825,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_FlipX(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_FlipX), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -771,6 +835,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_FlipX(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_FlipX), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -780,6 +845,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static int Get__CCameraRenderer_FlipY(IntPtr self)
     {
+        LogCall(nameof(Get__CCameraRenderer_FlipY), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);
@@ -789,6 +855,7 @@ public static unsafe class CameraRenderer
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static void Set__CCameraRenderer_FlipY(IntPtr self, int value)
     {
+        LogCall(nameof(Set__CCameraRenderer_FlipY), minimal: true, message: $"self=0x{self.ToInt64():X} value={value}");
         if (self == IntPtr.Zero) return;
         int handle = (int)self;
         var renderer = HandleManager.Get<EmulatedCameraRenderer>(handle);

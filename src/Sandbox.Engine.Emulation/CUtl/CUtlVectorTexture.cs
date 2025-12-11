@@ -12,24 +12,34 @@ namespace Sandbox.Engine.Emulation.CUtl;
 /// </summary>
 public static unsafe class CUtlVectorTexture
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][CUtlVecTex] {name} {message}");
+    }
+
     /// <summary>
     /// Initialise le module CUtlVectorTexture en patchant les fonctions natives.
     /// Indices depuis Interop.Engine.cs lignes 16093-16096 (1228-1231)
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // Indices 1228-1231
         native[1228] = (void*)(delegate* unmanaged<IntPtr, void>)&CtlVctrHRndrTxtr_DeleteThis;
         native[1229] = (void*)(delegate* unmanaged<int, int, IntPtr>)&CtlVctrHRndrTxtr_Create;
         native[1230] = (void*)(delegate* unmanaged<IntPtr, int>)&CtlVctrHRndrTxtr_Count;
         native[1231] = (void*)(delegate* unmanaged<IntPtr, int, IntPtr>)&CtlVctrHRndrTxtr_Element;
         
-        Console.WriteLine("[NativeAOT] CUtlVectorTexture module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     [UnmanagedCallersOnly]
     public static void CtlVctrHRndrTxtr_DeleteThis(IntPtr self)
     {
+        LogCall(nameof(CtlVctrHRndrTxtr_DeleteThis), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return;
         
@@ -39,6 +49,7 @@ public static unsafe class CUtlVectorTexture
     [UnmanagedCallersOnly]
     public static IntPtr CtlVctrHRndrTxtr_Create(int growsize, int initialcapacity)
     {
+        LogCall(nameof(CtlVctrHRndrTxtr_Create), minimal: true, message: $"growsize={growsize} initcap={initialcapacity}");
         var vectorData = new VectorTextureData
         {
             GrowSize = growsize,
@@ -54,6 +65,7 @@ public static unsafe class CUtlVectorTexture
     [UnmanagedCallersOnly]
     public static int CtlVctrHRndrTxtr_Count(IntPtr self)
     {
+        LogCall(nameof(CtlVctrHRndrTxtr_Count), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return 0;
         
@@ -64,6 +76,7 @@ public static unsafe class CUtlVectorTexture
     [UnmanagedCallersOnly]
     public static IntPtr CtlVctrHRndrTxtr_Element(IntPtr self, int i)
     {
+        LogCall(nameof(CtlVctrHRndrTxtr_Element), minimal: true, message: $"self=0x{self.ToInt64():X} i={i}");
         if (self == IntPtr.Zero || i < 0)
             return IntPtr.Zero;
         

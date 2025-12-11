@@ -11,12 +11,21 @@ namespace Sandbox.Engine.Emulation.CUtl;
 /// </summary>
 public static unsafe class CUtlVectorFloat
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][CUtlVecF] {name} {message}");
+    }
+
     /// <summary>
     /// Initialise le module CUtlVectorFloat en patchant les fonctions natives.
     /// Indices depuis Interop.Engine.cs lignes 16088-16092 (1223-1227)
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // Indices 1223-1227
         native[1223] = (void*)(delegate* unmanaged<IntPtr, void>)&CtlVctrflt_DeleteThis;
         native[1224] = (void*)(delegate* unmanaged<int, int, IntPtr>)&CtlVctrflt_Create;
@@ -24,7 +33,7 @@ public static unsafe class CUtlVectorFloat
         native[1226] = (void*)(delegate* unmanaged<IntPtr, int, void>)&CtlVctrflt_SetCount;
         native[1227] = (void*)(delegate* unmanaged<IntPtr, int, float>)&CtlVctrflt_Element;
         
-        Console.WriteLine("[NativeAOT] CUtlVectorFloat module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     /// <summary>
@@ -37,6 +46,7 @@ public static unsafe class CUtlVectorFloat
     [UnmanagedCallersOnly]
     public static void CtlVctrflt_DeleteThis(IntPtr self)
     {
+        LogCall(nameof(CtlVctrflt_DeleteThis), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return;
         
@@ -65,6 +75,7 @@ public static unsafe class CUtlVectorFloat
     [UnmanagedCallersOnly]
     public static IntPtr CtlVctrflt_Create(int growsize, int initialcapacity)
     {
+        LogCall(nameof(CtlVctrflt_Create), minimal: true, message: $"growsize={growsize} initcap={initialcapacity}");
         var vectorData = new VectorFloatData
         {
             GrowSize = growsize,
@@ -104,6 +115,7 @@ public static unsafe class CUtlVectorFloat
     [UnmanagedCallersOnly]
     public static int CtlVctrflt_Count(IntPtr self)
     {
+        LogCall(nameof(CtlVctrflt_Count), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero)
             return 0;
         
@@ -122,6 +134,7 @@ public static unsafe class CUtlVectorFloat
     [UnmanagedCallersOnly]
     public static void CtlVctrflt_SetCount(IntPtr self, int count)
     {
+        LogCall(nameof(CtlVctrflt_SetCount), minimal: true, message: $"self=0x{self.ToInt64():X} count={count}");
         if (self == IntPtr.Zero || count < 0)
             return;
         
@@ -174,6 +187,7 @@ public static unsafe class CUtlVectorFloat
     [UnmanagedCallersOnly]
     public static float CtlVctrflt_Element(IntPtr self, int i)
     {
+        LogCall(nameof(CtlVctrflt_Element), minimal: true, message: $"self=0x{self.ToInt64():X} i={i}");
         if (self == IntPtr.Zero || i < 0)
             return 0.0f;
         
@@ -192,6 +206,7 @@ public static unsafe class CUtlVectorFloat
     /// </summary>
     public static void SetCountHelper(IntPtr self, int count)
     {
+        LogCall(nameof(SetCountHelper), minimal: false, message: $"self=0x{self.ToInt64():X} count={count}");
         if (self == IntPtr.Zero || count < 0)
             return;
         
@@ -238,6 +253,7 @@ public static unsafe class CUtlVectorFloat
     /// </summary>
     public static void SetElement(IntPtr self, int i, float value)
     {
+        LogCall(nameof(SetElement), minimal: false, message: $"self=0x{self.ToInt64():X} i={i} value={value}");
         if (self == IntPtr.Zero || i < 0)
             return;
         
@@ -255,6 +271,7 @@ public static unsafe class CUtlVectorFloat
     /// </summary>
     public static void SetCountManaged(IntPtr self, int count)
     {
+        LogCall(nameof(SetCountManaged), minimal: false, message: $"self=0x{self.ToInt64():X} count={count}");
         if (self == IntPtr.Zero || count < 0)
             return;
 

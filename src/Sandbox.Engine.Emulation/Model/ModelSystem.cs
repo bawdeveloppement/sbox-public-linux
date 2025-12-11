@@ -11,6 +11,14 @@ namespace Sandbox.Engine.Emulation.Model;
 /// </summary>
 public static unsafe class ModelSystem
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][Model] {name} {message}");
+    }
+
     /// <summary>
     /// Données internes pour un modèle émulé.
     /// Pattern identique à MaterialData dans MaterialSystem.cs
@@ -29,6 +37,7 @@ public static unsafe class ModelSystem
     /// </summary>
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         // CModel functions essentielles (indices 541-546 depuis Interop.Engine.cs)
         native[541] = (void*)(delegate* unmanaged<IntPtr, void>)&CModel_DestroyStrongHandle;
         native[542] = (void*)(delegate* unmanaged<IntPtr, int>)&CModel_IsStrongHandleValid;
@@ -48,7 +57,7 @@ public static unsafe class ModelSystem
         // TODO: Implémenter les autres fonctions CModel_* (indices 551-604)
         // Pour l'instant, on implémente seulement les fonctions essentielles pour que le système fonctionne
         
-        Console.WriteLine("[NativeAOT] ModelSystem module initialized");
+        LogCall(nameof(Init), minimal: true, message: "module initialized");
     }
     
     /// <summary>
@@ -57,6 +66,7 @@ public static unsafe class ModelSystem
     /// </summary>
     public static IntPtr CreateModelFromResourceHelper(string resourceName)
     {
+        LogCall(nameof(CreateModelFromResourceHelper), minimal: true, message: $"name={resourceName}");
         if (string.IsNullOrEmpty(resourceName)) return IntPtr.Zero;
         
         // Chercher un modèle existant avec ce nom (O(1) via index)
@@ -72,7 +82,7 @@ public static unsafe class ModelSystem
                 var allHandles = HandleManager.GetAllHandles(existingHandle);
                 if (allHandles.Length > 0)
                 {
-                    Console.WriteLine($"[NativeAOT] ModelSystem.CreateModelFromResourceHelper: found existing {resourceName}");
+                    LogCall(nameof(CreateModelFromResourceHelper), minimal: true, message: $"found existing name={resourceName}");
                     return (IntPtr)allHandles[0];
                 }
             }
@@ -94,7 +104,7 @@ public static unsafe class ModelSystem
         // Enregistrer dans l'index Name pour recherche O(1)
         HandleManager.RegisterNameIndex(resourceName, bindingHandle);
         
-        Console.WriteLine($"[NativeAOT] ModelSystem.CreateModelFromResourceHelper: created new {resourceName}, handle={handle}");
+        LogCall(nameof(CreateModelFromResourceHelper), minimal: true, message: $"created name={resourceName} handle={handle}");
         return (IntPtr)handle;
     }
     
@@ -105,6 +115,7 @@ public static unsafe class ModelSystem
     [UnmanagedCallersOnly]
     public static void CModel_DestroyStrongHandle(IntPtr self)
     {
+        LogCall(nameof(CModel_DestroyStrongHandle), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         
         var modelData = HandleManager.Get<ModelData>((int)self);
@@ -118,7 +129,6 @@ public static unsafe class ModelSystem
         }
         
         HandleManager.Unregister((int)self);
-        Console.WriteLine($"[NativeAOT] CModel_DestroyStrongHandle: {self}");
     }
     
     /// <summary>
@@ -129,6 +139,7 @@ public static unsafe class ModelSystem
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static int CModel_IsStrongHandleValid(IntPtr self)
     {
+        LogCall(nameof(CModel_IsStrongHandleValid), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         return HandleManager.Exists((int)self) ? 1 : 0;
     }
@@ -141,6 +152,7 @@ public static unsafe class ModelSystem
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static int CModel_IsError(IntPtr self)
     {
+        LogCall(nameof(CModel_IsError), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 1; // Null = erreur
         
         var modelData = HandleManager.Get<ModelData>((int)self);
@@ -160,6 +172,7 @@ public static unsafe class ModelSystem
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static int CModel_IsStrongHandleLoaded(IntPtr self)
     {
+        LogCall(nameof(CModel_IsStrongHandleLoaded), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return 0;
         
         var modelData = HandleManager.Get<ModelData>((int)self);
@@ -179,12 +192,13 @@ public static unsafe class ModelSystem
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static IntPtr CModel_CopyStrongHandle(IntPtr self)
     {
+        LogCall(nameof(CModel_CopyStrongHandle), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         int newHandle = HandleManager.CopyHandle((int)self);
         if (newHandle != 0)
         {
-            Console.WriteLine($"[NativeAOT] CModel_CopyStrongHandle: {self} -> {newHandle} (refs={HandleManager.GetReferenceCount((int)self)})");
+            LogCall(nameof(CModel_CopyStrongHandle), minimal: true, message: $"self=0x{self.ToInt64():X} new=0x{newHandle:X} refs={HandleManager.GetReferenceCount((int)self)}");
             return (IntPtr)newHandle;
         }
         
@@ -201,6 +215,7 @@ public static unsafe class ModelSystem
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static IntPtr CModel_GetBindingPtr(IntPtr self)
     {
+        LogCall(nameof(CModel_GetBindingPtr), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         int bindingHandle = HandleManager.GetBindingHandle((int)self);
@@ -214,6 +229,7 @@ public static unsafe class ModelSystem
     [UnmanagedCallersOnly]
     public static IntPtr CModel_GetModelName(IntPtr self)
     {
+        LogCall(nameof(CModel_GetModelName), minimal: true, message: $"self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return IntPtr.Zero;
         
         var modelData = HandleManager.Get<ModelData>((int)self);
@@ -233,6 +249,7 @@ public static unsafe class ModelSystem
     [UnmanagedCallersOnly]
     public static int CModel_IsTranslucent(IntPtr self)
     {
+        LogCall(nameof(CModel_IsTranslucent), minimal: true, message: $"self=0x{self.ToInt64():X}");
         // TODO: Implémenter la logique réelle basée sur les matériaux du modèle
         throw new NotImplementedException("CModel_IsTranslucent not implemented");
     }
@@ -244,6 +261,7 @@ public static unsafe class ModelSystem
     [UnmanagedCallersOnly]
     public static int CModel_IsTranslucentTwoPass(IntPtr self)
     {
+        LogCall(nameof(CModel_IsTranslucentTwoPass), minimal: true, message: $"self=0x{self.ToInt64():X}");
         // TODO: Implémenter la logique réelle
         throw new NotImplementedException( "CModel_IsTranslucentTwoPass not implemented" );
     }
@@ -255,6 +273,7 @@ public static unsafe class ModelSystem
     [UnmanagedCallersOnly]
     public static int CModel_HasPhysics(IntPtr self)
     {
+        LogCall(nameof(CModel_HasPhysics), minimal: true, message: $"self=0x{self.ToInt64():X}");
         // TODO: Implémenter la logique réelle basée sur les données du modèle
         throw new NotImplementedException( "CModel_HasPhysics not implemented" );
     }

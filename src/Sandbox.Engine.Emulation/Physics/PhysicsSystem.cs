@@ -82,9 +82,9 @@ public static unsafe class PhysicsSystem
         native[1469] = (void*)(delegate* unmanaged<IntPtr, void>)&g_pPhysicsSystem_UpdateSurfaceProperties;
         
         // IPhysSurfacePropertyController functions: Indices 2084-2086
-        native[2084] = (void*)(delegate* unmanaged<IntPtr, int>)&PhysSrfcPrprtyCn_GetSurfacePropCount;
-        native[2085] = (void*)(delegate* unmanaged<IntPtr, int, IntPtr>)&PhysSrfcPrprtyCn_GetSurfaceProperty;
-        native[2086] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, IntPtr>)&PhysSrfcPrprtyCn_AddProperty;
+        native[2087] = (void*)(delegate* unmanaged<IntPtr, int>)&PhysSrfcPrprtyCn_GetSurfacePropCount;
+        native[2088] = (void*)(delegate* unmanaged<IntPtr, int, IntPtr>)&PhysSrfcPrprtyCn_GetSurfaceProperty;
+        native[2089] = (void*)(delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, IntPtr>)&PhysSrfcPrprtyCn_AddProperty;
         
         // CPhysSurfaceProperties functions (654-670) are now handled by PhysicSurfaceProperties.Init()
         PhysicSurfaceProperties.Init(native);
@@ -162,7 +162,7 @@ public static unsafe class PhysicsSystem
             Common.HandleManager.Unregister(handle);
             return 0;
         }
-
+        
         lock (_physicsWorlds)
         {
             _physicsWorlds[bindingHandle] = new PhysicsWorldEntry
@@ -184,7 +184,7 @@ public static unsafe class PhysicsSystem
         {
             Console.WriteLine($"[NativeAOT] Warning: HandleIndex registration unavailable. TypeID={_physicsWorldTypeId}, Ptr={(IntPtr)EngineGlue.Imports._ptr_Sandbox_HandleIndex_RegisterHandle}");
         }
-
+        
         return bindingHandle;
     }
     
@@ -196,7 +196,7 @@ public static unsafe class PhysicsSystem
     {
         int bindingHandle = (int)worldPtr;
         PhysicsWorldEntry entry;
-
+        
         lock (_physicsWorlds)
         {
             if (!_physicsWorlds.TryGetValue(bindingHandle, out entry))
@@ -274,7 +274,7 @@ public static unsafe class PhysicsSystem
             {
                 world = entry.World;
                 return true;
-            }
+        }
         }
 
         world = null;

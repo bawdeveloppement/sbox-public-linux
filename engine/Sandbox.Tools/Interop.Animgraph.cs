@@ -147,7 +147,7 @@ namespace Managed.SourceAnimgraph
 			fixed ( int* s = structSizes )
 			
 			{
-				nativeInit( 29202, m, n, s );
+				nativeInit( 42666, m, n, s );
 			}
 			
 			var onError = Marshal.GetDelegateForFunctionPointer<_ErrorFunction>( nativeFunctions[0] );

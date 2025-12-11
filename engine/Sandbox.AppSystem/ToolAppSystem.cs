@@ -1,4 +1,4 @@
-﻿using Sandbox.Engine;
+using Sandbox.Engine;
 using Sandbox.Tasks;
 using System;
 using System.IO;
@@ -50,31 +50,29 @@ public class ToolAppSystem : AppSystem, IDisposable
 		var commandLine = System.Environment.CommandLine;
 		commandLine = commandLine.Replace( ".dll", ".exe" ); // uck
 
-		_appSystem = null; // Set to null or a dummy implementation for Linux
-		if ( !System.OperatingSystem.IsLinux() )
+		// For Linux emulation we keep the struct but it may remain default/invalid.
+		_appSystem = CMaterialSystem2AppSystemDict.Create( createInfo.ToMaterialSystem2AppSystemDictCreateInfo() );
+
+		if ( _appSystem.IsValid )
 		{
-			_appSystem = CMaterialSystem2AppSystemDict.Create( createInfo.ToMaterialSystem2AppSystemDictCreateInfo() );
+			_appSystem.SetModGameSubdir( "core" );
+			_appSystem.SetInToolsMode();
+			_appSystem.SetSteamAppId( (uint)Application.AppId );
+
+			//_appSystem.Init();
+
+			if ( !NativeEngine.EngineGlobal.SourceEnginePreInit( commandLine, _appSystem ) )
+			{
+				throw new System.Exception( "SourceEnginePreInit failed" );
+			}
+
+			_appSystem.AddSystem( "resourcecompiler", "ResourceCompilerSystem001" );
+
+			Bootstrap.PreInit( _appSystem );
+
+			//Bootstrap.Init();
 		}
-		
-		        if ( _appSystem is not null )
-		        {
-		            _appSystem.Value.SetModGameSubdir( "core" );
-		            _appSystem.Value.SetInToolsMode();
-		            _appSystem.Value.SetSteamAppId( (uint)Application.AppId );
-		
-		            //_appSystem.Init();
-		
-		            if ( !NativeEngine.EngineGlobal.SourceEnginePreInit( commandLine, _appSystem.Value ) ) // Use .Value
-		            {
-		                throw new System.Exception( "SourceEnginePreInit failed" );
-		            }
-		
-		            _appSystem.Value.AddSystem( "resourcecompiler", "ResourceCompilerSystem001" );
-		
-		            Bootstrap.PreInit( _appSystem.Value ); // Use .Value
-		
-		            //Bootstrap.Init();
-		        }	}
+	}
 
 	static void AddSearchPaths( string[] args )
 	{

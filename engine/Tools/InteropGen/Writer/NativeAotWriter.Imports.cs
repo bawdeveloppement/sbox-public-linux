@@ -22,13 +22,12 @@ internal partial class NativeAotWriter
 				IEnumerable<string> argTypes = c.SelfArg(true, f.Static)
 					.Concat(f.Parameters)
 					.Where(x => x.IsRealArgument)
-					.Select(x => ToNativeAotDelegateType(x));
-
-				string returnType = ToNativeAotDelegateType(f.Return);
+					.Select( x => $"{ToNativeAotTypeFromType(x.GetManagedDelegateType( false ))}" )
+					.Concat( new[] { ToNativeAotTypeFromType(f.Return.GetManagedDelegateType( true )) } );
 
 				string signature = string.Join(", ", argTypes);
 
-				WriteLine($"        public static delegate* unmanaged<{signature}{(signature.Length > 0 ? ", " : "")}{returnType}> _ptr_{f.MangledName};");
+				WriteLine($"        public static delegate* unmanaged<{argTypes}> _ptr_{f.MangledName};");
 			}
 		}
 		GenerateStoreImports();
@@ -48,15 +47,15 @@ internal partial class NativeAotWriter
 				IEnumerable<string> argTypes = c.SelfArg(true, f.Static)
 					.Concat(f.Parameters)
 					.Where(x => x.IsRealArgument)
-					.Select(x => ToNativeAotDelegateType(x));
+					.Select( x => $"{ToNativeAotTypeFromType(x.GetManagedDelegateType( false ))}" )
+					.Concat( new[] { ToNativeAotTypeFromType(f.Return.GetManagedDelegateType( true )) } );
 
-				string returnType = ToNativeAotDelegateType(f.Return);
 				string signature = string.Join(", ", argTypes);
 				if (!string.IsNullOrWhiteSpace(signature)) signature += ", ";
 
 				WriteLine($"        public static void StoreImport_{f.MangledName}(void* ptr)");
 				WriteLine($"        {{");
-				WriteLine($"            _ptr_{f.MangledName} = (delegate* unmanaged<{signature}{returnType}>)ptr;");
+				WriteLine($"            _ptr_{f.MangledName} = (delegate* unmanaged<{signature}>)ptr;");
 				WriteLine($"        }}");
 			}
 		}

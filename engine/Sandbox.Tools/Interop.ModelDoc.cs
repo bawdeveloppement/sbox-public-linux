@@ -283,7 +283,7 @@ namespace Managed.SourceModelDoc
 			fixed ( int* s = structSizes )
 			
 			{
-				nativeInit( 5716, m, n, s );
+				nativeInit( 15178, m, n, s );
 			}
 			
 			var onError = Marshal.GetDelegateForFunctionPointer<_ErrorFunction>( nativeFunctions[0] );

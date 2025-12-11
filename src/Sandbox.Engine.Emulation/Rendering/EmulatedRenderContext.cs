@@ -16,6 +16,14 @@ namespace Sandbox.Engine.Emulation.Rendering;
 /// </summary>
 internal unsafe class EmulatedRenderContext
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][ERC] {name} {message}");
+    }
+
     private const int DefaultVertexStride = 80; // align stride with RenderTools fallback
     private readonly GL _gl;
     private IntPtr _selfPtr;
@@ -37,6 +45,7 @@ internal unsafe class EmulatedRenderContext
     public EmulatedRenderContext(GL gl)
     {
         _gl = gl ?? throw new ArgumentNullException(nameof(gl));
+        LogCall(".ctor", minimal: true, message: "gl set");
         Sandbox.Engine.Emulation.Video.VideoPlayer.SetSharedGL(_gl);
         
         // Allocate memory for CRenderAttributes
@@ -68,6 +77,7 @@ internal unsafe class EmulatedRenderContext
     
     private void EnsureShaderInitialized()
     {
+        LogCall(nameof(EnsureShaderInitialized), minimal: false, message: $"initialized={_shaderInitialized}");
         if (_shaderInitialized) return;
         
         _basicShaderProgram = BasicShaders.CreateShaderProgram(_gl);
@@ -76,6 +86,7 @@ internal unsafe class EmulatedRenderContext
     
     private void EnsureBuffersInitialized()
     {
+        LogCall(nameof(EnsureBuffersInitialized), minimal: false, message: $"initialized={_buffersInitialized}");
         if (_buffersInitialized) return;
         
         // Generate VAO
@@ -91,6 +102,7 @@ internal unsafe class EmulatedRenderContext
     
     public unsafe void UploadVertexData(IntPtr data, int dataSize)
     {
+        LogCall(nameof(UploadVertexData), minimal: true, message: $"data=0x{data.ToInt64():X} size={dataSize}");
         if (_isDisposed) return;
         
         EnsureBuffersInitialized();
@@ -101,6 +113,7 @@ internal unsafe class EmulatedRenderContext
     
     public unsafe void UploadIndexData(IntPtr data, int dataSize)
     {
+        LogCall(nameof(UploadIndexData), minimal: true, message: $"data=0x{data.ToInt64():X} size={dataSize}");
         if (_isDisposed) return;
         
         EnsureBuffersInitialized();
@@ -111,6 +124,7 @@ internal unsafe class EmulatedRenderContext
     
     public void SetupVertexLayout(NativeEngine.VertexLayout layout)
     {
+        LogCall(nameof(SetupVertexLayout), minimal: true, message: $"layout=0x{layout.self.ToInt64():X}");
         if (_isDisposed) return;
         
         EnsureBuffersInitialized();
@@ -162,6 +176,7 @@ internal unsafe class EmulatedRenderContext
     
     private static void RegisterInstance(IntPtr ptr, EmulatedRenderContext instance)
     {
+        LogCall(nameof(RegisterInstance), minimal: false, message: $"ptr=0x{ptr.ToInt64():X}");
         lock (_instances)
         {
             _instances[ptr] = instance;
@@ -170,6 +185,7 @@ internal unsafe class EmulatedRenderContext
     
     public static EmulatedRenderContext? GetInstance(IntPtr ptr)
     {
+        LogCall(nameof(GetInstance), minimal: false, message: $"ptr=0x{ptr.ToInt64():X}");
         lock (_instances)
         {
             _instances.TryGetValue(ptr, out var instance);
@@ -183,16 +199,19 @@ internal unsafe class EmulatedRenderContext
 
     public unsafe void SetViewport(NativeRect rect)
     {
+        LogCall(nameof(SetViewport), minimal: true, message: $"rect=({rect.x},{rect.y},{rect.w},{rect.h})");
         _gl.Viewport(rect.x, rect.y, (uint)rect.w, (uint)rect.h);
     }
 
     public void SetViewport(int x, int y, int w, int h)
     {
+        LogCall(nameof(SetViewport), minimal: true, message: $"xy=({x},{y}) wh=({w},{h})");
         _gl.Viewport(x, y, (uint)w, (uint)h);
     }
 
     public unsafe void SetViewport(NativeEngine.RenderViewport viewport)
     {
+        LogCall(nameof(SetViewport), minimal: true, message: $"viewport=({viewport.Rect.Left},{viewport.Rect.Top},{viewport.Rect.Width},{viewport.Rect.Height})");
         _currentViewport = viewport;
         var rect = viewport.Rect;
         _gl.Viewport((int)rect.Left, (int)rect.Top, (uint)rect.Width, (uint)rect.Height);
@@ -200,21 +219,25 @@ internal unsafe class EmulatedRenderContext
 
     public NativeEngine.RenderViewport GetViewport()
     {
+        LogCall(nameof(GetViewport), minimal: false, message: $"viewport=({_currentViewport.Rect.Left},{_currentViewport.Rect.Top},{_currentViewport.Rect.Width},{_currentViewport.Rect.Height})");
         return _currentViewport;
     }
 
     public unsafe void SetScissorRect(NativeRect rect)
     {
+        LogCall(nameof(SetScissorRect), minimal: false, message: $"rect=({rect.x},{rect.y},{rect.w},{rect.h})");
         _gl.Scissor(rect.x, rect.y, (uint)rect.w, (uint)rect.h);
     }
 
     public NativeEngine.CRenderAttributes GetAttributesPtrForModify()
     {
+        LogCall(nameof(GetAttributesPtrForModify), minimal: false, message: $"attrPtr=0x{_renderAttributesPtr.ToInt64():X}");
         return new NativeEngine.CRenderAttributes(_renderAttributesPtr);
     }
 
     public void Draw(NativeEngine.RenderPrimitiveType type, int nFirstVertex, int nVertexCount)
     {
+        LogCall(nameof(Draw), minimal: true, message: $"type={type} first={nFirstVertex} count={nVertexCount}");
         if (_isDisposed) return;
         
         // Ensure VAO is bound
@@ -232,6 +255,7 @@ internal unsafe class EmulatedRenderContext
 
     public void DrawIndexed(NativeEngine.RenderPrimitiveType type, int nFirstIndex, int nIndexCount, int nMaxVertexCount, int nBaseVertex)
     {
+        LogCall(nameof(DrawIndexed), minimal: true, message: $"type={type} firstIdx={nFirstIndex} countIdx={nIndexCount} maxVtx={nMaxVertexCount} baseVtx={nBaseVertex}");
         if (_isDisposed) return;
         
         // Ensure VAO is bound
@@ -255,6 +279,7 @@ internal unsafe class EmulatedRenderContext
 
     public void DrawQuadFallback()
     {
+        LogCall(nameof(DrawQuadFallback), minimal: true);
         if (_isDisposed) return;
         EnsureBuffersInitialized();
         EnsureShaderInitialized();
@@ -307,6 +332,7 @@ internal unsafe class EmulatedRenderContext
 
     public void DrawInstanced(NativeEngine.RenderPrimitiveType type, int nFirstVertex, int nVertexCountPerInstance, int nInstanceCount)
     {
+        LogCall(nameof(DrawInstanced), minimal: true, message: $"type={type} first={nFirstVertex} vtxPerInst={nVertexCountPerInstance} inst={nInstanceCount}");
         if (_isDisposed) return;
         EnsureShaderInitialized();
         EnsureBuffersInitialized();
@@ -317,6 +343,7 @@ internal unsafe class EmulatedRenderContext
 
     public void DrawIndexedInstanced(NativeEngine.RenderPrimitiveType type, int nFirstIndex, int nIndexCountPerInstance, int nInstanceCount, int nMaxVertexCount, int nBaseVertex)
     {
+        LogCall(nameof(DrawIndexedInstanced), minimal: true, message: $"type={type} firstIdx={nFirstIndex} countIdx={nIndexCountPerInstance} inst={nInstanceCount} maxVtx={nMaxVertexCount} baseVtx={nBaseVertex}");
         if (_isDisposed) return;
         EnsureShaderInitialized();
         EnsureBuffersInitialized();
@@ -328,6 +355,7 @@ internal unsafe class EmulatedRenderContext
 
     public unsafe void Clear(System.Numerics.Vector4 col, bool clearColor, bool clearDepth, bool clearStencil)
     {
+        LogCall(nameof(Clear), minimal: true, message: $"col=({col.X},{col.Y},{col.Z},{col.W}) clr={clearColor} depth={clearDepth} stn={clearStencil}");
         if (_isDisposed) return;
         
         uint clearMask = 0;
@@ -355,17 +383,20 @@ internal unsafe class EmulatedRenderContext
 
     public void Submit()
     {
+        LogCall(nameof(Submit), minimal: false);
         // OpenGL doesn't have explicit submit - rendering happens immediately
         // This is a no-op for OpenGL
     }
 
     public bool BindVertexBuffer(int nSlot, NativeEngine.VertexBufferHandle_t hVertexBuffer, int nOffset)
     {
+        LogCall(nameof(BindVertexBuffer), minimal: true, message: $"slot={nSlot} buf=0x{hVertexBuffer.self.ToInt64():X} offset={nOffset} stride={DefaultVertexStride}");
         return BindVertexBuffer(nSlot, hVertexBuffer, nOffset, DefaultVertexStride);
     }
 
     public bool BindVertexBuffer(int nSlot, NativeEngine.VertexBufferHandle_t hVertexBuffer, int nOffset, int nStride)
     {
+        LogCall(nameof(BindVertexBuffer), minimal: true, message: $"slot={nSlot} buf=0x{hVertexBuffer.self.ToInt64():X} offset={nOffset} stride={nStride}");
         if (_isDisposed) return false;
         EnsureBuffersInitialized();
         int handle = (int)hVertexBuffer.self;
@@ -397,6 +428,7 @@ internal unsafe class EmulatedRenderContext
 
     public bool BindIndexBuffer(NativeEngine.IndexBufferHandle_t hIndexBuffer, int nOffset)
     {
+        LogCall(nameof(BindIndexBuffer), minimal: true, message: $"buf=0x{hIndexBuffer.self.ToInt64():X} offset={nOffset}");
         if (_isDisposed) return false;
         EnsureBuffersInitialized();
         int handle = (int)hIndexBuffer.self;
@@ -411,6 +443,7 @@ internal unsafe class EmulatedRenderContext
 
     public void BindVertexShader(NativeEngine.RenderShaderHandle_t hVertexShader, NativeEngine.VertexBufferHandle_t hInputLayout)
     {
+        LogCall(nameof(BindVertexShader), minimal: true, message: $"vs=0x{hVertexShader.self.ToInt64():X} layout=0x{hInputLayout.self.ToInt64():X}");
         // For now, use our basic shader program
         EnsureShaderInitialized();
         if (_basicShaderProgram != 0)
@@ -421,6 +454,7 @@ internal unsafe class EmulatedRenderContext
 
     public void BindPixelShader(NativeEngine.RenderShaderHandle_t hShader)
     {
+        LogCall(nameof(BindPixelShader), minimal: true, message: $"ps=0x{hShader.self.ToInt64():X}");
         // For now, use our basic shader program (already set in BindVertexShader)
         EnsureShaderInitialized();
         if (_basicShaderProgram != 0)
@@ -431,6 +465,7 @@ internal unsafe class EmulatedRenderContext
 
     public void BindTexture(int nTextureIndex, NativeEngine.ITexture hTexture)
     {
+        LogCall(nameof(BindTexture), minimal: true, message: $"slot={nTextureIndex} tex=0x{hTexture.self.ToInt64():X}");
         if (_isDisposed) return;
         var gl = _gl;
         var texData = Texture.TextureSystem.GetTextureData(hTexture.self);
@@ -441,6 +476,7 @@ internal unsafe class EmulatedRenderContext
 
     public void BindRenderTargets(NativeEngine.ITexture colorTexture, NativeEngine.ITexture depthTexture, NativeEngine.ISceneLayer layer)
     {
+        LogCall(nameof(BindRenderTargets), minimal: true, message: $"color=0x{colorTexture.self.ToInt64():X} depth=0x{depthTexture.self.ToInt64():X} layer=0x{layer.self.ToInt64():X}");
         // Rendre dans le swapchain si possible (colorTexture est toujours le backbuffer dans notre emu).
         if (RenderDevice.BindSwapChainForRender())
             return;
@@ -451,6 +487,7 @@ internal unsafe class EmulatedRenderContext
 
     public void BindRenderTargets(IntPtr swapChain, bool color, bool depth)
     {
+        LogCall(nameof(BindRenderTargets), minimal: true, message: $"swap=0x{swapChain.ToInt64():X} color={color} depth={depth}");
         // Idem : binder le swapchain si dispo.
         if (RenderDevice.BindSwapChainForRender())
             return;
@@ -461,11 +498,13 @@ internal unsafe class EmulatedRenderContext
 
     public void RestoreRenderTargets(NativeEngine.ISceneLayer layer)
     {
+        LogCall(nameof(RestoreRenderTargets), minimal: true, message: $"layer=0x{layer.self.ToInt64():X}");
         _gl.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
     }
 
     public void GenerateMipMaps(NativeEngine.ITexture material)
     {
+        LogCall(nameof(GenerateMipMaps), minimal: true, message: $"tex=0x{material.self.ToInt64():X}");
         var texData = Texture.TextureSystem.GetTextureData(material.self);
         if (texData == null || texData.OpenGLHandle == 0) return;
         _gl.BindTexture(GLEnum.Texture2D, texData.OpenGLHandle);
@@ -474,16 +513,19 @@ internal unsafe class EmulatedRenderContext
 
     public void BeginPixEvent(string name)
     {
+        LogCall(nameof(BeginPixEvent), minimal: false, message: $"name='{name}'");
         // Debug marker - no-op for now
     }
 
     public void EndPixEvent()
     {
+        LogCall(nameof(EndPixEvent), minimal: false);
         // Debug marker - no-op for now
     }
 
     public void PixSetMarker(string name)
     {
+        LogCall(nameof(PixSetMarker), minimal: false, message: $"name='{name}'");
         // Debug marker - no-op for now
     }
 
@@ -502,6 +544,7 @@ internal unsafe class EmulatedRenderContext
 
     public void Dispose()
     {
+        LogCall(nameof(Dispose), minimal: true, message: $"disposed={_isDisposed}");
         if (_isDisposed) return;
         
         // Clean up OpenGL buffers

@@ -3828,7 +3828,7 @@ namespace Managed.SourceHammer
 			fixed ( int* s = structSizes )
 			
 			{
-				nativeInit( 39135, m, n, s );
+				nativeInit( 55867, m, n, s );
 			}
 			
 			var onError = Marshal.GetDelegateForFunctionPointer<_ErrorFunction>( nativeFunctions[0] );

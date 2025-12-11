@@ -17,6 +17,7 @@ namespace Sandbox.Engine.Emulation.Vfx;
 /// </summary>
 public static unsafe class VfxModule
 {
+    private static void Log(string message) => Console.WriteLine($"[NativeAOT][VFX] {message}");
     private static int _vfxInterfaceHandle;
     private static int _filesystemStubHandle;
 
@@ -61,15 +62,15 @@ public static unsafe class VfxModule
 
     public static void Init(void** native)
     {
-        // IShaderCompileContext
-        native[2200] = (void*)(delegate* unmanaged<IntPtr, void>)&Ctx_Delete;
-        native[2201] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&Ctx_SetMaskedCode;
+        // IShaderCompileContext (see Interop.Engine.cs)
+        native[2203] = (void*)(delegate* unmanaged<IntPtr, void>)&Ctx_Delete;
+        native[2204] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&Ctx_SetMaskedCode;
 
-        // IVfx
-        native[2297] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IVfx_Init;
-        native[2298] = (void*)(delegate* unmanaged<IntPtr, IntPtr, ulong, ulong, IntPtr, long, long, int, uint, IntPtr>)&IVfx_CompileShader;
-        native[2299] = (void*)(delegate* unmanaged<IntPtr, void>)&IVfx_ClearShaderCache;
-        native[2300] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&IVfx_CreateSharedContext;
+        // IVfx (see Interop.Engine.cs)
+        native[2300] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&IVfx_Init;
+        native[2301] = (void*)(delegate* unmanaged<IntPtr, IntPtr, ulong, ulong, IntPtr, long, long, int, uint, IntPtr>)&IVfx_CompileShader;
+        native[2302] = (void*)(delegate* unmanaged<IntPtr, void>)&IVfx_ClearShaderCache;
+        native[2303] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&IVfx_CreateSharedContext;
 
         // CVfx (indices from Interop.Engine.cs)
         native[1246] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&CVfx_DestroyStrongHandle;
@@ -109,35 +110,40 @@ public static unsafe class VfxModule
         native[1282] = (void*)(delegate* unmanaged<IntPtr, ulong>)&CVfxCmbtrtr_FirstDynamicCombo;
         native[1283] = (void*)(delegate* unmanaged<IntPtr, ulong>)&CVfxCmbtrtr_NextDynamicCombo;
 
-        // VfxCompiledShaderInfo_t accessors
-        native[2644] = (void*)(delegate* unmanaged<IntPtr, void>)&VfxCmpldShdrnf_t_Delete;
-        native[2645] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&Get__VfxCmpldShdrnf_t_compilerOutput;
-        native[2646] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&Set__VfxCmpldShdrnf_t_compilerOutput;
-        native[2647] = (void*)(delegate* unmanaged<IntPtr, int>)&Get__VfxCmpldShdrnf_t_compileFailed;
-        native[2648] = (void*)(delegate* unmanaged<IntPtr, int, void>)&Set__VfxCmpldShdrnf_t_compileFailed;
+        // VfxCompiledShaderInfo_t accessors (see Interop.Engine.cs)
+        native[2647] = (void*)(delegate* unmanaged<IntPtr, void>)&VfxCmpldShdrnf_t_Delete;
+        native[2648] = (void*)(delegate* unmanaged<IntPtr, IntPtr>)&Get__VfxCmpldShdrnf_t_compilerOutput;
+        native[2649] = (void*)(delegate* unmanaged<IntPtr, IntPtr, void>)&Set__VfxCmpldShdrnf_t_compilerOutput;
+        native[2650] = (void*)(delegate* unmanaged<IntPtr, int>)&Get__VfxCmpldShdrnf_t_compileFailed;
+        native[2651] = (void*)(delegate* unmanaged<IntPtr, int, void>)&Set__VfxCmpldShdrnf_t_compileFailed;
 
         // CVfxProgramData field accessors (see Interop.Engine.cs)
         native[1284] = (void*)(delegate* unmanaged<IntPtr, int>)&Get__CVfxProgramData_m_bLoadedFromVcsFile;
         native[1285] = (void*)(delegate* unmanaged<IntPtr, int, void>)&Set__CVfxProgramData_m_bLoadedFromVcsFile;
 
         Console.WriteLine("[NativeAOT] VfxModule initialized");
+        Log("Init patched VFX/ShaderCompile exports");
     }
 
     public static IntPtr GetVfxInterface()
     {
+        Log("GetVfxInterface");
         if (_vfxInterfaceHandle == 0)
         {
             _vfxInterfaceHandle = HandleManager.Register(new object());
         }
+        Log($"GetVfxInterface handle={_vfxInterfaceHandle}");
         return (IntPtr)_vfxInterfaceHandle;
     }
 
     public static IntPtr GetFilesystemStub()
     {
+        Log("GetFilesystemStub");
         if (_filesystemStubHandle == 0)
         {
             _filesystemStubHandle = HandleManager.Register(new object());
         }
+        Log($"GetFilesystemStub handle={_filesystemStubHandle}");
         return (IntPtr)_filesystemStubHandle;
     }
 
@@ -145,6 +151,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void Ctx_Delete(IntPtr self)
     {
+        Log($"Ctx_Delete self=0x{self.ToInt64():X}");
         if (self == IntPtr.Zero) return;
         HandleManager.Unregister((int)self);
     }
@@ -152,6 +159,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void Ctx_SetMaskedCode(IntPtr self, IntPtr code)
     {
+        Log($"Ctx_SetMaskedCode self=0x{self.ToInt64():X} codeLen={(code==IntPtr.Zero?0:(Marshal.PtrToStringUTF8(code)?.Length ?? 0))}");
         if (self == IntPtr.Zero) return;
         var ctx = HandleManager.Get<VfxContextData>((int)self);
         if (ctx == null) return;
@@ -164,27 +172,31 @@ public static unsafe class VfxModule
     private static void IVfx_Init(IntPtr self, IntPtr factory)
     {
         // Factory is unused in emulation; accept and return.
+        Log($"IVfx_Init self=0x{self.ToInt64():X} factory=0x{factory.ToInt64():X}");
     }
 
     [UnmanagedCallersOnly]
     private static IntPtr IVfx_CreateSharedContext(IntPtr self)
     {
-        Console.WriteLine("[NativeAOT] IVfx_CreateSharedContext ");
+        Log($"IVfx_CreateSharedContext self=0x{self.ToInt64():X}");
         
         var ctx = new VfxContextData();
         int handle = HandleManager.Register(ctx);
+        Log($"IVfx_CreateSharedContext handle={handle}");
         return handle == 0 ? IntPtr.Zero : (IntPtr)handle;
     }
 
     [UnmanagedCallersOnly]
     private static void IVfx_ClearShaderCache(IntPtr self)
     {
+        Log($"IVfx_ClearShaderCache self=0x{self.ToInt64():X}");
         // No-op stub.
     }
 
     [UnmanagedCallersOnly]
     private static IntPtr IVfx_CompileShader(IntPtr self, IntPtr ctxPtr, ulong staticcombo, ulong dynamiccombo, IntPtr pVfx, long compileTarget, long programType, int useShaderCache, uint flags)
     {
+        Log($"IVfx_CompileShader self=0x{self.ToInt64():X} ctx=0x{ctxPtr.ToInt64():X} static={staticcombo} dynamic={dynamiccombo} pVfx=0x{pVfx.ToInt64():X} target={compileTarget} prog={programType} cache={useShaderCache} flags={flags}");
         var info = new VfxCompiledShaderInfoData();
         try
         {
@@ -254,6 +266,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static IntPtr CVfx_DestroyStrongHandle(IntPtr self)
     {
+        Log($"CVfx_DestroyStrongHandle self=0x{self.ToInt64():X}");
         if (self != IntPtr.Zero)
         {
             HandleManager.Unregister((int)self);
@@ -262,34 +275,59 @@ public static unsafe class VfxModule
     }
 
     [UnmanagedCallersOnly]
-    private static int CVfx_IsStrongHandleValid(IntPtr self) => HandleManager.Get<VfxShaderData>((int)self) != null ? 1 : 0;
+    private static int CVfx_IsStrongHandleValid(IntPtr self)
+    {
+        var ok = HandleManager.Get<VfxShaderData>((int)self) != null ? 1 : 0;
+        Log($"CVfx_IsStrongHandleValid self=0x{self.ToInt64():X} -> {ok}");
+        return ok;
+    }
 
     [UnmanagedCallersOnly]
-    private static int CVfx_IsError(IntPtr self) => 0;
+    private static int CVfx_IsError(IntPtr self)
+    {
+        Log($"CVfx_IsError self=0x{self.ToInt64():X}");
+        return 0;
+    }
 
     [UnmanagedCallersOnly]
-    private static int CVfx_IsStrongHandleLoaded(IntPtr self) => 1;
+    private static int CVfx_IsStrongHandleLoaded(IntPtr self)
+    {
+        Log($"CVfx_IsStrongHandleLoaded self=0x{self.ToInt64():X}");
+        return 1;
+    }
 
     [UnmanagedCallersOnly]
-    private static IntPtr CVfx_CopyStrongHandle(IntPtr self) => self;
+    private static IntPtr CVfx_CopyStrongHandle(IntPtr self)
+    {
+        Log($"CVfx_CopyStrongHandle self=0x{self.ToInt64():X}");
+        return self;
+    }
 
     [UnmanagedCallersOnly]
-    private static IntPtr CVfx_GetBindingPtr(IntPtr self) => self;
+    private static IntPtr CVfx_GetBindingPtr(IntPtr self)
+    {
+        Log($"CVfx_GetBindingPtr self=0x{self.ToInt64():X}");
+        return self;
+    }
 
     [UnmanagedCallersOnly]
     private static IntPtr CVfx_Create(IntPtr debugName)
     {
+        Log($"CVfx_Create debugName='{(debugName==IntPtr.Zero?string.Empty:Marshal.PtrToStringUTF8(debugName))}'");
         var data = new VfxShaderData
         {
             FileName = debugName == IntPtr.Zero ? string.Empty : Marshal.PtrToStringUTF8(debugName) ?? string.Empty
         };
         int handle = HandleManager.Register(data);
+        Log($"CVfx_Create handle={handle}");
         return handle == 0 ? IntPtr.Zero : (IntPtr)handle;
     }
+
 
     [UnmanagedCallersOnly]
     private static IntPtr CVfx_GetFilename(IntPtr self)
     {
+        Log($"CVfx_GetFilename self=0x{self.ToInt64():X}");
         var data = HandleManager.Get<VfxShaderData>((int)self);
         if (data == null) return IntPtr.Zero;
         return Marshal.StringToHGlobalAnsi(data.FileName ?? string.Empty);
@@ -298,6 +336,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static int CVfx_CreateFromResourceFile(IntPtr self, IntPtr pShaderFile, long compileTarget, uint nCreateFlags, int bFailSilently)
     {
+        Log($"CVfx_CreateFromResourceFile self=0x{self.ToInt64():X} file='{(pShaderFile==IntPtr.Zero?string.Empty:Marshal.PtrToStringUTF8(pShaderFile))}' target={compileTarget} flags={nCreateFlags} failSilent={bFailSilently}");
         var data = HandleManager.Get<VfxShaderData>((int)self);
         if (data != null)
         {
@@ -309,6 +348,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static int CVfx_CreateFromShaderFile(IntPtr self, IntPtr pShaderFile, long compileTarget, uint nCreateFlags)
     {
+        Log($"CVfx_CreateFromShaderFile self=0x{self.ToInt64():X} file='{(pShaderFile==IntPtr.Zero?string.Empty:Marshal.PtrToStringUTF8(pShaderFile))}' target={compileTarget} flags={nCreateFlags}");
         var data = HandleManager.Get<VfxShaderData>((int)self);
         if (data != null)
         {
@@ -320,6 +360,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static IntPtr CVfx_GetProgramData(IntPtr self, long pass)
     {
+        Log($"CVfx_GetProgramData self=0x{self.ToInt64():X} pass={pass}");
         var data = HandleManager.Get<VfxShaderData>((int)self);
         int handle = data != null ? HandleManager.Register(data.ProgramData) : 0;
         return handle == 0 ? IntPtr.Zero : (IntPtr)handle;
@@ -328,6 +369,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static IntPtr CVfx_GetIterator(IntPtr self, long program)
     {
+        Log($"CVfx_GetIterator self=0x{self.ToInt64():X} program={program}");
         int handle = HandleManager.Register(new VfxComboIteratorData());
         return handle == 0 ? IntPtr.Zero : (IntPtr)handle;
     }
@@ -335,6 +377,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static IntPtr CVfx_Serialize(IntPtr self)
     {
+        Log($"CVfx_Serialize self=0x{self.ToInt64():X}");
         // Return an empty CUtlBuffer handle (managed allocation)
         var bufferData = new global::Sandbox.Engine.Emulation.CUtl.CUtlBuffer.BufferData
         {
@@ -350,19 +393,29 @@ public static unsafe class VfxModule
     private static int CVfx_HasShaderProgram(IntPtr self, long programType)
     {
         var data = HandleManager.Get<VfxShaderData>((int)self);
-        if (data == null) return 0;
-        return data.AvailablePrograms.Contains(programType) ? 1 : 0;
+        var has = data != null && data.AvailablePrograms.Contains(programType) ? 1 : 0;
+        Log($"CVfx_HasShaderProgram self=0x{self.ToInt64():X} program={programType} -> {has}");
+        return has;
     }
 
     [UnmanagedCallersOnly]
-    private static int CVfx_InitializeWrite(IntPtr self) => 1;
+    private static int CVfx_InitializeWrite(IntPtr self)
+    {
+        Log($"CVfx_InitializeWrite self=0x{self.ToInt64():X}");
+        return 1;
+    }
 
     [UnmanagedCallersOnly]
-    private static int CVfx_FinalizeCompile(IntPtr self) => 1;
+    private static int CVfx_FinalizeCompile(IntPtr self)
+    {
+        Log($"CVfx_FinalizeCompile self=0x{self.ToInt64():X}");
+        return 1;
+    }
 
     [UnmanagedCallersOnly]
     private static int CVfx_WriteProgramToBuffer(IntPtr self, long programType, IntPtr byteCodeManagerPtr, IntPtr outBufferPtr)
     {
+        Log($"CVfx_WriteProgramToBuffer self=0x{self.ToInt64():X} program={programType} bcm=0x{byteCodeManagerPtr.ToInt64():X} outBuf=0x{outBufferPtr.ToInt64():X}");
         var buffer = HandleManager.Get<global::Sandbox.Engine.Emulation.CUtl.CUtlBuffer.BufferData>((int)outBufferPtr);
         var shader = HandleManager.Get<VfxShaderData>((int)self);
         if (buffer == null || shader == null) return 0;
@@ -384,6 +437,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static int CVfx_WriteCombo(IntPtr self, long programType, ulong staticId, ulong dynamicId, IntPtr shaderInfoPtr)
     {
+        Log($"CVfx_WriteCombo self=0x{self.ToInt64():X} program={programType} static={staticId} dynamic={dynamicId} shaderInfo=0x{shaderInfoPtr.ToInt64():X}");
         var shaderInfo = HandleManager.Get<VfxCompiledShaderInfoData>((int)shaderInfoPtr);
         // Store association if available
         var shader = HandleManager.Get<VfxShaderData>((int)self);
@@ -400,6 +454,7 @@ public static unsafe class VfxModule
     private static IntPtr CVfx_GetPropertiesJson(IntPtr self)
     {
         // Return empty JSON object
+        Log($"CVfx_GetPropertiesJson self=0x{self.ToInt64():X}");
         return Marshal.StringToHGlobalAnsi("{}");
     }
     #endregion
@@ -408,13 +463,16 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static IntPtr CVfxBytCdMngr_Create()
     {
+        Log("CVfxBytCdMngr_Create");
         int handle = HandleManager.Register(new VfxByteCodeManagerData());
+        Log($"CVfxBytCdMngr_Create handle={handle}");
         return handle == 0 ? IntPtr.Zero : (IntPtr)handle;
     }
 
     [UnmanagedCallersOnly]
     private static void CVfxBytCdMngr_Delete(IntPtr self)
     {
+        Log($"CVfxBytCdMngr_Delete self=0x{self.ToInt64():X}");
         if (self != IntPtr.Zero)
         {
             HandleManager.Unregister((int)self);
@@ -424,6 +482,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void CVfxBytCdMngr_OnStaticCombo(IntPtr self, ulong id)
     {
+        Log($"CVfxBytCdMngr_OnStaticCombo self=0x{self.ToInt64():X} id={id}");
         var mgr = HandleManager.Get<VfxByteCodeManagerData>((int)self);
         if (mgr != null)
         {
@@ -434,6 +493,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void CVfxBytCdMngr_OnDynamicCombo(IntPtr self, IntPtr dataPtr)
     {
+        Log($"CVfxBytCdMngr_OnDynamicCombo self=0x{self.ToInt64():X} data=0x{dataPtr.ToInt64():X}");
         var mgr = HandleManager.Get<VfxByteCodeManagerData>((int)self);
         var info = HandleManager.Get<VfxCompiledShaderInfoData>((int)dataPtr);
         if (mgr != null && info != null)
@@ -445,6 +505,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void CVfxBytCdMngr_Reset(IntPtr self)
     {
+        Log($"CVfxBytCdMngr_Reset self=0x{self.ToInt64():X}");
         var mgr = HandleManager.Get<VfxByteCodeManagerData>((int)self);
         if (mgr != null)
         {
@@ -458,6 +519,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void VfxCmpldShdrnf_t_Delete(IntPtr self)
     {
+        Log($"VfxCmpldShdrnf_t_Delete self=0x{self.ToInt64():X}");
         if (self != IntPtr.Zero)
         {
             HandleManager.Unregister((int)self);
@@ -467,6 +529,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static IntPtr Get__VfxCmpldShdrnf_t_compilerOutput(IntPtr self)
     {
+        Log($"Get__VfxCmpldShdrnf_t_compilerOutput self=0x{self.ToInt64():X}");
         var info = HandleManager.Get<VfxCompiledShaderInfoData>((int)self);
         return info == null ? IntPtr.Zero : Marshal.StringToHGlobalAnsi(info.CompilerOutput ?? string.Empty);
     }
@@ -474,6 +537,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void Set__VfxCmpldShdrnf_t_compilerOutput(IntPtr self, IntPtr value)
     {
+        Log($"Set__VfxCmpldShdrnf_t_compilerOutput self=0x{self.ToInt64():X}");
         var info = HandleManager.Get<VfxCompiledShaderInfoData>((int)self);
         if (info == null) return;
         info.CompilerOutput = value == IntPtr.Zero ? string.Empty : Marshal.PtrToStringUTF8(value) ?? string.Empty;
@@ -482,6 +546,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static int Get__VfxCmpldShdrnf_t_compileFailed(IntPtr self)
     {
+        Log($"Get__VfxCmpldShdrnf_t_compileFailed self=0x{self.ToInt64():X}");
         var info = HandleManager.Get<VfxCompiledShaderInfoData>((int)self);
         return info != null && info.CompileFailed ? 1 : 0;
     }
@@ -489,6 +554,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void Set__VfxCmpldShdrnf_t_compileFailed(IntPtr self, int value)
     {
+        Log($"Set__VfxCmpldShdrnf_t_compileFailed self=0x{self.ToInt64():X} value={value}");
         var info = HandleManager.Get<VfxCompiledShaderInfoData>((int)self);
         if (info == null) return;
         info.CompileFailed = value != 0;
@@ -499,6 +565,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static int Get__CVfxProgramData_m_bLoadedFromVcsFile(IntPtr self)
     {
+        Log($"Get__CVfxProgramData_m_bLoadedFromVcsFile self=0x{self.ToInt64():X}");
         var data = HandleManager.Get<CVfxProgramData>((int)self);
         return data?.LoadedFromVcsFile ?? 0;
     }
@@ -506,6 +573,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void Set__CVfxProgramData_m_bLoadedFromVcsFile(IntPtr self, int value)
     {
+        Log($"Set__CVfxProgramData_m_bLoadedFromVcsFile self=0x{self.ToInt64():X} value={value}");
         var data = HandleManager.Get<CVfxProgramData>((int)self);
         if (data != null)
         {
@@ -518,6 +586,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static void CVfxCmbtrtr_Delete(IntPtr self)
     {
+        Log($"CVfxCmbtrtr_Delete self=0x{self.ToInt64():X}");
         if (self != IntPtr.Zero)
         {
             HandleManager.Unregister((int)self);
@@ -533,11 +602,16 @@ public static unsafe class VfxModule
     };
 
     [UnmanagedCallersOnly]
-    private static ulong CVfxCmbtrtr_InvalidIndex(IntPtr self) => InvalidComboIndex;
+    private static ulong CVfxCmbtrtr_InvalidIndex(IntPtr self)
+    {
+        Log($"CVfxCmbtrtr_InvalidIndex self=0x{self.ToInt64():X}");
+        return InvalidComboIndex;
+    }
 
     [UnmanagedCallersOnly]
     private static ulong CVfxCmbtrtr_SetStaticCombo(IntPtr self, ulong c)
     {
+        Log($"CVfxCmbtrtr_SetStaticCombo self=0x{self.ToInt64():X} c={c}");
         var it = HandleManager.Get<VfxComboIteratorData>((int)self);
         if (it != null) it.CurrentStatic = c;
         return c;
@@ -546,6 +620,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static ulong CVfxCmbtrtr_FirstStaticCombo(IntPtr self)
     {
+        Log($"CVfxCmbtrtr_FirstStaticCombo self=0x{self.ToInt64():X}");
         // No static combos available in stub: return invalid
         return InvalidComboIndex;
     }
@@ -553,6 +628,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static ulong CVfxCmbtrtr_NextStaticCombo(IntPtr self)
     {
+        Log($"CVfxCmbtrtr_NextStaticCombo self=0x{self.ToInt64():X}");
         // No iteration; always invalid
         return InvalidComboIndex;
     }
@@ -560,6 +636,7 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static ulong CVfxCmbtrtr_SetDynamicCombo(IntPtr self, ulong c)
     {
+        Log($"CVfxCmbtrtr_SetDynamicCombo self=0x{self.ToInt64():X} c={c}");
         var it = HandleManager.Get<VfxComboIteratorData>((int)self);
         if (it != null) it.CurrentDynamic = c;
         return c;
@@ -568,12 +645,14 @@ public static unsafe class VfxModule
     [UnmanagedCallersOnly]
     private static ulong CVfxCmbtrtr_FirstDynamicCombo(IntPtr self)
     {
+        Log($"CVfxCmbtrtr_FirstDynamicCombo self=0x{self.ToInt64():X}");
         return InvalidComboIndex;
     }
 
     [UnmanagedCallersOnly]
     private static ulong CVfxCmbtrtr_NextDynamicCombo(IntPtr self)
     {
+        Log($"CVfxCmbtrtr_NextDynamicCombo self=0x{self.ToInt64():X}");
         return InvalidComboIndex;
     }
     #endregion

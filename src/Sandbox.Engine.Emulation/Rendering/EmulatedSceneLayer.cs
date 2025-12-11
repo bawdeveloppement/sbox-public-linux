@@ -17,6 +17,14 @@ namespace Sandbox.Engine.Emulation.Rendering;
 /// </summary>
 internal static unsafe class EmulatedSceneLayer
 {
+    private static bool LogMinimal = true;
+    private static bool LogAll = true;
+    private static void LogCall(string name, bool minimal, string message = "")
+    {
+        if (!(LogAll || (LogMinimal && minimal))) return;
+        Console.WriteLine($"[NativeAOT][SL] {name} {message}");
+    }
+
     private class LayerData
     {
         public StringToken ObjectMatchId;
@@ -44,6 +52,7 @@ internal static unsafe class EmulatedSceneLayer
 
     public static void Init(void** native)
     {
+        LogCall(nameof(Init), minimal: true);
         native[2138] = (void*)(delegate* unmanaged<IntPtr, StringToken, void>)&ISceneLayer_SetObjectMatchID;
         native[2139] = (void*)(delegate* unmanaged<IntPtr, long, void>)&ISceneLayer_AddObjectFlagsRequiredMask;
         native[2140] = (void*)(delegate* unmanaged<IntPtr, long, void>)&ISceneLayer_AddObjectFlagsExcludedMask;
@@ -73,6 +82,8 @@ internal static unsafe class EmulatedSceneLayer
 
     public static IntPtr CreateLayer(string debugName, RenderViewport viewport, SceneLayerType layerType)
     {
+        var rect = viewport.Rect;
+        LogCall(nameof(CreateLayer), minimal: true, message: $"name={debugName} vp=({rect.Width}x{rect.Height}) layer={layerType}");
         var data = new LayerData
         {
             DebugName = string.IsNullOrWhiteSpace(debugName) ? "SceneLayer" : debugName,
@@ -105,6 +116,7 @@ internal static unsafe class EmulatedSceneLayer
             return fromHandle;
     }
 
+        LogCall(nameof(GetLayerData), minimal: true, message: $"fallback self=0x{self.ToInt64():X}");
         return EnsureFallback(self);
     }
 
@@ -130,6 +142,7 @@ internal static unsafe class EmulatedSceneLayer
     /// </summary>
     public static void SetOutputManaged(IntPtr self, IntPtr hColor, IntPtr hDepth)
     {
+        LogCall(nameof(SetOutputManaged), minimal: false, message: $"self=0x{self.ToInt64():X} color=0x{hColor.ToInt64():X} depth=0x{hDepth.ToInt64():X}");
         var data = GetLayerData(self);
         data.ColorTarget = hColor;
         data.DepthTarget = hDepth;
@@ -140,6 +153,8 @@ internal static unsafe class EmulatedSceneLayer
     /// </summary>
     public static void SetViewportManaged(IntPtr self, RenderViewport viewport)
     {
+        var rect = viewport.Rect;
+        LogCall(nameof(SetViewportManaged), minimal: false, message: $"self=0x{self.ToInt64():X} vp=({rect.Width}x{rect.Height})");
         var data = GetLayerData(self);
         data.Viewport = viewport;
     }
@@ -147,12 +162,14 @@ internal static unsafe class EmulatedSceneLayer
     [UnmanagedCallersOnly]
     public static void ISceneLayer_SetObjectMatchID(IntPtr self, StringToken nTok)
     {
+        LogCall(nameof(ISceneLayer_SetObjectMatchID), minimal: true, message: $"self=0x{self.ToInt64():X} tok=0x{nTok.GetHashCode():X}");
         GetLayerData(self).ObjectMatchId = nTok;
     }
 
     [UnmanagedCallersOnly]
     public static void ISceneLayer_AddObjectFlagsRequiredMask(IntPtr self, long nRequiredFlags)
     {
+        LogCall(nameof(ISceneLayer_AddObjectFlagsRequiredMask), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{nRequiredFlags:X}");
         var data = GetLayerData(self);
         data.RequiredMask |= (SceneObjectFlags)nRequiredFlags;
     }
@@ -160,6 +177,7 @@ internal static unsafe class EmulatedSceneLayer
     [UnmanagedCallersOnly]
     public static void ISceneLayer_AddObjectFlagsExcludedMask(IntPtr self, long nExcludedFlags)
     {
+        LogCall(nameof(ISceneLayer_AddObjectFlagsExcludedMask), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{nExcludedFlags:X}");
         var data = GetLayerData(self);
         data.ExcludedMask |= (SceneObjectFlags)nExcludedFlags;
     }
@@ -167,6 +185,7 @@ internal static unsafe class EmulatedSceneLayer
     [UnmanagedCallersOnly]
     public static void ISceneLayer_RemoveObjectFlagsRequiredMask(IntPtr self, long nRequiredFlags)
     {
+        LogCall(nameof(ISceneLayer_RemoveObjectFlagsRequiredMask), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{nRequiredFlags:X}");
         var data = GetLayerData(self);
         data.RequiredMask &= ~(SceneObjectFlags)nRequiredFlags;
     }
@@ -174,6 +193,7 @@ internal static unsafe class EmulatedSceneLayer
     [UnmanagedCallersOnly]
     public static void ISceneLayer_RemoveObjectFlagsExcludedMask(IntPtr self, long nExcludedFlags)
     {
+        LogCall(nameof(ISceneLayer_RemoveObjectFlagsExcludedMask), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{nExcludedFlags:X}");
         var data = GetLayerData(self);
         data.ExcludedMask &= ~(SceneObjectFlags)nExcludedFlags;
     }
@@ -181,13 +201,17 @@ internal static unsafe class EmulatedSceneLayer
     [UnmanagedCallersOnly]
     public static long ISceneLayer_GetObjectFlagsRequiredMask(IntPtr self)
     {
-        return (long)GetLayerData(self).RequiredMask;
+        var flags = (long)GetLayerData(self).RequiredMask;
+        LogCall(nameof(ISceneLayer_GetObjectFlagsRequiredMask), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{flags:X}");
+        return flags;
     }
 
     [UnmanagedCallersOnly]
     public static long ISceneLayer_GetObjectFlagsExcludedMask(IntPtr self)
     {
-        return (long)GetLayerData(self).ExcludedMask;
+        var flags = (long)GetLayerData(self).ExcludedMask;
+        LogCall(nameof(ISceneLayer_GetObjectFlagsExcludedMask), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{flags:X}");
+        return flags;
     }
 
     [UnmanagedCallersOnly]
@@ -198,6 +222,7 @@ internal static unsafe class EmulatedSceneLayer
         {
             data.DebugNamePtr = AllocUtf8(data.DebugName ?? "SceneLayer");
         }
+        LogCall(nameof(ISceneLayer_GetDebugName), minimal: true, message: $"self=0x{self.ToInt64():X} name={data.DebugName}");
         return data.DebugNamePtr;
     }
 
@@ -209,12 +234,14 @@ internal static unsafe class EmulatedSceneLayer
         {
             data.RenderAttributesPtr = RenderAttributes.RenderAttributes.CreateRenderAttributesInternal();
     }
+        LogCall(nameof(ISceneLayer_GetRenderAttributesPtr), minimal: true, message: $"self=0x{self.ToInt64():X} ptr=0x{data.RenderAttributesPtr.ToInt64():X}");
         return data.RenderAttributesPtr;
     }
 
     [UnmanagedCallersOnly]
     public static void ISceneLayer_SetAttr(IntPtr self, StringToken nTokenID, IntPtr hRenderTarget, long msaa, uint flags)
     {
+        LogCall(nameof(ISceneLayer_SetAttr), minimal: true, message: $"self=0x{self.ToInt64():X} token=0x{nTokenID.GetHashCode():X} rt=0x{hRenderTarget.ToInt64():X} msaa={msaa} flags=0x{flags:X}");
         var data = GetLayerData(self);
         data.AttrTargets[nTokenID] = (new SceneViewRenderTargetHandle { self = hRenderTarget }, (SceneLayerMSAAMode_t)msaa, flags);
     }
@@ -222,12 +249,13 @@ internal static unsafe class EmulatedSceneLayer
     [UnmanagedCallersOnly]
     public static void ISceneLayer_SetBoundingVolumeSizeCullThresholdInPercent(IntPtr self, float flSizeCullThreshold)
     {
-        // Not used in emulation yet; keep silent.
+        LogCall(nameof(ISceneLayer_SetBoundingVolumeSizeCullThresholdInPercent), minimal: true, message: $"self=0x{self.ToInt64():X} thresh={flSizeCullThreshold}");
     }
 
     [UnmanagedCallersOnly]
     public static void ISceneLayer_SetClearColor(IntPtr self, Vector4* vecColor, int nRenderTargetIndex)
     {
+        LogCall(nameof(ISceneLayer_SetClearColor), minimal: true, message: $"self=0x{self.ToInt64():X} ptr=0x{((IntPtr)vecColor).ToInt64():X} idx={nRenderTargetIndex}");
         if (vecColor == null) return;
         GetLayerData(self).ClearColor = *vecColor;
     }
@@ -238,8 +266,10 @@ internal static unsafe class EmulatedSceneLayer
         var data = GetLayerData(self);
         if (data.TextureValues.TryGetValue(nTokenID, out var val))
     {
+            LogCall(nameof(ISceneLayer_GetTextureValue), minimal: true, message: $"self=0x{self.ToInt64():X} token=0x{nTokenID.GetHashCode():X} hit=0x{val.ToInt64():X}");
             return val;
         }
+        LogCall(nameof(ISceneLayer_GetTextureValue), minimal: true, message: $"self=0x{self.ToInt64():X} token=0x{nTokenID.GetHashCode():X} default=0x{nDefaultValue.ToInt64():X}");
         return nDefaultValue;
     }
 
@@ -249,52 +279,97 @@ internal static unsafe class EmulatedSceneLayer
         var data = GetLayerData(self);
         if (data.TextureValues.TryGetValue(nTokenID, out var val))
         {
+            LogCall(nameof(ISceneLayer_GetTextureValue_1), minimal: true, message: $"self=0x{self.ToInt64():X} token=0x{nTokenID.GetHashCode():X} hit=0x{val.ToInt64():X}");
             return val;
         }
+        LogCall(nameof(ISceneLayer_GetTextureValue_1), minimal: true, message: $"self=0x{self.ToInt64():X} token=0x{nTokenID.GetHashCode():X} miss");
         return IntPtr.Zero;
     }
 
     [UnmanagedCallersOnly]
     public static IntPtr ISceneLayer_GetColorTarget(IntPtr self)
     {
-        return GetLayerData(self).ColorTarget;
+        var color = GetLayerData(self).ColorTarget;
+        LogCall(nameof(ISceneLayer_GetColorTarget), minimal: true, message: $"self=0x{self.ToInt64():X} color=0x{color.ToInt64():X}");
+        return color;
     }
 
     [UnmanagedCallersOnly]
     public static IntPtr ISceneLayer_GetDepthTarget(IntPtr self)
     {
-        return GetLayerData(self).DepthTarget;
+        var depth = GetLayerData(self).DepthTarget;
+        LogCall(nameof(ISceneLayer_GetDepthTarget), minimal: true, message: $"self=0x{self.ToInt64():X} depth=0x{depth.ToInt64():X}");
+        return depth;
     }
 
     [UnmanagedCallersOnly]
     public static void ISceneLayer_SetOutput(IntPtr self, IntPtr hColor, IntPtr hDepth)
     {
+        LogCall(nameof(ISceneLayer_SetOutput), minimal: true, message: $"self=0x{self.ToInt64():X} color=0x{hColor.ToInt64():X} depth=0x{hDepth.ToInt64():X}");
         var data = GetLayerData(self);
         data.ColorTarget = hColor;
         data.DepthTarget = hDepth;
     }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static long Get__ISceneLayer_m_nLayerFlags(IntPtr self) => (long)GetLayerData(self).LayerFlags;
+    public static long Get__ISceneLayer_m_nLayerFlags(IntPtr self)
+    {
+        var flags = (long)GetLayerData(self).LayerFlags;
+        LogCall(nameof(Get__ISceneLayer_m_nLayerFlags), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{flags:X}");
+        return flags;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static void Set__ISceneLayer_m_nLayerFlags(IntPtr self, long value) => GetLayerData(self).LayerFlags = (LayerFlags)value;
+    public static void Set__ISceneLayer_m_nLayerFlags(IntPtr self, long value)
+    {
+        LogCall(nameof(Set__ISceneLayer_m_nLayerFlags), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{value:X}");
+        GetLayerData(self).LayerFlags = (LayerFlags)value;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static long Get__ISceneLayer_LayerEnum(IntPtr self) => (long)GetLayerData(self).LayerEnum;
+    public static long Get__ISceneLayer_LayerEnum(IntPtr self)
+    {
+        var val = (long)GetLayerData(self).LayerEnum;
+        LogCall(nameof(Get__ISceneLayer_LayerEnum), minimal: true, message: $"self=0x{self.ToInt64():X} layer=0x{val:X}");
+        return val;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static void Set__ISceneLayer_LayerEnum(IntPtr self, long value) => GetLayerData(self).LayerEnum = (SceneLayerType)value;
+    public static void Set__ISceneLayer_LayerEnum(IntPtr self, long value)
+    {
+        LogCall(nameof(Set__ISceneLayer_LayerEnum), minimal: true, message: $"self=0x{self.ToInt64():X} layer=0x{value:X}");
+        GetLayerData(self).LayerEnum = (SceneLayerType)value;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static RenderViewport Get__ISceneLayer_m_viewport(IntPtr self) => GetLayerData(self).Viewport;
+    public static RenderViewport Get__ISceneLayer_m_viewport(IntPtr self)
+    {
+        var vp = GetLayerData(self).Viewport;
+        var rect = vp.Rect;
+        LogCall(nameof(Get__ISceneLayer_m_viewport), minimal: true, message: $"self=0x{self.ToInt64():X} vp=({rect.Width}x{rect.Height})");
+        return vp;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static void Set__ISceneLayer_m_viewport(IntPtr self, RenderViewport value) => GetLayerData(self).Viewport = value;
+    public static void Set__ISceneLayer_m_viewport(IntPtr self, RenderViewport value)
+    {
+        var rect = value.Rect;
+        LogCall(nameof(Set__ISceneLayer_m_viewport), minimal: true, message: $"self=0x{self.ToInt64():X} vp=({rect.Width}x{rect.Height})");
+        GetLayerData(self).Viewport = value;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static int Get__ISceneLayer_m_nClearFlags(IntPtr self) => GetLayerData(self).ClearFlags;
+    public static int Get__ISceneLayer_m_nClearFlags(IntPtr self)
+    {
+        var flags = GetLayerData(self).ClearFlags;
+        LogCall(nameof(Get__ISceneLayer_m_nClearFlags), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{flags:X}");
+        return flags;
+    }
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
-    public static void Set__ISceneLayer_m_nClearFlags(IntPtr self, int value) => GetLayerData(self).ClearFlags = value;
+    public static void Set__ISceneLayer_m_nClearFlags(IntPtr self, int value)
+    {
+        LogCall(nameof(Set__ISceneLayer_m_nClearFlags), minimal: true, message: $"self=0x{self.ToInt64():X} flags=0x{value:X}");
+        GetLayerData(self).ClearFlags = value;
+    }
     }
