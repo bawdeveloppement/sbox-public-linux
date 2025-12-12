@@ -63,7 +63,7 @@ engine/Sandbox.Compiling/EmbeddedRefs/*.xml
 game/*.xml
 engine/TestResults/
 
-#/engine/**/Interop.*.cs
+/engine/**/Interop.*.cs
 
 #
 # Visual Studio
