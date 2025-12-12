@@ -1,4 +1,4 @@
-﻿global using System;
+global using System;
 global using System.Collections.Generic;
 global using System.Diagnostics;
 global using System.Linq;
@@ -21,7 +21,7 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo( "Facepunch.Interopgen" )]
 [assembly: InternalsVisibleTo( "Sandbox.AppSystem" )]
 [assembly: InternalsVisibleTo( "Sbox-Server" )]
-[assembly: InternalsVisibleTo( "Sandbox.Engine.Emulation" )]
-[assembly: InternalsVisibleTo( "Sandbox.Engine.Emulation" )]
+[assembly: InternalsVisibleTo( "Bawstudios.OS27" )]
+[assembly: InternalsVisibleTo( "Bawstudios.OS27" )]
 
 [assembly: TasksPersistOnContextReset]

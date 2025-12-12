@@ -1,4 +1,4 @@
-﻿global using Sandbox;
+global using Sandbox;
 global using Sandbox.Diagnostics;
 global using Sandbox.Physics;
 global using Sandbox.Tasks;
@@ -29,7 +29,7 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo( "sbox-profiler" )]
 [assembly: InternalsVisibleTo( "benchmark" )]
 [assembly: InternalsVisibleTo( "CreateGameCache" )]
-[assembly: InternalsVisibleTo( "Sandbox.Engine.Emulation" )]
+[assembly: InternalsVisibleTo( "Bawstudios.OS27" )]
 
 [assembly: TasksPersistOnContextReset]
 

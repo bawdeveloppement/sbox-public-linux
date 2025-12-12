@@ -1,17 +1,18 @@
-﻿using System;
+using System;
 using System.IO;
 using Facepunch;
 using Facepunch.Steps;
 
 namespace Facepunch.Pipelines;
 
-internal class Build
+	internal class Build
 {
 	public static Pipeline Create( BuildConfiguration configuration = BuildConfiguration.Developer,
 								 bool clean = false,
 								 bool skipNative = false,
 								 bool skipManaged = false,
-								 bool aot = false )
+									 bool aot = false,
+									 string engine = "source2" )
 	{
 		var builder = new PipelineBuilder( "Build" );
 		var isPublicSource = IsPublicSourceDistribution();
@@ -43,7 +44,7 @@ internal class Build
 		// Add managed build step if not skipped
 		if ( !skipManaged )
 		{
-			builder.AddStep( new BuildManaged( "Build Managed", clean ) );
+			builder.AddStep( new BuildManaged( "Build Managed", clean, engine ) );
 		}
 
 		return builder.Build();

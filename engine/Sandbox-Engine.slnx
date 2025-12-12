@@ -71,6 +71,6 @@
     <Project Path="Sandbox.Test/Sandbox.Test.csproj" />
   </Folder>
   <Folder Name="/Emulation/">
-    <Project Path="../src/Sandbox.Engine.Emulation/Sandbox.Engine.Emulation.csproj" />
+    <Project Path="../src/Bawstudios.OS27/Bawstudios.OS27.csproj" />
   </Folder>
 </Solution>

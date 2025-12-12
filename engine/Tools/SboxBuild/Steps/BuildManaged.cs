@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using static Facepunch.Constants;
 
 namespace Facepunch.Steps;
 
-internal class BuildManaged( string name, bool clean = false ) : Step( name )
+internal class BuildManaged( string name, bool clean = false, string engine = "source2" ) : Step( name )
 {
 	private Dictionary<string, string> CopyEnvironmentVariables()
 	{
@@ -28,6 +29,7 @@ internal class BuildManaged( string name, bool clean = false ) : Step( name )
 		{
 			var envVars = CopyEnvironmentVariables(); // Capture env vars once
 			envVars["DisableAndroidTFM"] = "true";
+			envVars["SBOX_ENGINE"] = string.IsNullOrWhiteSpace( engine ) ? "source2" : engine.Trim().ToLowerInvariant();
 			const string disableAndroid = "-p:DisableAndroidTFM=true ";
 
 			Log.Info( "Step 1: Dotnet Clean" );
@@ -138,6 +140,20 @@ internal class BuildManaged( string name, bool clean = false ) : Step( name )
 
 
 
+
+			// Optionnel : build/publish OS27 si demandé
+			if ( envVars["SBOX_ENGINE"] == "os27" )
+			{
+				Log.Info( "Step 6: Build OS27 (Bawstudios.OS27)" );
+				var os27Project = Path.Combine( rootDir, "src", "Bawstudios.OS27", "Bawstudios.OS27.csproj" );
+				if ( !Utility.RunDotnetCommand( rootDir, $"build \"{os27Project}\" -p:TargetFramework=net10.0 -p:DisableAndroidTFM=true", envVars ) )
+					return ExitCode.Failure;
+
+				Log.Info( "Step 7: Publish OS27 (Bawstudios.OS27) linux-x64" );
+				// Respecte BuildPublish.sh (net10.0, DisableAndroidTFM, NativeLib Shared, SelfContained true)
+				if ( !Utility.RunDotnetCommand( rootDir, $"publish \"{os27Project}\" -c Release -r linux-x64 -p:TargetFramework=net10.0 -p:DisableAndroidTFM=true /p:NativeLib=Shared /p:SelfContained=true", envVars ) )
+					return ExitCode.Failure;
+			}
 
 			Log.Info( "Build completed successfully!" );
 			return ExitCode.Success;

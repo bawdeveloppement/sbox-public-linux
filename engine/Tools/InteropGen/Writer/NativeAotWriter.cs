@@ -16,7 +16,7 @@ internal partial class NativeAotWriter : BaseWriter
 		WriteLine("using System.Runtime.CompilerServices;");
 		WriteLine("using Silk.NET.Core.Native;");
 		WriteLine();
-		WriteLine("namespace Sandbox.Engine.Emulation.Generated");
+		WriteLine("namespace Bawstudios.OS27.Generated");
 		WriteLine("{");
 
 		GenerateExports();

@@ -1,9 +1,16 @@
-﻿internal static class NetCore
+internal static class NetCore
 {
 	/// <summary>
 	/// Interop will try to load dlls from this path, e.g bin/win64/
 	/// </summary>
 	internal static string NativeDllPath { get; set; } = System.OperatingSystem.IsLinux() ? "bin/linuxsteamrt64/" : "bin/win64/";
+
+	/// <summary>
+	/// Native engine library name (default Source 2)
+	/// </summary>
+	internal static string EngineLibraryName { get; set; } = System.OperatingSystem.IsLinux()
+		? "libengine2.so"
+		: System.OperatingSystem.IsWindows() ? "engine2.dll" : "libengine2.dylib";
 
 	/// <summary>
 	/// From here we'll open the native dlls and inject our function pointers into them,

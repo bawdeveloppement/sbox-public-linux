@@ -23794,8 +23794,26 @@ namespace Managed.SourceTools
 		{
 			if ( _initialized ) return;
 			
-			if ( !NativeLibrary.TryLoad( System.IO.Path.Combine( NetCore.NativeDllPath, "libtoolframework2.so" ), out var nativeDll ) )
-				Sandbox.Interop.NativeAssemblyLoadFailed( "libtoolframework2.so" );
+			var defaultEngineLib = NetCore.EngineLibraryName;
+			var requestedEngineLib = System.Environment.GetEnvironmentVariable( "SBOX_ENGINE_LIB" );
+			var engineLib = string.IsNullOrWhiteSpace( requestedEngineLib ) ? defaultEngineLib : requestedEngineLib.Trim();
+			
+			if ( !NativeLibrary.TryLoad( System.IO.Path.Combine( NetCore.NativeDllPath, engineLib ), out var nativeDll ) )
+			
+			{
+				if ( !engineLib.Equals( defaultEngineLib, System.StringComparison.OrdinalIgnoreCase ) &&
+				     NativeLibrary.TryLoad( System.IO.Path.Combine( NetCore.NativeDllPath, defaultEngineLib ), out nativeDll ) )
+				
+				{
+					Sandbox.Interop.NativeAssemblyLoadFailed( $"{engineLib} (fallback -> {defaultEngineLib})" );
+					engineLib = defaultEngineLib;
+				}
+				else
+				
+				{
+					Sandbox.Interop.NativeAssemblyLoadFailed( engineLib );
+				}
+			}
 			_nativeLibraryHandle = nativeDll;
 			NetCoreImportDelegate nativeInit = default;
 			
@@ -23803,11 +23821,11 @@ namespace Managed.SourceTools
 			if ( nativeInitPtr == IntPtr.Zero )
 			
 			{
-				throw new System.Exception( "Couldn't load from libtoolframework2.so - igen_tools not found." );
+				throw new System.Exception( $"Couldn't load from {engineLib} - igen_tools not found." );
 			}
 			
 			nativeInit = Marshal.GetDelegateForFunctionPointer<NetCoreImportDelegate>( nativeInitPtr );
-			if ( nativeInit == null ) throw new System.Exception( "Couldn't load from libtoolframework2.so" );
+			if ( nativeInit == null ) throw new System.Exception( $"Couldn't load from {engineLib}" );
 			
 			var managedFunctions = new IntPtr[417]
 			

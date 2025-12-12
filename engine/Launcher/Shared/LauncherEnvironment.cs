@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.IO;
 using System.Reflection;
 
 namespace Sandbox;
@@ -47,6 +48,45 @@ public static class LauncherEnvironment
 		ManagedDllPath = $"{GamePath}/bin/managed/";
 		var nativeDllPath = $"{GamePath}/bin/{PlatformName}/";
 
+		// Sélection de la lib native (source2 par défaut, fallback vers source2 si la lib demandée n'existe pas)
+		var requestedLib = NormalizeEngineLib( Environment.GetEnvironmentVariable( "SBOX_ENGINE_LIB" ) );
+		var requestedEngine = Environment.GetEnvironmentVariable( "SBOX_ENGINE" );
+		var defaultLib = GetDefaultEngineLibName();
+		string resolvedLib = defaultLib;
+		Console.WriteLine( $"[LauncherEnvironment] SBOX_ENGINE_LIB={requestedLib}, SBOX_ENGINE={requestedEngine}, default={defaultLib}" );
+
+		// Priorité 1 : SBOX_ENGINE_LIB explicite
+		if ( !string.IsNullOrWhiteSpace( requestedLib ) )
+		{
+			resolvedLib = requestedLib;
+		}
+		// Priorité 2 : SBOX_ENGINE (source2|os27)
+		else if ( !string.IsNullOrWhiteSpace( requestedEngine ) )
+		{
+			var eng = requestedEngine.Trim().ToLowerInvariant();
+			resolvedLib = eng switch
+			{
+				"os27" when OperatingSystem.IsLinux() => "libos27.so",
+				"os27" when OperatingSystem.IsWindows() => "os27.dll",
+				"os27" => "libos27.dylib",
+				_ => defaultLib // source2 ou autre → défaut
+			};
+		}
+
+		var candidatePath = Path.Combine( nativeDllPath, resolvedLib );
+		if ( !File.Exists( candidatePath ) && !resolvedLib.Equals( defaultLib, StringComparison.OrdinalIgnoreCase ) )
+		{
+			Console.WriteLine( $"[Launcher] Lib moteur '{resolvedLib}' introuvable ({candidatePath}), fallback sur '{defaultLib}'." );
+			resolvedLib = defaultLib;
+			candidatePath = Path.Combine( nativeDllPath, resolvedLib );
+		}
+		else
+		{
+			Console.WriteLine( $"[Launcher] Lib moteur sélectionnée : '{resolvedLib}' ({nativeDllPath})." );
+		}
+
+		Environment.SetEnvironmentVariable( "SBOX_ENGINE_LIB", resolvedLib );
+
 		// make the game dir our current dir
 		Environment.CurrentDirectory = GamePath;
 		Console.WriteLine( $"Current directory: {Environment.CurrentDirectory}" );
@@ -92,5 +132,22 @@ public static class LauncherEnvironment
 		}
 
 		return null;
+	}
+
+	static string NormalizeEngineLib( string? value )
+	{
+		if ( string.IsNullOrWhiteSpace( value ) )
+			return string.Empty;
+
+		return value.Trim();
+	}
+
+	static string GetDefaultEngineLibName()
+	{
+		if ( OperatingSystem.IsLinux() )
+			return "libengine2.so";
+		if ( OperatingSystem.IsWindows() )
+			return "engine2.dll";
+		return "libengine2.dylib";
 	}
 }

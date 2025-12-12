@@ -5,7 +5,17 @@ namespace Sandbox.Launcher.SboxAndroid;
 /// </summary>
 public static class LauncherEnvironment
 {
-    public static string NativeLibraryName => "libengine2.so";
+    public static string NativeLibraryName
+    {
+        get
+        {
+            var env = System.Environment.GetEnvironmentVariable( "SBOX_ENGINE_LIB" );
+            if ( string.IsNullOrWhiteSpace( env ) )
+                return "libengine2.so";
+
+            return env.Trim();
+        }
+    }
     public static string Abi => "arm64-v8a";
 }
 

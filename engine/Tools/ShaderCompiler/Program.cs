@@ -25,11 +25,23 @@ public static partial class Program
 		options.ForceRecompile = args.Any( x => x.Contains( "-f" ) );
 		options.SingleThreaded = args.Any( x => x.Contains( "-s" ) );
 		options.ConsoleOutput = !args.Any( x => x.Contains( "-q" ) );
-		var useOpenEngine = args.Any( x => x.Contains( "-openengine" ) );
-		if ( useOpenEngine )
+
+		var engineArg = args.FirstOrDefault( x => x.StartsWith( "-engine=", StringComparison.OrdinalIgnoreCase ) );
+		var engine = (engineArg is null ? "source2" : engineArg["-engine=".Length..].Trim().ToLowerInvariant());
+
+		// Sélection de la lib pour la compilation shader
+		var engineLib = engine switch
 		{
-			Environment.SetEnvironmentVariable( "SBOX_OPENENGINE_VFX", "1" );
-		}
+			"os27" when OperatingSystem.IsLinux() => "libos27.so",
+			"os27" when OperatingSystem.IsWindows() => "os27.dll",
+			"os27" => "libos27.dylib",
+			_ when OperatingSystem.IsLinux() => "libengine2.so",
+			_ when OperatingSystem.IsWindows() => "engine2.dll",
+			_ => "libengine2.dylib"
+		};
+
+		Environment.SetEnvironmentVariable( "SBOX_ENGINE", engine );
+		Environment.SetEnvironmentVariable( "SBOX_ENGINE_LIB", engineLib );
 
 		List<ProcessList> failedList = new();
 

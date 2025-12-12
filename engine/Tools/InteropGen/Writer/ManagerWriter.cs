@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Facepunch.InteropGen;
@@ -97,8 +97,24 @@ internal partial class ManagerWriter : BaseWriter
 				WriteLine( "if ( _initialized ) return;" );
 				WriteLine();
 
-				WriteLine( $"if ( !NativeLibrary.TryLoad( System.IO.Path.Combine( NetCore.NativeDllPath, \"{definitions.NativeDll}\" ), out var nativeDll ) )" );
-				WriteLine( $"	Sandbox.Interop.NativeAssemblyLoadFailed( \"{definitions.NativeDll}\" );" );
+				WriteLine( "var defaultEngineLib = NetCore.EngineLibraryName;" );
+				WriteLine( "var requestedEngineLib = System.Environment.GetEnvironmentVariable( \"SBOX_ENGINE_LIB\" );" );
+				WriteLine( "var engineLib = string.IsNullOrWhiteSpace( requestedEngineLib ) ? defaultEngineLib : requestedEngineLib.Trim();" );
+				WriteLine();
+
+				WriteLine( "if ( !NativeLibrary.TryLoad( System.IO.Path.Combine( NetCore.NativeDllPath, engineLib ), out var nativeDll ) )" );
+				StartBlock( null );
+				WriteLine( "if ( !engineLib.Equals( defaultEngineLib, System.StringComparison.OrdinalIgnoreCase ) &&" );
+				WriteLine( "     NativeLibrary.TryLoad( System.IO.Path.Combine( NetCore.NativeDllPath, defaultEngineLib ), out nativeDll ) )" );
+				StartBlock( null );
+				WriteLine( "Sandbox.Interop.NativeAssemblyLoadFailed( $\"{engineLib} (fallback -> {defaultEngineLib})\" );" );
+				WriteLine( "engineLib = defaultEngineLib;" );
+				EndBlock();
+				WriteLine( "else" );
+				StartBlock( null );
+				WriteLine( "Sandbox.Interop.NativeAssemblyLoadFailed( engineLib );" );
+				EndBlock();
+				EndBlock();
 				WriteLine( "_nativeLibraryHandle = nativeDll;" );
 
 				WriteLine( "NetCoreImportDelegate nativeInit = default;" ); // Declare outside the conditional, initialized to null
@@ -107,12 +123,12 @@ internal partial class ManagerWriter : BaseWriter
 				
 				WriteLine( $"if ( nativeInitPtr == IntPtr.Zero )" ); // Check for null pointer
 				StartBlock( null );
-				WriteLine( $"throw new System.Exception( \"Couldn't load from {definitions.NativeDll} - igen_{definitions.Ident} not found.\" );" );
+				WriteLine( $"throw new System.Exception( $\"Couldn't load from {{engineLib}} - igen_{definitions.Ident} not found.\" );" );
 				EndBlock();
 
 				WriteLine();
 				WriteLine( $"nativeInit = Marshal.GetDelegateForFunctionPointer<NetCoreImportDelegate>( nativeInitPtr );" );
-				WriteLine( $"if ( nativeInit == null ) throw new System.Exception( \"Couldn't load from {definitions.NativeDll}\" );" );
+				WriteLine( $"if ( nativeInit == null ) throw new System.Exception( $\"Couldn't load from {{engineLib}}\" );" );
 
 				int i = 0;
 

@@ -34,7 +34,7 @@ internal partial class NativeAotWriter
 		WriteLine($"	public static unsafe void FillNativeFunctions{CapitalizeFirst(definitions.Ident)}(void** managedFunctions, void** nativeFunctions, int* structSizes)");
 		WriteLine(" 	{");
 		WriteLine(" 		var i = 0;");
-		WriteLine(" 		nativeFunctions[i++] = (void*)(delegate* unmanaged<IntPtr, void>)&Sandbox.Engine.Emulation.EngineExports.DebugError;");
+		WriteLine(" 		nativeFunctions[i++] = (void*)(delegate* unmanaged<IntPtr, void>)&Bawstudios.OS27.EngineExports.DebugError;");
 		foreach (var c in definitions.Classes.Where(x => x.Native == true)) {
 			if (ShouldSkip(c)) continue;
 

@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using System.IO;
+using System.Threading;
 using Topten.RichTextKit;
 
 namespace Sandbox;
@@ -27,7 +28,7 @@ internal class FontManager : FontMapper
 {
 	public static FontManager Instance = new FontManager();
 
-	private static bool _skiaResolverSet = false;
+	private static int _skiaResolverSet = 0; // 0 = not set, 1 = set
 
 	static ConcurrentDictionary<int, SKTypeface> LoadedFonts = new();
 
@@ -42,16 +43,22 @@ internal class FontManager : FontMapper
 
 	private static void TryInitSkiaResolver()
 	{
-		if ( _skiaResolverSet )
+		// Thread-safe check-and-set: only one thread can set the resolver
+		if ( Interlocked.CompareExchange( ref _skiaResolverSet, 1, 0 ) != 0 )
 			return;
-
-		_skiaResolverSet = true;
 
 		if ( !OperatingSystem.IsLinux() )
 			return;
 
-		NativeLibrary.SetDllImportResolver( typeof( SKTypeface ).Assembly, SkiaImportResolver );
-		SkiaPreload();
+		try
+		{
+			NativeLibrary.SetDllImportResolver( typeof( SKTypeface ).Assembly, SkiaImportResolver );
+			SkiaPreload();
+		}
+		catch ( InvalidOperationException )
+		{
+			// Resolver already set by another thread/assembly load - ignore
+		}
 	}
 
 	private static IntPtr SkiaImportResolver( string libraryName, Assembly assembly, DllImportSearchPath? searchPath )

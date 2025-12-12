@@ -56,10 +56,16 @@ internal class Program
 			description: "Skip building managed code",
 			getDefaultValue: () => false );
 
+		var engineOption = new Option<string>(
+			"--engine",
+			description: "Engine to use (source2|os27)",
+			getDefaultValue: () => "source2" );
+
 		buildCommand.AddOption( configOption );
 		buildCommand.AddOption( cleanOption );
 		buildCommand.AddOption( skipNativeOption );
 		buildCommand.AddOption( skipManagedOption );
+		buildCommand.AddOption( engineOption );
 
 		var aotOption = new Option<bool>(
 			"--aot",
@@ -67,12 +73,12 @@ internal class Program
 			getDefaultValue: () => true );
 		buildCommand.AddOption( aotOption );
 
-		buildCommand.SetHandler( ( BuildConfiguration config, bool clean, bool skipNative, bool skipManaged, bool aot ) =>
+		buildCommand.SetHandler( ( BuildConfiguration config, bool clean, bool skipNative, bool skipManaged, bool aot, string engine ) =>
 		{
-			var pipeline = Build.Create( config, clean, skipNative, skipManaged, aot );
+			var pipeline = Build.Create( config, clean, skipNative, skipManaged, aot, engine );
 			ExitCode result = pipeline.Run();
 			Environment.ExitCode = (int)result;
-		}, configOption, cleanOption, skipNativeOption, skipManagedOption, aotOption );
+		}, configOption, cleanOption, skipNativeOption, skipManagedOption, aotOption, engineOption );
 
 		rootCommand.Add( buildCommand );
 	}
@@ -167,20 +173,20 @@ internal class Program
 			"--forced",
 			description: "Whether to force rebuild all shaders",
 			getDefaultValue: () => false );
-		var openEngineOption = new Option<bool>(
-			"--openengine",
-			description: "Use libengine2 CreateInterface for ShaderCompile instead of legacy vfx_vulkan",
-			getDefaultValue: () => false );
+		var engineOption = new Option<string>(
+			"--engine",
+			description: "Engine to use for shader compile (source2|os27)",
+			getDefaultValue: () => "source2" );
 
 		buildShadersCommand.AddOption( forcedOption );
-		buildShadersCommand.AddOption( openEngineOption );
+		buildShadersCommand.AddOption( engineOption );
 
-		buildShadersCommand.SetHandler( ( bool forced, bool openengine ) =>
+		buildShadersCommand.SetHandler( ( bool forced, string engine ) =>
 		{
-			var step = new BuildShaders( "Build Shaders", forced, openengine );
+			var step = new BuildShaders( "Build Shaders", forced, engine );
 			ExitCode result = step.Run();
 			Environment.ExitCode = (int)result;
-		}, forcedOption, openEngineOption );
+		}, forcedOption, engineOption );
 
 		rootCommand.Add( buildShadersCommand );
 	}

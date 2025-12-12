@@ -1,4 +1,4 @@
-﻿using Facepunch.InteropGen.Parsers;
+using Facepunch.InteropGen.Parsers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,9 +89,9 @@ public class Definition
 		parser.Parse( this, text, System.IO.Path.Combine( Root.FullName, Filename ) );
 		
 		// Root.FullName is usually engine/Definitions/something
-		// We want to go to src/Sbox.Engine.Emulation/Generated
-		// engine/Definitions/../../src/Sbox.Engine.Emulation/Generated
-		SaveFileCsAot = System.IO.Path.GetFullPath( System.IO.Path.Combine( Root.FullName, "../../src/Sandbox.Engine.Emulation/Generated", Filename.Replace( ".def", ".Generated.cs" ) ) );
+		// We want to go to src/Bawstudios.OS27/Generated
+		// engine/Definitions/../../src/Bawstudios.OS27/Generated
+		SaveFileCsAot = System.IO.Path.GetFullPath( System.IO.Path.Combine( Root.FullName, "../../src/Bawstudios.OS27/Generated", Filename.Replace( ".def", ".Generated.cs" ) ) );
 	}
 
 	private void GenerateHash()

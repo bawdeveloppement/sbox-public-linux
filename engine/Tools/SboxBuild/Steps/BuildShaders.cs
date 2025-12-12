@@ -3,7 +3,7 @@ using static Facepunch.Constants;
 
 namespace Facepunch.Steps;
 
-internal class BuildShaders( string name, bool forced = false, bool openengine = false ) : Step( name )
+internal class BuildShaders( string name, bool forced = false, string engine = "source2" ) : Step( name )
 {
 	protected override ExitCode RunInternal()
 	{
@@ -59,9 +59,10 @@ internal class BuildShaders( string name, bool forced = false, bool openengine =
 		{
 			arguments += " -f";
 		}
-		if ( openengine )
+
+		if ( !string.IsNullOrWhiteSpace( engine ) )
 		{
-			arguments += " -openengine";
+			arguments += $" -engine={engine.Trim().ToLowerInvariant()}";
 		}
 
 		// Track if any shaders were compiled
