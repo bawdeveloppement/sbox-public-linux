@@ -13,8 +13,8 @@ using Silk.NET.OpenGL;
 namespace Bawstudios.OS27.Material;
 
 /// <summary>
-/// Module d'émulation pour MaterialSystem2 et IMaterial2.
-/// Gère la création et la gestion des matériaux.
+/// Emulation module for MaterialSystem2 and IMaterial2.
+/// Handles creation and management of materials.
 /// </summary>
 public static unsafe class MaterialSystem
 {
@@ -67,7 +67,7 @@ public static unsafe class MaterialSystem
         return null;
     }
     /// <summary>
-    /// Données internes pour un matériau émulé.
+    /// Internal data for an emulated material.
     /// </summary>
     private class MaterialData
     {
@@ -76,12 +76,12 @@ public static unsafe class MaterialSystem
         public bool Anonymous { get; set; }
         public IntPtr RenderAttributes { get; set; } = IntPtr.Zero;
         public bool IsError { get; set; } = false;
-        public bool IsLoaded { get; set; } = true; // Par défaut, considéré comme chargé
+        public bool IsLoaded { get; set; } = true; // By default, considered loaded
         public bool IsEdited { get; set; } = false;
         public ulong SimilarityKey { get; set; } = 0;
         public Dictionary<string, object> Parameters { get; } = new(); // Stocke les paramètres du matériau
-        public IntPtr BindingPtr { get; set; } = IntPtr.Zero; // Pointeur de binding unique
-        public IntPtr MaterialMode { get; set; } = IntPtr.Zero; // Mode de rendu du matériau
+        public IntPtr BindingPtr { get; set; } = IntPtr.Zero; // Unique binding pointer
+        public IntPtr MaterialMode { get; set; } = IntPtr.Zero; // Material rendering mode
         public string? CompiledShaderPath { get; set; }
         public byte[]? CompiledShaderBytes { get; set; }
     }
@@ -178,7 +178,7 @@ public static unsafe class MaterialSystem
     // ========== CMtrlSystm2ppSys Functions ==========
     
     /// <summary>
-    /// Crée un nouveau MaterialSystem2AppSystemDict.
+    /// Creates a new MaterialSystem2AppSystemDict.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr CMtrlSystm2ppSys_Create(NativeEngine.MaterialSystem2AppSystemDictCreateInfo* createInfo)
@@ -188,7 +188,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Détruit le MaterialSystem2AppSystemDict.
+    /// Destroys the MaterialSystem2AppSystemDict.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_Destroy(IntPtr self)
@@ -198,7 +198,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Initialise le MaterialSystem2AppSystemDict.
+    /// Initializes the MaterialSystem2AppSystemDict.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_Init(IntPtr self)
@@ -213,7 +213,7 @@ public static unsafe class MaterialSystem
     private static GL? _gl;
     
     /// <summary>
-    /// Initialise la référence à la fenêtre (appelée depuis EngineExports ou PlatformFunctions).
+    /// Initializes the window reference (called from EngineExports or PlatformFunctions).
     /// </summary>
     internal static void SetWindowHandle(WindowHandle* handle)
     {
@@ -233,7 +233,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient le SwapChain de la fenêtre de l'application.
+    /// Gets the application window SwapChain.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr CMtrlSystm2ppSys_GetAppWindowSwapChain(IntPtr self)
@@ -246,10 +246,10 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Crée une fenêtre d'application.
-    /// Signature depuis Interop.Engine.cs ligne 15278: delegate* unmanaged&lt; IntPtr, IntPtr, int, int, int, int, int, int, IntPtr &gt;
-    /// Paramètres: self, pTitle, nPlatWindowFlags, x, y, w, h, nRefreshRateHz, icon
-    /// Utilise les instances GLFW/GL de PlatformFunctions (partagées).
+    /// Creates an application window.
+    /// Signature from Interop.Engine.cs line 15278: delegate* unmanaged&lt; IntPtr, IntPtr, int, int, int, int, int, int, IntPtr &gt;
+    /// Parameters: self, pTitle, nPlatWindowFlags, x, y, w, h, nRefreshRateHz, icon
+    /// Uses GLFW/GL instances from PlatformFunctions (shared).
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr CMtrlSystm2ppSys_CreateAppWindow(IntPtr self, IntPtr pTitle, int nPlatWindowFlags, int x, int y, int w, int h, int nRefreshRateHz)
@@ -259,11 +259,11 @@ public static unsafe class MaterialSystem
 
         try
         {
-            // Utiliser les instances de PlatformFunctions (partagées)
+            // Use PlatformFunctions instances (shared)
             var glfw = Platform.PlatformFunctions.GetGlfw();
             var existingWindowHandle = Platform.PlatformFunctions.GetWindowHandle();
             
-            // Si une fenêtre existe déjà (créée dans SourceEngineInit), la réutiliser
+            // If a window already exists (created in SourceEngineInit), reuse it
             if (existingWindowHandle != null && glfw != null)
             {
                 Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_CreateAppWindow: Reusing existing window");
@@ -272,7 +272,7 @@ public static unsafe class MaterialSystem
                 return (IntPtr)_windowHandle;
             }
             
-            // Sinon, créer une nouvelle fenêtre (normalement ne devrait pas arriver car SourceEngineInit crée déjà une fenêtre)
+            // Otherwise, create a new window (normally shouldn't happen as SourceEngineInit already creates a window)
             if (glfw == null)
             {
                 glfw = Glfw.GetApi();
@@ -303,7 +303,7 @@ public static unsafe class MaterialSystem
 
             glfw.MakeContextCurrent(_windowHandle);
 
-            // Initialize GL si pas déjà fait
+            // Initialize GL if not already done
             var gl = Platform.PlatformFunctions.GetGL();
             if (gl == null)
             {
@@ -323,7 +323,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Définit le titre de la fenêtre de l'application.
+    /// Sets the application window title.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SetAppWindowTitle(IntPtr self, IntPtr titlePtr)
@@ -338,7 +338,7 @@ public static unsafe class MaterialSystem
         }
     }
     
-    // Cache pour GetContentPath (évite les allocations répétées)
+    // Cache for GetContentPath (avoids repeated allocations)
     private static IntPtr? _cachedContentPath = null;
     
     /// <summary>
@@ -355,7 +355,7 @@ public static unsafe class MaterialSystem
         return _cachedContentPath.Value;
     }
     
-    // État du MaterialSystem
+    // MaterialSystem state
     private static string? _modGameSubdir = null;
     private static string? _moduleSearchPath = null;
     private static string? _defaultRenderSystemOption = null;
@@ -363,10 +363,10 @@ public static unsafe class MaterialSystem
     private static bool _isInToolsMode = false;
     private static bool _isDedicatedServer = false;
     private static bool _isConsoleApp = false;
-    private static bool _isGameApp = true; // Par défaut, c'est une app de jeu
+    private static bool _isGameApp = true; // By default, it's a game app
     private static bool _isInDeveloperMode = false;
     private static bool _isInVRMode = false;
-    private static bool _isRunningOnCustomerMachine = true; // Par défaut, on assume que c'est une machine client
+    private static bool _isRunningOnCustomerMachine = true; // By default, assume it's a client machine
     private static bool _isStandaloneApp = false;
     private static bool _modPathCheckDisabled = false;
     private static bool _appWindowDiscardMouseFocusClick = false;
@@ -389,7 +389,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Finalise la configuration du MaterialSystem après l'initialisation.
+    /// Finalizes MaterialSystem configuration after initialization.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_InitFinishSetupMaterialSystem(IntPtr self)
@@ -399,7 +399,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Supprime le chargement du manifeste de démarrage.
+    /// Suppresses startup manifest loading.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SuppressStartupManifestLoad(IntPtr self, int suppress)
@@ -419,7 +419,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Active le mode test.
+    /// Enables test mode.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SetInTestMode(IntPtr self)
@@ -439,7 +439,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Définit l'ID de l'application Steam.
+    /// Sets the Steam application ID.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SetSteamAppId(IntPtr self, uint appId)
@@ -449,7 +449,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient l'ID de l'application Steam.
+    /// Gets the Steam application ID.
     /// </summary>
     [UnmanagedCallersOnly]
     public static uint CMtrlSystm2ppSys_GetSteamAppId(IntPtr self)
@@ -468,7 +468,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Vérifie si l'application est un serveur dédié.
+    /// Checks if the application is a dedicated server.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_IsDedicatedServer(IntPtr self)
@@ -486,7 +486,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Vérifie si l'application est une application de jeu.
+    /// Checks if the application is a game application.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_IsGameApp(IntPtr self)
@@ -503,8 +503,8 @@ public static unsafe class MaterialSystem
         if (string.IsNullOrEmpty(_modGameSubdir))
             return IntPtr.Zero;
         
-        // Cache le résultat pour éviter les allocations répétées
-        // Note: Dans une implémentation réelle, il faudrait gérer la libération de cette mémoire
+        // Cache the result to avoid repeated allocations
+        // Note: In a real implementation, memory deallocation would need to be managed
         return Marshal.StringToHGlobalAnsi(_modGameSubdir);
     }
     
@@ -518,7 +518,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Vérifie si l'application est en mode développeur.
+    /// Checks if the application is in developer mode.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_IsInDeveloperMode(IntPtr self)
@@ -536,7 +536,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Vérifie si l'application s'exécute sur une machine client.
+    /// Checks if the application is running on a client machine.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_IsRunningOnCustomerMachine(IntPtr self)
@@ -554,7 +554,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient la phase d'initialisation actuelle.
+    /// Gets the current initialization phase.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_GetInitializationPhase(IntPtr self)
@@ -563,7 +563,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Vérifie si l'application est une application standalone.
+    /// Checks if the application is a standalone application.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_IsStandaloneApp(IntPtr self)
@@ -582,7 +582,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Définit l'icône de la fenêtre de l'application.
+    /// Sets the application window icon.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SetAppWindowIcon(IntPtr self, IntPtr iconPtr)
@@ -593,12 +593,12 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Définit l'image initiale de la fenêtre de l'application.
+    /// Sets the initial application window image.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SetInitialAppWindowImage(IntPtr self, IntPtr imagePtr)
     {
-        // Cette fonction définit une image à afficher avant le premier rendu
+        // This function sets an image to display before the first render
         Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_SetInitialAppWindowImage");
     }
     
@@ -613,7 +613,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Dessine l'image initiale de la fenêtre.
+    /// Draws the initial window image.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_DrawInitialWindowImage(IntPtr self)
@@ -623,7 +623,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Définit le chemin de recherche des modules.
+    /// Sets the module search path.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SetModuleSearchPath(IntPtr self, IntPtr pathPtr)
@@ -644,7 +644,7 @@ public static unsafe class MaterialSystem
         
         string? fileName = Marshal.PtrToStringUTF8(fileNamePtr);
         Console.WriteLine($"[NativeAOT] CMtrlSystm2ppSys_SetModFromFileName: {fileName}, flags={flags}");
-        // Note: Cette fonction pourrait extraire le nom du mod depuis le nom de fichier
+        // Note: This function could extract the mod name from the file name
     }
     
     /// <summary>
@@ -658,7 +658,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Définit l'option par défaut du système de rendu (ex: "-vulkan", "-opengl").
+    /// Sets the default rendering system option (e.g., "-vulkan", "-opengl").
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SetDefaultRenderSystemOption(IntPtr self, IntPtr optionPtr)
@@ -680,13 +680,13 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Préparation avant l'arrêt du MaterialSystem.
+    /// Preparation before MaterialSystem shutdown.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_PreShutdown(IntPtr self)
     {
         Console.WriteLine("[NativeAOT] CMtrlSystm2ppSys_PreShutdown");
-        // Nettoyer les ressources si nécessaire
+        // Clean up resources if necessary
     }
     
     /// <summary>
@@ -695,8 +695,8 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static int CMtrlSystm2ppSys_InitSDL(IntPtr self, uint flags)
     {
-        // Note: Sur Linux, on utilise GLFW au lieu de SDL
-        // Cette fonction est principalement un stub pour la compatibilité
+        // Note: On Linux, we use GLFW instead of SDL
+        // This function is mainly a stub for compatibility
         _sdlInitialized = true;
         Console.WriteLine($"[NativeAOT] CMtrlSystm2ppSys_InitSDL: flags={flags}");
         return 1; // Success
@@ -713,7 +713,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Ajoute un système au MaterialSystem.
+    /// Adds a system to MaterialSystem.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr CMtrlSystm2ppSys_AddSystem(IntPtr self, IntPtr moduleNamePtr, IntPtr systemNamePtr)
@@ -730,7 +730,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Active le mode standalone.
+    /// Enables standalone mode.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CMtrlSystm2ppSys_SetInStandaloneApp(IntPtr self)
@@ -762,7 +762,7 @@ public static unsafe class MaterialSystem
             RenderAttributes = renderAttributes
         };
 
-        // Charger le shader compilé (.shader_c) si disponible
+        // Load compiled shader (.shader_c) if available
         string? compiledPath = TryFindCompiledShaderPath(shader);
         if (!string.IsNullOrEmpty(compiledPath) && File.Exists(compiledPath))
         {
@@ -788,14 +788,14 @@ public static unsafe class MaterialSystem
             LogCall(nameof(g_pMtrlSystm2_CreateRawMaterial), minimal: true, message: "shader_c not found");
         }
         
-        // Enregistrer MaterialData dans HandleManager pour obtenir un handle unique
+        // Register MaterialData in HandleManager to get a unique handle
         int handle = HandleManager.Register(materialData);
         if (handle == 0) return IntPtr.Zero;
         
         int bindingHandle = HandleManager.GetBindingHandle(handle);
         materialData.BindingPtr = (IntPtr)bindingHandle;
         
-        // Créer un mode de rendu par défaut (on utilise aussi HandleManager pour la cohérence)
+        // Create a default rendering mode (we also use HandleManager for consistency)
         int modeHandle = HandleManager.Register(new object()); // Objet simple pour représenter le mode
         materialData.MaterialMode = (IntPtr)modeHandle;
         
@@ -811,7 +811,7 @@ public static unsafe class MaterialSystem
     // ========== IMaterial2 Functions ==========
     
     /// <summary>
-    /// Retourne les attributs de rendu d'un matériau.
+    /// Returns the render attributes of a material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetRenderAttributes(IntPtr self)
@@ -833,7 +833,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient le nom d'un matériau.
+    /// Gets the name of a material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetName(IntPtr self)
@@ -853,7 +853,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient le mode d'un matériau pour un token donné.
+    /// Gets the mode of a material for a given token.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetMode(IntPtr self, Sandbox.StringToken token)
@@ -893,7 +893,7 @@ public static unsafe class MaterialSystem
         var materialData = HandleManager.Get<MaterialData>((int)self);
         if (materialData != null)
         {
-            // Stocker la valeur dans les render attributes
+            // Store the value in render attributes
             if (materialData.RenderAttributes != IntPtr.Zero)
             {
                 RenderAttributes.RenderAttributes.SetStringValueHelper(materialData.RenderAttributes, name, value ?? "");
@@ -907,7 +907,7 @@ public static unsafe class MaterialSystem
     // ========== g_pMtrlSystm2 Functions supplémentaires ==========
     
     /// <summary>
-    /// Crée une copie procédurale d'un matériau.
+    /// Creates a procedural copy of a material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr g_pMtrlSystm2_CreateProceduralMaterialCopy(IntPtr hSrcMaterial, int nResourceType, int bRecreateStaticBuffers)
@@ -932,18 +932,18 @@ public static unsafe class MaterialSystem
                 SimilarityKey = srcMaterial.SimilarityKey
             };
             
-            // Enregistrer le nouveau MaterialData dans HandleManager pour obtenir un handle unique
+            // Register the new MaterialData in HandleManager to get a unique handle
             int newHandle = HandleManager.Register(newMaterial);
             if (newHandle == 0) return IntPtr.Zero;
             
             int newBindingHandle = HandleManager.GetBindingHandle(newHandle);
             newMaterial.BindingPtr = (IntPtr)newBindingHandle;
             
-            // Créer un nouveau mode de rendu pour la copie
+            // Create a new rendering mode for the copy
             int newModeHandle = HandleManager.Register(new object());
             newMaterial.MaterialMode = (IntPtr)newModeHandle;
             
-            // Copier les paramètres
+            // Copy parameters
             foreach (var kvp in srcMaterial.Parameters)
             {
                 newMaterial.Parameters[kvp.Key] = kvp.Value;
@@ -962,7 +962,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Trouve ou crée un matériau depuis une ressource.
+    /// Finds or creates a material from a resource.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr g_pMtrlSystm2_FindOrCreateMaterialFromResource(IntPtr pResourceName)
@@ -984,7 +984,7 @@ public static unsafe class MaterialSystem
     {
         if (string.IsNullOrEmpty(resourceName)) return IntPtr.Zero;
         
-        // Chercher un matériau existant avec ce nom (O(1) via index)
+        // Search for an existing material with this name (O(1) via index)
         var existingMaterial = HandleManager.FindByName<MaterialData>(resourceName);
         if (existingMaterial != null && existingMaterial.BindingPtr != IntPtr.Zero)
         {
@@ -993,7 +993,7 @@ public static unsafe class MaterialSystem
             int existingHandle = HandleManager.GetHandleByBindingHandle(existingBindingHandle);
             if (existingHandle != 0)
             {
-                // Obtenir tous les handles pour ce matériau et retourner le premier
+                // Get all handles for this material and return the first one
                 var allHandles = HandleManager.GetAllHandles(existingHandle);
                 if (allHandles.Length > 0)
                 {
@@ -1014,7 +1014,7 @@ public static unsafe class MaterialSystem
             RenderAttributes = renderAttributes
         };
         
-        // Enregistrer MaterialData dans HandleManager pour obtenir un handle unique
+        // Register MaterialData in HandleManager to get a unique handle
         int handle = HandleManager.Register(materialData);
         if (handle == 0) return IntPtr.Zero;
         
@@ -1025,7 +1025,7 @@ public static unsafe class MaterialSystem
         int modeHandle = HandleManager.Register(new object());
         materialData.MaterialMode = (IntPtr)modeHandle;
         
-        // Enregistrer dans l'index Name pour recherche O(1)
+        // Register in Name index for O(1) lookup
         HandleManager.RegisterNameIndex(resourceName, bindingHandle);
         
         Console.WriteLine($"[NativeAOT] FindOrCreateMaterialFromResourceHelper: created new {resourceName}, handle={handle}");
@@ -1044,7 +1044,7 @@ public static unsafe class MaterialSystem
     // ========== IMaterial2 Functions supplémentaires ==========
     
     /// <summary>
-    /// Détruit un handle fort de matériau.
+    /// Destroys a strong material handle.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void IMaterial2_DestroyStrongHandle(IntPtr self)
@@ -1061,7 +1061,7 @@ public static unsafe class MaterialSystem
                 HandleManager.Unregister((int)materialData.MaterialMode);
             }
             
-            // Nettoyer les index secondaires avant Unregister
+            // Clean up secondary indexes before Unregister
             if (!string.IsNullOrEmpty(materialData.Name))
             {
                 HandleManager.UnindexName(materialData.Name);
@@ -1083,7 +1083,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Vérifie si un matériau est en erreur.
+    /// Checks if a material is in error.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int IMaterial2_IsError(IntPtr self)
@@ -1101,7 +1101,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Vérifie si un handle fort de matériau est chargé.
+    /// Checks if a strong material handle is loaded.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int IMaterial2_IsStrongHandleLoaded(IntPtr self)
@@ -1137,9 +1137,9 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient le pointeur de binding d'un matériau.
-    /// Le binding pointer est un identifiant unique qui identifie le matériau natif,
-    /// utilisé pour comparer si deux handles pointent vers le même matériau.
+    /// Gets the binding pointer of a material.
+    /// The binding pointer is a unique identifier that identifies the native material,
+    /// used to compare if two handles point to the same material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetBindingPtr(IntPtr self)
@@ -1163,7 +1163,7 @@ public static unsafe class MaterialSystem
         var materialData = HandleManager.Get<MaterialData>((int)self);
         if (materialData != null)
         {
-            // Ajouter le préfixe du mod si disponible
+            // Add mod prefix if available
             string nameWithMod = materialData.Name;
             if (!string.IsNullOrEmpty(_modGameSubdir))
             {
@@ -1190,8 +1190,8 @@ public static unsafe class MaterialSystem
         {
             if (materialData.SimilarityKey == 0)
             {
-                // Générer une clé de similarité basée sur le nom et le shader
-                // Utilise MurmurHash2 pour garantir la compatibilité avec Source 2
+                // Generate a similarity key based on name and shader
+                // Uses MurmurHash2 to ensure compatibility with Source 2
                 string keyString = $"{materialData.Name}:{materialData.Shader}";
                 materialData.SimilarityKey = HashUtils.MurmurHash2(keyString, lowercase: true);
             }
@@ -1220,7 +1220,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient le mode d'un matériau (sans paramètre).
+    /// Gets the mode of a material (no parameter).
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetMode_1(IntPtr self)
@@ -1245,7 +1245,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient le mode d'un matériau pour une couche de scène donnée.
+    /// Gets the mode of a material for a given scene layer.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetMode_2(IntPtr self, IntPtr layer)
@@ -1271,7 +1271,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Recrée tous les buffers statiques constants et de commandes.
+    /// Recreates all static constant and command buffers.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void IMaterial2_RecreateAllStaticConstantAndCommandBuffers(IntPtr self)
@@ -1282,7 +1282,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient le premier attribut de texture d'un matériau.
+    /// Gets the first texture attribute of a material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetFirstTextureAttribute(IntPtr self)
@@ -1303,7 +1303,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient un attribut booléen d'un matériau avec valeur par défaut.
+    /// Gets a boolean attribute of a material with default value.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int IMaterial2_GetBoolAttributeOrDefault(IntPtr self, Sandbox.StringToken name, int defaultValue)
@@ -1329,7 +1329,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient un attribut entier d'un matériau avec valeur par défaut.
+    /// Gets an integer attribute of a material with default value.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int IMaterial2_GetIntAttributeOrDefault(IntPtr self, Sandbox.StringToken name, int defaultValue)
@@ -1379,7 +1379,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient un attribut de texture d'un matériau avec valeur par défaut.
+    /// Gets a texture attribute of a material with default value.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetTextureAttributeOrDefault(IntPtr self, Sandbox.StringToken name)
@@ -1417,7 +1417,7 @@ public static unsafe class MaterialSystem
         var materialData = HandleManager.Get<MaterialData>((int)self);
         if (materialData != null)
         {
-            // Vérifier dans les paramètres
+            // Check in parameters
             if (materialData.Parameters.ContainsKey(name))
                 return 1;
             
@@ -1433,7 +1433,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient une valeur de paramètre string d'un matériau.
+    /// Gets a string parameter value of a material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetString(IntPtr self, IntPtr namePtr, IntPtr defaultValuePtr)
@@ -1449,11 +1449,11 @@ public static unsafe class MaterialSystem
             // Chercher dans les paramètres
             if (materialData.Parameters.TryGetValue(name, out var value) && value is string strValue)
             {
-                // Allouer et retourner la valeur
+                // Allocate and return the value
                 return Marshal.StringToHGlobalAnsi(strValue);
             }
             
-            // Chercher aussi dans les render attributes
+            // Also search in render attributes
             if (materialData.RenderAttributes != IntPtr.Zero)
             {
                 string? attrValue = RenderAttributes.RenderAttributes.GetStringValueHelper(materialData.RenderAttributes, name);
@@ -1468,7 +1468,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Définit une valeur de paramètre Vector4 d'un matériau.
+    /// Sets a Vector4 parameter value of a material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void IMaterial2_Set_1(IntPtr self, IntPtr namePtr, Vector4* value)
@@ -1484,7 +1484,7 @@ public static unsafe class MaterialSystem
             // Stocker dans les paramètres
             materialData.Parameters[name] = *value;
             
-            // Stocker aussi dans les render attributes
+            // Also store in render attributes
             if (materialData.RenderAttributes != IntPtr.Zero)
             {
                 RenderAttributes.RenderAttributes.SetVector4DValueHelper(materialData.RenderAttributes, name, *value);
@@ -1493,7 +1493,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient une valeur de paramètre Vector4 d'un matériau.
+    /// Gets a Vector4 parameter value of a material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static Vector4 IMaterial2_GetVector4(IntPtr self, IntPtr namePtr)
@@ -1513,7 +1513,7 @@ public static unsafe class MaterialSystem
                     return vec4;
             }
             
-            // Chercher aussi dans les render attributes
+            // Also search in render attributes
             if (materialData.RenderAttributes != IntPtr.Zero)
             {
                 return RenderAttributes.RenderAttributes.GetVector4DValueHelper(materialData.RenderAttributes, name, default);
@@ -1540,7 +1540,7 @@ public static unsafe class MaterialSystem
             // Stocker dans les paramètres
             materialData.Parameters[name] = texture;
             
-            // Stocker aussi dans les render attributes
+            // Also store in render attributes
             if (materialData.RenderAttributes != IntPtr.Zero)
             {
                 RenderAttributes.RenderAttributes.SetTextureValueHelper(materialData.RenderAttributes, name, texture);
@@ -1549,7 +1549,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Obtient une valeur de paramètre texture d'un matériau.
+    /// Gets a texture parameter value of a material.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr IMaterial2_GetTexture(IntPtr self, IntPtr namePtr)
@@ -1569,7 +1569,7 @@ public static unsafe class MaterialSystem
                     return texturePtr;
             }
             
-            // Chercher aussi dans les render attributes
+            // Also search in render attributes
             if (materialData.RenderAttributes != IntPtr.Zero)
             {
                 return RenderAttributes.RenderAttributes.GetTextureValueHelper(materialData.RenderAttributes, name, IntPtr.Zero);
@@ -1595,7 +1595,7 @@ public static unsafe class MaterialSystem
     }
     
     /// <summary>
-    /// Vérifie si un matériau est édité.
+    /// Checks if a material is edited.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int IMaterial2_IsEdited(IntPtr self)
@@ -1617,8 +1617,8 @@ public static unsafe class MaterialSystem
     [UnmanagedCallersOnly]
     public static void IMaterial2_ReloadStaticCombos(IntPtr self)
     {
-        // Pour l'instant, rien à faire car on n'utilise pas de combos statiques
-        // Dans une implémentation complète, on rechargerait les combinaisons de shaders statiques
+        // For now, nothing to do as we don't use static combos
+        // In a complete implementation, we would reload static shader combinations
     }
 }
 

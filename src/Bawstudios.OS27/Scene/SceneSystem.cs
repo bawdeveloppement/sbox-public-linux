@@ -13,13 +13,13 @@ using Bawstudios.OS27.Scene;
 namespace Bawstudios.OS27.Scene;
 
 /// <summary>
-/// Module d'émulation pour SceneSystem (g_pSceneSystem_*).
-/// Gère la création et la gestion des mondes de scène.
+/// Emulation module for SceneSystem (g_pSceneSystem_*).
+/// Handles creation and management of scene worlds.
 /// </summary>
 public static unsafe class SceneSystem
 {
     /// <summary>
-    /// Données internes pour un monde de scène émulé.
+    /// Internal data for an emulated scene world.
     /// </summary>
     private class SceneWorldData
     {
@@ -105,14 +105,14 @@ public static unsafe class SceneSystem
     }
     
     /// <summary>
-    /// Données internes pour les stats par frame du SceneSystem.
-    /// Les stats sont un singleton réutilisé chaque frame.
-    /// Contient un pointeur vers la structure SceneSystemPerFrameStats_t en mémoire non managée.
+    /// Internal data for SceneSystem per-frame stats.
+    /// Stats are a singleton reused each frame.
+    /// Contains a pointer to the SceneSystemPerFrameStats_t structure in unmanaged memory.
     /// </summary>
     private class ScenePerFrameStatsData
     {
         public IntPtr BindingPtr { get; set; } = IntPtr.Zero;
-        public IntPtr StatsPtr { get; set; } = IntPtr.Zero; // Pointeur vers SceneSystemPerFrameStats_t en mémoire non managée
+        public IntPtr StatsPtr { get; set; } = IntPtr.Zero; // Pointer to SceneSystemPerFrameStats_t in unmanaged memory
     }
     
     /// <summary>
@@ -126,7 +126,7 @@ public static unsafe class SceneSystem
     }
     
     /// <summary>
-    /// Données internes pour un Decal.
+    /// Internal data for a Decal.
     /// </summary>
     private class DecalData
     {
@@ -146,7 +146,7 @@ public static unsafe class SceneSystem
     }
     
     /// <summary>
-    /// Données internes pour un EnvMap.
+    /// Internal data for an EnvMap.
     /// </summary>
     private class EnvMapData
     {
@@ -165,7 +165,7 @@ public static unsafe class SceneSystem
     }
     
     /// <summary>
-    /// Données internes pour un RayTraceWorld.
+    /// Internal data for a RayTraceWorld.
     /// </summary>
     private class RayTraceWorldData
     {
@@ -187,14 +187,14 @@ public static unsafe class SceneSystem
     }
     
     /// <summary>
-    /// Données internes pour une VolumetricFogVolume.
+    /// Internal data for a VolumetricFogVolume.
     /// </summary>
     private class VolumetricFogVolumeData
     {
         public IntPtr World { get; set; } = IntPtr.Zero;
     }
     
-    // Singleton pour les stats par frame (réutilisé chaque frame)
+    // Singleton for per-frame stats (reused each frame)
     private static ScenePerFrameStatsData? _perFrameStats = null;
     private static int _perFrameStatsHandle = 0;
     
@@ -209,7 +209,7 @@ public static unsafe class SceneSystem
     // Queue pour les suppressions différées (DeleteSceneObjectAtFrameEnd)
     private static readonly Queue<IntPtr> _pendingDeletes = new();
     
-    // Cache pour les textures et matériaux bien connus
+    // Cache for well-known textures and materials
     private static readonly Dictionary<long, IntPtr> _wellKnownTextures = new();
     private static readonly Dictionary<long, IntPtr> _wellKnownMaterials = new();
 
@@ -221,7 +221,7 @@ public static unsafe class SceneSystem
     internal static IntPtr GetActiveSceneLayer() => _activeSceneLayerHandle;
     
     /// <summary>
-    /// Initialise le module SceneSystem en patchant les fonctions natives.
+    /// Initializes the SceneSystem module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16387-16414 :
     /// - g_pSceneSystem_DeleteSceneObject: 1522
     /// - g_pSceneSystem_DeleteSceneObjectAtFrameEnd: 1523
@@ -308,7 +308,7 @@ public static unsafe class SceneSystem
     }
     
     /// <summary>
-    /// Patche toutes les fonctions getter/setter pour SceneSystemPerFrameStats_t.
+    /// Patches all getter/setter functions for SceneSystemPerFrameStats_t.
     /// Indices depuis Interop.Engine.cs lignes 17313-17414.
     /// </summary>
     private static void PatchSceneSystemPerFrameStatsFunctions(void** native)
@@ -442,7 +442,7 @@ public static unsafe class SceneSystem
         if (_perFrameStats == null || _perFrameStats.StatsPtr == IntPtr.Zero)
             return null;
         
-        // self devrait pointer vers le BindingPtr, mais on utilise directement StatsPtr
+        // self should point to BindingPtr, but we use StatsPtr directly
         return (SceneSystemPerFrameStats_t*)_perFrameStats.StatsPtr;
     }
     
@@ -459,7 +459,7 @@ public static unsafe class SceneSystem
     {
         if (_perFrameStats == null)
         {
-            // Initialiser si pas encore fait (fallback)
+            // Initialize if not already done (fallback)
             _perFrameStats = new ScenePerFrameStatsData();
             _perFrameStatsHandle = HandleManager.Register(_perFrameStats);
             _perFrameStats.BindingPtr = (IntPtr)HandleManager.GetBindingHandle(_perFrameStatsHandle);
@@ -468,7 +468,7 @@ public static unsafe class SceneSystem
             int statsSize = Marshal.SizeOf<SceneSystemPerFrameStats_t>();
             _perFrameStats.StatsPtr = Marshal.AllocHGlobal(statsSize);
             
-            // Initialiser la structure à zéro
+            // Initialize the structure to zero
             unsafe
             {
                 var stats = (SceneSystemPerFrameStats_t*)_perFrameStats.StatsPtr;
@@ -490,13 +490,13 @@ public static unsafe class SceneSystem
     /// <summary>
     /// Create a new scene world.
     /// 
-    /// **Comportement Source 2** : Crée un nouveau monde de scène avec un nom de debug.
-    /// **Comportement émulation** : Crée un SceneWorldData et retourne un handle HandleManager.
+    /// **Source 2 behavior**: Creates a new scene world with a debug name.
+    /// **Emulation behavior**: Creates a SceneWorldData and returns a HandleManager handle.
     /// 
-    /// **Responsabilité mémoire** : L'appelant doit appeler g_pSceneSystem_DestroyWorld() pour libérer.
+    /// **Memory responsibility**: The caller must call g_pSceneSystem_DestroyWorld() to free.
     /// </summary>
     /// <param name="debugNamePtr">Pointeur vers le nom de debug (string UTF-8)</param>
-    /// <returns>Handle vers le monde de scène créé, ou 0 en cas d'erreur</returns>
+    /// <returns>Handle to the created scene world, or 0 on error</returns>
     [UnmanagedCallersOnly]
     public static int g_pSceneSystem_CreateWorld(IntPtr debugNamePtr)
     {
@@ -540,13 +540,13 @@ public static unsafe class SceneSystem
         }
     }
     
-    // ========== Gestion des objets de scène ==========
+    // ========== Scene object management ==========
     
     /// <summary>
     /// Delete a scene object immediately.
     /// 
-    /// **Comportement Source 2** : Supprime immédiatement un objet de scène.
-    /// **Comportement émulation** : Utilise HandleManager pour trouver et supprimer l'objet.
+    /// **Source 2 behavior**: Immediately deletes a scene object.
+    /// **Emulation behavior**: Uses HandleManager to find and delete the object.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pSceneSystem_DeleteSceneObject(IntPtr pObj)
@@ -557,8 +557,8 @@ public static unsafe class SceneSystem
     /// <summary>
     /// Delete a scene object at the end of the frame.
     /// 
-    /// **Comportement Source 2** : Ajoute l'objet à une queue de suppression différée.
-    /// **Comportement émulation** : Ajoute l'objet à la queue _pendingDeletes.
+    /// **Source 2 behavior**: Adds the object to a deferred deletion queue.
+    /// **Emulation behavior**: Adds the object to the _pendingDeletes queue.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pSceneSystem_DeleteSceneObjectAtFrameEnd(IntPtr pObj)
@@ -592,7 +592,7 @@ public static unsafe class SceneSystem
     }
     
     /// <summary>
-    /// Logique interne de suppression d'un objet de scène (appelable depuis le code managé).
+    /// Internal logic for deleting a scene object (callable from managed code).
     /// </summary>
     private static void DeleteSceneObjectInternal(IntPtr pObj)
     {
@@ -605,7 +605,7 @@ public static unsafe class SceneSystem
         
         if (handle != 0)
         {
-            // Essayer de trouver et supprimer différents types d'objets de scène
+            // Try to find and delete different types of scene objects
             var skyBox = HandleManager.GetByBindingHandle<SkyBoxData>(bindingHandle);
             if (skyBox != null)
             {
@@ -647,7 +647,7 @@ public static unsafe class SceneSystem
             }
         }
         
-        // Si on n'a pas trouvé, log un warning mais ne crash pas
+        // If not found, log a warning but don't crash
         Console.WriteLine($"[NativeAOT] DeleteSceneObjectInternal: object not found, pObj={pObj}");
     }
     
@@ -828,8 +828,8 @@ public static unsafe class SceneSystem
     /// <summary>
     /// Destroy a ray trace world.
     /// 
-    /// **Comportement Source 2** : Détruit un monde de ray tracing et libère ses ressources.
-    /// **Comportement émulation** : Utilise HandleManager pour trouver et supprimer le RayTraceWorld.
+    /// **Source 2 behavior**: Destroys a ray tracing world and releases its resources.
+    /// **Emulation behavior**: Uses HandleManager to find and delete the RayTraceWorld.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pSceneSystem_DestroyRayTraceWorld(IntPtr pRayTraceSceneWorld)
@@ -855,7 +855,7 @@ public static unsafe class SceneSystem
         Console.WriteLine($"[NativeAOT] g_pSceneSystem_DestroyRayTraceWorld: RayTraceWorld not found, pRayTraceSceneWorld={pRayTraceSceneWorld}");
     }
     
-    // ========== Rendu ==========
+    // ========== Rendering ==========
     
     /// <summary>
     /// Begin rendering a dynamic view.
@@ -878,7 +878,7 @@ public static unsafe class SceneSystem
 
         var viewport = new NativeEngine.RenderViewport(0, 0, width, height);
 
-        // Réutiliser view/layer si déjà créés et pView == 0, sinon adopter pView.
+        // Reuse view/layer if already created and pView == 0, otherwise adopt pView.
         if (pView != IntPtr.Zero)
         {
             _activeSceneViewHandle = pView;
@@ -896,7 +896,7 @@ public static unsafe class SceneSystem
             _activeSceneLayerHandle = Emulation.Rendering.EmulatedSceneLayer.CreateLayer("DefaultLayer", viewport, SceneLayerType.Translucent);
         }
 
-        // Mettre à jour viewport/swapchain sur les objets existants
+        // Update viewport/swapchain on existing objects
         Emulation.Rendering.EmulatedSceneLayer.SetViewportManaged(_activeSceneLayerHandle, viewport);
 
         // Brancher la swapchain comme color/depth target si disponible.
@@ -938,8 +938,8 @@ public static unsafe class SceneSystem
     /// <summary>
     /// Downsample a texture.
     /// 
-    /// **Comportement Source 2** : Réduit la résolution d'une texture.
-    /// **Comportement émulation** : Non implémenté, nécessite des opérations OpenGL complexes.
+    /// **Source 2 behavior**: Reduces a texture's resolution.
+    /// **Emulation behavior**: Not implemented, requires complex OpenGL operations.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pSceneSystem_DownsampleTexture(IntPtr ctx, IntPtr src, byte nDownsampleType)
@@ -950,8 +950,8 @@ public static unsafe class SceneSystem
     /// <summary>
     /// Render tiled light culling.
     /// 
-    /// **Comportement Source 2** : Effectue le culling de lumière en tuiles pour optimiser le rendu.
-    /// **Comportement émulation** : Non implémenté, nécessite une intégration complexe avec le système de rendu.
+    /// **Source 2 behavior**: Performs tiled light culling to optimize rendering.
+    /// **Emulation behavior**: Not implemented, requires complex integration with the rendering system.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pSceneSystem_RenderTiledLightCulling(IntPtr pCtx, IntPtr pView, IntPtr viewport)
@@ -971,13 +971,13 @@ public static unsafe class SceneSystem
         throw new NotImplementedException("g_pSceneSystem_BindTransformSlot is not yet implemented in the linux emulation layer");
     }
     
-    // ========== Utilitaires ==========
+    // ========== Utilities ==========
     
     /// <summary>
     /// Get a well-known texture by ID.
     /// 
-    /// **Comportement Source 2** : Retourne une texture système bien connue (white, black, checkerboard, etc.).
-    /// **Comportement émulation** : Crée et cache les textures bien connues à la demande.
+    /// **Source 2 behavior**: Returns a well-known system texture (white, black, checkerboard, etc.).
+    /// **Emulation behavior**: Creates and caches well-known textures on demand.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr g_pSceneSystem_GetWellKnownTexture(long a)
@@ -991,7 +991,7 @@ public static unsafe class SceneSystem
             }
         }
         
-        // Créer la texture bien connue selon l'ID
+        // Create the well-known texture according to the ID
         IntPtr textureHandle = CreateWellKnownTexture(a);
         
         if (textureHandle != IntPtr.Zero)
@@ -1006,17 +1006,17 @@ public static unsafe class SceneSystem
     }
     
     /// <summary>
-    /// Crée une texture bien connue selon son ID.
+    /// Creates a well-known texture according to its ID.
     /// </summary>
     private static IntPtr CreateWellKnownTexture(long textureId)
     {
-        // Utiliser RenderDevice.FindOrCreateTexture2 pour créer les textures
-        // Les textures bien connues sont généralement 1x1 ou 2x2
+        // Use RenderDevice.FindOrCreateTexture2 to create textures
+        // Well-known textures are generally 1x1 or 2x2
         string textureName = $"__wellknown_texture_{textureId}";
         
-        // Pour l'instant, retourner NotImplementedException car la création de textures
-        // nécessite une intégration avec RenderDevice qui n'est pas encore complète
-        // Les textures bien connues seront créées par le système de rendu natif
+        // For now, return NotImplementedException because texture creation
+        // requires integration with RenderDevice which is not yet complete
+        // Well-known textures will be created by the native rendering system
         throw new NotImplementedException($"g_pSceneSystem_GetWellKnownTexture: texture ID {textureId} not yet implemented in the linux emulation layer");
     }
     
@@ -1038,7 +1038,7 @@ public static unsafe class SceneSystem
             }
         }
         
-        // Créer le matériau bien connu selon l'ID
+        // Create the well-known material according to the ID
         IntPtr materialHandle = CreateWellKnownMaterial(a);
         
         if (materialHandle != IntPtr.Zero)
@@ -1067,8 +1067,8 @@ public static unsafe class SceneSystem
     /// <summary>
     /// Mark an environment map object as updated.
     /// 
-    /// **Comportement Source 2** : Marque un environment map comme mis à jour pour forcer le rafraîchissement.
-    /// **Comportement émulation** : No-op pour l'instant (l'objet est déjà géré par HandleManager).
+    /// **Source 2 behavior**: Marks an environment map as updated to force refresh.
+    /// **Emulation behavior**: No-op for now (object is already managed by HandleManager).
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pSceneSystem_MarkEnvironmentMapObjectUpdated(IntPtr pEnvMap)
@@ -1084,8 +1084,8 @@ public static unsafe class SceneSystem
     /// <summary>
     /// Mark a light probe volume object as updated.
     /// 
-    /// **Comportement Source 2** : Marque un light probe volume comme mis à jour pour forcer le rafraîchissement.
-    /// **Comportement émulation** : No-op pour l'instant (l'objet est déjà géré par HandleManager).
+    /// **Source 2 behavior**: Marks a light probe volume as updated to force refresh.
+    /// **Emulation behavior**: No-op for now (object is already managed by HandleManager).
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pSceneSystem_MarkLightProbeVolumeObjectUpdated(IntPtr pLightProbe)
@@ -1178,7 +1178,7 @@ public static unsafe class SceneSystem
     }
     
     // ========== SceneSystemPerFrameStats_t getter/setter functions ==========
-    // Toutes ces fonctions utilisent [SuppressGCTransition] pour éviter les transitions GC
+    // All these functions use [SuppressGCTransition] to avoid GC transitions
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     public static uint Get_ScnSystmPrFrmStt_m_nTrianglesRendered(IntPtr self)

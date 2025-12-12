@@ -5,8 +5,8 @@ using Bawstudios.OS27.Common;
 namespace Bawstudios.OS27.CUtl;
 
 /// <summary>
-/// Module d'émulation pour CUtlBuffer (CUtlBuffer_*).
-/// Gère les buffers de données.
+/// Emulation module for CUtlBuffer (CUtlBuffer_*).
+/// Handles data buffers.
 /// </summary>
 public static unsafe class CUtlBuffer
 {
@@ -19,7 +19,7 @@ public static unsafe class CUtlBuffer
     }
 
     /// <summary>
-    /// Initialise le module CUtlBuffer en patchant les fonctions natives.
+    /// Initializes the CUtlBuffer module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16078-16081 (1213-1216)
     /// </summary>
     public static void Init(void** native)

@@ -6,8 +6,8 @@ using NativeEngine;
 namespace Bawstudios.OS27.CUtl;
 
 /// <summary>
-/// Module d'émulation pour CUtlVectorFloat (CtlVctrflt_*).
-/// Gère les vecteurs de floats avec support pour l'écriture directe en mémoire.
+/// Emulation module for CUtlVectorFloat (CtlVctrflt_*).
+/// Handles float vectors with support for direct memory writing.
 /// </summary>
 public static unsafe class CUtlVectorFloat
 {
@@ -20,7 +20,7 @@ public static unsafe class CUtlVectorFloat
     }
 
     /// <summary>
-    /// Initialise le module CUtlVectorFloat en patchant les fonctions natives.
+    /// Initializes the CUtlVectorFloat module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16088-16092 (1223-1227)
     /// </summary>
     public static void Init(void** native)
@@ -297,7 +297,7 @@ public static unsafe class CUtlVectorFloat
                 Marshal.FreeHGlobal(vectorData.DataPtr);
             }
 
-            // Init nouveaux éléments à zéro
+            // Initialize new elements to zero
             for (int i = vectorData.Count; i < count; i++)
             {
                 Marshal.WriteInt32(newDataPtr, i * sizeof(float), 0);

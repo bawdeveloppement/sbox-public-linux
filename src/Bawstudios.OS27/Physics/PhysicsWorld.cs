@@ -13,9 +13,9 @@ using NativeEngine;
 namespace Bawstudios.OS27.Physics;
 
 /// <summary>
-/// Module d'émulation pour IPhysicsWorld (IPhysicsWorld_*).
-/// Gère les opérations sur les mondes physiques (bodies, joints, simulation, etc.).
-/// Utilise BepuPhysics pour l'implémentation.
+/// Emulation module for IPhysicsWorld (IPhysicsWorld_*).
+/// Handles operations on physics worlds (bodies, joints, simulation, etc.).
+/// Uses BepuPhysics for implementation.
 /// </summary>
 public static unsafe class PhysicsWorld
 {
@@ -74,7 +74,7 @@ public static unsafe class PhysicsWorld
     private static readonly Dictionary<int, float> _maxLinearSpeed = new();
     
     /// <summary>
-    /// Initialise le module PhysicsWorld en patchant les fonctions natives.
+    /// Initializes the PhysicsWorld module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16916-16948 :
     /// - IPhysicsWorld_AddBody: 2051
     /// - IPhysicsWorld_RemoveBody: 2052

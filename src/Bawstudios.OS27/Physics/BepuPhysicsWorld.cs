@@ -110,7 +110,7 @@ public class BepuPhysicsWorld : IDisposable
         var narrowPhaseCallbacks = new NarrowPhaseCallbacks();
         var poseIntegratorCallbacks = new PoseIntegratorCallbacks(Gravity);
         
-        // Initialise simulation with default callbacks.
+        // Initialize simulation with default callbacks.
         // Note: BepuPhysics will copy the structs, so they must be unmanaged
         Simulation = Simulation.Create(
             _bufferPool,
@@ -123,7 +123,7 @@ public class BepuPhysicsWorld : IDisposable
         // Register this world for callback access
         RegisterForCallbacks();
         
-        // Crée un body statique de référence
+        // Create a static reference body
         var boxIndex = Simulation.Shapes.Add(new Box(1, 1, 1));
         var staticDesc = new StaticDescription(
             new RigidPose(new Vector3(0, 0, 0)),

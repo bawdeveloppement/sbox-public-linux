@@ -6,8 +6,8 @@ using NativeEngine;
 namespace Bawstudios.OS27.CUtl;
 
 /// <summary>
-/// Module d'émulation pour CUtlVectorTraceResult (CtlVctrPhyscsTrc_Result_*).
-/// Gère les vecteurs de PhysicsTrace.Result.
+/// Emulation module for CUtlVectorTraceResult (CtlVctrPhyscsTrc_Result_*).
+/// Handles PhysicsTrace.Result vectors.
 /// </summary>
 public static unsafe class CUtlVectorTraceResult
 {
@@ -20,7 +20,7 @@ public static unsafe class CUtlVectorTraceResult
     }
 
     /// <summary>
-    /// Initialise le module CUtlVectorTraceResult en patchant les fonctions natives.
+    /// Initializes the CUtlVectorTraceResult module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16097-16100 (1232-1235)
     /// </summary>
     public static void Init(void** native)

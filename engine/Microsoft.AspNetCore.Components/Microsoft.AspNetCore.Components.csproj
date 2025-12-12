@@ -12,7 +12,7 @@
 	  <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-	<!-- Option pour builds desktop: ne cibler que net10.0 et éviter le runtime Mono Android -->
+  <!-- Option for desktop builds: target only net10.0 and avoid the Mono Android runtime -->
 	<PropertyGroup Condition="'$(DisableAndroidTFM)' == 'true'">
 		<TargetFrameworks>net10.0</TargetFrameworks>
   </PropertyGroup>

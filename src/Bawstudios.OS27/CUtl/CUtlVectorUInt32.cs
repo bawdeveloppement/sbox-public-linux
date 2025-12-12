@@ -6,8 +6,8 @@ using NativeEngine;
 namespace Bawstudios.OS27.CUtl;
 
 /// <summary>
-/// Module d'émulation pour CUtlVectorUInt32 (CtlVctrnt32_*).
-/// Gère les vecteurs de uint32.
+/// Emulation module for CUtlVectorUInt32 (CtlVctrnt32_*).
+/// Handles uint32 vectors.
 /// </summary>
 public static unsafe class CUtlVectorUInt32
 {
@@ -20,7 +20,7 @@ public static unsafe class CUtlVectorUInt32
     }
 
     /// <summary>
-    /// Initialise le module CUtlVectorUInt32 en patchant les fonctions natives.
+    /// Initializes the CUtlVectorUInt32 module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16101-16105 (1236-1240)
     /// </summary>
     public static void Init(void** native)

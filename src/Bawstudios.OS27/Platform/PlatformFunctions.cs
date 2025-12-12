@@ -13,12 +13,12 @@ using System.Runtime.CompilerServices;
 namespace Bawstudios.OS27.Platform;
 
 /// <summary>
-/// Module d'émulation pour les fonctions Platform (Plat_*, GetGameRootFolder, SourceEngine*).
-/// Gère les fonctions système de plateforme Linux.
+/// Emulation module for Platform functions (Plat_*, GetGameRootFolder, SourceEngine*).
+/// Handles Linux platform system functions.
 /// </summary>
 public static unsafe class PlatformFunctions
 {
-    // État global partagé avec EngineExports (sera initialisé depuis EngineExports)
+    // Global state shared with EngineExports (will be initialized from EngineExports)
     private static Glfw? _glfw;
     private static WindowHandle* _windowHandle;
     private static GL? _gl;
@@ -27,7 +27,7 @@ public static unsafe class PlatformFunctions
     // Cache pour GetGameRootFolder (évite les allocations répétées)
     private static IntPtr? _cachedGameRootFolder = null;
     
-    // Cache pour le nom du module (chemin vers l'exécutable)
+    // Cache for module name (path to executable)
     private static string? _moduleFilename = null;
     private static string? _moduleDirectory = null;
     private static EmulatedRenderContext? _renderContext;
@@ -236,7 +236,7 @@ public static unsafe class PlatformFunctions
     }
 
     /// <summary>
-    /// Obtient le répertoire du module (déduit du module filename).
+    /// Gets the module directory (deduced from module filename).
     /// </summary>
     public static string? GetModuleDirectory()
     {
@@ -261,7 +261,7 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Initialise les références partagées depuis EngineExports.
+    /// Initializes shared references from EngineExports.
     /// </summary>
     internal static void SetSharedState(Glfw? glfw, WindowHandle* windowHandle, GL? gl)
     {
@@ -279,7 +279,7 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Obtient l'instance GLFW (pour utilisation par EngineExports et autres modules).
+    /// Gets the GLFW instance (for use by EngineExports and other modules).
     /// </summary>
     public static Glfw? GetGlfw()
     {
@@ -295,7 +295,7 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Initialise les fonctions natives de Platform.
+    /// Initializes Platform native functions.
     /// </summary>
     public static void Init(void** native)
     {
@@ -337,8 +337,8 @@ public static unsafe class PlatformFunctions
         native[1598] = (void*)(delegate* unmanaged<int>)&global_AppIsDedicatedServer;
         native[1599] = (void*)(delegate* unmanaged<void>)&global_ToolsStallMonitor_IndicateActivity;
         
-        // TODO: Ajouter les autres fonctions Platform selon le plan
-        // Voir plan.md section "Inventaire Complet des Stubs par Module > Platform" (27 fonctions)
+        // TODO: Add other Platform functions according to plan
+        // See plan.md section "Complete Stub Inventory by Module > Platform" (27 functions)
     }
     
     // ========== global_Plat_* Functions ==========
@@ -356,8 +356,8 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Définit le nom de fichier du module (chemin vers l'exécutable).
-    /// Cette fonction est appelée au démarrage pour définir le chemin vers l'exécutable (sbox ou sbox.exe).
+    /// Sets the module filename (path to executable).
+    /// This function is called at startup to set the path to the executable (sbox or sbox.exe).
     /// </summary>
     [UnmanagedCallersOnly]
     public static void global_Plat_SetModuleFilename(IntPtr filename)
@@ -369,7 +369,7 @@ public static unsafe class PlatformFunctions
         // Réinitialiser le cache du répertoire du module
         _moduleDirectory = null;
         
-        // Si le module filename est défini, mettre à jour le répertoire courant si nécessaire
+            // If module filename is set, update current directory if necessary
         if (!string.IsNullOrEmpty(_moduleFilename))
         {
             try
@@ -383,7 +383,7 @@ public static unsafe class PlatformFunctions
             }
             catch
             {
-                // Ignorer les erreurs de parsing
+                // Ignore parsing errors
             }
         }
         
@@ -413,7 +413,7 @@ public static unsafe class PlatformFunctions
     private static ulong _currentFrame = 0;
     
     /// <summary>
-    /// Obtient le numéro de frame actuel.
+    /// Gets the current frame number.
     /// </summary>
     [UnmanagedCallersOnly]
     public static ulong global_Plat_GetCurrentFrame()
@@ -434,9 +434,9 @@ public static unsafe class PlatformFunctions
     // ========== global_GetGameRootFolder ==========
     
     /// <summary>
-    /// Obtient le répertoire racine du jeu.
-    /// Utilise le répertoire du module si disponible, sinon le répertoire courant.
-    /// Signature: delegate* unmanaged&lt; IntPtr &gt; (retourne IntPtr, pas void*)
+    /// Gets the game root directory.
+    /// Uses module directory if available, otherwise current directory.
+    /// Signature: delegate* unmanaged&lt; IntPtr &gt; (returns IntPtr, not void*)
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr GetGameRootFolder()
@@ -446,7 +446,7 @@ public static unsafe class PlatformFunctions
             // Essayer d'utiliser le répertoire du module d'abord
             string? rootFolder = GetModuleDirectory();
             
-            // Si le module directory n'est pas disponible, utiliser le répertoire courant
+            // If module directory is not available, use current directory
             if (string.IsNullOrEmpty(rootFolder) || !Directory.Exists(rootFolder))
             {
                 rootFolder = Directory.GetCurrentDirectory();
@@ -469,7 +469,7 @@ public static unsafe class PlatformFunctions
     {
         Console.WriteLine("[NativeAOT] SourceEnginePreInit");
         
-        // Réinitialiser le cache du répertoire racine au cas où le module filename aurait changé
+        // Reset root directory cache in case module filename changed
         if (_cachedGameRootFolder != null)
         {
             Marshal.FreeHGlobal(_cachedGameRootFolder.Value);
@@ -490,8 +490,8 @@ public static unsafe class PlatformFunctions
     {
         Console.WriteLine("[NativeAOT] SourceEngineInit");
         
-        // Initialiser OpenGL ici pour que FindOrCreateTexture2 puisse fonctionner dans InitStaticTextures()
-        // La fenêtre sera créée plus tard par CMtrlSystm2ppSys_CreateAppWindow, mais on initialise OpenGL maintenant
+        // Initialize OpenGL here so FindOrCreateTexture2 can work in InitStaticTextures()
+        // The window will be created later by CMtrlSystm2ppSys_CreateAppWindow, but we initialize OpenGL now
         try
         {
             if (!_glfwResolverSet)
@@ -556,7 +556,7 @@ public static unsafe class PlatformFunctions
     }
 
     /// <summary>
-    /// Boucle de frame principale (émulation). Rendu simple sur framebuffer par défaut.
+    /// Main frame loop (emulation). Simple rendering on default framebuffer.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int SourceEngineFrame(IntPtr appDict, double currentTime, double previousTime)
@@ -636,7 +636,7 @@ public static unsafe class PlatformFunctions
         if (missingPipeline && _renderContext != null)
         {
             Console.WriteLine("[NativeAOT] Render fallback: pipeline missing (view/layer/OnLayer null)");
-            // Binder FBO swapchain pour que le quad aille bien dans la cible présentée
+            // Bind swapchain FBO so the quad goes to the presented target
             RenderDevice.BindSwapChainForRender();
             _renderContext.Clear(new System.Numerics.Vector4(0.1f, 0.1f, 0.15f, 1f), clearColor: true, clearDepth: true, clearStencil: false);
             _renderContext.DrawQuadFallback();
@@ -645,7 +645,7 @@ public static unsafe class PlatformFunctions
             return 1;
         }
 
-        // Binder le FBO de swapchain avant d'appeler le pipeline managé
+        // Bind swapchain FBO before calling managed pipeline
         var boundSwap = RenderDevice.BindSwapChainForRender();
         if (!boundSwap)
         {
@@ -656,7 +656,7 @@ public static unsafe class PlatformFunctions
         var statsPtr = Scene.SceneSystem.GetPerFrameStatsPtrManaged();
         var statsHandle = statsPtr != IntPtr.Zero ? new SceneSystemPerFrameStats_t(statsPtr) : default;
 
-        // Construire le setup managé et appeler le pipeline managé
+        // Build managed setup and call managed pipeline
         var setup = new ManagedRenderSetup_t
         {
             renderContext = new NativeEngine.IRenderContext(_renderContextHandle),
@@ -673,7 +673,7 @@ public static unsafe class PlatformFunctions
             _defaultPipelineAttributes = RenderAttributes.RenderAttributes.CreateRenderAttributesInternal();
         }
 
-        // Laisser le pipeline managé ajouter les layers si disponible
+        // Let managed pipeline add layers if available
         SafeCallRenderPipelineAddLayers(
             ref sceneViewHandle,
             ref viewport,
@@ -684,7 +684,7 @@ public static unsafe class PlatformFunctions
             ref viewport         // screenDimensions (fallback: le même viewport)
         );
 
-        // Appeler Graphics.OnLayer pour UI et VS/PS
+        // Call Graphics.OnLayer for UI and VS/PS
         SafeCallOnLayer(-1, ref setup); // UI
         SafeCallOnLayer((int)Stage.AfterDepthPrepass, ref setup);
         SafeCallOnLayer((int)Stage.AfterOpaque, ref setup);
@@ -714,7 +714,7 @@ public static unsafe class PlatformFunctions
 
         EngineGlue.Imports.Sandbox_RenderTarget_Flush();
 
-        // Présenter le swapchain sur le backbuffer et swapper une seule fois.
+        // Present swapchain to backbuffer and swap once.
         RenderDevice.UnbindFramebuffer();
         RenderDevice.PresentManaged();
         Console.WriteLine($"[NativeAOT] SourceEngineFrame end t={currentTime:F3} dt={(currentTime - previousTime):F3}");
@@ -742,9 +742,9 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Met à jour la taille de la fenêtre.
-    /// Cette fonction est appelée quand la fenêtre est redimensionnée.
-    /// Signature: delegate* unmanaged&lt; void &gt; (pas de paramètres, pas de retour)
+    /// Updates the window size.
+    /// This function is called when the window is resized.
+    /// Signature: delegate* unmanaged&lt; void &gt; (no parameters, no return)
     /// </summary>
     [UnmanagedCallersOnly]
     public static void UpdateWindowSize()
@@ -756,8 +756,8 @@ public static unsafe class PlatformFunctions
         // Pour l'instant, on ne fait rien de spécial car GLFW gère déjà le redimensionnement
     }
     
-    // État pour les fonctions Platform
-    private static bool _isRetail = false; // Par défaut, ce n'est pas une version retail
+    // State for Platform functions
+    private static bool _isRetail = false; // By default, not a retail version
     private static bool _noAssert = false;
     
     /// <summary>
@@ -773,7 +773,7 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Vérifie si l'application est en version retail.
+    /// Checks if the application is a retail version.
     /// Signature: delegate* unmanaged&lt; int &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -794,7 +794,7 @@ public static unsafe class PlatformFunctions
         string? param = Marshal.PtrToStringUTF8(paramPtr);
         if (string.IsNullOrEmpty(param)) return 0;
         
-        // Vérifier dans les arguments de ligne de commande
+        // Check in command line arguments
         string[] args = Environment.GetCommandLineArgs();
         foreach (string arg in args)
         {
@@ -823,7 +823,7 @@ public static unsafe class PlatformFunctions
     private static IntPtr? _cachedGameSearchPath = null;
     
     /// <summary>
-    /// Obtient le chemin de recherche du jeu.
+    /// Gets the game search path.
     /// Signature: delegate* unmanaged&lt; IntPtr &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -844,7 +844,7 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Initialise le moteur Source pour les tests unitaires.
+    /// Initializes Source engine for unit tests.
     /// Signature: delegate* unmanaged&lt; int &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -863,7 +863,7 @@ public static unsafe class PlatformFunctions
     {
         Console.WriteLine($"[NativeAOT] global_SourceEngineShutdown: forced={forced}");
         
-        // Nettoyer les ressources si nécessaire
+        // Clean up resources if necessary
         if (_cachedGameRootFolder != null)
         {
             Marshal.FreeHGlobal(_cachedGameRootFolder.Value);
@@ -884,9 +884,9 @@ public static unsafe class PlatformFunctions
     [UnmanagedCallersOnly]
     public static int global_AppIsDedicatedServer()
     {
-        // Cette fonction vérifie si l'application est un serveur dédié
-        // On peut utiliser MaterialSystem pour obtenir cette information si nécessaire
-        return 0; // Par défaut, ce n'est pas un serveur dédié
+        // This function checks if the application is a dedicated server
+        // We can use MaterialSystem to get this information if necessary
+        return 0; // By default, not a dedicated server
     }
     
     /// <summary>
@@ -896,8 +896,8 @@ public static unsafe class PlatformFunctions
     [UnmanagedCallersOnly]
     public static float global_GetDiagonalDpi()
     {
-        // Retourner un DPI par défaut (96 DPI est standard)
-        // Dans une implémentation complète, on pourrait utiliser GLFW pour obtenir le DPI réel
+        // Return a default DPI (96 DPI is standard)
+        // In a complete implementation, we could use GLFW to get the real DPI
         return 96.0f;
     }
     
@@ -908,15 +908,15 @@ public static unsafe class PlatformFunctions
     [UnmanagedCallersOnly]
     public static void global_ToolsStallMonitor_IndicateActivity()
     {
-        // Cette fonction est appelée pour indiquer qu'il y a une activité
-        // Utile pour éviter que les outils ne soient considérés comme bloqués
-        // Pour l'instant, c'est un stub
+        // This function is called to indicate there is activity
+        // Useful to prevent tools from being considered stalled
+        // For now, it's a stub
     }
     
     // ========== Fonctions Platform supplémentaires ==========
     
     /// <summary>
-    /// Convertit les coordonnées écran vers coordonnées fenêtre.
+    /// Converts screen coordinates to window coordinates.
     /// Signature: delegate* unmanaged&lt; IntPtr, int*, int*, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -927,7 +927,7 @@ public static unsafe class PlatformFunctions
         // Obtenir la position de la fenêtre
         _glfw.GetWindowPos(_windowHandle, out int winX, out int winY);
         
-        // Convertir les coordonnées écran vers coordonnées fenêtre
+        // Convert screen coordinates to window coordinates
         *x -= winX;
         *y -= winY;
     }
@@ -944,7 +944,7 @@ public static unsafe class PlatformFunctions
         // Obtenir la position de la fenêtre
         _glfw.GetWindowPos(_windowHandle, out int winX, out int winY);
         
-        // Convertir les coordonnées fenêtre vers coordonnées écran
+        // Convert window coordinates to screen coordinates
         *x += winX;
         *y += winY;
     }
@@ -960,7 +960,7 @@ public static unsafe class PlatformFunctions
         
         try
         {
-            // Obtenir le moniteur (0 = moniteur principal)
+            // Get monitor (0 = primary monitor)
             Silk.NET.GLFW.Monitor* monitor = nMonitorIndex == 0 ? _glfw.GetPrimaryMonitor() : null;
             if (monitor == null) return 0;
             
@@ -976,7 +976,7 @@ public static unsafe class PlatformFunctions
         }
         catch
         {
-            // En cas d'erreur, retourner des valeurs par défaut
+            // On error, return default values
             *pWidth = 1920;
             *pHeight = 1080;
             *pRefreshRate = 60;
@@ -991,7 +991,7 @@ public static unsafe class PlatformFunctions
     [UnmanagedCallersOnly]
     public static int global_Plat_GetDefaultMonitorIndex()
     {
-        // Retourner 0 pour le moniteur principal
+        // Return 0 for primary monitor
         return 0;
     }
     
@@ -1025,7 +1025,7 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Change le numéro de frame actuel par un delta.
+    /// Changes the current frame number by a delta.
     /// Signature: delegate* unmanaged&lt; long, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -1041,7 +1041,7 @@ public static unsafe class PlatformFunctions
     [UnmanagedCallersOnly]
     public static int global_Plat_IsRunningOnCustomerMachine()
     {
-        // Par défaut, on assume que c'est une machine client (pas un serveur de développement)
+        // By default, assume it's a client machine (not a development server)
         return 1;
     }
     
@@ -1049,7 +1049,7 @@ public static unsafe class PlatformFunctions
     private static string? _clipboardText = null;
     
     /// <summary>
-    /// Vérifie si le presse-papiers contient du texte.
+    /// Checks if the clipboard contains text.
     /// Signature: delegate* unmanaged&lt; int &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -1060,7 +1060,7 @@ public static unsafe class PlatformFunctions
     }
     
     /// <summary>
-    /// Définit le texte du presse-papiers.
+    /// Sets the clipboard text.
     /// Signature: delegate* unmanaged&lt; IntPtr, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -1080,7 +1080,7 @@ public static unsafe class PlatformFunctions
             }
             catch
             {
-                // Ignorer les erreurs de presse-papiers
+                // Ignore clipboard errors
             }
         }
     }
@@ -1094,7 +1094,7 @@ public static unsafe class PlatformFunctions
     {
         string? text = null;
         
-        // Essayer d'obtenir depuis GLFW
+        // Try to get from GLFW
         if (_glfw != null && _windowHandle != null)
         {
             try
@@ -1103,7 +1103,7 @@ public static unsafe class PlatformFunctions
             }
             catch
             {
-                // Ignorer les erreurs de presse-papiers
+                // Ignore clipboard errors
             }
         }
         
@@ -1116,7 +1116,7 @@ public static unsafe class PlatformFunctions
         if (string.IsNullOrEmpty(text))
             return IntPtr.Zero;
         
-        // Allouer de la mémoire pour le texte (l'appelant doit libérer)
+        // Allocate memory for text (caller must free)
         return Marshal.StringToHGlobalAnsi(text);
     }
     
@@ -1129,7 +1129,7 @@ public static unsafe class PlatformFunctions
     {
         _clipboardText = null;
         
-        // Essayer d'effacer via GLFW
+        // Try to clear via GLFW
         if (_glfw != null && _windowHandle != null)
         {
             try
@@ -1138,7 +1138,7 @@ public static unsafe class PlatformFunctions
             }
             catch
             {
-                // Ignorer les erreurs de presse-papiers
+                // Ignore clipboard errors
             }
         }
     }

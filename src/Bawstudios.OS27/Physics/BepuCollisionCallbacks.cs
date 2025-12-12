@@ -124,12 +124,12 @@ public struct PoseIntegratorCallbacks : IPoseIntegratorCallbacks
     public void Initialize(Simulation simulation) { }
     public void PrepareForIntegration(float dt)
     {
-        // Prépare la version "wide" du vecteur gravité pour SIMD
+        // Prepare the "wide" version of the gravity vector for SIMD
         Vector3Wide.Broadcast(Gravity, out gravityWide);
     }
     public void IntegrateVelocity(Vector<int> bodyIndices, Vector3Wide position, QuaternionWide orientation, BodyInertiaWide localInertia, Vector<int> integrationMask, int workerIndex, Vector<float> dt, ref BodyVelocityWide velocity)
     {
-        // Utilise Vector3Wide.Scale pour appliquer la gravité à chaque lane
+        // Use Vector3Wide.Scale to apply gravity to each lane
         Vector3Wide.Scale(gravityWide, dt, out var gravityDt);
         velocity.Linear += gravityDt;
     }

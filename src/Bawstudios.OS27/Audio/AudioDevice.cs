@@ -8,13 +8,13 @@ using Silk.NET.OpenAL;
 namespace Bawstudios.OS27.Audio;
 
 /// <summary>
-/// Module d'émulation pour AudioDevice (g_pAudioDevice_*).
-/// Gère les opérations de base du périphérique audio (OpenAL sur Linux).
-/// Signatures exactes depuis Interop.Engine.cs ligne 6623-6636 et indices depuis ligne 16151-16164.
+/// Emulation module for AudioDevice (g_pAudioDevice_*).
+/// Handles basic audio device operations (OpenAL on Linux).
+/// Exact signatures from Interop.Engine.cs line 6623-6636 and indices from line 16151-16164.
 /// </summary>
 public static unsafe class AudioDevice
 {
-    // État du périphérique audio OpenAL
+    // OpenAL audio device state
     private static AL? _al;
     private static ALContext? _alc;
     private static Device* _device;
@@ -25,21 +25,21 @@ public static unsafe class AudioDevice
     private static bool _isMuted;
     private static string _deviceName = "OpenAL Soft";
     
-    // Paramètres audio par défaut (compatibles avec Source 2)
-    private const uint DefaultChannelCount = 2; // Stéréo
+    // Default audio parameters (compatible with Source 2)
+    private const uint DefaultChannelCount = 2; // Stereo
     private const uint DefaultMixChannelCount = 2;
     private const uint DefaultBitsPerSample = 16;
     private const uint DefaultBytesPerSample = 2; // 16 bits = 2 bytes
     private const uint DefaultSampleRate = 44100; // MIX_DEFAULT_SAMPLING_RATE
     
-    // Cache pour le nom du périphérique (alloué une fois)
+    // Cache for device name (allocated once)
     private static IntPtr _cachedDeviceNamePtr = IntPtr.Zero;
     
     // Gestion des sources OpenAL pour chaque canal audio
     // Clé: handle vers AudioMixDeviceBuffers, Valeur: liste de sources OpenAL (une par canal)
     private static readonly Dictionary<IntPtr, List<uint>> _openalSources = new();
     
-    // Buffers OpenAL pour le streaming (3 buffers par source pour éviter les gaps)
+    // OpenAL buffers for streaming (3 buffers per source to avoid gaps)
     private const int NumStreamBuffers = 3;
 
     /// <summary>
@@ -49,7 +49,7 @@ public static unsafe class AudioDevice
     /// </summary>
     public static void Init(void** native)
     {
-        // AudioDevice functions (indices 1404-1417 depuis Interop.Engine.cs ligne 16151-16164)
+        // AudioDevice functions (indices 1404-1417 from Interop.Engine.cs line 16151-16164)
         native[1404] = (void*)(delegate* unmanaged<IntPtr>)&g_pAudioDevice_Name;
         native[1405] = (void*)(delegate* unmanaged<uint>)&g_pAudioDevice_ChannelCount;
         native[1406] = (void*)(delegate* unmanaged<uint>)&g_pAudioDevice_MixChannelCount;
@@ -65,12 +65,12 @@ public static unsafe class AudioDevice
         native[1416] = (void*)(delegate* unmanaged<int>)&g_pAudioDevice_IsValid;
         native[1417] = (void*)(delegate* unmanaged<IntPtr, void>)&g_pAudioDevice_SendOutput;
         
-        // Initialiser le périphérique audio
+        // Initialize the audio device
         InitializeAudioDevice();
     }
 
     /// <summary>
-    /// Initialise le périphérique audio OpenAL.
+    /// Initializes the OpenAL audio device.
     /// </summary>
     private static void InitializeAudioDevice()
     {
@@ -89,7 +89,7 @@ public static unsafe class AudioDevice
                 return;
             }
             
-            // Créer un contexte audio
+            // Create an audio context
             _context = _alc.CreateContext(_device, null);
             if (_context == null)
             {
@@ -126,7 +126,7 @@ public static unsafe class AudioDevice
             _isValid = false;
             _isInitialized = false;
             
-            // Nettoyer en cas d'erreur
+            // Clean up on error
             if (_context != null)
             {
                 _alc?.DestroyContext(_context);
@@ -142,7 +142,7 @@ public static unsafe class AudioDevice
 
     // ============================================================================
     // AudioDevice Functions (g_pAudioDevice_*)
-    // Signatures exactes depuis Interop.Engine.cs ligne 6623-6636
+    // Exact signatures from Interop.Engine.cs line 6623-6636
     // ============================================================================
 
     /// <summary>
@@ -153,7 +153,7 @@ public static unsafe class AudioDevice
     [UnmanagedCallersOnly]
     public static IntPtr g_pAudioDevice_Name()
     {
-        // Allouer la mémoire pour le nom du périphérique si nécessaire
+        // Allocate memory for device name if necessary
         if (_cachedDeviceNamePtr == IntPtr.Zero)
         {
             byte[] nameBytes = Encoding.UTF8.GetBytes(_deviceName + "\0");
@@ -175,8 +175,8 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Retourne le nombre de canaux de mixage.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; uint &gt;
+    /// Returns the number of mixing channels.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; uint &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static uint g_pAudioDevice_MixChannelCount()
@@ -195,8 +195,8 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Retourne le nombre d'octets par échantillon.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; uint &gt;
+    /// Returns the number of bytes per sample.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; uint &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static uint g_pAudioDevice_BytesPerSample()
@@ -215,9 +215,9 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Indique si le périphérique audio est actif.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; int &gt;
-    /// Retourne 1 si actif, 0 sinon.
+    /// Indicates if the audio device is active.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; int &gt;
+    /// Returns 1 if active, 0 otherwise.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int g_pAudioDevice_IsActive()
@@ -234,7 +234,7 @@ public static unsafe class AudioDevice
     {
         if (_al == null || !_isValid) return;
         
-        // Arrêter toutes les sources OpenAL
+        // Stop all OpenAL sources
         foreach (var sources in _openalSources.Values)
         {
             foreach (var source in sources)
@@ -247,8 +247,8 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Attend que la sortie audio soit complète.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; void &gt;
+    /// Waits for audio output to complete.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pAudioDevice_WaitForComplete()
@@ -279,7 +279,7 @@ public static unsafe class AudioDevice
             
             if (!allStopped)
             {
-                Thread.Sleep(1); // Attendre 1ms
+                Thread.Sleep(1); // Wait 1ms
                 iterations++;
             }
         }
@@ -288,8 +288,8 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Active ou désactive le mute du périphérique audio.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; int, void &gt;
+    /// Enables or disables audio device mute.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; int, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pAudioDevice_MuteDevice(int bMuteDevice)
@@ -297,7 +297,7 @@ public static unsafe class AudioDevice
         _isMuted = bMuteDevice != 0;
         Console.WriteLine($"[NativeAOT] g_pAudioDevice_MuteDevice: {_isMuted}");
         
-        // Dans Source 2, appeler MuteDevice démarre le système audio pour la première fois
+        // In Source 2, calling MuteDevice starts the audio system for the first time
         // Voir AudioEngine.cs ligne 75-79
         if (!_isInitialized && !_isMuted)
         {
@@ -309,8 +309,8 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Vide le buffer audio.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; void &gt;
+    /// Clears the audio buffer.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pAudioDevice_ClearBuffer()
@@ -337,8 +337,8 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Affiche les informations de débogage du périphérique audio.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; void &gt;
+    /// Outputs audio device debug information.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pAudioDevice_OutputDebugInfo()
@@ -354,9 +354,9 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Indique si le périphérique audio est valide.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; int &gt;
-    /// Retourne 1 si valide, 0 sinon.
+    /// Indicates if the audio device is valid.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; int &gt;
+    /// Returns 1 if valid, 0 otherwise.
     /// </summary>
     [UnmanagedCallersOnly]
     public static int g_pAudioDevice_IsValid()
@@ -376,7 +376,7 @@ public static unsafe class AudioDevice
     }
 
     /// <summary>
-    /// Version managée utilisable depuis le code C# (backend vidéo).
+    /// Managed version usable from C# code (video backend).
     /// </summary>
     public static void SendOutputManaged(IntPtr buffers)
     {
@@ -388,7 +388,7 @@ public static unsafe class AudioDevice
         
         if (!_isValid || _isMuted || _al == null)
         {
-            // Si le périphérique n'est pas valide ou est muet, on ignore la sortie
+            // If the device is not valid or is muted, ignore output
             return;
         }
         
@@ -401,7 +401,7 @@ public static unsafe class AudioDevice
             return;
         }
         
-        // Créer ou récupérer les sources OpenAL pour ce device
+        // Create or get OpenAL sources for this device
         if (!_openalSources.TryGetValue(buffers, out var sources))
         {
             sources = new List<uint>();
@@ -419,7 +419,7 @@ public static unsafe class AudioDevice
             }
         }
         
-        // Pour chaque canal, envoyer les données audio vers OpenAL
+        // For each channel, send audio data to OpenAL
         for (int channelIndex = 0; channelIndex < deviceData.BufferHandles.Count && channelIndex < sources.Count; channelIndex++)
         {
             int bufferHandle = deviceData.BufferHandles[channelIndex];
@@ -432,14 +432,14 @@ public static unsafe class AudioDevice
             _al.GetSourceProperty(source, GetSourceInteger.BuffersProcessed, out int processed);
             if (processed > 0)
             {
-                // Réutiliser les buffers traités
+                // Reuse processed buffers
                 uint[] processedBuffers = new uint[processed];
                 _al.SourceUnqueueBuffers(source, processedBuffers);
                 
                 // Convertir les données float[] en int16 pour OpenAL
                 short[] pcmData = ConvertFloatToInt16(bufferData.Data, DefaultSampleRate);
                 
-                // Mettre à jour le buffer avec les nouvelles données
+                // Update the buffer with new data
                 fixed (short* pcmPtr = pcmData)
                 {
                     _al.BufferData(processedBuffers[0], BufferFormat.Mono16, pcmPtr, pcmData.Length * sizeof(short), (int)DefaultSampleRate);
@@ -464,7 +464,7 @@ public static unsafe class AudioDevice
                     // Convertir les données float[] en int16 pour OpenAL
                     short[] pcmData = ConvertFloatToInt16(bufferData.Data, DefaultSampleRate);
                     
-                    // Remplir les buffers avec les données
+                    // Fill buffers with data
                     fixed (short* pcmPtr = pcmData)
                     {
                         for (int i = 0; i < newBuffers.Length; i++)
@@ -478,7 +478,7 @@ public static unsafe class AudioDevice
                 }
             }
             
-            // Démarrer la source si elle n'est pas déjà en cours de lecture
+            // Start the source if it's not already playing
             _al.GetSourceProperty(source, GetSourceInteger.SourceState, out int state);
             if (state != (int)SourceState.Playing)
             {
@@ -495,7 +495,7 @@ public static unsafe class AudioDevice
         short[] pcmData = new short[floatData.Length];
         for (int i = 0; i < floatData.Length; i++)
         {
-            // Clamper la valeur entre -1.0 et 1.0, puis convertir en int16
+            // Clamp the value between -1.0 and 1.0, then convert to int16
             float clamped = Math.Max(-1.0f, Math.Min(1.0f, floatData[i]));
             pcmData[i] = (short)(clamped * short.MaxValue);
         }

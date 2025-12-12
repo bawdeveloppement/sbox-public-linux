@@ -175,7 +175,6 @@ Contributions are welcome, especially if you:
 
 # Follow the Journey
 
-* 🌐 Newsletter: [https://goldyrust.com/newsletter](https://goldyrust.com/newsletter)
 * ⭐ Support the vision by starring the repository
 * 🏹 Maintained by **Baw Studios — Hermann Vincent**
 

@@ -7,8 +7,8 @@ using Sandbox;
 namespace Bawstudios.OS27.CUtl;
 
 /// <summary>
-/// Module d'émulation pour CUtlVectorVector (CtlVctrVctr_*).
-/// Gère les vecteurs de Vector3.
+/// Emulation module for CUtlVectorVector (CtlVctrVctr_*).
+/// Handles Vector3 vectors.
 /// </summary>
 public static unsafe class CUtlVectorVector
 {
@@ -21,7 +21,7 @@ public static unsafe class CUtlVectorVector
     }
 
     /// <summary>
-    /// Initialise le module CUtlVectorVector en patchant les fonctions natives.
+    /// Initializes the CUtlVectorVector module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16106-16110 (1241-1245)
     /// </summary>
     public static void Init(void** native)

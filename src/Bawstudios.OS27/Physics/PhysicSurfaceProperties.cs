@@ -9,18 +9,18 @@ using Bawstudios.OS27.Common;
 namespace Bawstudios.OS27.Physics;
 
 /// <summary>
-/// Module d'émulation pour CPhysSurfaceProperties (CPhysSrfcPrprts_*).
-/// Gère les propriétés de surface physique (friction, élasticité, etc.).
+/// Emulation module for CPhysSurfaceProperties (CPhysSrfcPrprts_*).
+/// Handles physical surface properties (friction, elasticity, etc.).
 /// </summary>
 public static unsafe class PhysicSurfaceProperties
 {
-    // Cache pour les pointeurs de chaînes UTF-8 (pour Get__CPhysSrfcPrprts_m_name et m_description)
+    // Cache for UTF-8 string pointers (for Get__CPhysSrfcPrprts_m_name and m_description)
     private static readonly Dictionary<IntPtr, IntPtr> _stringCache = new();
     private static readonly List<IntPtr> _allocatedStrings = new();
     private static readonly object _cacheLock = new object();
 
     /// <summary>
-    /// Initialise le module PhysicSurfaceProperties en patchant les fonctions natives.
+    /// Initializes the PhysicSurfaceProperties module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 15519-15535 :
     /// - CPhysSrfcPrprts_UpdatePhysics: 654
     /// - Get__CPhysSrfcPrprts_m_name: 655
@@ -82,7 +82,7 @@ public static unsafe class PhysicSurfaceProperties
 
     /// <summary>
     /// Update physics properties of a surface property.
-    /// Signature exacte depuis Interop.Engine.cs ligne 15519: delegate* unmanaged< IntPtr, float, float, float, float, float, void >
+    /// Exact signature from Interop.Engine.cs line 15519: delegate* unmanaged< IntPtr, float, float, float, float, float, void >
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CPhysSrfcPrprts_UpdatePhysics(IntPtr self, float Friction, float Elasticity, float Density, float RollingResistance, float BounceThreshold)
@@ -100,7 +100,7 @@ public static unsafe class PhysicSurfaceProperties
     /// <summary>
     /// Get the name of a surface property.
     /// Returns a cached UTF-8 string pointer.
-    /// Signature exacte depuis Interop.Engine.cs ligne 15520: delegate* unmanaged[SuppressGCTransition]<IntPtr, IntPtr>
+    /// Exact signature from Interop.Engine.cs line 15520: delegate* unmanaged[SuppressGCTransition]<IntPtr, IntPtr>
     /// </summary>
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvSuppressGCTransition) })]
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -147,7 +147,7 @@ public static unsafe class PhysicSurfaceProperties
             property.Name = name;
             property.NameHash = HashUtils.MurmurHash2(name, lowercase: true);
 
-            // Invalider le cache de la chaîne
+            // Invalidate the string cache
             lock (_cacheLock)
             {
                 if (_stringCache.TryGetValue(self, out var cachedPtr))
@@ -340,8 +340,8 @@ public static unsafe class PhysicSurfaceProperties
         if (self == IntPtr.Zero || !PhysicsSystem.TryGetSurfaceProperty(self, out var property))
             return IntPtr.Zero;
 
-        // Utiliser une clé différente pour le cache de description
-        IntPtr descKey = new IntPtr(self.ToInt64() + 1); // Offset pour différencier du cache de name
+        // Use a different key for the description cache
+        IntPtr descKey = new IntPtr(self.ToInt64() + 1); // Offset to differentiate from name cache
 
         lock (_cacheLock)
         {
@@ -380,7 +380,7 @@ public static unsafe class PhysicSurfaceProperties
         {
             property.Description = description;
 
-            // Invalider le cache de la description
+            // Invalidate the description cache
             lock (_cacheLock)
             {
                 IntPtr descKey = new IntPtr(self.ToInt64() + 1);

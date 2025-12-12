@@ -7,8 +7,8 @@ using NativeEngine;
 namespace Bawstudios.OS27.CUtl;
 
 /// <summary>
-/// Module d'émulation pour CUtlVectorString (CtlVctrCtlStrng_*).
-/// Gère les vecteurs de strings.
+/// Emulation module for CUtlVectorString (CtlVctrCtlStrng_*).
+/// Handles string vectors.
 /// </summary>
 public static unsafe class CUtlVectorString
 {
@@ -21,7 +21,7 @@ public static unsafe class CUtlVectorString
     }
 
     /// <summary>
-    /// Initialise le module CUtlVectorString en patchant les fonctions natives.
+    /// Initializes the CUtlVectorString module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16083-16087 (1218-1222)
     /// </summary>
     public static void Init(void** native)

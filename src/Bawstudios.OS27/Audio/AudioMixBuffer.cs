@@ -5,16 +5,16 @@ using Bawstudios.OS27.Common;
 namespace Bawstudios.OS27.Audio;
 
 /// <summary>
-/// Module d'émulation pour AudioMixBuffer (CAudioMixBuffer_*).
-/// Gère les buffers de mixage audio (512 échantillons float).
-/// Signatures exactes depuis Interop.Engine.cs ligne 194-203 et indices depuis ligne 14766-14775.
+/// Emulation module for AudioMixBuffer (CAudioMixBuffer_*).
+/// Handles audio mixing buffers (512 float samples).
+/// Exact signatures from Interop.Engine.cs line 194-203 and indices from line 14766-14775.
 /// </summary>
 public static unsafe class AudioMixBuffer
 {
     /// <summary>
-    /// Initialise le module AudioMixBuffer en patchant toutes les fonctions natives.
-    /// Signatures exactes depuis Interop.Engine.cs ligne 194-203.
-    /// Indices depuis Interop.Engine.cs ligne 14766-14775.
+    /// Initializes the AudioMixBuffer module by patching all native functions.
+    /// Exact signatures from Interop.Engine.cs line 194-203.
+    /// Indices from Interop.Engine.cs line 14766-14775.
     /// </summary>
     public static void Init(void** native)
     {
@@ -33,7 +33,7 @@ public static unsafe class AudioMixBuffer
 
     // ============================================================================
     // AudioMixBuffer Functions (CAudioMixBuffer_*)
-    // Signatures exactes depuis Interop.Engine.cs ligne 194-203
+    // Exact signatures from Interop.Engine.cs line 194-203
     // ============================================================================
 
     /// <summary>
@@ -51,8 +51,8 @@ public static unsafe class AudioMixBuffer
     }
 
     /// <summary>
-    /// Libère un buffer de mixage audio.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, void &gt;
+    /// Releases an audio mixing buffer.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CAudioMixBuffer_Dispose(IntPtr bufferPtr)
@@ -80,8 +80,8 @@ public static unsafe class AudioMixBuffer
     }
 
     /// <summary>
-    /// Met tous les échantillons du buffer à zéro.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, void &gt;
+    /// Sets all buffer samples to zero.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CAudioMixBuffer_Silence(IntPtr bufferPtr)
@@ -104,9 +104,9 @@ public static unsafe class AudioMixBuffer
     }
 
     /// <summary>
-    /// Calcule le niveau moyen du buffer (moyenne des valeurs absolues).
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, float &gt;
-    /// Note: Dans Interop.Engine.cs ligne 199, la fonction s'appelle "AvergeLevel" (typo dans Source 2).
+    /// Calculates the average level of the buffer (average of absolute values).
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, float &gt;
+    /// Note: In Interop.Engine.cs line 199, the function is called "AvergeLevel" (typo in Source 2).
     /// </summary>
     [UnmanagedCallersOnly]
     public static float CAudioMixBuffer_AvergeLevel(IntPtr bufferPtr)
@@ -129,8 +129,8 @@ public static unsafe class AudioMixBuffer
     }
 
     /// <summary>
-    /// Copie les données d'un autre buffer dans ce buffer.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, IntPtr, void &gt;
+    /// Copies data from another buffer into this buffer.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, IntPtr, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CAudioMixBuffer_CopyFrom(IntPtr bufferPtr, IntPtr otherPtr)
@@ -157,8 +157,8 @@ public static unsafe class AudioMixBuffer
     }
 
     /// <summary>
-    /// Mélange les données d'un autre buffer dans ce buffer avec un rampe d'échelle.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, IntPtr, float, float, void &gt;
+    /// Mixes data from another buffer into this buffer with a scale ramp.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, IntPtr, float, float, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CAudioMixBuffer_MixRamp(IntPtr bufferPtr, IntPtr otherPtr, float a, float b)
@@ -171,7 +171,7 @@ public static unsafe class AudioMixBuffer
     }
 
     /// <summary>
-    /// Données d'un buffer de mixage audio (512 échantillons float).
+    /// Data for an audio mixing buffer (512 float samples).
     /// </summary>
     internal class AudioMixBufferData
     {

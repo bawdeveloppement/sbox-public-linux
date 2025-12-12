@@ -6,26 +6,26 @@ using Bawstudios.OS27.Common;
 namespace Bawstudios.OS27.Texture;
 
 /// <summary>
-/// Module d'émulation pour les fonctions CTextureBase (CTextureBase_*).
-/// Gère les textures chargées depuis les ressources.
+/// Emulation module for CTextureBase functions (CTextureBase_*).
+/// Handles textures loaded from resources.
 /// </summary>
 public static unsafe class TextureSystem
 {
     /// <summary>
-    /// Données internes pour une texture émulée.
-    /// Pattern identique à MaterialData dans MaterialSystem.cs et ModelData dans ModelSystem.cs
+    /// Internal data for an emulated texture.
+    /// Pattern identical to MaterialData in MaterialSystem.cs and ModelData in ModelSystem.cs
     /// </summary>
     public class TextureData
     {
         public string Name { get; set; } = "";
-        public IntPtr BindingPtr { get; set; } = IntPtr.Zero; // Pointeur de binding unique (handle HandleManager)
+        public IntPtr BindingPtr { get; set; } = IntPtr.Zero; // Unique binding pointer (HandleManager handle)
         public bool IsError { get; set; } = false;
-        public bool IsLoaded { get; set; } = true; // Par défaut, considéré comme chargé
-        public uint OpenGLHandle { get; set; } = 0; // Handle OpenGL de la texture
+        public bool IsLoaded { get; set; } = true; // By default, considered loaded
+        public uint OpenGLHandle { get; set; } = 0; // OpenGL handle of the texture
     }
     
     /// <summary>
-    /// Obtient les données de texture pour un handle donné (pour utilisation par RenderDevice et autres modules).
+    /// Gets texture data for a given handle (for use by RenderDevice and other modules).
     /// </summary>
     public static TextureData? GetTextureData(IntPtr textureHandle)
     {
@@ -33,12 +33,12 @@ public static unsafe class TextureSystem
     }
     
     /// <summary>
-    /// Initialise le module TextureSystem en patchant les fonctions natives.
+    /// Initializes the TextureSystem module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 15954-15959 (1207-1212)
     /// </summary>
     public static void Init(void** native)
     {
-        // CTextureBase functions essentielles (indices 1207-1212 depuis Interop.Engine.cs)
+        // Essential CTextureBase functions (indices 1207-1212 from Interop.Engine.cs)
         native[1207] = (void*)(delegate* unmanaged<IntPtr, void>)&CTextureBase_DestroyStrongHandle;
         native[1208] = (void*)(delegate* unmanaged<IntPtr, int>)&CTextureBase_IsStrongHandleValid;
         native[1209] = (void*)(delegate* unmanaged<IntPtr, int>)&CTextureBase_IsError;
@@ -50,8 +50,8 @@ public static unsafe class TextureSystem
     }
     
     /// <summary>
-    /// Helper pour créer une texture avec un handle OpenGL (appelable depuis le code managé).
-    /// Utilisé par EngineExports.FindOrCreateTexture2.
+    /// Helper to create a texture with an OpenGL handle (callable from managed code).
+    /// Used by EngineExports.FindOrCreateTexture2.
     /// </summary>
     public static IntPtr CreateTextureWithOpenGLHandle(string resourceName, uint openGLHandle)
     {
@@ -76,7 +76,7 @@ public static unsafe class TextureSystem
             }
         }
         
-        // Créer une nouvelle texture
+        // Create a new texture
         var textureData = new TextureData
         {
             Name = resourceName ?? "",
@@ -104,8 +104,8 @@ public static unsafe class TextureSystem
     }
     
     /// <summary>
-    /// Helper pour créer une texture depuis une ressource (appelable depuis le code managé).
-    /// Utilisé par EngineGlue.Glue_Resources_GetTexture.
+    /// Helper to create a texture from a resource (callable from managed code).
+    /// Used by EngineGlue.Glue_Resources_GetTexture.
     /// </summary>
     public static IntPtr CreateTextureFromResourceHelper(string resourceName)
     {
@@ -130,7 +130,7 @@ public static unsafe class TextureSystem
             }
         }
         
-        // Créer une nouvelle texture
+        // Create a new texture
         var textureData = new TextureData
         {
             Name = resourceName
@@ -151,7 +151,7 @@ public static unsafe class TextureSystem
     }
     
     /// <summary>
-    /// Libère un handle fort de texture.
+    /// Releases a strong texture handle.
     /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -178,7 +178,7 @@ public static unsafe class TextureSystem
     }
     
     /// <summary>
-    /// Vérifie si un handle fort de texture est valide.
+    /// Checks if a strong texture handle is valid.
     /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, int &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -190,7 +190,7 @@ public static unsafe class TextureSystem
     }
     
     /// <summary>
-    /// Vérifie si une texture est en erreur.
+    /// Checks if a texture is in error.
     /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, int &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -209,7 +209,7 @@ public static unsafe class TextureSystem
     }
     
     /// <summary>
-    /// Vérifie si une texture est chargée.
+    /// Checks if a texture is loaded.
     /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, int &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -228,7 +228,7 @@ public static unsafe class TextureSystem
     }
     
     /// <summary>
-    /// Crée une copie d'un handle fort de texture.
+    /// Creates a copy of a strong texture handle.
     /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, IntPtr &gt;
     /// </summary>
     [UnmanagedCallersOnly]
@@ -250,7 +250,7 @@ public static unsafe class TextureSystem
     /// <summary>
     /// Obtient le pointeur de binding d'une texture.
     /// Le binding pointer est un identifiant unique qui identifie la texture native,
-    /// utilisé pour comparer si deux handles pointent vers la même texture.
+    /// used to compare if two handles point to the same texture.
     /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, IntPtr &gt;
     /// </summary>
     [UnmanagedCallersOnly]

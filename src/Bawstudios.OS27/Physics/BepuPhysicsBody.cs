@@ -81,6 +81,6 @@ public class BepuPhysicsBody
 
     public void Disable()
     {
-        // Le sommeil est automatique dans BepuPhysics, pas de méthode directe.
+        // Sleep is automatic in BepuPhysics, no direct method.
     }
 }

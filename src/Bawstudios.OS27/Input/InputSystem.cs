@@ -6,8 +6,8 @@ using Silk.NET.GLFW;
 namespace Bawstudios.OS27.Input;
 
 /// <summary>
-/// Module d'émulation pour InputSystem (g_pInputSystem_*).
-/// Gère les fonctions d'entrée système (SDL, Editor, IME, cursors, etc.) via GLFW.
+/// Emulation module for InputSystem (g_pInputSystem_*).
+/// Handles system input functions (SDL, Editor, IME, cursors, etc.) via GLFW.
 /// </summary>
 public static unsafe class InputSystem
 {
@@ -18,7 +18,7 @@ public static unsafe class InputSystem
     private static bool _imeAllowed = false;
     
     /// <summary>
-    /// Initialise le module InputSystem en patchant les fonctions natives.
+    /// Initializes the InputSystem module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16301-16321 :
     /// - g_pInputSystem_RegisterWindowWithSDL: 1436
     /// - g_pInputSystem_UnregisterWindowFromSDL: 1437

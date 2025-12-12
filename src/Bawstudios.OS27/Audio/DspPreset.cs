@@ -7,9 +7,9 @@ using Bawstudios.OS27.Common;
 namespace Bawstudios.OS27.Audio;
 
 /// <summary>
-/// Module d'émulation pour DspPreset (DspPreset_*).
-/// Gère les presets DSP (Digital Signal Processing) pour les effets audio.
-/// Signatures exactes depuis Interop.Engine.cs ligne 6134-6138 et indices depuis ligne 16065-16069.
+/// Emulation module for DspPreset (DspPreset_*).
+/// Handles DSP (Digital Signal Processing) presets for audio effects.
+/// Exact signatures from Interop.Engine.cs line 6134-6138 and indices from line 16065-16069.
 /// </summary>
 public static unsafe class DspPreset
 {
@@ -39,9 +39,9 @@ public static unsafe class DspPreset
     }
 
     /// <summary>
-    /// Initialise le module DspPreset en patchant toutes les fonctions natives.
-    /// Signatures exactes depuis Interop.Engine.cs ligne 6134-6138.
-    /// Indices depuis Interop.Engine.cs ligne 16065-16069.
+    /// Initializes the DspPreset module by patching all native functions.
+    /// Exact signatures from Interop.Engine.cs line 6134-6138.
+    /// Indices from Interop.Engine.cs line 16065-16069.
     /// </summary>
     public static void Init(void** native)
     {
@@ -55,12 +55,12 @@ public static unsafe class DspPreset
 
     // ============================================================================
     // DspPreset Functions (DspPreset_*)
-    // Signatures exactes depuis Interop.Engine.cs ligne 6134-6138
+    // Exact signatures from Interop.Engine.cs line 6134-6138
     // ============================================================================
 
     /// <summary>
-    /// Crée un nouveau preset DSP.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, IntPtr &gt;
+    /// Creates a new DSP preset.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, IntPtr &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr DspPreset_Create(IntPtr namePtr)
@@ -88,15 +88,15 @@ public static unsafe class DspPreset
     }
 
     /// <summary>
-    /// Libère un preset DSP.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, void &gt;
+    /// Releases a DSP preset.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void DspPreset_Dispose(IntPtr self)
     {
         int handle = (int)self;
 
-        // Nettoie les instances associées
+        // Clean up associated instances
         lock (_lock)
         {
             if (_presetInstances.TryGetValue(handle, out var instances))
@@ -114,8 +114,8 @@ public static unsafe class DspPreset
     }
 
     /// <summary>
-    /// Ajoute un processeur DSP au preset.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, int, float*, uint, void &gt;
+    /// Adds a DSP processor to the preset.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, int, float*, uint, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void DspPreset_AddProcessor(IntPtr self, int nType, float* prms, uint prmsCount)
@@ -134,7 +134,7 @@ public static unsafe class DspPreset
             return;
         }
 
-        // Sécurise les pointeurs et tailles
+        // Validate pointers and sizes
         if (prms == null || prmsCount == 0)
         {
             Console.WriteLine($"[NativeAOT] DspPreset_AddProcessor: {preset.Name} type={nType} with no parameters");
@@ -177,9 +177,9 @@ public static unsafe class DspPreset
     }
 
     /// <summary>
-    /// Instancie un preset DSP pour un nombre de canaux donné.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, int, IntPtr &gt;
-    /// Retourne un handle vers une instance DSP (pour utilisation avec OpenAL).
+    /// Instantiates a DSP preset for a given number of channels.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged&lt; IntPtr, int, IntPtr &gt;
+    /// Returns a handle to a DSP instance (for use with OpenAL).
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr DspPreset_Instantiate(IntPtr self, int channels)
@@ -198,7 +198,7 @@ public static unsafe class DspPreset
             preset.IsFinished = true;
         }
 
-        // Crée une instance active pour le preset demandé
+        // Create an active instance for the requested preset
         var instance = new DspInstanceData
         {
             PresetHandle = self,

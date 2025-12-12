@@ -6,8 +6,8 @@ using Silk.NET.GLFW;
 namespace Bawstudios.OS27.Input;
 
 /// <summary>
-/// Module d'émulation pour InputService (g_pInputService_*).
-/// Gère les fonctions d'entrée (clavier, souris, etc.) via GLFW.
+/// Emulation module for InputService (g_pInputService_*).
+/// Handles input functions (keyboard, mouse, etc.) via GLFW.
 /// </summary>
 public static unsafe class InputService
 {
@@ -37,10 +37,10 @@ public static unsafe class InputService
     /// <summary>
     /// Check if the application is active (window has focus).
     /// 
-    /// **Comportement Source 2** : Retourne si l'application a le focus.
-    /// **Comportement émulation** : Utilise GLFW pour vérifier si la fenêtre a le focus.
+    /// **Source 2 behavior**: Returns if the application has focus.
+    /// **Emulation behavior**: Uses GLFW to check if the window has focus.
     /// </summary>
-    /// <returns>1 si l'app est active, 0 sinon</returns>
+    /// <returns>1 if app is active, 0 otherwise</returns>
     [UnmanagedCallersOnly]
     public static int g_pInputService_IsAppActive()
     {
@@ -57,10 +57,10 @@ public static unsafe class InputService
     /// <summary>
     /// Check if the window has mouse focus.
     /// 
-    /// **Comportement Source 2** : Retourne si la fenêtre a le focus de la souris.
-    /// **Comportement émulation** : Utilise GLFW pour vérifier si la fenêtre a le focus de la souris.
+    /// **Source 2 behavior**: Returns if the window has mouse focus.
+    /// **Emulation behavior**: Uses GLFW to check if the window has mouse focus.
     /// </summary>
-    /// <returns>1 si la souris a le focus, 0 sinon</returns>
+    /// <returns>1 if mouse has focus, 0 otherwise</returns>
     [UnmanagedCallersOnly]
     public static int g_pInputService_HasMouseFocus()
     {
@@ -70,8 +70,8 @@ public static unsafe class InputService
         if (windowHandle == null || glfw == null)
             return 0;
         
-        // GLFW n'a pas de fonction directe pour vérifier le focus de la souris
-        // On vérifie si la fenêtre a le focus et si le curseur est dans la fenêtre
+        // GLFW doesn't have a direct function to check mouse focus
+        // We check if the window has focus and if the cursor is in the window
         bool focused = glfw.GetWindowAttrib(windowHandle, WindowAttributeGetter.Focused);
         bool hovered = glfw.GetWindowAttrib(windowHandle, WindowAttributeGetter.Hovered);
         
@@ -81,11 +81,11 @@ public static unsafe class InputService
     /// <summary>
     /// Get the key name for a binding string.
     /// 
-    /// **Comportement Source 2** : Retourne le nom de la touche correspondant à un binding.
-    /// **Comportement émulation** : Retourne une chaîne vide pour l'instant (non implémenté).
+    /// **Source 2 behavior**: Returns the key name corresponding to a binding.
+    /// **Emulation behavior**: Returns an empty string for now (not implemented).
     /// </summary>
-    /// <param name="binding">Pointeur vers la chaîne de binding (UTF-8)</param>
-    /// <returns>Pointeur vers la chaîne du nom de la touche (UTF-8), ou IntPtr.Zero</returns>
+    /// <param name="binding">Pointer to binding string (UTF-8)</param>
+    /// <returns>Pointer to key name string (UTF-8), or IntPtr.Zero</returns>
     [UnmanagedCallersOnly]
     public static IntPtr g_pInputService_Key_NameForBinding(IntPtr binding)
     {
@@ -102,11 +102,11 @@ public static unsafe class InputService
     /// <summary>
     /// Get the binding string for a button code.
     /// 
-    /// **Comportement Source 2** : Retourne le binding correspondant à un code de bouton.
-    /// **Comportement émulation** : Retourne une chaîne vide pour l'instant (non implémenté).
+    /// **Source 2 behavior**: Returns the binding corresponding to a button code.
+    /// **Emulation behavior**: Returns an empty string for now (not implemented).
     /// </summary>
-    /// <param name="button">Code du bouton (ButtonCode)</param>
-    /// <returns>Pointeur vers la chaîne du binding (UTF-8), ou IntPtr.Zero</returns>
+    /// <param name="button">Button code (ButtonCode)</param>
+    /// <returns>Pointer to binding string (UTF-8), or IntPtr.Zero</returns>
     [UnmanagedCallersOnly]
     public static IntPtr g_pInputService_GetBinding(long button)
     {
@@ -116,11 +116,11 @@ public static unsafe class InputService
     /// <summary>
     /// Set the cursor position in window coordinates.
     /// 
-    /// **Comportement Source 2** : Définit la position du curseur dans les coordonnées de la fenêtre.
-    /// **Comportement émulation** : Utilise GLFW pour définir la position du curseur.
+    /// **Source 2 behavior**: Sets the cursor position in window coordinates.
+    /// **Emulation behavior**: Uses GLFW to set the cursor position.
     /// </summary>
-    /// <param name="x">Position X en pixels</param>
-    /// <param name="y">Position Y en pixels</param>
+    /// <param name="x">X position in pixels</param>
+    /// <param name="y">Y position in pixels</param>
     [UnmanagedCallersOnly]
     public static void g_pInputService_SetCursorPosition(int x, int y)
     {
@@ -136,8 +136,8 @@ public static unsafe class InputService
     /// <summary>
     /// Pump input events (process keyboard, mouse, etc.).
     /// 
-    /// **Comportement Source 2** : Traite les événements d'entrée en attente.
-    /// **Comportement émulation** : Appelle glfw.PollEvents() pour traiter les événements GLFW.
+    /// **Source 2 behavior**: Processes pending input events.
+    /// **Emulation behavior**: Calls glfw.PollEvents() to process GLFW events.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void g_pInputService_Pump()
@@ -147,7 +147,7 @@ public static unsafe class InputService
         if (glfw == null)
             return;
         
-        // PollEvents traite tous les événements en attente (clavier, souris, fenêtre, etc.)
+        // PollEvents processes all pending events (keyboard, mouse, window, etc.)
         glfw.PollEvents();
     }
 }

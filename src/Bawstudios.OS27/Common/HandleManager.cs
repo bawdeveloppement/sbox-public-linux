@@ -9,9 +9,9 @@ using System.Threading;
 namespace Bawstudios.OS27.Common;
 
 /// <summary>
-/// Gestionnaire centralisé de handles pour tous les objets émulés.
-/// Thread-safe, utilise ConcurrentDictionary pour la sécurité multi-thread.
-/// Supporte le pattern Source 2 avec reference counting et plusieurs handles pointant vers le même objet.
+/// Centralized handle manager for all emulated objects.
+/// Thread-safe, uses ConcurrentDictionary for multi-thread safety.
+/// Supports Source 2 pattern with reference counting and multiple handles pointing to the same object.
 /// </summary>
 public static class HandleManager
 {
@@ -21,14 +21,14 @@ public static class HandleManager
     private const int MAX_HANDLE = int.MaxValue - 1000;
     private const int LOCK_TIMEOUT_MS = 1000;
 
-    // Compteurs atomiques
-    private static int _nextHandle = MIN_HANDLE; // Handles normaux (impairs)
-    private static int _nextBindingHandle = MIN_BINDING_HANDLE; // BindingHandles (pairs)
+    // Atomic counters
+    private static int _nextHandle = MIN_HANDLE; // Normal handles (odd)
+    private static int _nextBindingHandle = MIN_BINDING_HANDLE; // BindingHandles (even)
     private static long _registerCount;
 
-    // Dictionnaires de gestion
+    // Management dictionaries
     private static readonly ConcurrentDictionary<int, HandleEntry> _entries = new();
-    private static readonly ConcurrentDictionary<int, int> _bindingToEntry = new(); // BindingHandle → handle principal
+    private static readonly ConcurrentDictionary<int, int> _bindingToEntry = new(); // BindingHandle → main handle
     private static readonly ConcurrentQueue<HandleEntry> _entryPool = new();
 
     // Index secondaires (lazy initialization)
@@ -36,7 +36,7 @@ public static class HandleManager
     private static ConcurrentDictionary<string, int>? _nameIndex;
     private const int MAX_NAME_LENGTH = 256;
 
-    // Métriques de performance
+    // Performance metrics
     private static long _copyHandleCount;
     private static long _unregisterCount;
     private static long _getCount;
@@ -68,7 +68,7 @@ public static class HandleManager
 
         public HandleEntry(object obj, int bindingHandle)
         {
-            _handles = new HashSet<int>(10); // Capacité initiale de 4
+            _handles = new HashSet<int>(10); // Initial capacity of 4
             Initialize(obj, bindingHandle);
         }
 
@@ -100,7 +100,7 @@ public static class HandleManager
         public int ReferenceCount => Volatile.Read(ref _referenceCount);
 
         /// <summary>
-        /// Incrémente le compteur de références de manière atomique.
+        /// Atomically increments the reference counter.
         /// </summary>
         public int IncrementRef()
         {
@@ -116,7 +116,7 @@ public static class HandleManager
         }
 
         /// <summary>
-        /// Ajoute un handle à la liste (protégé par lock).
+        /// Adds a handle to the list (protected by lock).
         /// </summary>
         public void AddHandle(int handle)
         {
@@ -139,8 +139,8 @@ public static class HandleManager
         }
 
         /// <summary>
-        /// Retourne un snapshot thread-safe de tous les handles via ArrayPool.
-        /// Retourne aussi le nombre de handles dans le paramètre out.
+        /// Returns a thread-safe snapshot of all handles via ArrayPool.
+        /// Also returns the number of handles in the out parameter.
         /// </summary>
         public int[] GetAllHandles(out int count)
         {
@@ -177,7 +177,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Enregistre un objet et retourne un handle unique.
+    /// Registers an object and returns a unique handle.
     /// </summary>
     public static int Register(object obj)
     {
@@ -188,7 +188,7 @@ public static class HandleManager
         if (!TryGenerateBindingHandle(out int bindingHandle))
             return 0;
 
-        // Générer handle principal unique (impair)
+        // Generate unique main handle (odd)
         if (!TryGenerateHandle(out int handle))
             return 0;
 
@@ -196,11 +196,11 @@ public static class HandleManager
         var entry = GetOrCreateEntry(obj, bindingHandle);
         entry.AddHandle(handle);
 
-        // Enregistrer
+        // Register
         _entries[handle] = entry;
         _bindingToEntry[bindingHandle] = handle;
         Interlocked.Increment(ref _registerCount);
-        Interlocked.Increment(ref _cacheVersion); // Invalider le cache
+        Interlocked.Increment(ref _cacheVersion); // Invalidate cache
 
         return handle;
     }
@@ -222,7 +222,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Libère un handle et son objet associé.
+    /// Releases a handle and its associated object.
     /// </summary>
     public static void Unregister(int handle)
     {
@@ -243,7 +243,7 @@ public static class HandleManager
             
             if (!entry.RemoveHandle(handle))
             {
-                // Handle déjà retiré, libérer le pool et retourner
+                // Handle already removed, return pool and return
                     if (allHandles != null && handleCount > 0)
                         ArrayPool<int>.Shared.Return(allHandles, clearArray: false);
                 return;
@@ -271,7 +271,7 @@ public static class HandleManager
         {
             if (allHandles != null)
             {
-                // Batch removal : retirer tous les handles
+                // Batch removal: remove all handles
                 for (int i = 0; i < handleCount; i++)
                 {
                     int h = allHandles[i];
@@ -285,14 +285,14 @@ public static class HandleManager
             // Libérer le BindingHandle
             _bindingToEntry.TryRemove(entry.BindingHandle, out _);
 
-            // Nettoyer les index secondaires
+            // Clean up secondary indexes
             if (entry.Object != null)
             {
                 UnindexObject(entry.Object, entry.BindingHandle);
             }
 
             ReturnToPool(entry);
-            Interlocked.Increment(ref _cacheVersion); // Invalider le cache
+            Interlocked.Increment(ref _cacheVersion); // Invalidate cache
         }
 
         Interlocked.Increment(ref _unregisterCount);
@@ -309,7 +309,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Copie un handle (incrémente le compteur de références).
+    /// Copies a handle (increments the reference counter).
     /// </summary>
     public static int CopyHandle(int handle)
     {
@@ -362,7 +362,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Retourne le BindingHandle associé à un handle.
+    /// Returns the BindingHandle associated with a handle.
     /// </summary>
     public static int GetBindingHandle(int handle)
     {
@@ -392,7 +392,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Retourne tous les handles associés à un objet (via un handle).
+    /// Returns all handles associated with an object (via a handle).
     /// </summary>
     public static int[] GetAllHandles(int handle)
     {
@@ -407,7 +407,7 @@ public static class HandleManager
             var result = new int[count];
             Array.Copy(snapshot, result, count);
             
-            // Retourner au pool
+            // Return to pool
                 ArrayPool<int>.Shared.Return(snapshot, clearArray: false);
             
             return result;
@@ -434,7 +434,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Vérifie si un handle est valide (impair, supérieur ou égal à MIN_HANDLE, inférieur à MAX_HANDLE).
+    /// Checks if a handle is valid (odd, greater than or equal to MIN_HANDLE, less than MAX_HANDLE).
     /// </summary>
     private static bool IsValidHandle(int handle)
     {
@@ -457,7 +457,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Incrémente une valeur impaire avec protection contre overflow et réinitialisation si nécessaire.
+    /// Increments an odd value with overflow protection and reset if necessary.
     /// </summary>
     private static int SafeIncrementOdd(ref int value, int maxValue, int resetValue)
     {
@@ -473,7 +473,7 @@ public static class HandleManager
                 current = resetValue;
             }
             
-            // S'assurer que c'est impair
+            // Ensure it's odd
                 if ((current % 2) == 0)
             {
                 current = Interlocked.Increment(ref value);
@@ -500,7 +500,7 @@ public static class HandleManager
                 current = resetValue;
             }
             
-            // S'assurer que c'est pair
+            // Ensure it's even
             if ((current % 2) == 1)
             {
                 current = Interlocked.Increment(ref value);
@@ -513,7 +513,7 @@ public static class HandleManager
     // ========== Index secondaires (Cycle TDD 1.5) ==========
 
     /// <summary>
-    /// Obtient l'index OpenGLHandle avec lazy initialization.
+    /// Gets the OpenGLHandle index with lazy initialization.
     /// </summary>
     private static ConcurrentDictionary<uint, int> GetOpenGLHandleIndex()
     {
@@ -537,7 +537,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Enregistre un index OpenGLHandle.
+    /// Registers an OpenGLHandle index.
     /// </summary>
     public static void RegisterOpenGLHandleIndex(uint openGLHandle, int bindingHandle)
     {
@@ -556,7 +556,7 @@ public static class HandleManager
             return;
 
         if (name.Length > MAX_NAME_LENGTH)
-            return; // Ignorer les noms trop longs pour économiser la mémoire
+            return; // Ignore names that are too long to save memory
 
         string normalizedName = name.ToLowerInvariant();
         GetNameIndex()[normalizedName] = bindingHandle;
@@ -567,14 +567,14 @@ public static class HandleManager
     /// </summary>
     private static void UnindexObject(object obj, int bindingHandle)
     {
-        // Nettoyer l'index OpenGLHandle si l'objet a une propriété OpenGLHandle
-        // Note: Cette méthode nécessite une réflexion ou une interface, pour l'instant on nettoie manuellement
-        // Les systèmes spécifiques appelleront UnindexOpenGLHandle/UnindexName explicitement
+        // Clean up OpenGLHandle index if object has an OpenGLHandle property
+        // Note: This method requires reflection or an interface, for now we clean manually
+        // Specific systems will call UnindexOpenGLHandle/UnindexName explicitly
 
-        // Nettoyer l'index Name si nécessaire
-        // Même note : nettoyage manuel par les systèmes
+        // Clean up Name index if necessary
+        // Same note: manual cleanup by systems
         
-        // Paramètres non utilisés pour l'instant (nettoyage manuel par les systèmes)
+        // Parameters unused for now (manual cleanup by systems)
         _ = obj;
         _ = bindingHandle;
     }
@@ -591,7 +591,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Retire un index Name.
+    /// Removes a Name index.
     /// </summary>
     public static void UnindexName(string name)
     {
@@ -617,7 +617,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Recherche un objet par nom (O(1)).
+    /// Searches for an object by name (O(1)).
     /// </summary>
     public static T? FindByName<T>(string name) where T : class
     {
@@ -646,7 +646,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Obtient un handle à partir d'un BindingHandle (O(1)).
+    /// Gets a handle from a BindingHandle (O(1)).
     /// </summary>
     public static int GetHandleByBindingHandle(int bindingHandle)
     {
@@ -667,7 +667,7 @@ public static class HandleManager
         return bindingHandle >= MIN_BINDING_HANDLE && bindingHandle < MAX_HANDLE && (bindingHandle % 2) == 0;
     }
 
-    // ========== Métriques et HealthCheck (Cycle TDD 1.6) ==========
+    // ========== Metrics and HealthCheck (TDD Cycle 1.6) ==========
 
     /// <summary>
     /// Retourne tous les objets uniques (avec cache versioning).
@@ -677,7 +677,7 @@ public static class HandleManager
         int currentVersion = Volatile.Read(ref _cacheVersion);
         if (_cachedObjects != null && _lastCacheVersion == currentVersion)
         {
-            return _cachedObjects; // Cache valide, retour O(1)
+            return _cachedObjects; // Valid cache, O(1) return
         }
 
         // Reconstruire le cache
@@ -699,7 +699,7 @@ public static class HandleManager
     }
 
     /// <summary>
-    /// Retourne le nombre d'objets uniques (O(1)).
+    /// Returns the number of unique objects (O(1)).
     /// </summary>
     public static int GetUniqueObjectCount()
     {
@@ -713,7 +713,7 @@ public static class HandleManager
     {
         errorMessage = string.Empty;
 
-        // Vérifier que tous les handles dans _entries pointent vers des entries valides
+        // Verify that all handles in _entries point to valid entries
         foreach (var kvp in _entries)
         {
             if (kvp.Value == null)
@@ -724,12 +724,12 @@ public static class HandleManager
 
             if (kvp.Value.Object == null)
             {
-                errorMessage = $"Handle {kvp.Key} a une entry avec Object null";
+                errorMessage = $"Handle {kvp.Key} has an entry with null Object";
                 return false;
             }
         }
 
-        // Vérifier que tous les BindingHandles dans _bindingToEntry ont des entries correspondantes
+        // Verify that all BindingHandles in _bindingToEntry have corresponding entries
         foreach (var kvp in _bindingToEntry)
         {
             if (!_entries.ContainsKey(kvp.Value))
@@ -739,7 +739,7 @@ public static class HandleManager
             }
         }
 
-        // Vérifier que les index sont cohérents
+        // Verify that indexes are consistent
         if (_openGLHandleIndex != null)
         {
             foreach (var kvp in _openGLHandleIndex)
@@ -758,7 +758,7 @@ public static class HandleManager
             {
                 if (!_bindingToEntry.ContainsKey(kvp.Value))
                 {
-                    errorMessage = $"Name '{kvp.Key}' pointe vers un BindingHandle {kvp.Value} qui n'existe pas";
+                    errorMessage = $"Name '{kvp.Key}' points to a BindingHandle {kvp.Value} that doesn't exist";
                     return false;
                 }
             }

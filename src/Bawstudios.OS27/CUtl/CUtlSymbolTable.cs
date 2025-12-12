@@ -6,8 +6,8 @@ using Bawstudios.OS27.Common;
 namespace Bawstudios.OS27.CUtl;
 
 /// <summary>
-/// Module d'émulation pour CUtlSymbolTable (CUtlSymbolTable_*).
-/// Gère les tables de symboles.
+/// Emulation module for CUtlSymbolTable (CUtlSymbolTable_*).
+/// Handles symbol tables.
 /// </summary>
 public static unsafe class CUtlSymbolTable
 {
@@ -20,7 +20,7 @@ public static unsafe class CUtlSymbolTable
     }
 
     /// <summary>
-    /// Initialise le module CUtlSymbolTable en patchant les fonctions natives.
+    /// Initializes the CUtlSymbolTable module by patching native functions.
     /// Indice depuis Interop.Engine.cs ligne 16082 (1217)
     /// </summary>
     public static void Init(void** native)

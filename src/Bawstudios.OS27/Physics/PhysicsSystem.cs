@@ -10,8 +10,8 @@ using Bawstudios.OS27;
 namespace Bawstudios.OS27.Physics;
 
 /// <summary>
-/// Module d'émulation pour PhysicsSystem (g_pPhysicsSystem_*).
-/// Gère les propriétés de surface physique et le contrôleur de propriétés.
+/// Emulation module for PhysicsSystem (g_pPhysicsSystem_*).
+/// Handles physical surface properties and the property controller.
 /// </summary>
 public static unsafe class PhysicsSystem
 {
@@ -46,7 +46,7 @@ public static unsafe class PhysicsSystem
     }
     
     /// <summary>
-    /// Initialise le module PhysicsSystem en patchant les fonctions natives.
+    /// Initializes the PhysicsSystem module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16328-16334 :
     /// - g_pPhysicsSystem_NumWorlds: 1463
     /// - g_pPhysicsSystem_CreateWorld: 1464

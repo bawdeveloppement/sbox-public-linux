@@ -4,8 +4,8 @@ using System.Text;
 namespace Bawstudios.OS27.Common;
 
 /// <summary>
-/// Utilitaires de hash pour l'émulation.
-/// Utilise MurmurHash2 pour garantir la compatibilité avec Source 2.
+/// Hash utilities for emulation.
+/// Uses MurmurHash2 to ensure compatibility with Source 2.
 /// </summary>
 public static unsafe class HashUtils
 {
@@ -13,12 +13,12 @@ public static unsafe class HashUtils
     /// Hash a string using MurmurHash2 algorithm (same as Source 2).
     /// Uses lowercase = true and seed = 0x31415926 to match StringToken behavior.
     /// 
-    /// **Comportement Source 2** : Utilise MurmurHash2 avec seed = 0x31415926 (STRINGTOKEN_MURMURHASH_SEED).
-    /// **Comportement émulation** : Identique, garantit la compatibilité des hash.
+    /// **Source 2 behavior**: Uses MurmurHash2 with seed = 0x31415926 (STRINGTOKEN_MURMURHASH_SEED).
+    /// **Emulation behavior**: Identical, ensures hash compatibility.
     /// 
-    /// **Référence** : 
-    /// - `engine/Sandbox.System/Utility/StringToken.cs` ligne 36 : `value.MurmurHash2( true )`
-    /// - `engine/Sandbox.System/Extend/StringExtensions.cs` ligne 716 : Implémentation Source 2
+    /// **Reference**: 
+    /// - `engine/Sandbox.System/Utility/StringToken.cs` line 36: `value.MurmurHash2( true )`
+    /// - `engine/Sandbox.System/Extend/StringExtensions.cs` line 716: Source 2 implementation
     /// </summary>
     /// <param name="str">String to hash</param>
     /// <param name="lowercase">If true, convert string to lowercase before hashing (default: false)</param>

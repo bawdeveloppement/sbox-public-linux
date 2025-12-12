@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 namespace Bawstudios.OS27.PerformanceTrace;
 
 /// <summary>
-/// Module d'émulation pour PerformanceTrace (PerformanceTrace_*).
-/// Gère les événements de profiling et de traçage de performance.
+/// Emulation module for PerformanceTrace (PerformanceTrace_*).
+/// Handles profiling and performance tracing events.
 /// </summary>
 public static unsafe class PerformanceTrace
 {
@@ -19,13 +19,13 @@ public static unsafe class PerformanceTrace
     }
 
     /// <summary>
-    /// Initialise le module PerformanceTrace en patchant les fonctions natives.
+    /// Initializes the PerformanceTrace module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 17252-17253 (2387-2388)
     /// </summary>
     public static void Init(void** native)
     {
         LogCall(nameof(Init), minimal: true);
-        // PerformanceTrace functions (indices 2387-2388 depuis Interop.Engine.cs)
+        // PerformanceTrace functions (indices 2387-2388 from Interop.Engine.cs)
         native[2390] = (void*)(delegate* unmanaged<IntPtr, IntPtr, uint, void>)&PerformanceTrace_BeginEvent;
         native[2391] = (void*)(delegate* unmanaged<void>)&PerformanceTrace_EndEvent;
         
@@ -36,8 +36,8 @@ public static unsafe class PerformanceTrace
     /// Begin a performance trace event (profiling).
     /// Signature exacte depuis Interop.Engine.cs ligne 17252: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, IntPtr, uint, void &gt;
     /// 
-    /// **Comportement Source 2** : Enregistre un événement de profiling avec nom, données et couleur.
-    /// **Comportement émulation** : No-op pour l'instant (profiling non critique). Peut être implémenté avec une bibliothèque de profiling si nécessaire.
+    /// **Source 2 behavior**: Records a profiling event with name, data, and color.
+    /// **Emulation behavior**: No-op for now (profiling not critical). Can be implemented with a profiling library if needed.
     /// </summary>
     [UnmanagedCallersOnly]
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
@@ -53,8 +53,8 @@ public static unsafe class PerformanceTrace
     /// End a performance trace event (profiling).
     /// Signature exacte depuis Interop.Engine.cs ligne 17253: delegate* unmanaged[SuppressGCTransition]&lt; void &gt;
     /// 
-    /// **Comportement Source 2** : Termine l'événement de profiling en cours.
-    /// **Comportement émulation** : No-op pour l'instant (profiling non critique). Peut être implémenté avec une bibliothèque de profiling si nécessaire.
+    /// **Source 2 behavior**: Ends the current profiling event.
+    /// **Emulation behavior**: No-op for now (profiling not critical). Can be implemented with a profiling library if needed.
     /// </summary>
     [UnmanagedCallersOnly]
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]

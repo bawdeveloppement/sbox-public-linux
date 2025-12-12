@@ -5,17 +5,17 @@ using Bawstudios.OS27.Common;
 namespace Bawstudios.OS27.Audio;
 
 /// <summary>
-/// Module d'émulation pour AudioMixDeviceBuffers (CdMxDvcBffrs_*).
-/// Gère un ensemble de buffers de mixage pour plusieurs canaux audio (jusqu'à 8 canaux).
-/// CdMxDvcBffrs = CAudioMixDeviceBuffers (abréviation).
-/// Signatures exactes depuis Interop.Engine.cs ligne 239-241 et indices depuis ligne 14776-14778.
+/// Emulation module for AudioMixDeviceBuffers (CdMxDvcBffrs_*).
+/// Handles a set of mixing buffers for multiple audio channels (up to 8 channels).
+/// CdMxDvcBffrs = CAudioMixDeviceBuffers (abbreviation).
+/// Exact signatures from Interop.Engine.cs line 239-241 and indices from line 14776-14778.
 /// </summary>
 public static unsafe class AudioMixDeviceBuffers
 {
     /// <summary>
-    /// Initialise le module AudioMixDeviceBuffers en patchant toutes les fonctions natives.
-    /// Signatures exactes depuis Interop.Engine.cs ligne 239-241.
-    /// Indices depuis Interop.Engine.cs ligne 14776-14778.
+    /// Initializes the AudioMixDeviceBuffers module by patching all native functions.
+    /// Exact signatures from Interop.Engine.cs line 239-241.
+    /// Indices from Interop.Engine.cs line 14776-14778.
     /// </summary>
     public static void Init(void** native)
     {
@@ -27,7 +27,7 @@ public static unsafe class AudioMixDeviceBuffers
 
     // ============================================================================
     // AudioMixDeviceBuffers Functions (CdMxDvcBffrs_*)
-    // Signatures exactes depuis Interop.Engine.cs ligne 239-241
+    // Exact signatures from Interop.Engine.cs line 239-241
     // ============================================================================
 
     /// <summary>
@@ -50,8 +50,8 @@ public static unsafe class AudioMixDeviceBuffers
     }
 
     /// <summary>
-    /// Libère un ensemble de buffers de mixage.
-    /// Signature exacte depuis Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, void &gt;
+    /// Releases a set of mixing buffers.
+    /// Exact signature from Interop.Engine.cs: delegate* unmanaged[SuppressGCTransition]&lt; IntPtr, void &gt;
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CdMxDvcBffrs_Destroy(IntPtr devicePtr)
@@ -77,7 +77,7 @@ public static unsafe class AudioMixDeviceBuffers
     }
 
     /// <summary>
-    /// Données d'un ensemble de buffers de mixage pour plusieurs canaux.
+    /// Data for a set of mixing buffers for multiple channels.
     /// </summary>
     internal class AudioMixDeviceBuffersData
     {
@@ -85,7 +85,7 @@ public static unsafe class AudioMixDeviceBuffers
 
         public AudioMixDeviceBuffersData(int count)
         {
-            // Créer un buffer de mixage pour chaque canal
+            // Create a mixing buffer for each channel
             for (int i = 0; i < count; i++)
             {
                 var buf = new AudioMixBuffer.AudioMixBufferData();

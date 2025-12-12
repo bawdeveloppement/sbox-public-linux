@@ -30,8 +30,8 @@ public struct RenderAttributesSamplerStateDesc
 }
 
 /// <summary>
-/// Module d'émulation pour CRenderAttributes.
-/// Gère les attributs de rendu (paramètres de shader, textures, etc.).
+/// Emulation module for CRenderAttributes.
+/// Handles render attributes (shader parameters, textures, etc.).
 /// </summary>
 public static unsafe class RenderAttributes
 {
@@ -44,9 +44,9 @@ public static unsafe class RenderAttributes
         if (!(LogAll || (LogMinimal && minimal))) return;
         Console.WriteLine($"[NativeAOT][RA] {name} {message}");
     }
-    // Certains appels venant du moteur managé peuvent passer un pointeur/handle inconnu
-    // (ex: valeur élevée hors plage HandleManager). On garde un cache de secours pour
-    // ces handles externes afin d'éviter un crash immédiat.
+    // Some calls from the managed engine may pass an unknown pointer/handle
+    // (e.g., high value outside HandleManager range). We keep a fallback cache for
+    // these external handles to avoid an immediate crash.
     private static readonly System.Collections.Concurrent.ConcurrentDictionary<IntPtr, EmulatedRenderAttributes> _externalAttributes = new();
 
     /// <summary>
@@ -55,7 +55,7 @@ public static unsafe class RenderAttributes
     public static void Init(void** native)
     {
         Console.WriteLine("[NativeAOT] RenderAttributes.Init: patching CRenderAttributes function pointers (indices 689-727)");
-        // Fonctions principales (indices 689-727)
+        // Main functions (indices 689-727)
         native[689] = (void*)(delegate* unmanaged<IntPtr, void>)&CRndrttrbts_DeleteThis;
         native[690] = (void*)(delegate* unmanaged<IntPtr>)&CRndrttrbts_Create;
         native[691] = (void*)(delegate* unmanaged<IntPtr, Sandbox.StringToken, float, void>)&CRndrttrbts_SetFloatValue;
@@ -100,8 +100,8 @@ public static unsafe class RenderAttributes
     }
     
     /// <summary>
-    /// Représentation émulée d'un CRenderAttributes.
-    /// Stocke tous les attributs de rendu (paramètres de shader, textures, etc.).
+    /// Emulated representation of a CRenderAttributes.
+    /// Stores all render attributes (shader parameters, textures, etc.).
     /// </summary>
     private class EmulatedRenderAttributes
     {
@@ -342,7 +342,7 @@ public static unsafe class RenderAttributes
         var attrs = GetRenderAttributes(self);
         if (attrs == null) return IntPtr.Zero;
         
-        // Retourner la première texture trouvée
+        // Return the first texture found
         foreach (var texture in attrs.TextureValues.Values)
         {
             return texture.self;
@@ -371,8 +371,8 @@ public static unsafe class RenderAttributes
         var result = HandleManager.Get<EmulatedRenderAttributes>(handle);
         if (result == null)
         {
-            // Fallback: si le handle ne provient pas de notre HandleManager (ex: pointeur natif),
-            // on alloue une instance de secours pour éviter un segfault et poursuivre le rendu.
+            // Fallback: if the handle doesn't come from our HandleManager (e.g., native pointer),
+            // we allocate a fallback instance to avoid a segfault and continue rendering.
             result = _externalAttributes.GetOrAdd(self, static h =>
             {
                 Console.WriteLine($"[NativeAOT] RenderAttributes: external handle 0x{h.ToInt64():X} not found in HandleManager, allocating fallback attributes");
@@ -382,10 +382,10 @@ public static unsafe class RenderAttributes
         return result;
     }
     
-    // ========== Fonctions principales ==========
+    // ========== Main functions ==========
     
     /// <summary>
-    /// Supprime un CRenderAttributes.
+    /// Deletes a CRenderAttributes.
     /// </summary>
     [UnmanagedCallersOnly]
     public static void CRndrttrbts_DeleteThis(IntPtr self)
@@ -401,12 +401,12 @@ public static unsafe class RenderAttributes
             Console.WriteLine($"[NativeAOT] CRndrttrbts_DeleteThis: deleted handle={handle}");
         }
 
-        // Nettoyer un éventuel handle externe de secours
+        // Clean up any fallback external handle
         _externalAttributes.TryRemove(self, out _);
     }
     
     /// <summary>
-    /// Crée un nouveau CRenderAttributes.
+    /// Creates a new CRenderAttributes.
     /// </summary>
     [UnmanagedCallersOnly]
     public static IntPtr CRndrttrbts_Create()

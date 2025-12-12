@@ -48,19 +48,19 @@ public static class LauncherEnvironment
 		ManagedDllPath = $"{GamePath}/bin/managed/";
 		var nativeDllPath = $"{GamePath}/bin/{PlatformName}/";
 
-		// Sélection de la lib native (source2 par défaut, fallback vers source2 si la lib demandée n'existe pas)
+		// Select the native library (source2 by default, fallback to source2 if the requested library does not exist)
 		var requestedLib = NormalizeEngineLib( Environment.GetEnvironmentVariable( "SBOX_ENGINE_LIB" ) );
 		var requestedEngine = Environment.GetEnvironmentVariable( "SBOX_ENGINE" );
 		var defaultLib = GetDefaultEngineLibName();
 		string resolvedLib = defaultLib;
 		Console.WriteLine( $"[LauncherEnvironment] SBOX_ENGINE_LIB={requestedLib}, SBOX_ENGINE={requestedEngine}, default={defaultLib}" );
 
-		// Priorité 1 : SBOX_ENGINE_LIB explicite
+		// Priority 1: Explicit SBOX_ENGINE_LIB
 		if ( !string.IsNullOrWhiteSpace( requestedLib ) )
 		{
 			resolvedLib = requestedLib;
 		}
-		// Priorité 2 : SBOX_ENGINE (source2|os27)
+		// Priority 2 : SBOX_ENGINE (source2|os27)
 		else if ( !string.IsNullOrWhiteSpace( requestedEngine ) )
 		{
 			var eng = requestedEngine.Trim().ToLowerInvariant();

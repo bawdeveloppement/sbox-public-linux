@@ -7,8 +7,8 @@ using NativeEngine;
 namespace Bawstudios.OS27.CUtl;
 
 /// <summary>
-/// Module d'émulation pour CUtlVectorTexture (CtlVctrHRndrTxtr_*).
-/// Gère les vecteurs de textures.
+/// Emulation module for CUtlVectorTexture (CtlVctrHRndrTxtr_*).
+/// Handles texture vectors.
 /// </summary>
 public static unsafe class CUtlVectorTexture
 {
@@ -21,7 +21,7 @@ public static unsafe class CUtlVectorTexture
     }
 
     /// <summary>
-    /// Initialise le module CUtlVectorTexture en patchant les fonctions natives.
+    /// Initializes the CUtlVectorTexture module by patching native functions.
     /// Indices depuis Interop.Engine.cs lignes 16093-16096 (1228-1231)
     /// </summary>
     public static void Init(void** native)
