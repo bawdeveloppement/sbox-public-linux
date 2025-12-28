@@ -24,18 +24,18 @@ public partial class SceneViewportWidget
 
 		SetSizeMode( SizeMode.CanGrow, SizeMode.CanGrow );
 	}
-	
+
 	/// <summary>
 	/// Set the viewport to a specific aspect ratio
 	/// </summary>
 	/// <param name="aspectRatio"></param>
 	public void SetAspectRatio( float aspectRatio )
 	{
-		
+
 		MinimumSize = Vector2.Zero;
 		MaximumSize = QT_MAX_SIZE;
 		FixedSize = QT_MAX_SIZE;
-		
+
 		// Don't update if the aspect ratio hasn't changed
 		if ( ForcedAspectRatio.HasValue && ForcedAspectRatio.Value.AlmostEqual( aspectRatio ) && !ForcedSize.HasValue )
 		{
@@ -66,6 +66,7 @@ public partial class SceneViewportWidget
 		{
 			var size = ForcedSize.Value;
 
+			// For fixed resolution, use exact size constraints
 			MaximumSize = size;
 			FixedSize = size;
 		}
@@ -85,6 +86,7 @@ public partial class SceneViewportWidget
 		}
 		else
 		{
+			// For aspect ratio mode or free, don't lock the size - let it be dynamic
 			MaximumSize = new Vector2( QT_MAX_SIZE, QT_MAX_SIZE );
 			FixedSize = QT_MAX_SIZE;
 		}
@@ -129,10 +131,12 @@ public partial class SceneViewportWidget
 		Vector2 result;
 		if ( aspectRatio > availableAspect )
 		{
+			// Fit to width
 			result = new Vector2( availableSize.x, availableSize.x / aspectRatio );
 		}
 		else
 		{
+			// Fit to height
 			result = new Vector2( availableSize.y * aspectRatio, availableSize.y );
 		}
 
