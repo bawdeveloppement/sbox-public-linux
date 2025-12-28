@@ -15,6 +15,7 @@ public partial class SceneViewportWidget
 	/// </summary>
 	public void SetDefaultSize()
 	{
+		Log.Info("SetDefaultSize");
 		ForcedSize = null;
 		ForcedAspectRatio = null;
 
@@ -24,13 +25,25 @@ public partial class SceneViewportWidget
 
 		SetSizeMode( SizeMode.CanGrow, SizeMode.CanGrow );
 	}
-
+	
 	/// <summary>
 	/// Set the viewport to a specific aspect ratio
 	/// </summary>
 	/// <param name="aspectRatio"></param>
 	public void SetAspectRatio( float aspectRatio )
 	{
+		Log.Info("SetAspectRatio");
+		
+		MinimumSize = Vector2.Zero;
+		MaximumSize = QT_MAX_SIZE;
+		FixedSize = QT_MAX_SIZE;
+		
+		// Don't update if the aspect ratio hasn't changed
+		if ( ForcedAspectRatio.HasValue && ForcedAspectRatio.Value.AlmostEqual( aspectRatio ) && !ForcedSize.HasValue )
+		{
+			return;
+		}
+
 		ForcedAspectRatio = aspectRatio;
 		ForcedSize = null;
 
@@ -51,58 +64,90 @@ public partial class SceneViewportWidget
 
 	private void UpdateSizeConstraints()
 	{
+		Log.Info("UpdateSizeConstraints");
 		if ( ForcedSize.HasValue )
 		{
 			var size = ForcedSize.Value;
 
-			// For fixed resolution, use exact size constraints
 			MaximumSize = size;
 			FixedSize = size;
 		}
+		else if ( ForcedAspectRatio.HasValue )
+		{
+			if ( Parent != null )
+			{
+				Log.Info($"CurrentSize: x{Size.x} y{Size.y}");
+				var contentRect = Parent.ContentRect;
+				var parentSize = new Vector2( contentRect.Width, contentRect.Height );
+				MaximumSize = parentSize;
+				Log.Info($"MaximumSize: x{MaximumSize.x} y{MaximumSize.y}");
+			}
+			else
+			{
+				MaximumSize = new Vector2( QT_MAX_SIZE, QT_MAX_SIZE );
+			}
+			FixedSize = QT_MAX_SIZE;
+			Log.Info($"FixedSize: x{FixedSize.x} y{FixedSize.y}");
+		}
 		else
 		{
-			// For aspect ratio mode or free, don't lock the size - let it be dynamic
 			MaximumSize = new Vector2( QT_MAX_SIZE, QT_MAX_SIZE );
 			FixedSize = QT_MAX_SIZE;
 		}
 
 		Layout.SizeConstraint = SizeConstraint.SetDefaultConstraint;
 		SetSizeMode( SizeMode.Expand, SizeMode.Expand );
-
-		UpdateGeometry();
-		AdjustSize();
 	}
+
+	Vector2? defaultSize;
 
 	protected override Vector2 SizeHint()
 	{
-		// Exact size, easy
 		if ( ForcedSize.HasValue )
 		{
 			return ForcedSize.Value;
 		}
 
-		// Free
 		if ( !ForcedAspectRatio.HasValue )
 		{
 			return base.SizeHint();
 		}
 
-		// Dynamically calculate size based on current parent size
-		var parentSize = Parent?.Size ?? base.SizeHint();
-		var parentAspect = parentSize.x / parentSize.y;
-		var aspectRatio = ForcedAspectRatio.Value;
-
-		if ( aspectRatio > parentAspect )
+		if ( defaultSize == null )
 		{
-			// Fit to width
-			return new Vector2( parentSize.x, parentSize.x / aspectRatio );
+			defaultSize = Size;
+		}
+
+		var availableSize = defaultSize.Value;
+		if ( availableSize.x <= 0 || availableSize.y <= 0 )
+		{
+			return base.SizeHint();
+		}
+
+		var aspectRatio = ForcedAspectRatio.Value;
+		Log.Info( $"Aspect ratio: {aspectRatio}" );
+
+		if ( aspectRatio <= 0 || float.IsNaN( aspectRatio ) || float.IsInfinity( aspectRatio ) )
+		{
+			return availableSize;
+		}
+
+		var availableAspect = availableSize.x / availableSize.y;
+		Vector2 result;
+		if ( aspectRatio > availableAspect )
+		{
+			result = new Vector2( availableSize.x, availableSize.x / aspectRatio );
 		}
 		else
 		{
-			// Fit to height
-			return new Vector2( parentSize.y * aspectRatio, parentSize.y );
+			result = new Vector2( availableSize.y * aspectRatio, availableSize.y );
 		}
 
+		if ( MaximumSize.x > 0 && MaximumSize.y > 0 )
+		{
+			result = new Vector2( MathF.Min( result.x, MaximumSize.x ), MathF.Min( result.y, MaximumSize.y ) );
+		}
 
+		return result;
 	}
 }
